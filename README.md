@@ -19,15 +19,28 @@ Steps chain automatically: 1 launches 2, and 2 launches 3 once every scene has a
 
 ## Quick start
 
+**Windows: just double-click `run.bat`.** It checks Python, ffmpeg, the
+required packages and your API keys, then starts the dashboard and opens
+your browser. If a check fails it tells you exactly what to install.
+
+Any platform:
+
+```bash
+python launch.py            # same preflight + dashboard
+python launch.py --port 9000    # force a port
+python launch.py --no-browser   # don't open a tab
+```
+
+Or drive it manually:
+
 ```bash
 pip install -r tools/requirements.txt   # needs ffmpeg + ffprobe on PATH too
 cd tools
 
-# Option A: the dashboard (every flag documented, live output, Stop button)
+# the dashboard (every flag documented, live output, Stop button)
 python webui/server.py
 
-# Option B: the CLI
-#   put your narration in projects/en/myvideo/script.txt, then:
+# or the CLI -- put your narration in projects/en/myvideo/script.txt, then:
 python step1_audio_and_captions.py en/myvideo
 ```
 
