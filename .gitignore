@@ -1,0 +1,28 @@
+# ---- Secrets: never commit ----
+tools/cookies.txt
+tools/*_key.txt
+tools/pexels_key.txt
+tools/pixabay_key.txt
+tools/coverr_key.txt
+tools/groq_key.txt
+tools/deepseek_key.txt
+
+# ---- Generated video projects (large; per-user output) ----
+projects/
+
+# ---- Large branding assets (not referenced by any script) ----
+tools/subscribe.mp4
+tools/watermark.mp4
+
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+
+# ---- Local caches ----
+tools/webui/.voices_cache.json
+.pexels_cache/
+.music_cache/
+.build_cache.json

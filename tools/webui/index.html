@@ -1,0 +1,1166 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pipeline Dashboard</title>
+<style>
+  /* Theme tokens. Dark is the default; html[data-theme="light"] swaps in a
+     clean, high-contrast light palette (white panels on a soft grey ground,
+     indigo/green accents, soft shadows). The console deliberately stays
+     dark in BOTH themes -- terminal output reads best that way. */
+  :root {
+    --bg: #0f1115;
+    --panel: #161922;
+    --panel-2: #1d212c;
+    --border: #2a2f3d;
+    --text: #e4e6eb;
+    --muted: #8b90a0;
+    --accent: #5aa9ff;
+    --accent-2: #58d68d;
+    --danger: #ff6b6b;
+    --warn: #f5c05a;
+    --mono: "Cascadia Code", "Consolas", "SFMono-Regular", Menlo, monospace;
+    --ok-bg: #0f2618; --ok-border: #2c6e44; --ok-text: #a5eec4;
+    --warn-bg: #26200f; --warn-border: #6e5a2c; --warn-text: #eedca5;
+    --err-bg: #260f0f; --err-border: #6e2c2c; --err-text: #eea5a5;
+    --input-bg: #0c0e13;
+    --row-changed: #182333;
+    --code-text: #cfe3ff;
+    --console-bg: #0a0c10; --console-border: #2a2f3d; --console-text: #d7dae0;
+    --btn-run-text: #06210f; --btn-next-text: #041022; --btn-stop-text: #2a0808;
+    --pill-bg: #14213a; --pill-border: #29416e; --pill-text: #5aa9ff;
+    --card-shadow: none;
+    --step-active-bg: #0f1115;
+  }
+  html[data-theme="light"] {
+    --bg: #f3f5f8;
+    --panel: #ffffff;
+    --panel-2: #eef1f6;
+    --border: #dfe4ec;
+    --text: #16202c;
+    --muted: #5b6a7e;
+    --accent: #2563eb;
+    --accent-2: #16a34a;
+    --danger: #dc2626;
+    --warn: #b45309;
+    --ok-bg: #ecfdf3; --ok-border: #a6e6c3; --ok-text: #11603a;
+    --warn-bg: #fffbeb; --warn-border: #eeddaa; --warn-text: #8a6116;
+    --err-bg: #fdf0f0; --err-border: #f2bcbc; --err-text: #991f1f;
+    --input-bg: #ffffff;
+    --row-changed: #e9f0fd;
+    --code-text: #1d4ed8;
+    --btn-run-text: #ffffff; --btn-next-text: #ffffff; --btn-stop-text: #ffffff;
+    --pill-bg: #e8effe; --pill-border: #bdd0f7; --pill-text: #1d4ed8;
+    --card-shadow: 0 1px 3px rgba(16, 24, 40, .07), 0 1px 2px rgba(16, 24, 40, .04);
+    --step-active-bg: #f3f5f8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text);
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  a { color: var(--accent); }
+  #app { display: flex; flex-direction: column; height: 100%; }
+
+  /* --- stepper header --- */
+  #topbar { background: var(--panel); border-bottom: 1px solid var(--border);
+    padding: 14px 22px 0; }
+  #topbar .brand { display:flex; align-items:baseline; gap:14px; margin-bottom: 12px; }
+  #topbar h1 { font-size: 15px; margin: 0; letter-spacing: .04em; }
+  #topbar .proj { font-family: var(--mono); font-size: 12.5px; color: var(--pill-text);
+    background: var(--pill-bg); border: 1px solid var(--pill-border); padding: 3px 10px; border-radius: 999px; }
+  #topbar .proj:empty { display: none; }
+  #stepper { display: flex; gap: 4px; overflow-x: auto; }
+  .step { flex: 1; min-width: 100px; text-align: center; padding: 9px 6px 11px;
+    border-radius: 10px 10px 0 0; cursor: pointer; border: 1px solid transparent;
+    border-bottom: none; color: var(--muted); font-size: 12.5px; white-space: nowrap;
+    background: transparent; }
+  .step .n { display: inline-flex; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--panel-2); border: 1px solid var(--border); align-items: center;
+    justify-content: center; font-size: 11px; margin-right: 7px; vertical-align: -4px; }
+  .step:hover { color: var(--text); }
+  .step.active { background: var(--bg); border-color: var(--border); color: var(--text);
+    font-weight: 600; }
+  .step.done .n { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok-text); }
+  .step.done .n::before { content: "✓"; }
+  .step.done .n span { display: none; }
+  .step.running .n { border-color: var(--accent-2); color: var(--accent-2);
+    animation: pulse 1.2s infinite; }
+  @keyframes pulse { 50% { box-shadow: 0 0 0 4px rgba(88,214,141,.15); } }
+
+  /* --- screens --- */
+  #screen { flex: 1; overflow-y: auto; padding: 26px 30px 80px; max-width: 1200px;
+    width: 100%; margin: 0 auto; }
+  .screen-head h2 { margin: 0 0 6px; font-size: 24px; }
+  .screen-head .sub { color: var(--muted); font-size: 14px; line-height: 1.55; max-width: 860px; }
+
+  .banner { margin: 16px 0; padding: 12px 16px; border-radius: 10px; font-size: 13.5px;
+    border: 1px solid var(--border); background: var(--panel); }
+  .banner.ok { border-color: var(--ok-border); background: var(--ok-bg); color: var(--ok-text); }
+  .banner.warn { border-color: var(--warn-border); background: var(--warn-bg); color: var(--warn-text); }
+  .banner.err { border-color: var(--err-border); background: var(--err-bg); color: var(--err-text); }
+
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 18px 20px; margin: 16px 0; box-shadow: var(--card-shadow); }
+  .card h3 { margin: 0 0 12px; font-size: 14px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: .05em; }
+
+  .field { display: grid; grid-template-columns: 200px 1fr; gap: 14px; align-items: start;
+    padding: 10px 0; border-bottom: 1px solid var(--panel-2); }
+  .field:last-child { border-bottom: none; }
+  .field .fname { font-size: 13.5px; padding-top: 7px; }
+  .field .fname .mono { font-family: var(--mono); font-size: 11.5px; color: var(--muted);
+    display: block; margin-top: 2px; }
+  .field .fhelp { color: var(--muted); font-size: 12px; margin-top: 5px; line-height: 1.45; }
+
+  input[type=text], input[type=password], input[type=number], select {
+    background: var(--input-bg); border: 1px solid var(--border); color: var(--text);
+    border-radius: 7px; padding: 8px 10px; font-size: 13.5px; font-family: var(--mono);
+    width: 100%; max-width: 520px; }
+  input:focus, select:focus { outline: 1px solid var(--accent); }
+  input[type=checkbox] { width: 17px; height: 17px; accent-color: var(--accent); margin-top: 8px; }
+
+  details.advanced { margin: 14px 0; }
+  details.advanced summary { cursor: pointer; color: var(--muted); font-size: 13px;
+    padding: 8px 0; user-select: none; }
+  details.advanced summary:hover { color: var(--text); }
+  .flag-row { display: grid; grid-template-columns: 210px 1fr 250px; gap: 14px;
+    padding: 11px 14px; border-bottom: 1px solid var(--border); background: var(--panel);
+    font-size: 12.5px; }
+  .flag-row:first-child { border-radius: 10px 10px 0 0; }
+  .flag-row:last-child { border-bottom: none; border-radius: 0 0 10px 10px; }
+  .flag-row.changed { background: var(--row-changed); }
+  .flag-name { font-family: var(--mono); font-size: 12.5px; color: var(--code-text); }
+  .flag-def { color: var(--muted); font-size: 10.5px; font-family: var(--mono); margin-top: 4px; }
+  .desc { color: #b9bdc9; line-height: 1.5; }
+
+  .actions { display: flex; gap: 10px; align-items: center; margin: 18px 0; flex-wrap: wrap; }
+  button { font-family: inherit; }
+  button.run { background: var(--accent-2); color: var(--btn-run-text); border: none; font-weight: 700;
+    padding: 12px 26px; border-radius: 9px; cursor: pointer; font-size: 14.5px; box-shadow: var(--card-shadow); }
+  button.run:disabled { opacity: .45; cursor: default; }
+  button.next { background: var(--accent); color: var(--btn-next-text); border: none; font-weight: 700;
+    padding: 12px 26px; border-radius: 9px; cursor: pointer; font-size: 14.5px; box-shadow: var(--card-shadow); }
+  button.stop { background: var(--danger); color: var(--btn-stop-text); border: none; font-weight: 600;
+    padding: 11px 18px; border-radius: 9px; cursor: pointer; font-size: 13.5px; }
+  button.ghost { background: transparent; border: 1px solid var(--border); color: var(--muted);
+    padding: 10px 16px; border-radius: 9px; cursor: pointer; font-size: 13px; }
+  button.ghost:hover { color: var(--text); border-color: var(--muted); }
+  .status-pill { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+  .console-wrap { margin-top: 14px; }
+  .console-wrap summary { cursor: pointer; color: var(--muted); font-size: 12.5px; padding: 6px 0; }
+  .console { background: var(--console-bg); border: 1px solid var(--console-border); border-radius: 10px;
+    padding: 12px 14px; height: 260px; overflow-y: auto; font-family: var(--mono);
+    font-size: 12.3px; white-space: pre-wrap; word-break: break-word; color: var(--console-text); }
+  .console:empty::before { content: "Output streams here live once the step runs."; color: var(--muted); }
+
+  iframe.embed { width: 100%; height: calc(100vh - 320px); min-height: 480px;
+    border: 1px solid var(--border); border-radius: 12px; background: var(--panel);
+    box-shadow: var(--card-shadow); }
+
+  /* project screen */
+  .proj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px; margin-top: 14px; }
+  .proj-card { background: var(--panel); border: 1px solid var(--border); border-radius: 12px;
+    padding: 14px 16px; cursor: pointer; box-shadow: var(--card-shadow); }
+  .proj-card:hover { border-color: var(--accent); }
+  .proj-card .name { font-family: var(--mono); font-size: 14px; color: var(--code-text); }
+  .proj-card .chips { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 10.5px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border);
+    color: var(--muted); }
+  .chip.on { border-color: var(--ok-border); color: var(--ok-text); background: var(--ok-bg); }
+
+  video#player { width: 100%; max-height: calc(100vh - 340px); border-radius: 12px;
+    border: 1px solid var(--border); background: #000; }
+
+  /* toast */
+  #toast { position: fixed; left: 50%; bottom: 84px; transform: translateX(-50%);
+    background: var(--ok-bg); border: 1px solid var(--ok-border); color: var(--ok-text); padding: 12px 22px;
+    border-radius: 10px; font-size: 14px; z-index: 50; display: none; box-shadow: 0 8px 30px rgba(0,0,0,.35); }
+
+  /* live footer */
+  #livebar { background: var(--panel); border-top: 1px solid var(--border);
+    padding: 8px 22px; display: flex; align-items: center; gap: 14px; font-size: 12.5px;
+    color: var(--muted); min-height: 40px; }
+  #livebar .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--muted); }
+  #livebar.busy .dot { background: var(--accent-2); animation: pulse 1.2s infinite; }
+  #livebar .grow { flex: 1; }
+  #livebar button { padding: 5px 12px; font-size: 12px; }
+  #themetoggle { margin-left: auto; background: var(--panel-2); border: 1px solid var(--border);
+    color: var(--text); padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: 12.5px; }
+  #themetoggle:hover { border-color: var(--accent); }
+  #livetext { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  /* ---------- responsive: tablets & phones ---------- */
+  @media (max-width: 900px) {
+    #screen { padding: 16px 14px 70px; }
+    .screen-head h2 { font-size: 20px; }
+    .screen-head .sub { font-size: 13px; }
+    #topbar { padding: 10px 12px 0; }
+    #topbar h1 { font-size: 14px; }
+    .brand { flex-wrap: wrap; row-gap: 6px; }
+    .step { min-width: 84px; font-size: 11.5px; padding: 8px 4px 10px; }
+    .step .n { width: 18px; height: 18px; font-size: 10px; margin-right: 5px; }
+    /* Stack every two-/three-column row into a single readable column. */
+    .field { grid-template-columns: 1fr; gap: 6px; }
+    .field .fname { padding-top: 0; }
+    .flag-row { grid-template-columns: 1fr; gap: 8px; }
+    input[type=text], input[type=password], input[type=number], select { max-width: 100%; }
+    .actions button.run, .actions button.next { padding: 11px 18px; font-size: 13.5px; }
+    iframe.embed { height: calc(100vh - 230px); min-height: 380px; }
+    .console { height: 200px; }
+    #livebar { font-size: 11.5px; padding: 8px 12px; }
+    .proj-grid { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    /* Phones: number-only stepper chips -- titles reappear on the active step. */
+    .step { min-width: 40px; flex: none; padding: 8px 8px 10px; }
+    .step .t { display: none; }
+    .step.active .t { display: inline; }
+    .step .n { margin-right: 0; }
+    .step.active .n { margin-right: 5px; }
+    .actions { gap: 8px; }
+    .actions button.run, .actions button.next { width: 100%; }
+    video#player { max-height: 46vh; }
+  }
+</style>
+<script>
+  /* Apply the saved (or system) theme before first paint -- no flash. */
+  document.documentElement.dataset.theme =
+    localStorage.getItem("wizard-theme") ||
+    (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+</script>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <div class="brand">
+      <h1>🎬 Video Pipeline</h1>
+      <span class="proj" id="projpill"></span>
+      <button id="themetoggle" title="Switch between light and dark mode"></button>
+    </div>
+    <div id="stepper"></div>
+  </div>
+  <div id="screen"></div>
+  <div id="livebar"><span class="dot"></span><span id="livetext">idle</span><span class="grow"></span>
+    <button class="stop" id="livestop" style="display:none">■ Stop</button></div>
+</div>
+<div id="toast"></div>
+
+<script>
+"use strict";
+
+/* =====================================================================
+ * Flag documentation, straight from each script's argparse setup. The
+ * wizard shows a few essential fields per screen; everything else lives
+ * under "All flags". Blank field = don't pass the flag.
+ * =================================================================== */
+const SCRIPTS = {
+  step0: {
+    file: "step0_build_script.py",
+    essential: ["yt-link", "documentary", "words"],
+    flags: [
+      { name: "words", type: "number", step: 1, default: 2500, label: "Target words",
+        help: "Target word count (default 2500 ~ 17 min at --rate -10%)." },
+      { name: "model", type: "select", default: "openai/gpt-oss-20b",
+        choices: ["openai/gpt-oss-20b", "openai/gpt-oss-120b"],
+        help: "Groq model. gpt-oss-20b (default) writes clean 12-18 word sentences; gpt-oss-120b is available but writes longer-winded ones. Other Groq models were tested and rejected (see groq_client.py)." },
+      { name: "api-key", type: "password", default: null,
+        help: "Groq key (else every line in groq_key.txt, or $GROQ_API_KEY)." },
+      { name: "polish", type: "flag",
+        help: "Skip generation: run the naturalness pass over the existing script.txt." },
+      { name: "documentary", type: "flag", label: "Documentary tone rewrite",
+        help: "Rewrite using the humanized documentary tone. Implies --polish unless combined with --yt-link." },
+      { name: "no-polish", type: "flag", help: "Skip the naturalness pass after generating." },
+      { name: "brief-only", type: "flag", help: "Write the fact brief to brief.json and stop." },
+      { name: "fresh", type: "flag", help: "Ignore the cached brief/sections and rebuild from scratch." },
+      { name: "yt-link", type: "text", default: null, label: "YouTube link",
+        placeholder: "https://youtube.com/watch?v=...",
+        help: "Fetch this video's transcript, write it to script.txt, and rewrite it. Creates the project folder if needed." },
+    ],
+  },
+  step1: {
+    file: "step1_audio_and_captions.py",
+    essential: ["voice", "rate", "caption-style", "vertical"],
+    flags: [
+      { name: "voice", type: "voices", default: null, label: "Narrator voice",
+        help: "Pick from every edge-tts voice (your project's language is listed first). Leave on auto for the language default (en: Andrew, es: Jorge, ur: Asad)." },
+      { name: "rate", type: "select", default: "-10%", label: "Speech rate",
+        choices: ["-25%", "-20%", "-15%", "-10%", "-5%", "+0%", "+5%", "+10%"],
+        help: "Speaking speed. -10% (default) is a relaxed narration pace; -15/-20% for documentary gravitas; +0% for news tempo." },
+      { name: "caption-style", type: "select", default: "classic", label: "Caption style",
+        choices: ["classic", "wordcolor", "wordcolor-bottom", "highlight", "std-yellow-black"],
+        help: "classic = static white line. wordcolor = big centered headline, current word coloured. wordcolor-bottom = branded bottom-anchored. highlight = yellow capsule on current word. std-yellow-black = yellow line, black capsule." },
+      { name: "vertical", type: "flag", label: "Vertical 9:16 (Shorts)",
+        help: "1080x1920 instead of 1920x1080. Step 2 switches to portrait clips, Step 3 renders to match." },
+      { name: "no-semantic", type: "flag",
+        help: "Use the legacy random-duration scene grouping instead of the semantic timeline (meaning-based scene cuts with exact word-timestamp mapping)." },
+      { name: "semantic-min-seconds", type: "number", step: "any", default: 2.5,
+        help: "Semantic mode: scenes shorter than this fold into a neighbor as an extra shot." },
+      { name: "semantic-max-seconds", type: "number", step: "any", default: 15.0,
+        help: "Semantic mode: scenes longer than this subdivide into continuation shots." },
+      { name: "scene-seconds-min", type: "number", step: "any", default: 12.0,
+        help: "Legacy mode only: minimum seconds of narration per scene." },
+      { name: "scene-seconds-max", type: "number", step: "any", default: 25.0,
+        help: "Legacy mode only: maximum seconds of narration per scene." },
+      { name: "seed", type: "number", step: 1, default: null, help: "Random seed for reproducible picks." },
+      { name: "long-scene-every", type: "number", step: 1, default: 0,
+        help: "Every Nth scene holds --long-scene-seconds instead of the random target. 0 disables." },
+      { name: "long-scene-seconds", type: "number", step: "any", default: 15.0,
+        help: "Narration length of each long scene." },
+      { name: "pause-every", type: "number", step: 1, default: 0,
+        help: "Splice a silent gap after every N scenes. 0 disables." },
+      { name: "pause-after-words", type: "number", step: 1, default: 0,
+        help: "Splice a silent gap after every sentence landing N+ words past the previous pause. 0 disables." },
+      { name: "pause-seconds-min", type: "number", step: "any", default: 5.0, help: "Minimum pause length." },
+      { name: "pause-seconds-max", type: "number", step: "any", default: 8.0, help: "Maximum pause length." },
+      { name: "image-prompts", type: "flag", help: "Also write image_prompts.txt (Google Flow workflow)." },
+      { name: "force", type: "flag", help: "Re-run even though clips are already picked (discards them)." },
+      { name: "captions-only", type: "flag",
+        help: "Rewrite captions.ass from existing timings only. Safe after clips are picked." },
+      { name: "font-size", type: "number", step: 1, default: null,
+        help: "Caption font size override (English 64, Urdu 140; 88 for the 50+ news format)." },
+      { name: "max-words", type: "number", step: 1, default: null, help: "Hard cap on words per caption card." },
+      { name: "text-color", type: "color", default: null, colorDefault: "#FFFFFF",
+        help: "Normal (not-yet-spoken) word colour. wordcolor/wordcolor-bottom styles only. Default white." },
+      { name: "highlight-color", type: "color", default: null, colorDefault: "#29D6F5",
+        help: "Currently-spoken word colour. Default cyan (#29D6F5 wordcolor, #00E6FF branded)." },
+      { name: "outline-color", type: "color", default: null, colorDefault: "#000000",
+        help: "Caption outline/border colour. Default black." },
+    ],
+  },
+  step2: {
+    file: "step2_pick_clips.py",
+    essential: [],
+    flags: [
+      { name: "api-key", type: "password", default: null, help: "Pexels API key (else pexels_key.txt)." },
+      { name: "pixabay-api-key", type: "password", default: null, help: "Pixabay key (optional)." },
+      { name: "coverr-api-key", type: "password", default: null, help: "Coverr key (optional)." },
+      { name: "port", type: "number", step: 1, default: 8000, help: "Picker server port." },
+    ],
+  },
+  music: {
+    file: "step_music_picker.py",
+    essential: [],
+    flags: [
+      { name: "port", type: "number", step: 1, default: 8010, help: "Music picker port." },
+      { name: "channel", type: "text", default: "https://www.youtube.com/c/audiolibrary-channel",
+        placeholder: "https://www.youtube.com/...",
+        help: "Channel/playlist auto-browsed on load. Default: YouTube Audio Library." },
+    ],
+  },
+  step3: {
+    file: "step3_render_video.py",
+    essential: ["crf", "preset"],
+    flags: [
+      { name: "fps", type: "select", default: "30", label: "Frame rate",
+        choices: ["24", "25", "30", "50", "60"],
+        help: "Output frame rate. 30 (default) suits YouTube; 24 for a filmic look." },
+      { name: "crf", type: "select", default: "20", label: "Quality (CRF)",
+        choices: ["17", "18", "20", "22", "24"],
+        help: "Final encode quality; lower = better/larger file. 18 for maximum quality uploads, 20 (default) balanced, 24 smaller/faster." },
+      { name: "preset", type: "select", default: "medium", label: "Encoder speed",
+        choices: ["ultrafast", "veryfast", "fast", "medium", "slow", "veryslow"],
+        help: "libx264 preset: slower = better compression at the same quality. medium (default) is a good balance; slow for final uploads." },
+      { name: "keep-tmp", type: "flag", help: "Keep tmp/ segments after rendering (debug)." },
+      { name: "music", type: "text", default: null, placeholder: "bg.mp3 or /path/to/track.mp3",
+        help: "Background music override. Omit: bg.mp3 / bg-1.mp3… auto-detected." },
+      { name: "music-volume", type: "number", step: "any", default: null, help: "Music dB when not ducked (auto-calibrated by default)." },
+      { name: "duck-db", type: "number", step: "any", default: null, help: "Extra dB reduction while narration plays (auto)." },
+      { name: "music-target-db", type: "number", step: "any", default: -20.0, help: "Target music loudness during silence." },
+      { name: "music-below-voice-db", type: "number", step: "any", default: 12.0, help: "How far below narration music sits while ducked." },
+      { name: "duck-gap-min", type: "number", step: "any", default: 1.2, help: "Min silence (s) before music swells back." },
+      { name: "duck-attack-ms", type: "number", step: "any", default: 150.0, help: "Duck-down speed (ms)." },
+      { name: "duck-release-ms", type: "number", step: "any", default: 400.0, help: "Swell-back speed (ms)." },
+      { name: "duck-lead-ms", type: "number", step: "any", default: 80.0, help: "Duck finishes this many ms before a word starts." },
+      { name: "no-4k", type: "flag", help: "Stay 1080p even if the first clip is natively 4K." },
+    ],
+  },
+};
+
+const STAGES = [
+  { id: "project", num: 1, title: "Project", sub: "Choose or create a project" },
+  { id: "script",  num: 2, title: "Script",  sub: "Write or generate script.txt", script: "step0" },
+  { id: "voice",   num: 3, title: "Voice & Scenes", sub: "Narration, captions, semantic timeline", script: "step1" },
+  { id: "music",   num: 4, title: "Music", sub: "Optional background track", script: "music" },
+  { id: "clips",   num: 5, title: "Pick Clips", sub: "Auto-match + manual picks", script: "step2" },
+  { id: "render",  num: 6, title: "Render", sub: "Download clips, burn captions, mix", script: "step3" },
+  { id: "done",    num: 7, title: "Done", sub: "Watch the finished video" },
+];
+
+/* ------------------------------- state -------------------------------- */
+const runs = {};   // scriptKey -> {runId, running, returncode, output}
+for (const k of Object.keys(SCRIPTS)) runs[k] = { runId: null, running: false, returncode: null, output: "" };
+const values = {}; // scriptKey -> {flagName: value}
+for (const [k, s] of Object.entries(SCRIPTS)) {
+  values[k] = {};
+  for (const f of s.flags) values[k][f.name] = f.type === "flag" ? false : "";
+}
+let project = localStorage.getItem("wizard-project") || "";
+let stage = "project";
+let projState = null;          // latest /api/project-state
+let knownProjects = [];
+let renderBaselineMtime = undefined; // output mtime when entering render/clips
+let advanceArmed = {};         // stageId -> bool, so each auto-advance fires once
+let pickerEmbedded = { step2: false, music: false };
+let renderKicked = false;      // we asked the running picker to render (its /api/finish)
+let pickerAlive = null;        // is the clip picker's HTTP server answering? (null = unknown)
+
+const $ = (id) => document.getElementById(id);
+
+/* ------------------------------- theme -------------------------------- */
+function currentTheme() { return document.documentElement.dataset.theme || "dark"; }
+function applyTheme(t) {
+  document.documentElement.dataset.theme = t;
+  localStorage.setItem("wizard-theme", t);
+  const btn = $("themetoggle");
+  if (btn) btn.textContent = t === "light" ? "🌙 Dark mode" : "☀ Light mode";
+}
+
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/* ------------------------------ stepper ------------------------------- */
+function stageDone(id) {
+  const p = projState;
+  if (!p || !p.exists) return false;
+  switch (id) {
+    case "project": return !!project && p.exists;
+    case "script": return p.script;
+    case "voice": return p.audio && p.scenes > 0;
+    case "music": return p.music;                     // optional; chip only
+    case "clips": return p.scenes > 0 && p.selections >= p.scenes;
+    case "render": return p.output;
+    case "done": return false;
+    default: return false;
+  }
+}
+function stageRunning(id) {
+  const st = STAGES.find(s => s.id === id);
+  if (id === "render") return runs.step3.running || (runs.step2.running && projState && projState.scenes > 0 && projState.selections >= projState.scenes);
+  return st && st.script ? runs[st.script].running : false;
+}
+function renderStepper() {
+  $("stepper").innerHTML = STAGES.map(s => {
+    const cls = ["step"];
+    if (s.id === stage) cls.push("active");
+    if (stageDone(s.id)) cls.push("done");
+    if (stageRunning(s.id)) cls.push("running");
+    return `<div class="${cls.join(" ")}" data-stage="${s.id}"><span class="n"><span>${s.num}</span></span><span class="t">${s.title}</span></div>`;
+  }).join("");
+  for (const el of $("stepper").querySelectorAll(".step"))
+    el.onclick = () => gotoStage(el.dataset.stage);
+  $("projpill").textContent = project || "";
+}
+
+/* ------------------------------ helpers ------------------------------- */
+function buildFlagArgs(key, extra = []) {
+  const s = SCRIPTS[key];
+  const args = [];
+  for (const f of s.flags) {
+    const v = values[key][f.name];
+    if (f.type === "flag") { if (v) args.push(`--${f.name}`); continue; }
+    if (v === "" || v === null || v === undefined) continue;
+    args.push(`--${f.name}`, String(v));
+  }
+  for (const e of extra) if (!args.includes(e)) args.push(...(Array.isArray(e) ? e : [e]));
+  return args;
+}
+
+async function apiState() {
+  if (!project) return null;
+  try {
+    const r = await fetch(`/api/project-state?project=${encodeURIComponent(project)}`);
+    if (!r.ok) return null;
+    return await r.json();
+  } catch { return null; }
+}
+
+async function loadProjects() {
+  try { knownProjects = (await (await fetch("/api/projects")).json()).projects || []; }
+  catch { knownProjects = []; }
+}
+
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.style.display = "block";
+  clearTimeout(t._h);
+  t._h = setTimeout(() => { t.style.display = "none"; }, 2600);
+}
+
+function gotoStage(id) {
+  stage = id;
+  advanceArmed[id] = true;   // (re)arm auto-advance for the screen we enter
+  if (id === "render" || id === "clips") {
+    renderBaselineMtime = projState ? projState.output_mtime : undefined;
+  }
+  // Revisiting a screen whose completion condition ALREADY holds must not
+  // bounce the user straight back out -- only fresh progress advances.
+  if (id === "clips" && projState && projState.scenes > 0 && projState.selections >= projState.scenes) {
+    advanceArmed[id] = false;
+  }
+  renderScreen();
+  renderStepper();
+}
+
+function nextStage(id) {
+  const i = STAGES.findIndex(s => s.id === id);
+  return STAGES[Math.min(i + 1, STAGES.length - 1)].id;
+}
+
+function autoAdvance(from, msg) {
+  if (stage !== from || !advanceArmed[from]) return false;
+  advanceArmed[from] = false;
+  toast(msg);
+  setTimeout(() => { if (stage === from) gotoStage(nextStage(from)); }, 1400);
+  return true;
+}
+
+/* ------------------------------ run engine ---------------------------- */
+async function startRun(key, extraFlags = [], onLine) {
+  const st = runs[key];
+  if (st.running) return false;
+  st.running = true; st.returncode = null; st.project = project;
+  st.output += `$ python ${SCRIPTS[key].file} ${project} ${buildFlagArgs(key, extraFlags).join(" ")}\n\n`;
+  renderStepper(); renderLivebar(); refreshConsole(key);
+  let res, data;
+  try {
+    res = await fetch("/api/run", {
+      method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ script: key, project, flags: buildFlagArgs(key, extraFlags) }),
+    });
+    data = await res.json();
+  } catch (e) {
+    st.output += `[dashboard] could not reach the server: ${e}\n`;
+    st.running = false; renderLivebar(); refreshConsole(key);
+    return false;
+  }
+  if (!res.ok) {
+    st.output += `[dashboard] ${data.error || "failed to start"}\n`;
+    st.running = false; renderLivebar(); refreshConsole(key);
+    return false;
+  }
+  st.runId = data.run_id;
+  streamRun(key, onLine);
+  return true;
+}
+
+async function streamRun(key, onLine) {
+  const st = runs[key];
+  try {
+    const res = await fetch(`/api/stream?run_id=${st.runId}`);
+    const reader = res.body.getReader();
+    const dec = new TextDecoder();
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      const text = dec.decode(value, { stream: true });
+      st.output += text;
+      if (onLine) onLine(text);
+      refreshConsole(key);
+    }
+  } catch { /* stream dropped; status poll below still resolves */ }
+  try {
+    const s = await (await fetch(`/api/status?run_id=${st.runId}`)).json();
+    st.returncode = s.returncode;
+  } catch { st.returncode = -1; }
+  st.running = false;
+  st.output += `\n[dashboard] finished (exit code ${st.returncode})\n`;
+  refreshConsole(key); renderStepper(); renderLivebar();
+  await tick();  // completion is what triggers auto-advance
+}
+
+async function stopRun(key) {
+  const st = runs[key];
+  if (!st.runId) return;
+  await fetch("/api/stop", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ run_id: st.runId }) });
+  st.output += "\n[dashboard] stop requested…\n";
+  refreshConsole(key);
+}
+
+function activeRunKey() {
+  for (const k of Object.keys(runs)) if (runs[k].running) return k;
+  return null;
+}
+
+function renderLivebar() {
+  const active = Object.keys(runs).filter(k => runs[k].running);
+  const bar = $("livebar");
+  bar.classList.toggle("busy", active.length > 0);
+  $("livetext").textContent = active.length
+    ? "running: " + active.map(k => `${SCRIPTS[k].file} (${runs[k].project || "?"})`).join("  ·  ")
+    : (project ? `idle — ${project}` : "idle");
+  const stop = $("livestop");
+  stop.style.display = active.length ? "" : "none";
+  stop.onclick = () => active.forEach(k => stopRun(k));
+}
+
+/* --------------------------- console rendering ------------------------ */
+function consoleHtml(key, open) {
+  return `<details class="console-wrap" ${open ? "open" : ""}>
+    <summary>Console output (${esc(SCRIPTS[key].file)})</summary>
+    <div class="console" id="console-${key}">${esc(runs[key].output)}</div>
+  </details>`;
+}
+function refreshConsole(key) {
+  const el = $(`console-${key}`);
+  if (!el) return;
+  el.textContent = runs[key].output;
+  el.scrollTop = el.scrollHeight;
+}
+
+/* ------------------------- flag field rendering ----------------------- */
+function fieldHtml(key, f) {
+  const v = values[key][f.name];
+  const label = f.label || `--${f.name}`;
+  let ctrl;
+  if (f.type === "flag") {
+    ctrl = `<input type="checkbox" data-k="${key}" data-f="${f.name}" ${v ? "checked" : ""}>`;
+  } else if (f.type === "voices") {
+    // Rendered immediately with just the saved value; populateVoices()
+    // fills the full grouped catalog asynchronously.
+    ctrl = `<select data-k="${key}" data-f="${f.name}" id="voicesel">
+      <option value="">(auto for project language)</option>
+      ${v ? `<option value="${esc(v)}" selected>${esc(v)}</option>` : ""}
+    </select>`;
+  } else if (f.type === "select") {
+    ctrl = `<select data-k="${key}" data-f="${f.name}">
+      <option value="">(default: ${esc(f.default)})</option>
+      ${f.choices.map(c => `<option value="${c}" ${v === c ? "selected" : ""}>${c}</option>`).join("")}</select>`;
+  } else if (f.type === "color") {
+    ctrl = colorControl(key, f, v);
+  } else {
+    const t = f.type === "password" ? "password" : (f.type === "number" ? "number" : "text");
+    ctrl = `<input type="${t}" ${f.step !== undefined ? `step="${f.step}"` : ""}
+      placeholder="${esc(f.placeholder || (f.default ?? ""))}" value="${esc(v)}"
+      data-k="${key}" data-f="${f.name}">`;
+  }
+  return `<div class="field">
+    <div class="fname">${esc(label)}<span class="mono">--${f.name}</span></div>
+    <div>${ctrl}<div class="fhelp">${esc(f.help || "")}</div></div>
+  </div>`;
+}
+
+function advancedHtml(key, exclude) {
+  const rows = SCRIPTS[key].flags.filter(f => !exclude.includes(f.name)).map(f => {
+    const v = values[key][f.name];
+    const changed = f.type === "flag" ? !!v : v !== "";
+    let ctrl;
+    if (f.type === "flag") ctrl = `<input type="checkbox" data-k="${key}" data-f="${f.name}" ${v ? "checked" : ""}>`;
+    else if (f.type === "select") ctrl = `<select data-k="${key}" data-f="${f.name}">
+      <option value="">(default)</option>${f.choices.map(c => `<option value="${c}" ${v === c ? "selected" : ""}>${c}</option>`).join("")}</select>`;
+    else if (f.type === "color") ctrl = colorControl(key, f, v);
+    else ctrl = `<input type="${f.type === "password" ? "password" : (f.type === "number" ? "number" : "text")}"
+      placeholder="${esc(f.placeholder || (f.default ?? ""))}" value="${esc(v)}" data-k="${key}" data-f="${f.name}">`;
+    return `<div class="flag-row ${changed ? "changed" : ""}">
+      <div><div class="flag-name">--${f.name}</div><div class="flag-def">default: ${f.type === "flag" ? "off" : (f.default ?? "(none)")}</div></div>
+      <div class="desc">${esc(f.help || "")}</div><div>${ctrl}</div></div>`;
+  }).join("");
+  return rows ? `<details class="advanced"><summary>⚙ All flags for ${esc(SCRIPTS[key].file)}</summary>${rows}</details>` : "";
+}
+
+function colorControl(key, f, v) {
+  // A native colour swatch. "" (never touched) means "don't pass the flag"
+  // -- the swatch shows the style's own default; picking a colour stores it,
+  // and the reset button clears back to default.
+  const cv = v || f.colorDefault || "#ffffff";
+  return `<div style="display:flex; gap:8px; align-items:center">
+    <input type="color" value="${esc(cv)}" data-k="${key}" data-f="${f.name}"
+      style="width:48px; height:32px; padding:2px; max-width:none">
+    <span class="status-pill">${v ? esc(v) : "(default)"}</span>
+    ${v ? `<button class="ghost" style="padding:4px 10px; font-size:11px" data-clearcolor="${key}:${f.name}">reset</button>` : ""}
+  </div>`;
+}
+
+function bindInputs(root) {
+  for (const el of root.querySelectorAll("[data-k]")) {
+    const k = el.dataset.k, f = el.dataset.f;
+    const flag = SCRIPTS[k].flags.find(x => x.name === f);
+    if (flag.type === "flag") el.onchange = () => { values[k][f] = el.checked; };
+    else el.oninput = el.onchange = () => { values[k][f] = el.value; };
+  }
+  for (const btn of root.querySelectorAll("[data-clearcolor]")) {
+    btn.onclick = () => {
+      const [k, f] = btn.dataset.clearcolor.split(":");
+      values[k][f] = "";
+      renderScreen();
+    };
+  }
+}
+
+/* Narrator voice catalog: fetched once from /api/voices (server caches the
+ * edge-tts list for a week), grouped by language with the project's own
+ * language pinned to the top. */
+let voicesCatalog = null;
+
+async function populateVoices() {
+  const sel = $("voicesel");
+  if (!sel) return;
+  if (voicesCatalog === null) {
+    try {
+      const d = await (await fetch("/api/voices")).json();
+      voicesCatalog = d.voices || [];
+      if (!voicesCatalog.length && d.error) console.warn("voices:", d.error);
+    } catch { voicesCatalog = []; }
+  }
+  if (!voicesCatalog.length || !$("voicesel")) return;
+  const cur = sel.value;
+  const lang = (project.split("/")[0] || "").toLowerCase();
+  const groups = {};
+  for (const v of voicesCatalog) {
+    const g = (v.locale.split("-")[0] || "other").toLowerCase();
+    (groups[g] = groups[g] || []).push(v);
+  }
+  const order = Object.keys(groups).sort((a, b) =>
+    a === lang ? -1 : b === lang ? 1 : a.localeCompare(b));
+  let html = `<option value="">(auto for project language)</option>`;
+  for (const g of order) {
+    html += `<optgroup label="${esc(g.toUpperCase())}${g === lang ? " — this project's language" : ""}">`;
+    for (const v of groups[g]) {
+      const short = v.name.replace(/^[a-z]{2,3}-[A-Za-z]{2,7}-/, "").replace(/Neural$/, "");
+      html += `<option value="${esc(v.name)}" ${v.name === cur ? "selected" : ""}>${esc(short)} — ${esc(v.gender)} (${esc(v.locale)})</option>`;
+    }
+    html += `</optgroup>`;
+  }
+  sel.innerHTML = html;
+  sel.value = cur || "";
+}
+
+/* ------------------------------ screens ------------------------------- */
+function screenHead(st, extra = "") {
+  return `<div class="screen-head"><h2>${st.num}. ${esc(st.title)}</h2>
+    <div class="sub">${esc(st.sub)}${extra}</div></div>`;
+}
+
+async function renderScreen() {
+  const scr = $("screen");
+  const st = STAGES.find(s => s.id === stage);
+  pickerEmbedded.step2 = pickerEmbedded.step2 && stage === "clips";
+  pickerEmbedded.music = pickerEmbedded.music && stage === "music";
+
+  if (stage === "project") {
+    // Render the shell (and the input!) synchronously, THEN fill the project
+    // cards into their own container -- rebuilding the whole screen after the
+    // async state fetches used to wipe whatever the user was typing.
+    scr.innerHTML = `${screenHead(st)}
+      <div class="card"><h3>New project</h3>
+        <div style="display:flex; gap:10px; max-width:640px">
+          <input type="text" id="newproj" placeholder="lang/name   e.g. en/moon-landing" value="${esc(project)}">
+          <button class="next" id="startproj">Start →</button>
+        </div>
+        <div class="fhelp" style="margin-top:8px">A project is a folder under projects/. Creating one just means typing its name here — Step 2 (script) can create the folder for you from a YouTube link, or put your own script.txt in it.</div>
+      </div>
+      <div class="card"><h3>Existing projects — click to continue where it left off</h3>
+        <div class="proj-grid" id="projgrid"><span class="status-pill">loading projects…</span></div>
+      </div>`;
+    $("startproj").onclick = () => chooseProject($("newproj").value.trim());
+    $("newproj").onkeydown = (e) => { if (e.key === "Enter") chooseProject($("newproj").value.trim()); };
+
+    await loadProjects();
+    const cards = await Promise.all(knownProjects.map(async p => {
+      let s = null;
+      try { s = await (await fetch(`/api/project-state?project=${encodeURIComponent(p)}`)).json(); } catch {}
+      const chips = s ? [
+        ["script", s.script], ["voice", s.audio && s.scenes > 0],
+        [`clips ${s.selections}/${s.scenes}`, s.scenes > 0 && s.selections >= s.scenes],
+        ["music", s.music], ["video ✓", s.output],
+      ].map(([t, on]) => `<span class="chip ${on ? "on" : ""}">${esc(t)}</span>`).join("") : "";
+      return `<div class="proj-card" data-p="${esc(p)}"><div class="name">${esc(p)}</div><div class="chips">${chips}</div></div>`;
+    }));
+    const grid = $("projgrid");
+    if (grid && stage === "project") {
+      grid.innerHTML = cards.join("") || `<span class="status-pill">none yet — type a name above to start one</span>`;
+      for (const el of grid.querySelectorAll(".proj-card"))
+        el.onclick = () => chooseProject(el.dataset.p);
+    }
+    return;
+  }
+
+  if (!project) { gotoStage("project"); return; }
+  const p = projState || {};
+
+  if (stage === "script") {
+    const have = p.script;
+    scr.innerHTML = `${screenHead(st)}
+      ${have ? `<div class="banner ok">✓ script.txt already exists for <b>${esc(project)}</b>. Continue, or regenerate below.</div>` : ""}
+      <div class="card"><h3>Generate with AI (Groq)</h3>
+        ${SCRIPTS.step0.essential.map(n => fieldHtml("step0", SCRIPTS.step0.flags.find(f => f.name === n))).join("")}
+      </div>
+      ${advancedHtml("step0", SCRIPTS.step0.essential)}
+      <div class="actions">
+        <button class="run" id="runbtn" ${runs.step0.running ? "disabled" : ""}>${runs.step0.running ? "Running…" : "▶ Generate script"}</button>
+        ${have ? `<button class="next" id="skipbtn">Continue with existing script →</button>` : ""}
+        ${runs.step0.running ? `<button class="stop" id="stopbtn">■ Stop</button>` : ""}
+        <span class="status-pill">or drop your own script.txt into projects/${esc(project)}/</span>
+      </div>
+      ${consoleHtml("step0", runs.step0.running)}`;
+    bindInputs(scr);
+    $("runbtn").onclick = () => startRun("step0");
+    if ($("skipbtn")) $("skipbtn").onclick = () => gotoStage("voice");
+    if ($("stopbtn")) $("stopbtn").onclick = () => stopRun("step0");
+    return;
+  }
+
+  if (stage === "voice") {
+    const have = p.audio && p.scenes > 0;
+    scr.innerHTML = `${screenHead(st, " — the script is voiced with word-level timestamps, then cut into meaning-based scenes (semantic timeline).")}
+      ${!p.script ? `<div class="banner warn">⚠ No script.txt yet — go back to the Script step first.</div>` : ""}
+      ${have ? `<div class="banner ok">✓ Voice + ${p.scenes} scenes already exist. Re-running redraws scene boundaries (invalidates picked clips).</div>` : ""}
+      <div class="card"><h3>Voice & captions</h3>
+        ${SCRIPTS.step1.essential.map(n => fieldHtml("step1", SCRIPTS.step1.flags.find(f => f.name === n))).join("")}
+      </div>
+      ${advancedHtml("step1", SCRIPTS.step1.essential)}
+      <div class="actions">
+        <button class="run" id="runbtn" ${runs.step1.running || !p.script ? "disabled" : ""}>${runs.step1.running ? "Running…" : "▶ Generate voice & scenes"}</button>
+        ${have ? `<button class="next" id="skipbtn">Continue →</button>` : ""}
+        ${runs.step1.running ? `<button class="stop" id="stopbtn">■ Stop</button>` : ""}
+      </div>
+      ${consoleHtml("step1", runs.step1.running)}`;
+    bindInputs(scr);
+    populateVoices();
+    $("runbtn").onclick = () => startRun("step1", ["--no-chain"]);
+    if ($("skipbtn")) $("skipbtn").onclick = () => gotoStage("music");
+    if ($("stopbtn")) $("stopbtn").onclick = () => stopRun("step1");
+    return;
+  }
+
+  if (stage === "music") {
+    scr.innerHTML = `${screenHead(st, " — completely optional. Anything saved here is auto-mixed under the narration with smart ducking at render time.")}
+      <div id="musicbanner">${p.music ? `<div class="banner ok">✓ This project has background music (bg*.mp3) — it will be mixed in automatically at render time.</div>` : ""}</div>
+      <div class="actions">
+        <button class="run" id="openmusic">♫ Open / restart the music picker</button>
+        <button class="next" id="skipbtn">${p.music ? "Continue →" : "Skip — no music →"}</button>
+        ${runs.music.running ? `<button class="stop" id="stopbtn">■ Stop picker</button>` : ""}
+      </div>
+      <div id="embedwrap"></div>
+      ${consoleHtml("music", false)}`;
+    bindInputs(scr);
+    $("openmusic").onclick = async () => {
+      pickerEmbedded.music = false; pickerPort.music = null;
+      await stopAndWait("music");
+      ensurePicker("music");
+    };
+    $("skipbtn").onclick = () => { if (runs.music.running) stopRun("music"); gotoStage("clips"); };
+    if ($("stopbtn")) $("stopbtn").onclick = () => stopRun("music");
+    // Re-attach to a running/adopted picker for this project, if any.
+    if (runs.music.running || pickerEmbedded.music) ensurePicker("music");
+    return;
+  }
+
+  if (stage === "clips") {
+    const total = p.scenes || 0, done = p.selections || 0;
+    scr.innerHTML = `${screenHead(st, " — ✨ Auto-match (top of the picker's sidebar) fills scenes automatically; pick the rest by hand. Confirming the last scene starts the render on its own.")}
+      ${total ? `<div class="banner ${done >= total ? "ok" : ""}" id="clipbanner">${done} / ${total} scenes have a clip${done >= total ? " — all picked ✓" : ""}</div>`
+              : `<div class="banner warn">⚠ No scenes yet — run the Voice step first.</div>`}
+      <div class="actions">
+        <button class="run" id="openpicker" ${!total ? "disabled" : ""}>▶ Open / restart the clip picker</button>
+        ${runs.step2.running ? `<button class="stop" id="stopbtn">■ Stop picker</button>` : ""}
+        <span class="status-pill" id="clipstatus"></span>
+      </div>
+      <div id="embedwrap"></div>
+      ${consoleHtml("step2", false)}`;
+    bindInputs(scr);
+    $("openpicker").onclick = async () => {
+      pickerEmbedded.step2 = false; pickerPort.step2 = null;
+      await stopAndWait("step2");
+      ensurePicker("step2");
+    };
+    if ($("stopbtn")) $("stopbtn").onclick = () => stopRun("step2");
+    // The screen is always project-synced: verify/adopt/start the right
+    // picker for THIS project the moment we arrive. Skipped when every
+    // scene is already picked and nothing is running -- reopening then is
+    // an explicit button click, not an automatic process launch.
+    if (total && (done < total || runs.step2.running || pickerEmbedded.step2)) ensurePicker("step2");
+    return;
+  }
+
+  if (stage === "render") {
+    // "Rendering" means an actual render: step3 running, or the picker
+    // process rendering after its finish was triggered (by us, or by the
+    // user confirming inside the picker -- detected because the picker's
+    // HTTP server shuts down the moment its render starts). A picker that
+    // is merely sitting there serving scenes is NOT a render in progress.
+    const pickerBusy = runs.step2.running && runs.step2.project === project;
+    const rendering = runs.step3.running || (pickerBusy && (renderKicked || pickerAlive === false));
+    const allPicked = p.scenes > 0 && p.selections >= p.scenes;
+    scr.innerHTML = `${screenHead(st, " — every clip is downloaded, cut to its scene's exact narration window (shot-exact for multi-shot scenes), captions burned in, music ducked under the voice.")}
+      ${rendering ? `<div class="banner">⏳ Rendering… the console below is live. This screen moves to Done by itself when the video is finished.</div>`
+                  : (p.output ? `<div class="banner ok">✓ A rendered video exists${p.output_mtime ? ` (from ${new Date(p.output_mtime * 1000).toLocaleString()})` : ""}. Re-render, or continue to watch it.</div>`
+                              : `<div class="banner warn">Nothing rendered yet — hit Render (needs all scenes picked: ${p.selections || 0}/${p.scenes || 0}).</div>`)}
+      <div class="card"><h3>Render settings</h3>
+        ${SCRIPTS.step3.essential.map(n => fieldHtml("step3", SCRIPTS.step3.flags.find(f => f.name === n))).join("")}
+      </div>
+      ${advancedHtml("step3", SCRIPTS.step3.essential)}
+      <div class="actions">
+        <button class="run" id="runbtn" ${rendering || !allPicked ? "disabled" : ""}>${rendering ? "Rendering…" : "▶ Render video"}</button>
+        ${p.output ? `<button class="next" id="skipbtn">Watch the video →</button>` : ""}
+        ${rendering ? `<button class="stop" id="stopbtn">■ Stop</button>` : ""}
+      </div>
+      ${consoleHtml(pickerBusy ? "step2" : "step3", rendering)}`;
+    bindInputs(scr);
+    $("runbtn").onclick = () => kickRender(p);
+    if ($("skipbtn")) $("skipbtn").onclick = () => gotoStage("done");
+    if ($("stopbtn")) $("stopbtn").onclick = () => stopRun(activeRunKey());
+    return;
+  }
+
+  if (stage === "done") {
+    const src = `/video/${project}.mp4`;
+    scr.innerHTML = `${screenHead(st)}
+      ${p.output ? `
+        <video id="player" controls src="${src}"></video>
+        <div class="banner ok" style="margin-top:14px">🎉 <b>projects/${esc(project)}/output.mp4</b>
+          ${p.output_size ? `(${(p.output_size / 1048576).toFixed(1)} MB)` : ""} — credits in credits.txt,
+          per-scene sync details in render_report.json / sync_report.json / timeline.json.</div>`
+      : `<div class="banner warn">No output.mp4 yet for this project — go back to Render.</div>`}
+      <div class="actions">
+        <button class="ghost" id="rerender">↻ Re-render</button>
+        <button class="ghost" id="newproj2">＋ Start another project</button>
+      </div>`;
+    $("rerender").onclick = () => gotoStage("render");
+    $("newproj2").onclick = () => { project = ""; localStorage.removeItem("wizard-project"); projState = null; gotoStage("project"); };
+    return;
+  }
+}
+
+async function kickRender(p) {
+  renderBaselineMtime = p.output_mtime;
+  const pickerBusy = runs.step2.running && runs.step2.project === project;
+  if (pickerBusy) {
+    // The running picker already has everything loaded -- its finish
+    // endpoint shuts the picker server down and renders in that same
+    // process (streaming into the step2 console). No duplicate step3 run.
+    const port = pickerPort.step2 || +(values.step2.port || 8000);
+    try {
+      await fetch(`http://127.0.0.1:${port}/api/finish`, { method: "POST" });
+      renderKicked = true;
+      renderScreen();
+      return;
+    } catch {
+      // Picker unreachable (already shut down / gone) -- fall through to a
+      // clean standalone render after making sure the process is gone.
+      await stopAndWait("step2");
+    }
+  }
+  await startRun("step3");
+  renderScreen();
+}
+
+async function chooseProject(p) {
+  if (!p || !/^[^/\\]+[/\\][^/\\]+$/.test(p)) { toast("Type the project as lang/name, e.g. en/moon-landing"); return; }
+  const switching = project && project !== p.replaceAll("\\", "/");
+  project = p.replaceAll("\\", "/");
+  localStorage.setItem("wizard-project", project);
+  // A different project must never inherit the previous one's embedded
+  // pickers -- ensurePicker() re-verifies identity per port anyway, but
+  // clearing here avoids even a flash of the old picker.
+  if (switching) {
+    pickerEmbedded.step2 = pickerEmbedded.music = false;
+    pickerPort.step2 = pickerPort.music = null;
+    renderBaselineMtime = undefined;
+    renderKicked = false;
+    pickerAlive = null;
+  }
+  projState = await apiState();
+  // jump to the first stage that isn't finished yet
+  const order = ["script", "voice", "clips", "render", "done"];
+  let target = "script";
+  if (projState && projState.exists) {
+    if (projState.output) target = "done";
+    else if (projState.scenes > 0 && projState.selections >= projState.scenes) target = "render";
+    else if (projState.audio && projState.scenes > 0) target = "clips";
+    else if (projState.script) target = "voice";
+  }
+  gotoStage(target);
+}
+
+/* ------------------------ picker iframe embedding ----------------------
+ * A picker is a separate local server bound to one port and ONE project.
+ * Before embedding anything the wizard checks which project the port is
+ * actually serving (the pickers expose it with CORS enabled): a match is
+ * adopted as-is, a foreign picker bumps us to the next port, a free port
+ * gets a fresh picker started for the current project. This is what keeps
+ * the Pick Clips screen always showing THIS project's scenes, never a
+ * stale picker left over from an earlier project. */
+const PICKER_PROBE = { step2: "/api/scenes", music: "/api/queue" };
+const pickerPort = { step2: null, music: null };  // port currently embedded
+
+async function pickerInfo(key, port) {
+  // Step 1 -- is ANYTHING listening? A no-cors ping resolves (opaquely) for
+  // any live server and rejects only on connection failure. Without this, a
+  // server that blocks cross-origin reads (an old picker built before CORS
+  // was enabled, or something else entirely on the port) would look
+  // identical to a free port -- which is exactly how stale pickers used to
+  // get silently reused.
+  const ping = new AbortController();
+  const tp = setTimeout(() => ping.abort(), 1500);
+  try {
+    await fetch(`http://127.0.0.1:${port}/`, { mode: "no-cors", signal: ping.signal, cache: "no-store" });
+    clearTimeout(tp);
+  } catch {
+    clearTimeout(tp);
+    return { occupied: false };
+  }
+  // Step 2 -- it's alive: which project is it serving? Unreadable (CORS
+  // blocked / not a picker) reports occupied with project unknown, so the
+  // caller treats it as foreign and moves to the next port.
+  const ctl = new AbortController();
+  const t = setTimeout(() => ctl.abort(), 1500);
+  try {
+    const r = await fetch(`http://127.0.0.1:${port}${PICKER_PROBE[key]}`, { signal: ctl.signal, cache: "no-store" });
+    clearTimeout(t);
+    if (!r.ok) return { occupied: true, project: null };
+    const d = await r.json();
+    return { occupied: true, project: d.project || null };
+  } catch {
+    clearTimeout(t);
+    return { occupied: true, project: null };
+  }
+}
+
+async function stopAndWait(key, timeoutMs = 8000) {
+  if (!runs[key].running) return true;
+  await stopRun(key);
+  const t0 = Date.now();
+  while (runs[key].running && Date.now() - t0 < timeoutMs)
+    await new Promise(r => setTimeout(r, 300));
+  return !runs[key].running;
+}
+
+function embedIframe(key, port) {
+  pickerEmbedded[key] = true;
+  pickerPort[key] = port;
+  const wrap = $("embedwrap");
+  if (wrap) wrap.innerHTML =
+    `<div style="display:flex; justify-content:space-between; align-items:center; margin:4px 2px 6px">
+       <span class="status-pill">picker for <b>${esc(project)}</b> on port ${port}</span>
+       <a href="http://127.0.0.1:${port}/" target="_blank" style="font-size:12.5px">↗ open in its own tab</a>
+     </div>
+     <iframe class="embed" src="http://127.0.0.1:${port}/?theme=${currentTheme()}"></iframe>`;
+}
+
+function embedNote(msg, cls = "warn") {
+  const wrap = $("embedwrap");
+  if (wrap) wrap.innerHTML = `<div class="banner ${cls}">${esc(msg)}</div>`;
+}
+
+async function ensurePicker(key) {
+  const wantStage = key === "music" ? "music" : "clips";
+  if (stage !== wantStage) return;
+  // Already embedded and still serving this project? Leave it alone.
+  if (pickerEmbedded[key] && pickerPort[key]) {
+    const info = await pickerInfo(key, pickerPort[key]);
+    if (info.occupied && info.project === project) return;
+    pickerEmbedded[key] = false;
+    pickerPort[key] = null;
+  }
+  embedNote(`Starting the ${key === "music" ? "music" : "clip"} picker for ${project}…`, "");
+  // Our own run serving another project is stale -- stop it first.
+  if (runs[key].running && runs[key].project !== project) await stopAndWait(key);
+
+  const base = +(values[key].port || (key === "music" ? 8010 : 8000));
+  let port = base;
+  for (let i = 0; i < 8; i++, port = base + i) {
+    if (stage !== wantStage) return;
+    const info = await pickerInfo(key, port);
+    if (info.occupied && info.project === project) { embedIframe(key, port); return; }  // adopt
+    if (!info.occupied) break;                       // free -- start ours here
+    // occupied by another project (or not a picker at all) -> try next port
+  }
+  values[key].port = String(port);
+  const ok = await startRun(key, ["--no-browser"]);
+  if (!ok) { embedNote("Could not start the picker — see the console below."); return; }
+  for (let i = 0; i < 40; i++) {
+    if (stage !== wantStage) return;
+    const info = await pickerInfo(key, port);
+    if (info.occupied && info.project === project) { embedIframe(key, port); return; }
+    if (!runs[key].running) { embedNote("The picker exited unexpectedly — see the console below.", "err"); return; }
+    await new Promise(r => setTimeout(r, 500));
+  }
+  embedNote("The picker did not come up in time — see the console below.", "err");
+}
+
+/* ------------------------------ live poll ------------------------------ */
+async function tick() {
+  if (!project) { renderStepper(); renderLivebar(); return; }
+  const fresh = await apiState();
+  if (!fresh) return;
+  const before = projState;
+  projState = fresh;
+  renderStepper(); renderLivebar();
+
+  // ---- auto-advance rules ----
+  // A run's exit code is consumed by the advance it triggers, so revisiting
+  // the screen later doesn't instantly bounce the user forward again.
+  if (stage === "script" && fresh.script && !runs.step0.running &&
+      runs.step0.returncode === 0) {
+    if (autoAdvance("script", "✓ Script ready — moving to Voice & Scenes")) runs.step0.returncode = null;
+  }
+  if (stage === "voice" && fresh.audio && fresh.scenes > 0 && !runs.step1.running &&
+      runs.step1.returncode === 0) {
+    if (autoAdvance("voice", `✓ Voice + ${fresh.scenes} semantic scenes ready — next: Music (optional)`)) runs.step1.returncode = null;
+  }
+  if (stage === "clips" && fresh.scenes > 0 && fresh.selections >= fresh.scenes) {
+    autoAdvance("clips", "✓ Every scene has a clip — moving to Render");
+  }
+  if ((stage === "render") && fresh.output &&
+      fresh.output_mtime !== renderBaselineMtime && !activeRunKey()) {
+    autoAdvance("render", "🎉 Video rendered — opening it now");
+  }
+  // Music saved (or removed) while sitting on the Music screen: update the
+  // banner and the Skip/Continue button IN PLACE -- a full re-render would
+  // reload the embedded picker mid-browse.
+  if (stage === "music" && before && before.music !== fresh.music) {
+    const banner = $("musicbanner");
+    if (banner) banner.innerHTML = fresh.music
+      ? `<div class="banner ok">✓ Background music saved — it will be mixed in automatically at render time.</div>`
+      : "";
+    const skip = $("skipbtn");
+    if (skip) skip.textContent = fresh.music ? "Continue →" : "Skip — no music →";
+    if (fresh.music) toast("♫ Background music saved to the project");
+  }
+  // Artifacts appearing from OUTSIDE a wizard-run (user dropped a
+  // script.txt in the folder, ran a step in a terminal): re-render the
+  // current screen so its banners/buttons reflect the new reality.
+  if (before && stage === "script" && !before.script && fresh.script && !runs.step0.running) renderScreen();
+  if (before && stage === "voice" && fresh.scenes > 0 && before.scenes === 0 && !runs.step1.running) renderScreen();
+  // On the render screen with the picker still up: watch whether its HTTP
+  // server is alive. It shutting down while the process keeps running means
+  // the user confirmed "render now" inside the picker -- flip the screen
+  // into its rendering state.
+  if (stage === "render" && runs.step2.running && runs.step2.project === project && !renderKicked) {
+    const port = pickerPort.step2 || +(values.step2.port || 8000);
+    const info = await pickerInfo("step2", port);
+    const aliveNow = info.occupied;
+    if (aliveNow !== pickerAlive) { pickerAlive = aliveNow; renderScreen(); }
+  }
+  // live refresh of lightweight bits without re-rendering whole screen
+  if (stage === "clips" && before && (before.selections !== fresh.selections)) {
+    const b = $("clipstatus");
+    if (b) b.textContent = `${fresh.selections} / ${fresh.scenes} scenes picked`;
+    const banner = $("clipbanner");
+    if (banner && fresh.scenes) {
+      banner.textContent = `${fresh.selections} / ${fresh.scenes} scenes have a clip${fresh.selections >= fresh.scenes ? " — all picked ✓" : ""}`;
+      banner.className = "banner" + (fresh.selections >= fresh.scenes ? " ok" : "");
+    }
+  }
+}
+
+/* -------------------------------- init --------------------------------- */
+(async function init() {
+  applyTheme(currentTheme());
+  $("themetoggle").onclick = () => {
+    applyTheme(currentTheme() === "light" ? "dark" : "light");
+    // Re-render so embedded pickers reload with the matching theme.
+    pickerEmbedded.step2 = pickerEmbedded.music = false;
+    renderScreen();
+  };
+  if (project) projState = await apiState();
+  renderStepper(); renderLivebar();
+  if (project && projState && projState.exists) gotoStage("project"); else gotoStage("project");
+  setInterval(tick, 2500);
+})();
+</script>
+</body>
+</html>

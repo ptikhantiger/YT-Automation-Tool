@@ -1,0 +1,183 @@
+For A quick copy paste 3 steps
+
+    python step0_build_script.py en/norway --documentary --yt-link https://www.youtube.com/watch?v=gaRWfjWqAvs
+
+    python step1_audio_and_captions.py lang/slug
+    python step1_audio_and_captions.py en/iran-usa
+    
+    or force 
+    
+    python step1_audio_and_captions.py en/norway --caption-style wordcolor-bottom --force --rate -5%
+    python step3_render_video.py en/iran-usa
+
+That's it -- step 1 now auto-launches step 2 (the clip picker) when it
+finishes, and step 2 auto-launches step 3 (the render) once you confirm the
+popup after picking the last clip. Run step 2 or step 3 by hand only if you
+need to resume/redo one on its own:
+
+    python step2_pick_clips.py en/guyana
+    python step3_render_video.py en/iran-usa
+
+
+HOW TO MAKE A VIDEO
+====================
+
+All commands run from the "tools" folder. Open a terminal there first:
+
+    cd tools
+
+Your project lives at:  projects/<lang>/<slug>/
+Example:                 projects/en/crumbs/
+("en" = language folder, "crumbs" = your video's name/slug -- pick your own)
+
+
+STEP 0 (one time only) -- write your script
+--------------------------------------------
+Create the file:
+
+    projects/<lang>/<slug>/script.txt
+
+and paste your finished narration script into it.
+
+(If you're making a news-format video from 3 source articles instead, see
+README_PIPELINE.md for step0_build_script.py -- that's a different starting
+point and isn't covered here.)
+
+
+STEP 1 -- make the audio + captions
+--------------------------------------
+    python step1_audio_and_captions.py <lang>/<slug>
+    python step1_audio_and_captions.py en/iran-usa
+
+This reads script.txt and writes, into your project folder:
+  - audio.mp3          the narration
+  - word_timings.json  word-by-word timing data
+  - scenes.json         the script broken into scenes
+  - captions.ass         styled captions
+
+As soon as step 1 finishes it automatically opens the step 2 clip picker in
+your browser -- you don't need to run step 2 yourself. If you'd rather listen
+to audio.mp3 and check the pacing/voice first, pass --no-chain and start step
+2 yourself when you're ready:
+  --no-chain                     stop after step 1 instead of auto-continuing
+
+Listen to audio.mp3. If the voice or pace isn't right, tweak and re-run:
+  --voice en-US-AndrewNeural     use a different narrator voice
+  --rate -5%                     slow down narration (+5% to speed up)
+
+Captions default to the big bold centered look (white words, the current
+word coloured, ~3 words on screen at a time -- the "THE INCOMING THREATS"
+style). Switch it with --caption-style:
+  --caption-style wordcolor-bottom   this channel's fixed branded look --
+                                  same big bold text as the default, but
+                                  bottom-anchored like ordinary subtitles
+                                  (not centered), with its own locked-in
+                                  colours matched to the reference caption
+                                  image: white words, a bright cyan
+                                  (#00E6FF) current word, black outline.
+                                  Use this one for a consistent channel
+                                  look video to video.
+  --caption-style highlight      small bottom-anchored line, current word
+                                  gets a yellow capsule instead
+  --caption-style classic        static bold white line, no per-word
+                                  highlighting at all
+Colours for the default/wordcolor-bottom styles: --text-color /
+--highlight-color / --outline-color (all #RRGGBB) -- pass one to override
+even the wordcolor-bottom locked colours. Already picked clips? Use
+--captions-only to redraw captions.ass from the existing narration without
+re-synthesizing audio.
+
+
+STEP 2 -- pick a stock clip (or image) for every scene
+----------------------------------------------
+    python step2_pick_clips.py <lang>/<slug>
+    python step2_pick_clips.py en/iran-usa
+This opens a page in your browser at http://localhost:8000/. For every
+scene it shows you 12 stock video clips -- hover to preview, click
+"Use this clip" to pick one. It auto-advances to the next scene. Close the
+browser or press Ctrl+C any time; re-run the same command to pick up where
+you left off.
+
+Six source tabs sit above the results grid, all free for commercial/
+monetized YouTube use with no attribution required:
+  - Pexels video   -- the default, as above.
+  - Pexels photo   -- same search box, but returns still photos. Step 3 turns
+                      the picked photo into a slow Ken Burns zoom for the
+                      scene's duration instead of a video segment.
+  - Pixabay video  -- another free clip library, useful when Pexels doesn't
+                      have a good match for a scene's search terms.
+  - Pixabay photo  -- Pixabay's still-photo equivalent, same Ken Burns
+                      treatment as Pexels photo.
+  - Coverr video   -- a third free clip library. Needs its own key (see
+                      NOTES below); add the key to enable this tab.
+  - Local file     -- upload an image straight from your computer instead of
+                      searching a stock site.
+Pixabay and Coverr are optional -- Pexels alone is enough to make a video --
+add a key for each extra tab you want to use.
+
+A "Minimum quality" dropdown above the results grid lets you require 1080p,
+2K, or 4K clips. Pexels and Pixabay results below the chosen tier are hidden
+entirely, and picking a higher tier also makes step 2 download that
+higher-resolution rendition instead of settling for ~1080p (bigger files,
+sharper video). Coverr never reports a clip's resolution, so its tab ignores
+this filter and shows all results regardless -- a note says so in the status
+line when a tier is set.
+
+Apply one pick to many scenes at once: tick "Apply the clip/image I pick to
+a range of scenes" above the grid, set the "from"/"to" scene numbers (or
+click "All remaining" to fill them with the current scene through the last
+one), then click any clip/image as usual -- it's applied to every scene in
+that range. The from/to numbers stay editable any time, so you can shrink,
+grow, or re-aim the range and pick again.
+
+The moment the last scene gets a clip, a popup asks "Render the final video
+now (step 3)?" Click OK and step 3 starts automatically in the same terminal
+-- no need to type the step 3 command yourself. Click Cancel to keep editing
+picks; you can always re-render later with the command below.
+
+
+STEP 3 -- render the video
+------------------------------
+    python step3_render_video.py <lang>/<slug>
+    python step3_render_video.py en/iran-usa
+
+Produces:
+    projects/<lang>/<slug>/output.mp4
+
+This is your finished video: your picked clips, cut to length, captions
+burned in (big bold centered text by default, current word coloured --
+see the --caption-style flag in step 1 to change it), narration mixed in.
+
+
+BACKGROUND MUSIC (optional, run any time before step 3)
+----------------------------------------------------------
+    python step_music_picker.py <lang>/<slug>
+
+Opens a browser page: paste a YouTube URL and click Add.
+  - A single video's URL downloads and previews the audio there, then
+    queues it.
+  - A channel or playlist URL -- e.g. the YouTube Audio Library's own
+    channel (youtube.com/channel/UCht8qITGkBvXKsR1Byln-wA) -- instead lists
+    every track in it with a filter box to search by name and its own Add
+    button per track, so you can browse hundreds of tracks and only
+    download the ones you want.
+Add as many tracks as you like, reorder them with the up/down buttons, then
+"Save to project" writes them into your project folder as bg.mp3 (one
+track) or bg-1.mp3, bg-2.mp3, ... (several, in order). Step 3 picks these up
+automatically -- no --music flag needed.
+
+
+NOTES
+-----
+- Re-running step 1 reshuffles the scenes, which breaks any clips you've
+  already picked. Get the voice/pace right in step 1 BEFORE you start
+  picking clips.
+- Step 2 needs a Pexels API key saved in tools/pexels_key.txt (free at
+  https://www.pexels.com/api/). Pixabay (tools/pixabay_key.txt,
+  free at https://pixabay.com/api/docs/) and Coverr (tools/coverr_key.txt, free
+  at https://coverr.co/developers) are optional extra source tabs, and their
+  keys enable their own extra source tabs. To
+  swap in a different key later, just overwrite the matching file in tools/ --
+  no restart needed.
+- Full technical details, all flags, and the news-article (Step 0) workflow
+  are in README_PIPELINE.md in this same folder.

@@ -1,0 +1,9 @@
+cd tools
+
+python step1_audio_and_captions.py en/ksa --caption-style highlight --rate -15% --scene-seconds-min 8 --scene-seconds-max 14 --long-scene-every 5 --long-scene-seconds 18 --no-chain
+
+python step2_pick_clips.py en/ksa
+
+python step_music_picker.py <lang>/<slug>
+
+python step3_render_video.py <lang>/<slug> --crf 18 --preset slow
