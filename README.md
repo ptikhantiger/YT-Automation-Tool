@@ -19,6 +19,9 @@ Steps chain automatically: 1 launches 2, and 2 launches 3 once every scene has a
 
 ## Quick start
 
+Setting up on a new machine? See **[SETUP.md](SETUP.md)** for the full
+step-by-step (Python, ffmpeg, API keys, troubleshooting).
+
 **Windows: just double-click `run.bat`.** It checks Python, ffmpeg, the
 required packages and your API keys, then starts the dashboard and opens
 your browser. If a check fails it tells you exactly what to install.
@@ -64,9 +67,10 @@ next when one hits its quota.
 
 ## Documentation
 
-Full flag reference, the news-article workflow, caption styles, and gotchas:
-[`tools/README_PIPELINE.md`](tools/README_PIPELINE.md). Short version:
-[`tools/HOW_TO.txt`](tools/HOW_TO.txt).
+- **[SETUP.md](SETUP.md)** — fresh-laptop install, API keys, troubleshooting.
+- [`tools/README_PIPELINE.md`](tools/README_PIPELINE.md) — full flag reference,
+  the news-article workflow, caption styles, and gotchas.
+- [`tools/HOW_TO.txt`](tools/HOW_TO.txt) — the short version.
 
 ## Notes
 
