@@ -57,23 +57,21 @@ The only CPU-heavy step is step 3 (ffmpeg encoding). Steps 0–2 are just API
 calls and a browser page, so do those on your laptop and let GitHub Actions do
 the encode — free, unlimited minutes on a public repo, no API keys needed:
 
-1. Write the script, run step 1, pick clips in step 2 as usual. When the
-   picker asks to render, click **Not yet**.
-2. Push the project:
-   ```bash
-   git add projects/en/myvideo
-   git commit -m "myvideo: picks done"
-   git push
-   ```
-3. On GitHub: **Actions → Render video → Run workflow**, type `en/myvideo`.
-4. 20–40 minutes later, download `output.mp4` from the run's **Artifacts** box
-   (kept 30 days).
+1. Write the script, run step 1, pick clips in step 2 as usual.
+2. When every scene has a clip, click **☁ Render on GitHub (free)** in the
+   picker. It commits the project's picks as `render: en/myvideo`, pushes, and
+   shows you the link to the Actions run. (By hand, the same thing is
+   `git add projects/en/myvideo && git commit -m "render: en/myvideo" && git push`
+   — that commit message is the trigger.)
+3. 20–40 minutes later (45–90 for a 30-minute video), download `output.mp4`
+   from the run's **Artifacts** box (kept 30 days).
 
 The workflow is [`.github/workflows/render.yml`](.github/workflows/render.yml).
-It runs `step3_render_video.py --non-interactive --no-4k`; quality (`crf`),
-`preset`, and 4K are inputs on the Run workflow form. If a scene has no clip
-or a clip is unplayable, the run fails fast and names the scenes instead of
-opening the picker — fix them locally, push, re-run.
+It runs `step3_render_video.py --non-interactive --no-4k`. To change quality
+(`crf`), `preset`, or allow 4K, start it from **Actions → Render video → Run
+workflow** instead, which has those as form fields. If a scene has no clip or
+a clip is unplayable, the run fails fast and names the scenes instead of
+opening the picker — fix them in the picker, click the button again.
 
 Local uploads and AI illustrations (`clips/*_local*`, `clips/*_ai*`) are
 committed with the project because only your disk has them; stock picks are
@@ -106,17 +104,12 @@ dashboard works exactly as it does locally; when a run reaches step 2 the
 picker appears as its own forwarded port (8000) — the dashboard embeds it,
 or open it in its own tab.
 
-When the last scene is picked, the picker shows the push + render commands
-instead of the 60-second countdown (rendering on the 2-core codespace is slow
-and spends your hours; the Actions runner is free and unlimited):
-
-```bash
-git add projects/en/myvideo && git commit -m "myvideo: picks done" && git push
-gh workflow run render.yml -f project=en/myvideo
-```
-
-Download `output.mp4` from the run's Artifacts when it finishes. "Render here
-anyway" still works if you insist.
+When the last scene is picked, the picker offers **☁ Render on GitHub
+(free)** instead of the 60-second local countdown (rendering on the 2-core
+codespace is slow and spends your hours; the Actions runner is free and
+unlimited). One click pushes the picks and starts the render; the page shows
+the link to the run. Download `output.mp4` from its Artifacts when it
+finishes. "Render here anyway" still works if you insist.
 
 Notes:
 - The codespace **stops itself after 30 idle minutes** and keeps its disk;

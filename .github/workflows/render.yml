@@ -1,12 +1,15 @@
 # Render a project's final video on GitHub's servers instead of your laptop.
 #
-# Workflow on your machine (light work only -- no encoding):
-#   1. write script.txt, run step 1, pick clips in step 2 as usual
-#   2. git add projects/<lang>/<slug> && git commit && git push
-#      (.gitignore already keeps out clips/, caches, tmp/ and output.mp4 --
-#       only the few MB of metadata step 3 needs is committed)
-#   3. GitHub -> Actions -> "Render video" -> Run workflow -> type en/<slug>
-#   4. when it finishes, download output.mp4 from the run's Artifacts box
+# Two ways to start it:
+#   - the "Render on GitHub" button in the step 2 picker (Codespace or
+#     laptop): it commits the project's picks as "render: <lang>/<slug>" and
+#     pushes; that commit message is the trigger. Same thing by hand:
+#         git add projects/en/<slug> && git commit -m "render: en/<slug>" && git push
+#   - Actions -> "Render video" -> Run workflow -> type en/<slug> (lets you
+#     also change crf / preset / 4K)
+# Either way, download output.mp4 from the run's Artifacts box when done.
+# (.gitignore keeps clips/, caches, tmp/ and output.mp4 out of the repo --
+#  only the few MB of metadata step 3 needs is committed.)
 #
 # Step 3 needs no API keys: stock clips download from their direct URLs, so
 # there is nothing to configure in repository Secrets for rendering.
@@ -16,8 +19,12 @@
 # preset takes roughly 20-40 minutes; the artifact is kept for 30 days.
 
 name: Render video
+run-name: "${{ github.event_name == 'push' && github.event.head_commit.message || format('render: {0}', inputs.project) }}"
 
 on:
+  push:
+    # Any branch; filtered on the commit message below (no `paths:` filter
+    # on purpose -- a re-render is an empty commit that touches nothing).
   workflow_dispatch:
     inputs:
       project:
@@ -48,6 +55,7 @@ on:
 
 jobs:
   render:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'render:')
     runs-on: ubuntu-latest
     timeout-minutes: 360
     env:
@@ -55,15 +63,24 @@ jobs:
       PYTHONUTF8: "1"
 
     steps:
-      - name: Validate inputs
+      - name: Resolve project
         id: inputs
         env:
-          PROJECT: ${{ inputs.project }}
+          INPUT_PROJECT: ${{ inputs.project }}
+          HEAD_MESSAGE: ${{ github.event.head_commit.message }}
         run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            # first line of "render: en/slug" -> "en/slug"
+            PROJECT=$(echo "$HEAD_MESSAGE" | head -n1 | sed -E 's/^render:[[:space:]]*//; s/[[:space:]]+$//')
+          else
+            PROJECT="$INPUT_PROJECT"
+          fi
           if ! [[ "$PROJECT" =~ ^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$ ]]; then
             echo "::error::project must look like <lang>/<slug>, e.g. en/greenland1 (got '$PROJECT')"
             exit 1
           fi
+          echo "Rendering project: $PROJECT"
+          echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
           echo "slug=${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v4
@@ -90,8 +107,6 @@ jobs:
         run: pip install -q -r tools/requirements.txt
 
       - name: Check the project was pushed
-        env:
-          PROJECT: ${{ inputs.project }}
         run: |
           dir="projects/$PROJECT"
           missing=0
@@ -107,10 +122,9 @@ jobs:
       - name: Render
         working-directory: tools
         env:
-          PROJECT: ${{ inputs.project }}
-          CRF: ${{ inputs.crf }}
-          PRESET: ${{ inputs.preset }}
-          ALLOW_4K: ${{ inputs.allow_4k }}
+          CRF: ${{ inputs.crf || '20' }}
+          PRESET: ${{ inputs.preset || 'medium' }}
+          ALLOW_4K: ${{ inputs.allow_4k || 'false' }}
         run: |
           flags=(--non-interactive --crf "$CRF" --preset "$PRESET")
           if [ "$ALLOW_4K" != "true" ]; then
@@ -121,8 +135,6 @@ jobs:
 
       - name: Summarize
         if: success()
-        env:
-          PROJECT: ${{ inputs.project }}
         run: |
           out="projects/$PROJECT/output.mp4"
           size=$(du -h "$out" | cut -f1)
@@ -149,9 +161,9 @@ jobs:
         with:
           name: video-${{ steps.inputs.outputs.slug }}
           path: |
-            projects/${{ inputs.project }}/output.mp4
-            projects/${{ inputs.project }}/credits.txt
-            projects/${{ inputs.project }}/render_report.json
+            projects/${{ env.PROJECT }}/output.mp4
+            projects/${{ env.PROJECT }}/credits.txt
+            projects/${{ env.PROJECT }}/render_report.json
           if-no-files-found: error
           retention-days: 30
           compression-level: 0
@@ -161,6 +173,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: render-report-${{ steps.inputs.outputs.slug }}
-          path: projects/${{ inputs.project }}/render_report.json
+          path: projects/${{ env.PROJECT }}/render_report.json
           if-no-files-found: ignore
           retention-days: 7

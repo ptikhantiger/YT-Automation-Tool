@@ -57,6 +57,7 @@ import os
 import random
 import re
 import shutil
+import subprocess
 import sys
 import threading
 import time
@@ -143,6 +144,81 @@ def auto_render_default():
     4-core runner instead. The page then shows the push + render steps in
     place of the countdown. --no-auto-render / --auto-render override."""
     return os.environ.get("CODESPACES", "").lower() != "true"
+
+
+# ---- "Render on GitHub" -----------------------------------------------------
+# The free render path: commit this project's picks with a "render: <project>"
+# message and push. .github/workflows/render.yml triggers on exactly that
+# message, renders on a 4-core Actions runner, and leaves output.mp4 as an
+# artifact. Plain git only -- no gh CLI, no token with actions:write -- so it
+# works identically from a Codespace and from this laptop.
+REPO_ROOT = Path(__file__).resolve().parent.parent
+_GITHUB_REMOTE_RE = re.compile(
+    r"^(?:https://github\.com/|git@github\.com:|ssh://git@github\.com/)([^/]+)/([^/]+?)(?:\.git)?/?$"
+)
+
+
+def _git(*args, timeout=180):
+    return subprocess.run(
+        ["git", *args], cwd=REPO_ROOT, capture_output=True, text=True,
+        encoding="utf-8", errors="replace", timeout=timeout,
+    )
+
+
+def github_web_url():
+    """https://github.com/<owner>/<repo> for this checkout's origin, or None
+    when this isn't a git checkout with a GitHub remote (then the button is
+    simply not offered)."""
+    try:
+        r = _git("remote", "get-url", "origin", timeout=15)
+    except (OSError, subprocess.TimeoutExpired):
+        return None
+    if r.returncode != 0:
+        return None
+    m = _GITHUB_REMOTE_RE.match(r.stdout.strip())
+    return f"https://github.com/{m.group(1)}/{m.group(2)}" if m else None
+
+
+def cloud_render(project):
+    """git add projects/<project>; commit "render: <project>"; push. Returns
+    what the browser shows: the Actions URL on success, else the failing
+    command's output so the user can see what git said."""
+    log = []
+
+    def step(*args):
+        r = _git(*args)
+        out = (r.stdout + r.stderr).strip()
+        log.append(f"$ git {' '.join(args)}" + (f"\n{out}" if out else ""))
+        return r, out
+
+    web = STATE.get("github_url")
+    if not web:
+        return {"ok": False, "error": "This folder isn't a git checkout with a GitHub 'origin' remote.", "log": log}
+
+    r, out = step("add", "-A", "--", f"projects/{project}")
+    if r.returncode != 0:
+        return {"ok": False, "error": "git add failed.", "log": log}
+
+    msg = f"render: {project}"
+    r, out = step("commit", "-m", msg)
+    if r.returncode != 0 and "nothing to commit" in out:
+        # Picks already committed (e.g. the push failed last time, or nothing
+        # changed since) -- an empty commit still carries the trigger message.
+        r, out = step("commit", "--allow-empty", "-m", msg)
+    if r.returncode != 0:
+        hint = ""
+        if "tell me who you are" in out or "Author identity unknown" in out:
+            hint = (' Tell git who you are once, in the terminal:  git config --global user.name "Your Name"'
+                    '  &&  git config --global user.email you@example.com')
+        return {"ok": False, "error": "git commit failed." + hint, "log": log}
+
+    branch = _git("rev-parse", "--abbrev-ref", "HEAD", timeout=15).stdout.strip() or "main"
+    r, out = step("push", "-u", "origin", branch)
+    if r.returncode != 0:
+        return {"ok": False, "error": "git push failed -- the commit is made, fix the push and click again.", "log": log}
+
+    sha = _git("rev-parse", "--short", "HEAD", timeout=15).stdout.strip()
+    return {"ok": True, "actions_url": f"{web}/actions/workflows/render.yml", "commit": sha, "branch": branch, "log": log}
 
 
 # --------------------------------------------------------------------------
@@ -2185,6 +2261,7 @@ class Handler(BaseHTTPRequestHandler):
                 "highlight": sorted(STATE.get("highlight") or []),
                 "automatch_available": bool(STATE.get("llm_keys")),
                 "auto_render": STATE.get("auto_render", True),
+                "cloud_render": bool(STATE.get("github_url")),
                 # AI illustration tab -- always available (Pollinations needs
                 # no key); a token just makes it faster and watermark-free.
                 "ai_available": True,
@@ -2684,6 +2761,25 @@ class Handler(BaseHTTPRequestHandler):
                 reviewed = sum(1 for v in selections.values() if v.get("reviewed"))
             return self._send_json({"ok": True, "reviewed": reviewed, "total": len(STATE["scenes"])})
 
+        if route == "/api/cloud-render":
+            # Commit + push with the "render: <project>" trigger message. Not
+            # under STATE["lock"] (a push can take a minute and picking may
+            # continue), just guarded against a double click.
+            if STATE.get("cloud_render_busy"):
+                self._send_json({"ok": False, "error": "Already pushing -- give it a moment."})
+                return
+            STATE["cloud_render_busy"] = True
+            try:
+                result = cloud_render(STATE["project"])
+            except subprocess.TimeoutExpired:
+                result = {"ok": False, "error": "git took too long (network?). Click again to retry.", "log": []}
+            except OSError as e:
+                result = {"ok": False, "error": f"git isn't available here: {e}", "log": []}
+            finally:
+                STATE["cloud_render_busy"] = False
+            self._send_json(result)
+            return
+
         if route == "/api/finish":
             # Every scene has a clip and the browser confirmed it's time to
             # render. Reply first, then shut the server down from a separate
@@ -3127,15 +3223,18 @@ PAGE_HTML = r"""<!doctype html>
       <span id="arcancelled" style="display:none"> Auto-render is paused. Click
         <b>Render now</b> whenever you're ready.</span>
       <span id="arcloud" style="display:none"> You're in a Codespace, so rendering
-        here is off (it's slow and spends your free hours). Push the picks and let
-        GitHub Actions render for free -- in the terminal:<br>
-        <code id="arcloudcmd" style="display:block; margin:10px 0; white-space:pre-wrap;"></code>
-        Then download <b>output.mp4</b> from the run's Artifacts box (Actions tab).
+        here is off (it's slow and spends your free hours). Click <b>Render on
+        GitHub</b>: your picks are pushed and GitHub Actions renders the video for
+        free -- download <b>output.mp4</b> from that run's Artifacts box when it's
+        done. (Same thing by hand: <code id="arcloudcmd"></code>)
         <b>Render here anyway</b> still works if you really want to.</span>
       <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="arcloudbtn" class="primary" style="display:none"
+                title="Commit + push this project's picks; GitHub Actions renders it for free.">&#9729; Render on GitHub (free)</button>
         <button id="arnow" class="primary">Render now</button>
         <button id="arwait">Not yet -- keep picking</button>
       </div>
+      <div id="arcloudstatus" style="display:none; margin-top:12px; font-size:13px; white-space:pre-wrap;"></div>
     </div>
     <div id="done">
       <b>All scenes have a clip.</b> Render the final video with:<br><br>
@@ -3191,7 +3290,7 @@ const PROVIDER_LABELS = { pexels: 'Pexels', pixabay: 'Pixabay', coverr: 'Coverr'
 let source = 'pexels-video'; // key into SOURCES
 let localAsset = null;
 let renderOffered = false; // ask at most once per page load
-let autoRenderEnabled = true, projectPath = '';  // from /api/scenes
+let autoRenderEnabled = true, cloudRenderAvailable = false, projectPath = '';  // from /api/scenes
 let aiStop = false;         // set by the AI panel's Stop button mid-generate
 let aiWatermarked = true;   // no Pollinations token -> free tier adds a small watermark
 
@@ -3602,6 +3701,13 @@ async function reviewRenderClick() {
     return;
   }
   closeReview();
+  if (!autoRenderEnabled) {
+    // Cloud mode: don't render on this machine -- surface the "Render on
+    // GitHub" box (re-arm in case it was offered and dismissed earlier).
+    renderOffered = false;
+    maybeOfferRender();
+    return;
+  }
   startRender();
 }
 
@@ -3732,6 +3838,7 @@ async function boot() {
   highlight = new Set(d.highlight || []);
   automatchAvailable = !!d.automatch_available;
   autoRenderEnabled = d.auto_render !== false;
+  cloudRenderAvailable = !!d.cloud_render;
   projectPath = d.project || '';
   // Always show the buttons -- with no Gemini key the endpoint returns a clear
   // one-line reason on click, which is more discoverable than a button that
@@ -4134,6 +4241,37 @@ async function startRender() {
   $('finished').scrollIntoView({ behavior: 'smooth' });
 }
 
+async function cloudRender() {
+  // Stop a running local countdown first -- the whole point is NOT to render here.
+  if (autoRenderTimer) clearTimeout(autoRenderTimer);
+  if (autoRenderTick) clearInterval(autoRenderTick);
+  autoRenderTimer = autoRenderTick = null;
+  $('arcountdown').style.display = 'none';
+  const st = $('arcloudstatus');
+  st.style.display = ''; st.style.color = '';
+  st.textContent = 'Committing and pushing your picks to GitHub...';
+  $('arcloudbtn').disabled = true;
+  let d;
+  try {
+    d = await (await fetch('/api/cloud-render', { method: 'POST' })).json();
+  } catch (e) {
+    d = { ok: false, error: 'Lost contact with the picker server: ' + e, log: [] };
+  }
+  $('arcloudbtn').disabled = false;
+  if (d.ok) {
+    st.innerHTML = `<b>Pushed (${esc(d.commit)} on ${esc(d.branch)}) -- GitHub is rendering now.</b><br>` +
+      `Watch it, and download <b>output.mp4</b> from the run's Artifacts box when it finishes ` +
+      `(a 30-minute video takes roughly 45-90 minutes):<br>` +
+      `<a href="${esc(d.actions_url)}" target="_blank" rel="noopener">${esc(d.actions_url)}</a><br><br>` +
+      `You can close this tab. To render again after changing picks, just click the button again.`;
+    $('arcloudbtn').textContent = '\u2601 Render on GitHub again';
+  } else {
+    st.style.color = 'var(--warn, #e66)';
+    st.textContent = 'Could not hand off to GitHub: ' + (d.error || 'unknown error') +
+      ((d.log && d.log.length) ? '\n\n' + d.log.join('\n\n') : '');
+  }
+}
+
 function cancelAutoRender() {
   if (autoRenderTimer) clearTimeout(autoRenderTimer);
   if (autoRenderTick) clearInterval(autoRenderTick);
@@ -4152,16 +4290,22 @@ function maybeOfferRender() {
   renderOffered = true;
   const box = $('autorender');
   $('arcancelled').style.display = 'none';
+  $('arcloudstatus').style.display = 'none';
+  // "Render on GitHub" is offered wherever this checkout has a GitHub remote
+  // -- in a Codespace it's the main button, on the laptop it's the free
+  // alternative to the local countdown.
+  $('arcloudbtn').style.display = cloudRenderAvailable ? '' : 'none';
+  $('arcloudbtn').onclick = cloudRender;
   if (!autoRenderEnabled) {
-    // Cloud-render mode (Codespaces): no countdown, show the push + Actions
-    // steps instead. "Render now" stays as an explicit opt-in.
+    // Cloud-render mode (Codespaces): no countdown. "Render now" stays as an
+    // explicit opt-in, demoted to a plain button.
     $('arcountdown').style.display = 'none';
     $('arwait').style.display = 'none';
     $('arcloud').style.display = '';
     $('arcloudcmd').textContent =
-      `git add projects/${projectPath} && git commit -m "${projectPath}: picks done" && git push\n` +
-      `gh workflow run render.yml -f project=${projectPath}`;
+      `git add projects/${projectPath} && git commit -m "render: ${projectPath}" && git push`;
     $('arnow').textContent = 'Render here anyway';
+    $('arnow').className = '';
     $('arnow').onclick = startRender;
     box.style.display = 'block';
     box.scrollIntoView({ behavior: 'smooth' });
@@ -4529,6 +4673,8 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         "lang": Path(project).parts[0] if Path(project).parts else "en",
         "finish_requested": False,
         "auto_render": auto_render_default() if auto_render is None else bool(auto_render),
+        "github_url": github_web_url(),
+        "cloud_render_busy": False,
         "highlight": set(highlight or []),
         "orientation": orientation,
     })

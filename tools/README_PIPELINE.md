@@ -200,6 +200,7 @@ Flags you'll actually reach for:
 | `--crf 18` | 3 | Higher quality, bigger file. `--crf 23` for smaller. |
 | `--preset slow` | 3 | Better compression, slower render. |
 | `--non-interactive` | 3 | Never open the step 2 picker for missing/unplayable clips; exit with the scene list instead. For CI/headless servers — the GitHub Actions render workflow uses it (see the root README). |
+| `--no-auto-render` | 2 | Don't start step 3 locally when the last scene is picked; offer **Render on GitHub** (commit as `render: <project>` + push → Actions renders) instead. Default inside a GitHub Codespace. `--auto-render` forces the local countdown. |
 
 Rules of thumb:
 

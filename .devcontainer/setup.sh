@@ -35,8 +35,10 @@ cat <<'EOF'
   GEMINI_API_KEY, optional PIXABAY_API_KEY / COVERR_API_KEY /
   POLLINATIONS_TOKEN) and rebuild/restart the codespace.
 
-  Render for free on Actions instead of in here:
-      git add projects/en/<slug> && git commit -m "picks" && git push
-      gh workflow run render.yml -f project=en/<slug>
+  Rendering: when every scene has a clip, click "Render on
+  GitHub (free)" in the picker -- it pushes the picks and
+  GitHub Actions renders the video. Download output.mp4 from
+  that run's Artifacts. (By hand: commit with the message
+  "render: en/<slug>" and push -- that message is the trigger.)
 ============================================================
 EOF
