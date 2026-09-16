@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "mode": "sentence",
+    "sentences": 2,
+    "scenes": 2,
+    "llm_scenes": 0,
+    "multi_shot_scenes": 0,
+    "llm_failures": []
+  },
+  "words": [
+    {
+      "i": 0,
+      "text": "This",
+      "start": 0.125,
+      "end": 0.292,
+      "scene": 1
+    },
+    {
+      "i": 1,
+      "text": "is",
+      "start": 0.306,
+      "end": 0.431,
+      "scene": 1
+    },
+    {
+      "i": 2,
+      "text": "a",
+      "start": 0.444,
+      "end": 0.514,
+      "scene": 1
+    },
+    {
+      "i": 3,
+      "text": "quick",
+      "start": 0.528,
+      "end": 0.819,
+      "scene": 1
+    },
+    {
+      "i": 4,
+      "text": "smoke",
+      "start": 0.833,
+      "end": 1.208,
+      "scene": 1
+    },
+    {
+      "i": 5,
+      "text": "test",
+      "start": 1.222,
+      "end": 1.556,
+      "scene": 1
+    },
+    {
+      "i": 6,
+      "text": "of",
+      "start": 1.569,
+      "end": 1.639,
+      "scene": 1
+    },
+    {
+      "i": 7,
+      "text": "the",
+      "start": 1.653,
+      "end": 1.736,
+      "scene": 1
+    },
+    {
+      "i": 8,
+      "text": "pipeline",
+      "start": 1.75,
+      "end": 2.347,
+      "scene": 1
+    },
+    {
+      "i": 9,
+      "text": "If",
+      "start": 2.806,
+      "end": 2.917,
+      "scene": 2
+    },
+    {
+      "i": 10,
+      "text": "you",
+      "start": 2.931,
+      "end": 3.028,
+      "scene": 2
+    },
+    {
+      "i": 11,
+      "text": "can",
+      "start": 3.042,
+      "end": 3.208,
+      "scene": 2
+    },
+    {
+      "i": 12,
+      "text": "hear",
+      "start": 3.222,
+      "end": 3.514,
+      "scene": 2
+    },
+    {
+      "i": 13,
+      "text": "this",
+      "start": 3.528,
+      "end": 3.931,
+      "scene": 2
+    },
+    {
+      "i": 14,
+      "text": "narration",
+      "start": 4.153,
+      "end": 4.819,
+      "scene": 2
+    },
+    {
+      "i": 15,
+      "text": "and",
+      "start": 4.958,
+      "end": 5.069,
+      "scene": 2
+    },
+    {
+      "i": 16,
+      "text": "captions",
+      "start": 5.083,
+      "end": 5.611,
+      "scene": 2
+    },
+    {
+      "i": 17,
+      "text": "are",
+      "start": 5.625,
+      "end": 5.736,
+      "scene": 2
+    },
+    {
+      "i": 18,
+      "text": "working",
+      "start": 5.75,
+      "end": 6.153,
+      "scene": 2
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "segment_id": "segment_001",
+      "index": 1,
+      "text": "﻿This is a quick smoke test of the pipeline.",
+      "word_from": 0,
+      "word_to": 8,
+      "start": 0.125,
+      "end": 2.347,
+      "duration": 2.222,
+      "semantic": {
+        "meaning": "﻿This is a quick smoke test of the pipeline.",
+        "subject": "",
+        "action": "",
+        "object": "",
+        "location": "",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [],
+      "visual_exclusions": [],
+      "queries": [
+        "pipeline quick smoke test"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_002",
+      "segment_id": "segment_002",
+      "index": 2,
+      "text": "If you can hear this, narration and captions are working.",
+      "word_from": 9,
+      "word_to": 18,
+      "start": 2.806,
+      "end": 6.153,
+      "duration": 3.347,
+      "semantic": {
+        "meaning": "If you can hear this, narration and captions are working.",
+        "subject": "",
+        "action": "",
+        "object": "",
+        "location": "",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [],
+      "visual_exclusions": [],
+      "queries": [
+        "narration captions working hear"
+      ],
+      "shots": []
+    }
+  ]
+}

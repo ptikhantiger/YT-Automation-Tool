@@ -1,0 +1,2641 @@
+[
+  {
+    "text": "Picture a place where you could nuke the largest city in Greenland.",
+    "word_from": 0,
+    "word_to": 11,
+    "query": "nuclear explosion city",
+    "queries": [
+      "nuclear explosion city",
+      "atomic bomb blast city"
+    ],
+    "keywords": [
+      "greenland",
+      "picture",
+      "largest",
+      "place",
+      "nuke"
+    ],
+    "semantic": {
+      "meaning": "Hypothetical nuclear blast scenario over Greenland's largest city",
+      "subject": "City",
+      "action": "exploding",
+      "object": "nuclear explosion",
+      "location": "Greenland city",
+      "time": "day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "cityscape",
+      "nuclear explosion"
+    ],
+    "visual_exclusions": [
+      "peaceful scenery"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.105541,
+    "end": 3.452749,
+    "duration": 3.3472079999999997,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "Located far in the northern hemisphere with most of its land frozen this place presents an interesting story.",
+    "word_from": 12,
+    "word_to": 29,
+    "query": "arctic landscape aerial view",
+    "queries": [
+      "arctic landscape aerial view",
+      "frozen northern hemisphere land"
+    ],
+    "keywords": [
+      "interesting",
+      "hemisphere",
+      "northern",
+      "presents",
+      "located"
+    ],
+    "semantic": {
+      "meaning": "Northern hemisphere frozen land overview",
+      "subject": "Frozen land",
+      "action": "stretching",
+      "object": "snow and ice",
+      "location": "northern hemisphere",
+      "time": "day",
+      "entities": [
+        "Northern Hemisphere"
+      ]
+    },
+    "visual_requirements": [
+      "frozen landscape",
+      "snow",
+      "ice"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "crowded city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 4.183333,
+    "end": 10.794457,
+    "duration": 6.611123999999999,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "It's a remote zone with a vast expanse of ice that still exudes an undeniable natural charm.",
+    "word_from": 30,
+    "word_to": 46,
+    "query": "vast expanse of ice",
+    "queries": [
+      "vast expanse of ice",
+      "remote arctic glacier"
+    ],
+    "keywords": [
+      "undeniable",
+      "expanse",
+      "natural",
+      "remote",
+      "exudes"
+    ],
+    "semantic": {
+      "meaning": "Remote ice expanse with natural charm",
+      "subject": "Ice expanse",
+      "action": "shining",
+      "object": "glacier ice",
+      "location": "remote arctic zone",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "vast ice sheet",
+      "glacier",
+      "natural scenery"
+    ],
+    "visual_exclusions": [
+      "industrial buildings",
+      "highways"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 3,
+    "sentence_to": 3,
+    "start": 11.519458,
+    "end": 17.352749,
+    "duration": 5.833290999999999,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "Behind the silence and the cold there's a real pulse of life.",
+    "word_from": 47,
+    "word_to": 58,
+    "query": "cold arctic wilderness",
+    "queries": [
+      "cold arctic wilderness",
+      "silence and cold landscape"
+    ],
+    "keywords": [
+      "silence",
+      "behind",
+      "pulse",
+      "cold",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Pulse of life behind silence and cold",
+      "subject": "Arctic nature",
+      "action": "thriving",
+      "object": "wildlife or subtle movement",
+      "location": "cold wilderness",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "cold landscape",
+      "subtle movement"
+    ],
+    "visual_exclusions": [
+      "busy metropolis"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 18.091666,
+    "end": 21.8,
+    "duration": 3.7083340000000007,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "This is Nuuk the largest city in Greenland isolated by eternal ice with a very long winter every year.",
+    "word_from": 59,
+    "word_to": 77,
+    "query": "Nuuk Greenland winter city",
+    "queries": [
+      "Nuuk Greenland winter city",
+      "snowy Nuuk cityscape"
+    ],
+    "keywords": [
+      "greenland",
+      "isolated",
+      "largest",
+      "eternal",
+      "winter"
+    ],
+    "semantic": {
+      "meaning": "Nuuk city isolated by eternal ice with long winter",
+      "subject": "Nuuk city",
+      "action": "standing",
+      "object": "colorful buildings",
+      "location": "Nuuk Greenland",
+      "time": "winter",
+      "entities": [
+        "Nuuk",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Nuuk cityscape",
+      "snow",
+      "winter"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "summer sun"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 5,
+    "sentence_to": 5,
+    "start": 22.525,
+    "end": 29.636083,
+    "duration": 7.111083000000001,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "Greenland is the largest island in the world.",
+    "word_from": 78,
+    "word_to": 85,
+    "query": "Greenland satellite map",
+    "queries": [
+      "Greenland satellite map",
+      "largest island from space"
+    ],
+    "keywords": [
+      "greenland",
+      "largest",
+      "island",
+      "world"
+    ],
+    "semantic": {
+      "meaning": "Greenland is the largest island in the world",
+      "subject": "Greenland island",
+      "action": "rotating",
+      "object": "earth globe view",
+      "location": "globe",
+      "time": "day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "satellite view of Greenland",
+      "island"
+    ],
+    "visual_exclusions": [
+      "street level view"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 6,
+    "sentence_to": 6,
+    "start": 30.361125,
+    "end": 33.069458,
+    "duration": 2.708332999999996,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "It sits between the Arctic Ocean and the Atlantic Ocean northeast of Canada.",
+    "word_from": 86,
+    "word_to": 98,
+    "query": "arctic and atlantic ocean map",
+    "queries": [
+      "arctic and atlantic ocean map",
+      "Greenland northeast of Canada map"
+    ],
+    "keywords": [
+      "northeast",
+      "atlantic",
+      "arctic",
+      "canada",
+      "ocean"
+    ],
+    "semantic": {
+      "meaning": "Geographical location between Arctic and Atlantic Ocean northeast of Canada",
+      "subject": "Greenland location",
+      "action": "mapping",
+      "object": "ocean and land map",
+      "location": "North Atlantic",
+      "time": "day",
+      "entities": [
+        "Arctic Ocean",
+        "Atlantic Ocean",
+        "Canada"
+      ]
+    },
+    "visual_requirements": [
+      "map view",
+      "arctic ocean",
+      "atlantic ocean"
+    ],
+    "visual_exclusions": [
+      "desert"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 7,
+    "sentence_to": 7,
+    "start": 33.808333,
+    "end": 38.697249,
+    "duration": 4.888916000000002,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "Most of its territory is covered in ice all year round.",
+    "word_from": 99,
+    "word_to": 109,
+    "query": "Greenland ice sheet aerial",
+    "queries": [
+      "Greenland ice sheet aerial",
+      "ice covered landmass"
+    ],
+    "keywords": [
+      "territory",
+      "covered",
+      "round",
+      "year"
+    ],
+    "semantic": {
+      "meaning": "Territory covered in ice all year round",
+      "subject": "Ice sheet",
+      "action": "covering",
+      "object": "landmass",
+      "location": "Greenland interior",
+      "time": "day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Greenland ice sheet aerial",
+      "ice cap"
+    ],
+    "visual_exclusions": [
+      "forests",
+      "beaches"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 8,
+    "sentence_to": 8,
+    "start": 39.436125,
+    "end": 42.519458,
+    "duration": 3.083333000000003,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "but this place is inhabited by 56,000 residents.",
+    "word_from": 110,
+    "word_to": 117,
+    "query": "Greenland residents walking town",
+    "queries": [
+      "Greenland residents walking town",
+      "people in arctic town"
+    ],
+    "keywords": [
+      "inhabited",
+      "residents",
+      "place"
+    ],
+    "semantic": {
+      "meaning": "Inhabited place with 56000 residents",
+      "subject": "Residents",
+      "action": "walking",
+      "object": "people",
+      "location": "Greenland town",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people walking",
+      "small town community"
+    ],
+    "visual_exclusions": [
+      "empty landscape"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 9,
+    "start": 43.075,
+    "end": 46.963874,
+    "duration": 3.888873999999994,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "Of all the inhabited places Nuuk is the largest city.",
+    "word_from": 118,
+    "word_to": 127,
+    "query": "Nuuk city panoramic view",
+    "queries": [
+      "Nuuk city panoramic view",
+      "largest city in Greenland"
+    ],
+    "keywords": [
+      "inhabited",
+      "largest",
+      "places",
+      "nuuk",
+      "city"
+    ],
+    "semantic": {
+      "meaning": "Nuuk is the largest of all inhabited places",
+      "subject": "Nuuk",
+      "action": "stretching",
+      "object": "urban area",
+      "location": "Nuuk",
+      "time": "day",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "Nuuk city panorama",
+      "buildings"
+    ],
+    "visual_exclusions": [
+      "wilderness"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 10,
+    "sentence_to": 10,
+    "start": 47.702791,
+    "end": 51.299999,
+    "duration": 3.597208000000002,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "and it accommodates a third of Greenland's population.",
+    "word_from": 128,
+    "word_to": 135,
+    "query": "crowd in Nuuk Greenland",
+    "queries": [
+      "crowd in Nuuk Greenland",
+      "Greenland urban population"
+    ],
+    "keywords": [
+      "accommodates",
+      "population",
+      "greenland",
+      "third"
+    ],
+    "semantic": {
+      "meaning": "Accommodates a third of Greenland's population",
+      "subject": "Population",
+      "action": "gathering",
+      "object": "citizens",
+      "location": "Nuuk",
+      "time": "day",
+      "entities": [
+        "Nuuk",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "people in Nuuk",
+      "urban community"
+    ],
+    "visual_exclusions": [
+      "empty streets"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 11,
+    "sentence_to": 11,
+    "start": 51.813875,
+    "end": 54.841666,
+    "duration": 3.0277909999999935,
+    "index": 11,
+    "segment_id": "segment_011"
+  },
+  {
+    "text": "Nuuk is really beautiful and colorful in the summer.",
+    "word_from": 136,
+    "word_to": 144,
+    "query": "Nuuk colorful houses summer",
+    "queries": [
+      "Nuuk colorful houses summer",
+      "Greenland summer town colorful"
+    ],
+    "keywords": [
+      "beautiful",
+      "colorful",
+      "summer",
+      "nuuk"
+    ],
+    "semantic": {
+      "meaning": "Nuuk is beautiful and colorful in the summer",
+      "subject": "Nuuk",
+      "action": "shining",
+      "object": "colorful houses",
+      "location": "Nuuk",
+      "time": "summer",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "colorful houses",
+      "summer sunlight",
+      "green grass"
+    ],
+    "visual_exclusions": [
+      "snow",
+      "blizzard"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 12,
+    "sentence_to": 12,
+    "start": 55.566666,
+    "end": 58.691666,
+    "duration": 3.125,
+    "index": 12,
+    "segment_id": "segment_012"
+  },
+  {
+    "text": "However when winter rolls in the face of the city instantly transforms into a white world covered in frozen snow.",
+    "word_from": 145,
+    "word_to": 164,
+    "query": "winter snowy city aerial view",
+    "queries": [
+      "winter snowy city aerial view",
+      "snow covered urban landscape"
+    ],
+    "keywords": [
+      "transforms",
+      "instantly",
+      "covered",
+      "winter",
+      "frozen"
+    ],
+    "semantic": {
+      "meaning": "Winter arrives, instantly transforming the cityscape into a white world covered in frozen snow.",
+      "subject": "city",
+      "action": "transforming",
+      "object": "snow",
+      "location": "cityscape",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snow covered city",
+      "winter landscape",
+      "buildings"
+    ],
+    "visual_exclusions": [
+      "summer",
+      "green grass",
+      "sunshine"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 13,
+    "sentence_to": 13,
+    "start": 59.416666,
+    "end": 66.694458,
+    "duration": 7.277791999999998,
+    "index": 13,
+    "segment_id": "segment_013"
+  },
+  {
+    "text": "According to history it was founded in 1728 by the Norwegian missionary Hans Egede and originally named Godthab which means Good Hope.",
+    "word_from": 165,
+    "word_to": 185,
+    "query": "historical map 18th century",
+    "queries": [
+      "historical map 18th century",
+      "old explorer portrait illustration"
+    ],
+    "keywords": [
+      "missionary",
+      "originally",
+      "according",
+      "norwegian",
+      "history"
+    ],
+    "semantic": {
+      "meaning": "Historical founding of the city in 1728 by Norwegian missionary Hans Egede, originally named Godthab.",
+      "subject": "Hans Egede",
+      "action": "founding",
+      "object": "city",
+      "location": "historic settlement",
+      "time": "1728",
+      "entities": [
+        "Hans Egede"
+      ]
+    },
+    "visual_requirements": [
+      "historical map",
+      "old painting",
+      "explorer portrait"
+    ],
+    "visual_exclusions": [
+      "modern skyscrapers",
+      "cars",
+      "airports"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 14,
+    "sentence_to": 14,
+    "start": 67.419458,
+    "end": 77.127791,
+    "duration": 9.708332999999996,
+    "index": 14,
+    "segment_id": "segment_014"
+  },
+  {
+    "text": "Before Europeans arrived the area around Nuuk had been inhabited by various Inuit groups for thousands of years.",
+    "word_from": 186,
+    "word_to": 203,
+    "query": "indigenous arctic people historical",
+    "queries": [
+      "indigenous arctic people historical",
+      "ancient Inuit landscape"
+    ],
+    "keywords": [
+      "europeans",
+      "inhabited",
+      "thousands",
+      "arrived",
+      "various"
+    ],
+    "semantic": {
+      "meaning": "Inuit groups inhabited the area around Nuuk for thousands of years before Europeans arrived.",
+      "subject": "Inuit groups",
+      "action": "inhabiting",
+      "object": "land",
+      "location": "Arctic landscape",
+      "time": "ancient times",
+      "entities": [
+        "Inuit"
+      ]
+    },
+    "visual_requirements": [
+      "indigenous people",
+      "arctic landscape",
+      "tundra"
+    ],
+    "visual_exclusions": [
+      "modern buildings",
+      "urban cars"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 15,
+    "sentence_to": 15,
+    "start": 77.866666,
+    "end": 84.741666,
+    "duration": 6.875,
+    "index": 15,
+    "segment_id": "segment_015"
+  },
+  {
+    "text": "These Inuit people were hunters and fishermen who relied heavily on natural resources to survive.",
+    "word_from": 204,
+    "word_to": 218,
+    "query": "traditional Inuit hunter fishing",
+    "queries": [
+      "traditional Inuit hunter fishing",
+      "indigenous fisherman arctic"
+    ],
+    "keywords": [
+      "fishermen",
+      "resources",
+      "hunters",
+      "heavily",
+      "natural"
+    ],
+    "semantic": {
+      "meaning": "Inuit people were hunters and fishermen relying on natural resources for survival.",
+      "subject": "Inuit people",
+      "action": "hunting",
+      "object": "natural resources",
+      "location": "coastal Arctic",
+      "time": "historical",
+      "entities": [
+        "Inuit"
+      ]
+    },
+    "visual_requirements": [
+      "hunter",
+      "fisherman",
+      "traditional clothing",
+      "ocean"
+    ],
+    "visual_exclusions": [
+      "modern city",
+      "machinery"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 16,
+    "sentence_to": 16,
+    "start": 85.466666,
+    "end": 91.174999,
+    "duration": 5.708332999999996,
+    "index": 16,
+    "segment_id": "segment_016"
+  },
+  {
+    "text": "Along the way Nuuk continued to grow and develop.",
+    "word_from": 219,
+    "word_to": 227,
+    "query": "growing arctic town timelapse",
+    "queries": [
+      "growing arctic town timelapse",
+      "historical city development aerial"
+    ],
+    "keywords": [
+      "continued",
+      "develop",
+      "along",
+      "nuuk",
+      "grow"
+    ],
+    "semantic": {
+      "meaning": "Nuuk continued to grow and develop along the way.",
+      "subject": "Nuuk",
+      "action": "growing",
+      "object": "city",
+      "location": "Nuuk",
+      "time": "historical progression",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "expanding town",
+      "buildings growing",
+      "aerial town"
+    ],
+    "visual_exclusions": [
+      "empty wilderness"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 17,
+    "sentence_to": 17,
+    "start": 91.9,
+    "end": 95.205541,
+    "duration": 3.305540999999991,
+    "index": 17,
+    "segment_id": "segment_017"
+  },
+  {
+    "text": "The city plays an important role in Greenland's history especially after Greenland gained autonomy from Denmark in 1979.",
+    "word_from": 228,
+    "word_to": 244,
+    "query": "Greenland flag blowing",
+    "queries": [
+      "Greenland flag blowing",
+      "historic government building"
+    ],
+    "keywords": [
+      "especially",
+      "important",
+      "greenland",
+      "autonomy",
+      "history"
+    ],
+    "semantic": {
+      "meaning": "The city plays an important role in Greenland's history, especially after gaining autonomy from Denmark in 1979.",
+      "subject": "city",
+      "action": "playing role",
+      "object": "history",
+      "location": "Greenland",
+      "time": "1979",
+      "entities": [
+        "Greenland",
+        "Denmark"
+      ]
+    },
+    "visual_requirements": [
+      "government building",
+      "Greenland flag",
+      "historic meeting"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 18,
+    "sentence_to": 18,
+    "start": 95.930541,
+    "end": 104.152791,
+    "duration": 8.222249999999988,
+    "index": 18,
+    "segment_id": "segment_018"
+  },
+  {
+    "text": "Nuuk serves as the administrative center for the local government of Greenland. making it the capital of the northernmost country in the world.",
+    "word_from": 245,
+    "word_to": 267,
+    "query": "administrative northernmost government greenland capital",
+    "queries": [
+      "administrative northernmost government greenland capital"
+    ],
+    "keywords": [
+      "administrative",
+      "northernmost",
+      "government",
+      "greenland",
+      "capital"
+    ],
+    "semantic": {
+      "meaning": "Nuuk serves as the administrative center for the local government of Greenland, making it the capital of the northernmost country in the world.",
+      "subject": "Nuuk",
+      "action": "serving",
+      "object": "capital",
+      "location": "Nuuk",
+      "time": "present day",
+      "entities": [
+        "Nuuk",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "capital city",
+      "administrative buildings",
+      "urban center"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 19,
+    "sentence_to": 20,
+    "start": 104.877791,
+    "end": 113.016666,
+    "duration": 8.138874999999999,
+    "index": 19,
+    "segment_id": "segment_019"
+  },
+  {
+    "text": "Right now Nuuk is inhabited by around 19,872 residents.",
+    "word_from": 268,
+    "word_to": 276,
+    "query": "people walking in arctic city",
+    "queries": [
+      "people walking in arctic city",
+      "residents in Nuuk street"
+    ],
+    "keywords": [
+      "inhabited",
+      "residents",
+      "nuuk"
+    ],
+    "semantic": {
+      "meaning": "Right now Nuuk is inhabited by around 19,872 residents.",
+      "subject": "residents",
+      "action": "living",
+      "object": "city",
+      "location": "Nuuk",
+      "time": "present",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "people walking",
+      "city residents",
+      "streets"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 21,
+    "sentence_to": 21,
+    "start": 113.755541,
+    "end": 119.769416,
+    "duration": 6.013875000000013,
+    "index": 20,
+    "segment_id": "segment_020"
+  },
+  {
+    "text": "They live in houses made with bright vibrant colors.",
+    "word_from": 277,
+    "word_to": 285,
+    "query": "colorful houses Greenland",
+    "queries": [
+      "colorful houses Greenland",
+      "vibrant painted homes neighborhood"
+    ],
+    "keywords": [
+      "vibrant",
+      "houses",
+      "bright",
+      "colors",
+      "live"
+    ],
+    "semantic": {
+      "meaning": "Residents live in houses made with bright vibrant colors.",
+      "subject": "They",
+      "action": "living",
+      "object": "bright houses",
+      "location": "residential neighborhood",
+      "time": "present",
+      "entities": []
+    },
+    "visual_requirements": [
+      "bright colored houses",
+      "vibrant buildings",
+      "neighborhood"
+    ],
+    "visual_exclusions": [
+      "monotone gray buildings"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 22,
+    "sentence_to": 22,
+    "start": 120.494458,
+    "end": 123.883333,
+    "duration": 3.3888749999999987,
+    "index": 21,
+    "segment_id": "segment_021"
+  },
+  {
+    "text": "Since colonial times greenlandic houses have tended to be small and brightly painted.",
+    "word_from": 286,
+    "word_to": 298,
+    "query": "small colorful wooden houses Greenland",
+    "queries": [
+      "small colorful wooden houses Greenland",
+      "historic brightly painted colonial homes"
+    ],
+    "keywords": [
+      "greenlandic",
+      "colonial",
+      "brightly",
+      "painted",
+      "houses"
+    ],
+    "semantic": {
+      "meaning": "Since colonial times Greenlandic houses have tended to be small and brightly painted.",
+      "subject": "Greenlandic houses",
+      "action": "standing",
+      "object": "houses",
+      "location": "Greenland",
+      "time": "colonial times to present",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "small colorful houses",
+      "colonial architecture",
+      "wooden homes"
+    ],
+    "visual_exclusions": [
+      "skyscrapers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 23,
+    "sentence_to": 23,
+    "start": 124.608333,
+    "end": 130.261083,
+    "duration": 5.652750000000012,
+    "index": 22,
+    "segment_id": "segment_022"
+  },
+  {
+    "text": "Historically each color had a specific meaning that showed what the building was used for.",
+    "word_from": 299,
+    "word_to": 313,
+    "query": "historic colored houses Greenland",
+    "queries": [
+      "historic colored houses Greenland",
+      "traditional painted buildings architecture"
+    ],
+    "keywords": [
+      "historically",
+      "specific",
+      "building",
+      "meaning",
+      "showed"
+    ],
+    "semantic": {
+      "meaning": "Historically each color had a specific meaning that showed what the building was used for.",
+      "subject": "color",
+      "action": "indicating",
+      "object": "building use",
+      "location": "historic town",
+      "time": "history",
+      "entities": []
+    },
+    "visual_requirements": [
+      "painted buildings",
+      "historic colored houses",
+      "signage or details"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 24,
+    "sentence_to": 24,
+    "start": 131.0,
+    "end": 136.541666,
+    "duration": 5.541665999999992,
+    "index": 23,
+    "segment_id": "segment_023"
+  },
+  {
+    "text": "A red building symbolized a church or school.",
+    "word_from": 314,
+    "word_to": 321,
+    "query": "red wooden building Greenland",
+    "queries": [
+      "red wooden building Greenland",
+      "historical red house exterior"
+    ],
+    "keywords": [
+      "symbolized",
+      "building",
+      "church",
+      "school"
+    ],
+    "semantic": {
+      "meaning": "A red building represented a church or school.",
+      "subject": "red building",
+      "action": "symbolizing",
+      "object": "church or school",
+      "location": "Greenland",
+      "time": "historical",
+      "entities": []
+    },
+    "visual_requirements": [
+      "red building",
+      "historical architecture"
+    ],
+    "visual_exclusions": [
+      "modern skyscrapers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 25,
+    "sentence_to": 25,
+    "start": 137.266666,
+    "end": 140.016666,
+    "duration": 2.75,
+    "index": 24,
+    "segment_id": "segment_024"
+  },
+  {
+    "text": "A yellow building meant the occupant was a doctor.",
+    "word_from": 322,
+    "word_to": 330,
+    "query": "yellow wooden house exterior",
+    "queries": [
+      "yellow wooden house exterior",
+      "vintage yellow building Greenland"
+    ],
+    "keywords": [
+      "building",
+      "occupant",
+      "yellow",
+      "doctor",
+      "meant"
+    ],
+    "semantic": {
+      "meaning": "A yellow building indicated a doctor's residence.",
+      "subject": "yellow building",
+      "action": "indicating",
+      "object": "doctor occupant",
+      "location": "Greenland",
+      "time": "historical",
+      "entities": []
+    },
+    "visual_requirements": [
+      "yellow building",
+      "historical house"
+    ],
+    "visual_exclusions": [
+      "modern hospital"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 26,
+    "sentence_to": 26,
+    "start": 140.741666,
+    "end": 143.394457,
+    "duration": 2.6527909999999792,
+    "index": 25,
+    "segment_id": "segment_025"
+  },
+  {
+    "text": "A green house indicated that the person living there was a mechanic or worked in the electrical or telecommunications industry.",
+    "word_from": 331,
+    "word_to": 350,
+    "query": "green wooden house Greenland",
+    "queries": [
+      "green wooden house Greenland",
+      "historical green building exterior"
+    ],
+    "keywords": [
+      "telecommunications",
+      "electrical",
+      "indicated",
+      "mechanic",
+      "industry"
+    ],
+    "semantic": {
+      "meaning": "A green house showed that a mechanic or electrical/telecom worker lived there.",
+      "subject": "green house",
+      "action": "indicating",
+      "object": "mechanic or electrical worker",
+      "location": "Greenland",
+      "time": "historical",
+      "entities": []
+    },
+    "visual_requirements": [
+      "green house",
+      "wooden architecture"
+    ],
+    "visual_exclusions": [
+      "modern city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 27,
+    "sentence_to": 27,
+    "start": 144.119458,
+    "end": 151.869457,
+    "duration": 7.7499990000000025,
+    "index": 26,
+    "segment_id": "segment_026"
+  },
+  {
+    "text": "A blue house was for employees in the fishing industry. while a black building was a police station.",
+    "word_from": 351,
+    "word_to": 368,
+    "query": "blue wooden house Greenland",
+    "queries": [
+      "blue wooden house Greenland",
+      "historical blue building exterior",
+      "black wooden building Greenland"
+    ],
+    "keywords": [
+      "employees",
+      "industry",
+      "fishing",
+      "house",
+      "blue"
+    ],
+    "semantic": {
+      "meaning": "A blue house belonged to fishing industry employees.",
+      "subject": "blue house",
+      "action": "belonging",
+      "object": "fishing industry employees",
+      "location": "Greenland",
+      "time": "historical",
+      "entities": []
+    },
+    "visual_requirements": [
+      "blue house",
+      "coastal town",
+      "black building",
+      "historical architecture"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "modern police car"
+    ],
+    "shots": [
+      {
+        "word_from": 351,
+        "word_to": 360,
+        "text": "A blue house was for employees in the fishing industry.",
+        "query": "blue wooden house Greenland",
+        "subject": "blue house",
+        "action": "belonging",
+        "start": 152.594458,
+        "end": 155.497208,
+        "duration": 2.9027499999999975,
+        "shot_id": "scene_027_shot_1"
+      },
+      {
+        "word_from": 361,
+        "word_to": 368,
+        "text": "while a black building was a police station.",
+        "query": "black wooden building Greenland",
+        "subject": "black building",
+        "action": "serving",
+        "start": 156.038875,
+        "end": 158.483333,
+        "duration": 2.4444579999999974,
+        "shot_id": "scene_027_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 28,
+    "sentence_to": 29,
+    "start": 152.594458,
+    "end": 158.483333,
+    "duration": 5.8888749999999845,
+    "index": 27,
+    "segment_id": "segment_027"
+  },
+  {
+    "text": "Until now colorful houses remain a trademark of Greenland.",
+    "word_from": 369,
+    "word_to": 377,
+    "query": "colorful houses Greenland town",
+    "queries": [
+      "colorful houses Greenland town",
+      "bright painted wooden houses"
+    ],
+    "keywords": [
+      "trademark",
+      "greenland",
+      "colorful",
+      "houses",
+      "remain"
+    ],
+    "semantic": {
+      "meaning": "Colorful houses remain a trademark of Greenland today.",
+      "subject": "colorful houses",
+      "action": "remaining",
+      "object": "trademark of Greenland",
+      "location": "Greenland",
+      "time": "present day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "colorful houses",
+      "Greenland landscape"
+    ],
+    "visual_exclusions": [
+      "monochrome filter"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 30,
+    "sentence_to": 30,
+    "start": 159.208333,
+    "end": 163.305583,
+    "duration": 4.0972500000000025,
+    "index": 28,
+    "segment_id": "segment_028"
+  },
+  {
+    "text": "Only now residents can choose whatever color they want without having to match their profession.",
+    "word_from": 378,
+    "word_to": 392,
+    "query": "painting house exterior colorful",
+    "queries": [
+      "painting house exterior colorful",
+      "people painting wooden house"
+    ],
+    "keywords": [
+      "profession",
+      "residents",
+      "whatever",
+      "choose",
+      "color"
+    ],
+    "semantic": {
+      "meaning": "Residents can now choose any color they want without profession matching.",
+      "subject": "residents",
+      "action": "choosing",
+      "object": "house colors",
+      "location": "Greenland",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people",
+      "houses being painted"
+    ],
+    "visual_exclusions": [
+      "historical costumes"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 31,
+    "sentence_to": 31,
+    "start": 164.030541,
+    "end": 169.475,
+    "duration": 5.444458999999995,
+    "index": 29,
+    "segment_id": "segment_029"
+  },
+  {
+    "text": "Extreme weather is one of the toughest challenges in this city.",
+    "word_from": 393,
+    "word_to": 403,
+    "query": "blizzard in arctic town",
+    "queries": [
+      "blizzard in arctic town",
+      "extreme weather snowy city"
+    ],
+    "keywords": [
+      "challenges",
+      "toughest",
+      "extreme",
+      "weather",
+      "city"
+    ],
+    "semantic": {
+      "meaning": "Extreme weather is a tough challenge in this city.",
+      "subject": "extreme weather",
+      "action": "challenging",
+      "object": "city",
+      "location": "Greenland",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "harsh weather",
+      "snow and wind"
+    ],
+    "visual_exclusions": [
+      "sunny summer day"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 32,
+    "sentence_to": 32,
+    "start": 170.213875,
+    "end": 173.255583,
+    "duration": 3.041708,
+    "index": 30,
+    "segment_id": "segment_030"
+  },
+  {
+    "text": "which is famous for its polar climate and long winter.",
+    "word_from": 404,
+    "word_to": 413,
+    "query": "arctic polar climate landscape",
+    "queries": [
+      "arctic polar climate landscape",
+      "long winter arctic town"
+    ],
+    "keywords": [
+      "climate",
+      "famous",
+      "winter",
+      "polar"
+    ],
+    "semantic": {
+      "meaning": "The city is famous for its polar climate and long winter.",
+      "subject": "city",
+      "action": "experiencing",
+      "object": "polar climate",
+      "location": "Greenland",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "polar climate",
+      "snowy landscape"
+    ],
+    "visual_exclusions": [
+      "green grass"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 33,
+    "sentence_to": 33,
+    "start": 173.811125,
+    "end": 177.255541,
+    "duration": 3.4444159999999897,
+    "index": 31,
+    "segment_id": "segment_031"
+  },
+  {
+    "text": "For about seven months every year the temperature here drops below freezing.",
+    "word_from": 414,
+    "word_to": 425,
+    "query": "freezing arctic winter snow",
+    "queries": [
+      "freezing arctic winter snow",
+      "frost on windows arctic"
+    ],
+    "keywords": [
+      "temperature",
+      "freezing",
+      "months",
+      "seven",
+      "drops"
+    ],
+    "semantic": {
+      "meaning": "Temperatures drop below freezing for about seven months every year.",
+      "subject": "temperature",
+      "action": "dropping",
+      "object": "below freezing",
+      "location": "Greenland",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "freezing temperature",
+      "frost and ice"
+    ],
+    "visual_exclusions": [
+      "melting ice"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 34,
+    "sentence_to": 34,
+    "start": 177.980541,
+    "end": 182.563875,
+    "duration": 4.583334000000008,
+    "index": 32,
+    "segment_id": "segment_032"
+  },
+  {
+    "text": "March is usually the coldest month which leaves the entire city wrapped in thick ice.",
+    "word_from": 426,
+    "word_to": 440,
+    "query": "thick ice arctic city",
+    "queries": [
+      "thick ice arctic city",
+      "frozen coastal town Greenland"
+    ],
+    "keywords": [
+      "usually",
+      "coldest",
+      "wrapped",
+      "leaves",
+      "entire"
+    ],
+    "semantic": {
+      "meaning": "March is typically the coldest month, leaving the city wrapped in thick ice.",
+      "subject": "March",
+      "action": "leaving",
+      "object": "city wrapped in thick ice",
+      "location": "Greenland",
+      "time": "March",
+      "entities": []
+    },
+    "visual_requirements": [
+      "thick ice",
+      "frozen city"
+    ],
+    "visual_exclusions": [
+      "summer flowers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 35,
+    "sentence_to": 35,
+    "start": 183.288875,
+    "end": 188.997249,
+    "duration": 5.7083740000000205,
+    "index": 33,
+    "segment_id": "segment_033"
+  },
+  {
+    "text": "Nuuk goes through a very short summer that lasts only three months.",
+    "word_from": 441,
+    "word_to": 452,
+    "query": "Nuuk Greenland summer landscape",
+    "queries": [
+      "Nuuk Greenland summer landscape",
+      "arctic summer rocky terrain"
+    ],
+    "keywords": [
+      "summer",
+      "months",
+      "short",
+      "lasts",
+      "three"
+    ],
+    "semantic": {
+      "meaning": "Nuuk experiences a very short summer lasting only three months.",
+      "subject": "Nuuk",
+      "action": "experiencing",
+      "object": "short summer",
+      "location": "Nuuk, Greenland",
+      "time": "summer",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "arctic summer",
+      "bare ground or melting snow"
+    ],
+    "visual_exclusions": [
+      "heavy blizzard"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 36,
+    "sentence_to": 36,
+    "start": 189.736125,
+    "end": 193.916666,
+    "duration": 4.180541000000005,
+    "index": 34,
+    "segment_id": "segment_034"
+  },
+  {
+    "text": "Even though it's summer the temperature still feels cold averaging around nine degrees Celsius.",
+    "word_from": 453,
+    "word_to": 466,
+    "query": "cold summer thermometer",
+    "queries": [
+      "cold summer thermometer",
+      "chilly summer weather nuuk"
+    ],
+    "keywords": [
+      "temperature",
+      "averaging",
+      "degrees",
+      "celsius",
+      "summer"
+    ],
+    "semantic": {
+      "meaning": "Summer temperature in Nuuk feels cold, averaging around nine degrees Celsius.",
+      "subject": "thermometer or cold summer landscape",
+      "action": "displaying temperature",
+      "object": "thermometer reading",
+      "location": "Nuuk",
+      "time": "summer",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "thermometer showing low temperature",
+      "chilly summer weather"
+    ],
+    "visual_exclusions": [
+      "heavy winter snowstorms",
+      "tropical beach"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 37,
+    "sentence_to": 37,
+    "start": 194.641666,
+    "end": 200.933332,
+    "duration": 6.291666000000021,
+    "index": 35,
+    "segment_id": "segment_035"
+  },
+  {
+    "text": "On December 21st Nuuk experiences the shortest day and longest night of the year.",
+    "word_from": 467,
+    "word_to": 479,
+    "query": "dark winter day nuuk",
+    "queries": [
+      "dark winter day nuuk",
+      "arctic winter darkness"
+    ],
+    "keywords": [
+      "experiences",
+      "december",
+      "shortest",
+      "longest",
+      "night"
+    ],
+    "semantic": {
+      "meaning": "December 21st in Nuuk brings the shortest day and longest night.",
+      "subject": "Nuuk landscape",
+      "action": "darkening",
+      "object": "winter sky",
+      "location": "Nuuk",
+      "time": "December 21st winter",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "dark winter day",
+      "arctic town in winter darkness"
+    ],
+    "visual_exclusions": [
+      "bright summer sun",
+      "palm trees"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 38,
+    "sentence_to": 38,
+    "start": 201.658333,
+    "end": 207.866666,
+    "duration": 6.20833300000001,
+    "index": 36,
+    "segment_id": "segment_036"
+  },
+  {
+    "text": "On that day the sun doesn't even peek out until 11:22 in the morning. and sets at 3:28 p.m..",
+    "word_from": 480,
+    "word_to": 497,
+    "query": "low arctic winter sun",
+    "queries": [
+      "low arctic winter sun",
+      "short winter daylight"
+    ],
+    "keywords": [
+      "morning",
+      "doesn",
+      "peek",
+      "sets"
+    ],
+    "semantic": {
+      "meaning": "On that day the sun doesn't peek out until 11:22 in the morning and sets at 3:28 p.m.",
+      "subject": "sun",
+      "action": "rising briefly",
+      "object": "sun over horizon",
+      "location": "Nuuk",
+      "time": "winter solstice",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "low winter sun on horizon",
+      "short daylight arctic"
+    ],
+    "visual_exclusions": [
+      "midday high sun",
+      "tropical sunset"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 39,
+    "sentence_to": 40,
+    "start": 208.591666,
+    "end": 216.788083,
+    "duration": 8.196416999999997,
+    "index": 37,
+    "segment_id": "segment_037"
+  },
+  {
+    "text": "On the flip side on June 21st Nuuk gets the longest day and shortest night of the year.",
+    "word_from": 498,
+    "word_to": 514,
+    "query": "bright summer day nuuk",
+    "queries": [
+      "bright summer day nuuk",
+      "arctic summer solstice"
+    ],
+    "keywords": [
+      "shortest",
+      "longest",
+      "night",
+      "flip",
+      "side"
+    ],
+    "semantic": {
+      "meaning": "On June 21st Nuuk gets the longest day and shortest night.",
+      "subject": "Nuuk landscape",
+      "action": "shining",
+      "object": "summer sun",
+      "location": "Nuuk",
+      "time": "June 21st summer",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "bright summer day arctic",
+      "sunny town of Nuuk"
+    ],
+    "visual_exclusions": [
+      "dark winter night",
+      "snow blizzard"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 41,
+    "sentence_to": 41,
+    "start": 217.518666,
+    "end": 223.949207,
+    "duration": 6.430541000000005,
+    "index": 38,
+    "segment_id": "segment_038"
+  },
+  {
+    "text": "The sun rises at 3:53 a.m.  and only sets at 1:00 a.m. meaning you can actually see the sun shining at night.",
+    "word_from": 515,
+    "word_to": 534,
+    "query": "midnight sun greenland",
+    "queries": [
+      "midnight sun greenland",
+      "arctic sun shining at night"
+    ],
+    "keywords": [
+      "meaning",
+      "shining",
+      "rises",
+      "night",
+      "sets"
+    ],
+    "semantic": {
+      "meaning": "The sun rises at 3:53 a.m. and sets at 1:00 a.m. with sun shining at night.",
+      "subject": "sun",
+      "action": "shining at night",
+      "object": "midnight sun",
+      "location": "Nuuk",
+      "time": "midnight",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "midnight sun arctic",
+      "sun shining at night"
+    ],
+    "visual_exclusions": [
+      "pitch black night",
+      "daytime shadows"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 42,
+    "sentence_to": 42,
+    "start": 224.674208,
+    "end": 232.396416,
+    "duration": 7.722207999999995,
+    "index": 39,
+    "segment_id": "segment_039"
+  },
+  {
+    "text": "As a remote city surrounded by frozen ice it's already got pretty much everything you'd need.",
+    "word_from": 535,
+    "word_to": 550,
+    "query": "remote arctic city aerial",
+    "queries": [
+      "remote arctic city aerial",
+      "nuuk greenland aerial view"
+    ],
+    "keywords": [
+      "surrounded",
+      "remote",
+      "frozen",
+      "pretty",
+      "city"
+    ],
+    "semantic": {
+      "meaning": "Nuuk is a remote city surrounded by frozen ice with everything you need.",
+      "subject": "Nuuk city",
+      "action": "surrounded by ice",
+      "object": "remote city",
+      "location": "Nuuk",
+      "time": "daytime",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "remote coastal city",
+      "surrounded by ice and water"
+    ],
+    "visual_exclusions": [
+      "dense tropical jungle",
+      "desert city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 43,
+    "sentence_to": 43,
+    "start": 233.121458,
+    "end": 238.760332,
+    "duration": 5.6388740000000155,
+    "index": 40,
+    "segment_id": "segment_040"
+  },
+  {
+    "text": "You can find airports hospitals shopping centers schools and universities.",
+    "word_from": 551,
+    "word_to": 560,
+    "query": "modern arctic city buildings",
+    "queries": [
+      "modern arctic city buildings",
+      "nuuk city infrastructure"
+    ],
+    "keywords": [
+      "universities",
+      "hospitals",
+      "airports",
+      "shopping",
+      "centers"
+    ],
+    "semantic": {
+      "meaning": "You can find airports hospitals shopping centers schools and universities in Nuuk.",
+      "subject": "city buildings",
+      "action": "standing",
+      "object": "hospitals and schools",
+      "location": "Nuuk",
+      "time": "daytime",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "modern city buildings",
+      "hospitals and shopping centers"
+    ],
+    "visual_exclusions": [
+      "ancient ruins",
+      "tent camp"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 44,
+    "sentence_to": 44,
+    "start": 239.485333,
+    "end": 245.054791,
+    "duration": 5.569457999999997,
+    "index": 41,
+    "segment_id": "segment_041"
+  },
+  {
+    "text": "In fact the only university in the whole Greenland region is right here in Nuuk.",
+    "word_from": 561,
+    "word_to": 575,
+    "query": "university building greenland",
+    "queries": [
+      "university building greenland",
+      "nuuk university campus"
+    ],
+    "keywords": [
+      "university",
+      "greenland",
+      "region",
+      "fact",
+      "nuuk"
+    ],
+    "semantic": {
+      "meaning": "The only university in Greenland is right here in Nuuk.",
+      "subject": "university building",
+      "action": "standing",
+      "object": "university campus",
+      "location": "Nuuk",
+      "time": "daytime",
+      "entities": [
+        "Nuuk",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "university building in Greenland",
+      "campus architecture"
+    ],
+    "visual_exclusions": [
+      "beach resort",
+      "factory"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 45,
+    "sentence_to": 45,
+    "start": 245.779791,
+    "end": 250.779749,
+    "duration": 4.999958000000021,
+    "index": 42,
+    "segment_id": "segment_042"
+  },
+  {
+    "text": "Electricity is a big deal for any city. and this place is well sorted with its own power systems.",
+    "word_from": 576,
+    "word_to": 594,
+    "query": "city electrical power station",
+    "queries": [
+      "city electrical power station",
+      "power grid infrastructure"
+    ],
+    "keywords": [
+      "electricity",
+      "systems",
+      "sorted",
+      "place",
+      "power"
+    ],
+    "semantic": {
+      "meaning": "Electricity is a big deal and this place is well sorted with its own power systems.",
+      "subject": "power systems",
+      "action": "operating",
+      "object": "electrical infrastructure",
+      "location": "Nuuk",
+      "time": "daytime",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "power station infrastructure",
+      "electrical grid city"
+    ],
+    "visual_exclusions": [
+      "primitive village",
+      "no wires"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 46,
+    "sentence_to": 47,
+    "start": 251.504791,
+    "end": 257.893666,
+    "duration": 6.3888749999999845,
+    "index": 43,
+    "segment_id": "segment_043"
+  },
+  {
+    "text": "Nuuk gets its juice from hydroelectric power plants.",
+    "word_from": 595,
+    "word_to": 602,
+    "query": "hydroelectric power plant dam",
+    "queries": [
+      "hydroelectric power plant dam",
+      "hydro plant greenland"
+    ],
+    "keywords": [
+      "hydroelectric",
+      "plants",
+      "juice",
+      "power",
+      "nuuk"
+    ],
+    "semantic": {
+      "meaning": "Nuuk gets its juice from hydroelectric power plants.",
+      "subject": "hydroelectric power plant",
+      "action": "generating power",
+      "object": "water dam",
+      "location": "Nuuk",
+      "time": "daytime",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "hydroelectric power plant",
+      "dam with water flow"
+    ],
+    "visual_exclusions": [
+      "coal plant smoke",
+      "wind turbines"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 48,
+    "sentence_to": 48,
+    "start": 258.618666,
+    "end": 261.785333,
+    "duration": 3.1666669999999613,
+    "index": 44,
+    "segment_id": "segment_044"
+  },
+  {
+    "text": "with the main one being the Buksefjord hydroelectric plant sitting about 45 kilometers outside the city.",
+    "word_from": 603,
+    "word_to": 618,
+    "query": "Buksefjord hydroelectric plant exterior",
+    "queries": [
+      "Buksefjord hydroelectric plant exterior",
+      "hydroelectric power station mountains",
+      "remote power plant Greenland"
+    ],
+    "keywords": [
+      "hydroelectric",
+      "buksefjord",
+      "kilometers",
+      "sitting",
+      "outside"
+    ],
+    "semantic": {
+      "meaning": "Exterior shot of the Buksefjord hydroelectric plant located near Nuuk.",
+      "subject": "hydroelectric plant",
+      "action": "sitting",
+      "object": "Buksefjord plant",
+      "location": "45 kilometers outside Nuuk",
+      "time": "",
+      "entities": [
+        "Buksefjord hydroelectric plant"
+      ]
+    },
+    "visual_requirements": [
+      "hydroelectric power station",
+      "mountain landscape",
+      "river or fjord"
+    ],
+    "visual_exclusions": [
+      "urban city center",
+      "crowded streets"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 49,
+    "sentence_to": 49,
+    "start": 262.285333,
+    "end": 269.340874,
+    "duration": 7.055541000000005,
+    "index": 45,
+    "segment_id": "segment_045"
+  },
+  {
+    "text": "It harnesses the natural flow of water coming off the glaciers to generate electricity.",
+    "word_from": 619,
+    "word_to": 632,
+    "query": "glacier water flowing",
+    "queries": [
+      "glacier water flowing",
+      "natural waterfall hydroelectric",
+      "glaciers melting water flow"
+    ],
+    "keywords": [
+      "electricity",
+      "harnesses",
+      "glaciers",
+      "generate",
+      "natural"
+    ],
+    "semantic": {
+      "meaning": "Water rushing from glaciers to produce electricity.",
+      "subject": "water",
+      "action": "flowing",
+      "object": "glacier water",
+      "location": "near hydroelectric plant",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "glacier runoff",
+      "rushing water",
+      "hydroelectric generation"
+    ],
+    "visual_exclusions": [
+      "arid desert",
+      "dry land"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 50,
+    "sentence_to": 50,
+    "start": 270.065875,
+    "end": 275.274249,
+    "duration": 5.208373999999992,
+    "index": 46,
+    "segment_id": "segment_046"
+  },
+  {
+    "text": "On top of hydro power they're also pushing for more wind energy to tap into other renewables.",
+    "word_from": 633,
+    "word_to": 649,
+    "query": "wind turbines spinning",
+    "queries": [
+      "wind turbines spinning",
+      "wind farm renewable energy",
+      "wind power turbines landscape"
+    ],
+    "keywords": [
+      "renewables",
+      "pushing",
+      "energy",
+      "hydro",
+      "power"
+    ],
+    "semantic": {
+      "meaning": "Wind turbines operating in a landscape to generate renewable energy.",
+      "subject": "wind turbines",
+      "action": "spinning",
+      "object": "wind energy",
+      "location": "Greenland landscape",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "wind turbines",
+      "renewable energy",
+      "wind farm landscape"
+    ],
+    "visual_exclusions": [
+      "solar panels",
+      "nuclear plant"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 51,
+    "sentence_to": 51,
+    "start": 275.999208,
+    "end": 281.943666,
+    "duration": 5.944457999999997,
+    "index": 47,
+    "segment_id": "segment_047"
+  },
+  {
+    "text": "Getting to Nuuk isn't easy since it's a remote city with zero roads leading into it.",
+    "word_from": 650,
+    "word_to": 665,
+    "query": "aerial view remote city",
+    "queries": [
+      "aerial view remote city",
+      "Nuuk Greenland landscape aerial",
+      "isolated coastal city mountains"
+    ],
+    "keywords": [
+      "leading",
+      "remote",
+      "roads",
+      "nuuk",
+      "easy"
+    ],
+    "semantic": {
+      "meaning": "Aerial view of the remote city of Nuuk surrounded by mountains and water with no roads.",
+      "subject": "Nuuk city",
+      "action": "surrounded",
+      "object": "remote city",
+      "location": "Nuuk Greenland",
+      "time": "",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "remote coastal city",
+      "mountains",
+      "ocean",
+      "no roads visible"
+    ],
+    "visual_exclusions": [
+      "busy highway",
+      "traffic jam",
+      "interstate"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 52,
+    "sentence_to": 52,
+    "start": 282.668666,
+    "end": 287.432541,
+    "duration": 4.763875000000041,
+    "index": 48,
+    "segment_id": "segment_048"
+  },
+  {
+    "text": "Planes and ships are your only two options for travel.",
+    "word_from": 666,
+    "word_to": 675,
+    "query": "airplane flying arctic",
+    "queries": [
+      "airplane flying arctic",
+      "ship sailing icy waters",
+      "transportation options Greenland"
+    ],
+    "keywords": [
+      "options",
+      "planes",
+      "travel",
+      "ships"
+    ],
+    "semantic": {
+      "meaning": "Commercial airplanes and ships traveling to the remote destination.",
+      "subject": "planes and ships",
+      "action": "traveling",
+      "object": "transportation options",
+      "location": "Nuuk",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "airplane in flight",
+      "ship in water",
+      "arctic travel"
+    ],
+    "visual_exclusions": [
+      "train",
+      "subway"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 53,
+    "sentence_to": 53,
+    "start": 288.171458,
+    "end": 291.296416,
+    "duration": 3.124958000000049,
+    "index": 49,
+    "segment_id": "segment_049"
+  },
+  {
+    "text": "But in the winter ships just aren't reliable because the surrounding waters freeze right up.",
+    "word_from": 676,
+    "word_to": 690,
+    "query": "frozen ocean winter",
+    "queries": [
+      "frozen ocean winter",
+      "ice covered sea water",
+      "frozen waters arctic"
+    ],
+    "keywords": [
+      "surrounding",
+      "reliable",
+      "winter",
+      "waters",
+      "freeze"
+    ],
+    "semantic": {
+      "meaning": "Frozen ocean waters blocking ships during the harsh winter.",
+      "subject": "waters",
+      "action": "freezing",
+      "object": "ice-covered sea",
+      "location": "ocean surrounding Nuuk",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frozen ocean",
+      "ice chunks",
+      "winter sea"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "swimming water"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 54,
+    "sentence_to": 54,
+    "start": 292.021458,
+    "end": 297.049208,
+    "duration": 5.027750000000026,
+    "index": 50,
+    "segment_id": "segment_050"
+  },
+  {
+    "text": "If you really have to go by water you'll need a special icebreaker to carve a path through for other boats.",
+    "word_from": 691,
+    "word_to": 711,
+    "query": "icebreaker ship breaking ice",
+    "queries": [
+      "icebreaker ship breaking ice",
+      "icebreaker vessel winter sea",
+      "ship carving path through ice"
+    ],
+    "keywords": [
+      "icebreaker",
+      "special",
+      "water",
+      "carve",
+      "boats"
+    ],
+    "semantic": {
+      "meaning": "An icebreaker ship carving a path through thick sea ice for other boats.",
+      "subject": "icebreaker ship",
+      "action": "carving path",
+      "object": "thick sea ice",
+      "location": "frozen waters",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "icebreaker ship",
+      "breaking ice",
+      "frozen sea"
+    ],
+    "visual_exclusions": [
+      "speed boat",
+      "cruise ship in summer"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 55,
+    "sentence_to": 55,
+    "start": 297.774208,
+    "end": 303.940916,
+    "duration": 6.166708000000028,
+    "index": 51,
+    "segment_id": "segment_051"
+  },
+  {
+    "text": "Even though it's isolated and deals with long harsh winters Nuuk is blessed with some jaw-dropping natural scenery.",
+    "word_from": 712,
+    "word_to": 729,
+    "query": "dramatic mountain scenery fjords",
+    "queries": [
+      "dramatic mountain scenery fjords",
+      "Greenland natural landscape aerial",
+      "stunning arctic landscape"
+    ],
+    "keywords": [
+      "isolated",
+      "dropping",
+      "winters",
+      "blessed",
+      "natural"
+    ],
+    "semantic": {
+      "meaning": "Breathtaking natural scenery surrounding the isolated northern city.",
+      "subject": "natural scenery",
+      "action": "displaying",
+      "object": "jaw-dropping landscape",
+      "location": "Nuuk",
+      "time": "",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "dramatic mountains",
+      "fjords",
+      "dramatic landscape"
+    ],
+    "visual_exclusions": [
+      "flat plains",
+      "urban skyscrapers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 56,
+    "sentence_to": 56,
+    "start": 304.665875,
+    "end": 312.013124,
+    "duration": 7.347248999999977,
+    "index": 52,
+    "segment_id": "segment_052"
+  },
+  {
+    "text": "Just like in other polar regions the night sky often lights up with colorful auroras dancing across the horizon. turning the city nights into something truly magical.",
+    "word_from": 730,
+    "word_to": 756,
+    "query": "aurora borealis night sky polar",
+    "queries": [
+      "aurora borealis night sky polar",
+      "aurora borealis over city night",
+      "northern lights city skyline"
+    ],
+    "keywords": [
+      "colorful",
+      "regions",
+      "auroras",
+      "dancing",
+      "horizon"
+    ],
+    "semantic": {
+      "meaning": "Colorful Northern Lights dancing across the night sky above the city.",
+      "subject": "auroras",
+      "action": "dancing",
+      "object": "night sky",
+      "location": "Nuuk",
+      "time": "night",
+      "entities": []
+    },
+    "visual_requirements": [
+      "northern lights aurora borealis",
+      "night sky",
+      "city lights"
+    ],
+    "visual_exclusions": [
+      "daylight",
+      "sunshine"
+    ],
+    "shots": [
+      {
+        "word_from": 730,
+        "word_to": 748,
+        "text": "Just like in other polar regions the night sky often lights up with colorful auroras dancing across the horizon",
+        "query": "aurora borealis night sky polar",
+        "subject": "auroras",
+        "action": "dancing",
+        "start": 312.738125,
+        "end": 320.071416,
+        "duration": 7.333290999999974,
+        "shot_id": "scene_053_shot_1"
+      },
+      {
+        "word_from": 749,
+        "word_to": 756,
+        "text": "turning the city nights into something truly magical",
+        "query": "aurora borealis over city night",
+        "subject": "auroras",
+        "action": "illuminating",
+        "start": 320.640875,
+        "end": 323.654791,
+        "duration": 3.0139159999999947,
+        "shot_id": "scene_053_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 57,
+    "sentence_to": 58,
+    "start": 312.738125,
+    "end": 323.654791,
+    "duration": 10.916665999999964,
+    "index": 53,
+    "segment_id": "segment_053"
+  },
+  {
+    "text": "At the end of the day Nuuk is the northernmost capital on Earth and the most populated settlement on the Greenland mainland.",
+    "word_from": 757,
+    "word_to": 778,
+    "query": "Nuuk capital Greenland colorful houses",
+    "queries": [
+      "Nuuk capital Greenland colorful houses",
+      "northernmost capital city",
+      "Greenland settlement aerial view"
+    ],
+    "keywords": [
+      "northernmost",
+      "settlement",
+      "populated",
+      "greenland",
+      "mainland"
+    ],
+    "semantic": {
+      "meaning": "Overview of Nuuk as the northernmost capital and largest settlement in Greenland.",
+      "subject": "Nuuk",
+      "action": "being",
+      "object": "northernmost capital",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Nuuk",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "colorful nordic houses",
+      "capital city",
+      "Greenland settlement"
+    ],
+    "visual_exclusions": [
+      "tropical city",
+      "desert town"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 59,
+    "sentence_to": 59,
+    "start": 324.379791,
+    "end": 331.768666,
+    "duration": 7.3888749999999845,
+    "index": 54,
+    "segment_id": "segment_054"
+  },
+  {
+    "text": "Sure most of Greenland is covered in thick ice with extreme weather that lasts forever. but life here keeps thriving.",
+    "word_from": 779,
+    "word_to": 798,
+    "query": "Greenland ice sheet aerial",
+    "queries": [
+      "Greenland ice sheet aerial",
+      "massive glacier ice cap",
+      "bustling Arctic city life"
+    ],
+    "keywords": [
+      "greenland",
+      "covered",
+      "extreme",
+      "weather",
+      "forever"
+    ],
+    "semantic": {
+      "meaning": "Vast ice sheet covering most of Greenland under extreme weather conditions.",
+      "subject": "ice sheet",
+      "action": "covering",
+      "object": "Greenland land",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "massive ice sheet",
+      "glacier ice cap",
+      "extreme polar weather",
+      "bustling city life",
+      "active people",
+      "urban environment"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "forest trees",
+      "empty ice sheet",
+      "stormy weather"
+    ],
+    "shots": [
+      {
+        "word_from": 779,
+        "word_to": 793,
+        "text": "Sure most of Greenland is covered in thick ice with extreme weather that lasts forever.",
+        "query": "Greenland ice sheet aerial",
+        "subject": "ice sheet",
+        "action": "covering",
+        "start": 332.493666,
+        "end": 337.660333,
+        "duration": 5.166666999999961,
+        "shot_id": "scene_055_shot_1"
+      },
+      {
+        "word_from": 794,
+        "word_to": 798,
+        "text": "but life here keeps thriving.",
+        "query": "bustling Arctic city life",
+        "subject": "local life",
+        "action": "thriving",
+        "start": 338.202,
+        "end": 339.979749,
+        "duration": 1.7777490000000284,
+        "shot_id": "scene_055_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 60,
+    "sentence_to": 61,
+    "start": 332.493666,
+    "end": 339.979749,
+    "duration": 7.486083000000008,
+    "index": 55,
+    "segment_id": "segment_055"
+  },
+  {
+    "text": "It's backed by solid infrastructure including a big port and an international airport that keep the economy moving through services fishing and tourism.",
+    "word_from": 799,
+    "word_to": 821,
+    "query": "busy Arctic seaport cargo",
+    "queries": [
+      "busy Arctic seaport cargo",
+      "modern airport terminal exterior",
+      "cargo ships harbor"
+    ],
+    "keywords": [
+      "infrastructure",
+      "international",
+      "including",
+      "services",
+      "airport"
+    ],
+    "semantic": {
+      "meaning": "Solid infrastructure including a big port and international airport support the local economy.",
+      "subject": "infrastructure",
+      "action": "operating",
+      "object": "port and airport",
+      "location": "Nuuk",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "harbor with ships",
+      "modern airport",
+      "busy port"
+    ],
+    "visual_exclusions": [
+      "primitive village",
+      "horse-drawn carts"
+    ],
+    "shots": [
+      {
+        "word_from": 799,
+        "word_to": 811,
+        "text": "It's backed by solid infrastructure including a big port and an international airport",
+        "query": "modern airport and busy port",
+        "subject": "infrastructure",
+        "action": "operating",
+        "start": 340.704791,
+        "end": 346.107541,
+        "duration": 5.402750000000026,
+        "shot_id": "scene_056_shot_1"
+      },
+      {
+        "word_from": 812,
+        "word_to": 821,
+        "text": "that keep the economy moving through services fishing and tourism",
+        "query": "fishing boats and tourism harbor",
+        "subject": "economy",
+        "action": "moving",
+        "start": 346.190875,
+        "end": 350.510333,
+        "duration": 4.319457999999997,
+        "shot_id": "scene_056_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 62,
+    "sentence_to": 62,
+    "start": 340.704791,
+    "end": 350.510333,
+    "duration": 9.805542000000003,
+    "index": 56,
+    "segment_id": "segment_056"
+  },
+  {
+    "text": "With all that spectacular natural beauty like giant icebergs and deep blue seas Nuuk has become an incredible spot for anyone looking for a real Arctic adventure.",
+    "word_from": 822,
+    "word_to": 848,
+    "query": "giant icebergs blue sea",
+    "queries": [
+      "giant icebergs blue sea",
+      "Arctic adventure landscape",
+      "Nuuk fjord icebergs"
+    ],
+    "keywords": [
+      "spectacular",
+      "incredible",
+      "adventure",
+      "icebergs",
+      "natural"
+    ],
+    "semantic": {
+      "meaning": "Spectacular natural beauty like giant icebergs and deep blue seas make Nuuk an incredible spot for an Arctic adventure.",
+      "subject": "Nuuk landscape",
+      "action": "displaying",
+      "object": "icebergs and sea",
+      "location": "Nuuk",
+      "time": "",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "giant icebergs",
+      "deep blue sea",
+      "Arctic landscape"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "desert"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 63,
+    "sentence_to": 63,
+    "start": 351.235333,
+    "end": 361.693666,
+    "duration": 10.458332999999982,
+    "index": 57,
+    "segment_id": "segment_057"
+  }
+]

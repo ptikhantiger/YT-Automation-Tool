@@ -1,0 +1,3691 @@
+[
+  {
+    "text": "Imagine waking up in a place where the temperature outside can fall below minus 60 degrees Celsius.",
+    "word_from": 0,
+    "word_to": 15,
+    "query": "person waking up cold bedroom",
+    "queries": [
+      "person waking up cold bedroom",
+      "frost covered window interior",
+      "freezing temperature interior home"
+    ],
+    "keywords": [
+      "temperature",
+      "imagine",
+      "outside",
+      "degrees",
+      "celsius"
+    ],
+    "semantic": {
+      "meaning": "Person waking up indoors in an extremely cold place with freezing temperatures outside.",
+      "subject": "Person",
+      "action": "waking up",
+      "object": "bed",
+      "location": "room in cold region",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person waking up",
+      "frost on window",
+      "cold interior"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "summer",
+      "warm weather"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.105541,
+    "end": 6.508332,
+    "duration": 6.402791000000001,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "A place where the wind can become so powerful that simply walking outside feels dangerous. For months the sun barely rises.",
+    "word_from": 16,
+    "word_to": 36,
+    "query": "blizzard strong wind snow",
+    "queries": [
+      "blizzard strong wind snow",
+      "dangerous winter storm outdoors",
+      "low sun arctic horizon"
+    ],
+    "keywords": [
+      "dangerous",
+      "powerful",
+      "walking",
+      "outside",
+      "become"
+    ],
+    "semantic": {
+      "meaning": "Powerful and dangerous winds blowing outside in a snowy landscape.",
+      "subject": "Wind",
+      "action": "blowing",
+      "object": "snow",
+      "location": "outdoors in winter",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "blizzard",
+      "strong wind",
+      "snowstorm",
+      "low sun",
+      "horizon",
+      "snow landscape"
+    ],
+    "visual_exclusions": [
+      "clear skies",
+      "calm weather",
+      "bright midday sun",
+      "tropical sun"
+    ],
+    "shots": [
+      {
+        "word_from": 16,
+        "word_to": 30,
+        "text": "A place where the wind can become so powerful that simply walking outside feels dangerous.",
+        "query": "blizzard strong wind snow",
+        "subject": "Wind",
+        "action": "blowing",
+        "start": 7.238875,
+        "end": 12.877791,
+        "duration": 5.638916,
+        "shot_id": "scene_002_shot_1"
+      },
+      {
+        "word_from": 31,
+        "word_to": 36,
+        "text": "For months the sun barely rises.",
+        "query": "low sun arctic horizon",
+        "subject": "Sun",
+        "action": "rising",
+        "start": 13.602791,
+        "end": 15.908333,
+        "duration": 2.305542000000001,
+        "shot_id": "scene_002_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 3,
+    "start": 7.238875,
+    "end": 15.908333,
+    "duration": 8.669458,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "And during the darkest part of winter entire regions are surrounded by almost complete darkness. There are no permanent cities. No forests. No farms.",
+    "word_from": 37,
+    "word_to": 60,
+    "query": "dark polar night snow",
+    "queries": [
+      "dark polar night snow",
+      "antarctic winter darkness",
+      "empty snow plains"
+    ],
+    "keywords": [
+      "surrounded",
+      "complete",
+      "darkness",
+      "darkest",
+      "regions"
+    ],
+    "semantic": {
+      "meaning": "Entire snowy regions surrounded by almost complete darkness during the winter night.",
+      "subject": "Regions",
+      "action": "surrounded by darkness",
+      "object": "snow",
+      "location": "antarctic night",
+      "time": "night",
+      "entities": []
+    },
+    "visual_requirements": [
+      "darkness",
+      "snow",
+      "night sky",
+      "empty landscape",
+      "no buildings",
+      "snow plains",
+      "barren ice",
+      "no trees"
+    ],
+    "visual_exclusions": [
+      "daylight",
+      "bright sun",
+      "cities",
+      "skyscrapers",
+      "towns",
+      "forest",
+      "trees",
+      "jungle"
+    ],
+    "shots": [
+      {
+        "word_from": 37,
+        "word_to": 51,
+        "text": "And during the darkest part of winter entire regions are surrounded by almost complete darkness.",
+        "query": "dark polar night snow",
+        "subject": "Regions",
+        "action": "surrounded by darkness",
+        "start": 16.647208,
+        "end": 22.466666,
+        "duration": 5.819458000000001,
+        "shot_id": "scene_003_shot_1"
+      },
+      {
+        "word_from": 52,
+        "word_to": 56,
+        "text": "There are no permanent cities.",
+        "query": "empty snow landscape aerial",
+        "subject": "Landscape",
+        "action": "being empty",
+        "start": 23.191666,
+        "end": 24.9,
+        "duration": 1.7083339999999971,
+        "shot_id": "scene_003_shot_2"
+      },
+      {
+        "word_from": 57,
+        "word_to": 58,
+        "text": "No forests.",
+        "query": "barren ice sheet aerial",
+        "subject": "Terrain",
+        "action": "being barren",
+        "start": 25.625,
+        "end": 26.708332,
+        "duration": 1.0833319999999986,
+        "shot_id": "scene_003_shot_3"
+      },
+      {
+        "word_from": 59,
+        "word_to": 60,
+        "text": "No farms.",
+        "query": "empty snow plains",
+        "subject": "Landscape",
+        "action": "being barren",
+        "start": 27.433333,
+        "end": 28.419457,
+        "duration": 0.9861240000000002,
+        "shot_id": "scene_003_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 7,
+    "start": 16.647208,
+    "end": 28.419457,
+    "duration": 11.772249000000002,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "And almost the entire continent is buried beneath an enormous sheet of ice.",
+    "word_from": 61,
+    "word_to": 73,
+    "query": "massive ice sheet aerial",
+    "queries": [
+      "massive ice sheet aerial",
+      "antarctic glacier vastness",
+      "ice covered continent aerial"
+    ],
+    "keywords": [
+      "continent",
+      "enormous",
+      "beneath",
+      "entire",
+      "buried"
+    ],
+    "semantic": {
+      "meaning": "Almost the entire continent buried beneath an enormous sheet of ice.",
+      "subject": "Continent",
+      "action": "buried",
+      "object": "ice sheet",
+      "location": "Antarctica",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "massive ice sheet",
+      "glacier expanse",
+      "aerial view ice"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "forest",
+      "city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 8,
+    "sentence_to": 8,
+    "start": 29.144458,
+    "end": 33.908333,
+    "duration": 4.763874999999999,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "Yet somehow. life survives here.",
+    "word_from": 74,
+    "word_to": 78,
+    "query": "emperor penguins walking ice",
+    "queries": [
+      "emperor penguins walking ice",
+      "penguins surviving antarctica",
+      "wildlife in snow antarctica"
+    ],
+    "keywords": [
+      "survives",
+      "somehow",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Animals like penguins surviving in the harsh antarctic environment.",
+      "subject": "Life",
+      "action": "survives",
+      "object": "penguins",
+      "location": "Antarctica",
+      "time": "day",
+      "entities": [
+        "penguins"
+      ]
+    },
+    "visual_requirements": [
+      "penguins",
+      "ice",
+      "snow"
+    ],
+    "visual_exclusions": [
+      "tropical animals",
+      "desert animals"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 10,
+    "start": 34.633333,
+    "end": 37.705583,
+    "duration": 3.072249999999997,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "Welcome to Antarctica the coldest and most extreme continent on Earth.",
+    "word_from": 79,
+    "word_to": 89,
+    "query": "extreme cold antarctic mountains",
+    "queries": [
+      "extreme cold antarctic mountains",
+      "frozen continent landscape",
+      "antarctica extreme weather landscape"
+    ],
+    "keywords": [
+      "antarctica",
+      "continent",
+      "welcome",
+      "coldest",
+      "extreme"
+    ],
+    "semantic": {
+      "meaning": "Antarctica as the coldest and most extreme continent on Earth.",
+      "subject": "Antarctica",
+      "action": "existing",
+      "object": "continent",
+      "location": "Antarctica",
+      "time": "day",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "extreme cold landscape",
+      "ice mountains",
+      "snowy continent"
+    ],
+    "visual_exclusions": [
+      "warm beaches",
+      "cities"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 11,
+    "sentence_to": 11,
+    "start": 38.430541,
+    "end": 42.986124,
+    "duration": 4.555582999999999,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "Antarctica sits at the southernmost point of our planet.",
+    "word_from": 90,
+    "word_to": 98,
+    "query": "earth globe south pole",
+    "queries": [
+      "earth globe south pole",
+      "planet earth from space",
+      "rotating earth highlighting antarctica"
+    ],
+    "keywords": [
+      "southernmost",
+      "antarctica",
+      "planet",
+      "point",
+      "sits"
+    ],
+    "semantic": {
+      "meaning": "Global perspective of Earth showing Antarctica at the southernmost point.",
+      "subject": "Planet Earth",
+      "action": "spinning",
+      "object": "globe",
+      "location": "space",
+      "time": "day",
+      "entities": [
+        "Earth",
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "globe",
+      "planet earth from space",
+      "south pole highlighted"
+    ],
+    "visual_exclusions": [
+      "flat earth",
+      "map only"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 12,
+    "sentence_to": 12,
+    "start": 43.711125,
+    "end": 46.808333,
+    "duration": 3.097207999999995,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "It is larger than Europe but almost all of its land is covered by ice.",
+    "word_from": 99,
+    "word_to": 113,
+    "query": "Antarctica ice sheet aerial",
+    "queries": [
+      "Antarctica ice sheet aerial",
+      "vast polar ice landscape"
+    ],
+    "keywords": [
+      "covered",
+      "larger",
+      "europe",
+      "land"
+    ],
+    "semantic": {
+      "meaning": "Aerial view showing the vast ice sheet covering Antarctica, which is larger than Europe.",
+      "subject": "Antarctica ice sheet",
+      "action": "spanning",
+      "object": "land",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Europe",
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "vast ice sheet",
+      "snow-covered landscape",
+      "aerial perspective"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "cities",
+      "modern technology"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 13,
+    "sentence_to": 13,
+    "start": 47.547208,
+    "end": 52.380582,
+    "duration": 4.833373999999999,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "In some places that ice is several kilometers thick.",
+    "word_from": 114,
+    "word_to": 122,
+    "query": "thick glacial ice wall",
+    "queries": [
+      "thick glacial ice wall",
+      "Antarctica ice shelf cross section"
+    ],
+    "keywords": [
+      "kilometers",
+      "several",
+      "places",
+      "thick"
+    ],
+    "semantic": {
+      "meaning": "Cross-section or massive wall of thick glacial ice showing extreme depth.",
+      "subject": "Glacial ice",
+      "action": "rising",
+      "object": "ice wall",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "thick glacial ice",
+      "ice cliff",
+      "blue ice layers"
+    ],
+    "visual_exclusions": [
+      "thin ice",
+      "meltwater pools"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 14,
+    "sentence_to": 14,
+    "start": 53.119458,
+    "end": 56.647207,
+    "duration": 3.527749,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "The continent contains an enormous amount of the world's freshwater. locked away inside its frozen landscape.",
+    "word_from": 123,
+    "word_to": 138,
+    "query": "frozen landscape Antarctica",
+    "queries": [
+      "frozen landscape Antarctica",
+      "vast ice desert"
+    ],
+    "keywords": [
+      "freshwater",
+      "continent",
+      "landscape",
+      "contains",
+      "enormous"
+    ],
+    "semantic": {
+      "meaning": "Vast frozen landscape containing massive reserves of freshwater locked in ice.",
+      "subject": "Frozen landscape",
+      "action": "stretching",
+      "object": "ice and snow",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frozen landscape",
+      "snow and ice",
+      "vast expanse"
+    ],
+    "visual_exclusions": [
+      "open ocean",
+      "forests"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 15,
+    "sentence_to": 16,
+    "start": 57.386125,
+    "end": 64.108333,
+    "duration": 6.722208000000002,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "But Antarctica is not simply a giant block of ice.",
+    "word_from": 139,
+    "word_to": 148,
+    "query": "antarctica giant block",
+    "queries": [
+      "antarctica giant block"
+    ],
+    "keywords": [
+      "antarctica",
+      "giant",
+      "block"
+    ],
+    "semantic": {
+      "meaning": "But Antarctica is not simply a giant block of ice.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 17,
+    "sentence_to": 17,
+    "start": 64.847208,
+    "end": 68.208333,
+    "duration": 3.3611250000000013,
+    "index": 11,
+    "segment_id": "segment_011"
+  },
+  {
+    "text": "It is a world of towering mountains massive glaciers frozen oceans violent storms and animals specially adapted to survive conditions that would be deadly for most living creatures.",
+    "word_from": 149,
+    "word_to": 176,
+    "query": "conditions mountains specially creatures towering",
+    "queries": [
+      "conditions mountains specially creatures towering"
+    ],
+    "keywords": [
+      "conditions",
+      "mountains",
+      "specially",
+      "creatures",
+      "towering"
+    ],
+    "semantic": {
+      "meaning": "It is a world of towering mountains massive glaciers frozen oceans violent storms and animals specially adapted to survive conditions that would be deadly for most living creatures.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 18,
+    "sentence_to": 18,
+    "start": 68.933333,
+    "end": 81.141666,
+    "duration": 12.208332999999996,
+    "index": 12,
+    "segment_id": "segment_012"
+  },
+  {
+    "text": "And perhaps the most famous of them all is the emperor penguin.",
+    "word_from": 177,
+    "word_to": 188,
+    "query": "emperor penguin famous",
+    "queries": [
+      "emperor penguin famous"
+    ],
+    "keywords": [
+      "emperor",
+      "penguin",
+      "famous"
+    ],
+    "semantic": {
+      "meaning": "And perhaps the most famous of them all is the emperor penguin.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 19,
+    "sentence_to": 19,
+    "start": 81.866666,
+    "end": 85.366666,
+    "duration": 3.5,
+    "index": 13,
+    "segment_id": "segment_013"
+  },
+  {
+    "text": "When winter arrives emperor penguins face one of the most difficult survival challenges in the animal kingdom.",
+    "word_from": 189,
+    "word_to": 205,
+    "query": "challenges difficult penguins survival arrives",
+    "queries": [
+      "challenges difficult penguins survival arrives"
+    ],
+    "keywords": [
+      "challenges",
+      "difficult",
+      "penguins",
+      "survival",
+      "arrives"
+    ],
+    "semantic": {
+      "meaning": "When winter arrives emperor penguins face one of the most difficult survival challenges in the animal kingdom.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 20,
+    "sentence_to": 20,
+    "start": 86.091666,
+    "end": 92.577791,
+    "duration": 6.486125000000001,
+    "index": 14,
+    "segment_id": "segment_014"
+  },
+  {
+    "text": "Instead of escaping the cold they remain on the frozen continent.",
+    "word_from": 206,
+    "word_to": 216,
+    "query": "continent escaping remain frozen cold",
+    "queries": [
+      "continent escaping remain frozen cold"
+    ],
+    "keywords": [
+      "continent",
+      "escaping",
+      "remain",
+      "frozen",
+      "cold"
+    ],
+    "semantic": {
+      "meaning": "Instead of escaping the cold they remain on the frozen continent.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 21,
+    "sentence_to": 21,
+    "start": 93.302791,
+    "end": 97.483333,
+    "duration": 4.180542000000003,
+    "index": 15,
+    "segment_id": "segment_015"
+  },
+  {
+    "text": "Thousands of penguins gather together in enormous groups.",
+    "word_from": 217,
+    "word_to": 224,
+    "query": "thousands penguins enormous gather groups",
+    "queries": [
+      "thousands penguins enormous gather groups"
+    ],
+    "keywords": [
+      "thousands",
+      "penguins",
+      "enormous",
+      "gather",
+      "groups"
+    ],
+    "semantic": {
+      "meaning": "Thousands of penguins gather together in enormous groups.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 22,
+    "sentence_to": 22,
+    "start": 98.208333,
+    "end": 101.59725,
+    "duration": 3.3889170000000064,
+    "index": 16,
+    "segment_id": "segment_016"
+  },
+  {
+    "text": "They stand shoulder to shoulder forming a moving wall of feathers and bodies. Those on the outside face the freezing wind.",
+    "word_from": 225,
+    "word_to": 245,
+    "query": "shoulder feathers forming moving bodies",
+    "queries": [
+      "shoulder feathers forming moving bodies",
+      "freezing outside face wind"
+    ],
+    "keywords": [
+      "shoulder",
+      "feathers",
+      "forming",
+      "moving",
+      "bodies"
+    ],
+    "semantic": {
+      "meaning": "They stand shoulder to shoulder forming a moving wall of feathers and bodies.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 225,
+        "word_to": 237,
+        "text": "They stand shoulder to shoulder forming a moving wall of feathers and bodies.",
+        "query": "shoulder feathers forming moving bodies",
+        "subject": "",
+        "action": "",
+        "start": 102.322208,
+        "end": 107.044457,
+        "duration": 4.722248999999991,
+        "shot_id": "scene_017_shot_1"
+      },
+      {
+        "word_from": 238,
+        "word_to": 245,
+        "text": "Those on the outside face the freezing wind.",
+        "query": "freezing outside face wind",
+        "subject": "",
+        "action": "",
+        "start": 107.769458,
+        "end": 110.213916,
+        "duration": 2.4444579999999974,
+        "shot_id": "scene_017_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 23,
+    "sentence_to": 24,
+    "start": 102.322208,
+    "end": 110.213916,
+    "duration": 7.891707999999994,
+    "index": 17,
+    "segment_id": "segment_017"
+  },
+  {
+    "text": "But slowly the group moves and rotates.",
+    "word_from": 246,
+    "word_to": 252,
+    "query": "penguins huddle rotating movement",
+    "queries": [
+      "penguins huddle rotating movement",
+      "emperor penguins shifting position"
+    ],
+    "keywords": [
+      "rotates",
+      "slowly",
+      "group",
+      "moves"
+    ],
+    "semantic": {
+      "meaning": "The penguin group slowly shifts and rotates positions.",
+      "subject": "penguin group",
+      "action": "moving",
+      "object": "huddle",
+      "location": "Antarctica",
+      "time": "day",
+      "entities": [
+        "penguins"
+      ]
+    },
+    "visual_requirements": [
+      "penguin huddle",
+      "slow movement"
+    ],
+    "visual_exclusions": [
+      "sunny beach",
+      "green grass"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 25,
+    "sentence_to": 25,
+    "start": 110.952791,
+    "end": 113.716666,
+    "duration": 2.7638749999999987,
+    "index": 18,
+    "segment_id": "segment_018"
+  },
+  {
+    "text": "Penguins from the outside eventually reach the warmer center. while others take their place.",
+    "word_from": 253,
+    "word_to": 266,
+    "query": "penguins walking to center",
+    "queries": [
+      "penguins walking to center",
+      "penguin huddle rotating behavior"
+    ],
+    "keywords": [
+      "eventually",
+      "penguins",
+      "outside",
+      "warmer",
+      "center"
+    ],
+    "semantic": {
+      "meaning": "Outer penguins move to the warm center while others take their place on the outside.",
+      "subject": "penguins",
+      "action": "walking",
+      "object": "center",
+      "location": "Antarctica ice",
+      "time": "day",
+      "entities": [
+        "penguins"
+      ]
+    },
+    "visual_requirements": [
+      "emperor penguins",
+      "ice sheet"
+    ],
+    "visual_exclusions": [
+      "flying birds",
+      "grassland"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 26,
+    "sentence_to": 27,
+    "start": 114.441666,
+    "end": 119.649999,
+    "duration": 5.208332999999996,
+    "index": 19,
+    "segment_id": "segment_019"
+  },
+  {
+    "text": "This simple behavior helps the colony conserve heat and survive temperatures far below freezing.",
+    "word_from": 267,
+    "word_to": 280,
+    "query": "penguin colony huddling warmth",
+    "queries": [
+      "penguin colony huddling warmth",
+      "emperor penguins freezing weather"
+    ],
+    "keywords": [
+      "temperatures",
+      "behavior",
+      "conserve",
+      "freezing",
+      "survive"
+    ],
+    "semantic": {
+      "meaning": "This behavior helps the colony conserve heat and survive freezing temperatures.",
+      "subject": "penguin colony",
+      "action": "huddling",
+      "object": "warmth",
+      "location": "antarctic ice sheet",
+      "time": "day",
+      "entities": [
+        "emperor penguins"
+      ]
+    },
+    "visual_requirements": [
+      "dense penguin colony",
+      "snow and ice"
+    ],
+    "visual_exclusions": [
+      "forests",
+      "warm weather"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 28,
+    "sentence_to": 28,
+    "start": 120.375,
+    "end": 126.333333,
+    "duration": 5.958332999999996,
+    "index": 20,
+    "segment_id": "segment_020"
+  },
+  {
+    "text": "But for male emperor penguins the challenge becomes even greater.",
+    "word_from": 281,
+    "word_to": 290,
+    "query": "male emperor penguin standing",
+    "queries": [
+      "male emperor penguin standing",
+      "lonely emperor penguin ice"
+    ],
+    "keywords": [
+      "challenge",
+      "penguins",
+      "emperor",
+      "becomes",
+      "greater"
+    ],
+    "semantic": {
+      "meaning": "Male emperor penguins face an even greater challenge.",
+      "subject": "male emperor penguin",
+      "action": "standing",
+      "object": "",
+      "location": "antarctic ice",
+      "time": "day",
+      "entities": [
+        "emperor penguin"
+      ]
+    },
+    "visual_requirements": [
+      "single male penguin",
+      "frozen landscape"
+    ],
+    "visual_exclusions": [
+      "crowded colony",
+      "summer"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 29,
+    "sentence_to": 29,
+    "start": 127.058333,
+    "end": 131.169458,
+    "duration": 4.111124999999987,
+    "index": 21,
+    "segment_id": "segment_021"
+  },
+  {
+    "text": "After the female lays a single egg the male protects it by balancing it on his feet beneath a warm fold of skin.",
+    "word_from": 291,
+    "word_to": 313,
+    "query": "penguin balancing egg on feet",
+    "queries": [
+      "penguin balancing egg on feet",
+      "male penguin protecting egg"
+    ],
+    "keywords": [
+      "balancing",
+      "protects",
+      "beneath",
+      "female",
+      "single"
+    ],
+    "semantic": {
+      "meaning": "After the female lays an egg, the male protects it on his feet under a skin fold.",
+      "subject": "male emperor penguin",
+      "action": "balancing egg",
+      "object": "egg on feet",
+      "location": "antarctic ice",
+      "time": "day",
+      "entities": [
+        "emperor penguin",
+        "egg"
+      ]
+    },
+    "visual_requirements": [
+      "penguin balancing egg",
+      "feet and brood pouch"
+    ],
+    "visual_exclusions": [
+      "flying birds",
+      "water"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 30,
+    "sentence_to": 30,
+    "start": 131.894458,
+    "end": 138.949999,
+    "duration": 7.055541000000005,
+    "index": 22,
+    "segment_id": "segment_022"
+  },
+  {
+    "text": "For weeks he may survive with almost no food while protecting the developing chick from the ice beneath him.",
+    "word_from": 314,
+    "word_to": 332,
+    "query": "male penguin protecting chick ice",
+    "queries": [
+      "male penguin protecting chick ice",
+      "penguin enduring winter cold"
+    ],
+    "keywords": [
+      "protecting",
+      "developing",
+      "survive",
+      "beneath",
+      "weeks"
+    ],
+    "semantic": {
+      "meaning": "He survives weeks without food while protecting the chick from the ice.",
+      "subject": "male emperor penguin",
+      "action": "standing",
+      "object": "egg",
+      "location": "antarctic ice",
+      "time": "day",
+      "entities": [
+        "emperor penguin"
+      ]
+    },
+    "visual_requirements": [
+      "standing penguin",
+      "snowy ground"
+    ],
+    "visual_exclusions": [
+      "summer",
+      "grass"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 31,
+    "sentence_to": 31,
+    "start": 139.675,
+    "end": 146.244458,
+    "duration": 6.569457999999997,
+    "index": 23,
+    "segment_id": "segment_023"
+  },
+  {
+    "text": "One mistake could expose the egg to the cold and end its chance of survival.",
+    "word_from": 333,
+    "word_to": 347,
+    "query": "penguin egg on ice danger",
+    "queries": [
+      "penguin egg on ice danger",
+      "close up penguin feet egg"
+    ],
+    "keywords": [
+      "survival",
+      "mistake",
+      "expose",
+      "chance",
+      "cold"
+    ],
+    "semantic": {
+      "meaning": "A single mistake could expose the egg to cold and ruin its survival.",
+      "subject": "emperor penguin",
+      "action": "protecting",
+      "object": "egg",
+      "location": "ice",
+      "time": "day",
+      "entities": [
+        "emperor penguin",
+        "egg"
+      ]
+    },
+    "visual_requirements": [
+      "close up penguin feet",
+      "egg on ice"
+    ],
+    "visual_exclusions": [
+      "swimming penguins",
+      "crowd"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 32,
+    "sentence_to": 32,
+    "start": 146.983333,
+    "end": 151.344458,
+    "duration": 4.3611250000000155,
+    "index": 24,
+    "segment_id": "segment_024"
+  },
+  {
+    "text": "Penguins are not the only animals living in this frozen world.",
+    "word_from": 348,
+    "word_to": 358,
+    "query": "antarctic frozen landscape",
+    "queries": [
+      "antarctic frozen landscape",
+      "ice and snow wilderness"
+    ],
+    "keywords": [
+      "penguins",
+      "animals",
+      "living",
+      "frozen",
+      "world"
+    ],
+    "semantic": {
+      "meaning": "Penguins are not the only animals in this frozen world.",
+      "subject": "antarctic wildlife",
+      "action": "existing",
+      "object": "",
+      "location": "antarctic landscape",
+      "time": "day",
+      "entities": [
+        "antarctic landscape"
+      ]
+    },
+    "visual_requirements": [
+      "frozen antarctic landscape",
+      "snow and ice"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "forest"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 33,
+    "sentence_to": 33,
+    "start": 152.069458,
+    "end": 155.541666,
+    "duration": 3.472207999999995,
+    "index": 25,
+    "segment_id": "segment_025"
+  },
+  {
+    "text": "Along Antarctica's coastline seals rest on floating ice.",
+    "word_from": 359,
+    "word_to": 366,
+    "query": "seals resting floating ice",
+    "queries": [
+      "seals resting floating ice",
+      "antarctic seals on ice floe"
+    ],
+    "keywords": [
+      "antarctica",
+      "coastline",
+      "floating",
+      "along",
+      "seals"
+    ],
+    "semantic": {
+      "meaning": "Seals rest on floating ice along the coastline of Antarctica.",
+      "subject": "seals",
+      "action": "resting",
+      "object": "floating ice",
+      "location": "antarctic coastline",
+      "time": "day",
+      "entities": [
+        "seals",
+        "ice floe"
+      ]
+    },
+    "visual_requirements": [
+      "seals on ice floe",
+      "ocean water"
+    ],
+    "visual_exclusions": [
+      "penguins",
+      "sand beach"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 34,
+    "sentence_to": 34,
+    "start": 156.280541,
+    "end": 160.377749,
+    "duration": 4.097207999999995,
+    "index": 26,
+    "segment_id": "segment_026"
+  },
+  {
+    "text": "Weddell seals can dive deep beneath the frozen surface in search of fish and squid.",
+    "word_from": 367,
+    "word_to": 381,
+    "query": "Weddell seal diving underwater",
+    "queries": [
+      "Weddell seal diving underwater",
+      "seal swimming under ice"
+    ],
+    "keywords": [
+      "weddell",
+      "beneath",
+      "surface",
+      "frozen",
+      "search"
+    ],
+    "semantic": {
+      "meaning": "Weddell seals dive deep beneath the frozen surface for fish and squid.",
+      "subject": "Weddell seal",
+      "action": "diving",
+      "object": "underwater",
+      "location": "under ice",
+      "time": "underwater",
+      "entities": [
+        "Weddell seal"
+      ]
+    },
+    "visual_requirements": [
+      "seal swimming underwater",
+      "ice surface from below"
+    ],
+    "visual_exclusions": [
+      "land",
+      "beach"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 35,
+    "sentence_to": 35,
+    "start": 161.102791,
+    "end": 166.061082,
+    "duration": 4.958291000000003,
+    "index": 27,
+    "segment_id": "segment_027"
+  },
+  {
+    "text": "Leopard seals are powerful hunters and are among the most dangerous predators around Antarctic waters.",
+    "word_from": 382,
+    "word_to": 396,
+    "query": "leopard seal swimming predator",
+    "queries": [
+      "leopard seal swimming predator",
+      "dangerous leopard seal antarctica"
+    ],
+    "keywords": [
+      "dangerous",
+      "predators",
+      "antarctic",
+      "powerful",
+      "leopard"
+    ],
+    "semantic": {
+      "meaning": "Leopard seals are powerful and dangerous predators in Antarctic waters.",
+      "subject": "leopard seal",
+      "action": "swimming",
+      "object": "",
+      "location": "Antarctic waters",
+      "time": "day",
+      "entities": [
+        "leopard seal"
+      ]
+    },
+    "visual_requirements": [
+      "leopard seal in water",
+      "sharp teeth visible"
+    ],
+    "visual_exclusions": [
+      "fur seal",
+      "gentle animals"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 36,
+    "sentence_to": 36,
+    "start": 166.786125,
+    "end": 172.633332,
+    "duration": 5.847206999999997,
+    "index": 28,
+    "segment_id": "segment_028"
+  },
+  {
+    "text": "Farther offshore whales travel through the Southern Ocean.",
+    "word_from": 397,
+    "word_to": 404,
+    "query": "whales swimming ocean",
+    "queries": [
+      "whales swimming ocean",
+      "Southern Ocean whales",
+      "ocean surface whales"
+    ],
+    "keywords": [
+      "offshore",
+      "southern",
+      "farther",
+      "whales",
+      "travel"
+    ],
+    "semantic": {
+      "meaning": "Whales travel through the Southern Ocean farther offshore.",
+      "subject": "whales",
+      "action": "traveling",
+      "object": "Southern Ocean",
+      "location": "Southern Ocean offshore",
+      "time": "",
+      "entities": [
+        "Southern Ocean"
+      ]
+    },
+    "visual_requirements": [
+      "whales",
+      "ocean water",
+      "waves"
+    ],
+    "visual_exclusions": [
+      "coastal land",
+      "city buildings"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 37,
+    "sentence_to": 37,
+    "start": 173.358333,
+    "end": 176.774999,
+    "duration": 3.4166660000000206,
+    "index": 29,
+    "segment_id": "segment_029"
+  },
+  {
+    "text": "Humpback whales orcas and other species depend on the rich marine ecosystem surrounding the continent.",
+    "word_from": 405,
+    "word_to": 419,
+    "query": "humpback whale pod ocean",
+    "queries": [
+      "humpback whale pod ocean",
+      "orcas swimming sea",
+      "marine life Antarctica"
+    ],
+    "keywords": [
+      "surrounding",
+      "ecosystem",
+      "continent",
+      "humpback",
+      "species"
+    ],
+    "semantic": {
+      "meaning": "Humpback whales, orcas, and other species depend on the rich marine ecosystem surrounding the continent.",
+      "subject": "humpback whales and orcas",
+      "action": "swimming",
+      "object": "marine ecosystem",
+      "location": "Antarctic surrounding waters",
+      "time": "",
+      "entities": [
+        "Antarctic"
+      ]
+    },
+    "visual_requirements": [
+      "humpback whales",
+      "orcas",
+      "ocean water"
+    ],
+    "visual_exclusions": [
+      "shores without water",
+      "dry land"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 38,
+    "sentence_to": 38,
+    "start": 177.5,
+    "end": 184.374999,
+    "duration": 6.8749990000000025,
+    "index": 30,
+    "segment_id": "segment_030"
+  },
+  {
+    "text": "And strangely much of this enormous food web depends on something incredibly small. Krill.",
+    "word_from": 420,
+    "word_to": 433,
+    "query": "krill swarm underwater",
+    "queries": [
+      "krill swarm underwater",
+      "tiny krill ocean",
+      "antarctic krill macro"
+    ],
+    "keywords": [
+      "incredibly",
+      "strangely",
+      "enormous",
+      "depends",
+      "small"
+    ],
+    "semantic": {
+      "meaning": "And strangely much of this enormous food web depends on something incredibly small, krill.",
+      "subject": "krill",
+      "action": "swimming",
+      "object": "food web",
+      "location": "ocean",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "tiny krill",
+      "underwater view",
+      "swarm of krill"
+    ],
+    "visual_exclusions": [
+      "large fish",
+      "whales"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 39,
+    "sentence_to": 40,
+    "start": 185.1,
+    "end": 191.616666,
+    "duration": 6.516666000000015,
+    "index": 31,
+    "segment_id": "segment_031"
+  },
+  {
+    "text": "These tiny shrimp-like animals gather in huge numbers beneath the ocean surface.",
+    "word_from": 434,
+    "word_to": 445,
+    "query": "krill swarming underwater",
+    "queries": [
+      "krill swarming underwater",
+      "massive krill swarm",
+      "tiny crustaceans swimming"
+    ],
+    "keywords": [
+      "animals",
+      "numbers",
+      "beneath",
+      "surface",
+      "shrimp"
+    ],
+    "semantic": {
+      "meaning": "These tiny shrimp-like animals gather in huge numbers beneath the ocean surface.",
+      "subject": "tiny shrimp-like animals krill",
+      "action": "gathering",
+      "object": "huge numbers",
+      "location": "beneath ocean surface",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "shrimp-like krill",
+      "swarming underwater",
+      "ocean depths"
+    ],
+    "visual_exclusions": [
+      "birds",
+      "land animals"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 41,
+    "sentence_to": 41,
+    "start": 192.327791,
+    "end": 197.14725,
+    "duration": 4.819459000000023,
+    "index": 32,
+    "segment_id": "segment_032"
+  },
+  {
+    "text": "Penguins eat them. Seals eat them. Fish eat them.",
+    "word_from": 446,
+    "word_to": 454,
+    "query": "penguin hunting underwater",
+    "queries": [
+      "penguin hunting underwater",
+      "seal eating krill",
+      "fish swimming ocean"
+    ],
+    "keywords": [
+      "penguins",
+      "seals",
+      "fish"
+    ],
+    "semantic": {
+      "meaning": "Penguins eat them, seals eat them, fish eat them.",
+      "subject": "penguins seals and fish",
+      "action": "feeding",
+      "object": "krill",
+      "location": "Antarctic ocean",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "penguins underwater",
+      "seals hunting",
+      "fish swimming"
+    ],
+    "visual_exclusions": [
+      "deserts",
+      "forests"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 42,
+    "sentence_to": 44,
+    "start": 197.886125,
+    "end": 202.113916,
+    "duration": 4.227790999999996,
+    "index": 33,
+    "segment_id": "segment_033"
+  },
+  {
+    "text": "And some of the largest animals that have ever existed including whales depend heavily on them.",
+    "word_from": 455,
+    "word_to": 470,
+    "query": "whale feeding krill",
+    "queries": [
+      "whale feeding krill",
+      "blue whale ocean",
+      "giant whale underwater"
+    ],
+    "keywords": [
+      "including",
+      "largest",
+      "animals",
+      "existed",
+      "heavily"
+    ],
+    "semantic": {
+      "meaning": "And some of the largest animals that have ever existed including whales depend heavily on them.",
+      "subject": "whales",
+      "action": "feeding",
+      "object": "krill",
+      "location": "ocean",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "large whale",
+      "ocean surface",
+      "whale feeding"
+    ],
+    "visual_exclusions": [
+      "small boats",
+      "fishing nets"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 45,
+    "sentence_to": 45,
+    "start": 202.838875,
+    "end": 208.880582,
+    "duration": 6.041707000000002,
+    "index": 34,
+    "segment_id": "segment_034"
+  },
+  {
+    "text": "In Antarctica even the smallest creature can support an entire ecosystem. But humans live here too.",
+    "word_from": 471,
+    "word_to": 486,
+    "query": "Antarctic ecosystem wildlife",
+    "queries": [
+      "Antarctic ecosystem wildlife",
+      "Antarctica ocean life",
+      "researchers in Antarctica"
+    ],
+    "keywords": [
+      "antarctica",
+      "ecosystem",
+      "smallest",
+      "creature",
+      "support"
+    ],
+    "semantic": {
+      "meaning": "In Antarctica even the smallest creature can support an entire ecosystem.",
+      "subject": "small creature krill",
+      "action": "supporting ecosystem",
+      "object": "ecosystem",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "Antarctic landscape",
+      "ocean",
+      "wildlife",
+      "humans in Antarctica",
+      "snow landscape",
+      "expedition gear"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "urban city",
+      "green grass",
+      "crowded cities"
+    ],
+    "shots": [
+      {
+        "word_from": 471,
+        "word_to": 481,
+        "text": "In Antarctica even the smallest creature can support an entire ecosystem.",
+        "query": "Antarctic ecosystem wildlife",
+        "subject": "small creature krill",
+        "action": "supporting ecosystem",
+        "start": 209.605541,
+        "end": 214.286124,
+        "duration": 4.680583000000013,
+        "shot_id": "scene_035_shot_1"
+      },
+      {
+        "word_from": 482,
+        "word_to": 486,
+        "text": "But humans live here too.",
+        "query": "researchers in Antarctica",
+        "subject": "humans",
+        "action": "living",
+        "start": 215.011125,
+        "end": 216.469457,
+        "duration": 1.4583320000000128,
+        "shot_id": "scene_035_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 46,
+    "sentence_to": 47,
+    "start": 209.605541,
+    "end": 216.469457,
+    "duration": 6.8639160000000174,
+    "index": 35,
+    "segment_id": "segment_035"
+  },
+  {
+    "text": "Not permanently in normal cities but inside research stations operated by countries from around the world.",
+    "word_from": 487,
+    "word_to": 502,
+    "query": "Antarctic research station",
+    "queries": [
+      "Antarctic research station",
+      "scientific base Antarctica",
+      "polar research facility"
+    ],
+    "keywords": [
+      "permanently",
+      "countries",
+      "research",
+      "stations",
+      "operated"
+    ],
+    "semantic": {
+      "meaning": "Not permanently in normal cities but inside research stations operated by countries from around the world.",
+      "subject": "research stations",
+      "action": "operating",
+      "object": "Antarctic research station",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "Antarctic research station",
+      "buildings on snow",
+      "scientific base"
+    ],
+    "visual_exclusions": [
+      "skyscrapers",
+      "suburban houses"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 48,
+    "sentence_to": 48,
+    "start": 217.194458,
+    "end": 223.638874,
+    "duration": 6.44441599999999,
+    "index": 36,
+    "segment_id": "segment_036"
+  },
+  {
+    "text": "Scientists travel to Antarctica to study the atmosphere glaciers wildlife geology climate and even space.",
+    "word_from": 503,
+    "word_to": 517,
+    "query": "scientists in Antarctica fieldwork",
+    "queries": [
+      "scientists in Antarctica fieldwork",
+      "researchers working in Antarctica",
+      "Antarctic scientific expedition"
+    ],
+    "keywords": [
+      "scientists",
+      "antarctica",
+      "atmosphere",
+      "glaciers",
+      "wildlife"
+    ],
+    "semantic": {
+      "meaning": "Scientists travel to Antarctica to study various scientific fields including the atmosphere, glaciers, wildlife, geology, climate, and space.",
+      "subject": "Scientists",
+      "action": "traveling",
+      "object": "equipment",
+      "location": "Antarctica",
+      "time": "daytime",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "scientists",
+      "antarctic landscape",
+      "research equipment"
+    ],
+    "visual_exclusions": [
+      "crowded cities",
+      "tropical locations"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 49,
+    "sentence_to": 49,
+    "start": 224.363875,
+    "end": 232.988916,
+    "duration": 8.625040999999982,
+    "index": 37,
+    "segment_id": "segment_037"
+  },
+  {
+    "text": "Some research stations operate throughout the year.",
+    "word_from": 518,
+    "word_to": 524,
+    "query": "antarctic research station exterior",
+    "queries": [
+      "antarctic research station exterior",
+      "remote polar station building",
+      "scientific base in snow"
+    ],
+    "keywords": [
+      "throughout",
+      "research",
+      "stations",
+      "operate",
+      "year"
+    ],
+    "semantic": {
+      "meaning": "Some research stations remain operational throughout the entire year.",
+      "subject": "Research stations",
+      "action": "operating",
+      "object": "buildings",
+      "location": "Antarctica",
+      "time": "year-round",
+      "entities": []
+    },
+    "visual_requirements": [
+      "antarctic research station",
+      "snow",
+      "buildings"
+    ],
+    "visual_exclusions": [
+      "summer flowers",
+      "green grass"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 50,
+    "sentence_to": 50,
+    "start": 233.713875,
+    "end": 236.422207,
+    "duration": 2.7083319999999844,
+    "index": 38,
+    "segment_id": "segment_038"
+  },
+  {
+    "text": "During summer thousands of researchers and support workers can be present across the continent.",
+    "word_from": 525,
+    "word_to": 538,
+    "query": "scientists working in Antarctica summer",
+    "queries": [
+      "scientists working in Antarctica summer",
+      "antarctic field camp researchers",
+      "people at polar research station"
+    ],
+    "keywords": [
+      "researchers",
+      "thousands",
+      "continent",
+      "support",
+      "workers"
+    ],
+    "semantic": {
+      "meaning": "During the summer season, thousands of researchers and support staff populate the continent.",
+      "subject": "Researchers",
+      "action": "working",
+      "object": "supplies",
+      "location": "Antarctica",
+      "time": "summer",
+      "entities": []
+    },
+    "visual_requirements": [
+      "group of scientists",
+      "antarctic summer",
+      "outdoor research"
+    ],
+    "visual_exclusions": [
+      "darkness",
+      "blizzard"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 51,
+    "sentence_to": 51,
+    "start": 237.147208,
+    "end": 242.688916,
+    "duration": 5.541708,
+    "index": 39,
+    "segment_id": "segment_039"
+  },
+  {
+    "text": "But when winter arrives the population falls dramatically.",
+    "word_from": 539,
+    "word_to": 546,
+    "query": "antarctic station in winter",
+    "queries": [
+      "antarctic station in winter",
+      "dark winter in Antarctica",
+      "abandoned polar station snow"
+    ],
+    "keywords": [
+      "dramatically",
+      "population",
+      "arrives",
+      "winter",
+      "falls"
+    ],
+    "semantic": {
+      "meaning": "When winter arrives, the human population on the continent drops drastically.",
+      "subject": "Population",
+      "action": "decreasing",
+      "object": "people",
+      "location": "Antarctica",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "empty antarctic station",
+      "dark winter polar sky",
+      "snow landscape"
+    ],
+    "visual_exclusions": [
+      "crowds of people"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 52,
+    "sentence_to": 52,
+    "start": 243.413875,
+    "end": 247.080541,
+    "duration": 3.6666660000000206,
+    "index": 40,
+    "segment_id": "segment_040"
+  },
+  {
+    "text": "For those who remain life can become incredibly isolated.",
+    "word_from": 547,
+    "word_to": 555,
+    "query": "isolated person looking out window winter",
+    "queries": [
+      "isolated person looking out window winter",
+      "lonely researcher antarctica inside",
+      "person inside polar station looking out"
+    ],
+    "keywords": [
+      "incredibly",
+      "isolated",
+      "remain",
+      "become",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "For the few people who stay behind, life becomes extremely isolated.",
+      "subject": "Individual",
+      "action": "looking",
+      "object": "window",
+      "location": "antarctic base interior",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person looking out window",
+      "isolation",
+      "snow outside"
+    ],
+    "visual_exclusions": [
+      "crowded rooms",
+      "happy groups"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 53,
+    "sentence_to": 53,
+    "start": 247.805541,
+    "end": 251.597208,
+    "duration": 3.7916669999999897,
+    "index": 41,
+    "segment_id": "segment_041"
+  },
+  {
+    "text": "Imagine spending months surrounded by ice.",
+    "word_from": 556,
+    "word_to": 561,
+    "query": "vast antarctic ice sheet aerial",
+    "queries": [
+      "vast antarctic ice sheet aerial",
+      "endless ice and snow landscape",
+      "polar desert aerial view"
+    ],
+    "keywords": [
+      "surrounded",
+      "spending",
+      "imagine",
+      "months"
+    ],
+    "semantic": {
+      "meaning": "Imagine spending many months completely surrounded by vast fields of ice.",
+      "subject": "Landscape",
+      "action": "stretching",
+      "object": "ice sheet",
+      "location": "Antarctica",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "vast ice sheet",
+      "endless snow",
+      "polar desert"
+    ],
+    "visual_exclusions": [
+      "cities",
+      "trees"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 54,
+    "sentence_to": 54,
+    "start": 252.322208,
+    "end": 255.086124,
+    "duration": 2.763916000000023,
+    "index": 42,
+    "segment_id": "segment_042"
+  },
+  {
+    "text": "Outside temperatures can become dangerous.",
+    "word_from": 562,
+    "word_to": 566,
+    "query": "extreme cold weather frost",
+    "queries": [
+      "extreme cold weather frost",
+      "freezing temperatures ice crystals",
+      "harsh winter cold frost on glass"
+    ],
+    "keywords": [
+      "temperatures",
+      "dangerous",
+      "outside",
+      "become"
+    ],
+    "semantic": {
+      "meaning": "Temperatures outside drop to levels that can pose serious dangers.",
+      "subject": "Thermometer",
+      "action": "showing",
+      "object": "extreme temperature",
+      "location": "Antarctica",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frost on window",
+      "extreme cold visualization",
+      "subzero weather"
+    ],
+    "visual_exclusions": [
+      "warm weather",
+      "sunshine"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 55,
+    "sentence_to": 55,
+    "start": 255.811125,
+    "end": 258.394458,
+    "duration": 2.583332999999982,
+    "index": 43,
+    "segment_id": "segment_043"
+  },
+  {
+    "text": "Flights may become impossible for long periods. Fresh food becomes limited.",
+    "word_from": 567,
+    "word_to": 577,
+    "query": "antarctic blizzard whiteout",
+    "queries": [
+      "antarctic blizzard whiteout",
+      "severe snowstorm polar winds",
+      "emergency rations canned food"
+    ],
+    "keywords": [
+      "impossible",
+      "flights",
+      "periods",
+      "become"
+    ],
+    "semantic": {
+      "meaning": "Severe weather can make airplane flights impossible for extended periods.",
+      "subject": "Blizzard",
+      "action": "blowing",
+      "object": "snow",
+      "location": "Antarctica",
+      "time": "blizzard",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snowstorm",
+      "zero visibility",
+      "strong wind",
+      "canned food",
+      "storage shelves",
+      "rations"
+    ],
+    "visual_exclusions": [
+      "clear blue sky",
+      "calm weather",
+      "fresh vegetables",
+      "supermarket aisle"
+    ],
+    "shots": [
+      {
+        "word_from": 567,
+        "word_to": 573,
+        "text": "Flights may become impossible for long periods.",
+        "query": "antarctic blizzard whiteout",
+        "subject": "Blizzard",
+        "action": "blowing",
+        "start": 259.119458,
+        "end": 262.202791,
+        "duration": 3.083332999999982,
+        "shot_id": "scene_044_shot_1"
+      },
+      {
+        "word_from": 574,
+        "word_to": 577,
+        "text": "Fresh food becomes limited.",
+        "query": "emergency rations canned food",
+        "subject": "Food",
+        "action": "sitting",
+        "start": 262.927791,
+        "end": 264.775,
+        "duration": 1.847208999999964,
+        "shot_id": "scene_044_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 56,
+    "sentence_to": 57,
+    "start": 259.119458,
+    "end": 264.775,
+    "duration": 5.6555419999999685,
+    "index": 44,
+    "segment_id": "segment_044"
+  },
+  {
+    "text": "And communication with family happens from one of the most remote places on the planet.",
+    "word_from": 578,
+    "word_to": 592,
+    "query": "person video calling on laptop indoors",
+    "queries": [
+      "person video calling on laptop indoors",
+      "researcher using satellite phone antarctica",
+      "communicating from remote base"
+    ],
+    "keywords": [
+      "communication",
+      "happens",
+      "family",
+      "remote",
+      "places"
+    ],
+    "semantic": {
+      "meaning": "Communication with family back home happens from one of the most remote places on Earth.",
+      "subject": "Researcher",
+      "action": "using",
+      "object": "computer or satellite phone",
+      "location": "antarctic base",
+      "time": "indoor",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person using laptop",
+      "satellite communication",
+      "indoor shelter"
+    ],
+    "visual_exclusions": [
+      "outdoor crowds"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 58,
+    "sentence_to": 58,
+    "start": 265.5,
+    "end": 270.374999,
+    "duration": 4.8749990000000025,
+    "index": 45,
+    "segment_id": "segment_045"
+  },
+  {
+    "text": "Every journey outside requires preparation. Heavy insulated clothing. Protective goggles. Special boots. Gloves. And strict safety procedures.",
+    "word_from": 593,
+    "word_to": 609,
+    "query": "researcher gearing up for cold weather",
+    "queries": [
+      "researcher gearing up for cold weather",
+      "putting on extreme cold weather gear",
+      "strict safety procedures sign"
+    ],
+    "keywords": [
+      "preparation",
+      "requires",
+      "journey",
+      "outside"
+    ],
+    "semantic": {
+      "meaning": "Every single journey stepping outside requires careful preparation and gear.",
+      "subject": "Researcher",
+      "action": "preparing",
+      "object": "gear",
+      "location": "antarctic station locker room",
+      "time": "indoor",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person putting on gear",
+      "locker room",
+      "polar clothing",
+      "heavy parka",
+      "insulated hood",
+      "extreme cold clothing",
+      "protective goggles",
+      "snow gear"
+    ],
+    "visual_exclusions": [
+      "casual clothes",
+      "t-shirts",
+      "light jackets",
+      "summer clothing",
+      "indoors",
+      "sneakers",
+      "dress shoes",
+      "bare hands"
+    ],
+    "shots": [
+      {
+        "word_from": 593,
+        "word_to": 597,
+        "text": "Every journey outside requires preparation.",
+        "query": "researcher gearing up for cold weather",
+        "subject": "Researcher",
+        "action": "preparing",
+        "start": 271.1,
+        "end": 273.794458,
+        "duration": 2.6944579999999974,
+        "shot_id": "scene_046_shot_1"
+      },
+      {
+        "word_from": 598,
+        "word_to": 600,
+        "text": "Heavy insulated clothing.",
+        "query": "person in heavy arctic parka",
+        "subject": "Researcher",
+        "action": "wearing",
+        "start": 274.519458,
+        "end": 276.019457,
+        "duration": 1.4999990000000025,
+        "shot_id": "scene_046_shot_2"
+      },
+      {
+        "word_from": 601,
+        "word_to": 602,
+        "text": "Protective goggles.",
+        "query": "protective goggles extreme cold",
+        "subject": "protective goggles",
+        "action": "",
+        "start": 276.758333,
+        "end": 278.022249,
+        "duration": 1.2639159999999947,
+        "shot_id": "scene_046_shot_3"
+      },
+      {
+        "word_from": 603,
+        "word_to": 604,
+        "text": "Special boots.",
+        "query": "heavy insulated boots",
+        "subject": "special boots",
+        "action": "",
+        "start": 278.74725,
+        "end": 279.844457,
+        "duration": 1.097206999999969,
+        "shot_id": "scene_046_shot_4"
+      },
+      {
+        "word_from": 605,
+        "word_to": 605,
+        "text": "Gloves.",
+        "query": "winter gloves extreme cold",
+        "subject": "gloves",
+        "action": "",
+        "start": 280.569458,
+        "end": 281.194458,
+        "duration": 0.625,
+        "shot_id": "scene_046_shot_5"
+      },
+      {
+        "word_from": 606,
+        "word_to": 609,
+        "text": "And strict safety procedures.",
+        "query": "strict safety procedures sign",
+        "subject": "safety procedures",
+        "action": "",
+        "start": 281.919458,
+        "end": 283.752791,
+        "duration": 1.833332999999982,
+        "shot_id": "scene_046_shot_6"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 59,
+    "sentence_to": 64,
+    "start": 271.1,
+    "end": 283.752791,
+    "duration": 12.65279099999998,
+    "index": 46,
+    "segment_id": "segment_046"
+  },
+  {
+    "text": "Because in Antarctica bad weather can arrive quickly.",
+    "word_from": 610,
+    "word_to": 617,
+    "query": "antarctic storm rolling in",
+    "queries": [
+      "antarctic storm rolling in",
+      "blizzard approaching fast"
+    ],
+    "keywords": [
+      "antarctica",
+      "weather",
+      "quickly",
+      "arrive"
+    ],
+    "semantic": {
+      "meaning": "Bad weather arriving quickly in Antarctica over a snowy landscape",
+      "subject": "bad weather",
+      "action": "arriving quickly",
+      "object": "storm",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snowstorm",
+      "blizzard",
+      "windy snow"
+    ],
+    "visual_exclusions": [
+      "sunny day",
+      "clear sky"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 65,
+    "sentence_to": 65,
+    "start": 284.477791,
+    "end": 287.797208,
+    "duration": 3.319416999999987,
+    "index": 47,
+    "segment_id": "segment_047"
+  },
+  {
+    "text": "A clear landscape can disappear inside blowing snow making it difficult to see even a short distance ahead. Another challenge is darkness.",
+    "word_from": 618,
+    "word_to": 639,
+    "query": "antarctic whiteout blowing snow",
+    "queries": [
+      "antarctic whiteout blowing snow",
+      "poor visibility blizzard snowstorm",
+      "polar night darkness"
+    ],
+    "keywords": [
+      "landscape",
+      "disappear",
+      "difficult",
+      "distance",
+      "blowing"
+    ],
+    "semantic": {
+      "meaning": "A clear landscape disappearing into blowing snow making visibility poor",
+      "subject": "clear landscape",
+      "action": "disappearing inside blowing snow",
+      "object": "snow whiteout",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "whiteout",
+      "blowing snow",
+      "zero visibility",
+      "darkness",
+      "night sky"
+    ],
+    "visual_exclusions": [
+      "clear sunny weather",
+      "bright sun",
+      "daytime"
+    ],
+    "shots": [
+      {
+        "word_from": 618,
+        "word_to": 635,
+        "text": "A clear landscape can disappear inside blowing snow making it difficult to see even a short distance ahead.",
+        "query": "antarctic whiteout blowing snow",
+        "subject": "clear landscape",
+        "action": "disappearing inside blowing snow",
+        "start": 288.52225,
+        "end": 295.466707,
+        "duration": 6.944457,
+        "shot_id": "scene_048_shot_1"
+      },
+      {
+        "word_from": 636,
+        "word_to": 639,
+        "text": "Another challenge is darkness.",
+        "query": "polar night darkness",
+        "subject": "darkness",
+        "action": "",
+        "start": 296.191666,
+        "end": 298.094458,
+        "duration": 1.9027919999999767,
+        "shot_id": "scene_048_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 66,
+    "sentence_to": 67,
+    "start": 288.52225,
+    "end": 298.094458,
+    "duration": 9.57220799999999,
+    "index": 48,
+    "segment_id": "segment_048"
+  },
+  {
+    "text": "Near the South Pole the sun disappears for months during winter.",
+    "word_from": 640,
+    "word_to": 650,
+    "query": "sun below horizon polar night",
+    "queries": [
+      "sun below horizon polar night",
+      "antarctic winter twilight"
+    ],
+    "keywords": [
+      "disappears",
+      "months",
+      "during",
+      "winter",
+      "south"
+    ],
+    "semantic": {
+      "meaning": "The sun below the horizon during winter near the South Pole",
+      "subject": "sun",
+      "action": "disappears for months",
+      "object": "sun below horizon",
+      "location": "South Pole",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "dim horizon",
+      "polar winter sky"
+    ],
+    "visual_exclusions": [
+      "bright midday sun"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 68,
+    "sentence_to": 68,
+    "start": 299.193541,
+    "end": 303.137999,
+    "duration": 3.9444579999999974,
+    "index": 49,
+    "segment_id": "segment_049"
+  },
+  {
+    "text": "Scientists living there can experience a long polar night.",
+    "word_from": 651,
+    "word_to": 659,
+    "query": "scientists in polar station night",
+    "queries": [
+      "scientists in polar station night",
+      "antarctic base night window"
+    ],
+    "keywords": [
+      "scientists",
+      "experience",
+      "living",
+      "polar",
+      "night"
+    ],
+    "semantic": {
+      "meaning": "Scientists living in a base during the long polar night",
+      "subject": "scientists",
+      "action": "living there",
+      "object": "research base during polar night",
+      "location": "Antarctica",
+      "time": "polar night",
+      "entities": []
+    },
+    "visual_requirements": [
+      "scientists",
+      "research station window",
+      "dark outside"
+    ],
+    "visual_exclusions": [
+      "summer daylight"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 69,
+    "sentence_to": 69,
+    "start": 303.868541,
+    "end": 307.451916,
+    "duration": 3.5833749999999895,
+    "index": 50,
+    "segment_id": "segment_050"
+  },
+  {
+    "text": "The human body naturally depends on daylight to regulate sleep and energy.",
+    "word_from": 660,
+    "word_to": 671,
+    "query": "human sleep circadian rhythm sunlight",
+    "queries": [
+      "human sleep circadian rhythm sunlight",
+      "waking up to morning light"
+    ],
+    "keywords": [
+      "naturally",
+      "daylight",
+      "regulate",
+      "depends",
+      "energy"
+    ],
+    "semantic": {
+      "meaning": "The human body depending on daylight to regulate sleep and energy",
+      "subject": "human body",
+      "action": "depending on daylight",
+      "object": "circadian rhythm",
+      "location": "",
+      "time": "daylight",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person sleeping or waking up",
+      "sunlight through window"
+    ],
+    "visual_exclusions": [
+      "pitch black room"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 70,
+    "sentence_to": 70,
+    "start": 308.176875,
+    "end": 312.690791,
+    "duration": 4.513915999999995,
+    "index": 51,
+    "segment_id": "segment_051"
+  },
+  {
+    "text": "Without normal sunrise and sunset daily routines become extremely important.",
+    "word_from": 672,
+    "word_to": 681,
+    "query": "station schedule board clock",
+    "queries": [
+      "station schedule board clock",
+      "daily routine time management"
+    ],
+    "keywords": [
+      "extremely",
+      "important",
+      "routines",
+      "sunrise",
+      "normal"
+    ],
+    "semantic": {
+      "meaning": "Daily routines becoming extremely important without normal sunrise and sunset",
+      "subject": "daily routines",
+      "action": "becoming extremely important",
+      "object": "schedule clock routine",
+      "location": "research station",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "clock on wall",
+      "schedule on board"
+    ],
+    "visual_exclusions": [
+      "vacation relaxation"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 71,
+    "sentence_to": 71,
+    "start": 313.415791,
+    "end": 318.651916,
+    "duration": 5.2361250000000155,
+    "index": 52,
+    "segment_id": "segment_052"
+  },
+  {
+    "text": "People work exercise eat together watch films conduct experiments and create their own routines to stay physically and mentally active.",
+    "word_from": 682,
+    "word_to": 701,
+    "query": "scientists exercising eating together indoor station",
+    "queries": [
+      "scientists exercising eating together indoor station",
+      "antarctic base indoor life activities"
+    ],
+    "keywords": [
+      "experiments",
+      "physically",
+      "exercise",
+      "routines",
+      "mentally"
+    ],
+    "semantic": {
+      "meaning": "People working, exercising, eating together, watching films, and conducting experiments to stay active",
+      "subject": "people",
+      "action": "working exercise eating together watch films conduct experiments and create routines",
+      "object": "group activities",
+      "location": "antarctic research station interior",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "scientists indoors",
+      "group activities",
+      "research station interior"
+    ],
+    "visual_exclusions": [
+      "outdoor blizzard",
+      "solitude"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 72,
+    "sentence_to": 72,
+    "start": 319.376875,
+    "end": 328.710249,
+    "duration": 9.333373999999992,
+    "index": 53,
+    "segment_id": "segment_053"
+  },
+  {
+    "text": "Then after months of darkness sunlight finally returns.",
+    "word_from": 702,
+    "word_to": 709,
+    "query": "polar sunrise Antarctica",
+    "queries": [
+      "polar sunrise Antarctica",
+      "sunlight returning to ice",
+      "arctic sun rising over snow"
+    ],
+    "keywords": [
+      "darkness",
+      "sunlight",
+      "returns",
+      "months"
+    ],
+    "semantic": {
+      "meaning": "Sunlight finally returns to Antarctica after months of polar darkness.",
+      "subject": "sunlight",
+      "action": "returning",
+      "object": "sunlight",
+      "location": "Antarctica",
+      "time": "day",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "sunrise over snowy landscape",
+      "bright sunlight on ice",
+      "polar horizon"
+    ],
+    "visual_exclusions": [
+      "nighttime",
+      "darkness"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 73,
+    "sentence_to": 73,
+    "start": 329.449125,
+    "end": 333.768541,
+    "duration": 4.3194160000000466,
+    "index": 54,
+    "segment_id": "segment_054"
+  },
+  {
+    "text": "For people who have spent an entire winter there seeing the sun again can be an unforgettable moment.",
+    "word_from": 710,
+    "word_to": 727,
+    "query": "people watching sunrise polar",
+    "queries": [
+      "people watching sunrise polar",
+      "happy researchers looking at sun",
+      "polar station residents outdoors"
+    ],
+    "keywords": [
+      "unforgettable",
+      "people",
+      "entire",
+      "winter",
+      "seeing"
+    ],
+    "semantic": {
+      "meaning": "People who spent the long winter outdoors or indoors watch the sun return with strong emotion.",
+      "subject": "people",
+      "action": "watching",
+      "object": "sun",
+      "location": "polar station",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people looking at sun",
+      "happy expressions",
+      "polar station exterior"
+    ],
+    "visual_exclusions": [
+      "sunset",
+      "darkness"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 74,
+    "sentence_to": 74,
+    "start": 334.493541,
+    "end": 340.688,
+    "duration": 6.194458999999995,
+    "index": 55,
+    "segment_id": "segment_055"
+  },
+  {
+    "text": "And underneath the ice is another hidden world.",
+    "word_from": 728,
+    "word_to": 735,
+    "query": "underwater ice shelf Antarctica",
+    "queries": [
+      "underwater ice shelf Antarctica",
+      "subglacial aquatic world",
+      "beneath Antarctic ice underwater"
+    ],
+    "keywords": [
+      "underneath",
+      "hidden",
+      "world"
+    ],
+    "semantic": {
+      "meaning": "Beneath the surface of the ice sheet lies a hidden aquatic world.",
+      "subject": "underwater ecosystem",
+      "action": "hidden",
+      "object": "water beneath ice",
+      "location": "under ice",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "underwater view of ice shelf",
+      "subglacial aquatic environment",
+      "blue ice cave under water"
+    ],
+    "visual_exclusions": [
+      "above ground views",
+      "dry land"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 75,
+    "sentence_to": 75,
+    "start": 341.426875,
+    "end": 344.149083,
+    "duration": 2.7222080000000233,
+    "index": 56,
+    "segment_id": "segment_056"
+  },
+  {
+    "text": "Antarctica is surrounded by freezing ocean water filled with organisms adapted to extreme cold.",
+    "word_from": 736,
+    "word_to": 749,
+    "query": "Antarctic marine life cold water",
+    "queries": [
+      "Antarctic marine life cold water",
+      "polar ocean organisms swimming",
+      "icebergs freezing ocean water"
+    ],
+    "keywords": [
+      "antarctica",
+      "surrounded",
+      "organisms",
+      "freezing",
+      "adapted"
+    ],
+    "semantic": {
+      "meaning": "Freezing ocean water surrounding Antarctica teems with specialized organisms adapted to extreme cold.",
+      "subject": "ocean organisms",
+      "action": "swimming",
+      "object": "freezing water",
+      "location": "ocean around Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "polar ocean water",
+      "marine life in cold water",
+      "icebergs in freezing sea"
+    ],
+    "visual_exclusions": [
+      "warm water tropical fish"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 76,
+    "sentence_to": 76,
+    "start": 344.888,
+    "end": 350.804666,
+    "duration": 5.916666000000021,
+    "index": 57,
+    "segment_id": "segment_057"
+  },
+  {
+    "text": "Researchers continue to discover how life survives beneath ice shelves and in environments receiving little or no sunlight.",
+    "word_from": 750,
+    "word_to": 767,
+    "query": "scientists studying ice shelf",
+    "queries": [
+      "scientists studying ice shelf",
+      "Antarctic research diving cold",
+      "researchers sampling ice environment"
+    ],
+    "keywords": [
+      "environments",
+      "researchers",
+      "receiving",
+      "continue",
+      "discover"
+    ],
+    "semantic": {
+      "meaning": "Researchers continue studying how marine life survives beneath ice shelves with little sunlight.",
+      "subject": "researchers",
+      "action": "studying",
+      "object": "life beneath ice shelves",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "scientists working",
+      "ice shelf edge",
+      "polar research equipment"
+    ],
+    "visual_exclusions": [
+      "tropical setting"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 77,
+    "sentence_to": 77,
+    "start": 351.529666,
+    "end": 359.418583,
+    "duration": 7.888916999999992,
+    "index": 58,
+    "segment_id": "segment_058"
+  },
+  {
+    "text": "Some organisms survive in conditions once considered almost impossible for life.",
+    "word_from": 768,
+    "word_to": 778,
+    "query": "microscopic organisms extreme cold",
+    "queries": [
+      "microscopic organisms extreme cold",
+      "life in extreme conditions science",
+      "microbes under microscope ice"
+    ],
+    "keywords": [
+      "conditions",
+      "considered",
+      "impossible",
+      "organisms",
+      "survive"
+    ],
+    "semantic": {
+      "meaning": "Microscopic or specialized organisms survive in extreme conditions previously thought uninhabitable.",
+      "subject": "organisms",
+      "action": "surviving",
+      "object": "extreme conditions",
+      "location": "microscopic view",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "microscopic view of organisms",
+      "extreme cold environment life",
+      "tardigrade or bacteria under microscope"
+    ],
+    "visual_exclusions": [
+      "human cities"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 78,
+    "sentence_to": 78,
+    "start": 360.157458,
+    "end": 365.324125,
+    "duration": 5.166666999999961,
+    "index": 59,
+    "segment_id": "segment_059"
+  },
+  {
+    "text": "That is one reason Antarctica is so valuable to science.",
+    "word_from": 779,
+    "word_to": 788,
+    "query": "Antarctica scientific research value",
+    "queries": [
+      "Antarctica scientific research value",
+      "vast Antarctic landscape science",
+      "polar research stationwide view"
+    ],
+    "keywords": [
+      "antarctica",
+      "valuable",
+      "science",
+      "reason"
+    ],
+    "semantic": {
+      "meaning": "Antarctica holds immense value for scientific research.",
+      "subject": "Antarctica",
+      "action": "is valuable",
+      "object": "science",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "Antarctic landscape",
+      "scientific instruments",
+      "vast ice sheet"
+    ],
+    "visual_exclusions": [
+      "urban areas"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 79,
+    "sentence_to": 79,
+    "start": 366.063,
+    "end": 369.729666,
+    "duration": 3.6666660000000206,
+    "index": 60,
+    "segment_id": "segment_060"
+  },
+  {
+    "text": "By studying life here researchers can better understand the limits of survival on Earth.",
+    "word_from": 789,
+    "word_to": 802,
+    "query": "scientists working in laboratory",
+    "queries": [
+      "scientists working in laboratory",
+      "polar biology research lab",
+      "researchers analyzing samples microscope"
+    ],
+    "keywords": [
+      "researchers",
+      "understand",
+      "studying",
+      "survival",
+      "better"
+    ],
+    "semantic": {
+      "meaning": "Researchers study local life to understand the absolute limits of biological survival on Earth.",
+      "subject": "researchers",
+      "action": "studying",
+      "object": "limits of survival",
+      "location": "polar laboratory",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "scientists in laboratory",
+      "microscope work",
+      "polar research station interior"
+    ],
+    "visual_exclusions": [
+      "outdoor wildlife only"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 80,
+    "sentence_to": 80,
+    "start": 370.468541,
+    "end": 375.704666,
+    "duration": 5.236124999999959,
+    "index": 61,
+    "segment_id": "segment_061"
+  },
+  {
+    "text": "And perhaps even what life could look like in extreme environments beyond our planet. But Antarctica is also changing.",
+    "word_from": 803,
+    "word_to": 821,
+    "query": "scientist thinking space exploration",
+    "queries": [
+      "scientist thinking space exploration",
+      "astrobiology research concept",
+      "Antarctica landscape changing"
+    ],
+    "keywords": [
+      "environments",
+      "extreme",
+      "beyond",
+      "planet",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Scientists ponder what extraterrestrial life might resemble in extreme environments beyond Earth.",
+      "subject": "scientists",
+      "action": "pondering",
+      "object": "alien life in extreme environments",
+      "location": "laboratory",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "thoughtful scientist",
+      "cosmos graphic or laboratory setting",
+      "space exploration concept",
+      "melting glacier edge",
+      "cracking ice sheet",
+      "Antarctic landscape"
+    ],
+    "visual_exclusions": [
+      "pure wildlife",
+      "stable stable thick ice only"
+    ],
+    "shots": [
+      {
+        "word_from": 803,
+        "word_to": 816,
+        "text": "And perhaps even what life could look like in extreme environments beyond our planet.",
+        "query": "scientist thinking space exploration",
+        "subject": "scientists",
+        "action": "pondering",
+        "start": 376.429666,
+        "end": 381.179666,
+        "duration": 4.75,
+        "shot_id": "scene_062_shot_1"
+      },
+      {
+        "word_from": 817,
+        "word_to": 821,
+        "text": "But Antarctica is also changing.",
+        "query": "Antarctica landscape changing",
+        "subject": "Antarctica",
+        "action": "changing",
+        "start": 381.918541,
+        "end": 383.890791,
+        "duration": 1.972249999999974,
+        "shot_id": "scene_062_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 81,
+    "sentence_to": 82,
+    "start": 376.429666,
+    "end": 383.890791,
+    "duration": 7.461124999999981,
+    "index": 62,
+    "segment_id": "segment_062"
+  },
+  {
+    "text": "Scientists closely monitor its glaciers sea ice and enormous ice sheets because changes here can influence oceans and climate far beyond the continent itself.",
+    "word_from": 822,
+    "word_to": 845,
+    "query": "scientists monitoring glaciers Antarctica",
+    "queries": [
+      "scientists monitoring glaciers Antarctica",
+      "measuring sea ice thickness",
+      "glaciologist fieldwork Antarctica"
+    ],
+    "keywords": [
+      "scientists",
+      "influence",
+      "continent",
+      "glaciers",
+      "enormous"
+    ],
+    "semantic": {
+      "meaning": "Scientists closely monitor glaciers, sea ice, and massive ice sheets because changes impact global oceans and climate.",
+      "subject": "scientists",
+      "action": "monitoring",
+      "object": "glaciers and sea ice",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "scientists with measuring equipment",
+      "glacier monitoring",
+      "satellite data screen"
+    ],
+    "visual_exclusions": [
+      "indoor only scenes without context"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 83,
+    "sentence_to": 83,
+    "start": 384.615791,
+    "end": 395.032416,
+    "duration": 10.41662500000001,
+    "index": 63,
+    "segment_id": "segment_063"
+  },
+  {
+    "text": "What happens in this frozen wilderness does not remain in Antarctica. It can affect the entire planet. Antarctica may look empty from a distance. But look closer.",
+    "word_from": 846,
+    "word_to": 872,
+    "query": "melting ice sheet global impact",
+    "queries": [
+      "melting ice sheet global impact",
+      "Antarctic ice breaking off",
+      "zoom in ice surface"
+    ],
+    "keywords": [
+      "wilderness",
+      "antarctica",
+      "happens",
+      "frozen",
+      "remain"
+    ],
+    "semantic": {
+      "meaning": "Environmental shifts in this frozen wilderness have global consequences.",
+      "subject": "frozen wilderness",
+      "action": "affecting",
+      "object": "global climate",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "vast melting ice sheet",
+      "global climate concept",
+      "ice breaking into ocean",
+      "globe from space",
+      "Earth atmosphere",
+      "vast snowy landscape",
+      "empty ice sheet",
+      "zoom in effect"
+    ],
+    "visual_exclusions": [
+      "green forests",
+      "close up of animals",
+      "human cities",
+      "research stations",
+      "cities",
+      "forests"
+    ],
+    "shots": [
+      {
+        "word_from": 846,
+        "word_to": 856,
+        "text": "What happens in this frozen wilderness does not remain in Antarctica.",
+        "query": "melting ice sheet global impact",
+        "subject": "frozen wilderness",
+        "action": "affecting",
+        "start": 395.757458,
+        "end": 399.729666,
+        "duration": 3.9722080000000233,
+        "shot_id": "scene_064_shot_1"
+      },
+      {
+        "word_from": 857,
+        "word_to": 862,
+        "text": "It can affect the entire planet.",
+        "query": "Earth from space global view",
+        "subject": "planet Earth",
+        "action": "affecting",
+        "start": 400.468541,
+        "end": 402.399083,
+        "duration": 1.9305420000000026,
+        "shot_id": "scene_064_shot_2"
+      },
+      {
+        "word_from": 863,
+        "word_to": 869,
+        "text": "Antarctica may look empty from a distance.",
+        "query": "Antarctica aerial view ice sheet",
+        "subject": "Antarctica landscape",
+        "action": "appearing",
+        "start": 403.138,
+        "end": 405.526874,
+        "duration": 2.388874000000044,
+        "shot_id": "scene_064_shot_3"
+      },
+      {
+        "word_from": 870,
+        "word_to": 872,
+        "text": "But look closer.",
+        "query": "zoom in ice surface",
+        "subject": "viewer",
+        "action": "looking",
+        "start": 406.251875,
+        "end": 407.265749,
+        "duration": 1.013874000000044,
+        "shot_id": "scene_064_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 84,
+    "sentence_to": 87,
+    "start": 395.757458,
+    "end": 407.265749,
+    "duration": 11.508291000000042,
+    "index": 64,
+    "segment_id": "segment_064"
+  },
+  {
+    "text": "and you discover penguins protecting their young in brutal winter storms. Seals hunting beneath frozen oceans. Whales traveling through icy waters.",
+    "word_from": 873,
+    "word_to": 893,
+    "query": "penguins in blizzard",
+    "queries": [
+      "penguins in blizzard",
+      "emperor penguins winter storm",
+      "whale swimming icy water"
+    ],
+    "keywords": [
+      "protecting",
+      "discover",
+      "penguins",
+      "brutal",
+      "winter"
+    ],
+    "semantic": {
+      "meaning": "Penguins protecting chicks in harsh winter storms",
+      "subject": "penguins",
+      "action": "protecting young",
+      "object": "chicks",
+      "location": "Antarctica",
+      "time": "winter",
+      "entities": [
+        "penguins"
+      ]
+    },
+    "visual_requirements": [
+      "penguins in snow storm",
+      "adult penguin protecting chick",
+      "seal swimming underwater",
+      "sea ice from below",
+      "whale swimming",
+      "icebergs in water"
+    ],
+    "visual_exclusions": [
+      "summer sun",
+      "green grass",
+      "tropical water",
+      "sand beach",
+      "warm tropical sea",
+      "coral reef"
+    ],
+    "shots": [
+      {
+        "word_from": 873,
+        "word_to": 883,
+        "text": "and you discover penguins protecting their young in brutal winter storms.",
+        "query": "penguins in blizzard",
+        "subject": "penguins",
+        "action": "protecting young",
+        "start": 408.157458,
+        "end": 412.115791,
+        "duration": 3.958332999999982,
+        "shot_id": "scene_065_shot_1"
+      },
+      {
+        "word_from": 884,
+        "word_to": 888,
+        "text": "Seals hunting beneath frozen oceans.",
+        "query": "seal hunting under ice",
+        "subject": "seals",
+        "action": "hunting",
+        "start": 412.840791,
+        "end": 415.271332,
+        "duration": 2.4305409999999483,
+        "shot_id": "scene_065_shot_2"
+      },
+      {
+        "word_from": 889,
+        "word_to": 893,
+        "text": "Whales traveling through icy waters.",
+        "query": "whale swimming icy water",
+        "subject": "whales",
+        "action": "traveling",
+        "start": 416.010208,
+        "end": 418.287999,
+        "duration": 2.277791000000036,
+        "shot_id": "scene_065_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 88,
+    "sentence_to": 90,
+    "start": 408.157458,
+    "end": 418.287999,
+    "duration": 10.130540999999994,
+    "index": 65,
+    "segment_id": "segment_065"
+  },
+  {
+    "text": "Tiny organisms supporting enormous food chains.",
+    "word_from": 894,
+    "word_to": 899,
+    "query": "krill swarming polar ocean",
+    "queries": [
+      "krill swarming polar ocean",
+      "microscopic marine life zooplankton"
+    ],
+    "keywords": [
+      "supporting",
+      "organisms",
+      "enormous",
+      "chains",
+      "tiny"
+    ],
+    "semantic": {
+      "meaning": "Tiny organisms supporting vast food chains",
+      "subject": "tiny organisms",
+      "action": "supporting",
+      "object": "food chains",
+      "location": "ocean",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "krill swimming",
+      "marine micro organisms"
+    ],
+    "visual_exclusions": [
+      "large mammals only",
+      "land animals"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 91,
+    "sentence_to": 91,
+    "start": 419.013,
+    "end": 422.193583,
+    "duration": 3.180583000000013,
+    "index": 66,
+    "segment_id": "segment_066"
+  },
+  {
+    "text": "And humans living at the edge of what our bodies can tolerate. searching for answers about our planet.",
+    "word_from": 900,
+    "word_to": 917,
+    "query": "scientists in Antarctica base",
+    "queries": [
+      "scientists in Antarctica base",
+      "researchers in extreme cold weather"
+    ],
+    "keywords": [
+      "searching",
+      "tolerate",
+      "answers",
+      "humans",
+      "living"
+    ],
+    "semantic": {
+      "meaning": "Humans living at extreme limits and searching for answers",
+      "subject": "humans",
+      "action": "living and searching",
+      "object": "answers",
+      "location": "Antarctica research station",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "scientists in extreme cold",
+      "polar expedition gear"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "indoor office"
+    ],
+    "shots": [
+      {
+        "word_from": 900,
+        "word_to": 911,
+        "text": "And humans living at the edge of what our bodies can tolerate",
+        "query": "scientists working in Antarctica extreme cold",
+        "subject": "humans",
+        "action": "living",
+        "start": 422.918541,
+        "end": 426.126916,
+        "duration": 3.2083749999999895,
+        "shot_id": "scene_067_shot_1"
+      },
+      {
+        "word_from": 912,
+        "word_to": 917,
+        "text": "searching for answers about our planet",
+        "query": "researchers taking ice core samples",
+        "subject": "scientists",
+        "action": "searching",
+        "start": 426.640791,
+        "end": 428.890749,
+        "duration": 2.249958000000049,
+        "shot_id": "scene_067_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 92,
+    "sentence_to": 93,
+    "start": 422.918541,
+    "end": 428.890749,
+    "duration": 5.972208000000023,
+    "index": 67,
+    "segment_id": "segment_067"
+  },
+  {
+    "text": "Antarctica is not a lifeless frozen desert.",
+    "word_from": 918,
+    "word_to": 924,
+    "query": "Antarctica diverse wildlife ecosystem",
+    "queries": [
+      "Antarctica diverse wildlife ecosystem",
+      "penguins and seals on ice"
+    ],
+    "keywords": [
+      "antarctica",
+      "lifeless",
+      "frozen",
+      "desert"
+    ],
+    "semantic": {
+      "meaning": "Antarctica is not a lifeless frozen desert",
+      "subject": "Antarctica",
+      "action": "being",
+      "object": "alive with wildlife",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "wildlife in Antarctica",
+      "active ecosystem on ice"
+    ],
+    "visual_exclusions": [
+      "completely barren ice",
+      "desert sand"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 94,
+    "sentence_to": 94,
+    "start": 429.615791,
+    "end": 432.421332,
+    "duration": 2.805541000000005,
+    "index": 68,
+    "segment_id": "segment_068"
+  },
+  {
+    "text": "It is one of Earth's greatest survival stories.",
+    "word_from": 925,
+    "word_to": 932,
+    "query": "polar animals surviving winter",
+    "queries": [
+      "polar animals surviving winter",
+      "wildlife resilience Antarctica"
+    ],
+    "keywords": [
+      "greatest",
+      "survival",
+      "stories",
+      "earth"
+    ],
+    "semantic": {
+      "meaning": "Antarctica is a remarkable survival story",
+      "subject": "Antarctica ecosystem",
+      "action": "representing",
+      "object": "survival story",
+      "location": "Antarctica",
+      "time": "",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "animals surviving harsh conditions",
+      "polar wildlife resilience"
+    ],
+    "visual_exclusions": [
+      "artificial environments",
+      "zoo animals"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 95,
+    "sentence_to": 95,
+    "start": 433.146333,
+    "end": 436.021333,
+    "duration": 2.875,
+    "index": 69,
+    "segment_id": "segment_069"
+  },
+  {
+    "text": "A place where temperatures fall to extraordinary lows. where darkness can last for months.",
+    "word_from": 933,
+    "word_to": 946,
+    "query": "extreme cold frost ice",
+    "queries": [
+      "extreme cold frost ice",
+      "frosty polar landscape winter",
+      "Antarctic polar night landscape"
+    ],
+    "keywords": [
+      "extraordinary",
+      "temperatures",
+      "place",
+      "fall",
+      "lows"
+    ],
+    "semantic": {
+      "meaning": "Location where temperatures drop to extreme lows",
+      "subject": "temperatures",
+      "action": "falling",
+      "object": "extraordinary lows",
+      "location": "Antarctica",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frost covered landscape",
+      "extreme cold weather",
+      "snow and ice",
+      "dark winter sky",
+      "snow landscape",
+      "starry night or twilight"
+    ],
+    "visual_exclusions": [
+      "warm sunny beach",
+      "rain",
+      "bright sunlight",
+      "green trees",
+      "city lights"
+    ],
+    "shots": [
+      {
+        "word_from": 933,
+        "word_to": 940,
+        "text": "A place where temperatures fall to extraordinary lows.",
+        "query": "extreme cold frost ice",
+        "subject": "temperatures",
+        "action": "falling",
+        "start": 436.746333,
+        "end": 439.940791,
+        "duration": 3.1944579999999974,
+        "shot_id": "scene_070_shot_1"
+      },
+      {
+        "word_from": 941,
+        "word_to": 946,
+        "text": "where darkness can last for months.",
+        "query": "Antarctic polar night landscape",
+        "subject": "Antarctic landscape",
+        "action": "darkening",
+        "start": 441.013,
+        "end": 443.040749,
+        "duration": 2.0277490000000284,
+        "shot_id": "scene_070_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 96,
+    "sentence_to": 97,
+    "start": 436.746333,
+    "end": 443.040749,
+    "duration": 6.2944160000000124,
+    "index": 70,
+    "segment_id": "segment_070"
+  },
+  {
+    "text": "and where life continues against almost impossible odds. This is Antarctica. Life beyond the limits.",
+    "word_from": 947,
+    "word_to": 961,
+    "query": "penguin surviving blizzard Antarctica",
+    "queries": [
+      "penguin surviving blizzard Antarctica",
+      "wildlife in extreme cold",
+      "penguin at edge of ice"
+    ],
+    "keywords": [
+      "impossible",
+      "continues",
+      "life",
+      "odds"
+    ],
+    "semantic": {
+      "meaning": "Wildlife surviving in harsh polar conditions against extreme odds.",
+      "subject": "Antarctic wildlife",
+      "action": "surviving",
+      "object": "penguins or seals",
+      "location": "Antarctica",
+      "time": "winter",
+      "entities": [
+        "Antarctic animals"
+      ]
+    },
+    "visual_requirements": [
+      "wildlife in snow",
+      "harsh environment",
+      "struggling animals",
+      "vast ice sheet",
+      "glaciers",
+      "aerial view of Antarctica",
+      "single penguin",
+      "ice wilderness"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "zoo cages",
+      "lush forest",
+      "cityscapes",
+      "deserts",
+      "forests",
+      "human equipment",
+      "buildings"
+    ],
+    "shots": [
+      {
+        "word_from": 947,
+        "word_to": 954,
+        "text": "and where life continues against almost impossible odds.",
+        "query": "penguin surviving blizzard Antarctica",
+        "subject": "Antarctic wildlife",
+        "action": "surviving",
+        "start": 444.001875,
+        "end": 447.418541,
+        "duration": 3.4166660000000206,
+        "shot_id": "scene_071_shot_1"
+      },
+      {
+        "word_from": 955,
+        "word_to": 957,
+        "text": "This is Antarctica.",
+        "query": "aerial view of Antarctica",
+        "subject": "Antarctic continent",
+        "action": "revealing",
+        "start": 448.143541,
+        "end": 449.296333,
+        "duration": 1.1527919999999767,
+        "shot_id": "scene_071_shot_2"
+      },
+      {
+        "word_from": 958,
+        "word_to": 961,
+        "text": "Life beyond the limits.",
+        "query": "penguin at edge of ice",
+        "subject": "Emperor penguin chick",
+        "action": "standing",
+        "start": 450.035208,
+        "end": 451.424124,
+        "duration": 1.3889159999999947,
+        "shot_id": "scene_071_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 98,
+    "sentence_to": 100,
+    "start": 444.001875,
+    "end": 451.424124,
+    "duration": 7.422249000000022,
+    "index": 71,
+    "segment_id": "segment_071"
+  },
+  {
+    "text": "And this is Extreme Earth Life in Antarctica.",
+    "word_from": 962,
+    "word_to": 969,
+    "query": "dramatic Antarctic mountains",
+    "queries": [
+      "dramatic Antarctic mountains",
+      "icy wilderness landscape",
+      "extreme earth Antarctica"
+    ],
+    "keywords": [
+      "antarctica",
+      "extreme",
+      "earth",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Title card or documentary introduction for Extreme Earth Life in Antarctica.",
+      "subject": "Antarctic landscape",
+      "action": "displaying",
+      "object": "mountains of Antarctica",
+      "location": "Antarctica",
+      "time": "daytime",
+      "entities": [
+        "Antarctica"
+      ]
+    },
+    "visual_requirements": [
+      "dramatic mountains",
+      "snow and ice",
+      "documentary title scenery"
+    ],
+    "visual_exclusions": [
+      "urban areas",
+      "indoor settings"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 101,
+    "sentence_to": 101,
+    "start": 452.149125,
+    "end": 454.704666,
+    "duration": 2.5555409999999483,
+    "index": 72,
+    "segment_id": "segment_072"
+  }
+]

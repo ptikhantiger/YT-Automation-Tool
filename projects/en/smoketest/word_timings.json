@@ -1,0 +1,97 @@
+[
+  {
+    "text": "This",
+    "start": 0.125,
+    "end": 0.291666
+  },
+  {
+    "text": "is",
+    "start": 0.305541,
+    "end": 0.430541
+  },
+  {
+    "text": "a",
+    "start": 0.444458,
+    "end": 0.513916
+  },
+  {
+    "text": "quick",
+    "start": 0.527791,
+    "end": 0.819457
+  },
+  {
+    "text": "smoke",
+    "start": 0.833333,
+    "end": 1.208333
+  },
+  {
+    "text": "test",
+    "start": 1.222208,
+    "end": 1.555541
+  },
+  {
+    "text": "of",
+    "start": 1.569458,
+    "end": 1.638916
+  },
+  {
+    "text": "the",
+    "start": 1.652791,
+    "end": 1.736124
+  },
+  {
+    "text": "pipeline",
+    "start": 1.75,
+    "end": 2.347208
+  },
+  {
+    "text": "If",
+    "start": 2.805541,
+    "end": 2.916666
+  },
+  {
+    "text": "you",
+    "start": 2.930541,
+    "end": 3.027749
+  },
+  {
+    "text": "can",
+    "start": 3.041666,
+    "end": 3.208332
+  },
+  {
+    "text": "hear",
+    "start": 3.222208,
+    "end": 3.513874
+  },
+  {
+    "text": "this",
+    "start": 3.527791,
+    "end": 3.930582
+  },
+  {
+    "text": "narration",
+    "start": 4.152791,
+    "end": 4.819457
+  },
+  {
+    "text": "and",
+    "start": 4.958333,
+    "end": 5.069458
+  },
+  {
+    "text": "captions",
+    "start": 5.083333,
+    "end": 5.611124
+  },
+  {
+    "text": "are",
+    "start": 5.625,
+    "end": 5.736125
+  },
+  {
+    "text": "working",
+    "start": 5.75,
+    "end": 6.152791
+  }
+]

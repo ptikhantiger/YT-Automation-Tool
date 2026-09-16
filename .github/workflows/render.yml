@@ -1,0 +1,166 @@
+# Render a project's final video on GitHub's servers instead of your laptop.
+#
+# Workflow on your machine (light work only -- no encoding):
+#   1. write script.txt, run step 1, pick clips in step 2 as usual
+#   2. git add projects/<lang>/<slug> && git commit && git push
+#      (.gitignore already keeps out clips/, caches, tmp/ and output.mp4 --
+#       only the few MB of metadata step 3 needs is committed)
+#   3. GitHub -> Actions -> "Render video" -> Run workflow -> type en/<slug>
+#   4. when it finishes, download output.mp4 from the run's Artifacts box
+#
+# Step 3 needs no API keys: stock clips download from their direct URLs, so
+# there is nothing to configure in repository Secrets for rendering.
+#
+# Free tier: unlimited minutes on a public repo (2,000/month on a private
+# one), 4-core runner, 6 h per job. A 17-minute 1080p video at the default
+# preset takes roughly 20-40 minutes; the artifact is kept for 30 days.
+
+name: Render video
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project path under projects/, e.g. en/greenland1"
+        required: true
+        type: string
+      crf:
+        description: "x264 quality: lower = better and bigger (18 high, 20 default, 23 small)"
+        required: false
+        default: "20"
+        type: string
+      preset:
+        description: "x264 preset: slower = smaller file for the same quality"
+        required: false
+        default: "medium"
+        type: choice
+        options:
+          - veryfast
+          - faster
+          - fast
+          - medium
+          - slow
+      allow_4k:
+        description: "Render at 4K when the first scene's clip is natively 4K (about 4x slower)"
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONUTF8: "1"
+
+    steps:
+      - name: Validate inputs
+        id: inputs
+        env:
+          PROJECT: ${{ inputs.project }}
+        run: |
+          if ! [[ "$PROJECT" =~ ^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$ ]]; then
+            echo "::error::project must look like <lang>/<slug>, e.g. en/greenland1 (got '$PROJECT')"
+            exit 1
+          fi
+          echo "slug=${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg and fonts
+        # fonts-liberation: Linux has no Arial. Liberation Sans is metric-
+        # compatible and fontconfig aliases "Arial" to it automatically, so
+        # the caption capsules positioned by step 1 still line up.
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-liberation
+          ffmpeg -hide_banner -version | head -1
+          if ! ffmpeg -hide_banner -filters 2>/dev/null | grep -qw ass; then
+            echo "::error::this ffmpeg has no libass filter -- captions can't be burned in"
+            exit 1
+          fi
+          echo "Arial resolves to: $(fc-match Arial)"
+
+      - name: Install Python packages
+        run: pip install -q -r tools/requirements.txt
+
+      - name: Check the project was pushed
+        env:
+          PROJECT: ${{ inputs.project }}
+        run: |
+          dir="projects/$PROJECT"
+          missing=0
+          for f in audio.mp3 scenes.json captions.ass selections.json; do
+            if [ ! -f "$dir/$f" ]; then
+              echo "::error::$dir/$f is not in the repository -- run 'git add projects/$PROJECT' and push first"
+              missing=1
+            fi
+          done
+          [ "$missing" -eq 0 ]
+          echo "Project files:"; ls -la "$dir"
+
+      - name: Render
+        working-directory: tools
+        env:
+          PROJECT: ${{ inputs.project }}
+          CRF: ${{ inputs.crf }}
+          PRESET: ${{ inputs.preset }}
+          ALLOW_4K: ${{ inputs.allow_4k }}
+        run: |
+          flags=(--non-interactive --crf "$CRF" --preset "$PRESET")
+          if [ "$ALLOW_4K" != "true" ]; then
+            flags+=(--no-4k)
+          fi
+          echo "python step3_render_video.py $PROJECT ${flags[*]}"
+          python step3_render_video.py "$PROJECT" "${flags[@]}"
+
+      - name: Summarize
+        if: success()
+        env:
+          PROJECT: ${{ inputs.project }}
+        run: |
+          out="projects/$PROJECT/output.mp4"
+          size=$(du -h "$out" | cut -f1)
+          dur=$(ffprobe -v error -show_entries format=duration -of default=nw=1:nk=1 "$out" | cut -d. -f1)
+          {
+            echo "## Rendered \`$PROJECT\`"
+            echo
+            echo "- **output.mp4**: $size, $((dur / 60)) min $((dur % 60)) s"
+            echo "- Download it from the **Artifacts** box at the bottom of this page."
+            if [ -f "projects/$PROJECT/credits.txt" ]; then
+              echo
+              echo "<details><summary>credits.txt</summary>"
+              echo
+              echo '```'
+              cat "projects/$PROJECT/credits.txt"
+              echo '```'
+              echo "</details>"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload output.mp4
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: video-${{ steps.inputs.outputs.slug }}
+          path: |
+            projects/${{ inputs.project }}/output.mp4
+            projects/${{ inputs.project }}/credits.txt
+            projects/${{ inputs.project }}/render_report.json
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0
+
+      - name: Upload render report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: render-report-${{ steps.inputs.outputs.slug }}
+          path: projects/${{ inputs.project }}/render_report.json
+          if-no-files-found: ignore
+          retention-days: 7

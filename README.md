@@ -47,8 +47,37 @@ python webui/server.py
 python step1_audio_and_captions.py en/myvideo
 ```
 
-Projects live in `projects/<lang>/<slug>/` and are gitignored — they hold your
-generated audio, clips, and rendered video.
+Projects live in `projects/<lang>/<slug>/`. Only their small metadata files
+(script, audio, scenes, picks, captions — a few MB) are tracked; clips, caches,
+and the rendered video stay on your disk.
+
+## Render in the cloud (free)
+
+The only CPU-heavy step is step 3 (ffmpeg encoding). Steps 0–2 are just API
+calls and a browser page, so do those on your laptop and let GitHub Actions do
+the encode — free, unlimited minutes on a public repo, no API keys needed:
+
+1. Write the script, run step 1, pick clips in step 2 as usual. When the
+   picker asks to render, click **Not yet**.
+2. Push the project:
+   ```bash
+   git add projects/en/myvideo
+   git commit -m "myvideo: picks done"
+   git push
+   ```
+3. On GitHub: **Actions → Render video → Run workflow**, type `en/myvideo`.
+4. 20–40 minutes later, download `output.mp4` from the run's **Artifacts** box
+   (kept 30 days).
+
+The workflow is [`.github/workflows/render.yml`](.github/workflows/render.yml).
+It runs `step3_render_video.py --non-interactive --no-4k`; quality (`crf`),
+`preset`, and 4K are inputs on the Run workflow form. If a scene has no clip
+or a clip is unplayable, the run fails fast and names the scenes instead of
+opening the picker — fix them locally, push, re-run.
+
+Local uploads and AI illustrations (`clips/*_local*`, `clips/*_ai*`) are
+committed with the project because only your disk has them; stock picks are
+re-downloaded by the runner.
 
 ## API keys
 
@@ -58,11 +87,11 @@ gitignored and never sent to the browser.
 | File | Service | Required | Free key |
 |---|---|---|---|
 | `pexels_key.txt` | Pexels stock video/photo | **yes** | https://www.pexels.com/api/ |
-| `groq_key.txt` | Groq LLM (step 0, semantic scenes, auto-match) | recommended | https://console.groq.com/keys |
+| `gemini_key.txt` | Gemini LLM (step 0, semantic scenes, auto-match) | recommended | https://aistudio.google.com/apikey |
 | `pixabay_key.txt` | Pixabay source tab | optional | https://pixabay.com/api/docs/ |
 | `coverr_key.txt` | Coverr source tab | optional | https://coverr.co/developers |
 
-`groq_key.txt` accepts multiple keys, one per line — the client rotates to the
+`gemini_key.txt` accepts multiple keys, one per line — the client rotates to the
 next when one hits its quota.
 
 ## Documentation

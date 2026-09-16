@@ -4,11 +4,34 @@ tools/*_key.txt
 tools/pexels_key.txt
 tools/pixabay_key.txt
 tools/coverr_key.txt
-tools/groq_key.txt
+tools/gemini_key.txt
 tools/deepseek_key.txt
+tools/pollinations_token.txt
 
-# ---- Generated video projects (large; per-user output) ----
-projects/
+# ---- Video projects ----
+# Only the small metadata step 3 needs is tracked, so a push + "Run workflow"
+# can render in the cloud (see .github/workflows/render.yml). Everything heavy
+# or regenerable stays local: stock clips (step 3 re-downloads them), caches,
+# tmp/, and the rendered output itself.
+projects/**
+!projects/**/
+!projects/**/script.txt
+!projects/**/script-*.txt
+!projects/**/audio.mp3
+!projects/**/word_timings.json
+!projects/**/scenes.json
+!projects/**/timeline.json
+!projects/**/captions.ass
+!projects/**/selections.json
+!projects/**/render.json
+!projects/**/bg.mp3
+!projects/**/bg-*.mp3
+# Local uploads and AI illustrations live only on your disk -- they must
+# travel with the project. Stock picks (NNN_pexels*/pixabay*/coverr*) don't.
+!projects/**/clips/*_local*
+!projects/**/clips/*_ai*
+projects/**/tmp/
+projects/**/output.mp4
 
 # ---- Large branding assets (not referenced by any script) ----
 tools/subscribe.mp4
@@ -24,5 +47,6 @@ venv/
 # ---- Local caches ----
 tools/webui/.voices_cache.json
 .pexels_cache/
+.ai_cache/
 .music_cache/
 .build_cache.json

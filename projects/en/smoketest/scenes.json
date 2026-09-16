@@ -1,0 +1,72 @@
+[
+  {
+    "text": "﻿This is a quick smoke test of the pipeline.",
+    "word_from": 0,
+    "word_to": 8,
+    "query": "pipeline quick smoke test",
+    "queries": [
+      "pipeline quick smoke test"
+    ],
+    "keywords": [
+      "pipeline",
+      "quick",
+      "smoke",
+      "test"
+    ],
+    "semantic": {
+      "meaning": "﻿This is a quick smoke test of the pipeline.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.125,
+    "end": 2.347208,
+    "duration": 2.222208,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "If you can hear this, narration and captions are working.",
+    "word_from": 9,
+    "word_to": 18,
+    "query": "narration captions working hear",
+    "queries": [
+      "narration captions working hear"
+    ],
+    "keywords": [
+      "narration",
+      "captions",
+      "working",
+      "hear"
+    ],
+    "semantic": {
+      "meaning": "If you can hear this, narration and captions are working.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 2.805541,
+    "end": 6.152791,
+    "duration": 3.34725,
+    "index": 2,
+    "segment_id": "segment_002"
+  }
+]

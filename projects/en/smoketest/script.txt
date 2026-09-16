@@ -1,0 +1,1 @@
+﻿This is a quick smoke test of the pipeline. If you can hear this, narration and captions are working.

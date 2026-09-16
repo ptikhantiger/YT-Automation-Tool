@@ -1,0 +1,603 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:03.29,Default,,0,0,0,,Walk past a cafe in Reykjavik in winter and
+Dialogue: 0,0:00:03.29,0:00:05.97,Default,,0,0,0,,you'll see a baby alone in a pram on the pavement
+Dialogue: 0,0:00:05.97,0:00:07.99,Default,,0,0,0,,asleep in the freezing cold
+Dialogue: 0,0:00:07.99,0:00:10.61,Default,,0,0,0,,while its parents sit inside
+Dialogue: 0,0:00:10.61,0:00:13.64,Default,,0,0,0,,Seven out of 10 children here are born outside
+Dialogue: 0,0:00:13.64,0:00:16.46,Default,,0,0,0,,marriage and nobody blinks an eye
+Dialogue: 0,0:00:16.46,0:00:19.78,Default,,0,0,0,,This is a country with almost no crime no army
+Dialogue: 0,0:00:19.78,0:00:22.37,Default,,0,0,0,,that sent its bankers to prison
+Dialogue: 0,0:00:22.37,0:00:25.86,Default,,0,0,0,,400,000 people on an island the size of a small
+Dialogue: 0,0:00:25.86,0:00:27.15,Default,,0,0,0,,state
+Dialogue: 0,0:00:27.15,0:00:29.68,Default,,0,0,0,,And somehow it produced the strongest men who
+Dialogue: 0,0:00:29.68,0:00:31.46,Default,,0,0,0,,have ever lived
+Dialogue: 0,0:00:31.46,0:00:34.06,Default,,0,0,0,,They eat shark that has to rot for months before
+Dialogue: 0,0:00:34.06,0:00:35.93,Default,,0,0,0,,it's safe to swallow
+Dialogue: 0,0:00:35.93,0:00:38.32,Default,,0,0,0,,And the ground beneath their feet keeps tearing
+Dialogue: 0,0:00:38.32,0:00:39.45,Default,,0,0,0,,open
+Dialogue: 0,0:00:39.45,0:00:42.16,Default,,0,0,0,,Fire pushing up through the ice
+Dialogue: 0,0:00:42.16,0:00:44.64,Default,,0,0,0,,One island holds all of it
+Dialogue: 0,0:00:44.64,0:00:47.25,Default,,0,0,0,,The land of fire and ice
+Dialogue: 0,0:00:47.25,0:00:49.13,Default,,0,0,0,,This is Iceland
+Dialogue: 0,0:00:49.13,0:00:52.78,Default,,0,0,0,,Start with what the cameras always find first
+Dialogue: 0,0:00:52.78,0:00:55.74,Default,,0,0,0,,Icelandic women are known for a certain northern
+Dialogue: 0,0:00:55.74,0:00:56.94,Default,,0,0,0,,beauty
+Dialogue: 0,0:00:56.94,0:01:00.17,Default,,0,0,0,,Pale eyes strong Viking features and ease in
+Dialogue: 0,0:01:00.17,0:01:01.77,Default,,0,0,0,,their own skin
+Dialogue: 0,0:01:01.77,0:01:04.58,Default,,0,0,0,,But spend any real time around them
+Dialogue: 0,0:01:04.58,0:01:07.32,Default,,0,0,0,,And the thing that stands out isn't the face
+Dialogue: 0,0:01:07.32,0:01:09.78,Default,,0,0,0,,it's the independence behind it
+Dialogue: 0,0:01:09.78,0:01:12.20,Default,,0,0,0,,Because behind that image sits a habit that
+Dialogue: 0,0:01:12.20,0:01:15.42,Default,,0,0,0,,still unsettles much of the Western world
+Dialogue: 0,0:01:15.42,0:01:18.79,Default,,0,0,0,,Nearly 7 in 10 children in Iceland
+Dialogue: 0,0:01:18.79,0:01:22.69,Default,,0,0,0,,Close to 69% are born outside marriage
+Dialogue: 0,0:01:22.69,0:01:25.03,Default,,0,0,0,,the highest rate in Europe
+Dialogue: 0,0:01:25.03,0:01:26.24,Default,,0,0,0,,Here
+Dialogue: 0,0:01:26.24,0:01:29.40,Default,,0,0,0,,A child born to unmarried parents isn't a scandal
+Dialogue: 0,0:01:29.40,0:01:32.63,Default,,0,0,0,,and a single mother isn't a cautionary tale
+Dialogue: 0,0:01:32.63,0:01:35.88,Default,,0,0,0,,It's just a family arranged a little differently
+Dialogue: 0,0:01:35.88,0:01:38.61,Default,,0,0,0,,And this isn't drift or decline
+Dialogue: 0,0:01:38.61,0:01:41.41,Default,,0,0,0,,It's a country that decided a woman never needed
+Dialogue: 0,0:01:41.41,0:01:43.46,Default,,0,0,0,,a husband to be whole
+Dialogue: 0,0:01:43.46,0:01:46.07,Default,,0,0,0,,Iceland has ranked first in the world for gender
+Dialogue: 0,0:01:46.07,0:01:48.88,Default,,0,0,0,,equality for 16 years running
+Dialogue: 0,0:01:48.88,0:01:51.88,Default,,0,0,0,,The only nation to close more than 90% of the
+Dialogue: 0,0:01:51.88,0:01:53.03,Default,,0,0,0,,gap
+Dialogue: 0,0:01:53.03,0:01:56.10,Default,,0,0,0,,In 1980 it elected the world's first female
+Dialogue: 0,0:01:56.10,0:01:59.67,Default,,0,0,0,,president Vigdis Finnbogadottir a single mother
+Dialogue: 0,0:01:59.67,0:02:00.98,Default,,0,0,0,,at that
+Dialogue: 0,0:02:00.98,0:02:03.97,Default,,0,0,0,,Women here keep their own name for life
+Dialogue: 0,0:02:03.97,0:02:06.25,Default,,0,0,0,,They never take a husband's
+Dialogue: 0,0:02:06.25,0:02:08.64,Default,,0,0,0,,There's a reason it went this way
+Dialogue: 0,0:02:08.64,0:02:13.26,Default,,0,0,0,,In 1975 90% of Icelandic women refuse
+Dialogue: 0,0:02:13.26,0:02:15.71,Default,,0,0,0,,to work for one full day
+Dialogue: 0,0:02:15.71,0:02:19.56,Default,,0,0,0,,No jobs no cooking no child care
+Dialogue: 0,0:02:19.56,0:02:21.45,Default,,0,0,0,,The country stopped
+Dialogue: 0,0:02:21.45,0:02:24.13,Default,,0,0,0,,Fathers dragged their children into offices
+Dialogue: 0,0:02:24.13,0:02:26.68,Default,,0,0,0,,and ran out of food by evening
+Dialogue: 0,0:02:26.68,0:02:29.71,Default,,0,0,0,,The message landed and it never left
+Dialogue: 0,0:02:29.71,0:02:32.45,Default,,0,0,0,,So the beauty was never the story
+Dialogue: 0,0:02:32.45,0:02:34.84,Default,,0,0,0,,The story is a place where a woman's life was
+Dialogue: 0,0:02:34.84,0:02:37.52,Default,,0,0,0,,never built to lean on a man's
+Dialogue: 0,0:02:37.52,0:02:39.71,Default,,0,0,0,,Wherever you're watching this from drop your
+Dialogue: 0,0:02:39.71,0:02:42.30,Default,,0,0,0,,city or country in the comments
+Dialogue: 0,0:02:42.30,0:02:45.37,Default,,0,0,0,,I'm genuinely curious how far this tiny island
+Dialogue: 0,0:02:45.37,0:02:47.03,Default,,0,0,0,,reaches today
+Dialogue: 0,0:02:47.03,0:02:49.69,Default,,0,0,0,,Because if marriage matters this little here
+Dialogue: 0,0:02:49.69,0:02:52.97,Default,,0,0,0,,you have to wonder what marriage even means
+Dialogue: 0,0:02:52.97,0:02:55.70,Default,,0,0,0,,The answer is stranger than you'd think
+Dialogue: 0,0:02:55.70,0:02:58.49,Default,,0,0,0,,Icelanders mostly don't have family surnames
+Dialogue: 0,0:02:58.49,0:02:59.66,Default,,0,0,0,,at all
+Dialogue: 0,0:02:59.66,0:03:02.52,Default,,0,0,0,,So a family of four can carry four different
+Dialogue: 0,0:03:02.52,0:03:04.22,Default,,0,0,0,,last names
+Dialogue: 0,0:03:04.22,0:03:06.88,Default,,0,0,0,,The phone book doesn't even try to sort people
+Dialogue: 0,0:03:06.88,0:03:08.34,Default,,0,0,0,,by surname
+Dialogue: 0,0:03:08.34,0:03:11.72,Default,,0,0,0,,It lists everyone by first name the prime minister
+Dialogue: 0,0:03:11.72,0:03:13.08,Default,,0,0,0,,included
+Dialogue: 0,0:03:13.08,0:03:16.17,Default,,0,0,0,,Walk past a cafe in Reykjavik in winter and
+Dialogue: 0,0:03:16.17,0:03:19.26,Default,,0,0,0,,you'll find prams parked outside on the pavement
+Dialogue: 0,0:03:19.26,0:03:21.62,Default,,0,0,0,,infants asleep in them while the parents sit
+Dialogue: 0,0:03:21.62,0:03:23.35,Default,,0,0,0,,warm indoors
+Dialogue: 0,0:03:23.35,0:03:26.52,Default,,0,0,0,,To a visitor it looks like neglect
+Dialogue: 0,0:03:26.52,0:03:29.68,Default,,0,0,0,,To Icelanders it's plain good sense
+Dialogue: 0,0:03:29.68,0:03:33.08,Default,,0,0,0,,Cold fresh air is believed to help babies sleep
+Dialogue: 0,0:03:33.08,0:03:34.43,Default,,0,0,0,,and breathe
+Dialogue: 0,0:03:34.43,0:03:37.09,Default,,0,0,0,,And crime is so rare that no one fears the
+Dialogue: 0,0:03:37.09,0:03:39.03,Default,,0,0,0,,pram will be touched
+Dialogue: 0,0:03:39.03,0:03:42.31,Default,,0,0,0,,Marriage itself runs in a different order here
+Dialogue: 0,0:03:42.31,0:03:44.91,Default,,0,0,0,,Couples often live together for years have
+Dialogue: 0,0:03:44.91,0:03:48.56,Default,,0,0,0,,children build a whole life and only later
+Dialogue: 0,0:03:48.56,0:03:50.49,Default,,0,0,0,,if ever marry
+Dialogue: 0,0:03:50.49,0:03:53.06,Default,,0,0,0,,The wedding doesn't start the family
+Dialogue: 0,0:03:53.06,0:03:55.86,Default,,0,0,0,,It catches up to one already there
+Dialogue: 0,0:03:55.86,0:03:58.39,Default,,0,0,0,,There's a logic under all of it
+Dialogue: 0,0:03:58.39,0:04:01.58,Default,,0,0,0,,A nation this small and isolated where almost
+Dialogue: 0,0:04:01.58,0:04:04.53,Default,,0,0,0,,everyone is distantly related never needed
+Dialogue: 0,0:04:04.53,0:04:06.97,Default,,0,0,0,,inherited surnames to know who belonged to
+Dialogue: 0,0:04:06.97,0:04:08.13,Default,,0,0,0,,whom
+Dialogue: 0,0:04:08.13,0:04:10.85,Default,,0,0,0,,Your identity came from your parent not your
+Dialogue: 0,0:04:10.85,0:04:11.56,Default,,0,0,0,,dynasty
+Dialogue: 0,0:04:12.66,0:04:14.99,Default,,0,0,0,,Keep that smallness in mind because somehow
+Dialogue: 0,0:04:14.99,0:04:17.44,Default,,0,0,0,,this same tiny country produced something the
+Dialogue: 0,0:04:17.44,0:04:19.71,Default,,0,0,0,,rest of the planet could not
+Dialogue: 0,0:04:19.71,0:04:21.89,Default,,0,0,0,,And we'll come back to how
+Dialogue: 0,0:04:21.89,0:04:25.27,Default,,0,0,0,,For a nation of just 400,000 people
+Dialogue: 0,0:04:25.27,0:04:27.95,Default,,0,0,0,,Iceland has made more champion strongmen than
+Dialogue: 0,0:04:27.95,0:04:30.19,Default,,0,0,0,,almost anywhere on Earth
+Dialogue: 0,0:04:30.19,0:04:32.49,Default,,0,0,0,,So what's the secret
+Dialogue: 0,0:04:32.49,0:04:35.87,Default,,0,0,0,,For centuries Icelandic farm hands proved themselves
+Dialogue: 0,0:04:35.87,0:04:38.97,Default,,0,0,0,,by hauling the Hussefel stone a slab of around
+Dialogue: 0,0:04:38.97,0:04:43.54,Default,,0,0,0,,186 kilos over 400 lb
+Dialogue: 0,0:04:43.54,0:04:46.02,Default,,0,0,0,,It was carried a set distance to mark a boy
+Dialogue: 0,0:04:46.02,0:04:47.79,Default,,0,0,0,,becoming a man
+Dialogue: 0,0:04:47.79,0:04:50.00,Default,,0,0,0,,Strength wasn't a hobby
+Dialogue: 0,0:04:50.00,0:04:52.95,Default,,0,0,0,,It was a job requirement on farms where machines
+Dialogue: 0,0:04:52.95,0:04:56.32,Default,,0,0,0,,didn't exist and the weather never forgave
+Dialogue: 0,0:04:56.32,0:04:59.16,Default,,0,0,0,,Add a diet built on fish and lamb and a culture
+Dialogue: 0,0:04:59.16,0:05:01.57,Default,,0,0,0,,raised on Viking sagas where the strongest
+Dialogue: 0,0:05:01.57,0:05:04.67,Default,,0,0,0,,man was the hero and you get something a treadmill
+Dialogue: 0,0:05:04.67,0:05:06.76,Default,,0,0,0,,cannot manufacture
+Dialogue: 0,0:05:06.76,0:05:09.18,Default,,0,0,0,,The secret isn't a supplement
+Dialogue: 0,0:05:09.18,0:05:11.68,Default,,0,0,0,,It's a thousand years of needing to be strong
+Dialogue: 0,0:05:11.68,0:05:13.53,Default,,0,0,0,,just to survive
+Dialogue: 0,0:05:13.53,0:05:16.30,Default,,0,0,0,,In a line Icelanders still repeat there is
+Dialogue: 0,0:05:16.30,0:05:19.96,Default,,0,0,0,,no reason to be alive if you can't do deadlift
+Dialogue: 0,0:05:19.96,0:05:22.29,Default,,0,0,0,,But these same fearless people are quietly
+Dialogue: 0,0:05:22.29,0:05:24.92,Default,,0,0,0,,obsessed with something far sweeter
+Dialogue: 0,0:05:24.92,0:05:27.69,Default,,0,0,0,,What they're obsessed with is ice cream
+Dialogue: 0,0:05:27.69,0:05:29.33,Default,,0,0,0,,Not in summer
+Dialogue: 0,0:05:29.33,0:05:31.86,Default,,0,0,0,,All year in the dark in the snow
+Dialogue: 0,0:05:31.86,0:05:34.58,Default,,0,0,0,,When a blizzard rolls in Icelanders will get
+Dialogue: 0,0:05:34.58,0:05:37.28,Default,,0,0,0,,in the car drive through it and line up at
+Dialogue: 0,0:05:37.28,0:05:40.68,Default,,0,0,0,,an ice cream shop at 5 below zero
+Dialogue: 0,0:05:40.68,0:05:45.35,Default,,0,0,0,,23° F ice on the windshield and a request
+Dialogue: 0,0:05:45.35,0:05:47.88,Default,,0,0,0,,out the door for soft serve
+Dialogue: 0,0:05:47.88,0:05:51.59,Default,,0,0,0,,The ice cream shop isn't really a dessert stop
+Dialogue: 0,0:05:51.59,0:05:53.70,Default,,0,0,0,,It's a social ritual
+Dialogue: 0,0:05:53.70,0:05:56.71,Default,,0,0,0,,Somewhere to go someone to see
+Dialogue: 0,0:05:56.71,0:05:58.89,Default,,0,0,0,,In a place where winter locks you indoors for
+Dialogue: 0,0:05:58.89,0:06:00.80,Default,,0,0,0,,months when the weather is already against
+Dialogue: 0,0:06:00.80,0:06:01.49,Default,,0,0,0,,you
+Dialogue: 0,0:06:01.49,0:06:04.28,Default,,0,0,0,,a small warm ritual you control beats waiting
+Dialogue: 0,0:06:04.28,0:06:07.03,Default,,0,0,0,,on a summer that barely arrives
+Dialogue: 0,0:06:07.03,0:06:08.82,Default,,0,0,0,,So they don't wait
+Dialogue: 0,0:06:08.82,0:06:11.52,Default,,0,0,0,,Their other national food is the hot dog made
+Dialogue: 0,0:06:11.52,0:06:15.20,Default,,0,0,0,,of lamb beef and pork buried under crispy fried
+Dialogue: 0,0:06:15.20,0:06:18.10,Default,,0,0,0,,onions and a sweet brown sauce
+Dialogue: 0,0:06:18.10,0:06:21.08,Default,,0,0,0,,A tiny stand in Reykjavik called Bæjarins Beztu
+Dialogue: 0,0:06:21.08,0:06:24.41,Default,,0,0,0,,Pylsur the best in town has sold them for about
+Dialogue: 0,0:06:24.41,0:06:26.00,Default,,0,0,0,,80 years
+Dialogue: 0,0:06:26.00,0:06:28.71,Default,,0,0,0,,Bill Clinton once stood in that line
+Dialogue: 0,0:06:28.71,0:06:33.04,Default,,0,0,0,,The local order is ein með öllu one with everything
+Dialogue: 0,0:06:33.04,0:06:35.99,Default,,0,0,0,,And to wash it down Coca-Cola
+Dialogue: 0,0:06:35.99,0:06:38.63,Default,,0,0,0,,Icelanders drink more of it per person than
+Dialogue: 0,0:06:38.63,0:06:40.72,Default,,0,0,0,,any nation on Earth
+Dialogue: 0,0:06:40.72,0:06:43.97,Default,,0,0,0,,Somewhere near 400 bottles each a year
+Dialogue: 0,0:06:43.97,0:06:46.01,Default,,0,0,0,,That's about eight a week where the average
+Dialogue: 0,0:06:46.01,0:06:48.24,Default,,0,0,0,,American manages three
+Dialogue: 0,0:06:48.24,0:06:52.15,Default,,0,0,0,,So this is a country with a serious sweet tooth
+Dialogue: 0,0:06:52.15,0:06:54.28,Default,,0,0,0,,which makes the other end of their menu all
+Dialogue: 0,0:06:54.28,0:06:55.96,Default,,0,0,0,,the more startling
+Dialogue: 0,0:06:55.96,0:06:58.67,Default,,0,0,0,,Later I'll show you the one food here that
+Dialogue: 0,0:06:58.67,0:07:01.85,Default,,0,0,0,,can actually kill you if it's prepared wrong
+Dialogue: 0,0:07:01.85,0:07:05.28,Default,,0,0,0,,Almost every town in Iceland however small
+Dialogue: 0,0:07:05.28,0:07:07.87,Default,,0,0,0,,has a public geothermal pool
+Dialogue: 0,0:07:07.87,0:07:10.42,Default,,0,0,0,,And the hot pot beside it is where the country
+Dialogue: 0,0:07:10.42,0:07:12.27,Default,,0,0,0,,actually talks
+Dialogue: 0,0:07:12.27,0:07:15.05,Default,,0,0,0,,People soak there all year in rain and snow
+Dialogue: 0,0:07:15.05,0:07:18.67,Default,,0,0,0,,steam rising off the water while the air bites
+Dialogue: 0,0:07:18.67,0:07:20.97,Default,,0,0,0,,It isn't really about swimming
+Dialogue: 0,0:07:20.97,0:07:23.75,Default,,0,0,0,,It's the town square where gossip moves deals
+Dialogue: 0,0:07:23.75,0:07:26.88,Default,,0,0,0,,get done and neighbors stay neighbors
+Dialogue: 0,0:07:26.88,0:07:29.01,Default,,0,0,0,,One rule is sacred
+Dialogue: 0,0:07:29.01,0:07:31.62,Default,,0,0,0,,You shower fully without a swimsuit before
+Dialogue: 0,0:07:31.62,0:07:33.91,Default,,0,0,0,,you get in because the water carries almost
+Dialogue: 0,0:07:33.91,0:07:35.36,Default,,0,0,0,,no chlorine
+Dialogue: 0,0:07:35.36,0:07:37.65,Default,,0,0,0,,All that hot water comes from the same thing
+Dialogue: 0,0:07:37.65,0:07:40.62,Default,,0,0,0,,that makes the country dangerous the fire under
+Dialogue: 0,0:07:40.62,0:07:42.01,Default,,0,0,0,,the ground
+Dialogue: 0,0:07:42.01,0:07:45.11,Default,,0,0,0,,Around 9 in 10 Icelandic homes are heated straight
+Dialogue: 0,0:07:45.11,0:07:46.63,Default,,0,0,0,,from the earth
+Dialogue: 0,0:07:46.63,0:07:49.03,Default,,0,0,0,,And nearly all of the nation's electricity
+Dialogue: 0,0:07:49.03,0:07:51.60,Default,,0,0,0,,comes from renewable sources
+Dialogue: 0,0:07:51.60,0:07:53.99,Default,,0,0,0,,It's one of the cleanest energy systems on
+Dialogue: 0,0:07:53.99,0:07:55.42,Default,,0,0,0,,the planet
+Dialogue: 0,0:07:55.42,0:07:58.08,Default,,0,0,0,,And it was built on the same volcanic violence
+Dialogue: 0,0:07:58.08,0:08:01.41,Default,,0,0,0,,that keeps threatening to swallow whole towns
+Dialogue: 0,0:08:01.41,0:08:04.17,Default,,0,0,0,,They've pushed the trick further than heating
+Dialogue: 0,0:08:04.17,0:08:07.40,Default,,0,0,0,,In greenhouses warmed by that underground heat
+Dialogue: 0,0:08:07.40,0:08:11.17,Default,,0,0,0,,this near Arctic island grows tomatoes cucumbers
+Dialogue: 0,0:08:11.17,0:08:12.21,Default,,0,0,0,,even bananas
+Dialogue: 0,0:08:13.31,0:08:16.68,Default,,0,0,0,,In open defiance of the latitude the most famous
+Dialogue: 0,0:08:16.68,0:08:19.45,Default,,0,0,0,,pool of all was an accident
+Dialogue: 0,0:08:19.45,0:08:22.37,Default,,0,0,0,,The Blue Lagoon that milky turquoise water
+Dialogue: 0,0:08:22.37,0:08:25.47,Default,,0,0,0,,people fly across the world to sit in began
+Dialogue: 0,0:08:25.47,0:08:28.01,Default,,0,0,0,,as runoff from a power station
+Dialogue: 0,0:08:28.01,0:08:30.65,Default,,0,0,0,,The fire and the ice were never really enemies
+Dialogue: 0,0:08:30.65,0:08:31.78,Default,,0,0,0,,here
+Dialogue: 0,0:08:31.78,0:08:34.50,Default,,0,0,0,,But the same society that bathes together every
+Dialogue: 0,0:08:34.50,0:08:37.15,Default,,0,0,0,,day also lives under some of the strangest
+Dialogue: 0,0:08:37.15,0:08:38.84,Default,,0,0,0,,laws on Earth
+Dialogue: 0,0:08:38.84,0:08:41.00,Default,,0,0,0,,Starting with what you're allowed to name your
+Dialogue: 0,0:08:41.00,0:08:42.58,Default,,0,0,0,,own child
+Dialogue: 0,0:08:42.58,0:08:46.77,Default,,0,0,0,,For 75 years beer was illegal in Iceland
+Dialogue: 0,0:08:46.77,0:08:49.36,Default,,0,0,0,,Not wine not spirits
+Dialogue: 0,0:08:49.36,0:08:52.06,Default,,0,0,0,,Those came back decades earlier
+Dialogue: 0,0:08:52.06,0:08:57.32,Default,,0,0,0,,But beer stayed banned until the 1st of March, 1989
+Dialogue: 0,0:08:57.32,0:08:59.89,Default,,0,0,0,,Part of the reason was political
+Dialogue: 0,0:08:59.89,0:09:03.22,Default,,0,0,0,,Beer had become tangled up with Danish rule
+Dialogue: 0,0:09:03.22,0:09:06.30,Default,,0,0,0,,The day the ban finally lifted is now celebrated
+Dialogue: 0,0:09:06.30,0:09:08.76,Default,,0,0,0,,every year as Beer Day
+Dialogue: 0,0:09:08.76,0:09:11.36,Default,,0,0,0,,Then there's your name which isn't fully yours
+Dialogue: 0,0:09:11.36,0:09:12.94,Default,,0,0,0,,to choose
+Dialogue: 0,0:09:12.94,0:09:15.28,Default,,0,0,0,,You cannot just call your child whatever you
+Dialogue: 0,0:09:15.28,0:09:16.42,Default,,0,0,0,,like
+Dialogue: 0,0:09:16.42,0:09:19.11,Default,,0,0,0,,The name has to come from an official register
+Dialogue: 0,0:09:19.11,0:09:21.68,Default,,0,0,0,,or be approved by a body actually named the
+Dialogue: 0,0:09:21.68,0:09:24.17,Default,,0,0,0,,Icelandic Naming Committee
+Dialogue: 0,0:09:24.17,0:09:26.81,Default,,0,0,0,,There are now over 2,000 approved names for
+Dialogue: 0,0:09:26.81,0:09:30.19,Default,,0,0,0,,boys and more than 2,000 for girls
+Dialogue: 0,0:09:30.19,0:09:33.05,Default,,0,0,0,,And any new one has to fit Icelandic grammar
+Dialogue: 0,0:09:33.05,0:09:34.43,Default,,0,0,0,,and spelling
+Dialogue: 0,0:09:34.43,0:09:38.14,Default,,0,0,0,,The reason traces back to that patronymic system
+Dialogue: 0,0:09:38.14,0:09:40.93,Default,,0,0,0,,A name has to work as someone's son or daughter
+Dialogue: 0,0:09:40.93,0:09:42.98,Default,,0,0,0,,down the generations
+Dialogue: 0,0:09:42.98,0:09:45.67,Default,,0,0,0,,For a country this fond of rules it built the
+Dialogue: 0,0:09:45.67,0:09:48.30,Default,,0,0,0,,first one remarkably early
+Dialogue: 0,0:09:48.30,0:09:51.49,Default,,0,0,0,,The Althing Iceland's parliament was founded
+Dialogue: 0,0:09:51.49,0:09:54.49,Default,,0,0,0,,in the year 930 making it one of the oldest
+Dialogue: 0,0:09:54.49,0:09:57.63,Default,,0,0,0,,parliaments still sitting anywhere on Earth
+Dialogue: 0,0:09:57.63,0:10:00.47,Default,,0,0,0,,And here's a record they just lost
+Dialogue: 0,0:10:00.47,0:10:03.43,Default,,0,0,0,,For all of recorded history Iceland was the
+Dialogue: 0,0:10:03.43,0:10:07.08,Default,,0,0,0,,only country on the planet with no mosquitoes
+Dialogue: 0,0:10:07.08,0:10:09.64,Default,,0,0,0,,Far too cold for them to breed
+Dialogue: 0,0:10:09.64,0:10:14.26,Default,,0,0,0,,Then in October 2025 the first three were found
+Dialogue: 0,0:10:14.26,0:10:17.44,Default,,0,0,0,,As the ice warms even that quiet distinction
+Dialogue: 0,0:10:17.44,0:10:18.98,Default,,0,0,0,,slipped away
+Dialogue: 0,0:10:18.98,0:10:21.98,Default,,0,0,0,,Of everything so far the names the laws the
+Dialogue: 0,0:10:21.98,0:10:25.58,Default,,0,0,0,,strong men which part surprised you most
+Dialogue: 0,0:10:25.58,0:10:27.54,Default,,0,0,0,,Tell me in the comments
+Dialogue: 0,0:10:27.54,0:10:30.28,Default,,0,0,0,,Strange laws are harmless though
+Dialogue: 0,0:10:30.28,0:10:32.57,Default,,0,0,0,,The ground these people stand on is anything
+Dialogue: 0,0:10:32.57,0:10:33.63,Default,,0,0,0,,but
+Dialogue: 0,0:10:33.63,0:10:36.17,Default,,0,0,0,,That ground isn't solid at all
+Dialogue: 0,0:10:36.17,0:10:39.76,Default,,0,0,0,,After sleeping for around 800 years the Reykjanes
+Dialogue: 0,0:10:39.76,0:10:42.55,Default,,0,0,0,,Peninsula in Iceland's southwest woke back
+Dialogue: 0,0:10:42.55,0:10:43.58,Default,,0,0,0,,up
+Dialogue: 0,0:10:43.58,0:10:48.15,Default,,0,0,0,,Since 2021 it's erupted roughly 12 times
+Dialogue: 0,0:10:48.15,0:10:51.24,Default,,0,0,0,,One stretch of land has cracked open nine times
+Dialogue: 0,0:10:51.24,0:10:54.43,Default,,0,0,0,,since December 2023 alone
+Dialogue: 0,0:10:54.43,0:10:57.59,Default,,0,0,0,,The most recent eruption ran for 21 days in
+Dialogue: 0,0:10:57.59,0:11:00.42,Default,,0,0,0,,the summer of 2025
+Dialogue: 0,0:11:00.42,0:11:03.48,Default,,0,0,0,,Scientists say this is no one-off
+Dialogue: 0,0:11:03.48,0:11:06.84,Default,,0,0,0,,They expect the fire to come and go for years
+Dialogue: 0,0:11:06.84,0:11:10.38,Default,,0,0,0,,For one town it's already cost everything
+Dialogue: 0,0:11:10.38,0:11:13.62,Default,,0,0,0,,Grindavik a fishing community of about 4,000
+Dialogue: 0,0:11:13.62,0:11:17.89,Default,,0,0,0,,people was evacuated in late 2023
+Dialogue: 0,0:11:17.89,0:11:20.57,Default,,0,0,0,,The streets split apart and magma pushed up
+Dialogue: 0,0:11:20.57,0:11:21.98,Default,,0,0,0,,beneath them
+Dialogue: 0,0:11:21.98,0:11:24.52,Default,,0,0,0,,Most of it now stands empty
+Dialogue: 0,0:11:24.52,0:11:27.74,Default,,0,0,0,,A modern town abandoned not to war or money
+Dialogue: 0,0:11:27.74,0:11:29.77,Default,,0,0,0,,but to the earth itself
+Dialogue: 0,0:11:29.77,0:11:33.32,Default,,0,0,0,,But Icelanders don't just run they engineer
+Dialogue: 0,0:11:33.32,0:11:35.94,Default,,0,0,0,,Crews have raised enormous walls of rock and
+Dialogue: 0,0:11:35.94,0:11:39.34,Default,,0,0,0,,earth to steer the molten flow around homes
+Dialogue: 0,0:11:39.34,0:11:41.92,Default,,0,0,0,,Sensors wait for the next tremor
+Dialogue: 0,0:11:41.92,0:11:45.47,Default,,0,0,0,,And underneath it all runs that national shrug
+Dialogue: 0,0:11:45.47,0:11:47.14,Default,,0,0,0,,It'll work out
+Dialogue: 0,0:11:47.14,0:11:49.93,Default,,0,0,0,,There's even a strange tourism in it
+Dialogue: 0,0:11:49.93,0:11:52.56,Default,,0,0,0,,When the authorities say it's safe people walk
+Dialogue: 0,0:11:52.56,0:11:55.19,Default,,0,0,0,,out to watch fresh lava fountain into the night
+Dialogue: 0,0:11:55.19,0:11:56.53,Default,,0,0,0,,sky
+Dialogue: 0,0:11:56.53,0:11:59.04,Default,,0,0,0,,Danger turned carefully into one of the rarest
+Dialogue: 0,0:11:59.04,0:12:00.80,Default,,0,0,0,,sights on Earth
+Dialogue: 0,0:12:00.80,0:12:03.02,Default,,0,0,0,,This is what it means to live on the seam where
+Dialogue: 0,0:12:03.02,0:12:05.47,Default,,0,0,0,,two continents pull apart
+Dialogue: 0,0:12:05.47,0:12:08.31,Default,,0,0,0,,Fire from below and from above a sky that tries
+Dialogue: 0,0:12:08.31,0:12:11.39,Default,,0,0,0,,to freeze them and blow them off their feet
+Dialogue: 0,0:12:11.39,0:12:14.18,Default,,0,0,0,,That sky runs to extremes too
+Dialogue: 0,0:12:14.18,0:12:17.06,Default,,0,0,0,,In the depth of winter around December Reykjavik
+Dialogue: 0,0:12:17.06,0:12:20.71,Default,,0,0,0,,gets only four or five hours of daylight
+Dialogue: 0,0:12:20.71,0:12:23.42,Default,,0,0,0,,The sun crawling up near 11 and gone again
+Dialogue: 0,0:12:23.42,0:12:25.27,Default,,0,0,0,,by mid-afternoon
+Dialogue: 0,0:12:25.27,0:12:27.05,Default,,0,0,0,,Then summer flips it completely
+Dialogue: 0,0:12:28.16,0:12:31.23,Default,,0,0,0,,Around the June solstice the sun barely sets
+Dialogue: 0,0:12:31.23,0:12:34.06,Default,,0,0,0,,at all and people mow lawns and play golf at
+Dialogue: 0,0:12:34.06,0:12:35.41,Default,,0,0,0,,midnight
+Dialogue: 0,0:12:35.41,0:12:38.51,Default,,0,0,0,,The wind is the part that actually hurts
+Dialogue: 0,0:12:38.51,0:12:40.89,Default,,0,0,0,,Iceland sits right in the path of the North
+Dialogue: 0,0:12:40.89,0:12:43.06,Default,,0,0,0,,Atlantic storm track
+Dialogue: 0,0:12:43.06,0:12:45.86,Default,,0,0,0,,And from autumn to spring the gales blow hard
+Dialogue: 0,0:12:45.86,0:12:49.30,Default,,0,0,0,,enough to tear a car door clean off its hinges
+Dialogue: 0,0:12:49.30,0:12:51.56,Default,,0,0,0,,which is why rental companies here actually
+Dialogue: 0,0:12:51.56,0:12:53.78,Default,,0,0,0,,sell wind insurance
+Dialogue: 0,0:12:53.78,0:12:55.96,Default,,0,0,0,,The weather can swing from sun to sleet to
+Dialogue: 0,0:12:55.96,0:12:57.97,Default,,0,0,0,,whiteout in minutes
+Dialogue: 0,0:12:57.97,0:13:00.38,Default,,0,0,0,,Locals have a saying for it
+Dialogue: 0,0:13:00.38,0:13:03.84,Default,,0,0,0,,If you don't like the weather wait five minutes
+Dialogue: 0,0:13:03.84,0:13:06.99,Default,,0,0,0,,So how does anyone stay happy through months
+Dialogue: 0,0:13:06.99,0:13:08.79,Default,,0,0,0,,of dark and wind
+Dialogue: 0,0:13:08.79,0:13:11.26,Default,,0,0,0,,Mostly by leaning on each other
+Dialogue: 0,0:13:11.26,0:13:14.25,Default,,0,0,0,,The hot pools the tight-knit towns that stubborn
+Dialogue: 0,0:13:14.25,0:13:16.24,Default,,0,0,0,,refusal to panic
+Dialogue: 0,0:13:16.24,0:13:18.60,Default,,0,0,0,,They don't defeat the darkness
+Dialogue: 0,0:13:18.60,0:13:20.92,Default,,0,0,0,,They sit inside it together
+Dialogue: 0,0:13:20.92,0:13:23.70,Default,,0,0,0,,Despite all of it Iceland lands year after
+Dialogue: 0,0:13:23.70,0:13:26.09,Default,,0,0,0,,year among the three happiest countries on
+Dialogue: 0,0:13:26.09,0:13:27.24,Default,,0,0,0,,Earth
+Dialogue: 0,0:13:27.24,0:13:29.61,Default,,0,0,0,,Surviving winters like that shape the most
+Dialogue: 0,0:13:29.61,0:13:32.41,Default,,0,0,0,,extreme thing on this entire list what they
+Dialogue: 0,0:13:32.41,0:13:34.32,Default,,0,0,0,,put on their plates
+Dialogue: 0,0:13:34.32,0:13:37.18,Default,,0,0,0,,This is where your stomach gets tested
+Dialogue: 0,0:13:37.18,0:13:38.73,Default,,0,0,0,,Here it is
+Dialogue: 0,0:13:38.73,0:13:41.10,Default,,0,0,0,,The dish Icelanders are most known for is a
+Dialogue: 0,0:13:41.10,0:13:43.38,Default,,0,0,0,,piece of shark that would kill you if you ate
+Dialogue: 0,0:13:43.38,0:13:44.84,Default,,0,0,0,,it fresh
+Dialogue: 0,0:13:44.84,0:13:47.70,Default,,0,0,0,,The Greenland shark is poisonous
+Dialogue: 0,0:13:47.70,0:13:50.49,Default,,0,0,0,,Its flesh is loaded with urea and a compound
+Dialogue: 0,0:13:50.49,0:13:52.43,Default,,0,0,0,,that turns toxic
+Dialogue: 0,0:13:52.43,0:13:55.37,Default,,0,0,0,,For most of human history it was useless as
+Dialogue: 0,0:13:55.37,0:13:56.56,Default,,0,0,0,,food
+Dialogue: 0,0:13:56.56,0:13:59.59,Default,,0,0,0,,Icelanders found a way regardless
+Dialogue: 0,0:13:59.59,0:14:02.14,Default,,0,0,0,,They bury it let it ferment then hang it to
+Dialogue: 0,0:14:02.14,0:14:04.98,Default,,0,0,0,,dry for four or five months until the poison
+Dialogue: 0,0:14:04.98,0:14:06.51,Default,,0,0,0,,breaks down
+Dialogue: 0,0:14:06.51,0:14:08.63,Default,,0,0,0,,What's left is hákarl
+Dialogue: 0,0:14:08.63,0:14:11.58,Default,,0,0,0,,Pale cubes of shark with an ammonia smell strong
+Dialogue: 0,0:14:11.58,0:14:13.84,Default,,0,0,0,,enough to sting your eyes
+Dialogue: 0,0:14:13.84,0:14:17.25,Default,,0,0,0,,Chased with a schnapps nicknamed black death
+Dialogue: 0,0:14:17.25,0:14:20.35,Default,,0,0,0,,A meat too poisonous to eat fresh rotted for
+Dialogue: 0,0:14:20.35,0:14:23.33,Default,,0,0,0,,a season until it turns safe then served with
+Dialogue: 0,0:14:23.33,0:14:24.59,Default,,0,0,0,,pride
+Dialogue: 0,0:14:24.59,0:14:27.69,Default,,0,0,0,,Outsiders rarely keep their composure
+Dialogue: 0,0:14:27.69,0:14:30.19,Default,,0,0,0,,Anthony Bourdain called it the single worst
+Dialogue: 0,0:14:30.19,0:14:32.99,Default,,0,0,0,,thing he had ever put in his mouth
+Dialogue: 0,0:14:32.99,0:14:35.99,Default,,0,0,0,,Gordon Ramsay tried to swallow it and was sick
+Dialogue: 0,0:14:35.99,0:14:37.73,Default,,0,0,0,,right at the table
+Dialogue: 0,0:14:37.73,0:14:40.47,Default,,0,0,0,,One British chef compared the texture to chewing
+Dialogue: 0,0:14:40.47,0:14:43.54,Default,,0,0,0,,a mattress soaked in something far worse
+Dialogue: 0,0:14:43.54,0:14:46.16,Default,,0,0,0,,And the shark is only the start
+Dialogue: 0,0:14:46.16,0:14:49.25,Default,,0,0,0,,At the mid-winter feast Icelanders still serve
+Dialogue: 0,0:14:49.25,0:14:52.67,Default,,0,0,0,,a whole sheep's head singed split in two and
+Dialogue: 0,0:14:52.67,0:14:55.81,Default,,0,0,0,,boiled the eye looking right back at you alongside
+Dialogue: 0,0:14:55.81,0:14:59.31,Default,,0,0,0,,soured ram's testicles pressed into cakes
+Dialogue: 0,0:14:59.31,0:15:02.20,Default,,0,0,0,,But here's the part the squeamish miss
+Dialogue: 0,0:15:02.20,0:15:05.47,Default,,0,0,0,,None of this was invented to shock anyone
+Dialogue: 0,0:15:05.47,0:15:08.05,Default,,0,0,0,,On a freezing island with no refrigeration
+Dialogue: 0,0:15:08.05,0:15:11.21,Default,,0,0,0,,and a summer too short to grow much survival
+Dialogue: 0,0:15:11.21,0:15:14.69,Default,,0,0,0,,meant fermenting salting and drying every last
+Dialogue: 0,0:15:14.69,0:15:16.08,Default,,0,0,0,,part of an animal
+Dialogue: 0,0:15:16.08,0:15:18.32,Default,,0,0,0,,or starving before spring
+Dialogue: 0,0:15:18.32,0:15:20.61,Default,,0,0,0,,What looks like a dare today was once how a
+Dialogue: 0,0:15:20.61,0:15:22.85,Default,,0,0,0,,people refused to die
+Dialogue: 0,0:15:22.85,0:15:26.16,Default,,0,0,0,,They eat it now out of pride not hunger
+Dialogue: 0,0:15:26.16,0:15:28.54,Default,,0,0,0,,Could you actually swallow that
+Dialogue: 0,0:15:28.54,0:15:30.15,Default,,0,0,0,,Tell me below
+Dialogue: 0,0:15:30.15,0:15:32.98,Default,,0,0,0,,Would you try Iceland's fermented shark or
+Dialogue: 0,0:15:32.98,0:15:36.11,Default,,0,0,0,,is that one tradition you'd happily skip
+Dialogue: 0,0:15:36.11,0:15:38.54,Default,,0,0,0,,Because the same toughness that eats this food
+Dialogue: 0,0:15:38.54,0:15:41.25,Default,,0,0,0,,did something to its banks that no other country
+Dialogue: 0,0:15:41.25,0:15:42.66,Default,,0,0,0,,has dared
+Dialogue: 0,0:15:42.66,0:15:45.69,Default,,0,0,0,,What it did was send its bankers to prison
+Dialogue: 0,0:15:45.69,0:15:49.64,Default,,0,0,0,,When the financial crash of 2008 struck almost
+Dialogue: 0,0:15:49.64,0:15:52.73,Default,,0,0,0,,every country rushed to rescue the banks
+Dialogue: 0,0:15:52.73,0:15:55.00,Default,,0,0,0,,Iceland did the opposite
+Dialogue: 0,0:15:55.00,0:15:58.15,Default,,0,0,0,,It let the banks fail then prosecuted the men
+Dialogue: 0,0:15:58.15,0:15:59.65,Default,,0,0,0,,who ran them
+Dialogue: 0,0:15:59.65,0:16:02.76,Default,,0,0,0,,Around 36 bankers were convicted and sentenced
+Dialogue: 0,0:16:02.76,0:16:06.52,Default,,0,0,0,,to a combined 90 odd years behind bars
+Dialogue: 0,0:16:06.52,0:16:09.28,Default,,0,0,0,,Instead of bailing out lenders the government
+Dialogue: 0,0:16:09.28,0:16:12.31,Default,,0,0,0,,bailed out ordinary people forgiving mortgage
+Dialogue: 0,0:16:12.31,0:16:14.60,Default,,0,0,0,,debt that had swollen past the value of the
+Dialogue: 0,0:16:14.60,0:16:15.88,Default,,0,0,0,,homes
+Dialogue: 0,0:16:15.88,0:16:18.95,Default,,0,0,0,,Within a few years Iceland had recovered faster
+Dialogue: 0,0:16:18.95,0:16:20.68,Default,,0,0,0,,than much of Europe
+Dialogue: 0,0:16:20.68,0:16:22.93,Default,,0,0,0,,Sit with that for a moment
+Dialogue: 0,0:16:22.93,0:16:25.61,Default,,0,0,0,,The question isn't really why Iceland jailed
+Dialogue: 0,0:16:25.61,0:16:27.21,Default,,0,0,0,,its bankers
+Dialogue: 0,0:16:27.21,0:16:29.96,Default,,0,0,0,,It's why almost nobody else did
+Dialogue: 0,0:16:29.96,0:16:32.54,Default,,0,0,0,,Then there's the army which doesn't exist at
+Dialogue: 0,0:16:32.54,0:16:33.62,Default,,0,0,0,,all
+Dialogue: 0,0:16:33.62,0:16:36.92,Default,,0,0,0,,Iceland keeps no standing military at all and
+Dialogue: 0,0:16:36.92,0:16:39.42,Default,,0,0,0,,it has still been named the most peaceful country
+Dialogue: 0,0:16:39.42,0:16:41.55,Default,,0,0,0,,in the world for 17 years running
+Dialogue: 0,0:16:42.63,0:16:46.84,Default,,0,0,0,,Its security rests on a coast guard not soldiers
+Dialogue: 0,0:16:46.84,0:16:49.98,Default,,0,0,0,,And the peace is real in ordinary life
+Dialogue: 0,0:16:49.98,0:16:52.70,Default,,0,0,0,,Crime is so rare that people leave their doors
+Dialogue: 0,0:16:52.70,0:16:56.19,Default,,0,0,0,,unlocked and their babies napping on the street
+Dialogue: 0,0:16:56.19,0:16:59.01,Default,,0,0,0,,The prime minister drives her own car and walks
+Dialogue: 0,0:16:59.01,0:17:01.61,Default,,0,0,0,,through Reykjavik with no bodyguard
+Dialogue: 0,0:17:01.61,0:17:05.26,Default,,0,0,0,,They even tried to rewrite the rules from scratch
+Dialogue: 0,0:17:05.26,0:17:08.92,Default,,0,0,0,,After the crash citizens crowdsourced an entirely
+Dialogue: 0,0:17:08.92,0:17:11.02,Default,,0,0,0,,new constitution
+Dialogue: 0,0:17:11.02,0:17:13.77,Default,,0,0,0,,It then stalled in Parliament and to this day
+Dialogue: 0,0:17:13.77,0:17:15.59,Default,,0,0,0,,never became law
+Dialogue: 0,0:17:15.59,0:17:19.36,Default,,0,0,0,,Proof that even here progress stays fragile
+Dialogue: 0,0:17:19.36,0:17:21.86,Default,,0,0,0,,A country that jails its bankers and trusts
+Dialogue: 0,0:17:21.86,0:17:24.09,Default,,0,0,0,,its people without an army
+Dialogue: 0,0:17:24.09,0:17:26.18,Default,,0,0,0,,What holds it all together
+Dialogue: 0,0:17:26.18,0:17:29.79,Default,,0,0,0,,Partly a language unlike any other still spoken
+Dialogue: 0,0:17:29.79,0:17:32.80,Default,,0,0,0,,That language is almost a time machine
+Dialogue: 0,0:17:32.80,0:17:35.67,Default,,0,0,0,,Icelandic has changed so little over the last
+Dialogue: 0,0:17:35.67,0:17:37.40,Default,,0,0,0,,thousand years
+Dialogue: 0,0:17:37.40,0:17:40.40,Default,,0,0,0,,An Icelander today can pick up a medieval saga
+Dialogue: 0,0:17:40.40,0:17:43.11,Default,,0,0,0,,and read it nearly as it was written
+Dialogue: 0,0:17:43.11,0:17:45.50,Default,,0,0,0,,Think about how rare that is
+Dialogue: 0,0:17:45.50,0:17:48.02,Default,,0,0,0,,It survives because they guard it
+Dialogue: 0,0:17:48.02,0:17:50.59,Default,,0,0,0,,Rather than borrow foreign words the way most
+Dialogue: 0,0:17:50.59,0:17:54.24,Default,,0,0,0,,languages do Icelanders build their own
+Dialogue: 0,0:17:54.24,0:17:56.46,Default,,0,0,0,,A computer is stitched together from the old
+Dialogue: 0,0:17:56.46,0:17:59.01,Default,,0,0,0,,words for number and prophetus
+Dialogue: 0,0:17:59.01,0:18:02.34,Default,,0,0,0,,A telephone is an ancient word for thread
+Dialogue: 0,0:18:02.34,0:18:05.04,Default,,0,0,0,,The original saga manuscripts are treated as
+Dialogue: 0,0:18:05.04,0:18:07.89,Default,,0,0,0,,national treasure listed by UNESCO among the
+Dialogue: 0,0:18:07.89,0:18:10.67,Default,,0,0,0,,documentary heritage of the world
+Dialogue: 0,0:18:10.67,0:18:12.93,Default,,0,0,0,,The way they talk to each other is just as
+Dialogue: 0,0:18:12.93,0:18:14.29,Default,,0,0,0,,distinct
+Dialogue: 0,0:18:14.29,0:18:17.30,Default,,0,0,0,,Everyone is on a firstname basis
+Dialogue: 0,0:18:17.30,0:18:20.77,Default,,0,0,0,,The doctor the professor the prime minister
+Dialogue: 0,0:18:20.77,0:18:23.22,Default,,0,0,0,,They tend to be direct and almost all of them
+Dialogue: 0,0:18:23.22,0:18:25.19,Default,,0,0,0,,speak excellent English
+Dialogue: 0,0:18:25.19,0:18:27.83,Default,,0,0,0,,which makes the island far easier to visit
+Dialogue: 0,0:18:27.83,0:18:30.28,Default,,0,0,0,,than its remoteness suggests
+Dialogue: 0,0:18:30.28,0:18:32.44,Default,,0,0,0,,And then there's the phrase that runs the whole
+Dialogue: 0,0:18:32.44,0:18:33.67,Default,,0,0,0,,country
+Dialogue: 0,0:18:33.67,0:18:35.81,Default,,0,0,0,,It'll sort itself out
+Dialogue: 0,0:18:35.81,0:18:38.56,Default,,0,0,0,,It's how they meet the weather the volcanoes
+Dialogue: 0,0:18:38.56,0:18:40.30,Default,,0,0,0,,the long dark
+Dialogue: 0,0:18:40.30,0:18:43.05,Default,,0,0,0,,A quiet refusal to panic about what can't be
+Dialogue: 0,0:18:43.05,0:18:44.48,Default,,0,0,0,,controlled
+Dialogue: 0,0:18:44.48,0:18:46.97,Default,,0,0,0,,A language frozen in time isn't their only
+Dialogue: 0,0:18:46.97,0:18:49.19,Default,,0,0,0,,thousand-year-old belief
+Dialogue: 0,0:18:49.19,0:18:51.71,Default,,0,0,0,,Many Icelanders still won't quite rule out
+Dialogue: 0,0:18:51.71,0:18:53.82,Default,,0,0,0,,the existence of elves
+Dialogue: 0,0:18:53.82,0:18:57.32,Default,,0,0,0,,Elves or more precisely the hidden people
+Dialogue: 0,0:18:57.32,0:19:00.52,Default,,0,0,0,,And this isn't a tale they spin for tourists
+Dialogue: 0,0:19:00.52,0:19:03.71,Default,,0,0,0,,In a survey by the University of Iceland more
+Dialogue: 0,0:19:03.71,0:19:05.98,Default,,0,0,0,,than half the population said they would not
+Dialogue: 0,0:19:05.98,0:19:08.55,Default,,0,0,0,,rule out the existence of elves
+Dialogue: 0,0:19:08.55,0:19:10.80,Default,,0,0,0,,Most weren't sure they're real
+Dialogue: 0,0:19:10.80,0:19:13.65,Default,,0,0,0,,They just weren't willing to say they're not
+Dialogue: 0,0:19:13.65,0:19:16.34,Default,,0,0,0,,It shows up in concrete ways
+Dialogue: 0,0:19:16.34,0:19:19.13,Default,,0,0,0,,Road projects here have genuinely been rerouted
+Dialogue: 0,0:19:19.13,0:19:21.68,Default,,0,0,0,,or delayed to spare rocks believed to be elf
+Dialogue: 0,0:19:21.68,0:19:23.16,Default,,0,0,0,,dwellings
+Dialogue: 0,0:19:23.16,0:19:26.41,Default,,0,0,0,,At one site near Reykjavik machinery reportedly
+Dialogue: 0,0:19:26.41,0:19:29.33,Default,,0,0,0,,kept breaking down until the plans were redrawn
+Dialogue: 0,0:19:29.33,0:19:31.01,Default,,0,0,0,,around the stone
+Dialogue: 0,0:19:31.01,0:19:33.56,Default,,0,0,0,,The roads authority has described the detours
+Dialogue: 0,0:19:33.56,0:19:36.78,Default,,0,0,0,,plainly as respect for cultural tradition
+Dialogue: 0,0:19:36.78,0:19:38.96,Default,,0,0,0,,It would be easy to laugh
+Dialogue: 0,0:19:38.96,0:19:41.75,Default,,0,0,0,,Look closer though and there's something wiser
+Dialogue: 0,0:19:41.75,0:19:43.09,Default,,0,0,0,,underneath
+Dialogue: 0,0:19:43.09,0:19:45.36,Default,,0,0,0,,These are people who have lived for centuries
+Dialogue: 0,0:19:45.36,0:19:48.99,Default,,0,0,0,,on top of a land that erupts freezes and tears
+Dialogue: 0,0:19:48.99,0:19:50.67,Default,,0,0,0,,itself apart
+Dialogue: 0,0:19:50.67,0:19:53.09,Default,,0,0,0,,A place that has never once let them feel in
+Dialogue: 0,0:19:53.09,0:19:54.41,Default,,0,0,0,,charge
+Dialogue: 0,0:19:54.41,0:19:56.86,Default,,0,0,0,,The hidden people say out loud what the island
+Dialogue: 0,0:19:56.86,0:19:58.82,Default,,0,0,0,,teaches every day
+Dialogue: 0,0:19:58.82,0:20:00.96,Default,,0,0,0,,You don't get to bulldoze nature without a
+Dialogue: 0,0:20:00.96,0:20:02.31,Default,,0,0,0,,cost
+Dialogue: 0,0:20:02.31,0:20:05.08,Default,,0,0,0,,Many Icelanders now invoke the hidden people
+Dialogue: 0,0:20:05.08,0:20:07.64,Default,,0,0,0,,to halt construction that would scar untouched
+Dialogue: 0,0:20:07.64,0:20:08.93,Default,,0,0,0,,ground
+Dialogue: 0,0:20:08.93,0:20:12.09,Default,,0,0,0,,So the belief isn't really about magic
+Dialogue: 0,0:20:12.09,0:20:15.49,Default,,0,0,0,,It's humility wearing the costume of folklore
+Dialogue: 0,0:20:15.49,0:20:18.89,Default,,0,0,0,,They respect the unseen forces in the land
+Dialogue: 0,0:20:18.89,0:20:21.14,Default,,0,0,0,,And no wonder the land itself is splitting
+Dialogue: 0,0:20:21.14,0:20:23.32,Default,,0,0,0,,apart beneath their feet
+Dialogue: 0,0:20:23.32,0:20:26.28,Default,,0,0,0,,It is in the most literal sense there is
+Dialogue: 0,0:20:26.28,0:20:29.11,Default,,0,0,0,,Iceland sits directly on top of the Mid-Atlantic
+Dialogue: 0,0:20:29.11,0:20:30.37,Default,,0,0,0,,ridge
+Dialogue: 0,0:20:30.37,0:20:32.81,Default,,0,0,0,,The vast crack where the North American and
+Dialogue: 0,0:20:32.81,0:20:34.97,Default,,0,0,0,,Eurasian plates meet
+Dialogue: 0,0:20:34.97,0:20:37.26,Default,,0,0,0,,Those two plates are pulling apart at roughly
+Dialogue: 0,0:20:37.26,0:20:39.74,Default,,0,0,0,,2 1/2 cm a year
+Dialogue: 0,0:20:39.74,0:20:42.22,Default,,0,0,0,,which means the country is slowly being stretched
+Dialogue: 0,0:20:42.22,0:20:44.86,Default,,0,0,0,,wider every year that passes
+Dialogue: 0,0:20:44.86,0:20:47.15,Default,,0,0,0,,Iceland is the only place on Earth where you
+Dialogue: 0,0:20:47.15,0:20:50.06,Default,,0,0,0,,can stand on that seam in the open air
+Dialogue: 0,0:20:50.06,0:20:51.71,Default,,0,0,0,,You can walk straight into it
+Dialogue: 0,0:20:52.81,0:20:55.68,Default,,0,0,0,,At the same ground where Parliament was born
+Dialogue: 0,0:20:55.68,0:20:58.56,Default,,0,0,0,,a rift valley lets you stroll between two continents
+Dialogue: 0,0:20:58.56,0:21:00.26,Default,,0,0,0,,on dry land
+Dialogue: 0,0:21:00.26,0:21:03.30,Default,,0,0,0,,Close by is a flooded fisher where divers drift
+Dialogue: 0,0:21:03.30,0:21:05.22,Default,,0,0,0,,in the gap between the plates through melt
+Dialogue: 0,0:21:05.22,0:21:07.78,Default,,0,0,0,,waters so clear you can see a hundred meters
+Dialogue: 0,0:21:07.78,0:21:08.92,Default,,0,0,0,,ahead
+Dialogue: 0,0:21:08.92,0:21:11.39,Default,,0,0,0,,This is the engine behind the fire and the
+Dialogue: 0,0:21:11.39,0:21:12.74,Default,,0,0,0,,ice
+Dialogue: 0,0:21:12.74,0:21:16.25,Default,,0,0,0,,The same rift feeds around 130 volcanoes and
+Dialogue: 0,0:21:16.25,0:21:18.47,Default,,0,0,0,,countless hot springs
+Dialogue: 0,0:21:18.47,0:21:21.50,Default,,0,0,0,,New land is still being born out here
+Dialogue: 0,0:21:21.50,0:21:25.15,Default,,0,0,0,,In the 1960s an undersea eruption pushed a
+Dialogue: 0,0:21:25.15,0:21:28.23,Default,,0,0,0,,whole new island up out of the ocean
+Dialogue: 0,0:21:28.23,0:21:31.80,Default,,0,0,0,,That violent geology also carved the most otherworldly
+Dialogue: 0,0:21:31.80,0:21:34.14,Default,,0,0,0,,landscapes on the planet
+Dialogue: 0,0:21:34.14,0:21:36.24,Default,,0,0,0,,And there's a right way and a dangerous way
+Dialogue: 0,0:21:36.24,0:21:38.37,Default,,0,0,0,,to go and see them
+Dialogue: 0,0:21:38.37,0:21:41.28,Default,,0,0,0,,The difference matters more than you'd think
+Dialogue: 0,0:21:41.28,0:21:44.16,Default,,0,0,0,,Iceland is a gallery of the surreal
+Dialogue: 0,0:21:44.16,0:21:46.90,Default,,0,0,0,,Waterfalls thunder into a canyon
+Dialogue: 0,0:21:46.90,0:21:49.72,Default,,0,0,0,,At some you can walk into the space behind
+Dialogue: 0,0:21:49.72,0:21:51.45,Default,,0,0,0,,the falling water
+Dialogue: 0,0:21:51.45,0:21:54.40,Default,,0,0,0,,The sand is volcanic black and the cliffs rise
+Dialogue: 0,0:21:54.40,0:21:56.92,Default,,0,0,0,,in perfect basalt columns
+Dialogue: 0,0:21:56.92,0:22:00.18,Default,,0,0,0,,At Diamond Beach chunks of glacier ice wash
+Dialogue: 0,0:22:00.18,0:22:02.97,Default,,0,0,0,,up and glitter on the dark shore
+Dialogue: 0,0:22:02.97,0:22:06.37,Default,,0,0,0,,And in winter when the sky is clear the northern
+Dialogue: 0,0:22:06.37,0:22:09.22,Default,,0,0,0,,lights spill green across the dark
+Dialogue: 0,0:22:09.22,0:22:12.17,Default,,0,0,0,,Seeing it safely takes a little planning
+Dialogue: 0,0:22:12.17,0:22:14.44,Default,,0,0,0,,Most of the famous sights string along the
+Dialogue: 0,0:22:14.44,0:22:15.54,Default,,0,0,0,,ring road
+Dialogue: 0,0:22:15.54,0:22:17.78,Default,,0,0,0,,which loops the whole island
+Dialogue: 0,0:22:17.78,0:22:19.81,Default,,0,0,0,,Self-driving is popular
+Dialogue: 0,0:22:19.81,0:22:22.72,Default,,0,0,0,,but the weather turns fast so locals will tell
+Dialogue: 0,0:22:22.72,0:22:25.70,Default,,0,0,0,,you to check the forecast and the road conditions
+Dialogue: 0,0:22:25.70,0:22:27.56,Default,,0,0,0,,before every leg
+Dialogue: 0,0:22:27.56,0:22:29.92,Default,,0,0,0,,And take the warnings to heart
+Dialogue: 0,0:22:29.92,0:22:33.34,Default,,0,0,0,,Sudden surges the locals call sneaker waves
+Dialogue: 0,0:22:33.34,0:22:35.55,Default,,0,0,0,,have dragged visitors off the beach and out
+Dialogue: 0,0:22:35.55,0:22:36.87,Default,,0,0,0,,to sea
+Dialogue: 0,0:22:36.87,0:22:39.63,Default,,0,0,0,,People have died there standing a step too
+Dialogue: 0,0:22:39.63,0:22:41.47,Default,,0,0,0,,close to the water
+Dialogue: 0,0:22:41.47,0:22:43.75,Default,,0,0,0,,This is beauty with teeth
+Dialogue: 0,0:22:43.75,0:22:45.96,Default,,0,0,0,,If these otherworldly landscapes made your
+Dialogue: 0,0:22:45.96,0:22:47.31,Default,,0,0,0,,jaw drop
+Dialogue: 0,0:22:47.31,0:22:49.83,Default,,0,0,0,,hit like and subscribe so the channel can keep
+Dialogue: 0,0:22:49.83,0:22:52.48,Default,,0,0,0,,taking you to places like this
+Dialogue: 0,0:22:52.48,0:22:54.96,Default,,0,0,0,,Because beyond the postcards sit a few quirks
+Dialogue: 0,0:22:54.96,0:22:57.42,Default,,0,0,0,,you'll find nowhere else on Earth
+Dialogue: 0,0:22:57.42,0:22:59.84,Default,,0,0,0,,Iceland has a Christmas that sounds like a
+Dialogue: 0,0:22:59.84,0:23:01.51,Default,,0,0,0,,horror story
+Dialogue: 0,0:23:01.51,0:23:04.88,Default,,0,0,0,,Instead of one Santa children get 13 mischief
+Dialogue: 0,0:23:04.88,0:23:07.33,Default,,0,0,0,,makers called the Yule Lads
+Dialogue: 0,0:23:07.33,0:23:10.12,Default,,0,0,0,,Behind them looms the Christmas cat a giant
+Dialogue: 0,0:23:10.12,0:23:12.67,Default,,0,0,0,,beast said to eat anyone who doesn't receive
+Dialogue: 0,0:23:12.67,0:23:15.46,Default,,0,0,0,,new clothes before Christmas
+Dialogue: 0,0:23:15.46,0:23:18.49,Default,,0,0,0,,It sounds cruel until you learn why
+Dialogue: 0,0:23:18.49,0:23:20.78,Default,,0,0,0,,It was dreamed up to push people to finish
+Dialogue: 0,0:23:20.78,0:23:23.28,Default,,0,0,0,,the autumn wool work back when warm clothes
+Dialogue: 0,0:23:23.28,0:23:24.95,Default,,0,0,0,,meant survival
+Dialogue: 0,0:23:24.95,0:23:26.78,Default,,0,0,0,,Then there's their relationship with their
+Dialogue: 0,0:23:26.78,0:23:28.15,Default,,0,0,0,,own blood
+Dialogue: 0,0:23:28.15,0:23:30.63,Default,,0,0,0,,A company has mapped the genes of nearly the
+Dialogue: 0,0:23:30.63,0:23:32.68,Default,,0,0,0,,entire population
+Dialogue: 0,0:23:32.68,0:23:35.44,Default,,0,0,0,,Because almost everyone is distantly related
+Dialogue: 0,0:23:35.44,0:23:38.00,Default,,0,0,0,,students built an app to check before a date
+Dialogue: 0,0:23:38.00,0:23:42.00,Default,,0,0,0,,goes too far whether two people share a grandparent
+Dialogue: 0,0:23:42.00,0:23:44.39,Default,,0,0,0,,Its slogan bump the app before you bump in
+Dialogue: 0,0:23:44.39,0:23:45.49,Default,,0,0,0,,bed
+Dialogue: 0,0:23:45.49,0:23:47.56,Default,,0,0,0,,A few more oddities
+Dialogue: 0,0:23:47.56,0:23:49.78,Default,,0,0,0,,McDonald's pulled out completely after the
+Dialogue: 0,0:23:49.78,0:23:51.16,Default,,0,0,0,,crash
+Dialogue: 0,0:23:51.16,0:23:54.50,Default,,0,0,0,,There isn't a single branch left in the country
+Dialogue: 0,0:23:54.50,0:23:57.50,Default,,0,0,0,,The purebred Icelandic horse once it leaves
+Dialogue: 0,0:23:57.50,0:24:00.43,Default,,0,0,0,,the island is never allowed back to protect
+Dialogue: 0,0:24:00.43,0:24:01.97,Default,,0,0,0,,the bloodline
+Dialogue: 0,0:24:01.97,0:24:04.38,Default,,0,0,0,,And here's one that just flipped
+Dialogue: 0,0:24:04.38,0:24:07.25,Default,,0,0,0,,For almost all of Iceland's history the sheep
+Dialogue: 0,0:24:07.25,0:24:09.05,Default,,0,0,0,,outnumbered the people
+Dialogue: 0,0:24:09.05,0:24:12.88,Default,,0,0,0,,Around 2024 the people pulled ahead
+Dialogue: 0,0:24:12.88,0:24:16.46,Default,,0,0,0,,For all the strangeness look at the scoreboard
+Dialogue: 0,0:24:16.46,0:24:20.39,Default,,0,0,0,,The most peaceful country on Earth for 17 years
+Dialogue: 0,0:24:20.39,0:24:23.28,Default,,0,0,0,,The most gender equal for 16
+Dialogue: 0,0:24:23.28,0:24:25.77,Default,,0,0,0,,The strangest little nation on the list also
+Dialogue: 0,0:24:25.77,0:24:28.58,Default,,0,0,0,,quietly tops the ones that matter
+Dialogue: 0,0:24:28.58,0:24:31.07,Default,,0,0,0,,So here is the whole of it
+Dialogue: 0,0:24:31.07,0:24:34.52,Default,,0,0,0,,A nation of 400,000 that jails its bankers
+Dialogue: 0,0:24:34.52,0:24:37.55,Default,,0,0,0,,names its babies by committee eats shark left
+Dialogue: 0,0:24:37.55,0:24:40.70,Default,,0,0,0,,to rot and still tops nearly every list that
+Dialogue: 0,0:24:40.70,0:24:42.00,Default,,0,0,0,,counts
+Dialogue: 0,0:24:42.00,0:24:44.58,Default,,0,0,0,,Pull back and the contradictions stop looking
+Dialogue: 0,0:24:44.58,0:24:46.63,Default,,0,0,0,,like contradictions
+Dialogue: 0,0:24:46.63,0:24:50.21,Default,,0,0,0,,Children before marriage no army a quiet faith
+Dialogue: 0,0:24:50.21,0:24:51.53,Default,,0,0,0,,in elves
+Dialogue: 0,0:24:51.53,0:24:53.67,Default,,0,0,0,,They grow from one root
+Dialogue: 0,0:24:53.67,0:24:56.17,Default,,0,0,0,,A people who learned on an island that burns
+Dialogue: 0,0:24:56.17,0:24:58.85,Default,,0,0,0,,and freezes at once that you cannot control
+Dialogue: 0,0:24:58.85,0:25:00.13,Default,,0,0,0,,everything
+Dialogue: 0,0:25:00.13,0:25:03.47,Default,,0,0,0,,So they adapt and trust each other instead
+Dialogue: 0,0:25:03.47,0:25:05.80,Default,,0,0,0,,Maybe that's the real secret of the land of
+Dialogue: 0,0:25:05.80,0:25:07.75,Default,,0,0,0,,fire and ice
+Dialogue: 0,0:25:07.75,0:25:10.92,Default,,0,0,0,,Not the volcanoes not the strong men
+Dialogue: 0,0:25:10.92,0:25:13.55,Default,,0,0,0,,A small strange country that stopped pretending
+Dialogue: 0,0:25:13.55,0:25:15.95,Default,,0,0,0,,it was in charge and ended up running better
+Dialogue: 0,0:25:15.95,0:25:18.22,Default,,0,0,0,,than the ones that never did
+Dialogue: 0,0:25:18.22,0:25:21.70,Default,,0,0,0,,So before you go sit with one question
+Dialogue: 0,0:25:21.70,0:25:24.29,Default,,0,0,0,,How much of what you call normal is just something
+Dialogue: 0,0:25:24.29,0:25:26.25,Default,,0,0,0,,you've never seen done another way

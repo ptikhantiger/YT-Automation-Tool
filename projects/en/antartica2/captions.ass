@@ -1,0 +1,192 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.72,Default,,0,0,0,,Imagine waking up in a place where the temperature
+Dialogue: 0,0:00:02.72,0:00:07.24,Default,,0,0,0,,outside can fall below minus 60 degrees Celsius
+Dialogue: 0,0:00:07.24,0:00:09.93,Default,,0,0,0,,A place where the wind can become so powerful
+Dialogue: 0,0:00:09.93,0:00:13.60,Default,,0,0,0,,that simply walking outside feels dangerous
+Dialogue: 0,0:00:13.60,0:00:16.65,Default,,0,0,0,,For months the sun barely rises
+Dialogue: 0,0:00:16.65,0:00:19.49,Default,,0,0,0,,And during the darkest part of winter entire
+Dialogue: 0,0:00:19.49,0:00:23.19,Default,,0,0,0,,regions are surrounded by almost complete darkness
+Dialogue: 0,0:00:23.19,0:00:25.62,Default,,0,0,0,,There are no permanent cities
+Dialogue: 0,0:00:25.62,0:00:27.43,Default,,0,0,0,,No forests
+Dialogue: 0,0:00:27.43,0:00:29.14,Default,,0,0,0,,No farms
+Dialogue: 0,0:00:29.14,0:00:32.02,Default,,0,0,0,,And almost the entire continent is buried beneath
+Dialogue: 0,0:00:32.02,0:00:34.63,Default,,0,0,0,,an enormous sheet of ice
+Dialogue: 0,0:00:34.63,0:00:36.50,Default,,0,0,0,,Yet somehow
+Dialogue: 0,0:00:36.50,0:00:38.43,Default,,0,0,0,,life survives here
+Dialogue: 0,0:00:38.43,0:00:41.25,Default,,0,0,0,,Welcome to Antarctica the coldest and most
+Dialogue: 0,0:00:41.25,0:00:43.71,Default,,0,0,0,,extreme continent on Earth
+Dialogue: 0,0:00:43.71,0:00:46.04,Default,,0,0,0,,Antarctica sits at the southernmost point of
+Dialogue: 0,0:00:46.04,0:00:47.55,Default,,0,0,0,,our planet
+Dialogue: 0,0:00:47.55,0:00:49.35,Default,,0,0,0,,It is larger than Europe
+Dialogue: 0,0:00:49.35,0:00:53.12,Default,,0,0,0,,but almost all of its land is covered by ice
+Dialogue: 0,0:00:53.12,0:00:56.22,Default,,0,0,0,,In some places that ice is several kilometers
+Dialogue: 0,0:00:56.22,0:00:57.39,Default,,0,0,0,,thick
+Dialogue: 0,0:00:57.39,0:00:59.77,Default,,0,0,0,,The continent contains an enormous amount of
+Dialogue: 0,0:00:59.77,0:01:01.59,Default,,0,0,0,,the world's freshwater
+Dialogue: 0,0:01:01.59,0:01:04.85,Default,,0,0,0,,locked away inside its frozen landscape
+Dialogue: 0,0:01:04.85,0:01:07.46,Default,,0,0,0,,But Antarctica is not simply a giant block
+Dialogue: 0,0:01:07.46,0:01:08.93,Default,,0,0,0,,of ice
+Dialogue: 0,0:01:08.93,0:01:11.54,Default,,0,0,0,,It is a world of towering mountains massive
+Dialogue: 0,0:01:11.54,0:01:16.02,Default,,0,0,0,,glaciers frozen oceans violent storms and animals
+Dialogue: 0,0:01:16.02,0:01:18.71,Default,,0,0,0,,specially adapted to survive conditions that
+Dialogue: 0,0:01:18.71,0:01:21.87,Default,,0,0,0,,would be deadly for most living creatures
+Dialogue: 0,0:01:21.87,0:01:24.19,Default,,0,0,0,,And perhaps the most famous of them all is
+Dialogue: 0,0:01:24.19,0:01:26.09,Default,,0,0,0,,the emperor penguin
+Dialogue: 0,0:01:26.09,0:01:28.97,Default,,0,0,0,,When winter arrives emperor penguins face one
+Dialogue: 0,0:01:28.97,0:01:31.51,Default,,0,0,0,,of the most difficult survival challenges in
+Dialogue: 0,0:01:31.51,0:01:33.30,Default,,0,0,0,,the animal kingdom
+Dialogue: 0,0:01:33.30,0:01:36.15,Default,,0,0,0,,Instead of escaping the cold they remain on
+Dialogue: 0,0:01:36.15,0:01:38.21,Default,,0,0,0,,the frozen continent
+Dialogue: 0,0:01:38.21,0:01:40.99,Default,,0,0,0,,Thousands of penguins gather together in enormous
+Dialogue: 0,0:01:40.99,0:01:42.32,Default,,0,0,0,,groups
+Dialogue: 0,0:01:42.32,0:01:44.42,Default,,0,0,0,,They stand shoulder to shoulder
+Dialogue: 0,0:01:44.42,0:01:47.77,Default,,0,0,0,,forming a moving wall of feathers and bodies
+Dialogue: 0,0:01:47.77,0:01:50.95,Default,,0,0,0,,Those on the outside face the freezing wind
+Dialogue: 0,0:01:50.95,0:01:54.44,Default,,0,0,0,,But slowly the group moves and rotates
+Dialogue: 0,0:01:54.44,0:01:56.64,Default,,0,0,0,,Penguins from the outside eventually reach
+Dialogue: 0,0:01:56.64,0:01:58.08,Default,,0,0,0,,the warmer center
+Dialogue: 0,0:01:58.08,0:02:00.38,Default,,0,0,0,,while others take their place
+Dialogue: 0,0:02:00.38,0:02:03.01,Default,,0,0,0,,This simple behavior helps the colony conserve
+Dialogue: 0,0:02:03.01,0:02:07.06,Default,,0,0,0,,heat and survive temperatures far below freezing
+Dialogue: 0,0:02:07.06,0:02:09.84,Default,,0,0,0,,But for male emperor penguins the challenge
+Dialogue: 0,0:02:09.84,0:02:11.89,Default,,0,0,0,,becomes even greater
+Dialogue: 0,0:02:11.89,0:02:14.76,Default,,0,0,0,,After the female lays a single egg the male
+Dialogue: 0,0:02:14.76,0:02:17.51,Default,,0,0,0,,protects it by balancing it on his feet beneath
+Dialogue: 0,0:02:17.51,0:02:19.68,Default,,0,0,0,,a warm fold of skin
+Dialogue: 0,0:02:19.68,0:02:23.01,Default,,0,0,0,,For weeks he may survive with almost no food
+Dialogue: 0,0:02:23.01,0:02:25.12,Default,,0,0,0,,while protecting the developing chick from
+Dialogue: 0,0:02:25.12,0:02:26.98,Default,,0,0,0,,the ice beneath him
+Dialogue: 0,0:02:26.98,0:02:29.58,Default,,0,0,0,,One mistake could expose the egg to the cold
+Dialogue: 0,0:02:29.58,0:02:32.07,Default,,0,0,0,,and end its chance of survival
+Dialogue: 0,0:02:32.07,0:02:34.43,Default,,0,0,0,,Penguins are not the only animals living in
+Dialogue: 0,0:02:34.43,0:02:36.28,Default,,0,0,0,,this frozen world
+Dialogue: 0,0:02:36.28,0:02:39.38,Default,,0,0,0,,Along Antarctica's coastline seals rest on
+Dialogue: 0,0:02:39.38,0:02:41.10,Default,,0,0,0,,floating ice
+Dialogue: 0,0:02:41.10,0:02:43.77,Default,,0,0,0,,Weddell seals can dive deep beneath the frozen
+Dialogue: 0,0:02:43.77,0:02:46.79,Default,,0,0,0,,surface in search of fish and squid
+Dialogue: 0,0:02:46.79,0:02:49.15,Default,,0,0,0,,Leopard seals are powerful hunters and are
+Dialogue: 0,0:02:49.15,0:02:51.98,Default,,0,0,0,,among the most dangerous predators around Antarctic
+Dialogue: 0,0:02:51.98,0:02:53.36,Default,,0,0,0,,waters
+Dialogue: 0,0:02:53.36,0:02:55.93,Default,,0,0,0,,Farther offshore whales travel through the
+Dialogue: 0,0:02:55.93,0:02:57.50,Default,,0,0,0,,Southern Ocean
+Dialogue: 0,0:02:57.50,0:03:01.32,Default,,0,0,0,,Humpback whales orcas and other species depend
+Dialogue: 0,0:03:01.32,0:03:03.69,Default,,0,0,0,,on the rich marine ecosystem surrounding the
+Dialogue: 0,0:03:03.69,0:03:05.10,Default,,0,0,0,,continent
+Dialogue: 0,0:03:05.10,0:03:08.17,Default,,0,0,0,,And strangely much of this enormous food web
+Dialogue: 0,0:03:08.17,0:03:11.14,Default,,0,0,0,,depends on something incredibly small
+Dialogue: 0,0:03:11.14,0:03:12.33,Default,,0,0,0,,Krill
+Dialogue: 0,0:03:12.33,0:03:14.97,Default,,0,0,0,,These tiny shrimp-like animals gather in huge
+Dialogue: 0,0:03:14.97,0:03:17.89,Default,,0,0,0,,numbers beneath the ocean surface
+Dialogue: 0,0:03:17.89,0:03:19.62,Default,,0,0,0,,Penguins eat them
+Dialogue: 0,0:03:19.62,0:03:21.29,Default,,0,0,0,,Seals eat them
+Dialogue: 0,0:03:21.29,0:03:22.84,Default,,0,0,0,,Fish eat them
+Dialogue: 0,0:03:22.84,0:03:25.13,Default,,0,0,0,,And some of the largest animals that have ever
+Dialogue: 0,0:03:25.13,0:03:28.60,Default,,0,0,0,,existed including whales depend heavily on
+Dialogue: 0,0:03:28.60,0:03:29.61,Default,,0,0,0,,them
+Dialogue: 0,0:03:29.61,0:03:32.36,Default,,0,0,0,,In Antarctica even the smallest creature can
+Dialogue: 0,0:03:32.36,0:03:35.01,Default,,0,0,0,,support an entire ecosystem
+Dialogue: 0,0:03:35.01,0:03:37.19,Default,,0,0,0,,But humans live here too
+Dialogue: 0,0:03:37.19,0:03:40.29,Default,,0,0,0,,Not permanently in normal cities but inside
+Dialogue: 0,0:03:40.29,0:03:42.71,Default,,0,0,0,,research stations operated by countries from
+Dialogue: 0,0:03:42.71,0:03:44.36,Default,,0,0,0,,around the world
+Dialogue: 0,0:03:44.36,0:03:46.79,Default,,0,0,0,,Scientists travel to Antarctica to study the
+Dialogue: 0,0:03:46.79,0:03:51.77,Default,,0,0,0,,atmosphere glaciers wildlife geology climate
+Dialogue: 0,0:03:51.77,0:03:53.71,Default,,0,0,0,,and even space
+Dialogue: 0,0:03:53.71,0:03:56.01,Default,,0,0,0,,Some research stations operate throughout the
+Dialogue: 0,0:03:56.01,0:03:57.15,Default,,0,0,0,,year
+Dialogue: 0,0:03:57.15,0:03:59.74,Default,,0,0,0,,During summer thousands of researchers and
+Dialogue: 0,0:03:59.74,0:04:03.41,Default,,0,0,0,,support workers can be present across the continent
+Dialogue: 0,0:04:03.41,0:04:06.29,Default,,0,0,0,,But when winter arrives the population falls
+Dialogue: 0,0:04:06.29,0:04:07.81,Default,,0,0,0,,dramatically
+Dialogue: 0,0:04:07.81,0:04:10.88,Default,,0,0,0,,For those who remain life can become incredibly
+Dialogue: 0,0:04:10.88,0:04:12.32,Default,,0,0,0,,isolated
+Dialogue: 0,0:04:12.32,0:04:15.81,Default,,0,0,0,,Imagine spending months surrounded by ice
+Dialogue: 0,0:04:15.81,0:04:19.12,Default,,0,0,0,,Outside temperatures can become dangerous
+Dialogue: 0,0:04:19.12,0:04:22.93,Default,,0,0,0,,Flights may become impossible for long periods
+Dialogue: 0,0:04:22.93,0:04:25.50,Default,,0,0,0,,Fresh food becomes limited
+Dialogue: 0,0:04:25.50,0:04:27.86,Default,,0,0,0,,And communication with family happens from
+Dialogue: 0,0:04:27.86,0:04:31.10,Default,,0,0,0,,one of the most remote places on the planet
+Dialogue: 0,0:04:31.10,0:04:34.52,Default,,0,0,0,,Every journey outside requires preparation
+Dialogue: 0,0:04:34.52,0:04:36.76,Default,,0,0,0,,Heavy insulated clothing
+Dialogue: 0,0:04:36.76,0:04:38.75,Default,,0,0,0,,Protective goggles
+Dialogue: 0,0:04:38.75,0:04:40.57,Default,,0,0,0,,Special boots
+Dialogue: 0,0:04:40.57,0:04:41.92,Default,,0,0,0,,Gloves
+Dialogue: 0,0:04:41.92,0:04:44.48,Default,,0,0,0,,And strict safety procedures
+Dialogue: 0,0:04:44.48,0:04:47.20,Default,,0,0,0,,Because in Antarctica bad weather can arrive
+Dialogue: 0,0:04:47.20,0:04:48.52,Default,,0,0,0,,quickly
+Dialogue: 0,0:04:48.52,0:04:51.34,Default,,0,0,0,,A clear landscape can disappear inside blowing
+Dialogue: 0,0:04:51.34,0:04:54.59,Default,,0,0,0,,snow making it difficult to see even a short
+Dialogue: 0,0:04:54.59,0:04:56.19,Default,,0,0,0,,distance ahead
+Dialogue: 0,0:04:56.19,0:04:58.09,Default,,0,0,0,,Another challenge is darkness
+Dialogue: 0,0:04:59.19,0:05:02.08,Default,,0,0,0,,Near the South Pole the sun disappears for
+Dialogue: 0,0:05:02.08,0:05:03.87,Default,,0,0,0,,months during winter
+Dialogue: 0,0:05:03.87,0:05:06.60,Default,,0,0,0,,Scientists living there can experience a long
+Dialogue: 0,0:05:06.60,0:05:08.18,Default,,0,0,0,,polar night
+Dialogue: 0,0:05:08.18,0:05:10.87,Default,,0,0,0,,The human body naturally depends on daylight
+Dialogue: 0,0:05:10.87,0:05:13.42,Default,,0,0,0,,to regulate sleep and energy
+Dialogue: 0,0:05:13.42,0:05:16.93,Default,,0,0,0,,Without normal sunrise and sunset daily routines
+Dialogue: 0,0:05:16.93,0:05:19.38,Default,,0,0,0,,become extremely important
+Dialogue: 0,0:05:19.38,0:05:23.27,Default,,0,0,0,,People work exercise eat together watch films
+Dialogue: 0,0:05:23.27,0:05:26.42,Default,,0,0,0,,conduct experiments and create their own routines
+Dialogue: 0,0:05:26.42,0:05:29.45,Default,,0,0,0,,to stay physically and mentally active
+Dialogue: 0,0:05:29.45,0:05:33.00,Default,,0,0,0,,Then after months of darkness sunlight finally
+Dialogue: 0,0:05:33.00,0:05:34.49,Default,,0,0,0,,returns
+Dialogue: 0,0:05:34.49,0:05:36.97,Default,,0,0,0,,For people who have spent an entire winter
+Dialogue: 0,0:05:36.97,0:05:40.17,Default,,0,0,0,,there seeing the sun again can be an unforgettable
+Dialogue: 0,0:05:40.17,0:05:41.43,Default,,0,0,0,,moment
+Dialogue: 0,0:05:41.43,0:05:44.89,Default,,0,0,0,,And underneath the ice is another hidden world
+Dialogue: 0,0:05:44.89,0:05:47.36,Default,,0,0,0,,Antarctica is surrounded by freezing ocean
+Dialogue: 0,0:05:47.36,0:05:50.28,Default,,0,0,0,,water filled with organisms adapted to extreme
+Dialogue: 0,0:05:50.28,0:05:51.53,Default,,0,0,0,,cold
+Dialogue: 0,0:05:51.53,0:05:54.50,Default,,0,0,0,,Researchers continue to discover how life survives
+Dialogue: 0,0:05:54.50,0:05:57.43,Default,,0,0,0,,beneath ice shelves and in environments receiving
+Dialogue: 0,0:05:57.43,0:06:00.16,Default,,0,0,0,,little or no sunlight
+Dialogue: 0,0:06:00.16,0:06:03.42,Default,,0,0,0,,Some organisms survive in conditions once considered
+Dialogue: 0,0:06:03.42,0:06:06.06,Default,,0,0,0,,almost impossible for life
+Dialogue: 0,0:06:06.06,0:06:08.83,Default,,0,0,0,,That is one reason Antarctica is so valuable
+Dialogue: 0,0:06:08.83,0:06:10.47,Default,,0,0,0,,to science
+Dialogue: 0,0:06:10.47,0:06:13.26,Default,,0,0,0,,By studying life here researchers can better
+Dialogue: 0,0:06:13.26,0:06:16.43,Default,,0,0,0,,understand the limits of survival on Earth
+Dialogue: 0,0:06:16.43,0:06:18.61,Default,,0,0,0,,And perhaps even what life could look like
+Dialogue: 0,0:06:18.61,0:06:21.92,Default,,0,0,0,,in extreme environments beyond our planet
+Dialogue: 0,0:06:21.92,0:06:24.62,Default,,0,0,0,,But Antarctica is also changing
+Dialogue: 0,0:06:24.62,0:06:27.59,Default,,0,0,0,,Scientists closely monitor its glaciers sea
+Dialogue: 0,0:06:27.59,0:06:30.74,Default,,0,0,0,,ice and enormous ice sheets because changes
+Dialogue: 0,0:06:30.74,0:06:33.84,Default,,0,0,0,,here can influence oceans and climate far beyond
+Dialogue: 0,0:06:33.84,0:06:35.76,Default,,0,0,0,,the continent itself
+Dialogue: 0,0:06:35.76,0:06:38.16,Default,,0,0,0,,What happens in this frozen wilderness does
+Dialogue: 0,0:06:38.16,0:06:40.47,Default,,0,0,0,,not remain in Antarctica
+Dialogue: 0,0:06:40.47,0:06:43.14,Default,,0,0,0,,It can affect the entire planet
+Dialogue: 0,0:06:43.14,0:06:46.25,Default,,0,0,0,,Antarctica may look empty from a distance
+Dialogue: 0,0:06:46.25,0:06:48.16,Default,,0,0,0,,But look closer
+Dialogue: 0,0:06:48.16,0:06:50.27,Default,,0,0,0,,and you discover penguins protecting their
+Dialogue: 0,0:06:50.27,0:06:52.84,Default,,0,0,0,,young in brutal winter storms
+Dialogue: 0,0:06:52.84,0:06:56.01,Default,,0,0,0,,Seals hunting beneath frozen oceans
+Dialogue: 0,0:06:56.01,0:06:59.01,Default,,0,0,0,,Whales traveling through icy waters
+Dialogue: 0,0:06:59.01,0:07:02.92,Default,,0,0,0,,Tiny organisms supporting enormous food chains
+Dialogue: 0,0:07:02.92,0:07:05.35,Default,,0,0,0,,And humans living at the edge of what our bodies
+Dialogue: 0,0:07:05.35,0:07:06.64,Default,,0,0,0,,can tolerate
+Dialogue: 0,0:07:06.64,0:07:09.62,Default,,0,0,0,,searching for answers about our planet
+Dialogue: 0,0:07:09.62,0:07:13.15,Default,,0,0,0,,Antarctica is not a lifeless frozen desert
+Dialogue: 0,0:07:13.15,0:07:16.75,Default,,0,0,0,,It is one of Earth's greatest survival stories
+Dialogue: 0,0:07:16.75,0:07:19.41,Default,,0,0,0,,A place where temperatures fall to extraordinary
+Dialogue: 0,0:07:19.41,0:07:19.94,Default,,0,0,0,,lows
+Dialogue: 0,0:07:21.01,0:07:24.00,Default,,0,0,0,,where darkness can last for months
+Dialogue: 0,0:07:24.00,0:07:26.86,Default,,0,0,0,,and where life continues against almost impossible
+Dialogue: 0,0:07:26.86,0:07:28.14,Default,,0,0,0,,odds
+Dialogue: 0,0:07:28.14,0:07:30.04,Default,,0,0,0,,This is Antarctica
+Dialogue: 0,0:07:30.04,0:07:32.15,Default,,0,0,0,,Life beyond the limits
+Dialogue: 0,0:07:32.15,0:07:34.70,Default,,0,0,0,,And this is Extreme Earth Life in Antarctica
