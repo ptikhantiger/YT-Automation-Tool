@@ -16,6 +16,7 @@ and raises UnicodeEncodeError on fancy characters.
 """
 import argparse
 import shutil
+import os
 import socket
 import subprocess
 import sys
@@ -34,12 +35,14 @@ CORE_PACKAGES = [("edge_tts", "edge-tts"), ("PIL", "Pillow")]
 # Needed only for step 0 --yt-link and the music picker.
 OPTIONAL_PACKAGES = [("youtube_transcript_api", "youtube-transcript-api"), ("yt_dlp", "yt-dlp")]
 
-# key file -> (label, required, signup url)
+# key file -> (env var, label, required, signup url). A key can come from
+# either: the file under tools/ (this laptop) or the env var (a GitHub
+# Codespace, where keys are stored as Codespaces Secrets and arrive as env).
 KEYS = [
-    ("pexels_key.txt", "Pexels (stock clips)", True, "https://www.pexels.com/api/"),
-    ("gemini_key.txt", "Gemini (script + auto-match)", False, "https://aistudio.google.com/apikey"),
-    ("pixabay_key.txt", "Pixabay (extra source tab)", False, "https://pixabay.com/api/docs/"),
-    ("coverr_key.txt", "Coverr (extra source tab)", False, "https://coverr.co/developers"),
+    ("pexels_key.txt", "PEXELS_API_KEY", "Pexels (stock clips)", True, "https://www.pexels.com/api/"),
+    ("gemini_key.txt", "GEMINI_API_KEY", "Gemini (script + auto-match)", False, "https://aistudio.google.com/apikey"),
+    ("pixabay_key.txt", "PIXABAY_API_KEY", "Pixabay (extra source tab)", False, "https://pixabay.com/api/docs/"),
+    ("coverr_key.txt", "COVERR_API_KEY", "Coverr (extra source tab)", False, "https://coverr.co/developers"),
 ]
 
 
@@ -121,17 +124,18 @@ def check_keys():
     """Keys are not fatal -- the dashboard should still open so the user can
     read the setup text. Only report what is and isn't there."""
     blocking = False
-    for filename, label, required, url in KEYS:
+    for filename, env_name, label, required, url in KEYS:
         path = TOOLS / filename
-        present = path.exists() and bool(path.read_text(encoding="utf-8", errors="replace").strip())
-        if present:
-            print(f"  [ OK ] {label}")
+        in_file = path.exists() and bool(path.read_text(encoding="utf-8", errors="replace").strip())
+        in_env = bool(os.environ.get(env_name, "").strip())
+        if in_file or in_env:
+            print(f"  [ OK ] {label}" + ("" if in_file else f" (from ${env_name})"))
         elif required:
-            print(f"  [FAIL] {label} -- missing tools/{filename}")
+            print(f"  [FAIL] {label} -- missing tools/{filename} (or ${env_name})")
             print(f"         Required. Get a free key: {url}")
             blocking = True
         else:
-            print(f"  [WARN] {label} -- no tools/{filename} (optional)")
+            print(f"  [WARN] {label} -- no tools/{filename} or ${env_name} (optional)")
     return not blocking
 
 

@@ -135,6 +135,16 @@ LOCAL_IMAGE_EXTS = {"jpg", "jpeg", "png", "webp"}
 STATE = {}
 
 
+def auto_render_default():
+    """Whether the picker should start step 3 by itself once every scene has
+    a clip. On this laptop: yes. Inside a GitHub Codespace (GitHub sets
+    CODESPACES=true): no -- the codespace is a 2-core machine that burns the
+    free-hours quota, and the repo's Actions workflow renders for free on a
+    4-core runner instead. The page then shows the push + render steps in
+    place of the countdown. --no-auto-render / --auto-render override."""
+    return os.environ.get("CODESPACES", "").lower() != "true"
+
+
 # --------------------------------------------------------------------------
 # Pexels
 # --------------------------------------------------------------------------
@@ -2174,6 +2184,7 @@ class Handler(BaseHTTPRequestHandler):
                 "rtl": STATE.get("rtl", False),
                 "highlight": sorted(STATE.get("highlight") or []),
                 "automatch_available": bool(STATE.get("llm_keys")),
+                "auto_render": STATE.get("auto_render", True),
                 # AI illustration tab -- always available (Pollinations needs
                 # no key); a token just makes it faster and watermark-free.
                 "ai_available": True,
@@ -3115,6 +3126,12 @@ PAGE_HTML = r"""<!doctype html>
         with default settings -- you don't need to do anything.</span>
       <span id="arcancelled" style="display:none"> Auto-render is paused. Click
         <b>Render now</b> whenever you're ready.</span>
+      <span id="arcloud" style="display:none"> You're in a Codespace, so rendering
+        here is off (it's slow and spends your free hours). Push the picks and let
+        GitHub Actions render for free -- in the terminal:<br>
+        <code id="arcloudcmd" style="display:block; margin:10px 0; white-space:pre-wrap;"></code>
+        Then download <b>output.mp4</b> from the run's Artifacts box (Actions tab).
+        <b>Render here anyway</b> still works if you really want to.</span>
       <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
         <button id="arnow" class="primary">Render now</button>
         <button id="arwait">Not yet -- keep picking</button>
@@ -3174,6 +3191,7 @@ const PROVIDER_LABELS = { pexels: 'Pexels', pixabay: 'Pixabay', coverr: 'Coverr'
 let source = 'pexels-video'; // key into SOURCES
 let localAsset = null;
 let renderOffered = false; // ask at most once per page load
+let autoRenderEnabled = true, projectPath = '';  // from /api/scenes
 let aiStop = false;         // set by the AI panel's Stop button mid-generate
 let aiWatermarked = true;   // no Pollinations token -> free tier adds a small watermark
 
@@ -3713,6 +3731,8 @@ async function boot() {
   scenes = d.scenes; selections = d.selections;
   highlight = new Set(d.highlight || []);
   automatchAvailable = !!d.automatch_available;
+  autoRenderEnabled = d.auto_render !== false;
+  projectPath = d.project || '';
   // Always show the buttons -- with no Gemini key the endpoint returns a clear
   // one-line reason on click, which is more discoverable than a button that
   // silently isn't there. The strictness dropdown only matters when usable.
@@ -4131,8 +4151,23 @@ function maybeOfferRender() {
   if (!scenes.length || n !== scenes.length || highlight.size !== 0) return;
   renderOffered = true;
   const box = $('autorender');
-  $('arcountdown').style.display = '';
   $('arcancelled').style.display = 'none';
+  if (!autoRenderEnabled) {
+    // Cloud-render mode (Codespaces): no countdown, show the push + Actions
+    // steps instead. "Render now" stays as an explicit opt-in.
+    $('arcountdown').style.display = 'none';
+    $('arwait').style.display = 'none';
+    $('arcloud').style.display = '';
+    $('arcloudcmd').textContent =
+      `git add projects/${projectPath} && git commit -m "${projectPath}: picks done" && git push\n` +
+      `gh workflow run render.yml -f project=${projectPath}`;
+    $('arnow').textContent = 'Render here anyway';
+    $('arnow').onclick = startRender;
+    box.style.display = 'block';
+    box.scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  $('arcountdown').style.display = '';
   $('arwait').style.display = '';
   box.style.display = 'block';
   box.scrollIntoView({ behavior: 'smooth' });
@@ -4399,7 +4434,8 @@ boot();
 
 
 def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
-        pollinations_token=None, port=8000, no_browser=False, highlight=None):
+        pollinations_token=None, port=8000, no_browser=False, highlight=None,
+        auto_render=None):
     """Serve the clip picker for `project` until every scene has a clip and
     the browser confirms it's time to render, or the server is interrupted.
 
@@ -4492,6 +4528,7 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         "rtl": caption_style(Path(project).parts[0])["rtl"],
         "lang": Path(project).parts[0] if Path(project).parts else "en",
         "finish_requested": False,
+        "auto_render": auto_render_default() if auto_render is None else bool(auto_render),
         "highlight": set(highlight or []),
         "orientation": orientation,
     })
@@ -4564,13 +4601,19 @@ def main():
     parser.add_argument("--pollinations-token", default=None, help="Pollinations token for the AI illustration tab (else POLLINATIONS_TOKEN or tools/pollinations_token.txt) -- optional; the tab works without it")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--no-browser", action="store_true", help="Don't auto-open the browser")
+    ar = parser.add_mutually_exclusive_group()
+    ar.add_argument("--no-auto-render", dest="auto_render", action="store_false", default=None,
+                    help="Don't start step 3 automatically when the last scene is picked; show the "
+                    "push + GitHub Actions render steps instead. Default inside a GitHub Codespace.")
+    ar.add_argument("--auto-render", dest="auto_render", action="store_true",
+                    help="Start step 3 here automatically (the default outside Codespaces).")
     args = parser.parse_args()
 
     render_now = run(
         args.project, api_key=args.api_key,
         pixabay_api_key=args.pixabay_api_key, coverr_api_key=args.coverr_api_key,
         pollinations_token=args.pollinations_token,
-        port=args.port, no_browser=args.no_browser,
+        port=args.port, no_browser=args.no_browser, auto_render=args.auto_render,
     )
     if render_now:
         import step3_render_video

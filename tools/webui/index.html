@@ -924,6 +924,17 @@ async function renderScreen() {
   }
 }
 
+// Where a picker/music server on `port` is reachable FROM THIS BROWSER.
+// Locally that's literally 127.0.0.1. Behind GitHub Codespaces port
+// forwarding this page is served from https://<name>-8765.app.github.dev
+// and each other port gets its own hostname with the port baked in --
+// 127.0.0.1 there would be the viewer's own laptop, not the codespace.
+function pickerBase(port) {
+  const m = location.hostname.match(/^(.+)-(\d+)\.(app\.github\.dev|githubpreview\.dev)$/);
+  if (m) return `https://${m[1]}-${port}.${m[3]}`;
+  return `http://127.0.0.1:${port}`;
+}
+
 async function kickRender(p) {
   renderBaselineMtime = p.output_mtime;
   const pickerBusy = runs.step2.running && runs.step2.project === project;
@@ -933,7 +944,7 @@ async function kickRender(p) {
     // process (streaming into the step2 console). No duplicate step3 run.
     const port = pickerPort.step2 || +(values.step2.port || 8000);
     try {
-      await fetch(`http://127.0.0.1:${port}/api/finish`, { method: "POST" });
+      await fetch(`${pickerBase(port)}/api/finish`, { method: "POST" });
       renderKicked = true;
       renderScreen();
       return;
@@ -996,7 +1007,7 @@ async function pickerInfo(key, port) {
   const ping = new AbortController();
   const tp = setTimeout(() => ping.abort(), 1500);
   try {
-    await fetch(`http://127.0.0.1:${port}/`, { mode: "no-cors", signal: ping.signal, cache: "no-store" });
+    await fetch(`${pickerBase(port)}/`, { mode: "no-cors", signal: ping.signal, cache: "no-store" });
     clearTimeout(tp);
   } catch {
     clearTimeout(tp);
@@ -1008,7 +1019,7 @@ async function pickerInfo(key, port) {
   const ctl = new AbortController();
   const t = setTimeout(() => ctl.abort(), 1500);
   try {
-    const r = await fetch(`http://127.0.0.1:${port}${PICKER_PROBE[key]}`, { signal: ctl.signal, cache: "no-store" });
+    const r = await fetch(`${pickerBase(port)}${PICKER_PROBE[key]}`, { signal: ctl.signal, cache: "no-store" });
     clearTimeout(t);
     if (!r.ok) return { occupied: true, project: null };
     const d = await r.json();

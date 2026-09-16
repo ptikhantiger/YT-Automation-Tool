@@ -1,0 +1,39 @@
+{
+  // GitHub Codespaces: run the whole pipeline (dashboard, picker, music
+  // picker) from a browser, on GitHub's machine instead of your laptop.
+  // Free tier: 60 hours/month on this 2-core size + 15 GB storage.
+  // Hand renders (step 3) to the "Render video" Actions workflow -- it's
+  // unlimited there and this small machine would spend your hours on it.
+  "name": "YouTube Automation Tool",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "hostRequirements": { "cpus": 2, "memory": "8gb" },
+
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "forwardPorts": [8765, 8000, 8010],
+  "portsAttributes": {
+    "8765": { "label": "Dashboard", "onAutoForward": "openBrowser" },
+    "8000": { "label": "Clip picker (step 2)", "onAutoForward": "openBrowser" },
+    "8010": { "label": "Music picker", "onAutoForward": "notify" }
+  },
+
+  // Codespaces Secrets (github.com/settings/codespaces) arrive as env vars,
+  // and every script already reads PEXELS_API_KEY / GEMINI_API_KEY /
+  // PIXABAY_API_KEY / COVERR_API_KEY / POLLINATIONS_TOKEN. No key files needed.
+  "remoteEnv": {
+    "PYTHONUNBUFFERED": "1"
+  },
+
+  "customizations": {
+    "codespaces": {
+      "openFiles": ["README.md"]
+    },
+    "vscode": {
+      "extensions": ["ms-python.python"]
+    }
+  }
+}

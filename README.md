@@ -79,10 +79,65 @@ Local uploads and AI illustrations (`clips/*_local*`, `clips/*_ai*`) are
 committed with the project because only your disk has them; stock picks are
 re-downloaded by the runner.
 
+## Use it from any browser (GitHub Codespaces)
+
+Don't want to run *anything* on your laptop? Open the repo in a Codespace:
+a Linux machine on GitHub's side that you drive from a browser tab. Free tier
+is 60 hours/month on the 2-core size plus 15 GB of storage — more than enough
+for a couple of videos a week. Only your GitHub login can reach its ports.
+
+**One-time**
+
+1. Add your keys as Codespaces Secrets at <https://github.com/settings/codespaces>
+   → *New secret*, scoped to this repo: `PEXELS_API_KEY` (required),
+   `GEMINI_API_KEY` (recommended), optional `PIXABAY_API_KEY`, `COVERR_API_KEY`,
+   `POLLINATIONS_TOKEN`. They arrive as environment variables; no key files.
+2. On the repo page: **Code → Codespaces → Create codespace on main**. The
+   first build installs ffmpeg, fonts, and the Python packages (~2 min).
+
+**Every video**
+
+```bash
+python launch.py --no-browser
+```
+
+Open the **Dashboard** port from the *Ports* tab (a toast also pops up). The
+dashboard works exactly as it does locally; when a run reaches step 2 the
+picker appears as its own forwarded port (8000) — the dashboard embeds it,
+or open it in its own tab.
+
+When the last scene is picked, the picker shows the push + render commands
+instead of the 60-second countdown (rendering on the 2-core codespace is slow
+and spends your hours; the Actions runner is free and unlimited):
+
+```bash
+git add projects/en/myvideo && git commit -m "myvideo: picks done" && git push
+gh workflow run render.yml -f project=en/myvideo
+```
+
+Download `output.mp4` from the run's Artifacts when it finishes. "Render here
+anyway" still works if you insist.
+
+Notes:
+- The codespace **stops itself after 30 idle minutes** and keeps its disk;
+  reopen it from **Code → Codespaces**. Unused codespaces are deleted after
+  30 days — anything you've pushed is safe, unpushed picks are not, so push.
+- Codespaces run on Azure IPs, which YouTube sometimes bot-checks: `--yt-link`
+  and the music picker may need the `tools/cookies.txt` workaround described
+  in [`tools/README_PIPELINE.md`](tools/README_PIPELINE.md).
+- Urdu captions need Jameel Noori Nastaleeq — copy the `.ttf` into `~/.fonts/`
+  in the codespace (no package ships it).
+- Everything in `.devcontainer/` also works on any Linux VM (e.g. an Oracle
+  Cloud Always-Free instance) if you ever outgrow the free hours.
+
 ## API keys
 
 Create these files in `tools/` (each holds just the key, nothing else). They are
 gitignored and never sent to the browser.
+
+Each can also be given as an environment variable instead of a file
+(`PEXELS_API_KEY`, `GEMINI_API_KEY`, `PIXABAY_API_KEY`, `COVERR_API_KEY`,
+`POLLINATIONS_TOKEN`) — that's how a Codespace gets them.
 
 | File | Service | Required | Free key |
 |---|---|---|---|

@@ -672,7 +672,30 @@ def write_srt(captions, path):
     path.write_text("\n".join(lines).strip() + "\n", encoding="utf-8")
 
 
-DEFAULT_FONT_PATH = "C:/Windows/Fonts/arialbd.ttf"
+def find_font(*candidates):
+    """First of `candidates` that exists on this machine, else the first one
+    (so the eventual PIL error still names the font we wanted). Lets the same
+    CAPTION_STYLES work on this Windows laptop and on Linux (a GitHub
+    Codespace / Actions runner), where the font lives somewhere else or is a
+    metric-compatible stand-in."""
+    for candidate in candidates:
+        expanded = str(Path.home()) + candidate[1:] if candidate.startswith("~") else candidate
+        if Path(expanded).exists():
+            return expanded  # as written (forward slashes), not Path-normalized
+    return candidates[0]
+
+
+# Arial Bold on Windows. On Linux, Liberation Sans Bold (package
+# fonts-liberation) is metric-compatible with Arial -- same advance widths --
+# and fontconfig aliases the family name "Arial" to it, so the .ass style can
+# keep saying "Arial" and the capsule positions PIL measures still hold.
+DEFAULT_FONT_PATH = find_font(
+    "C:/Windows/Fonts/arialbd.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/liberation-sans/LiberationSans-Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+)
 DEFAULT_FONT_SIZE = 64
 
 # Per-language caption rendering. `font_name` is what goes in the .ass style
@@ -725,7 +748,13 @@ CAPTION_STYLES = {
     # misleading 0.56). Ratio held at 0.585-0.594 across five word advances.
     "ur": {
         "font_name": "Jameel Noori Nastaleeq",
-        "font_path": "C:/Windows/Fonts/Jameel Noori Nastaleeq.ttf",
+        # No Linux package ships this font: on a Codespace/VM drop the .ttf
+        # into ~/.fonts/ (fontconfig picks it up for libass, this for PIL).
+        "font_path": find_font(
+            "C:/Windows/Fonts/Jameel Noori Nastaleeq.ttf",
+            "~/.fonts/Jameel Noori Nastaleeq.ttf",
+            "/usr/share/fonts/truetype/Jameel Noori Nastaleeq.ttf",
+        ),
         "font_size": 140,
         "bold": False,  # Nastaliq has no bold face; faux-bold smears the joins
         # Encoding -1 is what actually turns on right-to-left word order, and
