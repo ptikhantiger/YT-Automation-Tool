@@ -22,6 +22,12 @@ separate clip pick needed and step2/step3 need no changes for it.
 count: a pause after every sentence that lands N+ words past the previous
 one (e.g. --pause-after-words 15).
 
+--sentence-scenes makes every sentence its own scene, 1:1, with no LLM
+grouping and no shot-splitting -- so each line of narration gets its own
+clip pick in step 2. Use it when you pick or make the visuals yourself
+(Local file / AI illustration) and want them to line up sentence for
+sentence with no matching guesswork.
+
 Reads projects/<lang>/<slug>/script.txt and writes all outputs into that same
 project folder. Works for any language edge-tts has voices for -- <lang> is
 just a folder name for your own organization (en/, es/, ...), but it also
@@ -50,6 +56,7 @@ from common import (
     long_gap_starts,
     save_json,
     scene_image_filename,
+    strip_speaker_labels,
     write_ass,
     write_karaoke_ass,
     write_wordcolor_ass,
@@ -127,12 +134,24 @@ def main():
         "--seed", type=int, default=None, help="Random seed for reproducible scene-duration picks"
     )
     parser.add_argument(
+        "--sentence-scenes",
+        action="store_true",
+        help="Split the script into one scene per sentence -- a strict 1:1 mapping. "
+        "Every sentence in script.txt becomes its own scene and its own clip pick in "
+        "step 2, in order, with NO LLM merging of consecutive sentences and NO "
+        "shot-splitting of long ones. Needs no Gemini key. Use this when you pick or make "
+        "the visuals yourself (Local file / AI illustration) and want each line of "
+        "narration to line up exactly with its own image or clip -- it removes the "
+        "guesswork of matching separately-made visuals to grouped scenes. Overrides "
+        "--no-semantic and the --semantic-*/--scene-seconds-* options.",
+    )
+    parser.add_argument(
         "--no-semantic",
         action="store_true",
         help="Use the legacy random-duration scene grouping (--scene-seconds-min/max) "
         "instead of the semantic timeline. By default scenes are cut where the MEANING "
-        "changes -- whole sentences grouped/split into visual segments by the same Groq "
-        "LLM step 0 uses (falling back to exact sentence-boundary grouping if no Groq "
+        "changes -- whole sentences grouped/split into visual segments by the same Gemini "
+        "LLM step 0 uses (falling back to exact sentence-boundary grouping if no Gemini "
         "key is configured), each scene mapped to the exact words and voice timestamps "
         "it represents, with per-scene visual requirements/exclusions and search "
         "queries, plus a timeline.json master map (word -> timestamp -> scene).",
@@ -322,6 +341,17 @@ def main():
     text = script_path.read_text(encoding="utf-8").strip()
     if not text:
         sys.exit(f"{script_path} is empty.")
+    # Last line of defense before TTS: drop any "Narrator:" / "[Voice-over]:"
+    # speaker labels sitting at the start of a line, so edge-tts doesn't read
+    # them aloud. Done here (not only in step 0) so a hand-pasted script.txt
+    # or one built before this check is cleaned too. Applied to `text` itself
+    # so synthesis, sentence alignment and captions all see the same words.
+    cleaned = strip_speaker_labels(text)
+    if cleaned != text:
+        removed = len(text.splitlines()) - len(cleaned.splitlines())
+        print(f"  stripped speaker label(s) from script.txt before synthesis"
+              + (f" ({removed} label line(s) removed)" if removed > 0 else ""))
+        text = cleaned
 
     timings_path = project_dir / "word_timings.json"
     audio_path = project_dir / "audio.mp3"
@@ -350,28 +380,39 @@ def main():
     if not args.captions_only:
         rng = random.Random(args.seed)
         timeline_meta = None
-        if args.no_semantic:
+        if args.sentence_scenes:
+            # Strict one-scene-per-sentence: the script's own sentence
+            # boundaries are the scene boundaries, 1:1, no LLM, no merging or
+            # shot-splitting -- so separately-made visuals line up line for line.
+            scenes, timeline_meta = build_scenes(
+                words, text, lang, llm_keys=None, one_per_sentence=True,
+            )
+            print(
+                f"  one scene per sentence -- {timeline_meta['sentences']} sentence(s) "
+                f"-> {len(scenes)} scene(s), 1:1 (no LLM, no merging)"
+            )
+        elif args.no_semantic:
             scenes = group_scenes(
                 words, min_duration=args.scene_seconds_min, max_duration=args.scene_seconds_max, rng=rng,
                 long_every=args.long_scene_every, long_seconds=args.long_scene_seconds,
                 sentence_punctuation=sentence_punct,
             )
         else:
-            groq_keys = None
+            llm_keys = None
             try:
-                from groq_client import load_keys
-                groq_keys = load_keys()
+                from llm_client import load_keys
+                llm_keys = load_keys()
             except Exception:
-                groq_keys = None
-            if groq_keys:
-                print("  analyzing script semantics with Groq (one scene per visual idea)...")
+                llm_keys = None
+            if llm_keys:
+                print("  analyzing script semantics with Gemini (one scene per visual idea)...")
             else:
                 print(
-                    "  no Groq key found -- semantic scenes fall back to exact sentence "
-                    "grouping (add a key to tools/groq_key.txt for full semantic analysis)"
+                    "  no Gemini key found -- semantic scenes fall back to exact sentence "
+                    "grouping (add a key to tools/gemini_key.txt for full semantic analysis)"
                 )
             scenes, timeline_meta = build_scenes(
-                words, text, lang, groq_keys,
+                words, text, lang, llm_keys,
                 min_scene_seconds=args.semantic_min_seconds,
                 max_scene_seconds=args.semantic_max_seconds,
             )
@@ -406,7 +447,10 @@ def main():
                 f"{args.pause_after_words}+ words past the previous pause) into audio.mp3 -- "
                 f"now {words[-1]['end']:.1f}s (was {before_end:.1f}s)"
             )
-        if args.no_semantic:
+        # timeline_meta is set for both the semantic pipeline and the strict
+        # --sentence-scenes 1:1 mapping (both go through build_scenes and are
+        # word-index exact); it's None only for the legacy group_scenes path.
+        if timeline_meta is None:
             for i, s in enumerate(scenes, start=1):
                 s["index"] = i
                 s["keywords"] = extract_keywords(s["text"], lang=lang)
@@ -417,11 +461,12 @@ def main():
             # the whole timeline exact no matter what moved.
             refresh_times(scenes, words)
         save_json(scenes, project_dir / "scenes.json")
-        if not args.no_semantic:
+        if timeline_meta is not None:
             write_timeline(project_dir, words, scenes, timeline_meta)
             n_multi = timeline_meta["multi_shot_scenes"]
+            kind = "one-per-sentence" if timeline_meta["mode"] == "sentence" else "semantic"
             print(
-                f"  scenes.json written ({len(scenes)} semantic scenes from "
+                f"  scenes.json written ({len(scenes)} {kind} scenes from "
                 f"{timeline_meta['sentences']} sentences, mode: {timeline_meta['mode']}"
                 + (f", {n_multi} multi-shot" if n_multi else "")
                 + f" -- that's {len(scenes)} clip picks in step 2)"

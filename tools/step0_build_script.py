@@ -3,7 +3,7 @@ Step 0: script-1.txt + script-2.txt + script-3.txt -> script.txt
 
 Merges several news reports of THE SAME story into one continuous spoken
 script, written in plain language for viewers aged 50 and over, using the
-Groq API.
+Gemini API.
 
 Usage:
     python step0_build_script.py <lang>/<slug> [--words 2500] [--model ...]
@@ -21,7 +21,7 @@ Usage:
     python step0_build_script.py <lang>/<slug> --yt-link <youtube-url>
                                                             # transcript ->
                                                             # script.txt ->
-                                                            # Groq rewrite,
+                                                            # Gemini rewrite,
                                                             # one command
     python step0_build_script.py <lang>/<slug> --yt-link <url> --documentary
                                                             # same,
@@ -33,7 +33,7 @@ Reads every projects/<lang>/<slug>/script-N.txt (any number, two or more) plus
 the rulebook at "News Master Prompt.txt" in the repo root, and writes
 script.txt into the same project folder. The source files are never modified.
 
---polish's rewrite rulebook: by default it reads tools/groq-rewrite-
+--polish's rewrite rulebook: by default it reads tools/llm-rewrite-
 instructions.txt (news purpose, falling back to the built-in POLISH_SYSTEM if
 that file is missing). Pass --documentary to use the
 humanized documentary tone instead, and skip the news-only sentence-length /
@@ -58,7 +58,8 @@ import re
 import sys
 from pathlib import Path
 
-from groq_client import DEFAULT_MODEL, GroqError, complete, load_keys
+from common import strip_speaker_labels
+from llm_client import DEFAULT_MODEL, LLMError, complete, load_keys
 from youtube_transcript import YouTubeTranscriptError, fetch_transcript_text
 
 REPO_ROOT = Path(__file__).parent.parent
@@ -69,10 +70,10 @@ RULEBOOK = REPO_ROOT / "News Master Prompt.txt"
 # --polish rulebook. Default (news purpose) is read from this file; missing
 # it falls back to the built-in POLISH_SYSTEM below. --documentary
 # switches to DOCUMENTARY_SYSTEM_PROMPT instead.
-NEWS_REWRITE_INSTRUCTIONS = TOOLS_DIR / "groq-rewrite-instructions.txt"
+NEWS_REWRITE_INSTRUCTIONS = TOOLS_DIR / "llm-rewrite-instructions.txt"
 
 # Humanized documentary tone rules, used by --documentary instead of the
-# news rewrite rulebook in groq-rewrite-instructions.txt.
+# news rewrite rulebook in llm-rewrite-instructions.txt.
 DOCUMENTARY_SYSTEM_PROMPT = """You rewrite documentary narration scripts for a YouTube channel.
 
 Voice: warm, natural, human -- like a person telling a friend a story, not a
@@ -82,15 +83,30 @@ you'll). Documentary narrator pacing: some short punchy sentences for
 emphasis, mixed with longer flowing ones -- never a wall of uniform length.
 
 Rules:
-- Keep every fact, name, number, and the overall structure/order exactly as
-  given. This is a rewrite of tone, not a rewrite of content.
+- Keep every fact, number, date, place name, and the overall structure/order
+  exactly as given. This is a rewrite of tone, not a rewrite of content.
+- Names of ordinary people the story is about (one, two, or three
+  individuals whose personal story or example the video is built around): do
+  NOT keep their real names. Replace each with a plain, relatable stand-in
+  ("a man", "a woman", "your friend", "a friend of yours", "your mate",
+  "a classmate", "a colleague", "a coworker", "your neighbor", "an old
+  schoolmate"), matching that person's gender, and use the SAME stand-in for
+  that person every time. Give two or three such people DIFFERENT stand-ins
+  so they stay distinct, and keep the relationships between them intact
+  without names ("his sister", "her husband", "their boss"). This is not a
+  content change -- the person and everything they do stay the same, only
+  the name goes. EXCEPTION: keep the real names of genuinely well-known
+  public figures central to the facts (heads of state, government officials,
+  world-famous business or historical figures).
 - Remove any duplicated or stuttered phrases (leftover transcription
   artifacts like "for more than two straight for more than two straight
   months") -- keep one clean copy of the sentence.
 - Cut stiff/formal phrasing ("there exists", "it is the case that") in favor
   of how someone would actually say it out loud.
-- No markdown, no headers, no bullet points, no stage directions -- plain
-  narration paragraphs only, same as the input.
+- No markdown, no headers, no bullet points, no stage directions, and no
+  speaker labels -- never begin a line with "Narrator:", "NARRATOR",
+  "Voice-over:", or similar. Output plain narration paragraphs only, same as
+  the input.
 - Keep it roughly the same length as the input. This is a polish, not a
   summary.
 - Output ONLY the rewritten script text, nothing else -- no preamble, no
@@ -101,7 +117,7 @@ def load_polish_system(documentary):
     """Pick the --polish rulebook.
 
     --documentary always uses that channel's own tone rules. Otherwise
-    this reads groq-rewrite-instructions.txt (the news rewrite rulebook) and
+    this reads llm-rewrite-instructions.txt (the news rewrite rulebook) and
     falls back to the built-in POLISH_SYSTEM if that file is missing or empty.
     """
     if documentary:
@@ -186,7 +202,9 @@ STYLE_RULES = """HOW TO WRITE (these matter more than anything else):
 
 OUTPUT: plain spoken paragraphs only. No heading, no title, no label, no
 markdown, no bullets, no stage directions, no word count, no preamble such as
-"Here is the section". Output nothing but the words the narrator will say."""
+"Here is the section", and NO speaker label -- never start a line with
+"Narrator:", "NARRATOR", or "Voice-over:". Output nothing but the words the
+narrator will say."""
 
 BANNED_PHRASES = [
     "dive in", "diving in", "delve", "buckle up", "shockwave", "game-chang",
@@ -236,6 +254,10 @@ def clean_narration(text):
     text = _LABEL_LINE.sub("", text)
     for pat, repl in _MD_PATTERNS:
         text = pat.sub(repl, text)
+    # "Narrator:" / "[Voice-over]:" speaker labels the models prepend to a
+    # section or paragraph -- edge-tts would read them aloud. Run after the
+    # markdown pass so a bold "**Narrator:**" is already unwrapped.
+    text = strip_speaker_labels(text)
     # Source-naming the models slip in despite being told not to.
     text = OUTLET_NAMING.sub("one report", text)
     text = re.sub(r"\bAccording to one report, one report\b", "According to one report", text, flags=re.I)
@@ -310,11 +332,11 @@ def build_brief(sources, key, model, verbose=True):
     )
     m = re.search(r"\{.*\}", raw, re.S)
     if not m:
-        raise GroqError("Fact-brief pass did not return JSON. Try re-running.")
+        raise LLMError("Fact-brief pass did not return JSON. Try re-running.")
     try:
         brief = json.loads(m.group(0))
     except ValueError as e:
-        raise GroqError(f"Fact brief was not valid JSON ({e}). Try re-running.")
+        raise LLMError(f"Fact brief was not valid JSON ({e}). Try re-running.")
     if verbose:
         print(
             f"        {len(brief.get('agreed', []))} agreed facts, "
@@ -395,7 +417,9 @@ NEVER use: dive in, delve, buckle up, shockwaves, game-changer, in conclusion,
 it's important to note, at the end of the day, slammed, stay tuned, that being
 said, moreover, furthermore, needless to say.
 
-Output ONLY the rewritten narration. No preamble, no notes, no markdown."""
+Output ONLY the rewritten narration. No preamble, no notes, no markdown, and
+no speaker labels -- never begin a line with "Narrator:", "NARRATOR", or
+"Voice-over:"."""
 
 
 def polish(text, key, model, system=POLISH_SYSTEM, verbose=True):
@@ -536,7 +560,7 @@ def fix_long_sentences(text, key, model, rounds=3, verbose=True):
                 if not m:
                     continue
                 mapping = json.loads(m.group(0))
-            except (GroqError, ValueError):
+            except (LLMError, ValueError):
                 continue
             for n, original in enumerate(batch, 1):
                 new = clean_narration(str(mapping.get(str(n), "")).strip())
@@ -683,10 +707,10 @@ def main():
     parser.add_argument("project", help="Path under projects/, e.g. en/rate-rise")
     parser.add_argument("--words", type=int, default=2500,
                         help="Target word count (default 2500 ~ 17 min at --rate -10%%)")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="Groq model")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model")
     parser.add_argument("--api-key", default=None,
-                        help="Groq key (else every line in groq_key.txt, or "
-                             "$GROQ_API_KEY). Multiple keys in groq_key.txt "
+                        help="Gemini key (else every line in gemini_key.txt, or "
+                             "$GEMINI_API_KEY). Multiple keys in gemini_key.txt "
                              "(one per line) are used as fallbacks when a "
                              "request is too large or a key's quota runs out.")
     parser.add_argument("--polish", action="store_true",
@@ -694,7 +718,7 @@ def main():
     parser.add_argument("--documentary", action="store_true",
                         help="Rewrite using the humanized "
                              "documentary tone instead of the news rewrite "
-                             "rulebook (groq-rewrite-instructions.txt), and "
+                             "rulebook (llm-rewrite-instructions.txt), and "
                              "skip the news-only sentence-length/banned-phrase "
                              "passes. Implies --polish (rewrites the existing "
                              "script.txt in place) unless combined with "
@@ -730,10 +754,10 @@ def main():
 
     try:
         key = load_keys(args.api_key)
-    except GroqError as e:
+    except LLMError as e:
         sys.exit(str(e))
     if len(key) > 1:
-        print(f"  {len(key)} Groq keys loaded -- will roll over to the next "
+        print(f"  {len(key)} Gemini keys loaded -- will roll over to the next "
               f"one if a key runs out of room\n")
 
     script_path = project_dir / "script.txt"
@@ -857,9 +881,9 @@ def main():
         # over-long sentences, and the polish pass makes it worse by merging.
         script = fix_long_sentences(script, key, args.model)
 
-    except GroqError as e:
+    except LLMError as e:
         sys.exit(
-            f"\nGroq error: {e}\n\n"
+            f"\nGemini error: {e}\n\n"
             f"Re-run the same command to resume -- the fact brief and every "
             f"finished section are cached in {CACHE_NAME}, so nothing already "
             f"paid for is spent twice."

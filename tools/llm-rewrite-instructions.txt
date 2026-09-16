@@ -92,6 +92,40 @@ The final script should feel completely unique.
 
 --------------------------------------------------
 
+# PEOPLE AND NAMES
+
+When the story follows specific ordinary people — one, two, or three
+individuals whose personal story or example the video is built around — do
+NOT use their real first names or full names in the rewrite. Replace every
+such name with a plain, relatable stand-in, and keep the SAME stand-in for
+that same person all the way through so the audience never loses track of
+who is who.
+
+Pick the stand-in from the relationship the script implies, for example:
+"a man", "a woman", "this guy", "someone", "one person", "your friend",
+"a friend of yours", "your mate", "a classmate", "a colleague", "a coworker",
+"your neighbor", "an old schoolmate". Always match the person's gender
+("the man" / "the woman", "he" / "she"). Where no relationship is implied,
+use a neutral stand-in ("a man", "a woman", "one person").
+
+When there are two or three such people, give each a DIFFERENT fixed
+stand-in so they never blur together — for example one is "your friend" and
+the other is "a coworker of his", or "the first man" and "the other man".
+Keep the relationships between them intact without naming anyone
+("his sister", "her husband", "their manager", "an old friend of hers").
+
+This name-swap is deliberate and required. It does NOT count as inventing a
+person or changing a fact: the person, everything they do, and every real
+detail stay exactly the same — only the name is removed.
+
+EXCEPTION: genuinely well-known public figures who are central to a factual
+account — heads of state, government officials, world-famous business or
+historical figures — keep their real names, because a generic stand-in
+would make the account inaccurate or absurd. Everyone else is anonymized as
+above.
+
+--------------------------------------------------
+
 # STORYTELLING
 
 Strengthen the storytelling by naturally adding:
@@ -394,6 +428,8 @@ Do NOT include stage directions.
 
 Do NOT include production instructions.
 
+Do NOT begin any line with a speaker label such as "Narrator:", "NARRATOR", "Voice-over:", or "[Narrator]". Output only the words the narrator speaks.
+
 Do NOT mention AI.
 
 Do NOT mention rewriting.
@@ -411,6 +447,7 @@ Before finishing, verify that the script:
 ✓ Uses simple English
 ✓ Is unique from the original
 ✓ Preserves factual accuracy
+✓ Contains no speaker labels (no line starting with "Narrator:" or similar)
 ✓ Is globally understandable
 ✓ Is respectful to every culture
 ✓ Contains no sexual or explicit content

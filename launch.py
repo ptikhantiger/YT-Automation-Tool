@@ -37,7 +37,7 @@ OPTIONAL_PACKAGES = [("youtube_transcript_api", "youtube-transcript-api"), ("yt_
 # key file -> (label, required, signup url)
 KEYS = [
     ("pexels_key.txt", "Pexels (stock clips)", True, "https://www.pexels.com/api/"),
-    ("groq_key.txt", "Groq (script + auto-match)", False, "https://console.groq.com/keys"),
+    ("gemini_key.txt", "Gemini (script + auto-match)", False, "https://aistudio.google.com/apikey"),
     ("pixabay_key.txt", "Pixabay (extra source tab)", False, "https://pixabay.com/api/docs/"),
     ("coverr_key.txt", "Coverr (extra source tab)", False, "https://coverr.co/developers"),
 ]

@@ -65,6 +65,15 @@ Listen to audio.mp3. If the voice or pace isn't right, tweak and re-run:
   --voice en-US-AndrewNeural     use a different narrator voice
   --rate -5%                     slow down narration (+5% to speed up)
 
+By default scenes are cut where the MEANING changes (whole sentences grouped
+into visual ideas). If instead you want ONE scene per sentence -- so each line
+of narration gets its own clip pick in step 2 and separately-made visuals
+(Local file / AI illustration) line up 1:1 -- add:
+  --sentence-scenes             one sentence = one scene, no grouping, no
+                                LLM. Best when you pick or make the visuals
+                                yourself and want exact sentence-by-sentence
+                                sync.
+
 Captions default to the big bold centered look (white words, the current
 word coloured, ~3 words on screen at a time -- the "THE INCOMING THREATS"
 style). Switch it with --caption-style:
@@ -110,10 +119,19 @@ monetized YouTube use with no attribution required:
                       treatment as Pexels photo.
   - Coverr video   -- a third free clip library. Needs its own key (see
                       NOTES below); add the key to enable this tab.
+  - AI illustration -- generate a warm, hand-drawn storybook image for the
+                      scene with AI (Pollinations.AI / FLUX) instead of
+                      searching stock. Free, no key needed. Edit the prompt,
+                      click "Generate illustrations" for a few variations,
+                      then "Use this image". Step 3 renders it as a slow
+                      Ken Burns zoom, same as a stock photo. A free token in
+                      tools/pollinations_token.txt makes it faster and drops
+                      the small free-tier watermark.
   - Local file     -- upload an image straight from your computer instead of
                       searching a stock site.
 Pixabay and Coverr are optional -- Pexels alone is enough to make a video --
-add a key for each extra tab you want to use.
+add a key for each extra tab you want to use. The AI illustration tab always
+works.
 
 A "Minimum quality" dropdown above the results grid lets you require 1080p,
 2K, or 4K clips. Pexels and Pixabay results below the chosen tier are hidden
@@ -130,10 +148,22 @@ one), then click any clip/image as usual -- it's applied to every scene in
 that range. The from/to numbers stay editable any time, so you can shrink,
 grow, or re-aim the range and pick again.
 
-The moment the last scene gets a clip, a popup asks "Render the final video
-now (step 3)?" Click OK and step 3 starts automatically in the same terminal
--- no need to type the step 3 command yourself. Click Cancel to keep editing
-picks; you can always re-render later with the command below.
+Use more than one clip for one scene: tick "Use more than one clip for this
+scene", then add clips/images from the grid (or Local file / AI illustration
+tab) into the picks tray and click "Save picks".
+  - If the scene was split into SHOTS (the brief says "This scene has N
+    visual moments"), you pick exactly one clip per shot, in shot order.
+    Each clip is locked to its own shot's narration window -- clip 1 plays
+    until shot 1's line ends, then clip 2 starts, and so on. It is NOT an
+    even time split; the picks tray shows each shot's real length.
+  - Otherwise (a single-sentence / single-visual scene) the scene's time is
+    divided evenly between the clips you added.
+
+The moment the last scene gets a clip, a 60-second countdown appears and
+then step 3 starts automatically in the same terminal with default settings
+-- no need to type the step 3 command yourself. "Render now" starts it right
+away; "Not yet -- keep picking" cancels the auto-start. You can always
+re-render later with the command below.
 
 
 STEP 3 -- render the video
@@ -179,5 +209,9 @@ NOTES
   keys enable their own extra source tabs. To
   swap in a different key later, just overwrite the matching file in tools/ --
   no restart needed.
+- The "AI illustration" tab (Pollinations.AI / FLUX) needs no key. For faster
+  generation and no watermark, put a free token from
+  https://auth.pollinations.ai in tools/pollinations_token.txt. Generated
+  images are cached in the project's .ai_cache/ folder.
 - Full technical details, all flags, and the news-article (Step 0) workflow
   are in README_PIPELINE.md in this same folder.

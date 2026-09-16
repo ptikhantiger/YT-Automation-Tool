@@ -21,14 +21,14 @@ into word_timings.json), and all start/end times are recomputed from those
 indices via refresh_times() -- so anything that shifts timestamps later
 (e.g. step1's --pause-every silence splicing) can't desynchronize the map.
 
-The LLM (Groq, same client/keys as step 0) is asked to do only what code
+The LLM (Gemini, same client/keys as step 0) is asked to do only what code
 can't: group consecutive sentences into visual ideas, split multi-event
 sentences into shots (by quoting the exact words -- verified here against
 the real tokens, never trusted), and produce per-segment semantics: subject
 / action / object / location / time, visual requirements, visual
 exclusions, and concrete stock-search queries. Everything structural
 (coverage, ordering, word alignment, timing) is validated and repaired in
-code. No Groq key -- or any LLM failure -- falls back to a deterministic
+code. No Gemini key -- or any LLM failure -- falls back to a deterministic
 sentence-boundary segmentation that is still strictly better than the old
 random-duration cuts.
 
@@ -213,10 +213,10 @@ def _clean_list(value, limit=8, item_limit=100):
 
 
 def _llm_segment_batch(batch, lang, keys, model, prev_meaning, verbose=True):
-    """One Groq call turning a batch of numbered sentences into segments.
-    Raises GroqError/ValueError upward -- the caller decides how to fall
+    """One Gemini call turning a batch of numbered sentences into segments.
+    Raises LLMError/ValueError upward -- the caller decides how to fall
     back. Returns the raw (validated-shape, uncleaned-coverage) segments."""
-    from groq_client import complete, strip_reasoning
+    from llm_client import complete, strip_reasoning
 
     lines = [f'S{s["index"]}: "{s["text"]}"' for s in batch]
     context = (
@@ -378,12 +378,12 @@ def _resolve_shots(segment, sentences_by_index, words):
     return resolved
 
 
-def analyze_script(sentences, words, lang, groq_keys, model=None, verbose=True):
+def analyze_script(sentences, words, lang, llm_keys, model=None, verbose=True):
     """LLM pass over all sentences -> list of validated segments with exact
     word spans and (where quoting succeeded) exact word-span shots.
     Never raises on model trouble: failed batches degrade to per-sentence
     fallback segments and the failure is noted in the returned meta."""
-    from groq_client import DEFAULT_MODEL, GroqError
+    from llm_client import DEFAULT_MODEL, LLMError
 
     model = model or DEFAULT_MODEL
     sentences_by_index = {s["index"]: s for s in sentences}
@@ -399,10 +399,10 @@ def analyze_script(sentences, words, lang, groq_keys, model=None, verbose=True):
         # before degrading this batch to plain sentence segments.
         for attempt in range(2):
             try:
-                raw = _llm_segment_batch(batch, lang, groq_keys, model, prev_meaning, verbose=verbose)
+                raw = _llm_segment_batch(batch, lang, llm_keys, model, prev_meaning, verbose=verbose)
                 batch_segments = _repair_coverage(raw, batch)
                 break
-            except (GroqError, ValueError, json.JSONDecodeError) as e:
+            except (LLMError, ValueError, json.JSONDecodeError) as e:
                 last_err = e
         if batch_segments is None:
             failures.append(f"sentences {batch[0]['index']}-{batch[-1]['index']}: {last_err}")
@@ -602,22 +602,49 @@ def build_scenes(
     words,
     script_text,
     lang,
-    groq_keys=None,
+    llm_keys=None,
     model=None,
     min_scene_seconds=MIN_SCENE_SECONDS,
     max_scene_seconds=MAX_SCENE_SECONDS,
     verbose=True,
+    one_per_sentence=False,
 ):
     """The full pipeline: words+script -> semantic scenes with exact word
-    spans, times, semantics, and shots. Returns (scenes, meta)."""
+    spans, times, semantics, and shots. Returns (scenes, meta).
+
+    `one_per_sentence` forces a strict 1:1 mapping: every sentence in the
+    script becomes exactly one scene, in order, with no LLM call, no merging
+    of short sentences into a neighbour, and no shot-splitting of long ones.
+    Each scene is still word-index-exact (same coordinate system as the
+    semantic timeline), so pause splicing and step 3's frame plan stay exact.
+    Use it when you pick or make the visuals yourself and want each line of
+    narration to line up with its own clip in step 2."""
     sentences = sentences_from_words(words, script_text)
     sentences_by_index = {s["index"]: s for s in sentences}
 
+    if one_per_sentence:
+        segments = [_fallback_segment(s) for s in sentences]
+        scenes = [_segment_scene(seg, sentences_by_index, words, lang) for seg in segments]
+        # No _merge_short / _split_long -- the sentence IS the scene, always.
+        refresh_times(scenes, words)
+        for i, scene in enumerate(scenes, start=1):
+            scene["index"] = i
+            scene["segment_id"] = f"segment_{i:03d}"
+        meta = {
+            "mode": "sentence",
+            "sentences": len(sentences),
+            "scenes": len(scenes),
+            "llm_scenes": 0,
+            "multi_shot_scenes": 0,
+            "llm_failures": [],
+        }
+        return scenes, meta
+
     mode = "semantic"
     failures = []
-    if groq_keys:
+    if llm_keys:
         segments, failures = analyze_script(
-            sentences, words, lang, groq_keys, model=model, verbose=verbose
+            sentences, words, lang, llm_keys, model=model, verbose=verbose
         )
         if all(not seg.get("llm") for seg in segments):
             mode = "fallback"  # every batch failed -- effectively no LLM
@@ -739,7 +766,7 @@ def main():
     parser.add_argument("--write", action="store_true",
                         help="Rewrite scenes.json and timeline.json (default: just print the plan). "
                         "Refuses if clips are already picked -- same safety as step 1.")
-    parser.add_argument("--model", default=None, help="Groq model override")
+    parser.add_argument("--model", default=None, help="Gemini model override")
     parser.add_argument("--no-llm", action="store_true", help="Force the deterministic sentence fallback")
     args = parser.parse_args()
 
@@ -748,16 +775,16 @@ def main():
     words = load_json(project_dir / "word_timings.json")
     lang = Path(args.project).parts[0]
 
-    groq_keys = None
+    llm_keys = None
     if not args.no_llm:
         try:
-            from groq_client import load_keys
+            from llm_client import load_keys
 
-            groq_keys = load_keys()
+            llm_keys = load_keys()
         except Exception as e:
-            print(f"No Groq key ({e}) -- using deterministic sentence segmentation.")
+            print(f"No Gemini key ({e}) -- using deterministic sentence segmentation.")
 
-    scenes, meta = build_scenes(words, script_text, lang, groq_keys, model=args.model)
+    scenes, meta = build_scenes(words, script_text, lang, llm_keys, model=args.model)
     print_plan(scenes, meta)
 
     if args.write:

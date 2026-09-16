@@ -17,7 +17,7 @@ Budget about 20 minutes, most of it downloads.
 | 3 | The project files | **yes** |
 | 4 | Python packages (`edge-tts`, `Pillow`) | **yes** |
 | 5 | Pexels API key | **yes** |
-| 6 | Groq API key | strongly recommended |
+| 6 | Gemini API key | strongly recommended |
 | 7 | Pixabay / Coverr keys, `yt-dlp` | optional |
 
 You also need an internet connection every time you run this — narration is
@@ -118,19 +118,20 @@ Free quota is 25,000 requests/month, which is far more than you will use — one
 search per scene, plus re-searches. Every search is cached on disk, so
 revisiting a scene costs nothing.
 
-### Groq — strongly recommended
+### Gemini — strongly recommended
 
 Powers the semantic scene splitting, the ✨ auto-match button, and all of
 step 0. Everything still runs without it, but scene splitting falls back to
 simpler sentence grouping and you lose auto-match entirely.
 
-1. Go to <https://console.groq.com/keys> and sign up (free).
-2. Save the key as `tools/groq_key.txt`.
+1. Go to <https://aistudio.google.com/apikey> and sign up (free).
+2. Save the key as `tools/gemini_key.txt`.
 
 > **This file accepts multiple keys, one per line.** When one hits its quota
-> the client automatically rolls over to the next. The free tier is roughly
-> 100,000 tokens/day — about two full script builds — so if two people share
-> this tool, put both keys in the file and you get double the budget.
+> the client automatically rolls over to the next. The free tier gives
+> `gemini-flash-lite-latest` about 1,000 requests/day and 250,000 tokens/minute
+> — plenty for normal use — so a second key (a separate Google project) is
+> only needed if two people share this tool or you do many builds a day.
 
 ### Pixabay and Coverr — optional
 
@@ -162,7 +163,7 @@ Checking your setup:
   [ OK ] ffprobe
   [ OK ] Python packages (edge-tts, Pillow)
   [ OK ] Pexels (stock clips)
-  [ OK ] Groq (script + auto-match)
+  [ OK ] Gemini (script + auto-match)
 
 ----------------------------------------------------------------
   Dashboard:  http://127.0.0.1:8765/
@@ -201,7 +202,7 @@ python step1_audio_and_captions.py en/test
 
 That writes `audio.mp3`, `scenes.json` and `captions.ass`, then opens the clip
 picker in your browser. Pick a clip for each scene (or click **✨ Auto-match
-all unpicked** if you added a Groq key). When the last scene is filled it asks
+all unpicked** if you added a Gemini key). When the last scene is filled it asks
 whether to render — click OK.
 
 You should end up with `projects/en/test/output.mp4`: 1920x1080, H.264 + AAC,
@@ -232,8 +233,9 @@ project folders freely; they are just generated output.
 | Captions missing from the output video | Your ffmpeg build lacks libass. Check with `ffmpeg -filters` and look for `ass`. Reinstall a full build. |
 | `OSError: cannot open resource` during step 1 | A required font is missing. On Windows this should not happen; on Mac/Linux see below. |
 | Clip thumbnails are black | Normal. Cards use `preload="metadata"` and only load on hover, to save bandwidth. Give them a few seconds. |
-| `403` with body `error code: 1010` from Pexels or Groq | Cloudflare is rejecting the request's User-Agent. The `USER_AGENT` constants in `common.py` and `groq_client.py` are what get requests through — do not remove them. A genuinely bad key returns `401`, not `403`. |
-| Groq stops partway with a rate-limit message | Free tier daily token budget is spent. It refills gradually (not at midnight). Re-run the same command later — step 0 caches finished sections and resumes. |
+| `403` with body `error code: 1010` from Pexels | Cloudflare is rejecting the request's User-Agent. The `USER_AGENT` constant in `common.py` is what gets requests through — do not remove it. A genuinely bad key returns `401`, not `403`. |
+| Gemini stops partway with a rate-limit message | The per-minute or per-day free-tier quota is spent (per-day resets at midnight Pacific). Re-run the same command later — step 0 caches finished sections and resumes. Adding a second key to `tools/gemini_key.txt` doubles the budget. |
+| Gemini says the model is "no longer available to new users" | Google retired that version. The default `gemini-flash-lite-latest` is an alias that avoids this; if you pinned `--model`, switch to `gemini-3.5-flash` or drop the flag. |
 | `--yt-link` says "sign in to confirm you're not a bot" | YouTube is blocking your IP. Export your browser cookies with a "Get cookies.txt LOCALLY" extension and save as `tools/cookies.txt`. It is gitignored. |
 | Port 8765 already in use | The launcher falls back automatically. To force one: `run.bat --port 9000`. |
 | Picked clips look wrong after re-running step 1 | Re-running step 1 rebuilds the scene list, and `selections.json` is keyed by scene number. Get voice and pacing right *before* picking clips. To restyle captions afterwards use `--captions-only`, which is safe. |

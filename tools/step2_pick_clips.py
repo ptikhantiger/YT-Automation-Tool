@@ -28,6 +28,19 @@ Pixabay and Coverr are optional -- their tabs work as soon as a key is added,
 no restart needed if you add the key file before opening that tab. The keys
 stay on the server side; the browser never sees them.
 
+A fourth "AI illustration" tab generates a still image for a scene with
+Pollinations.AI (the free FLUX model) instead of searching stock -- edit the
+prompt, generate a few variations, pick one. It needs no key (anonymous tier
+~1 image/15s, small corner watermark); a free token from
+https://auth.pollinations.ai in tools/pollinations_token.txt (or
+POLLINATIONS_TOKEN, or --pollinations-token) unlocks the faster,
+watermark-free tier. Generated images are cached under the project's
+.ai_cache/ and, once picked, copied into clips/ -- step 3 renders them as a
+slow Ken Burns zoom exactly like a Pexels/Pixabay photo. The auto-matcher can
+also use this as a last resort: tick "Fill scenes stock can't match with an
+AI illustration" in the sidebar and any scene no stock clip fits is filled
+with a house-style illustration (flagged for review) rather than left empty.
+
 Search responses are cached under the project's .pexels_cache/ (shared by all
 three providers, keyed by provider+query+page), so re-visiting a scene you
 already searched costs no API quota. Pexels' measured quota is 25,000
@@ -41,14 +54,17 @@ import hashlib
 import json
 import mimetypes
 import os
+import random
 import re
 import shutil
 import sys
 import threading
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 import webbrowser
+from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
@@ -60,6 +76,7 @@ PROJECTS_DIR = TOOLS_DIR.parent / "projects"
 KEY_FILE = TOOLS_DIR / "pexels_key.txt"
 PIXABAY_KEY_FILE = TOOLS_DIR / "pixabay_key.txt"
 COVERR_KEY_FILE = TOOLS_DIR / "coverr_key.txt"
+POLLINATIONS_TOKEN_FILE = TOOLS_DIR / "pollinations_token.txt"
 
 PEXELS_SEARCH_URL = "https://api.pexels.com/videos/search"
 PEXELS_PHOTO_SEARCH_URL = "https://api.pexels.com/v1/search"
@@ -68,6 +85,35 @@ PIXABAY_PHOTO_URL = "https://pixabay.com/api/"
 COVERR_VIDEO_URL = "https://api.coverr.co/videos"
 PER_PAGE = 12
 REQUEST_TIMEOUT = 30
+
+# --------------------------------------------------------------------------
+# AI illustration provider -- Pollinations.AI (FLUX). Free and key-less: the
+# anonymous tier generates unlimited FLUX images at roughly one request every
+# 15 seconds. Dropping a free token from https://auth.pollinations.ai into
+# tools/pollinations_token.txt lifts that to ~1 per 5s AND removes the small
+# corner watermark the anonymous tier adds. Everything the picker generates
+# is a still image, rendered by step 3 as a slow Ken Burns zoom exactly like
+# a Pexels/Pixabay photo pick -- no render-side changes needed.
+# --------------------------------------------------------------------------
+POLLINATIONS_IMAGE_URL = "https://image.pollinations.ai/prompt/"
+POLLINATIONS_REFERRER = "youtube-automation-tool"
+AI_MODEL = "flux"
+AI_REQUEST_TIMEOUT = 180
+AI_CREDIT_AUTHOR = "Pollinations.AI (FLUX)"
+AI_CREDIT_URL = "https://pollinations.ai"
+# Appended to every scene's own subject text so the whole video keeps one
+# consistent look -- the warm, hand-illustrated storybook style (people shown
+# from behind / faceless, which also keeps real individuals unidentifiable).
+AI_STYLE_SUFFIX = (
+    "2D digital illustration in a warm hand-drawn storybook style, flat cel "
+    "shading with gouache-like soft gradients, limited golden-hour palette of "
+    "amber, ochre and muted teal, thick clean ink outlines on the foreground, "
+    "layered hills and trees fading into atmospheric haze, gentle paper grain "
+    "texture, painterly but clearly illustrated and NOT photorealistic, no lens "
+    "blur, any people shown from behind or in silhouette with no recognisable "
+    "face, no on-image text, no watermark, no logo, wide cinematic 16:9 "
+    "composition"
+)
 
 # Minimum-quality filter tiers: (long-edge px, short-edge px), checked
 # portrait-aware (same long/short-edge logic as the existing HD picker below)
@@ -536,6 +582,164 @@ def simplify_coverr_video(v):
 
 
 # --------------------------------------------------------------------------
+# AI illustration provider (Pollinations.AI / FLUX)
+# --------------------------------------------------------------------------
+
+def _ai_dimensions():
+    """Output size to ask Pollinations for -- portrait for a --vertical
+    project (render.json), landscape otherwise. Step 3 scales/crops to the
+    final frame regardless, but asking for the right aspect avoids a big
+    centre-crop."""
+    return (1080, 1920) if STATE.get("orientation") == "portrait" else (1920, 1080)
+
+
+def _ai_scene_subject(scene):
+    """A short 'what the camera sees' phrase for a scene, drawn from its
+    semantic brief when the timeline provided one, else its search query /
+    keywords / raw narration."""
+    sem = scene.get("semantic") or {}
+    bits = [str(sem[k]) for k in ("subject", "action", "object") if sem.get(k)]
+    if sem.get("location"):
+        bits.append("in " + str(sem["location"]))
+    if sem.get("time"):
+        bits.append("(" + str(sem["time"]) + ")")
+    if bits:
+        return ", ".join(bits)
+    for cand in (scene.get("query"),
+                 " ".join((scene.get("queries") or [])[:1]),
+                 " ".join(scene.get("keywords") or [])):
+        if cand and cand.strip():
+            return cand.strip()
+    return (scene.get("text") or "a quiet establishing shot").strip()[:180]
+
+
+def _ai_shot_subject(shot, scene):
+    """Same idea as _ai_scene_subject but for one shot of a multi-shot scene:
+    the shot's own subject/action/words, inheriting the scene's location."""
+    sem = scene.get("semantic") or {}
+    parts = [p for p in (shot.get("subject") or sem.get("subject"), shot.get("action")) if p]
+    if sem.get("location"):
+        parts.append("in " + str(sem["location"]))
+    if parts:
+        return ", ".join(str(p) for p in parts)
+    return (shot.get("text") or _ai_scene_subject(scene)).strip()[:180]
+
+
+def _compose_ai_prompt(subject, raw=False):
+    """Final Pollinations prompt: the scene subject followed by the locked
+    house-style suffix (unless `raw`, when the caller's text is used verbatim
+    so an experiment with a different look is possible)."""
+    subject = (subject or "").strip()
+    if raw:
+        return subject or AI_STYLE_SUFFIX
+    subject = subject.rstrip(". ")
+    return f"{subject}. {AI_STYLE_SUFFIX}" if subject else AI_STYLE_SUFFIX
+
+
+def _pollinations_url(prompt, seed, width, height, nologo=False):
+    params = {
+        "width": width,
+        "height": height,
+        "seed": int(seed),
+        "model": AI_MODEL,
+        "referrer": POLLINATIONS_REFERRER,
+    }
+    if nologo:
+        params["nologo"] = "true"
+    return (POLLINATIONS_IMAGE_URL + urllib.parse.quote(prompt, safe="")
+            + "?" + urllib.parse.urlencode(params))
+
+
+def _ai_cache_name(prompt, seed, width, height):
+    digest = hashlib.sha1(
+        f"{prompt}|{seed}|{width}x{height}|{AI_MODEL}".encode("utf-8")
+    ).hexdigest()[:20]
+    return f"ai_{digest}.jpg"
+
+
+def _ai_pace():
+    """Space successive Pollinations calls out to the free tier's rate limit
+    (~1 per 15s anonymous, ~1 per 5s with a token) so a burst of generations
+    doesn't just 429."""
+    interval = 5.0 if STATE.get("pollinations_token") else 15.0
+    last = STATE.get("ai_last_call") or 0.0
+    wait = interval - (time.time() - last)
+    if wait > 0:
+        time.sleep(min(wait, interval))
+    STATE["ai_last_call"] = time.time()
+
+
+def _generate_ai_image(prompt, seed, dest, width, height):
+    """Fetch one FLUX image from Pollinations to `dest` (atomic .part write).
+    Uses the configured token (faster tier + no watermark) when present.
+    Returns the plain, token-free URL for the same image so it can be stored
+    as a step-3 re-download fallback."""
+    token = STATE.get("pollinations_token")
+    fetch_url = _pollinations_url(prompt, seed, width, height, nologo=bool(token))
+    headers = {"User-Agent": USER_AGENT}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request(fetch_url, headers=headers)
+    tmp = dest.with_suffix(".part")
+    with urllib.request.urlopen(req, timeout=AI_REQUEST_TIMEOUT) as resp, open(tmp, "wb") as f:
+        shutil.copyfileobj(resp, f)
+    tmp.replace(dest)
+    return _pollinations_url(prompt, seed, width, height, nologo=False)
+
+
+def _ai_asset(prompt, seed, width, height, fetch_url=None):
+    """The common-shape asset dict for a generated illustration -- same keys
+    the UI grid and choose()/register_asset expect from a Pexels photo, plus
+    the fields needed to re-materialise it (cache_name, prompt, seed)."""
+    name = _ai_cache_name(prompt, seed, width, height)
+    return {
+        "id": seed,
+        "kind": "ai",
+        "source": "ai",
+        "seed": seed,
+        "prompt": prompt,
+        "model": AI_MODEL,
+        "cache_name": name,
+        "desc": prompt[:120],
+        "duration": None,
+        "width": width,
+        "height": height,
+        "thumb": f"/aicache/{name}",
+        "preview_url": f"/aicache/{name}",
+        "download_url": fetch_url or _pollinations_url(prompt, seed, width, height),
+        "page_url": AI_CREDIT_URL,
+        # No named human contributor -- the provider-level credit line in
+        # step3's credits.txt (PROVIDER_CREDITS["ai"]) covers Pollinations/FLUX.
+        "author": None,
+        "author_url": None,
+    }
+
+
+def ai_generate_for_scene(subject, seed, raw=False):
+    """Compose the prompt, generate (or reuse a cached) illustration, and
+    return its asset dict. Raises urllib errors up to the caller."""
+    prompt = _compose_ai_prompt(subject, raw=raw)
+    seed = int(seed) if seed else random.randint(1, 9_999_999)
+    if seed <= 0:
+        seed = random.randint(1, 9_999_999)
+    width, height = _ai_dimensions()
+    dest = STATE["ai_cache_dir"] / _ai_cache_name(prompt, seed, width, height)
+    fetch_url = None
+    if not dest.exists():
+        _ai_pace()
+        fetch_url = _generate_ai_image(prompt, seed, dest, width, height)
+    return _ai_asset(prompt, seed, width, height, fetch_url)
+
+
+def _ai_autofill(target, scene):
+    """Generate one house-style illustration for `target` (the scene itself,
+    or a shot dict of a multi-shot scene) -- used as the auto-match last
+    resort. Returns an asset dict ready for register_asset."""
+    subject = _ai_scene_subject(scene) if target is scene else _ai_shot_subject(target, scene)
+    return ai_generate_for_scene(subject, seed=random.randint(1, 9_999_999))
+
+
+# --------------------------------------------------------------------------
 # Selections
 # --------------------------------------------------------------------------
 
@@ -570,6 +774,8 @@ def asset_tag(asset):
     is always a Pexels pick, so that's the default."""
     if asset.get("kind") == "local":
         return "local"
+    if asset.get("kind") == "ai":
+        return f"ai{asset.get('seed') or asset.get('id') or 'x'}"
     return f"{asset.get('source') or 'pexels'}{asset['id']}"
 
 
@@ -584,7 +790,12 @@ def resolve_dest_path(scene_index, asset, part=None):
     selections.json; step3 is the one place that actually downloads a
     remote asset's bytes (see download_selected_clips() there)."""
     kind = asset.get("kind", "video")
-    ext = local_ext(asset.get("local_name")) if kind == "local" else ("mp4" if kind == "video" else "jpg")
+    if kind == "local":
+        ext = local_ext(asset.get("local_name"))
+    elif kind == "video":
+        ext = "mp4"
+    else:  # "photo" or "ai" -- both land as a still image
+        ext = "jpg"
     return STATE["clips_dir"] / clip_filename(scene_index, asset_tag(asset), ext, part)
 
 
@@ -606,20 +817,53 @@ def materialize_local_asset(scene_index, asset, part=None):
     return dest
 
 
+def materialize_ai_asset(scene_index, asset, part=None):
+    """Copy the generated illustration from .ai_cache/ into clips_dir for this
+    scene. Like a local upload, an AI pick is written now rather than deferred
+    to step3 (the bytes already exist on disk). If the cache file is gone -- a
+    picker restart with the cache cleared -- it's regenerated from the
+    recorded prompt+seed so a re-save still works. The plain Pollinations URL
+    also stays in the selection record as a second-chance re-download for
+    step3."""
+    dest = resolve_dest_path(scene_index, asset, part)
+    prompt = asset.get("prompt")
+    seed = int(asset.get("seed") or 0)
+    width = asset.get("width") or _ai_dimensions()[0]
+    height = asset.get("height") or _ai_dimensions()[1]
+    cache_name = asset.get("cache_name")
+    if not cache_name and prompt and seed:
+        # Restored from selections.json (which doesn't keep cache_name) --
+        # re-derive it from the recipe.
+        cache_name = _ai_cache_name(prompt, seed, width, height)
+    src = STATE["ai_cache_dir"] / cache_name if cache_name else None
+    if src is None or not src.is_file():
+        if not prompt or not seed:
+            raise ValueError("This AI illustration must be re-generated before saving picks again.")
+        src = STATE["ai_cache_dir"] / _ai_cache_name(prompt, seed, width, height)
+        src.parent.mkdir(exist_ok=True)
+        _ai_pace()
+        _generate_ai_image(prompt, seed, src, width, height)
+    shutil.copyfile(src, dest)
+    return dest
+
+
 def register_asset(scene_index, asset, part=None):
     """Record `asset` as picked for `scene_index`, returning the destination
-    path it will occupy in clips_dir. A local upload is written immediately
-    (see materialize_local_asset); a remote pick is left unfetched -- its
-    bytes are downloaded later, in bulk with a progress percentage, by
-    step3_render_video.py's download_selected_clips()."""
+    path it will occupy in clips_dir. A local upload or an AI illustration is
+    written immediately (see materialize_local_asset / materialize_ai_asset);
+    a remote stock pick is left unfetched -- its bytes are downloaded later,
+    in bulk with a progress percentage, by step3_render_video.py's
+    download_selected_clips()."""
     if asset.get("kind") == "local":
         return materialize_local_asset(scene_index, asset, part)
+    if asset.get("kind") == "ai":
+        return materialize_ai_asset(scene_index, asset, part)
     return resolve_dest_path(scene_index, asset, part)
 
 
 def selection_record(scene_index, asset, dest, query):
     kind = asset.get("kind", "video")
-    return {
+    record = {
         "scene_index": scene_index,
         "type": "video" if kind == "video" else "image",
         "source": "local" if kind == "local" else (asset.get("source") or "pexels"),
@@ -628,8 +872,17 @@ def selection_record(scene_index, asset, dest, query):
         # Not set for a local upload -- it's already written to disk (see
         # materialize_local_asset), nothing left to fetch. For a remote pick,
         # this is what step3_render_video.py's download_selected_clips()
-        # downloads before rendering.
+        # downloads before rendering. An AI illustration keeps its plain
+        # Pollinations URL here too -- the file is already written, but the URL
+        # lets step3 regenerate it if clips/ was cleared.
         "download_url": None if kind == "local" else asset.get("download_url"),
+        # A small streaming-friendly rendition + a still thumbnail, kept so the
+        # "Review picked clips" page can preview a remote pick without pulling
+        # its full-res file (step3 still downloads download_url for the render).
+        # Absent on a local upload / AI illustration -- those already have a
+        # file in clips/ the review page serves directly.
+        "preview_url": None if kind == "local" else asset.get("preview_url"),
+        "thumb": asset.get("thumb"),
         "duration": asset.get("duration"),
         "width": asset.get("width"),
         "height": asset.get("height"),
@@ -638,23 +891,37 @@ def selection_record(scene_index, asset, dest, query):
         "page_url": asset.get("page_url"),
         "query": query,
     }
+    if kind == "ai":
+        record["ai_prompt"] = asset.get("prompt")
+        record["ai_seed"] = asset.get("seed")
+        record["ai_model"] = asset.get("model") or AI_MODEL
+    return record
 # NOTE: "pexels_id" predates multi-provider support and is kept for
 # selections.json backward-compatibility -- it now holds the id from
 # whichever provider the "source" field names, not only Pexels.
 
 
-def multi_item_record(asset, dest, share_seconds):
+def multi_item_record(asset, dest, share_seconds, shot=None, shot_index=None):
     """One entry in a multi-clip scene's `items` list -- same shape as a
     single-clip selection_record's asset fields, plus `share_seconds`, the
     nominal slice of the scene's narration this item covers (informational;
-    step3 recomputes the real split from the scene's actual segment length)."""
+    step3 recomputes the real split from the scene's actual segment length).
+
+    When `shot` is given (a shot dict from the semantic timeline), this item
+    is locked to that shot's OWN narration window: `shot_start`/`shot_end`
+    (absolute seconds) and `shot_word_from`/`shot_word_to` (the durable
+    word-index coordinate) are recorded so step3 cuts each clip exactly where
+    its shot ends -- clip 1 plays for shot 1's duration, then clip 2 begins,
+    etc. -- instead of splitting the scene's total time evenly."""
     kind = asset.get("kind", "video")
-    return {
+    item = {
         "type": "video" if kind == "video" else "image",
         "source": "local" if kind == "local" else (asset.get("source") or "pexels"),
         "pexels_id": asset.get("id") if kind != "local" else None,
         "file": dest.name,
         "download_url": None if kind == "local" else asset.get("download_url"),
+        "preview_url": None if kind == "local" else asset.get("preview_url"),
+        "thumb": asset.get("thumb"),
         "share_seconds": round(share_seconds, 3),
         "width": asset.get("width"),
         "height": asset.get("height"),
@@ -662,6 +929,22 @@ def multi_item_record(asset, dest, share_seconds):
         "author_url": asset.get("author_url"),
         "page_url": asset.get("page_url"),
     }
+    if shot is not None:
+        item["shot_index"] = shot_index
+        if shot.get("start") is not None:
+            item["shot_start"] = round(shot["start"], 3)
+        if shot.get("end") is not None:
+            item["shot_end"] = round(shot["end"], 3)
+        for src, dst in (("word_from", "shot_word_from"), ("word_to", "shot_word_to")):
+            if shot.get(src) is not None:
+                item[dst] = shot[src]
+        if shot.get("text"):
+            item["shot_text"] = shot["text"]
+    if kind == "ai":
+        item["ai_prompt"] = asset.get("prompt")
+        item["ai_seed"] = asset.get("seed")
+        item["ai_model"] = asset.get("model") or AI_MODEL
+    return item
 
 
 def remove_clips_for_scene(scene_index):
@@ -683,33 +966,82 @@ def remove_clips_for_scene(scene_index):
 # --------------------------------------------------------------------------
 
 # A candidate must score at least this (0-100) against the scene's semantics
-# to be auto-selected; below it the scene is left for the human, with the
-# scored candidates and failure reason shown in the report.
+# to be auto-selected outright. Below it -- but at or above AUTOMATCH_SOFT_FLOOR
+# -- an "all unpicked" run still fills the scene with the best candidate and
+# flags it "soft" for review, rather than leaving the scene empty (the whole
+# point of that button is to fill everything). A single-scene "Auto-match this
+# scene" keeps the hard threshold unless the caller passes a soft floor.
 AUTOMATCH_THRESHOLD = 60
-AUTOMATCH_POOL = 24  # max candidates scored per scene (LLM context budget)
+AUTOMATCH_SOFT_FLOOR = 45
+# Candidates gathered per scene, and how many of those the LLM actually
+# scores per judging batch. The pool is trimmed to the JUDGE best by a
+# weighted word-overlap pre-rank first. These were tiny (18/10) under Groq's
+# 12k-token/minute free tier; Gemini's is ~250k/min, so a wider net and a
+# bigger judge batch cost nothing and catch matches the old sizes missed.
+AUTOMATCH_POOL = 32
+AUTOMATCH_JUDGE = 14
+# If the first JUDGE-sized batch produces nothing at or above the acceptance
+# bar and the pool still has candidates, score up to this many batches total
+# before giving up on the search results (cheap now, and the right clip is
+# often just outside an arbitrary top-14 cut).
+AUTOMATCH_MAX_BATCHES = 2
+# How many distinct search phrasings to build per scene/shot (see
+# _expand_queries) -- one keyword phrase almost never matches stock
+# catalogues, several angles on the same visual do.
+AUTOMATCH_QUERY_VARIANTS = 7
+
+
+class AutomatchUnavailable(RuntimeError):
+    """The LLM judge can't run right now (Gemini quota exhausted, key rejected,
+    or the service is down). Raised instead of quietly failing every scene so
+    an 'all unpicked' run stops immediately with one clear message rather than
+    grinding through the whole script doing pointless searches it can't score."""
+
+
+def refresh_llm_keys():
+    """Re-read the Gemini keys (tools/gemini_key.txt, GEMINI_API_KEY) into STATE.
+
+    Called before every auto-match and on every /api/scenes poll so a key
+    added or changed while the picker is already running takes effect on the
+    next run -- STATE["llm_keys"] used to be loaded once at startup, which
+    is why dropping a second key into gemini_key.txt mid-session did nothing
+    until you restarted the picker."""
+    try:
+        from llm_client import load_keys
+        STATE["llm_keys"] = load_keys()
+    except Exception:
+        STATE["llm_keys"] = None
+    return STATE["llm_keys"]
 
 AUTOMATCH_SYSTEM = """You are a documentary film editor judging stock footage against narration.
 You are given one narration segment (its exact script text and semantic
 requirements) and a list of candidate stock clips. All you know about each
-clip is its short catalog description, duration, and resolution -- score
-ONLY what the description actually says; never assume unmentioned content.
+clip is its short catalog description, the search phrase that surfaced it,
+its duration and resolution -- score ONLY what the description actually says;
+never assume unmentioned content.
 
-Score each candidate 0-100 for how well it visually represents THIS exact
-narration:
-- subject match and ACTION match matter most: footage whose description
-  states a CONTRADICTING action (standing vs running, exterior vs entering)
-  scores below 50.
-- right subject in the right setting with the action simply UNSTATED (short
-  catalog slugs rarely mention actions) scores 55-65 -- plausible, not
-  proven.
-- wrong location/era, or anything in the exclusion list, scores below 35.
-- generic thematic B-roll that doesn't show the required subject/elements
-  scores below 45, even if pleasant.
-- a description explicitly matching subject+action+setting scores 75+; add
-  points for matching time period, objects, and mood.
-Return STRICT JSON only:
-{"scores":[{"id":"C1","score":NN,"reason":"one short sentence"}, ...]}
-Include every candidate exactly once."""
+For each candidate return a score 0-100 AND a verdict:
+- "strong": the description explicitly shows the required SUBJECT doing the
+  required ACTION in the right setting -> score 78-95.
+- "ok": right subject in the right kind of setting, action merely UNSTATED
+  (short catalog slugs rarely mention the action) -> score 60-74. This is a
+  usable match.
+- "weak": related theme or mood but the required subject/elements are not
+  clearly shown -> score 35-52.
+- "wrong": contradicting action (standing vs running, exterior vs entering),
+  wrong location or era, or anything in the MUST NOT list -> score 0-30.
+
+Rules:
+- ACTION and SUBJECT match matter more than how cinematic or pretty a clip
+  sounds. A plain clip that shows the right thing beats a beautiful clip that
+  shows something adjacent.
+- Reward matching the time period, named objects, and mood on top of a
+  correct subject+action.
+- Judge every candidate independently and on its own description only.
+
+Return STRICT JSON only, nothing else -- no prose, no extra keys:
+{"scores":[{"id":"C1","score":NN,"verdict":"strong|ok|weak|wrong"}, ...]}
+Score every candidate exactly once."""
 
 
 def _automatch_search(query, min_duration, min_quality, page=1):
@@ -734,6 +1066,23 @@ def _automatch_search(query, min_duration, min_quality, page=1):
                     candidates.append(s)
         except Exception as e:
             errors.append(f"Pixabay '{query}': {e}")
+    # Coverr has no resolution data, so it can't honor a min_quality tier --
+    # only draw from it when no tier is set (same rule as its picker tab).
+    if STATE.get("coverr_key") and not min_quality:
+        try:
+            payload, _ = coverr_search(query, page)
+            for v in payload.get("hits", []):
+                s = simplify_coverr_video(v)
+                if not s or not s["download_url"]:
+                    continue
+                try:
+                    dur = float(s.get("duration") or 0)
+                except (TypeError, ValueError):
+                    dur = 0.0
+                if min_duration is None or not dur or dur >= min_duration:
+                    candidates.append(s)
+        except Exception as e:
+            errors.append(f"Coverr '{query}': {e}")
     return candidates, errors
 
 
@@ -755,6 +1104,100 @@ def _photo_pool(queries, errors_out, limit=10):
         except Exception as e:
             errors_out.append(f"Pexels photos '{query}': {e}")
     return pool[:limit]
+
+
+_QUERY_STOP = {
+    "the", "a", "an", "and", "or", "of", "in", "on", "at", "to", "for", "with",
+    "this", "that", "as", "by", "is", "are", "was", "were", "be", "being",
+    "into", "onto", "from", "while", "during", "over", "under", "near",
+}
+_QUERY_WORD = re.compile(r"[A-Za-z][A-Za-z\-]{1,}")
+
+
+def _core_terms(text, limit=3):
+    """The first `limit` content words of a phrase, in reading order (drops
+    stopwords and 1-2 letter tokens). A 2-3 word core is what stock
+    catalogues actually match; a full 6-word 'what the camera sees' sentence
+    usually returns nothing. Reading order keeps the phrase natural
+    ('trader watching screen', not 'screen watching trader')."""
+    seen, out = set(), []
+    for w in _QUERY_WORD.findall((text or "").lower()):
+        if w in _QUERY_STOP or len(w) < 3 or w in seen:
+            continue
+        seen.add(w)
+        out.append(w)
+        if len(out) >= limit:
+            break
+    return out
+
+
+def _norm_query(q):
+    return " ".join((q or "").split()).strip().lower()
+
+
+def _expand_queries(sem, base_queries, requirements, keywords, fallback_text, lang="en",
+                    limit=AUTOMATCH_QUERY_VARIANTS):
+    """Build several DISTINCT search phrasings for one scene/shot instead of
+    firing a single query at the stock APIs.
+
+    Angles, in priority order:
+      1. every LLM-written query verbatim (concrete 'what the camera sees')
+      2. subject + action, subject + object, subject + location pairings
+      3. each visual requirement (already concrete, camera-visible phrases)
+      4. a 2-3 word 'core' of the primary query -- the broad safety net that
+         still returns footage when the precise phrase returns nothing
+      5. the scene's extracted keywords, and a theme/keyword build_query()
+    Deduped (case-insensitively), capped at `limit`, order preserved.
+    """
+    subj = (sem or {}).get("subject") or ""
+    action = (sem or {}).get("action") or ""
+    obj = (sem or {}).get("object") or ""
+    loc = (sem or {}).get("location") or ""
+
+    ordered = []
+    for q in base_queries or []:
+        ordered.append(q)
+    if subj and action:
+        ordered.append(f"{subj} {action}")
+    if subj and obj:
+        ordered.append(f"{subj} {obj}")
+    if subj and loc:
+        ordered.append(f"{subj} {loc}")
+    for r in (requirements or [])[:3]:
+        ordered.append(r)
+    primary = (base_queries or [None])[0] or subj or fallback_text
+    core = _core_terms(primary, 3)
+    if len(core) >= 2:
+        ordered.append(" ".join(core))
+        ordered.append(" ".join(core[:2]))
+    if subj:
+        ordered.append(subj)
+    if keywords:
+        ordered.append(" ".join(keywords[:3]))
+    try:
+        built = build_query(fallback_text or "", lang=lang)
+        if built:
+            ordered.append(built)
+    except Exception:
+        pass
+
+    out, seen = [], set()
+    for q in ordered:
+        n = _norm_query(q)
+        if not n or n in seen:
+            continue
+        # Trim absurdly long phrases -- keep the first 5 words, no catalogue
+        # matches a full sentence.
+        words = n.split()
+        if len(words) > 5:
+            n = " ".join(words[:5])
+            if n in seen:
+                continue
+        seen.add(n)
+        out.append(n)
+        if len(out) >= limit:
+            break
+    return out or [_norm_query(fallback_text) or "abstract background"]
 
 
 def _scene_brief(scene):
@@ -795,25 +1238,166 @@ def _shot_brief(scene, shot):
     return "\n".join(lines)
 
 
-def _pick_best(scene_or_shot_brief, pool, entry_candidates):
-    """Score `pool` against a brief; append scored candidates to
-    entry_candidates and return (best_asset, best_score, best_reason)."""
-    from groq_client import complete, strip_reasoning
+_PRERANK_STOP = {
+    "the", "a", "an", "and", "or", "of", "in", "on", "at", "to", "for", "with",
+    "this", "that", "must", "not", "appear", "visible", "clip", "cover", "s",
+    "narration", "exact", "script", "subject", "action", "object", "location",
+    "time", "era", "entities", "seconds", "footage", "video", "shot", "must",
+}
+_PRERANK_WORD = re.compile(r"[a-z0-9]{3,}")
+
+
+def _prerank_signals(scene, shot=None):
+    """Weighted terms + exclusion terms for the pre-rank.
+
+    Subject / action / must-be-visible words carry the most matching signal,
+    so they're weighted 3x an ordinary narration content word. Exclusion
+    words let the pre-rank drop obviously-wrong footage before it ever
+    reaches the LLM judge.
+    """
+    sem = scene.get("semantic") or {}
+    src = shot or {}
+    high, low, excl = {}, {}, set()
+
+    def add(bucket, text, w):
+        for m in _PRERANK_WORD.findall((text or "").lower()):
+            if m not in _PRERANK_STOP:
+                bucket[m] = max(bucket.get(m, 0), w)
+
+    add(high, src.get("subject") or sem.get("subject"), 3)
+    add(high, src.get("action") or sem.get("action"), 3)
+    for r in scene.get("visual_requirements") or []:
+        add(high, r, 3)
+    add(low, sem.get("object"), 2)
+    add(low, sem.get("location"), 2)
+    add(low, src.get("text") or scene.get("text"), 1)
+    for e in scene.get("visual_exclusions") or []:
+        for m in _PRERANK_WORD.findall(e.lower()):
+            if m not in _PRERANK_STOP:
+                excl.add(m)
+    weighted = dict(low)
+    weighted.update(high)  # high wins on overlap
+    return weighted, excl
+
+
+def _desc_match_score(desc, weighted, exclusions, wset=None):
+    """Cheap weighted word-overlap score of a catalogue description against
+    the brief's weighted terms:
+      + term weight for each brief word present in the description
+      + 2 bonus if two brief words appear ADJACENT in the description
+      + 3 bonus if a subject/requirement bigram appears verbatim
+      - 4 for each exclusion word present
+    """
+    if wset is None:
+        wset = set(weighted)
+    words = _PRERANK_WORD.findall((desc or "").lower())
+    wjoin = " ".join(words)
+    seen = set(words)
+    score = sum(weighted[w] for w in seen if w in weighted)
+    for a, b in zip(words, words[1:]):
+        if a in wset and b in wset:
+            score += 2
+    score -= 4 * sum(1 for e in exclusions if e in seen)
+    for term in weighted:
+        if " " in term and term in wjoin:
+            score += 3
+    return score
+
+
+def _prerank(pool, weighted, exclusions, keep):
+    """Order `pool` by how well each catalogue description matches the brief
+    (see _desc_match_score), then keep the top `keep`. Ties broken by having
+    a real duration and resolution. Always sorts (even when it doesn't need
+    to trim) so the first judged batch is the best of the pool, not just its
+    first N in arrival order.
+    """
+    if not weighted:
+        return pool[:keep]
+    wset = set(weighted)
+
+    def rank(c):
+        return (
+            _desc_match_score(c.get("desc"), weighted, exclusions, wset),
+            1 if c.get("duration") else 0,
+            1 if c.get("width") else 0,
+        )
+
+    return sorted(pool, key=rank, reverse=True)[:keep]
+
+
+def _heuristic_pick(pool, signals):
+    """Deterministic fallback for when the Gemini judge is unavailable
+    (per-day quota hit, sustained rate-limit) partway through a long
+    "auto-match all" run: instead of stopping the whole run, choose the
+    candidate whose catalogue description overlaps the brief's weighted terms
+    best (the same signal the LLM pre-rank uses) and return it with a
+    deliberately modest pseudo-score so it always registers as a soft,
+    review-me pick -- never as a confident match. Returns (best, score,
+    reason) or (None, -1, "") for an empty pool."""
+    weighted, exclusions = signals or ({}, set())
+    if not pool:
+        return None, -1, ""
+    wset = set(weighted)
+    scored = sorted(
+        pool,
+        key=lambda c: (
+            _desc_match_score(c.get("desc"), weighted, exclusions, wset),
+            1 if c.get("duration") else 0,
+            1 if c.get("width") else 0,
+        ),
+        reverse=True,
+    )
+    best = scored[0]
+    raw = _desc_match_score(best.get("desc"), weighted, exclusions, wset)
+    # Map the uncalibrated overlap score into a 30..66 band: comfortably
+    # inside "soft" territory for a balanced/strict run so the scene gets
+    # filled rather than left empty, but never near a strictness bar -- a
+    # keyword-only pick has to be flagged and re-judged later.
+    score = int(max(30, min(66, 40 + raw * 3.5)))
+    reason = (
+        f'keyword-overlap fallback (Gemini judge unavailable): best match by '
+        f'term overlap vs "{(best.get("desc") or "")[:80]}"'
+    )
+    return best, score, reason
+
+
+# A judged verdict clamps the raw score into a sane band, so a hallucinated
+# number can't push obviously-wrong footage over the bar (or bury a clean
+# match). "ok" is left as the model gave it.
+_VERDICT_CLAMP = {
+    "wrong": (0, 28),
+    "weak": (30, 55),
+    "ok": (0, 100),
+    "strong": (72, 96),
+}
+
+
+def _judge_batch(brief, batch, entry_candidates):
+    """One Gemini scoring call over `batch` (already the size we want judged).
+    Appends every scored candidate to entry_candidates and returns
+    (best_asset, best_score, best_reason) for this batch."""
+    from llm_client import LLMError, complete, strip_reasoning
     from semantic_timeline import _extract_json
 
     listing = []
-    for i, c in enumerate(pool, start=1):
-        desc = (c.get("desc") or "").strip() or "(no description)"
-        dims = f"{c.get('width')}x{c.get('height')}" if c.get("width") else "unknown res"
-        listing.append(f'C{i}: "{desc}" ({c.get("duration") or "?"}s, {dims}, {c.get("source")})')
-    user = scene_or_shot_brief + "\n\nCANDIDATE CLIPS:\n" + "\n".join(listing) + "\n\nScore every candidate. STRICT JSON only."
-    data = None
-    last_err = None
-    for attempt in range(2):  # a truncated/malformed reply is usually a one-off
-        reply = complete(
-            [{"role": "system", "content": AUTOMATCH_SYSTEM}, {"role": "user", "content": user}],
-            STATE["groq_keys"], temperature=0.1, max_tokens=2000, verbose=False,
-        )
+    for i, c in enumerate(batch, start=1):
+        desc = ((c.get("desc") or "").strip() or "(no description)")[:140]
+        dims = f"{c.get('width')}x{c.get('height')}" if c.get("width") else "res n/a"
+        via = c.get("matched_query")
+        via_txt = f', via "{via}"' if via else ""
+        kind = "photo" if c.get("is_photo") or c.get("kind") == "photo" else f"{c.get('duration') or '?'}s"
+        listing.append(f'C{i}: "{desc}" ({kind}, {dims}, {c.get("source")}{via_txt})')
+    user = (brief + "\n\nCANDIDATE CLIPS:\n" + "\n".join(listing)
+            + "\n\nScore AND give a verdict for every candidate. STRICT JSON only.")
+    data, last_err = None, None
+    for _ in range(2):  # a truncated/malformed reply is usually a one-off
+        try:
+            reply = complete(
+                [{"role": "system", "content": AUTOMATCH_SYSTEM}, {"role": "user", "content": user}],
+                STATE["llm_keys"], temperature=0.1, max_tokens=4000, verbose=False,
+            )
+        except LLMError as e:
+            raise AutomatchUnavailable(str(e))
         try:
             data = _extract_json(strip_reasoning(reply))
             break
@@ -821,36 +1405,96 @@ def _pick_best(scene_or_shot_brief, pool, entry_candidates):
             last_err = e
     if data is None:
         raise ValueError(f"judge reply unparseable after retry: {last_err}")
-    scores = {}
+
+    scored = {}
     for s in data.get("scores") or []:
+        if not isinstance(s, dict):
+            continue
         cid = str(s.get("id") or "").strip().upper()
         try:
-            scores[cid] = (max(0, min(100, int(s.get("score")))), str(s.get("reason") or "")[:200])
+            raw = max(0, min(100, int(s.get("score"))))
         except (TypeError, ValueError):
-            pass
+            continue
+        verdict = str(s.get("verdict") or "").strip().lower()
+        lo, hi = _VERDICT_CLAMP.get(verdict, (0, 100))
+        scored[cid] = (max(lo, min(hi, raw)), verdict or "ok", raw)
+
     best, best_score, best_reason = None, -1, ""
-    for i, c in enumerate(pool, start=1):
-        score, reason = scores.get(f"C{i}", (0, "not scored by judge"))
+    for i, c in enumerate(batch, start=1):
+        score, verdict, raw = scored.get(f"C{i}", (0, "unscored", 0))
+        note = f" [{verdict}]" if verdict not in ("ok", "unscored") else ""
+        reason = f'judged {score}/100{note} vs "{(c.get("desc") or "")[:80]}"'
         entry_candidates.append({
             "id": c.get("id"), "source": c.get("source"), "desc": c.get("desc"),
             "duration": c.get("duration"), "query": c.get("matched_query"),
-            "score": score, "reason": reason,
+            "score": score, "verdict": verdict, "raw_score": raw, "reason": reason,
         })
         if score > best_score:
             best, best_score, best_reason = c, score, reason
     return best, best_score, best_reason
 
 
+def _pick_best(brief, pool, entry_candidates, signals=None, accept=0):
+    """Pre-rank `pool`, then LLM-judge it in batches of AUTOMATCH_JUDGE.
+
+    Judges the strongest batch first; only judges the next batch (up to
+    AUTOMATCH_MAX_BATCHES) if nothing in the batches so far reached `accept`
+    -- the right clip is often just outside an arbitrary top-N cut, and
+    another batch is cheap on Gemini's budget. Returns (best, score, reason)
+    across every batch judged."""
+    weighted, exclusions = signals or ({}, set())
+    ranked = _prerank(pool, weighted, exclusions, AUTOMATCH_POOL)
+    best, best_score, best_reason = None, -1, ""
+    for b in range(AUTOMATCH_MAX_BATCHES):
+        batch = ranked[b * AUTOMATCH_JUDGE:(b + 1) * AUTOMATCH_JUDGE]
+        if not batch:
+            break
+        bbest, bscore, breason = _judge_batch(brief, batch, entry_candidates)
+        if bscore > best_score:
+            best, best_score, best_reason = bbest, bscore, breason
+        if best_score >= accept:
+            break
+    return best, best_score, best_reason
+
+
+def _interleave_by_source(pool):
+    """Round-robin the pool by provider so trimming to AUTOMATCH_POOL keeps a
+    spread of sources instead of whatever one prolific provider returned
+    first -- more variety for the pre-rank and judge to choose from."""
+    buckets = {}
+    for c in pool:
+        buckets.setdefault(c.get("source") or "?", []).append(c)
+    out = []
+    while any(buckets.values()):
+        for src in list(buckets):
+            if buckets[src]:
+                out.append(buckets[src].pop(0))
+    return out
+
+
 def _search_pool(queries, min_duration, min_quality, errors_out):
-    """Deduped candidate pool across queries/providers, relaxing the
-    duration floor if it comes up completely dry. Returns (pool, relaxed).
-    A thin first page pulls page 2 of the primary query as well -- exact
-    matches are found by judging MORE candidates, not by settling."""
+    """Deduped candidate pool across every query x provider, relaxing the
+    duration floor only if it comes up completely dry. Returns (pool,
+    relaxed). Page 2 is pulled for the first few queries while the pool is
+    thin -- exact matches are found by judging MORE candidates, not by
+    settling for the first page."""
     pool, seen = [], set()
 
     def gather(min_dur, page=1, qs=None):
-        for query in qs or queries:
-            cands, errors = _automatch_search(query, min_dur, min_quality, page=page)
+        targets = list(qs or queries)
+        if not targets:
+            return
+        # Fan the query x provider searches out -- they're independent HTTP
+        # calls, so 7 phrasings across 3 providers finish in ~2 waves instead
+        # of 21 sequential round-trips. Results are merged in submission order
+        # so `matched_query` (used for the "via" hint to the judge) stays the
+        # first phrasing that surfaced each clip.
+        with ThreadPoolExecutor(max_workers=min(6, len(targets))) as ex:
+            results = list(ex.map(
+                lambda q: (q, _automatch_search(q, min_dur, min_quality, page=page)),
+                targets,
+            ))
+        for query, (cands, errors) in results:
             errors_out.extend(errors)
             for c in cands:
                 key = (c.get("source"), c.get("id"))
@@ -860,179 +1504,361 @@ def _search_pool(queries, min_duration, min_quality, errors_out):
                     pool.append(c)
 
     gather(min_duration)
-    if queries and len(pool) < AUTOMATCH_POOL // 2:
-        gather(min_duration, page=2, qs=queries[:1])
+    # Only reach for page 2 while the pool is still thin -- once there are
+    # comfortably more than one judge batch's worth, extra pages just cost
+    # requests without changing which clip wins.
+    if queries and len(pool) < AUTOMATCH_JUDGE * 2:
+        gather(min_duration, page=2, qs=queries[:2])
     relaxed = False
     if not pool:
         relaxed = True
         gather(None)
-    return pool[:AUTOMATCH_POOL], relaxed
+        if queries and len(pool) < AUTOMATCH_JUDGE * 2:
+            gather(None, page=2, qs=queries[:2])
+    return _interleave_by_source(pool)[:AUTOMATCH_POOL], relaxed
 
 
 def _revise_queries(brief, tried, result_descs):
-    """The automatic-repair half of validate->repair: when every candidate
-    scored below threshold, ask the LLM for different search phrasings given
-    what the failed queries actually returned."""
-    from groq_client import complete, strip_reasoning
+    """The automatic-repair half of validate->repair: when nothing scored at
+    or above the bar, ask the LLM for different search phrasings given what
+    the failed queries actually returned -- one broader, one a synonym, one
+    a different concrete framing of the same beat."""
+    from llm_client import LLMError, complete, strip_reasoning
     from semantic_timeline import _extract_json
 
     user = (
         brief
         + f"\n\nStock-video queries already tried: {', '.join(tried)}"
         + ("\nTheir results were about: " + "; ".join(d for d in result_descs if d) if result_descs else "")
-        + "\n\nThose queries did not surface matching footage. Suggest 2 DIFFERENT concrete "
-        "stock-video search queries (2-4 English words each, camera-visible things, "
-        "synonyms or adjacent framings of the same event) more likely to find footage "
-        'matching the narration. STRICT JSON only: {"queries":["...","..."]}'
+        + "\n\nThose queries did not surface matching footage. Suggest 3 DIFFERENT "
+        "stock-video search queries, each 2-4 English words of camera-visible things:\n"
+        "  1. a BROADER query (drop the least essential word)\n"
+        "  2. a SYNONYM query (different words, same visual)\n"
+        "  3. a query for a DIFFERENT concrete moment or object from this same beat\n"
+        'STRICT JSON only: {"queries":["...","...","..."]}'
     )
-    reply = complete(
-        [{"role": "system", "content": "You craft stock-video search queries. STRICT JSON only."},
-         {"role": "user", "content": user}],
-        STATE["groq_keys"], temperature=0.4, max_tokens=300, verbose=False,
-    )
+    try:
+        reply = complete(
+            [{"role": "system", "content": "You craft stock-video search queries. STRICT JSON only."},
+             {"role": "user", "content": user}],
+            STATE["llm_keys"], temperature=0.4, max_tokens=1500, verbose=False,
+        )
+    except LLMError as e:
+        raise AutomatchUnavailable(str(e))
     data = _extract_json(strip_reasoning(reply))
     return [q.strip() for q in data.get("queries") or [] if isinstance(q, str) and q.strip()]
 
 
-def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out, errors_out, threshold):
-    """search -> judge -> (while nothing passes) revise queries and try
-    again, up to two repair rounds -> finally a still-photo round (photos
-    carry real alt-text and often depict the exact narration nouns; step3
-    renders them with a Ken Burns zoom). Best overall wins.
-    Returns (best, score, reason, relaxed)."""
+_PHOTO_BRIEF_NOTE = (
+    "\nSome candidates are STILL PHOTOS (rendered as a slow Ken Burns zoom) -- "
+    "marked (photo). Judge them only on whether the image depicts the exact "
+    "narration content; do not penalize for being a still."
+)
+
+
+def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out,
+                       errors_out, threshold, signals=None, photo_queries=None):
+    """search -> judge -> (while nothing reaches the bar) revise queries and
+    retry, up to two repair rounds -> a dedicated still-photo round. Photos
+    are also folded into the FIRST judge round when the video pool is thin,
+    so a spot-on still isn't missed just because a mediocre video existed.
+    Best overall wins. Returns (best, score, reason, relaxed, heuristic) --
+    `heuristic` True means the Gemini judge was unavailable and `best` was
+    chosen by keyword overlap alone, so it should be saved as a soft pick and
+    re-judged on a later run."""
     pool, relaxed = _search_pool(queries, min_duration, min_quality, errors_out)
+    photo_qs = photo_queries or queries
+    used_brief = brief
+    if 0 < len(pool) < 10:
+        photos = _photo_pool(photo_qs, errors_out, limit=8)
+        for p in photos:
+            p["is_photo"] = True
+        if photos:
+            pool = pool + photos
+            used_brief = brief + _PHOTO_BRIEF_NOTE
+            errors_out.append(f"Video pool thin ({len(pool) - len(photos)}); mixed in {len(photos)} still photo(s).")
+
     best, score, reason = None, -1, ""
-    if pool:
+    heuristic = False
+    if pool and STATE.get("llm_down"):
+        # An earlier scene in this run already found the Gemini judge out of
+        # room -- don't spend this scene's retries rediscovering that, go
+        # straight to the keyword-overlap fallback.
+        best, score, reason = _heuristic_pick(pool, signals)
+        heuristic = best is not None
+        if heuristic:
+            errors_out.append(
+                "Gemini judge still unavailable -- picked by keyword overlap (soft). "
+                "Re-run auto-match once quota resets to upgrade this scene."
+            )
+    elif pool:
         try:
-            best, score, reason = _pick_best(brief, pool, candidates_out)
-        except Exception as e:
+            best, score, reason = _pick_best(used_brief, pool, candidates_out, signals, threshold)
+        except AutomatchUnavailable as e:
+            # Gemini can't score anything right now. Rather than stop the whole
+            # "auto-match all" run (and leave every remaining scene empty),
+            # remember it's down and fill this scene with the best
+            # keyword-overlap match, flagged soft for a later re-judge.
+            STATE["llm_down"] = str(e)
+            best, score, reason = _heuristic_pick(pool, signals)
+            heuristic = best is not None
+            errors_out.append(
+                f"Gemini scoring unavailable ({e}). Picked the closest match by "
+                f"keyword overlap instead (soft) -- re-run auto-match after the "
+                f"quota resets to replace it with a judged pick."
+            )
+            if not heuristic:
+                return None, -1, "", relaxed, heuristic
+        except (ValueError, json.JSONDecodeError) as e:
             errors_out.append(f"Scoring failed: {e}")
-            return None, -1, "", relaxed
+            return None, -1, "", relaxed, False
+        if best is not None and best.get("is_photo"):
+            reason = f"[photo] {reason}"
+
+    if heuristic:
+        # Repair rounds and the photo round all need the judge -- skip them.
+        return best, score, reason, relaxed, True
 
     tried = {q.lower() for q in queries}
-    round_queries = list(queries)
     for repair_round in (1, 2):
         if best is not None and score >= threshold:
-            return best, score, reason, relaxed
+            return best, score, reason, relaxed, False
+        if STATE.get("llm_down"):
+            # Judge is out -- every repair step needs it. Don't burn retries
+            # rediscovering that; keep whatever the first round found.
+            break
         try:
             revised = _revise_queries(brief, sorted(tried), [c.get("desc") for c in pool[:6]])
-        except Exception as e:
+        except AutomatchUnavailable as e:
+            STATE["llm_down"] = str(e)
+            errors_out.append(f"Gemini went unavailable mid-repair ({e}) -- keeping the best pick so far.")
+            break
+        except (ValueError, json.JSONDecodeError) as e:
             errors_out.append(f"Query revision failed: {e}")
             break
-        revised = [q for q in revised if q.lower() not in tried][:2]
+        revised = [q for q in revised if q.lower() not in tried][:3]
         if not revised:
             break
         tried.update(q.lower() for q in revised)
-        round_queries = revised
         errors_out.append(f"Repair round {repair_round} tried revised queries: {', '.join(revised)}")
         pool2, relaxed2 = _search_pool(revised, min_duration, min_quality, errors_out)
         pool = pool2 or pool
         if pool2:
             try:
-                best2, score2, reason2 = _pick_best(brief, pool2, candidates_out)
-            except Exception as e:
+                best2, score2, reason2 = _pick_best(brief, pool2, candidates_out, signals, threshold)
+            except AutomatchUnavailable as e:
+                STATE["llm_down"] = str(e)
+                errors_out.append(f"Gemini went unavailable mid-repair ({e}) -- keeping the best pick so far.")
+                break
+            except (ValueError, json.JSONDecodeError) as e:
                 errors_out.append(f"Scoring failed on repair round: {e}")
                 break
             if score2 > score:
                 best, score, reason, relaxed = best2, score2, reason2, relaxed or relaxed2
 
-    if best is None or score < threshold:
-        # Photo fallback: an exact still beats an approximate video.
-        photos = _photo_pool(sorted(tried), errors_out)
+    if (best is None or score < threshold) and not STATE.get("llm_down"):
+        # Dedicated photo round: an exact still beats an approximate video.
+        photos = _photo_pool(sorted(set(list(tried) + list(photo_qs))), errors_out, limit=12)
+        for p in photos:
+            p["is_photo"] = True
         if photos:
             errors_out.append(f"Photo round judged {len(photos)} still photo(s).")
-            photo_brief = brief + (
-                "\nNote: these candidates are STILL PHOTOS (rendered as a slow "
-                "Ken Burns zoom). Judge only whether the image depicts the exact "
-                "narration content; do not penalize for being a photo."
-            )
             try:
-                pbest, pscore, preason = _pick_best(photo_brief, photos, candidates_out)
+                pbest, pscore, preason = _pick_best(
+                    brief + _PHOTO_BRIEF_NOTE, photos, candidates_out, signals, threshold
+                )
                 if pscore > score:
                     best, score, reason = pbest, pscore, f"[photo] {preason}"
-            except Exception as e:
+            except AutomatchUnavailable as e:
+                STATE["llm_down"] = str(e)
+                errors_out.append(f"Gemini went unavailable on the photo round ({e}).")
+            except (ValueError, json.JSONDecodeError) as e:
                 errors_out.append(f"Scoring failed on photo round: {e}")
 
-    return best, score, reason, relaxed
+    return best, score, reason, relaxed, False
 
 
-def _automatch_shots(scene, entry, min_quality, threshold):
+def _finish_with_ai_fallback(scene, entry, best_score):
+    """Auto-match last resort: when no stock clip cleared the bar and the
+    caller enabled AI fallback (`STATE["ai_fallback"]`, set from the
+    /api/automatch request), generate one house-style illustration, save it
+    as the scene's pick, and return `entry` as a soft PASS. Returns None if
+    AI fallback is off or generation failed -- the caller then returns the
+    FAIL entry it already built."""
+    if not STATE.get("ai_fallback"):
+        return None
+    try:
+        asset = _ai_autofill(scene, scene)
+    except Exception as e:
+        entry["failure_reasons"].append(f"AI illustration fallback failed: {e}")
+        return None
+    with STATE["lock"]:
+        remove_clips_for_scene(scene["index"])
+        dest = register_asset(scene["index"], asset)
+        selections = load_selections()
+        record = selection_record(scene["index"], asset, dest, asset["prompt"])
+        record["match_score"] = best_score if (best_score is not None and best_score >= 0) else None
+        record["match_reason"] = "AI illustration fallback (no stock clip cleared the bar)"
+        record["auto_matched"] = True
+        record["ai_generated"] = True
+        record["soft_match"] = True
+        selections[str(scene["index"])] = record
+        save_selections(selections)
+    entry["status"] = "PASS"
+    entry["soft"] = True
+    entry["ai_generated"] = True
+    entry["chosen"] = {"source": "ai", "desc": asset["desc"], "file": dest.name, "ai": True}
+    entry["failure_reasons"].append(
+        "No stock clip cleared the bar -- filled with a generated house-style "
+        "illustration (flagged for review)."
+    )
+    return entry
+
+
+def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
     """Per-shot auto-match for a multi-shot scene: each shot gets its own
     search + judging against ITS exact words, and the scene is saved as a
     multi-clip selection in shot order -- step3 then cuts each clip at the
-    shot's exact narration boundary. All shots must pass or nothing is
-    saved (a half-matched scene would silently misalign the later shots)."""
+    shot's exact narration boundary. Every shot must reach the acceptance bar
+    or nothing is saved (a half-matched scene would silently misalign the
+    later shots). With `soft_floor` set (an "all unpicked" run), the bar drops
+    to the floor and the scene is flagged "soft" if any shot came in under the
+    strictness threshold."""
+    accept = soft_floor if soft_floor is not None else threshold
     shots = scene.get("shots") or []
-    picks = []
     entry["shots"] = []
+    any_soft = False
+    ai_used = False
+    # One (shot, asset_or_None, score_or_None, is_ai) per shot, in shot order --
+    # kept aligned with `shots` so step3's shot-exact cut boundaries still line
+    # up even when some shots were AI-filled.
+    outcomes = []
     for shot in shots:
         shot_entry = {"text": shot.get("text"), "query": shot.get("query"),
                       "duration": round(shot.get("duration", 0), 2),
                       "status": "FAIL", "score": None, "chosen": None, "reason": None}
         entry["shots"].append(shot_entry)
-        queries = [q for q in (shot.get("query"), scene.get("query"), (scene.get("queries") or [None])[0]) if q]
-        queries = list(dict.fromkeys(queries))  # dedupe, keep order
+        base_qs = [q for q in (shot.get("query"), scene.get("query"),
+                               *(scene.get("queries") or [])) if q]
+        base_qs = list(dict.fromkeys(base_qs))
+        sem = scene.get("semantic") or {}
+        shot_sem = {"subject": shot.get("subject") or sem.get("subject"),
+                    "action": shot.get("action") or sem.get("action"),
+                    "object": sem.get("object"), "location": sem.get("location")}
+        queries = _expand_queries(
+            shot_sem, base_qs, scene.get("visual_requirements"),
+            scene.get("keywords"), shot.get("text") or scene.get("text"),
+            lang=STATE.get("lang", "en"),
+        )
+        signals = _prerank_signals(scene, shot=shot)
+        shot_entry["queries_tried"] = queries
         min_duration = max(1, int(shot.get("duration", 0) + 0.999))
-        best, score, reason, _relaxed = _match_with_repair(
-            _shot_brief(scene, shot), queries[:3], min_duration, min_quality,
-            entry["candidates"], entry["failure_reasons"], threshold,
+        best, score, reason, _relaxed, heuristic = _match_with_repair(
+            _shot_brief(scene, shot), queries, min_duration, min_quality,
+            entry["candidates"], entry["failure_reasons"], accept, signals=signals,
         )
         shot_entry["score"] = score if score >= 0 else None
-        if best is None or score < threshold:
-            shot_entry["reason"] = (
-                f"Best candidate scored {score} (threshold {threshold})." if score >= 0
-                else f"No usable search results for: {', '.join(queries[:2])}"
-            )
+        if heuristic:
+            shot_entry["heuristic"] = True
+        if best is not None and score >= accept:
+            shot_entry["status"] = "SOFT" if (score < threshold or heuristic) else "PASS"
+            any_soft = any_soft or score < threshold or heuristic
+            shot_entry["chosen"] = {"id": best.get("id"), "source": best.get("source"), "desc": best.get("desc")}
+            shot_entry["reason"] = reason
+            outcomes.append((shot, best, score, False))
             continue
-        shot_entry["status"] = "PASS"
-        shot_entry["chosen"] = {"id": best.get("id"), "source": best.get("source"), "desc": best.get("desc")}
-        shot_entry["reason"] = reason
-        picks.append((shot, best, score))
+        # No stock clip for this shot -- generate one if AI fallback is on,
+        # otherwise leave it unfilled (the scene won't be saved).
+        if STATE.get("ai_fallback"):
+            try:
+                asset = _ai_autofill(shot, scene)
+            except Exception as e:
+                shot_entry["reason"] = f"No stock clip; AI fallback failed: {e}"
+                outcomes.append((shot, None, None, False))
+                continue
+            ai_used = True
+            any_soft = True
+            shot_entry["status"] = "AI"
+            shot_entry["chosen"] = {"source": "ai", "desc": asset["desc"]}
+            shot_entry["reason"] = "No stock clip -- generated a house-style illustration."
+            outcomes.append((shot, asset, score if score >= 0 else None, True))
+            continue
+        shot_entry["reason"] = (
+            f"Best candidate scored {score} (needed {accept})." if score >= 0
+            else f"No usable search results for: {', '.join(queries[:2])}"
+        )
+        outcomes.append((shot, None, None, False))
 
-    failed = [se for se in entry["shots"] if se["status"] != "PASS"]
-    if failed:
+    unfilled = [se for se, (_, a, _, _) in zip(entry["shots"], outcomes) if a is None]
+    if unfilled:
         entry["failure_reasons"].append(
-            f"{len(failed)} of {len(shots)} shots had no candidate above threshold -- "
+            f"{len(unfilled)} of {len(shots)} shots had no usable candidate -- "
             f"nothing saved (a partial multi-pick would misalign the other shots). "
-            f"Pick this scene manually (multi mode) or re-run."
+            f"Pick this scene manually (multi mode), enable the AI fallback, or re-run."
         )
         entry["score"] = min((se["score"] for se in entry["shots"] if se["score"] is not None), default=None)
         return entry
 
+    scores_only = [sc for _, _, sc, _ in outcomes if sc is not None]
+    any_heuristic = any(se.get("heuristic") for se in entry["shots"])
     with STATE["lock"]:
         remove_clips_for_scene(scene["index"])
         items = []
-        for j, (shot, best, score) in enumerate(picks):
-            dest = register_asset(scene["index"], best, part=j + 1)
-            item = multi_item_record(best, dest, shot.get("duration", 0))
-            item["match_score"] = score
+        for j, (shot, asset, score, is_ai) in enumerate(outcomes):
+            dest = register_asset(scene["index"], asset, part=j + 1)
+            item = multi_item_record(
+                asset, dest, shot.get("duration", 0), shot=shot, shot_index=j + 1,
+            )
+            if score is not None:
+                item["match_score"] = score
+            if is_ai:
+                item["ai_generated"] = True
             items.append(item)
         selections = load_selections()
         selections[str(scene["index"])] = {
             "scene_index": scene["index"],
             "type": "multi",
             "items": items,
+            "shot_aligned": True,
             "query": scene.get("query"),
             "auto_matched": True,
-            "match_score": min(score for _, _, score in picks),
+            "soft_match": any_soft,
+            "heuristic": any_heuristic,
+            "ai_generated": ai_used,
+            "match_score": min(scores_only) if scores_only else None,
         }
         save_selections(selections)
     entry["status"] = "PASS"
-    entry["score"] = min(score for _, _, score in picks)
+    entry["soft"] = any_soft
+    if any_heuristic:
+        entry["heuristic"] = True
+    entry["ai_generated"] = ai_used
+    entry["score"] = min(scores_only) if scores_only else None
     entry["chosen"] = {
         "multi": True,
         "files": [it["file"] for it in items],
-        "descs": [se["chosen"]["desc"] for se in entry["shots"]],
+        "descs": [se["chosen"]["desc"] if se["chosen"] else "" for se in entry["shots"]],
     }
+    if ai_used:
+        entry["failure_reasons"].append(
+            "One or more shots had no stock match -- filled with generated "
+            "house-style illustration(s), flagged for review."
+        )
     return entry
 
 
-def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD):
+def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD, soft_floor=None):
     """Search + score + (maybe) select the best clip for one scene.
     A multi-shot scene (from the semantic timeline) is matched shot by
     shot and saved as a multi-clip selection with shot-exact timing; a
     single-visual scene gets one clip. Returns the report entry; on PASS
-    the selection is saved exactly as a human pick would be."""
+    the selection is saved exactly as a human pick would be.
+
+    `soft_floor` (used by the "Auto-match all unpicked" run): when the best
+    candidate misses `threshold` but reaches this floor, the scene is filled
+    with it anyway and flagged "soft" in the report and the selection, rather
+    than left empty. Pass None (the default, used by the per-scene button) to
+    keep the strict all-or-nothing behavior."""
     entry = {
         "scene_index": scene["index"],
         "script": scene["text"],
@@ -1040,40 +1866,69 @@ def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD):
         "voice_end": round(scene["end"], 2),
         "duration": round(scene["duration"], 2),
         "status": "FAIL",
+        "soft": False,
         "score": None,
         "chosen": None,
         "candidates": [],
         "failure_reasons": [],
     }
-    if not STATE.get("groq_keys"):
-        entry["failure_reasons"].append("No Groq API key -- semantic scoring unavailable.")
+    if not STATE.get("llm_keys"):
+        entry["failure_reasons"].append("No Gemini API key -- semantic scoring unavailable.")
         return entry
 
     if len(scene.get("shots") or []) >= 2:
-        return _automatch_shots(scene, entry, min_quality, threshold)
+        return _automatch_shots(scene, entry, min_quality, threshold, soft_floor)
 
-    queries = [q for q in (scene.get("queries") or []) if q] or [scene.get("query") or ""]
+    base_qs = [q for q in (scene.get("queries") or []) if q] or [scene.get("query") or ""]
+    queries = _expand_queries(
+        scene.get("semantic") or {}, base_qs, scene.get("visual_requirements"),
+        scene.get("keywords"), scene.get("text"), lang=STATE.get("lang", "en"),
+    )
+    signals = _prerank_signals(scene)
+    entry["queries_tried"] = queries
     min_duration = max(1, int(scene["duration"] + 0.999))
-    best, best_score, best_reason, duration_relaxed = _match_with_repair(
-        _scene_brief(scene), queries[:3], min_duration, min_quality,
-        entry["candidates"], entry["failure_reasons"], threshold,
+    # Let the repair loop stop as soon as it clears the acceptance bar -- the
+    # soft floor for an "all" run -- instead of burning extra Gemini calls
+    # chasing the full strictness threshold it may never reach.
+    accept = soft_floor if soft_floor is not None else threshold
+    best, best_score, best_reason, duration_relaxed, heuristic = _match_with_repair(
+        _scene_brief(scene), queries, min_duration, min_quality,
+        entry["candidates"], entry["failure_reasons"], accept, signals=signals,
     )
     entry["candidates"].sort(key=lambda c: -c["score"])
     entry["score"] = best_score if best_score >= 0 else None
+    entry["pool_size"] = len(entry["candidates"])
+    if heuristic:
+        entry["heuristic"] = True
     if best is None and best_score < 0:
         entry["failure_reasons"].append(f"No usable search results for: {', '.join(queries[:2])}")
-        return entry
+        return _finish_with_ai_fallback(scene, entry, None) or entry
 
-    if best is None or best_score < threshold:
+    soft = False
+    if best is None or best_score < accept:
         entry["failure_reasons"].append(
-            f"Best candidate scored {best_score} (threshold {threshold}) -- "
+            f"Best candidate scored {best_score} (needed {accept}) -- "
             f"pick this scene manually; the scored list is in the report."
         )
         if duration_relaxed:
             entry["failure_reasons"].append(
                 f"Note: no clip met the {min_duration}s minimum duration; shorter clips were considered."
             )
-        return entry
+        return _finish_with_ai_fallback(scene, entry, best_score) or entry
+    if heuristic:
+        soft = True
+        entry["failure_reasons"].append(
+            "Gemini judge was unavailable -- this scene was filled by keyword "
+            "overlap only (score is an estimate). Re-run auto-match once the "
+            "quota resets and it will be re-judged automatically."
+        )
+    elif best_score < threshold:
+        soft = True
+        entry["failure_reasons"].append(
+            f"Soft match: best candidate scored {best_score}, under the {threshold} strictness "
+            f"bar -- filled in anyway so the scene isn't left empty. Review it, or re-run at "
+            f"higher strictness / pick manually to replace it."
+        )
 
     with STATE["lock"]:
         remove_clips_for_scene(scene["index"])
@@ -1083,9 +1938,13 @@ def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD):
         record["match_score"] = best_score
         record["match_reason"] = best_reason
         record["auto_matched"] = True
+        record["soft_match"] = soft
+        if heuristic:
+            record["heuristic"] = True
         selections[str(scene["index"])] = record
         save_selections(selections)
     entry["status"] = "PASS"
+    entry["soft"] = soft
     entry["chosen"] = {
         "id": best.get("id"),
         "source": best.get("source"),
@@ -1118,6 +1977,127 @@ def save_sync_report(entries):
     report["threshold"] = AUTOMATCH_THRESHOLD
     save_json(report, path)
     return path
+
+
+def load_sync_report():
+    """The scenes map from sync_report.json ({str(index): entry}), or {}.
+    Used by the review page to show why each auto-matched scene was picked
+    (score, soft/keyword-only/AI flags, failure reasons) after a reload when
+    the browser's in-memory matchNotes are gone."""
+    path = STATE["selections_path"].parent / "sync_report.json"
+    if not path.exists():
+        return {}
+    try:
+        return (load_json(path) or {}).get("scenes") or {}
+    except Exception:
+        return {}
+
+
+def _review_clip_url(item):
+    """A browser-playable URL for one picked asset on the review page.
+    A file already sitting in clips/ (local upload, AI illustration, or a
+    clip fetched by an earlier step3 run) is served straight from disk; a
+    remote pick that hasn't been downloaded yet streams from its small
+    preview rendition, falling back to the full download URL."""
+    f = item.get("file")
+    if f and (STATE["clips_dir"] / os.path.basename(f)).is_file():
+        return f"/clips/{urllib.parse.quote(os.path.basename(f))}", True
+    return item.get("preview_url") or item.get("download_url"), False
+
+
+def build_review_payload():
+    """Everything the "Review picked clips" page needs: each scene with its
+    narration, the clip picked for it resolved to a playable preview URL, and
+    the auto-matcher's own verdict for it from sync_report.json."""
+    selections = load_selections()
+    report = load_sync_report()
+    rows = []
+    reviewed = 0
+    for s in STATE["scenes"]:
+        idx = s["index"]
+        sel = selections.get(str(idx))
+        preview = None
+        if sel is not None:
+            if sel.get("type") == "multi":
+                items = []
+                for it in sel.get("items") or []:
+                    url, local = _review_clip_url(it)
+                    items.append({
+                        "type": it.get("type") or "video",
+                        "url": url,
+                        "on_disk": local,
+                        "thumb": it.get("thumb"),
+                        "source": it.get("source") or "pexels",
+                        "author": it.get("author"),
+                        "page_url": it.get("page_url"),
+                        "shot_index": it.get("shot_index"),
+                        "shot_text": it.get("shot_text"),
+                    })
+                preview = {"type": "multi", "items": items,
+                           "shot_aligned": bool(sel.get("shot_aligned"))}
+            else:
+                url, local = _review_clip_url(sel)
+                preview = {
+                    "type": sel.get("type") or "video",
+                    "items": [{
+                        "type": sel.get("type") or "video",
+                        "url": url,
+                        "on_disk": local,
+                        "thumb": sel.get("thumb"),
+                        "source": sel.get("source") or "pexels",
+                        "author": sel.get("author"),
+                        "page_url": sel.get("page_url"),
+                    }],
+                }
+        if sel is not None and sel.get("reviewed"):
+            reviewed += 1
+        rep = report.get(str(idx))
+        rep_slim = None
+        if rep:
+            chosen = rep.get("chosen") or {}
+            rep_slim = {
+                "status": rep.get("status"),
+                "score": rep.get("score"),
+                "soft": bool(rep.get("soft")),
+                "heuristic": bool(rep.get("heuristic")),
+                "ai_generated": bool(rep.get("ai_generated")),
+                "chosen": {"desc": chosen.get("desc")} if chosen else None,
+                "failure_reasons": rep.get("failure_reasons") or [],
+                "queries_tried": rep.get("queries_tried") or [],
+                "candidates_n": len(rep.get("candidates") or []),
+            }
+        rows.append({
+            "index": idx,
+            "text": s.get("text") or "",
+            "start": s.get("start"),
+            "end": s.get("end"),
+            "duration": s.get("duration"),
+            "shots": [
+                {"text": sh.get("text"), "start": sh.get("start"),
+                 "end": sh.get("end"), "duration": sh.get("duration")}
+                for sh in s.get("shots") or []
+            ],
+            "query": (sel or {}).get("query"),
+            "selection": {
+                "source": (sel or {}).get("source"),
+                "type": (sel or {}).get("type"),
+                "author": (sel or {}).get("author"),
+                "file": (sel or {}).get("file"),
+                "heuristic": bool((sel or {}).get("heuristic")),
+                "soft": bool((sel or {}).get("soft")),
+            } if sel is not None else None,
+            "preview": preview,
+            "report": rep_slim,
+            "reviewed": bool((sel or {}).get("reviewed")),
+        })
+    return {
+        "project": STATE["project"],
+        "rtl": STATE.get("rtl", False),
+        "scenes": rows,
+        "reviewed": reviewed,
+        "total": len(STATE["scenes"]),
+        "picked": len(selections),
+    }
 
 
 # --------------------------------------------------------------------------
@@ -1157,6 +2137,7 @@ class Handler(BaseHTTPRequestHandler):
             return self._send_html(PAGE_HTML)
 
         if route == "/api/scenes":
+            refresh_llm_keys()  # so a key added after launch enables the button
             selections = load_selections()
             scenes = [
                 {
@@ -1192,8 +2173,19 @@ class Handler(BaseHTTPRequestHandler):
                 "rate_remaining": STATE.get("rate_remaining"),
                 "rtl": STATE.get("rtl", False),
                 "highlight": sorted(STATE.get("highlight") or []),
-                "automatch_available": bool(STATE.get("groq_keys")),
+                "automatch_available": bool(STATE.get("llm_keys")),
+                # AI illustration tab -- always available (Pollinations needs
+                # no key); a token just makes it faster and watermark-free.
+                "ai_available": True,
+                "ai_watermarked": not bool(STATE.get("pollinations_token")),
             })
+
+        if route == "/api/review":
+            # Everything the "Review picked clips" page needs -- script text
+            # next to a playable preview of the clip picked for each scene,
+            # plus the auto-matcher's verdict, so mismatches can be spotted
+            # and replaced before the render.
+            return self._send_json(build_review_payload())
 
         if route == "/api/search":
             query = (params.get("q") or [""])[0].strip()
@@ -1341,9 +2333,13 @@ class Handler(BaseHTTPRequestHandler):
                 "quality_unverified": bool(min_quality),
             })
 
-        if route.startswith("/clips/"):
-            name = os.path.basename(urllib.parse.unquote(route[len("/clips/"):]))
-            path = STATE["clips_dir"] / name
+        if route.startswith("/clips/") or route.startswith("/aicache/"):
+            if route.startswith("/clips/"):
+                base, prefix = STATE["clips_dir"], "/clips/"
+            else:
+                base, prefix = STATE["ai_cache_dir"], "/aicache/"
+            name = os.path.basename(urllib.parse.unquote(route[len(prefix):]))
+            path = base / name
             if not path.exists():
                 self.send_error(404)
                 return
@@ -1418,6 +2414,19 @@ class Handler(BaseHTTPRequestHandler):
             scene = next((s for s in STATE["scenes"] if s["index"] == scene_index), None)
             if scene is None:
                 return self._send_json({"error": "Unknown scene."}, status=400)
+            # A multi-shot scene: one clip per shot, each locked to that shot's
+            # own narration window (see multi_item_record). Anything else
+            # (single-visual scene, or a pick count that doesn't match the
+            # shots) falls back to an even split of the scene's total time.
+            shots = scene.get("shots") or []
+            shot_aligned = len(shots) >= 2 and len(assets) == len(shots)
+            if not shot_aligned and len(shots) >= 2 and len(assets) != len(shots):
+                return self._send_json(
+                    {"error": f"This scene has {len(shots)} shots -- pick exactly {len(shots)} "
+                              f"clip(s), one per shot, so each clip covers its own shot's "
+                              f"narration (you picked {len(assets)})."},
+                    status=400,
+                )
             with STATE["lock"]:
                 remove_clips_for_scene(scene_index)
                 share_seconds = scene["duration"] / len(assets)
@@ -1425,7 +2434,13 @@ class Handler(BaseHTTPRequestHandler):
                 try:
                     for i, asset in enumerate(assets):
                         dest = register_asset(scene_index, asset, part=i + 1)
-                        items.append(multi_item_record(asset, dest, share_seconds))
+                        if shot_aligned:
+                            items.append(multi_item_record(
+                                asset, dest, shots[i].get("duration", share_seconds),
+                                shot=shots[i], shot_index=i + 1,
+                            ))
+                        else:
+                            items.append(multi_item_record(asset, dest, share_seconds))
                 except Exception as e:
                     return self._send_json({"error": f"Save failed: {e}"}, status=502)
                 selections = load_selections()
@@ -1433,55 +2448,195 @@ class Handler(BaseHTTPRequestHandler):
                     "scene_index": scene_index,
                     "type": "multi",
                     "items": items,
+                    "shot_aligned": shot_aligned,
                     "query": body.get("query"),
                 }
                 save_selections(selections)
-            return self._send_json({"ok": True, "count": len(items)})
+            return self._send_json({"ok": True, "count": len(items), "shot_aligned": shot_aligned})
+
+        if route == "/api/ai-image":
+            # Generate ONE house-style illustration for a scene and return it
+            # as a grid card (kind:"ai"). The browser calls this once per
+            # requested variation so it can show them as they arrive and pace
+            # itself against Pollinations' free-tier rate limit. `batch` +
+            # `seed_offset` make a Generate click's variations reproducible;
+            # nothing is saved until the user actually picks one.
+            try:
+                idx = int(body["index"])
+            except (KeyError, TypeError, ValueError):
+                return self._send_json({"error": "Missing scene index."}, status=400)
+            scene = next((s for s in STATE["scenes"] if s["index"] == idx), None)
+            if scene is None:
+                return self._send_json({"error": "Unknown scene."}, status=400)
+            raw = bool(body.get("raw"))
+            subject = (body.get("prompt") or "").strip() or _ai_scene_subject(scene)
+            try:
+                seed = int(body.get("batch", 0)) + int(body.get("seed_offset", 0))
+            except (TypeError, ValueError):
+                seed = 0
+            if seed <= 0:
+                seed = random.randint(1, 9_999_999)
+            try:
+                asset = ai_generate_for_scene(subject, seed, raw=raw)
+            except urllib.error.HTTPError as e:
+                msg = (
+                    "Pollinations rate limit hit (the free anonymous tier is about one image "
+                    "every 15s). Wait a few seconds and click Generate again, or add a free "
+                    "token to tools/pollinations_token.txt for the faster tier."
+                    if e.code == 429 else f"Pollinations returned HTTP {e.code}."
+                )
+                return self._send_json({"error": msg}, status=502)
+            except urllib.error.URLError as e:
+                return self._send_json({"error": f"Could not reach Pollinations: {e.reason}"}, status=502)
+            except Exception as e:
+                return self._send_json({"error": f"AI image generation failed: {e}"}, status=502)
+            return self._send_json({"ok": True, "image": asset})
 
         if route == "/api/automatch":
-            # Semantic auto-match: one scene ({"index": N}) or every scene
-            # without a pick yet ({"all": true}). Search -> LLM-score against
-            # the exact script segment -> select above threshold; always
-            # written to sync_report.json, PASS or FAIL.
-            if not STATE.get("groq_keys"):
+            # Semantic auto-match: one scene ({"index": N}) or the unpicked
+            # scenes ({"all": true}, optionally {"limit": N} to do just the
+            # next N so the browser can drive it scene-by-scene with live
+            # progress instead of one multi-minute request). Search -> LLM
+            # pre-rank + score against the exact script segment -> select at
+            # or above the bar; every decision written to sync_report.json.
+            refresh_llm_keys()  # pick up a key added since the picker launched
+            if not STATE.get("llm_keys"):
                 return self._send_json(
-                    {"error": "Auto-match needs a Groq API key (tools/groq_key.txt) for semantic scoring."},
+                    {"error": "Auto-match needs a Gemini API key -- put one in tools/gemini_key.txt "
+                              "(one per line for several), then reload this page."},
                     status=400,
                 )
+            # When on, any scene/shot no stock clip can match is filled with a
+            # generated house-style illustration instead of left empty (see
+            # _finish_with_ai_fallback / _automatch_shots).
+            STATE["ai_fallback"] = bool(body.get("ai_fallback"))
+            # `llm_down` latches when Gemini's judge runs out of quota mid-run
+            # so the rest of the run fills scenes by keyword overlap instead of
+            # stopping (see _match_with_repair). Clear it at the start of a
+            # fresh run -- the per-scene button, or the first request of an
+            # "all" run (no `exclude` history yet) -- so the judge is retried.
+            if not body.get("all") or not body.get("exclude"):
+                STATE["llm_down"] = None
             min_quality = body.get("min_quality")
             min_quality = min_quality if min_quality in QUALITY_TIERS else None
             try:
                 threshold = max(0, min(100, int(body.get("threshold", AUTOMATCH_THRESHOLD))))
             except (TypeError, ValueError):
                 threshold = AUTOMATCH_THRESHOLD
+            soft_floor = None
+            if body.get("soft_floor") is not None:
+                try:
+                    soft_floor = max(0, min(threshold, int(body["soft_floor"])))
+                except (TypeError, ValueError):
+                    soft_floor = None
+            try:
+                limit = max(0, int(body.get("limit", 0)))
+            except (TypeError, ValueError):
+                limit = 0
             if body.get("all"):
+                # `exclude` is how the scene-by-scene driver skips scenes it
+                # already tried this run (a FAIL stays unpicked, so without
+                # this the "next unpicked scene" would be the same one again).
+                exclude = set()
+                if isinstance(body.get("exclude"), list):
+                    for x in body["exclude"]:
+                        try:
+                            exclude.add(int(x))
+                        except (TypeError, ValueError):
+                            pass
                 selections = load_selections()
-                targets = [s for s in STATE["scenes"] if str(s["index"]) not in selections]
+
+                def _needs_match(s):
+                    if s["index"] in exclude:
+                        return False
+                    sel = selections.get(str(s["index"]))
+                    if sel is None:
+                        return True
+                    # A keyword-overlap pick made on an earlier run when the
+                    # Gemini judge was quota-blocked: re-target it so a later
+                    # run (quota reset) upgrades it to a judged pick. Skip this
+                    # while the judge is known-down this run -- re-doing it
+                    # heuristically would change nothing.
+                    return bool(sel.get("heuristic")) and not STATE.get("llm_down")
+
+                targets = [s for s in STATE["scenes"] if _needs_match(s)]
+                if limit:
+                    targets = targets[:limit]
             else:
                 idx = int(body["index"])
                 targets = [s for s in STATE["scenes"] if s["index"] == idx]
                 if not targets:
                     return self._send_json({"error": "Unknown scene."}, status=400)
             entries = []
+            paused = None
+            dead_streak = 0  # consecutive scenes nothing could be picked for
             for scene in targets:
                 try:
-                    entries.append(automatch_scene(scene, min_quality=min_quality, threshold=threshold))
-                except Exception as e:
-                    entries.append({
+                    e = automatch_scene(
+                        scene, min_quality=min_quality, threshold=threshold, soft_floor=soft_floor,
+                    )
+                except AutomatchUnavailable as ex:
+                    # Shouldn't reach here now -- _match_with_repair catches the
+                    # judge going down and falls back to keyword overlap. Kept
+                    # as a backstop: latch it and let the remaining scenes take
+                    # the heuristic path rather than stopping the whole run.
+                    STATE["llm_down"] = str(ex)
+                    e = {
+                        "scene_index": scene["index"], "script": scene["text"],
+                        "status": "FAIL", "soft": False, "score": None, "chosen": None,
+                        "candidates": [],
+                        "failure_reasons": [f"Gemini unavailable: {ex}"],
+                    }
+                except Exception as ex:
+                    e = {
                         "scene_index": scene["index"],
                         "script": scene["text"],
                         "status": "FAIL",
+                        "soft": False,
                         "score": None,
                         "chosen": None,
                         "candidates": [],
-                        "failure_reasons": [f"Auto-match crashed: {e}"],
-                    })
+                        "failure_reasons": [f"Auto-match crashed: {ex}"],
+                    }
+                entries.append(e)
+                # When the judge is down AND scene after scene turns up nothing
+                # to even keyword-match (no pool at all -- the network is down,
+                # not just Gemini), stop rather than churn through hundreds of
+                # empty searches. A single such scene is normal; a run of them
+                # isn't.
+                if STATE.get("llm_down") and e["status"] != "PASS" and not e.get("candidates"):
+                    dead_streak += 1
+                    if dead_streak >= 8:
+                        paused = ("Gemini scoring is unavailable and the stock providers "
+                                  "returned nothing for several scenes in a row -- check the "
+                                  "network, then re-run to continue where this left off.")
+                        break
+                else:
+                    dead_streak = 0
             report_path = save_sync_report(entries)
             passed = sum(1 for e in entries if e["status"] == "PASS")
+            soft = sum(1 for e in entries if e.get("soft"))
+            heuristic_n = sum(1 for e in entries if e.get("heuristic"))
+            ai_filled = sum(1 for e in entries if e.get("ai_generated"))
+            after = load_selections()
+
+            def _still_pending(s):
+                sel = after.get(str(s["index"]))
+                if sel is None:
+                    return True
+                return bool(sel.get("heuristic")) and not STATE.get("llm_down")
+
+            remaining = sum(1 for s in STATE["scenes"] if _still_pending(s))
             return self._send_json({
                 "ok": True,
+                "paused": paused,
+                "llm_down": bool(STATE.get("llm_down")),
                 "matched": passed,
+                "soft": soft,
+                "heuristic": heuristic_n,
+                "ai_filled": ai_filled,
                 "failed": len(entries) - passed,
+                "remaining": remaining,
                 "entries": entries,
                 "report": report_path.name,
             })
@@ -1494,6 +2649,29 @@ class Handler(BaseHTTPRequestHandler):
                 selections.pop(str(scene_index), None)
                 save_selections(selections)
             return self._send_json({"ok": True})
+
+        if route == "/api/review-mark":
+            # The review page ticking/unticking a scene as "checked". Stored
+            # on the selection itself so a 300-scene review survives a page
+            # reload or a picker restart. `index: "*"` clears every tick.
+            want = bool(body.get("reviewed"))
+            with STATE["lock"]:
+                selections = load_selections()
+                if body.get("index") == "*":
+                    for v in selections.values():
+                        v.pop("reviewed", None)
+                    save_selections(selections)
+                    return self._send_json({"ok": True, "cleared": True})
+                key = str(int(body["index"]))
+                if key not in selections:
+                    return self._send_json({"error": "That scene has no clip picked yet."}, status=400)
+                if want:
+                    selections[key]["reviewed"] = True
+                else:
+                    selections[key].pop("reviewed", None)
+                save_selections(selections)
+                reviewed = sum(1 for v in selections.values() if v.get("reviewed"))
+            return self._send_json({"ok": True, "reviewed": reviewed, "total": len(STATE["scenes"])})
 
         if route == "/api/finish":
             # Every scene has a clip and the browser confirmed it's time to
@@ -1597,6 +2775,9 @@ PAGE_HTML = r"""<!doctype html>
     direction:rtl; text-align:right; font-family:"Jameel Noori Nastaleeq",serif;
     font-size:16px; line-height:1.9; }
   body.rtl-script #scenewords, body.rtl-script #tagbox { direction:rtl; }
+  body.rtl-script #scenescript .ssbody, body.rtl-script #fullscript .fsrow {
+    direction:rtl; text-align:right;
+    font-family:"Jameel Noori Nastaleeq",serif; font-size:17px; line-height:2; }
   body.rtl-script .wordchip, body.rtl-script .tag { font-family:"Jameel Noori Nastaleeq",serif; font-size:16px; }
 
   /* Sentence-as-tags + search-tags UI */
@@ -1629,8 +2810,28 @@ PAGE_HTML = r"""<!doctype html>
   #localpanel { display:none; background:var(--panel); border:1px solid var(--line); border-radius:10px;
                 padding:16px; margin-bottom:16px; max-width:520px; }
   #localpanel.on { display:block; }
-  #localpreviewwrap { margin:12px 0; max-width:360px; }
-  #localpreviewwrap img { width:100%; border-radius:8px; display:block; background:#000; }
+  #localhint { font-size:12px; color:var(--accent); margin:8px 0 4px; display:none; }
+  #localpanel.multi #localhint { display:block; }
+  /* Cap the preview so a tall (portrait phone) image can never shove the
+     "Use / Add" button below the fold -- that made multi-clip local uploads
+     look broken because the button to add the 2nd, 3rd... file was off-screen. */
+  #localpreviewwrap { margin:10px 0 0; max-width:360px; }
+  #localpreviewwrap img { max-width:100%; max-height:200px; width:auto; height:auto;
+                          border-radius:8px; display:block; background:#000; }
+
+  #aipanel { display:none; background:var(--panel); border:1px solid var(--line); border-radius:10px;
+             padding:16px; margin-bottom:16px; max-width:680px; }
+  #aipanel.on { display:block; }
+  #aipanel textarea { width:100%; min-height:66px; margin-top:8px; background:var(--panel2);
+                      border:1px solid var(--line); color:var(--text); border-radius:8px;
+                      padding:8px 10px; font:13px/1.5 system-ui,Segoe UI,sans-serif; resize:vertical; }
+  #aipanel textarea:focus { outline:none; border-color:var(--accent); }
+  #aipanel .airow { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:10px; }
+  #aipanel label { font-size:12px; display:flex; align-items:center; gap:6px; }
+  #aipanel input[type=number] { width:56px; background:var(--panel2); border:1px solid var(--line);
+                                color:var(--text); padding:6px 8px; border-radius:6px; font-size:13px; }
+  #aifallbackwrap { display:none; margin-top:6px; font-size:11.5px; color:var(--dim);
+                    align-items:flex-start; gap:6px; line-height:1.35; cursor:pointer; }
 
   #controls { display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:8px; }
   input[type=text] { flex:1; min-width:260px; background:var(--panel); border:1px solid var(--line);
@@ -1702,11 +2903,93 @@ PAGE_HTML = r"""<!doctype html>
   .qchip:hover { border-color:var(--accent); }
   .shotrow { margin:3px 0 0 8px; color:var(--dim); font-size:12px; }
   .shotrow .t { color:var(--text); }
-  #automatchbtn.busy, #automatchall.busy { opacity:.5; pointer-events:none; }
+  #automatchbtn.busy, #automatchall.busy, #aigen.busy { opacity:.5; pointer-events:none; }
   #automatchall { margin-top:8px; width:100%; font-size:12px; background:var(--panel2); color:var(--dim); }
   #automatchall:hover:not(:disabled) { border-color:var(--accent); color:var(--text); }
   .matchnote { margin-top:6px; font-size:12px; color:#8ce8b0; }
   .matchnote.fail { color:#ff9c9c; }
+
+  /* Readable narration for the current scene -- so you can see the exact
+     words a clip has to sit under while you're choosing it. */
+  #scenescript { margin:12px 0 4px; border:1px solid var(--line); border-radius:10px;
+    background:var(--panel); overflow:hidden; }
+  #scenescript .sshead { display:flex; align-items:center; justify-content:space-between;
+    gap:10px; padding:8px 12px; background:var(--panel2); font-size:12px;
+    text-transform:uppercase; letter-spacing:.08em; color:var(--dim); }
+  #scenescript .ssbody { padding:12px 14px; font-size:15.5px; line-height:1.75; color:var(--text); }
+  #scenescript .now { display:block; margin:2px 0; }
+  #scenescript .ctx { display:block; margin:4px 0; color:var(--dim); font-size:13px;
+    line-height:1.55; cursor:pointer; }
+  #scenescript .ctx:hover { color:var(--text); }
+  #scenescript .shotseg { display:block; margin:8px 0; padding-left:10px;
+    border-left:2px solid var(--line); }
+  #scenescript .shotseg .lbl { display:block; font-size:11px; text-transform:uppercase;
+    letter-spacing:.08em; color:var(--accent); margin-bottom:2px; }
+  #fulltoggle { font-size:11px; padding:3px 10px; text-transform:none; letter-spacing:0; }
+  #fullscript { margin:8px 0 4px; border:1px solid var(--line); border-radius:10px;
+    background:var(--panel); max-height:44vh; overflow-y:auto; }
+  #fullscript .fsrow { display:flex; gap:10px; padding:8px 12px; border-bottom:1px solid var(--line);
+    cursor:pointer; font-size:13.5px; line-height:1.6; }
+  #fullscript .fsrow:last-child { border-bottom:none; }
+  #fullscript .fsrow:hover { background:var(--panel2); }
+  #fullscript .fsrow .n { flex:none; color:var(--dim); font-variant-numeric:tabular-nums; }
+  #fullscript .fsrow.cur { background:rgba(245,197,66,.12); }
+  #fullscript .fsrow.cur .n { color:var(--accent); font-weight:700; }
+  #fullscript .fsrow.done .n::after { content:" \2713"; color:var(--ok); }
+
+  #reviewall { margin-top:8px; width:100%; font-size:12px; background:var(--panel2); color:var(--dim); }
+  #reviewall:hover:not(:disabled) { border-color:var(--accent); color:var(--text); }
+
+  /* ---------- Review picked clips (full-screen overlay) ---------- */
+  #review { position:fixed; inset:0; z-index:50; background:var(--bg); color:var(--text);
+    overflow-y:auto; display:none; }
+  #review.on { display:block; }
+  #review .rvhead { position:sticky; top:0; z-index:2; display:flex; align-items:center; gap:14px;
+    flex-wrap:wrap; padding:12px 24px; background:var(--panel); border-bottom:1px solid var(--line); }
+  #review .rvhead h2 { margin:0; font-size:15px; }
+  #review .rvhead .sp { flex:1; }
+  #rvcount { font-size:12px; color:var(--dim); font-variant-numeric:tabular-nums; }
+  #rvbar { height:5px; width:160px; background:var(--panel2); border-radius:3px; overflow:hidden; }
+  #rvbar > div { height:100%; background:var(--ok); width:0; transition:width .2s; }
+  #reviewlist { max-width:1180px; margin:0 auto; padding:16px 24px 90px; }
+  .rev-row { display:grid; grid-template-columns:1fr 440px; gap:22px; padding:18px 4px;
+    border-bottom:1px solid var(--line); }
+  .rev-row.flag { box-shadow:inset 3px 0 0 var(--accent); padding-left:14px; }
+  .rev-row.reviewed { opacity:.5; }
+  .rev-row.hide { display:none; }
+  .rev-num { font-size:12px; color:var(--dim); text-transform:uppercase; letter-spacing:.06em;
+    font-variant-numeric:tabular-nums; }
+  .rev-script { font-size:15px; line-height:1.7; margin:8px 0 4px; }
+  .rev-row .shotseg { display:block; margin:7px 0; padding-left:10px; border-left:2px solid var(--line); }
+  .rev-row .shotseg .lbl { display:block; font-size:11px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--accent); margin-bottom:2px; }
+  .rev-chip { display:inline-block; padding:2px 8px; border-radius:999px; font-size:10.5px; font-weight:700;
+    text-transform:uppercase; letter-spacing:.05em; margin:3px 6px 3px 0; }
+  .rev-chip.ok { background:rgba(88,214,141,.14); color:#8ce8b0; }
+  .rev-chip.warn { background:rgba(245,197,66,.16); color:var(--accent); }
+  .rev-chip.bad { background:rgba(255,107,107,.14); color:#ff9c9c; }
+  .rev-note { font-size:12px; color:var(--dim); margin-top:6px; line-height:1.5; }
+  .rev-src { font-size:11.5px; color:var(--dim); margin-top:4px; }
+  .rev-src a { color:inherit; }
+  .rev-media { width:100%; aspect-ratio:16/9; background:#000; border-radius:10px; display:block;
+    object-fit:contain; }
+  .rev-media.img { object-fit:cover; }
+  .rev-multi { display:flex; gap:8px; flex-wrap:wrap; }
+  .rev-multi figure { margin:0; flex:1 1 190px; }
+  .rev-multi figcaption { font-size:11px; color:var(--dim); margin-top:3px; overflow:hidden;
+    text-overflow:ellipsis; white-space:nowrap; }
+  .rev-none { font-size:13px; font-weight:600; color:#ff9c9c; padding:18px; border:1px dashed var(--line);
+    border-radius:10px; text-align:center; }
+  .rev-actions { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin-top:10px; }
+  .rev-actions label { font-size:12px; display:flex; align-items:center; gap:5px; cursor:pointer; color:var(--dim); }
+  .rev-actions button { font-size:12px; padding:6px 11px; }
+  body.light .rev-chip.ok { background:#ecfdf3; color:#11603a; }
+  body.light .rev-chip.warn { background:#fef6e0; color:#8a5a00; }
+  body.light .rev-chip.bad { background:#fdf0f0; color:#991f1f; }
+  body.light .rev-none { color:#991f1f; }
+  body.rtl-script .rev-script { direction:rtl; text-align:right;
+    font-family:"Jameel Noori Nastaleeq",serif; font-size:17px; line-height:2; }
+
   /* ---------- responsive: tablets & phones ---------- */
   @media (max-width: 820px) {
     #app { flex-direction:column; height:auto; min-height:100vh; }
@@ -1716,6 +2999,9 @@ PAGE_HTML = r"""<!doctype html>
     #controls { flex-wrap:wrap; }
     #sourcetabs { overflow-x:auto; white-space:nowrap; display:flex; }
     .srctab { flex:none; }
+    .rev-row { grid-template-columns:1fr; gap:12px; }
+    #reviewlist { padding:12px 12px 80px; }
+    #review .rvhead { padding:10px 12px; }
   }
 </style></head><body>
 <div id="app">
@@ -1723,20 +3009,26 @@ PAGE_HTML = r"""<!doctype html>
     <h1>Scenes</h1>
     <div id="progress"><span id="ptext">-</span><div id="bar"><div></div></div>
       <button id="resetall" title="Delete every downloaded clip and clear all selections">Reset all clips</button>
-      <button id="automatchall" style="display:none" title="Auto-match every scene that has no clip yet: search widely, LLM-score every candidate against each scene's exact narration (with query-repair rounds and a still-photo fallback), select the best above the strictness bar. Scenes that fail are left for you, with reasons in sync_report.json">&#10024; Auto-match all unpicked</button>
+      <button id="automatchall" style="display:none" title="Go through every scene with no clip yet, one at a time (the sidebar fills in live): search Pexels/Pixabay/Coverr, LLM-score the best candidates against that scene's exact narration, with query-repair rounds and a still-photo fallback. A clip at or above the strictness bar is a clean match; a weaker one that still clears the soft floor fills the scene and is flagged for review so nothing is left empty. Click again to stop -- progress is saved. Every decision is in sync_report.json.">&#10024; Auto-match all unpicked</button>
       <select id="strictness" style="display:none; margin-top:6px; width:100%; font-size:11.5px"
         title="How exact an auto-matched clip must be. Strict/Exact only accept descriptions that explicitly state the subject AND action -- fewer scenes auto-fill, but what fills is right.">
         <option value="60" selected>Match strictness: balanced</option>
         <option value="75">Match strictness: strict (explicit subject+action)</option>
         <option value="85">Match strictness: exact only</option>
         <option value="50">Match strictness: relaxed</option>
-      </select></div>
+      </select>
+      <label id="aifallbackwrap" title="After stock search + the still-photo round fail, generate a warm house-style AI illustration (Pollinations / FLUX, free) for that scene or shot instead of leaving it empty. Flagged for review in sync_report.json.">
+        <input type="checkbox" id="aifallback"> Fill scenes stock can't match with an AI illustration</label>
+      <button id="reviewall" style="display:none" title="Open a side-by-side review: every scene's narration next to the clip picked for it. Catch any mismatch and replace it before the render. Opens automatically once 'Auto-match all' fills every scene.">&#128269; Review picked clips</button>
+    </div>
     <div id="flagged"></div>
     <div id="scenelist"></div>
   </div>
   <div id="main">
     <div class="meta" id="scenemeta">Loading...</div>
     <div id="semanticbrief" style="display:none"></div>
+    <div id="scenescript"></div>
+    <div id="fullscript" style="display:none"></div>
 
     <div id="sourcetabs">
       <button class="srctab active" data-src="pexels-video">Pexels video</button>
@@ -1744,10 +3036,11 @@ PAGE_HTML = r"""<!doctype html>
       <button class="srctab" data-src="pixabay-video">Pixabay video</button>
       <button class="srctab" data-src="pixabay-photo">Pixabay photo</button>
       <button class="srctab" data-src="coverr-video">Coverr video</button>
+      <button class="srctab" data-src="ai-illustration">AI illustration</button>
       <button class="srctab" data-src="local">Local file</button>
     </div>
 
-    <div id="wlwords" class="wl"><span class="meta">Sentence &mdash; click a word to add it to or remove it from the search</span></div>
+    <div id="wlwords" class="wl"><span class="meta">Search helper &mdash; click any word from the narration to add or remove it as a search tag</span></div>
     <div id="scenewords"></div>
     <div id="wltags" class="wl"><span class="meta">Search tags</span><button id="clearall" title="Remove every search tag">Clear all</button></div>
     <div id="tagbox"><span id="tags"></span><input type="text" id="q" placeholder="type a keyword, press Enter to add..."></div>
@@ -1776,9 +3069,25 @@ PAGE_HTML = r"""<!doctype html>
 
     <div id="localpanel">
       <div class="meta">Pick an image file from this computer to use for this scene (or the range above).</div>
+      <div id="localhint">Multi-clip mode is on &mdash; pick a file and click <b>Add image to picks</b>, repeat for each image you want, then <b>Save picks</b> above.</div>
       <p><input type="file" id="localfile" accept="image/*"></p>
-      <div id="localpreviewwrap"><img id="localpreview" style="display:none"></div>
       <button id="uselocalbtn" class="primary" disabled>Use this image</button>
+      <div id="localpreviewwrap"><img id="localpreview" style="display:none"></div>
+    </div>
+
+    <div id="aipanel">
+      <div class="meta">Generate a house-style illustration for this scene with AI &mdash; Pollinations.AI / FLUX,
+        free and no key needed. Edit what the scene should show below; the warm hand-drawn
+        storybook look is added automatically. Each result is a still image, rendered as a slow
+        Ken&nbsp;Burns zoom in step&nbsp;3.</div>
+      <textarea id="aiprompt" placeholder="what this scene should show (e.g. a lone traveller walking a mountain trail at sunrise, seen from behind)"></textarea>
+      <label style="margin-top:6px"><input type="checkbox" id="airaw"> use my text exactly &mdash; skip the house style</label>
+      <div class="airow">
+        <label>How many <input type="number" id="aicount" min="1" max="6" value="3"></label>
+        <button id="aigen" class="primary">Generate illustrations</button>
+        <button id="aistop" style="display:none">Stop</button>
+        <span class="meta" id="aihint"></span>
+      </div>
     </div>
 
     <div id="opts">
@@ -1799,6 +3108,18 @@ PAGE_HTML = r"""<!doctype html>
       <span id="pageinfo" class="meta"></span>
     </div>
     <div id="loadmore" class="meta" style="display:none; text-align:center; padding:14px 0;">Loading more...</div>
+    <div id="autorender" style="display:none; margin-top:30px; padding:16px; background:var(--panel);
+         border:1px solid var(--ok); border-radius:10px;">
+      <b>All scenes have a clip.</b>
+      <span id="arcountdown"> Step 3 (render) starts automatically in <b id="arcount">60</b>s
+        with default settings -- you don't need to do anything.</span>
+      <span id="arcancelled" style="display:none"> Auto-render is paused. Click
+        <b>Render now</b> whenever you're ready.</span>
+      <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
+        <button id="arnow" class="primary">Render now</button>
+        <button id="arwait">Not yet -- keep picking</button>
+      </div>
+    </div>
     <div id="done">
       <b>All scenes have a clip.</b> Render the final video with:<br><br>
       <code id="rendercmd"></code><br><br>
@@ -1811,6 +3132,20 @@ PAGE_HTML = r"""<!doctype html>
       downloading the picked clips and rendering there now. You can close this tab.
     </div>
   </div>
+</div>
+
+<div id="review">
+  <div class="rvhead">
+    <h2>Review picked clips</h2>
+    <span id="rvcount">0 / 0 checked</span>
+    <div id="rvbar"><div></div></div>
+    <label style="font-size:12px; color:var(--dim); display:flex; align-items:center; gap:5px; cursor:pointer;">
+      <input type="checkbox" id="rvfilter"> Only flagged &amp; unchecked</label>
+    <span class="sp"></span>
+    <button id="rvback">&larr; Back to picker</button>
+    <button id="rvrender" class="primary" title="Every scene checked? Start step 3 (download + render) now.">Looks good &mdash; render</button>
+  </div>
+  <div id="reviewlist"></div>
 </div>
 <script>
 // Follow the dashboard's theme when embedded there (?theme=light).
@@ -1832,12 +3167,15 @@ const SOURCES = {
   'pixabay-video': { provider: 'pixabay', media: 'video', endpoint: '/api/search-pixabay' },
   'pixabay-photo': { provider: 'pixabay', media: 'photo', endpoint: '/api/search-pixabay-photos' },
   'coverr-video':  { provider: 'coverr',  media: 'video', endpoint: '/api/search-coverr' },
+  'ai-illustration': { provider: 'ai',    media: 'photo', endpoint: '/api/ai-image' },
   'local':         { provider: 'local',   media: 'photo', endpoint: null },
 };
-const PROVIDER_LABELS = { pexels: 'Pexels', pixabay: 'Pixabay', coverr: 'Coverr' };
+const PROVIDER_LABELS = { pexels: 'Pexels', pixabay: 'Pixabay', coverr: 'Coverr', ai: 'AI illustration' };
 let source = 'pexels-video'; // key into SOURCES
 let localAsset = null;
 let renderOffered = false; // ask at most once per page load
+let aiStop = false;         // set by the AI panel's Stop button mid-generate
+let aiWatermarked = true;   // no Pollinations token -> free tier adds a small watermark
 
 const $ = id => document.getElementById(id);
 const fmt = s => `${Math.floor(s/60)}:${String(Math.floor(s%60)).padStart(2,'0')}`;
@@ -1944,6 +3282,64 @@ function renderBrief(s) {
     el.onclick = () => setTags(el.dataset.q.split(/\s+/)));
 }
 
+let fullScriptOpen = false;
+
+// The exact narration for the current scene, as readable prose (not the
+// deduped word chips below, which are only a search helper). Shows a little
+// of the neighbouring scenes for flow, and breaks a multi-shot scene into
+// its shots -- each shot is what one clip in a multi-clip pick covers.
+function renderScript(s) {
+  const box = $('scenescript');
+  const prev = scenes[cur - 1], next = scenes[cur + 1];
+  const tail = t => { const w = String(t || '').trim().split(/\s+/); return (w.length > 16 ? '… ' : '') + w.slice(-16).join(' '); };
+  const head = t => { const w = String(t || '').trim().split(/\s+/); return w.slice(0, 16).join(' ') + (w.length > 16 ? ' …' : ''); };
+  const shots = (s.shots || []).filter(sh => sh && sh.text);
+  let body = '';
+  if (prev) body += `<span class="ctx" data-go="${cur - 1}" title="Go to scene ${String(prev.index).padStart(3,'0')}">← ${esc(tail(prev.text))}</span>`;
+  if (shots.length > 1) {
+    body += shots.map((sh, k) =>
+      `<span class="shotseg"><span class="lbl">Shot ${k + 1} &middot; ${fmt(sh.start)}–${fmt(sh.end)} &middot; ${(sh.duration || 0).toFixed(1)}s</span>${esc(sh.text)}</span>`
+    ).join('');
+  } else {
+    body += `<span class="now">${esc(s.text || '(no narration text)')}</span>`;
+  }
+  if (next) body += `<span class="ctx" data-go="${cur + 1}" title="Go to scene ${String(next.index).padStart(3,'0')}">${esc(head(next.text))} →</span>`;
+  box.innerHTML =
+    `<div class="sshead"><span>Narration &middot; scene ${String(s.index).padStart(3,'0')} of ${scenes.length} ` +
+    `&middot; ${s.duration.toFixed(1)}s on screen</span>` +
+    `<button id="fulltoggle">${fullScriptOpen ? 'Hide full script' : 'Read full script'}</button></div>` +
+    `<div class="ssbody">${body}</div>`;
+  box.querySelectorAll('.ctx').forEach(el => el.onclick = () => go(+el.dataset.go));
+  $('fulltoggle').onclick = toggleFullScript;
+  if (fullScriptOpen) {
+    $('fullscript').querySelectorAll('.fsrow').forEach((el, i) => {
+      el.classList.toggle('cur', i === cur);
+      el.classList.toggle('done', !!selections[scenes[i].index]);
+    });
+  }
+}
+
+// The whole script, every scene in order, current one highlighted. Click any
+// row to jump straight to that scene.
+function toggleFullScript() {
+  fullScriptOpen = !fullScriptOpen;
+  const box = $('fullscript');
+  if (!fullScriptOpen) {
+    box.style.display = 'none';
+    renderScript(scenes[cur]);
+    return;
+  }
+  box.innerHTML = scenes.map((s, i) =>
+    `<div class="fsrow ${i === cur ? 'cur' : ''} ${selections[s.index] ? 'done' : ''}" data-go="${i}">` +
+    `<span class="n">${String(s.index).padStart(3,'0')}</span>` +
+    `<span class="tx">${esc(s.text || '')}</span></div>`
+  ).join('');
+  box.querySelectorAll('.fsrow').forEach(el => el.onclick = () => go(+el.dataset.go));
+  box.style.display = 'block';
+  renderScript(scenes[cur]);
+  box.querySelector('.fsrow.cur')?.scrollIntoView({ block: 'center' });
+}
+
 let matchNotes = {}; // scene index -> {ok, text} from the last auto-match
 
 async function refreshSelections() {
@@ -1954,44 +3350,361 @@ async function refreshSelections() {
 
 function automatchNote(e) {
   if (e.status === 'PASS') {
+    if (e.ai_generated) {
+      return {ok:false, text:`No stock clip matched -- filled with a generated house-style ` +
+        `illustration${e.score ? ` (best stock candidate was ${e.score}/100)` : ''}. ` +
+        `Review it above, or open the "AI illustration" tab to regenerate / pick a clip instead.`};
+    }
+    if (e.heuristic) {
+      return {ok:false, text:`Keyword-only match (Gemini judge was out of quota): ` +
+        `"${(e.chosen&&e.chosen.desc)||''}" -- picked by tag overlap, score ${e.score||'?'}/100 ` +
+        `is an estimate. Re-run "Auto-match all" once the quota resets and this scene is ` +
+        `re-judged automatically, or pick a clip now to lock it in.`};
+    }
+    if (e.soft) {
+      return {ok:false, text:`Soft match (score ${e.score}/100, under the strictness bar): ` +
+        `"${(e.chosen&&e.chosen.desc)||''}" -- filled so the scene isn't left empty. ` +
+        `Review it, or pick another clip to replace it.`};
+    }
+    const nq = (e.queries_tried||[]).length;
+    const nc = (e.candidates_n != null) ? e.candidates_n : (e.candidates||[]).length;
     return {ok:true, text:`Auto-matched (score ${e.score}/100): "${(e.chosen&&e.chosen.desc)||''}" -- ` +
-      `${(e.candidates||[]).length} candidates scored. Override it any time by picking another clip.`};
+      `${nc} candidates scored across ${nq||'several'} search phrasings. ` +
+      `Override it any time by picking another clip.`};
   }
-  const why = (e.failure_reasons||[]).join(' ') || 'no candidate scored above the threshold.';
-  return {ok:false, text:`Auto-match: no clip accepted -- ${why}`};
+  const why = (e.failure_reasons||[]).join(' ') || 'no candidate scored high enough.';
+  const tried = (e.queries_tried||[]).length
+    ? ` Tried: ${(e.queries_tried||[]).slice(0,6).map(q=>`"${q}"`).join(', ')}.` : '';
+  return {ok:false, text:`Auto-match: no clip accepted -- ${why}${tried}`};
+}
+
+// ----------------------------------------------------------------------
+// Review picked clips: a full-screen page listing every scene's narration
+// next to a playable preview of the clip auto-match (or you) picked for it,
+// so a mismatch can be spotted and replaced before the render. Opens
+// automatically the moment "Auto-match all" fills the last scene; also
+// reachable any time from the sidebar button.
+// ----------------------------------------------------------------------
+let reviewData = null;
+let reviewFilter = false;
+let returnToReview = false; // set by "Replace clip" so the next save reopens this
+
+// <video> for hundreds of scenes would hammer the network on open -- give each
+// a poster and no source, then attach the real src only as it nears the
+// viewport.
+const reviewIO = ('IntersectionObserver' in window) ? new IntersectionObserver((ents) => {
+  for (const ent of ents) {
+    if (!ent.isIntersecting) continue;
+    const el = ent.target;
+    if (el.dataset.src && !el.src) el.src = el.dataset.src;
+    reviewIO.unobserve(el);
+  }
+}, { rootMargin: '600px 0px' }) : null;
+
+function reviewFlagged(row) {
+  if (!row.preview) return true;                     // no clip picked at all
+  const sel = row.selection || {};
+  if (sel.heuristic || sel.soft) return true;
+  const r = row.report;
+  if (r && (r.status !== 'PASS' || r.soft || r.heuristic || r.ai_generated)) return true;
+  return false;
+}
+
+async function openReview() {
+  $('status').className = ''; $('status').textContent = '';
+  try {
+    reviewData = await (await fetch('/api/review')).json();
+  } catch (e) {
+    $('status').className = 'err';
+    $('status').textContent = 'Could not load the review page: ' + e;
+    return;
+  }
+  renderReview();
+  $('review').classList.add('on');
+  document.body.style.overflow = 'hidden';
+  $('review').scrollTop = 0;
+}
+
+function closeReview() {
+  $('review').classList.remove('on');
+  document.body.style.overflow = '';
+}
+
+function reviewChips(row) {
+  const out = [];
+  if (!row.preview) { out.push('<span class="rev-chip bad">no clip</span>'); return out.join(''); }
+  const sel = row.selection || {}, r = row.report || null;
+  if (r && r.ai_generated) out.push('<span class="rev-chip warn">AI illustration</span>');
+  if (sel.heuristic || (r && r.heuristic)) out.push('<span class="rev-chip warn">keyword-only</span>');
+  else if (sel.soft || (r && r.soft)) out.push('<span class="rev-chip warn">soft match</span>');
+  else if (r && r.status === 'PASS') out.push(`<span class="rev-chip ok">auto-matched${r.score ? ' ' + r.score + '/100' : ''}</span>`);
+  else if (r && r.status && r.status !== 'PASS') out.push('<span class="rev-chip bad">auto-match failed</span>');
+  if (!r && row.preview) out.push('<span class="rev-chip ok">picked</span>');
+  if (row.reviewed) out.push('<span class="rev-chip ok">checked</span>');
+  return out.join('');
+}
+
+function reviewMediaHTML(row) {
+  const p = row.preview;
+  if (!p) return `<div class="rev-none">No clip picked for this scene &mdash; use "Replace clip".</div>`;
+  const one = (it, cap) => {
+    const poster = it.thumb ? ` poster="${esc(it.thumb)}"` : '';
+    const media = (it.type === 'video')
+      ? `<video class="rev-media" controls preload="none" playsinline${poster} data-src="${esc(it.url || '')}"></video>`
+      : `<img class="rev-media img" loading="lazy" src="${esc(it.url || '')}" alt="">`;
+    return cap
+      ? `<figure>${media}<figcaption>${esc(cap)}</figcaption></figure>`
+      : media;
+  };
+  if (p.type === 'multi') {
+    const its = p.items || [];
+    return `<div class="rev-multi">` + its.map((it, i) =>
+      one(it, it.shot_text ? `Shot ${it.shot_index || i + 1}: ${it.shot_text}` : `Clip ${i + 1}`)
+    ).join('') + `</div>`;
+  }
+  return one((p.items || [])[0] || {}, '');
+}
+
+function reviewScriptHTML(row) {
+  const shots = (row.shots || []).filter(sh => sh && sh.text);
+  if (shots.length > 1) {
+    return shots.map((sh, k) =>
+      `<span class="shotseg"><span class="lbl">Shot ${k + 1} &middot; ${(sh.duration || 0).toFixed(1)}s</span>${esc(sh.text)}</span>`
+    ).join('');
+  }
+  return esc(row.text || '(no narration text)');
+}
+
+function renderReview() {
+  const d = reviewData; if (!d) return;
+  const total = d.total || (d.scenes || []).length;
+  const reviewed = (d.scenes || []).filter(r => r.reviewed).length;
+  $('rvcount').textContent = `${reviewed} / ${total} checked`;
+  $('rvbar').firstElementChild.style.width = total ? (100 * reviewed / total) + '%' : '0';
+
+  const rows = d.scenes || [];
+  $('reviewlist').innerHTML = rows.map(row => {
+    const flag = reviewFlagged(row);
+    const hidden = reviewFilter && (row.reviewed || !flag);
+    const note = row.report ? automatchNote(row.report) : null;
+    const src = row.selection && row.selection.source
+      ? `Source: ${esc(row.selection.source)}${row.selection.author ? ' &middot; ' + esc(row.selection.author) : ''}` +
+        `${row.query ? ' &middot; search: "' + esc(row.query) + '"' : ''}`
+      : (row.query ? `Search: "${esc(row.query)}"` : '');
+    return `<div class="rev-row ${flag ? 'flag' : ''} ${row.reviewed ? 'reviewed' : ''} ${hidden ? 'hide' : ''}" data-i="${row.index}">
+      <div class="rev-l">
+        <div class="rev-num">Scene ${String(row.index).padStart(3, '0')} &middot; ${fmt(row.start || 0)}&ndash;${fmt(row.end || 0)} &middot; ${(row.duration || 0).toFixed(1)}s on screen</div>
+        <div>${reviewChips(row)}</div>
+        <div class="rev-script">${reviewScriptHTML(row)}</div>
+        ${note ? `<div class="rev-note ${note.ok ? '' : 'fail'}">${esc(note.text)}</div>` : ''}
+        ${src ? `<div class="rev-src">${src}</div>` : ''}
+        <div class="rev-actions">
+          <button class="rvreplace" data-i="${row.index}">Replace clip</button>
+          ${automatchAvailable ? `<button class="rvremat" data-i="${row.index}">Re-auto-match</button>` : ''}
+          <label><input type="checkbox" class="rvchk" data-i="${row.index}" ${row.reviewed ? 'checked' : ''} ${row.preview ? '' : 'disabled'}> looks right</label>
+        </div>
+      </div>
+      <div class="rev-r">${reviewMediaHTML(row)}</div>
+    </div>`;
+  }).join('');
+
+  if (reviewFilter && !$('reviewlist').querySelector('.rev-row:not(.hide)')) {
+    $('reviewlist').insertAdjacentHTML('beforeend',
+      `<div class="rev-none" style="color:var(--dim)">Nothing flagged and unchecked &mdash; every scene has been reviewed or matched cleanly.</div>`);
+  }
+
+  $('reviewlist').querySelectorAll('video[data-src]').forEach(v => { if (reviewIO) reviewIO.observe(v); else v.src = v.dataset.src; });
+  $('reviewlist').querySelectorAll('.rvreplace').forEach(b => b.onclick = () => reviewReplace(+b.dataset.i));
+  $('reviewlist').querySelectorAll('.rvremat').forEach(b => b.onclick = () => reviewRematch(+b.dataset.i, b));
+  $('reviewlist').querySelectorAll('.rvchk').forEach(c => c.onchange = () => reviewMark(+c.dataset.i, c.checked));
+}
+
+function reviewReplace(index) {
+  returnToReview = true;
+  closeReview();
+  const i = scenes.findIndex(s => s.index === index);
+  if (i === -1) return;
+  go(i);
+  $('main').scrollTo({ top: 0 });
+  $('status').className = '';
+  $('status').textContent = `Replacing the clip for scene ${String(index).padStart(3, '0')} -- ` +
+    `pick a new one below (search, auto-match, AI, or a local file). You'll return to the review automatically.`;
+}
+
+async function reviewRematch(index, btn) {
+  if (btn) { btn.disabled = true; btn.textContent = 'Matching...'; }
+  const threshold = parseInt($('strictness').value, 10) || 60;
+  try {
+    const d = await postAutomatch({ index, threshold, ai_fallback: $('aifallback').checked });
+    if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; closeReview(); return; }
+    for (const e of d.entries || []) matchNotes[e.scene_index] = automatchNote(e);
+    await refreshSelections();
+    await openReview();   // re-fetch + re-render with the new pick
+  } catch (e) {
+    $('status').className = 'err'; $('status').textContent = 'Re-auto-match failed: ' + e;
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = 'Re-auto-match'; }
+  }
+}
+
+async function reviewMark(index, reviewed) {
+  try {
+    const r = await fetch('/api/review-mark', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ index, reviewed })
+    });
+    const d = await r.json();
+    if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; return; }
+    const row = (reviewData.scenes || []).find(s => s.index === index);
+    if (row) row.reviewed = reviewed;
+    const rowEl = $('reviewlist').querySelector(`.rev-row[data-i="${index}"]`);
+    if (rowEl) {
+      rowEl.classList.toggle('reviewed', reviewed);
+      if (reviewFilter && reviewed) rowEl.classList.add('hide');
+    }
+    const total = reviewData.total || 0;
+    const n = (reviewData.scenes || []).filter(s => s.reviewed).length;
+    $('rvcount').textContent = `${n} / ${total} checked`;
+    $('rvbar').firstElementChild.style.width = total ? (100 * n / total) + '%' : '0';
+  } catch (e) {
+    $('status').className = 'err'; $('status').textContent = 'Could not save that: ' + e;
+  }
+}
+
+async function reviewRenderClick() {
+  const d = reviewData;
+  const missing = (d.scenes || []).filter(s => !s.preview).length;
+  if (missing) {
+    $('rvcount').textContent = `${missing} scene(s) still have no clip -- replace those first`;
+    const first = (d.scenes || []).find(s => !s.preview);
+    if (first) {
+      const el = $('reviewlist').querySelector(`.rev-row[data-i="${first.index}"]`);
+      if (el) { el.classList.remove('hide'); el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    }
+    return;
+  }
+  closeReview();
+  startRender();
+}
+
+$('reviewall').onclick = openReview;
+$('rvback').onclick = closeReview;
+$('rvrender').onclick = reviewRenderClick;
+$('rvfilter').onchange = () => { reviewFilter = $('rvfilter').checked; renderReview(); };
+
+let automatchStop = false;
+const AUTOMATCH_ALL_LABEL = '✨ Auto-match all unpicked';
+
+async function postAutomatch(body) {
+  const r = await fetch('/api/automatch', {
+    method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)
+  });
+  return r.json();
 }
 
 async function runAutomatch(all) {
   const btn = all ? $('automatchall') : $('automatchbtn');
+  // A second click while "all" is running = stop after the scene in flight.
+  if (all && btn.classList.contains('busy')) {
+    automatchStop = true;
+    $('status').textContent = 'Stopping after the current scene...';
+    return;
+  }
   btn.classList.add('busy');
   $('status').className = '';
-  $('status').textContent = all
-    ? 'Auto-matching every unpicked scene (search + LLM scoring, a few seconds per scene)...'
-    : 'Auto-matching: searching providers and scoring candidates against this scene\'s narration...';
+  const mq = $('minquality').value;
+  const threshold = parseInt($('strictness').value, 10) || 60;
+  const aiFallback = $('aifallback').checked;
+
   try {
-    const body = all ? {all:true} : {index: scenes[cur].index};
-    const mq = $('minquality').value;
-    if (mq) body.min_quality = mq;
-    body.threshold = parseInt($('strictness').value, 10) || 60;
-    const r = await fetch('/api/automatch', {
-      method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)
-    });
-    const d = await r.json();
-    if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; return; }
-    for (const e of d.entries || []) matchNotes[e.scene_index] = automatchNote(e);
-    await refreshSelections();
-    renderBrief(scenes[cur]);
-    $('status').className = d.failed ? 'err' : '';
-    $('status').textContent = all
-      ? `Auto-match done: ${d.matched} scene(s) matched, ${d.failed} left for manual picking ` +
-        `(scores and reasons in ${d.report}).`
-      : (d.entries[0].status === 'PASS'
-          ? `Scene ${d.entries[0].scene_index} matched with score ${d.entries[0].score}/100 -- see the note above.`
-          : `No candidate scored above the threshold -- reasons shown above; pick manually or adjust the tags.`);
+    if (!all) {
+      $('status').textContent = 'Auto-matching this scene: searching providers and scoring candidates against its narration...';
+      const body = {index: scenes[cur].index, threshold, ai_fallback: aiFallback};
+      if (mq) body.min_quality = mq;
+      const d = await postAutomatch(body);
+      if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; return; }
+      if (d.paused) { $('status').className = 'err'; $('status').textContent = 'Auto-match unavailable — ' + d.paused; return; }
+      for (const e of d.entries || []) matchNotes[e.scene_index] = automatchNote(e);
+      await refreshSelections();
+      renderBrief(scenes[cur]);
+      const e0 = (d.entries || [])[0] || {};
+      $('status').className = (e0.status === 'PASS' && !e0.soft) ? '' : 'err';
+      $('status').textContent = e0.status === 'PASS'
+        ? `Scene ${e0.scene_index}: ${e0.soft ? 'soft match' : 'matched'} at ${e0.score}/100 -- see the note above.`
+        : `No candidate scored high enough -- reasons above; pick manually or adjust the tags.`;
+      return;
+    }
+
+    // "all": one scene per request so the sidebar fills in live, a stop or a
+    // dropped connection never loses the scenes already done, and Gemini's
+    // free-tier pacing doesn't hide behind one silent multi-minute request.
+    automatchStop = false;
+    btn.textContent = '⏹ Stop auto-match';
+    const attempted = [];
+    // Below the strictness bar but this close to it -> still fill the scene
+    // (flagged "soft") rather than leave it empty. Scales with strictness:
+    // balanced 60 -> 45, strict 75 -> 60, exact 85 -> 70.
+    const softFloor = Math.max(35, threshold - 15);
+    let matched = 0, soft = 0, failed = 0, aiFilled = 0, heur = 0;
+    let sawLlmDown = false;
+    while (!automatchStop) {
+      const body = {all:true, limit:1, threshold, soft_floor: softFloor, exclude: attempted, ai_fallback: aiFallback};
+      if (mq) body.min_quality = mq;
+      let d;
+      try { d = await postAutomatch(body); }
+      catch (err) {
+        $('status').className = 'err';
+        $('status').textContent = 'Auto-match request failed: ' + err + ' -- re-run to continue where it stopped.';
+        break;
+      }
+      if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; break; }
+      const es = d.entries || [];
+      for (const e of es) { attempted.push(e.scene_index); matchNotes[e.scene_index] = automatchNote(e); }
+      matched += d.matched || 0; soft += d.soft || 0; failed += d.failed || 0;
+      aiFilled += d.ai_filled || 0; heur += d.heuristic || 0;
+      if (d.llm_down) sawLlmDown = true;
+      const aiTxt = aiFilled ? `, ${aiFilled} AI-filled` : '';
+      const heurTxt = heur ? `, ${heur} keyword-only` : '';
+      if (d.paused) {
+        await refreshSelections();
+        $('status').className = 'err';
+        $('status').textContent =
+          `Auto-match paused after ${matched} matched${soft ? ` (${soft} soft)` : ''}${heurTxt}${aiTxt} — ${d.paused}`;
+        break;
+      }
+      await refreshSelections();
+      if (scenes[cur]) renderBrief(scenes[cur]);
+      $('status').className = d.llm_down ? 'err' : '';
+      $('status').textContent = (d.llm_down
+          ? `Gemini quota hit -- still going, matching the rest by keyword overlap (flagged for a later re-judge). `
+          : `Auto-matching... `) +
+        `${matched} matched` + (soft ? ` (${soft} soft)` : '') + heurTxt + aiTxt +
+        `, ${failed} to review, ${d.remaining} scene(s) left. Click the button again to stop -- progress is saved.`;
+      if (!es.length || d.remaining === 0) break;
+    }
+    const aiDone = aiFilled ? `, ${aiFilled} AI-filled` : '';
+    const heurDone = heur ? `, ${heur} keyword-only (re-run later to upgrade)` : '';
+    $('status').className = (failed || heur || sawLlmDown) ? 'err' : '';
+    $('status').textContent = automatchStop
+      ? `Stopped. This run: ${matched} matched${soft ? ` (${soft} soft)` : ''}${heurDone}${aiDone}, ${failed} to review. Re-run to do the rest.`
+      : (sawLlmDown
+          ? `Auto-match finished with Gemini out of quota: ${matched} matched${soft ? ` (${soft} soft)` : ''}${heurDone}${aiDone}, ${failed} to review. Re-run "Auto-match all" after the quota resets (midnight Pacific) to re-judge the keyword-only scenes automatically.`
+          : `Auto-match finished: ${matched} matched${soft ? ` (${soft} soft)` : ''}${heurDone}${aiDone}, ${failed} to review. Scores and reasons in sync_report.json.`);
+    // Every scene now has a clip -- go straight into the side-by-side review
+    // so mismatches get caught before the render, exactly when the whole
+    // script is freshly matched and easiest to scan.
+    if (!automatchStop) {
+      await refreshSelections();
+      if (scenes.length && Object.keys(selections).length === scenes.length) {
+        setTimeout(openReview, 400);
+      }
+    }
   } catch (err) {
     $('status').className = 'err'; $('status').textContent = 'Auto-match failed: ' + err;
   } finally {
     btn.classList.remove('busy');
+    if (all) btn.textContent = AUTOMATCH_ALL_LABEL;
+    automatchStop = false;
   }
 }
 
@@ -2000,11 +3713,16 @@ async function boot() {
   scenes = d.scenes; selections = d.selections;
   highlight = new Set(d.highlight || []);
   automatchAvailable = !!d.automatch_available;
-  if (automatchAvailable) {
-    $('automatchbtn').style.display = '';
-    $('automatchall').style.display = '';
-    $('strictness').style.display = '';
-  }
+  // Always show the buttons -- with no Gemini key the endpoint returns a clear
+  // one-line reason on click, which is more discoverable than a button that
+  // silently isn't there. The strictness dropdown only matters when usable.
+  $('automatchbtn').style.display = '';
+  $('automatchall').style.display = '';
+  $('strictness').style.display = automatchAvailable ? '' : 'none';
+  // AI illustration is always available (Pollinations needs no key), so the
+  // "fill unmatchable scenes with AI" option shows whenever auto-match does.
+  aiWatermarked = d.ai_watermarked !== false;
+  $('aifallbackwrap').style.display = automatchAvailable ? 'flex' : 'none';
   // Only the narration text flips -- the chrome around it stays LTR so the
   // controls don't move around between language folders.
   if (d.rtl) document.body.classList.add('rtl-script');
@@ -2042,6 +3760,7 @@ function renderSidebar() {
   $('bar').firstElementChild.style.width = (100*n/scenes.length) + '%';
   $('done').style.display = (n === scenes.length && highlight.size === 0) ? 'block' : 'none';
   $('resetall').disabled = n === 0;
+  $('reviewall').style.display = n ? '' : 'none';
 }
 
 async function resetAll() {
@@ -2066,12 +3785,18 @@ async function resetAll() {
 // materialize_local_asset will refuse to re-save without a re-upload,
 // rather than silently writing an empty file.
 function itemToAsset(it) {
-  const kind = it.source === 'local' ? 'local' : (it.type === 'video' ? 'video' : 'photo');
+  const kind = it.source === 'local' ? 'local'
+             : it.source === 'ai' ? 'ai'
+             : (it.type === 'video' ? 'video' : 'photo');
   return {
     kind, id: it.pexels_id, source: it.source || 'pexels',
     download_url: it.download_url, width: it.width, height: it.height,
     author: it.author, author_url: it.author_url, page_url: it.page_url,
     local_name: it.file, __uid: kind === 'local' ? ++multiUidCounter : undefined,
+    // AI items carry the recipe so a re-save can regenerate the file if the
+    // .ai_cache copy is gone (materialize_ai_asset). The cache_name isn't in
+    // selections.json, so re-derive it there from prompt+seed.
+    prompt: it.ai_prompt, seed: it.ai_seed, model: it.ai_model,
   };
 }
 
@@ -2090,10 +3815,14 @@ function go(i) {
   $('multistuff').classList.toggle('on', multiMode);
   $('bulkmode').disabled = multiMode;
   renderMultiBar();
+  syncLocalPanel();
   $('scenemeta').textContent =
     `Scene ${String(s.index).padStart(3,'0')} of ${scenes.length}  .  ${fmt(s.start)}-${fmt(s.end)}  .  needs ${s.duration.toFixed(1)}s`;
   renderBrief(s);
+  renderScript(s);
   $('q').value = '';
+  prefillAIPrompt(true);  // reset the AI prompt box to this scene's subject
+  if (source === 'ai-illustration') { results = []; }
   renderSidebar();
   $('scenelist').querySelector('.active')?.scrollIntoView({block:'nearest'});
   // Default the search to the scene's semantic query when the timeline
@@ -2110,6 +3839,13 @@ function go(i) {
 async function search() {
   page = 1; results = []; hasNext = false;
   if (source === 'local') return;
+  if (source === 'ai-illustration') {
+    // Nothing to search -- the AI panel generates on demand. Keep whatever
+    // variations are already in the grid for this scene.
+    renderGrid();
+    $('pageinfo').textContent = ''; $('loadmore').style.display = 'none';
+    return;
+  }
   const q = searchTags.join(' ').trim();
   if (!q) {
     $('grid').innerHTML = '';
@@ -2255,24 +3991,59 @@ function removeMultiPick(k) {
   renderGrid();
 }
 
+// Shots this scene is broken into (semantic timeline). When there are 2+,
+// multi-clip mode is "one clip per shot" and each clip is locked to its
+// shot's own narration window in step 3 -- NOT an even time split.
+function curShots() {
+  return ((scenes[cur] && scenes[cur].shots) || []).filter(sh => sh && (sh.text || sh.duration));
+}
+
 function renderMultiBar() {
   const s = scenes[cur];
-  $('multipicks').innerHTML = multiPicks.map(p => {
-    const label = p.kind === 'local' ? 'Local image'
+  const shots = curShots();
+  const shotMode = shots.length >= 2;
+  const n = multiPicks.length;
+  $('multipicks').innerHTML = multiPicks.map((p, i) => {
+    const base = p.kind === 'local' ? 'Local image'
+      : p.kind === 'ai' ? 'AI illustration'
       : `${PROVIDER_LABELS[p.source] || 'Pexels'} ${p.kind === 'photo' ? 'photo' : 'video'} #${p.id}`;
+    let label = base;
+    if (shotMode) {
+      label = i < shots.length
+        ? `Shot ${i + 1} (${(shots[i].duration || 0).toFixed(1)}s) ← ${base}`
+        : `${base} — extra, will be rejected`;
+    }
     return `<span class="multichip">${esc(label)}<button title="Remove" data-k="${esc(assetKey(p))}">&times;</button></span>`;
   }).join('');
   $('multipicks').querySelectorAll('button').forEach(b => b.onclick = () => removeMultiPick(b.dataset.k));
-  const n = multiPicks.length;
-  $('multisplit').textContent = n > 0
-    ? `${n} clip${n === 1 ? '' : 's'} selected — ${(s.duration / n).toFixed(1)}s each of the ${s.duration.toFixed(1)}s scene`
-    : 'Add 2 or more clips below, then save -- the scene’s time splits evenly between them.';
-  $('multisave').disabled = n < 1;
+  if (shotMode) {
+    const slots = shots.map((sh, i) =>
+      `Shot ${i + 1}: ${(sh.duration || 0).toFixed(1)}s ${multiPicks[i] ? '✓' : '—'}`
+    ).join('  ·  ');
+    $('multisplit').textContent =
+      `This scene has ${shots.length} shots — pick exactly one clip per shot, in order. ` +
+      `Each clip plays for its own shot's narration (clip 1 ends when shot 1 ends, then clip 2). ` +
+      slots;
+    $('multisave').disabled = n !== shots.length;
+  } else {
+    $('multisplit').textContent = n > 0
+      ? `${n} clip${n === 1 ? '' : 's'} selected — ${(s.duration / n).toFixed(1)}s each of the ${s.duration.toFixed(1)}s scene`
+      : 'Add 2 or more clips below, then save -- the scene’s time splits evenly between them.';
+    $('multisave').disabled = n < 1;
+  }
 }
 
 async function saveMultiPicks() {
   const s = scenes[cur];
   if (multiPicks.length < 1) return;
+  const shots = curShots();
+  if (shots.length >= 2 && multiPicks.length !== shots.length) {
+    $('status').className = 'err';
+    $('status').textContent =
+      `This scene has ${shots.length} shots -- add exactly ${shots.length} clips (one per shot), ` +
+      `in shot order, so each clip covers its own shot. You have ${multiPicks.length}.`;
+    return;
+  }
   $('status').className = ''; $('status').textContent = 'Saving picks...';
   const query = searchTags.join(' ');
   const r = await fetch('/api/select-multi', {
@@ -2284,10 +4055,13 @@ async function saveMultiPicks() {
   const d2 = await (await fetch('/api/scenes')).json();
   selections = d2.selections;
   highlight.delete(s.index);
-  $('status').textContent = `Saved ${d.count} clip(s), time split across the scene.`;
+  $('status').textContent = d.shot_aligned
+    ? `Saved ${d.count} clip(s) -- each locked to its shot's narration window.`
+    : `Saved ${d.count} clip(s), time split evenly across the scene.`;
   multiPicks = [];
   renderMultiBar();
   renderSidebar(); renderGrid();
+  if (returnToReview) { returnToReview = false; setTimeout(openReview, 300); return; }
   // Auto-advance to the next scene still missing a clip, same as a single pick.
   const nxt = scenes.findIndex((sc,i) => i > cur && !selections[sc.index]);
   if (nxt !== -1) setTimeout(() => go(nxt), 350);
@@ -2312,6 +4086,9 @@ async function choose(v) {
   highlight.delete(s.index);
   $('status').textContent = `Saved ${d.file}`;
   renderSidebar(); renderGrid();
+  // Came here from "Replace clip" in the review page -- go straight back to it
+  // so a long review isn't interrupted by scanning forward through the script.
+  if (returnToReview) { returnToReview = false; setTimeout(openReview, 300); return; }
   // Auto-advance to the next scene still missing a clip -- the whole job is
   // hundreds of these, so every saved click matters.
   const nxt = scenes.findIndex((sc,i) => i > cur && !selections[sc.index]);
@@ -2319,21 +4096,56 @@ async function choose(v) {
   else setTimeout(maybeOfferRender, 350);
 }
 
-// Fires once, right when the last scene gets its clip. Confirms with the
-// user before kicking off step 3 automatically -- rendering isn't cheap, so
-// this shouldn't happen silently or repeat on every subsequent visit.
-async function maybeOfferRender() {
-  if (renderOffered) return;
-  const n = Object.keys(selections).length;
-  if (n !== scenes.length || highlight.size !== 0) return;
-  renderOffered = true;
-  const go3 = confirm(`All ${scenes.length} scenes have a clip.\n\nRender the final video now (step 3)? This can take a while.`);
-  if (!go3) return;
-  $('status').className = ''; $('status').textContent = 'Starting render...';
-  await fetch('/api/finish', { method: 'POST' });
+// Fires once, right when the last scene gets its clip. Shows a 60-second
+// countdown and then starts step 3 automatically with default settings --
+// no confirm() to click through. "Render now" starts it immediately;
+// "Not yet" cancels the auto-start and leaves the picker open.
+let autoRenderTimer = null, autoRenderTick = null;
+
+async function startRender() {
+  if (autoRenderTimer) clearTimeout(autoRenderTimer);
+  if (autoRenderTick) clearInterval(autoRenderTick);
+  autoRenderTimer = autoRenderTick = null;
+  $('autorender').style.display = 'none';
+  $('status').className = ''; $('status').textContent = 'Starting render (step 3)...';
+  try { await fetch('/api/finish', { method: 'POST' }); } catch (e) {}
   $('done').style.display = 'none';
   $('finished').style.display = 'block';
   $('finished').scrollIntoView({ behavior: 'smooth' });
+}
+
+function cancelAutoRender() {
+  if (autoRenderTimer) clearTimeout(autoRenderTimer);
+  if (autoRenderTick) clearInterval(autoRenderTick);
+  autoRenderTimer = autoRenderTick = null;
+  $('arcountdown').style.display = 'none';
+  $('arwait').style.display = 'none';
+  $('arcancelled').style.display = '';
+  // Re-arm: replacing/re-picking the last scene brings the countdown back.
+  renderOffered = false;
+}
+
+function maybeOfferRender() {
+  if (renderOffered) return;
+  const n = Object.keys(selections).length;
+  if (!scenes.length || n !== scenes.length || highlight.size !== 0) return;
+  renderOffered = true;
+  const box = $('autorender');
+  $('arcountdown').style.display = '';
+  $('arcancelled').style.display = 'none';
+  $('arwait').style.display = '';
+  box.style.display = 'block';
+  box.scrollIntoView({ behavior: 'smooth' });
+  let left = 60;
+  $('arcount').textContent = left;
+  autoRenderTick = setInterval(() => {
+    left -= 1;
+    $('arcount').textContent = left > 0 ? left : 0;
+    if (left <= 0 && autoRenderTick) { clearInterval(autoRenderTick); autoRenderTick = null; }
+  }, 1000);
+  autoRenderTimer = setTimeout(startRender, 60000);
+  $('arnow').onclick = startRender;
+  $('arwait').onclick = cancelAutoRender;
 }
 
 async function chooseRange(v) {
@@ -2375,9 +4187,17 @@ function localBtnLabel() {
   return 'Use this image';
 }
 
+// Keep the Local-file panel's button label + the multi-mode hint in sync with
+// the current bulk/multi state -- even before a file is chosen, so the button
+// never misleadingly says "Use this image" while multi mode is on.
+function syncLocalPanel() {
+  $('localpanel').classList.toggle('multi', multiMode && !bulkMode);
+  $('uselocalbtn').textContent = localBtnLabel();
+}
+
 function refreshBulkLabels() {
   renderGrid();
-  if (localAsset) $('uselocalbtn').textContent = localBtnLabel();
+  syncLocalPanel();
 }
 
 // Bulk mode (one clip -> a range of scenes) and multi mode (several clips ->
@@ -2408,26 +4228,106 @@ $('multimode').onchange = () => {
 };
 $('multisave').onclick = saveMultiPicks;
 
-// Source tabs: Pexels video/photo, Pixabay video/photo, Coverr video, or a
-// local image file (see SOURCES above). Only one is active at a time;
-// switching re-runs the search (or, for local, just shows the upload panel --
-// there's nothing to search).
+// Source tabs: Pexels video/photo, Pixabay video/photo, Coverr video, the AI
+// illustration generator, or a local image file (see SOURCES above). Only one
+// is active at a time; switching re-runs the search (local + AI just show
+// their own panel -- there's nothing to search).
 const SEARCH_UI_IDS = ['wlwords', 'scenewords', 'wltags', 'tagbox', 'opts', 'grid', 'pager'];
 function setSource(next) {
   if (source === next) return;
   source = next;
   document.querySelectorAll('.srctab').forEach(b => b.classList.toggle('active', b.dataset.src === source));
   const isLocal = source === 'local';
-  SEARCH_UI_IDS.forEach(id => { $(id).style.display = isLocal ? 'none' : ''; });
+  const isAI = source === 'ai-illustration';
+  // Hide the tag/search chrome for both panel tabs; AI still shows the grid
+  // (its generated variations) and pager area, local shows neither.
+  ['wlwords', 'scenewords', 'wltags', 'tagbox', 'opts'].forEach(id => {
+    $(id).style.display = (isLocal || isAI) ? 'none' : '';
+  });
+  $('grid').style.display = isLocal ? 'none' : '';
+  $('pager').style.display = isLocal ? 'none' : '';
   $('localpanel').classList.toggle('on', isLocal);
+  $('aipanel').classList.toggle('on', isAI);
   $('longenoughwrap').style.display = SOURCES[source].media === 'video' ? '' : 'none';
   if (isLocal) {
-    $('status').className = ''; $('status').textContent = '';
+    syncLocalPanel();
+    $('status').className = ''; $('status').textContent = multiMode
+      ? 'Multi-clip mode: add each image, then Save picks.' : '';
+  } else if (isAI) {
+    prefillAIPrompt(false);
+    $('aihint').textContent = aiWatermarked
+      ? 'Free tier: ~1 image / 15s, small corner watermark. Add tools/pollinations_token.txt (free) for the faster, watermark-free tier.'
+      : 'Faster, watermark-free tier (token found).';
+    results = []; renderGrid();
+    $('status').className = ''; $('status').textContent = 'Edit the prompt, then Generate.';
   } else {
     page = 1; search();
   }
 }
 document.querySelectorAll('.srctab').forEach(b => b.onclick = () => setSource(b.dataset.src));
+
+// ---- AI illustration panel ----
+function aiSubjectFor(s) {
+  const sem = s.semantic || {};
+  let subj = [sem.subject, sem.action, sem.object].filter(Boolean).join(', ');
+  if (sem.location) subj += (subj ? ', in ' : 'in ') + sem.location;
+  if (sem.time) subj += ` (${sem.time})`;
+  if (!subj) subj = (s.queries && s.queries[0]) || (s.keywords || []).join(' ')
+                    || (s.text || '').trim().slice(0, 180);
+  return subj;
+}
+function prefillAIPrompt(force) {
+  const s = scenes[cur]; if (!s) return;
+  const box = $('aiprompt');
+  if (!force && box.dataset.scene === String(s.index)) return; // keep edits
+  box.value = aiSubjectFor(s);
+  box.dataset.scene = String(s.index);
+}
+async function generateAI() {
+  if ($('aigen').classList.contains('busy')) return;
+  const s = scenes[cur]; if (!s) return;
+  const n = Math.max(1, Math.min(6, parseInt($('aicount').value, 10) || 3));
+  const raw = $('airaw').checked;
+  const prompt = $('aiprompt').value.trim();
+  if (!prompt) { $('status').className = 'err'; $('status').textContent = 'Type what the scene should show first.'; return; }
+  const batch = Math.floor(Math.random() * 9000000) + 1000000;
+  aiStop = false;
+  $('aigen').classList.add('busy');
+  $('aistop').style.display = '';
+  results = []; renderGrid();
+  try {
+    for (let i = 0; i < n && !aiStop; i++) {
+      $('status').className = '';
+      $('status').textContent = `Generating illustration ${i + 1} of ${n}${aiWatermarked ? ' (free tier is slow -- up to ~20s each)' : ''}...`;
+      let d;
+      try {
+        const r = await fetch('/api/ai-image', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ index: s.index, prompt, raw, batch, seed_offset: i }),
+        });
+        d = await r.json();
+      } catch (err) {
+        $('status').className = 'err'; $('status').textContent = 'Generation request failed: ' + err;
+        break;
+      }
+      if (d.error) { $('status').className = 'err'; $('status').textContent = d.error; break; }
+      results.push(d.image);
+      renderGrid();
+    }
+    if (!aiStop && results.length) {
+      $('status').className = '';
+      $('status').textContent = `${results.length} illustration(s) ready -- pick one, or Generate again for more.`;
+    } else if (aiStop) {
+      $('status').textContent = `Stopped. ${results.length} illustration(s) ready.`;
+    }
+  } finally {
+    $('aigen').classList.remove('busy');
+    $('aistop').style.display = 'none';
+    aiStop = false;
+  }
+}
+$('aigen').onclick = generateAI;
+$('aistop').onclick = () => { aiStop = true; $('status').textContent = 'Stopping after the current image...'; };
 
 // Local file upload: read as a data URL client-side and hand it to the same
 // choose()/chooseRange() flow the Pexels grid uses, tagged kind:'local' so
@@ -2487,6 +4387,8 @@ $('prevscene').onclick = () => go(cur - 1);
 $('longenough').onchange = () => { page = 1; search(); };
 $('minquality').onchange = () => { page = 1; search(); };
 document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && $('review').classList.contains('on')) { closeReview(); return; }
+  if ($('review').classList.contains('on')) return;  // review page has its own scroll
   if (e.target.tagName === 'INPUT') return;
   if (e.key === 'ArrowRight') go(cur + 1);
   if (e.key === 'ArrowLeft') go(cur - 1);
@@ -2497,7 +4399,7 @@ boot();
 
 
 def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
-        port=8000, no_browser=False, highlight=None):
+        pollinations_token=None, port=8000, no_browser=False, highlight=None):
     """Serve the clip picker for `project` until every scene has a clip and
     the browser confirms it's time to render, or the server is interrupted.
 
@@ -2528,6 +4430,7 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         )
     pixabay_key = resolve_key(pixabay_api_key, "PIXABAY_API_KEY", PIXABAY_KEY_FILE)
     coverr_key = resolve_key(coverr_api_key, "COVERR_API_KEY", COVERR_KEY_FILE)
+    pollinations_token = resolve_key(pollinations_token, "POLLINATIONS_TOKEN", POLLINATIONS_TOKEN_FILE)
 
     scenes = load_json(scenes_path)
     if not scenes:
@@ -2548,6 +4451,11 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
     clips_dir.mkdir(exist_ok=True)
     cache_dir = project_dir / ".pexels_cache"
     cache_dir.mkdir(exist_ok=True)
+    # Generated AI illustrations live here until picked, then get copied into
+    # clips/ like a local upload. Kept out of clips/ so "Reset all clips"
+    # doesn't force a slow regenerate.
+    ai_cache_dir = project_dir / ".ai_cache"
+    ai_cache_dir.mkdir(exist_ok=True)
 
     # render.json (written by step1_audio_and_captions.py --vertical) picks
     # the Pexels search orientation -- a vertical Shorts/Reels project wants
@@ -2569,25 +4477,30 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         "api_key": api_key,
         "pixabay_key": pixabay_key,
         "coverr_key": coverr_key,
+        "pollinations_token": pollinations_token,
+        "ai_cache_dir": ai_cache_dir,
+        "ai_fallback": False,
+        "ai_last_call": 0.0,
+        # Latches within one "auto-match all" run when Gemini's judge hits its
+        # quota, so the remaining scenes fall back to keyword-overlap picks
+        # instead of the run stopping dead. Reset at the start of each run.
+        "llm_down": None,
         "lock": threading.Lock(),
         "rate_remaining": None,
         # The narration panel shows the raw script text, so it has to follow
         # the script's own direction -- Urdu reads unusably as LTR.
         "rtl": caption_style(Path(project).parts[0])["rtl"],
+        "lang": Path(project).parts[0] if Path(project).parts else "en",
         "finish_requested": False,
         "highlight": set(highlight or []),
         "orientation": orientation,
     })
 
-    # Groq keys power the semantic auto-matcher (/api/automatch). Optional:
+    # Gemini keys power the semantic auto-matcher (/api/automatch). Optional:
     # without one the picker works exactly as before, just without the
-    # auto-match button.
-    try:
-        from groq_client import load_keys as _load_groq_keys
-
-        STATE["groq_keys"] = _load_groq_keys()
-    except Exception:
-        STATE["groq_keys"] = None
+    # auto-match button. Re-read on every request (see refresh_llm_keys) so
+    # adding a key later doesn't need a restart.
+    refresh_llm_keys()
 
     done = len(load_selections())
     url = f"http://localhost:{port}/"
@@ -2598,6 +4511,11 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
     if optional:
         print(f"No API key configured yet for: {', '.join(optional)} -- those tabs will show a "
               f"setup message until you add one (see the module docstring).")
+    if pollinations_token:
+        print("Pollinations token found -- AI illustration tab runs on the faster, watermark-free tier.")
+    else:
+        print("AI illustration tab is on (free, no key). Add tools/pollinations_token.txt "
+              "(free at https://auth.pollinations.ai) for faster, watermark-free images.")
     print(f"Picker running at {url}   (Ctrl+C to stop -- your progress is saved as you go)")
     if not no_browser:
         threading.Timer(0.5, lambda: webbrowser.open(url)).start()
@@ -2643,6 +4561,7 @@ def main():
     parser.add_argument("--api-key", default=None, help="Pexels API key (else PEXELS_API_KEY or tools/pexels_key.txt)")
     parser.add_argument("--pixabay-api-key", default=None, help="Pixabay API key (else PIXABAY_API_KEY or tools/pixabay_key.txt) -- optional")
     parser.add_argument("--coverr-api-key", default=None, help="Coverr API key (else COVERR_API_KEY or tools/coverr_key.txt) -- optional")
+    parser.add_argument("--pollinations-token", default=None, help="Pollinations token for the AI illustration tab (else POLLINATIONS_TOKEN or tools/pollinations_token.txt) -- optional; the tab works without it")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--no-browser", action="store_true", help="Don't auto-open the browser")
     args = parser.parse_args()
@@ -2650,6 +4569,7 @@ def main():
     render_now = run(
         args.project, api_key=args.api_key,
         pixabay_api_key=args.pixabay_api_key, coverr_api_key=args.coverr_api_key,
+        pollinations_token=args.pollinations_token,
         port=args.port, no_browser=args.no_browser,
     )
     if render_now:

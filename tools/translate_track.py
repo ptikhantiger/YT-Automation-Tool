@@ -19,7 +19,7 @@ if it doesn't exist yet) holding exactly the two files YouTube needs:
     captions.srt    -- YouTube-uploadable caption track, timed to that audio
 
 Re-run any time with the same --lang to regenerate -- e.g. to try a
-different --voice or --rate without spending a fresh Groq translation, since
+different --voice or --rate without spending a fresh Gemini translation, since
 the translation itself is cached in tracks/.cache/<lang>.txt. Pass
 --retranslate to force a new translation (e.g. after editing script.txt).
 """
@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 
 from common import caption_style, compute_sentence_end_flags, group_captions, write_srt
-from groq_client import DEFAULT_MODEL, GroqError, complete, load_keys
+from llm_client import DEFAULT_MODEL, LLMError, complete, load_keys
 from step1_audio_and_captions import DEFAULT_VOICES, synthesize
 
 PROJECTS_DIR = Path(__file__).parent.parent / "projects"
@@ -63,7 +63,7 @@ TRACK_VOICES = {
     "te": "te-IN-MohanNeural",
 }
 
-# English names, used only to tell Groq what language to translate into. An
+# English names, used only to tell Gemini what language to translate into. An
 # unlisted --lang code still works (falls back to the code itself in the
 # prompt), just less fluently phrased.
 LANGUAGE_NAMES = {
@@ -164,16 +164,16 @@ def main():
         "--lang", required=True,
         help="Target language code for this track, e.g. es, fr, hi -- used as both the "
         "tracks/ subfolder name and (unless --voice is given) to pick a default edge-tts "
-        "voice and tell Groq what to translate into.",
+        "voice and tell Gemini what to translate into.",
     )
     parser.add_argument("--voice", default=None, help="edge-tts voice name, overriding the --lang default")
     parser.add_argument("--rate", default="+0%", help="edge-tts speech rate adjustment, e.g. -10%%")
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="Groq model for translation")
-    parser.add_argument("--api-key", default=None, help="Groq API key, overriding groq_key.txt/GROQ_API_KEY")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model for translation")
+    parser.add_argument("--api-key", default=None, help="Gemini API key, overriding gemini_key.txt/GEMINI_API_KEY")
     parser.add_argument(
         "--retranslate", action="store_true",
         help="Ignore any cached translation for --lang and translate script.txt again with "
-        "Groq (use after editing script.txt).",
+        "Gemini (use after editing script.txt).",
     )
     parser.add_argument(
         "--max-chars", type=int, default=None,
@@ -208,7 +208,7 @@ def main():
         language_name = LANGUAGE_NAMES.get(args.lang, args.lang)
         try:
             key = load_keys(args.api_key)
-        except GroqError as e:
+        except LLMError as e:
             sys.exit(str(e))
         text = script_path.read_text(encoding="utf-8").strip()
         if not text:
@@ -219,7 +219,7 @@ def main():
         )
         translated = translate(text, language_name, key, args.model)
         if word_count(translated) < 5:
-            sys.exit("Translation came back empty or near-empty -- Groq likely refused or errored; try again.")
+            sys.exit("Translation came back empty or near-empty -- Gemini likely refused or errored; try again.")
         cache_path.parent.mkdir(parents=True, exist_ok=True)
         cache_path.write_text(translated + "\n", encoding="utf-8")
         print(f"  translated to {word_count(translated)} words")

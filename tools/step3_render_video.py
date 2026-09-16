@@ -73,14 +73,16 @@ from pathlib import Path
 from common import (
     build_duck_envelope,
     concat_audio_files,
+    DownloadError,
     download_file,
     load_json,
+    media_file_looks_valid,
     measure_mean_volume,
     probe_audio_format,
     probe_duration,
     probe_video_resolution,
     run_ffmpeg,
-    scene_segment_durations,
+    scene_frame_plan,
     stereo_pan,
     write_envelope_wav,
 )
@@ -196,14 +198,26 @@ def fit_strategy(source_duration, needed):
     return 0.0, f"loop x{needed / source_duration:.1f} ({source_duration:.1f}s source)"
 
 
-def render_segment(clip_path, duration, fps, out_path, width=OUTPUT_W, height=OUTPUT_H,
+def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H,
                    trim_start=0.0):
-    """Cut clip_path down to exactly `duration` seconds at width x height.
+    """Render clip_path as exactly `n_frames` frames of CFR `fps` video at
+    width x height.
+
+    The frame count is fixed with `-frames:v`, never a `-t` time cutoff:
+    `-t` lets ffmpeg round the emitted frame count per segment, and across a
+    long concat those fractions accumulate into seconds of visual-vs-voice
+    drift (see scene_frame_plan() in common.py). `-frames:v n_frames` after
+    the `fps` filter guarantees this segment is n_frames/fps seconds long to
+    the frame, so every scene's clip lands exactly on its own narration
+    window with no bleed into the next scene.
 
     `trim_start` skips that many seconds of the source first (see
-    fit_strategy()). -stream_loop -1 with a hard -t handles both remaining
-    cases in one command: a long clip is simply truncated, a short one
-    repeats until the scene is filled.
+    fit_strategy()); a trimmed source is by definition longer than the slot,
+    so it never needs looping -- and -stream_loop plus input-side -ss
+    interact unreliably, so they're mutually exclusive here. Otherwise
+    -stream_loop -1 covers the short-clip case: the source repeats and
+    -frames:v stops it at exactly n_frames, so a short clip loops rather than
+    freezing and it's still frame-exact.
     setsar=1 matters because stock footage occasionally carries a non-square
     pixel aspect ratio, which would make the concat demuxer reject the stream.
     Scale-to-cover + center-crop works for any target aspect, including a
@@ -214,18 +228,16 @@ def render_segment(clip_path, duration, fps, out_path, width=OUTPUT_W, height=OU
         f"crop={width}:{height},"
         f"fps={fps},setsar=1,format=yuv420p"
     )
-    # A trimmed source is by definition longer than the slot, so looping can
-    # never be needed there -- and -stream_loop plus input-side -ss interact
-    # unreliably, so they're mutually exclusive here.
     if trim_start > 0.01:
         args = ["-ss", f"{trim_start:.3f}"]
     else:
         args = ["-stream_loop", "-1"]
     args += [
         "-i", str(clip_path),
-        "-t", f"{duration:.3f}",
         "-an",
         "-vf", vf,
+        "-frames:v", str(int(n_frames)),
+        "-fps_mode", "cfr",
         "-c:v", "libx264",
         "-preset", "veryfast",
         "-crf", "18",
@@ -235,20 +247,21 @@ def render_segment(clip_path, duration, fps, out_path, width=OUTPUT_W, height=OU
     run_ffmpeg(args, description=f"rendering segment for {clip_path.name}")
 
 
-def render_image_segment(image_path, duration, fps, out_path, width=OUTPUT_W, height=OUTPUT_H):
+def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H):
     """Turn a still image (picked in step2 as an "image" selection, from a
-    Pexels/Pixabay photo or a local upload) into a `duration`-second clip at
-    width x height.
+    Pexels/Pixabay photo or a local upload) into an exactly `n_frames`-frame
+    clip of CFR `fps` video at width x height.
 
     A dead-static frame for several seconds reads poorly next to cut video
     clips, so this applies a slow, constant Ken Burns zoom-in via zoompan.
     Upscaling 2x before the zoom keeps the crop from ever sampling above the
     source's native resolution, which is what zoompan does if fed the output
-    size directly. `d` (zoompan's internal frame count) is set to match the
-    exact number of output frames so the zoom neither stalls nor overruns
-    before ffmpeg's own `-t` cuts the stream.
+    size directly. `d` (zoompan's internal frame count) is set to n_frames so
+    the zoom spans exactly the output, and `-frames:v n_frames` fixes the
+    segment length to the frame -- no `-t` time cutoff, for the same
+    accumulated-drift reason render_segment() avoids one.
     """
-    zoom_frames = max(round(duration * fps), 1)
+    zoom_frames = max(int(n_frames), 1)
     vf = (
         f"scale={width * 2}:{height * 2}:force_original_aspect_ratio=increase,"
         f"crop={width * 2}:{height * 2},"
@@ -258,8 +271,9 @@ def render_image_segment(image_path, duration, fps, out_path, width=OUTPUT_W, he
     args = [
         "-loop", "1",
         "-i", str(image_path),
-        "-t", f"{duration:.3f}",
         "-vf", vf,
+        "-frames:v", str(zoom_frames),
+        "-fps_mode", "cfr",
         "-c:v", "libx264",
         "-preset", "veryfast",
         "-crf", "18",
@@ -284,6 +298,7 @@ PROVIDER_CREDITS = {
     "pexels": "Pexels (https://www.pexels.com)",
     "pixabay": "Pixabay (https://pixabay.com)",
     "coverr": "Coverr (https://coverr.co)",
+    "ai": "AI illustrations generated with Pollinations.AI / FLUX (https://pollinations.ai)",
 }
 
 
@@ -309,10 +324,16 @@ def write_credits(selections, scenes, path):
             seen.setdefault(author, url)
         sources_used.update(selection_sources(sel))
     sources_used.discard("local")
+    ai_used = "ai" in sources_used
+    stock_used = sorted(sources_used - {"ai"})
     with open(path, "w", encoding="utf-8") as f:
-        if sources_used:
-            names = [PROVIDER_CREDITS.get(s, s) for s in sorted(sources_used)]
-            f.write(f"Stock footage via {', '.join(names)}\n\n")
+        if stock_used:
+            names = [PROVIDER_CREDITS.get(s, s) for s in stock_used]
+            f.write(f"Stock footage via {', '.join(names)}\n")
+        if ai_used:
+            f.write(f"{PROVIDER_CREDITS['ai']}\n")
+        if stock_used or ai_used:
+            f.write("\n")
         for author, url in sorted(seen.items()):
             f.write(f"- {author}{'  ' + url if url else ''}\n")
 
@@ -331,37 +352,71 @@ def download_selected_clips(selections, clips_dir):
     Pexels/Pixabay/Coverr pick is left unfetched until this runs, right
     before rendering.
 
-    Already-present files are skipped, so re-running this after a partial
-    failure (a dropped connection, a dead URL) only retries what's still
-    missing instead of re-downloading everything.
+    A file that's already present AND still looks like valid media (right
+    size, right byte signature -- see media_file_looks_valid) is skipped, so
+    re-running after a partial failure only fetches what's genuinely missing.
+    A file left behind by an interrupted or throttled earlier run that turned
+    out to be a truncated stream or an HTML/JSON error page saved under a
+    .mp4 name is deleted here and re-queued -- otherwise step 2's "clip
+    picked but couldn't be downloaded" recovery never sees it and the render
+    later chokes on an unplayable clip, throwing scene/voice sync off.
+
+    Downloads don't abort the whole render on the first failure: each is
+    retried (download_file has its own network backoff), the ones that still
+    fail are reported, and run()'s missing-file check then reopens step 2 for
+    exactly those scenes.
     """
-    pending = []  # (dest_path, download_url)
+    pending = []   # (dest_path, download_url)
+    repaired = 0
     for sel in selections.values():
         for item in selection_items(sel) or []:
             if not item or not item.get("download_url"):
                 continue
             dest = clips_dir / item["file"]
-            if not dest.exists():
-                pending.append((dest, item["download_url"]))
+            if dest.exists():
+                if media_file_looks_valid(dest):
+                    continue
+                # Present but broken -- drop it so it's fetched fresh.
+                try:
+                    dest.unlink()
+                    repaired += 1
+                except OSError:
+                    pass
+            pending.append((dest, item["download_url"]))
 
+    if repaired:
+        print(f"  {repaired} previously downloaded clip(s) were incomplete or corrupt -- re-fetching them.")
     if not pending:
         return
 
     total = len(pending)
     print(f"Downloading {total} clip(s) picked in step 2...")
+    failed = []
     for i, (dest, url) in enumerate(pending, start=1):
         try:
             download_file(url, dest)
+            if not media_file_looks_valid(dest):
+                raise DownloadError("downloaded bytes are not a playable media file")
         except Exception as e:
-            print()
-            sys.exit(
-                f"Failed to download {dest.name}: {e}\n"
-                f"Re-run step3_render_video.py -- clips already downloaded are kept, "
-                f"only the missing one(s) are retried."
-            )
-        pct = i * 100 // total
-        print(f"\r  {i}/{total} clips downloaded ({pct}%)", end="", flush=True)
+            if dest.exists():
+                try:
+                    dest.unlink()
+                except OSError:
+                    pass
+            failed.append((dest.name, e))
+            print(f"\r  {i}/{total}: {dest.name} FAILED -- {e}")
+        else:
+            pct = i * 100 // total
+            print(f"\r  {i}/{total} clips downloaded ({pct}%)", end="", flush=True)
     print()
+    if failed:
+        preview = "; ".join(f"{name} ({err})" for name, err in failed[:6])
+        more = f" (and {len(failed) - 6} more)" if len(failed) > 6 else ""
+        print(
+            f"{len(failed)} of {total} clip(s) could not be downloaded: {preview}{more}\n"
+            f"Continuing -- step 2 will reopen for the affected scenes so you can "
+            f"retry or pick them by hand."
+        )
 
 
 def resolve_music(project_dir, music, tmp_dir):
@@ -407,7 +462,8 @@ def resolve_music(project_dir, music, tmp_dir):
 def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
         music_volume=None, duck_db=None, duck_gap_min=1.2,
         duck_attack_ms=150.0, duck_release_ms=400.0, duck_lead_ms=80.0,
-        music_target_db=-20.0, music_below_voice_db=12.0, no_4k=False):
+        music_target_db=-20.0, music_below_voice_db=12.0, no_4k=False,
+        non_interactive=False):
     """Render projects/<project>/output.mp4 from picked clips + captions.
     Returns the output path. Exits the process on any missing prerequisite,
     same as running this script directly.
@@ -464,6 +520,14 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
         preview = ", ".join(str(i) for i in problem_scenes[:12])
         more = f" (and {len(problem_scenes) - 12} more)" if len(problem_scenes) > 12 else ""
         print(f"{len(problem_scenes)} of {len(scenes)} scenes {reason}: {preview}{more}")
+        if non_interactive:
+            # No browser to open here (CI / a headless server) -- the picker
+            # would sit waiting forever. Fail loudly and say what to do on
+            # the machine that does have a browser.
+            sys.exit(
+                f"Cannot render: fix those scenes on your own machine, then re-run:\n"
+                f"    python step2_pick_clips.py {project}"
+            )
         print("Opening step 2 so you can fix them -- they'll show with a red background.")
         import step2_pick_clips
         render_now = step2_pick_clips.run(project, highlight=problem_scenes)
@@ -479,7 +543,7 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
             music_volume=music_volume, duck_db=duck_db, duck_gap_min=duck_gap_min,
             duck_attack_ms=duck_attack_ms, duck_release_ms=duck_release_ms, duck_lead_ms=duck_lead_ms,
             music_target_db=music_target_db, music_below_voice_db=music_below_voice_db,
-            no_4k=no_4k,
+            no_4k=no_4k, non_interactive=non_interactive,
         )
 
     unpicked = [s["index"] for s in scenes if str(s["index"]) not in selections]
@@ -488,12 +552,21 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
 
     download_selected_clips(selections, clips_dir)
 
+    def _clip_unusable(f):
+        p = clips_dir / f
+        # Not there at all, or there but not real media (a truncated download
+        # or an error page saved under a .mp4 name by an earlier run) --
+        # either way the render can't use it. download_selected_clips already
+        # deletes and re-fetches the ones it can; whatever's still bad here
+        # goes back to step 2.
+        return not p.exists() or not media_file_looks_valid(p)
+
     missing_file = [
         s["index"] for s in scenes
-        if any(not (clips_dir / f).exists() for f in selection_files(selections[str(s["index"])]))
+        if any(_clip_unusable(f) for f in selection_files(selections[str(s["index"])]))
     ]
     if missing_file:
-        return reopen_step2_for(missing_file, "have a clip picked but it couldn't be downloaded")
+        return reopen_step2_for(missing_file, "have a clip picked but it's missing or unplayable")
 
     width, height = output_size(project_dir)
     if not no_4k:
@@ -507,29 +580,79 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
             )
 
     narration_seconds = probe_duration(audio_path)
-    segment_seconds = scene_segment_durations(scenes, narration_seconds)
+    # Frame-exact on-screen span for every scene. Each scene's clip is then
+    # rendered as exactly plan["frames"] frames (see render_segment), so the
+    # concatenated segments tile the timeline with zero accumulated drift and
+    # every scene's clip stays locked to its own narration window instead of
+    # sliding earlier as the video runs. See scene_frame_plan() in common.py.
+    frame_plan = scene_frame_plan(scenes, narration_seconds, fps)
 
     tmp_dir.mkdir(exist_ok=True)
     print(
         f"Rendering {len(scenes)} scenes' clip segments ({narration_seconds:.1f}s of "
-        f"narration) at {width}x{height}..."
+        f"narration) at {width}x{height}, {fps} fps..."
     )
-    def multi_shares(scene, items, screen_start, total_duration):
-        """Per-item on-screen durations for a multi-clip scene.
 
-        When the scene's semantic timeline defined shots and the pick count
-        matches, each clip covers exactly its shot's narration window (shot
-        boundaries within the scene's on-screen span, so cuts land where the
-        MEANING changes). Otherwise the old even split.
+    def even_frame_split(total, parts):
+        """`total` frames split into `parts` whole-frame counts that sum back
+        to `total` exactly (cumulative rounding -- at most one frame of
+        imbalance between the largest and smallest slice)."""
+        return [
+            round((k + 1) * total / parts) - round(k * total / parts)
+            for k in range(parts)
+        ]
+
+    def _contiguous_edges_from_cuts(raw_cuts, start_frame, end_frame, n):
+        """Turn n-1 desired interior cut frames into a strictly increasing
+        edge list [start_frame, ..., end_frame] where every one of the n
+        resulting slices is at least 1 frame -- so the slices always tile
+        [start_frame, end_frame) exactly no matter how the cuts crowd."""
+        edges = [start_frame]
+        for k in range(1, n):
+            lo = edges[-1] + 1
+            hi = end_frame - (n - k)  # leave >=1 frame for each remaining slice
+            edges.append(min(max(raw_cuts[k - 1], lo), hi))
+        edges.append(end_frame)
+        return edges
+
+    def multi_frame_shares(scene, items, start_frame, total_frames):
+        """Per-item frame counts for a multi-clip scene, summing to
+        total_frames exactly.
+
+        Priority:
+        1. Per-item shot windows recorded at pick time (`shot_start`, absolute
+           seconds -- see multi_item_record in step2). Clip k+1 starts exactly
+           when shot k+1's narration starts, so clip k runs for shot k plus
+           the tiny gap before the next shot (same "earlier segment holds
+           through the pause" convention scene_frame_plan uses between scenes);
+           the last clip absorbs any trailing pause. Authoritative and
+           independent of the live `scene["shots"]`.
+        2. Legacy: the scene still carries `shots` and the pick count matches
+           -- derive the same cuts from `shot["start"]` (older selections
+           saved before per-item shot windows existed).
+        3. Even split of the scene's on-screen time.
+        Cases 1/2 fall through to the even split if the scene is too short to
+        give every shot its own frame.
         """
-        shots = scene.get("shots") or []
-        if len(shots) == len(items) and all("start" in sh for sh in shots):
-            starts = [screen_start] + [sh["start"] for sh in shots[1:]]
-            bounds = starts + [screen_start + total_duration]
-            shares = [bounds[k + 1] - bounds[k] for k in range(len(items))]
-            if all(s > 0.05 for s in shares):
-                return shares, "shot-exact"
-        return [total_duration / len(items)] * len(items), "even"
+        n = len(items)
+        end_frame = start_frame + total_frames
+        if n >= 2 and total_frames >= n:
+            # (1) authoritative per-item shot windows
+            if all(it.get("shot_start") is not None for it in items):
+                cuts = [round(items[k + 1]["shot_start"] * fps) for k in range(n - 1)]
+                edges = _contiguous_edges_from_cuts(cuts, start_frame, end_frame, n)
+                shares = [edges[k + 1] - edges[k] for k in range(n)]
+                if all(s >= 1 for s in shares):
+                    return shares, "shot-exact"
+            # (2) legacy: live scene shots, positional match
+            shots = scene.get("shots") or []
+            if len(shots) == n and all("start" in sh for sh in shots):
+                cuts = [round(shots[k + 1]["start"] * fps) for k in range(n - 1)]
+                edges = _contiguous_edges_from_cuts(cuts, start_frame, end_frame, n)
+                shares = [edges[k + 1] - edges[k] for k in range(n)]
+                if all(s >= 1 for s in shares):
+                    return shares, "shot-exact"
+        return even_frame_split(total_frames, n), "even"
 
     def clip_source_duration(path):
         try:
@@ -539,10 +662,12 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
 
     segment_paths = []
     report_scenes = []
-    screen_start = 0.0
     for i, scene in enumerate(scenes):
         sel = selections[str(scene["index"])]
-        total_duration = segment_seconds[i]
+        plan = frame_plan[i]
+        total_frames = plan["frames"]
+        total_duration = plan["seconds"]
+        screen_start = plan["screen_start"]
         entry = {
             "scene_id": f"scene_{scene['index']:03d}",
             "script": scene.get("text", ""),
@@ -551,6 +676,7 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
             "screen_start": round(screen_start, 2),
             "screen_end": round(screen_start + total_duration, 2),
             "duration": round(total_duration, 2),
+            "frames": total_frames,
             "match_score": sel.get("match_score"),
             "auto_matched": bool(sel.get("auto_matched")),
             "clips": [],
@@ -560,44 +686,53 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
             # Several clips for one scene: shot-exact timing when the semantic
             # timeline defined the shots, even split otherwise.
             items = sel.get("items") or []
-            shares, share_mode = multi_shares(scene, items, screen_start, total_duration)
-            for j, (item, share) in enumerate(zip(items, shares)):
+            share_frames, share_mode = multi_frame_shares(
+                scene, items, plan["screen_start_frame"], total_frames
+            )
+            entry["multi_split"] = share_mode
+            for j, (item, nf) in enumerate(zip(items, share_frames)):
                 clip_path = clips_dir / item["file"]
                 seg_path = tmp_dir / f"seg_{i + 1:03d}_{j + 1:02d}.mp4"
+                secs = nf / fps
+                shot_note = {}
+                if item.get("shot_index"):
+                    shot_note = {"shot": item["shot_index"],
+                                 "shot_seconds": round((item.get("shot_end", 0) or 0) - (item.get("shot_start", 0) or 0), 2)}
                 if item.get("type") == "image":
-                    render_image_segment(clip_path, share, fps, seg_path, width, height)
-                    entry["clips"].append({"file": item["file"], "seconds": round(share, 2), "strategy": "image ken-burns"})
+                    render_image_segment(clip_path, nf, fps, seg_path, width, height)
+                    entry["clips"].append({"file": item["file"], "seconds": round(secs, 2),
+                                           "frames": nf, "strategy": "image ken-burns", **shot_note})
                 else:
                     src = clip_source_duration(clip_path)
-                    trim, label = fit_strategy(src, share)
-                    render_segment(clip_path, share, fps, seg_path, width, height, trim_start=trim)
-                    entry["clips"].append({"file": item["file"], "seconds": round(share, 2),
-                                           "source_seconds": src, "strategy": label})
+                    trim, label = fit_strategy(src, secs)
+                    render_segment(clip_path, nf, fps, seg_path, width, height, trim_start=trim)
+                    entry["clips"].append({"file": item["file"], "seconds": round(secs, 2),
+                                           "frames": nf, "source_seconds": src, "strategy": label, **shot_note})
                     if label.startswith("loop"):
                         entry["warnings"].append(f"{item['file']} loops ({label}) -- pick a longer clip to avoid the repeat.")
                 segment_paths.append(seg_path)
-            shares_text = ", ".join(f"{s:.1f}s" for s in shares)
+            shares_text = ", ".join(f"{nf / fps:.1f}s" for nf in share_frames)
             print(f"  [{i + 1}/{len(scenes)}] {len(items)} clips -> {total_duration:.1f}s ({share_mode} split: {shares_text})")
         else:
             clip_path = clips_dir / sel["file"]
             seg_path = tmp_dir / f"seg_{i + 1:03d}.mp4"
             if sel.get("type") == "image":
-                render_image_segment(clip_path, total_duration, fps, seg_path, width, height)
-                entry["clips"].append({"file": sel["file"], "seconds": round(total_duration, 2), "strategy": "image ken-burns"})
+                render_image_segment(clip_path, total_frames, fps, seg_path, width, height)
+                entry["clips"].append({"file": sel["file"], "seconds": round(total_duration, 2),
+                                       "frames": total_frames, "strategy": "image ken-burns"})
                 print(f"  [{i + 1}/{len(scenes)}] {clip_path.name} -> {total_duration:.1f}s")
             else:
                 src = clip_source_duration(clip_path)
                 trim, label = fit_strategy(src, total_duration)
-                render_segment(clip_path, total_duration, fps, seg_path, width, height, trim_start=trim)
+                render_segment(clip_path, total_frames, fps, seg_path, width, height, trim_start=trim)
                 entry["clips"].append({"file": sel["file"], "seconds": round(total_duration, 2),
-                                       "source_seconds": src, "strategy": label})
+                                       "frames": total_frames, "source_seconds": src, "strategy": label})
                 if label.startswith("loop"):
                     entry["warnings"].append(f"{sel['file']} loops ({label}) -- pick a longer clip or use multi-clip for this scene.")
                 print(f"  [{i + 1}/{len(scenes)}] {clip_path.name} -> {total_duration:.1f}s [{label}]"
                       + (f" (match {sel.get('match_score')}/100)" if sel.get("match_score") is not None else ""))
             segment_paths.append(seg_path)
         report_scenes.append(entry)
-        screen_start += total_duration
 
     concat_list_path = tmp_dir / "concat_list.txt"
     with open(concat_list_path, "w", encoding="utf-8") as f:
@@ -802,6 +937,11 @@ def main():
         "genuinely 4K-sourced if you want this, since a 4K render takes substantially longer "
         "to encode than 1080p.",
     )
+    parser.add_argument(
+        "--non-interactive", action="store_true",
+        help="Never open the step 2 picker to fix missing/unplayable clips -- exit with an "
+        "error listing them instead. For CI / headless servers (GitHub Actions uses this).",
+    )
     args = parser.parse_args()
 
     run(
@@ -811,7 +951,7 @@ def main():
         duck_release_ms=args.duck_release_ms, duck_lead_ms=args.duck_lead_ms,
         music_target_db=args.music_target_db,
         music_below_voice_db=args.music_below_voice_db,
-        no_4k=args.no_4k,
+        no_4k=args.no_4k, non_interactive=args.non_interactive,
     )
 
 

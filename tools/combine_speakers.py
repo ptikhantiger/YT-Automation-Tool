@@ -39,7 +39,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-from groq_client import DEFAULT_MODEL, GroqError, complete, load_key
+from llm_client import DEFAULT_MODEL, LLMError, complete, load_key
 
 # Reuse the pipeline's narration cleaner, word counter, runtime estimate and
 # validator so the output obeys the same TTS-safe rules as step0's script.txt.
@@ -48,8 +48,8 @@ from step0_build_script import clean_narration, runtime_line, validate, word_cou
 REPO_ROOT = Path(__file__).parent.parent
 PROJECTS_DIR = REPO_ROOT / "projects"
 
-# Turns to gather per Groq request. ~320 spoken words keeps each request well
-# inside the 12k-token/minute free-tier window (see groq_client note 3) while
+# Turns to gather per Gemini request. ~320 spoken words keeps each request well
+# inside the 250k-token/minute free-tier window (see llm_client note 5) while
 # still giving the model enough context to blend the turns smoothly.
 BATCH_WORDS = 320
 
@@ -228,7 +228,7 @@ def merge_batch(block, tail, perspective, key, model, verbose=True):
 # resume cache
 # --------------------------------------------------------------------------
 #
-# A 7,000-word transcript is 25+ requests, and the Groq free tier caps the day
+# A 7,000-word transcript is 25+ requests, and the Gemini free tier caps the day
 # at 100,000 tokens -- a block partway through is normal, not exceptional. Like
 # step0, we cache every finished batch (keyed by a hash of the transcript and
 # the settings that change the output) so a re-run after the quota window picks
@@ -289,9 +289,9 @@ def main():
         default=BATCH_WORDS,
         help=f"Turns of transcript to convert per request (default {BATCH_WORDS})",
     )
-    parser.add_argument("--model", default=DEFAULT_MODEL, help="Groq model")
+    parser.add_argument("--model", default=DEFAULT_MODEL, help="Gemini model")
     parser.add_argument(
-        "--api-key", default=None, help="Groq key (else groq_key.txt or $GROQ_API_KEY)"
+        "--api-key", default=None, help="Gemini key (else gemini_key.txt or $GEMINI_API_KEY)"
     )
     parser.add_argument(
         "--fresh",
@@ -337,7 +337,7 @@ def main():
 
     try:
         key = load_key(args.api_key)
-    except GroqError as e:
+    except LLMError as e:
         sys.exit(str(e))
 
     signature = _signature(text, args.perspective, args.model, args.batch_words)
@@ -359,7 +359,7 @@ def main():
         tail = " ".join(" ".join(parts).split()[-80:]) if parts else ""
         try:
             out = merge_batch(block, tail, args.perspective, key, args.model)
-        except GroqError as e:
+        except LLMError as e:
             blocked = e
             break
         print(
@@ -385,7 +385,7 @@ def main():
             else "  No batches finished yet, so script.txt was left untouched.\n"
         )
         sys.exit(
-            f"\nGroq error: {blocked}\n\n"
+            f"\nGemini error: {blocked}\n\n"
             f"  {len(done)}/{len(batches)} batches are saved -- re-run the SAME "
             f"command after the quota resets and it finishes the rest.\n"
             f"{partial}"

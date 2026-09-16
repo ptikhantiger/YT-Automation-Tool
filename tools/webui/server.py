@@ -2,7 +2,7 @@
 watch the real stdout stream in.
 
 Deliberately dependency-free (stdlib only), matching the rest of this
-pipeline (see groq_client.py's docstring) -- no Flask/FastAPI to install.
+pipeline (see llm_client.py's docstring) -- no Flask/FastAPI to install.
 
 Usage:
     python tools/webui/server.py [--port 8765] [--no-browser]

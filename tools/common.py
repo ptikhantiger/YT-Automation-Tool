@@ -3,11 +3,15 @@
 Used by step1_audio_and_captions.py and step2_render_video.py.
 """
 import bisect
+import http.client
 import json
 import random
 import re
+import socket
 import struct
 import subprocess
+import time
+import urllib.error
 import urllib.request
 import wave
 from pathlib import Path
@@ -20,6 +24,37 @@ from PIL import ImageFont
 SENTENCE_END_CHARS = ".!?…۔؟"
 TRAILING_QUOTE_CHARS = "\"')]»”’*"
 _HAS_WORD_CHAR = re.compile(r"\w", re.UNICODE)
+
+# A speaker label the LLM rewrite passes sometimes prepend to a section or
+# paragraph -- "Narrator:", "NARRATOR -", "[Voice-over]:", "Narrator (V.O.):",
+# or a bare "NARRATOR" line. edge-tts then reads the word "Narrator" aloud at
+# the top of the video (or wherever else it landed). strip_speaker_labels()
+# removes just the label and its trailing colon/dash; the narration after it
+# stays. Anchored to the start of a line so an ordinary sentence that merely
+# contains the word "narrator" is never touched.
+_SPEAKER_LABEL_RE = re.compile(
+    r"""^[ \t]{0,3}
+        [\[(<*_"']*[ \t]*
+        (?:narrator|narration|voice[ \t-]*over|voiceover)
+        (?:[ \t]*\([^)\n]{0,40}\))?
+        [ \t]*[)\]>*_"']*[ \t]*
+        (?:[:\-–—][ \t]*[)\]>*_"']*[ \t]*|$)
+    """,
+    re.IGNORECASE | re.MULTILINE | re.VERBOSE,
+)
+
+
+def strip_speaker_labels(text):
+    """Remove leading 'Narrator:' / 'NARRATOR -' / '[Voice-over]:' style
+    speaker labels from the start of any line, plus a line that is nothing
+    but such a label. Only the label (and its trailing delimiter) goes -- the
+    narration itself is kept. Collapses the blank lines a removed
+    standalone-label line leaves behind."""
+    if not text:
+        return text
+    cleaned = _SPEAKER_LABEL_RE.sub("", text)
+    cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
+    return cleaned.strip()
 
 
 def _tokenize_for_alignment(script_text):
@@ -1036,20 +1071,190 @@ def write_wordcolor_ass(
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) VideoPipeline/1.0"
 
 
-def download_file(url, dest, timeout=120):
-    """Stream `url` to `dest`, writing to a sibling .part file first and
-    atomically replacing it -- a crash or network drop mid-download can
-    never leave a truncated file sitting where a caller expects a finished
-    one."""
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+class DownloadError(RuntimeError):
+    """A clip/image URL could not be fetched into a usable media file after
+    every retry -- either the network kept failing or the server handed back
+    something that isn't the video/image it should be (an HTML error page, a
+    JSON rate-limit body, a truncated stream)."""
+
+
+# Minimum plausible size for a real media file, by kind. A stock clip that
+# comes back as a few hundred bytes is an error page, not footage.
+_MIN_MEDIA_BYTES = {"video": 20_000, "image": 2_000}
+
+_IMAGE_EXTS = {"jpg", "jpeg", "png", "gif", "webp", "bmp"}
+_VIDEO_EXTS = {"mp4", "mov", "m4v", "webm", "mkv", "avi", "flv"}
+
+
+def _kind_from_ext(path):
+    ext = Path(path).suffix.lstrip(".").lower()
+    if ext in _IMAGE_EXTS:
+        return "image"
+    if ext in _VIDEO_EXTS:
+        return "video"
+    return "video"  # default: the pipeline's remote picks are overwhelmingly clips
+
+
+def _media_signature_ok(head, kind):
+    """True if `head` (first ~32 bytes of a file) starts with a byte
+    signature consistent with `kind`. Used to reject an HTML error page or a
+    JSON rate-limit body that a CDN returned with a 200 and a .mp4 URL."""
+    stripped = head.lstrip()[:16].lower()
+    if stripped.startswith((b"<!doctype", b"<html", b"<head", b"<body",
+                            b"<?xml", b"<svg", b"<script", b"<!--")):
+        return False, "the server returned an HTML page, not media"
+    if head[:1] in (b"{", b"["):
+        return False, "the server returned a JSON response, not media"
+    if kind == "image":
+        if (head[:3] == b"\xff\xd8\xff"
+                or head[:8] == b"\x89PNG\r\n\x1a\n"
+                or head[:6] in (b"GIF87a", b"GIF89a")
+                or (head[:4] == b"RIFF" and head[8:12] == b"WEBP")
+                or head[:2] == b"BM"):
+            return True, ""
+        return False, "not a recognised image format"
+    # video / generic container
+    if (head[4:8] in (b"ftyp", b"moov", b"mdat", b"free", b"skip", b"wide", b"pnot")
+            or head[:4] == b"\x1aE\xdf\xa3"                       # webm / mkv (EBML)
+            or (head[:4] == b"RIFF" and head[8:12] in (b"AVI ", b"AVIX"))
+            or head[:3] == b"FLV"
+            or head[:4] == b"\x00\x00\x01\xba"                    # MPEG program stream
+            or head[:3] == b"\x00\x00\x01"):                      # MPEG elementary stream
+        return True, ""
+    return False, "not a recognised video container"
+
+
+def media_file_looks_valid(path, kind=None):
+    """Cheap, no-subprocess check that `path` holds a real media file and not
+    a truncated download or a saved error page: it exists, clears a minimum
+    size, and starts with a byte signature for its kind. step3 runs this over
+    every already-present clip before rendering so a broken file left by an
+    earlier interrupted run is re-fetched instead of handed to ffmpeg."""
+    p = Path(path)
+    try:
+        size = p.stat().st_size
+    except OSError:
+        return False
+    kind = kind or _kind_from_ext(p)
+    if size < _MIN_MEDIA_BYTES.get(kind, 1):
+        return False
+    try:
+        with open(p, "rb") as f:
+            head = f.read(32)
+    except OSError:
+        return False
+    ok, _ = _media_signature_ok(head, kind)
+    return ok
+
+
+def download_file(url, dest, timeout=120, attempts=4, min_bytes=None):
+    """Stream `url` to `dest`, writing to a sibling .part file first and only
+    atomically replacing `dest` once the bytes are verified to be the media
+    file they should be.
+
+    Hardened for the pipeline's real failure modes:
+
+    * **Slow / flaky network.** Each attempt is retried up to `attempts`
+      times with growing backoff (and honouring a `Retry-After` header),
+      catching dropped connections, read timeouts, incomplete reads and 5xx.
+    * **Truncated download.** If the response carries a Content-Length, the
+      .part file must reach it (within 1%) before it's accepted -- a
+      connection that drops near the end no longer promotes a short file.
+    * **Error page saved as a clip.** A 200 response whose body is actually
+      an HTML page or JSON error (rate limit, expired URL, Cloudflare
+      challenge) is rejected on its byte signature and minimum size, so
+      `dest` is never created from junk that ffmpeg would later choke on.
+
+    Raises DownloadError if no attempt produced a valid file.
+    """
+    kind = _kind_from_ext(dest)
+    floor = min_bytes if min_bytes is not None else _MIN_MEDIA_BYTES.get(kind, 1)
     tmp = dest.with_suffix(".part")
-    with urllib.request.urlopen(req, timeout=timeout) as resp, open(tmp, "wb") as f:
-        while True:
-            chunk = resp.read(1 << 16)
-            if not chunk:
+    backoff = 3.0
+    last_reason = "unknown error"
+
+    class _Transient(Exception):
+        """A failure worth retrying (network drop, timeout, 5xx, truncation)
+        -- as opposed to a server that's cleanly returning the wrong thing."""
+
+    for attempt in range(1, attempts + 1):
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                status = getattr(resp, "status", None) or resp.getcode()
+                ctype = (resp.headers.get("Content-Type") or "").split(";")[0].strip().lower()
+                cl = resp.headers.get("Content-Length")
+                declared = int(cl) if cl and cl.isdigit() else None
+                written = 0
+                with open(tmp, "wb") as f:
+                    while True:
+                        chunk = resp.read(1 << 16)
+                        if not chunk:
+                            break
+                        f.write(chunk)
+                        written += len(chunk)
+
+            if status and status >= 400:
+                raise _Transient(f"HTTP {status}")
+            if declared is not None and written < declared * 0.99:
+                # A short read against a known length is almost always a
+                # dropped connection -- retry rather than give up.
+                raise _Transient(f"truncated: got {written:,} of {declared:,} bytes "
+                                 f"({written * 100 // max(declared, 1)}%)")
+
+            with open(tmp, "rb") as f:
+                head = f.read(32)
+            sig_ok, sig_why = _media_signature_ok(head, kind)
+            ctype_ok = ctype.startswith(("video/", "image/", "application/octet-stream", "binary/"))
+            if written < floor:
+                # Too small to be real footage -- an error page or an empty
+                # body. Retrying a clean 200 like this won't change anything.
+                _cleanup(tmp)
+                raise DownloadError(
+                    f"{url}\n  server returned only {written:,} bytes -- an error "
+                    f"page or empty response, not {kind}."
+                )
+            if not sig_ok and not ctype_ok:
+                _cleanup(tmp)
+                raise DownloadError(f"{url}\n  {sig_why or 'unrecognised file contents'} "
+                                    f"(Content-Type {ctype or 'unset'}).")
+
+            tmp.replace(dest)
+            return
+
+        except urllib.error.HTTPError as e:
+            _cleanup(tmp)
+            transient = e.code in (408, 429) or e.code >= 500
+            if not transient:
+                raise DownloadError(f"{url} -> HTTP {e.code}") from e
+            try:
+                retry_after = float(e.headers.get("Retry-After") or 0) or None
+            except (TypeError, ValueError):
+                retry_after = None
+            last_reason = f"HTTP {e.code}"
+            if attempt == attempts:
                 break
-            f.write(chunk)
-    tmp.replace(dest)
+            time.sleep(retry_after or backoff)
+            backoff = min(backoff * 2, 45)
+        except (urllib.error.URLError, http.client.IncompleteRead,
+                http.client.HTTPException, socket.timeout, TimeoutError,
+                ConnectionError, OSError, _Transient) as e:
+            _cleanup(tmp)
+            last_reason = str(getattr(e, "reason", None) or e) or last_reason
+            if attempt == attempts:
+                break
+            time.sleep(backoff)
+            backoff = min(backoff * 2, 45)
+
+    _cleanup(tmp)
+    raise DownloadError(f"{url}\n  gave up after {attempts} attempt(s): {last_reason}")
+
+
+def _cleanup(path):
+    try:
+        Path(path).unlink()
+    except OSError:
+        pass
 
 
 def save_json(data, path):
@@ -1183,6 +1388,59 @@ def scene_segment_durations(scenes, audio_duration):
     end = max(audio_duration, starts[-1] + scenes[-1]["duration"])
     boundaries = starts + [end]
     return [boundaries[i + 1] - boundaries[i] for i in range(len(scenes))]
+
+
+def scene_frame_plan(scenes, audio_duration, fps):
+    """Frame-exact on-screen span for every scene -- the drift-free version of
+    scene_segment_durations().
+
+    scene_segment_durations() hands back floating-point seconds. When step 3
+    then renders each scene's clip as its own segment cut with `-t <seconds>`,
+    ffmpeg rounds the emitted frame count independently for every segment, so
+    a fraction of a frame is gained or lost on nearly every scene. Those
+    errors accumulate down the concat: a real 92-scene / 12-minute render
+    came out ~6 frames (0.2s) short of the narration, and every scene
+    boundary past the first sat progressively earlier than the word it was
+    meant to land on -- the clip for scene N still on screen while scene
+    N+1's narration had already started.
+
+    This snaps every scene boundary to a whole frame instead. Boundary i is
+    at frame round(boundary_seconds[i] * fps); scene i gets exactly
+    edges[i+1] - edges[i] frames. The segments therefore tile exactly
+    edges[-1] frames with zero accumulated drift no matter how many scenes
+    there are, and edges[-1] == round(end * fps) so the video still runs the
+    full length of the narration.
+
+    Returns one dict per scene:
+        {"frames": int,                # render this many frames (-frames:v)
+         "seconds": frames / fps,      # the exact time it occupies on screen
+         "screen_start_frame": int,    # its first frame in the final video
+         "screen_start": startframe / fps}
+    `seconds` is authoritative -- use it for the render report too, so the
+    report can never disagree with the file on disk.
+    """
+    starts = [0.0] + [s["start"] for s in scenes[1:]]
+    end = max(audio_duration, starts[-1] + scenes[-1]["duration"])
+    boundary_seconds = starts + [end]
+    edges = [round(b * fps) for b in boundary_seconds]
+    # Two scene starts can land on the same frame (aggressive --pause-every
+    # splicing, short-scene merges). Keep every segment at least one frame so
+    # no picked clip silently disappears from the render.
+    for i in range(1, len(edges)):
+        if edges[i] <= edges[i - 1]:
+            edges[i] = edges[i - 1] + 1
+    plan = []
+    for i in range(len(scenes)):
+        n = edges[i + 1] - edges[i]
+        plan.append(
+            {
+                "frames": n,
+                "seconds": n / fps,
+                "screen_start_frame": edges[i],
+                "screen_start": edges[i] / fps,
+            }
+        )
+    return plan
 
 
 def natural_sorted_images(images_dir):

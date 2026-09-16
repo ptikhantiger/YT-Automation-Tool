@@ -2,7 +2,7 @@
 
 Used by step0_build_script.py's --yt-link flag: paste a video URL, get back
 the spoken words with no [00:12] markers, no speaker labels, no formatting --
-just the text, ready to drop into script.txt and hand to the Groq rewrite
+just the text, ready to drop into script.txt and hand to the Gemini rewrite
 pass.
 
 Two free methods are tried, in order:

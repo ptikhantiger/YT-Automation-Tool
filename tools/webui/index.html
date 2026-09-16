@@ -262,11 +262,11 @@ const SCRIPTS = {
     flags: [
       { name: "words", type: "number", step: 1, default: 2500, label: "Target words",
         help: "Target word count (default 2500 ~ 17 min at --rate -10%)." },
-      { name: "model", type: "select", default: "openai/gpt-oss-20b",
-        choices: ["openai/gpt-oss-20b", "openai/gpt-oss-120b"],
-        help: "Groq model. gpt-oss-20b (default) writes clean 12-18 word sentences; gpt-oss-120b is available but writes longer-winded ones. Other Groq models were tested and rejected (see groq_client.py)." },
+      { name: "model", type: "select", default: "gemini-flash-lite-latest",
+        choices: ["gemini-flash-lite-latest", "gemini-3.5-flash", "gemini-3.5-flash-lite"],
+        help: "Gemini model. gemini-flash-lite-latest (default) is fast, cheap, and no thinking-token waste; gemini-3.5-flash writes a bit better but is slower. See llm_client.py for why the -latest alias is the default." },
       { name: "api-key", type: "password", default: null,
-        help: "Groq key (else every line in groq_key.txt, or $GROQ_API_KEY)." },
+        help: "Gemini key (else every line in gemini_key.txt, or $GEMINI_API_KEY)." },
       { name: "polish", type: "flag",
         help: "Skip generation: run the naturalness pass over the existing script.txt." },
       { name: "documentary", type: "flag", label: "Documentary tone rewrite",
@@ -784,7 +784,7 @@ async function renderScreen() {
     const have = p.script;
     scr.innerHTML = `${screenHead(st)}
       ${have ? `<div class="banner ok">✓ script.txt already exists for <b>${esc(project)}</b>. Continue, or regenerate below.</div>` : ""}
-      <div class="card"><h3>Generate with AI (Groq)</h3>
+      <div class="card"><h3>Generate with AI (Gemini)</h3>
         ${SCRIPTS.step0.essential.map(n => fieldHtml("step0", SCRIPTS.step0.flags.find(f => f.name === n))).join("")}
       </div>
       ${advancedHtml("step0", SCRIPTS.step0.essential)}
