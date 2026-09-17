@@ -5,6 +5,11 @@
 # second start while one is already running does nothing.
 cd "$(dirname "$0")/.."
 
+# Pick up code updates pushed from elsewhere. --ff-only never touches local
+# commits or edits: if there is anything to reconcile it just skips, and the
+# picker's "Render on GitHub" does a proper pull --rebase before pushing.
+git pull --ff-only --quiet origin main 2>/dev/null && echo "Code up to date with GitHub." || echo "Note: could not fast-forward from GitHub (local commits or offline) -- continuing."
+
 if curl -sf -o /dev/null --max-time 2 http://127.0.0.1:8765/; then
   echo "Dashboard already running on port 8765."
   exit 0

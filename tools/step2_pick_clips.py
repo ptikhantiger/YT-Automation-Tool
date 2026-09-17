@@ -217,6 +217,16 @@ def cloud_render(project):
         return {"ok": False, "error": "git commit failed." + hint, "log": log}
 
     branch = _git("rev-parse", "--abbrev-ref", "HEAD", timeout=15).stdout.strip() or "main"
+    # Bring in anything pushed to GitHub since this checkout last pulled (a
+    # code update from the other machine), otherwise the push is rejected as
+    # non-fast-forward. A rebase can't conflict on project files -- only this
+    # machine writes them -- so if it does fail, back out and say so.
+    r, out = step("pull", "--rebase", "--autostash", "origin", branch)
+    if r.returncode != 0:
+        _git("rebase", "--abort", timeout=30)
+        return {"ok": False, "error": "git pull --rebase failed -- run `git pull --rebase origin "
+                                      f"{branch}` in a terminal, resolve what it reports, then click again.",
+                "log": log}
     r, out = step("push", "-u", "origin", branch)
     if r.returncode != 0:
         return {"ok": False, "error": "git push failed -- the commit is made, fix the push and click again.", "log": log}
