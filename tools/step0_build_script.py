@@ -65,7 +65,12 @@ from youtube_transcript import YouTubeTranscriptError, fetch_transcript_text
 REPO_ROOT = Path(__file__).parent.parent
 TOOLS_DIR = Path(__file__).parent
 PROJECTS_DIR = REPO_ROOT / "projects"
-RULEBOOK = REPO_ROOT / "News Master Prompt.txt"
+# The rulebook lives in tools/ (where it's tracked); the repo root is still
+# checked so a copy placed there keeps working.
+RULEBOOK = next(
+    (p for p in (TOOLS_DIR / "News Master Prompt.txt", REPO_ROOT / "News Master Prompt.txt") if p.exists()),
+    TOOLS_DIR / "News Master Prompt.txt",
+)
 
 # --polish rulebook. Default (news purpose) is read from this file; missing
 # it falls back to the built-in POLISH_SYSTEM below. --documentary

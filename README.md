@@ -111,9 +111,16 @@ Notes:
 - The codespace **stops itself after 30 idle minutes** and keeps its disk;
   reopen it from **Code → Codespaces**. Unused codespaces are deleted after
   30 days — anything you've pushed is safe, unpushed picks are not, so push.
-- Codespaces run on Azure IPs, which YouTube sometimes bot-checks: `--yt-link`
-  and the music picker may need the `tools/cookies.txt` workaround described
-  in [`tools/README_PIPELINE.md`](tools/README_PIPELINE.md).
+- **`--yt-link` and the music picker need YouTube cookies in a codespace.**
+  YouTube blocks anonymous requests from cloud IPs ("Sign in to confirm
+  you're not a bot"). Fix once: on your own computer, log into YouTube
+  (a secondary Google account is safer than your channel's), export cookies
+  with the "Get cookies.txt LOCALLY" extension, open the file in Notepad and
+  paste its whole text into a Codespaces Secret named `YT_COOKIES`
+  (<https://github.com/settings/codespaces>), then restart the codespace.
+  The pipeline writes it to `tools/cookies.txt` on first use. Dropping the
+  file into `tools/` by hand also works, but is lost if the codespace is
+  rebuilt.
 - Urdu captions need Jameel Noori Nastaleeq — copy the `.ttf` into `~/.fonts/`
   in the codespace (no package ships it).
 - Everything in `.devcontainer/` also works on any Linux VM (e.g. an Oracle

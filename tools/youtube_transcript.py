@@ -20,6 +20,7 @@ network right now -- fetch_transcript_text raises one clear
 YouTubeTranscriptError explaining exactly what to do next, instead of a raw
 traceback.
 """
+import os
 import re
 import tempfile
 from pathlib import Path
@@ -35,15 +36,35 @@ _PATH_ID_RE = re.compile(r"^/(?:embed|shorts|live)/([A-Za-z0-9_-]{11})")
 # YouTube, save it here, and yt-dlp will use it to look like a real browser
 # instead of an anonymous IP.
 COOKIES_FILE = Path(__file__).with_name("cookies.txt")
+# Same content as an env var, for a GitHub Codespace: a Codespaces Secret
+# named YT_COOKIES holding the exported cookies.txt text. It's materialised
+# into COOKIES_FILE on first use, so it survives the codespace being rebuilt
+# (a file dropped into tools/ would not).
+COOKIES_ENV = "YT_COOKIES"
 
 COOKIES_HELP = (
-    "Free fix: log into YouTube in your normal browser, export its cookies "
-    "with a browser extension (e.g. \"Get cookies.txt LOCALLY\" for "
-    "Chrome/Firefox), and save the file as:\n"
+    "Free fix: log into YouTube in your normal browser (a secondary Google "
+    "account is safer than your channel's), export its cookies with a browser "
+    "extension (e.g. \"Get cookies.txt LOCALLY\" for Chrome/Firefox), and save "
+    "the file as:\n"
     f"  {COOKIES_FILE}\n"
+    f"(or, in a Codespace, paste the file's text into a Codespaces Secret named "
+    f"{COOKIES_ENV} and restart the codespace).\n"
     "Then run the command again -- yt-dlp will use those cookies to fetch "
     "the transcript as a logged-in browser instead of an anonymous IP."
 )
+
+
+def cookies_file():
+    """tools/cookies.txt if present; else written from $YT_COOKIES if that is
+    set; else None."""
+    if COOKIES_FILE.exists():
+        return COOKIES_FILE
+    text = os.environ.get(COOKIES_ENV, "")
+    if text.strip():
+        COOKIES_FILE.write_text(text.strip() + "\n", encoding="utf-8")
+        return COOKIES_FILE
+    return None
 
 
 class YouTubeTranscriptError(RuntimeError):
@@ -211,7 +232,7 @@ def fetch_transcript_text(url_or_id, languages=DEFAULT_LANGUAGES):
     except YouTubeTranscriptError as e:
         errors.append(f"youtube-transcript-api: {e}")
 
-    cookiefile = COOKIES_FILE if COOKIES_FILE.exists() else None
+    cookiefile = cookies_file()
     try:
         return _fetch_via_ytdlp(video_id, languages, cookiefile=cookiefile)
     except YouTubeTranscriptError as e:
