@@ -366,6 +366,7 @@ def download_selected_clips(selections, clips_dir):
     fail are reported, and run()'s missing-file check then reopens step 2 for
     exactly those scenes.
     """
+    clips_dir.mkdir(parents=True, exist_ok=True)  # absent on a fresh checkout (CI)
     pending = []   # (dest_path, download_url)
     repaired = 0
     for sel in selections.values():

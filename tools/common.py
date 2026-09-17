@@ -1199,6 +1199,11 @@ def download_file(url, dest, timeout=120, attempts=4, min_bytes=None):
     kind = _kind_from_ext(dest)
     floor = min_bytes if min_bytes is not None else _MIN_MEDIA_BYTES.get(kind, 1)
     tmp = dest.with_suffix(".part")
+    # The clips/ folder exists on the machine that ran step 2, but not on a
+    # fresh checkout (git tracks no empty dirs) -- e.g. the Actions render
+    # runner, where every download used to fail with ENOENT and burn the
+    # retry budget on it. Creating it here makes any caller safe.
+    dest.parent.mkdir(parents=True, exist_ok=True)
     backoff = 3.0
     last_reason = "unknown error"
 
@@ -1265,6 +1270,11 @@ def download_file(url, dest, timeout=120, attempts=4, min_bytes=None):
                 break
             time.sleep(retry_after or backoff)
             backoff = min(backoff * 2, 45)
+        except (FileNotFoundError, PermissionError, IsADirectoryError, NotADirectoryError) as e:
+            # Local filesystem trouble, not the network -- retrying with
+            # backoff can't fix it and only delays the real error message.
+            _cleanup(tmp)
+            raise DownloadError(f"{url}\n  cannot write {tmp}: {e}") from e
         except (urllib.error.URLError, http.client.IncompleteRead,
                 http.client.HTTPException, socket.timeout, TimeoutError,
                 ConnectionError, OSError, _Transient) as e:
