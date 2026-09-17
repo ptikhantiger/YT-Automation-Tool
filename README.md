@@ -105,11 +105,10 @@ picker appears as its own forwarded port (8000) — the dashboard embeds it,
 or open it in its own tab.
 
 When the last scene is picked, the picker offers **☁ Render on GitHub
-(free)** instead of the 60-second local countdown (rendering on the 2-core
-codespace is slow and spends your hours; the Actions runner is free and
-unlimited). One click pushes the picks and starts the render; the page shows
-the link to the run. Download `output.mp4` from its Artifacts when it
-finishes. "Render here anyway" still works if you insist.
+(free)** — exactly as on the laptop. One click pushes the picks and starts
+the render; the page shows the link to the run. Download `output.mp4` from
+its Artifacts when it finishes. "Render here instead" would encode on the
+2-core codespace, which is slow and spends your free hours — avoid it.
 
 Notes:
 - The codespace **stops itself after 30 idle minutes** and keeps its disk;

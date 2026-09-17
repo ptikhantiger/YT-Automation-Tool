@@ -136,14 +136,18 @@ LOCAL_IMAGE_EXTS = {"jpg", "jpeg", "png", "webp"}
 STATE = {}
 
 
-def auto_render_default():
-    """Whether the picker should start step 3 by itself once every scene has
-    a clip. On this laptop: yes. Inside a GitHub Codespace (GitHub sets
-    CODESPACES=true): no -- the codespace is a 2-core machine that burns the
-    free-hours quota, and the repo's Actions workflow renders for free on a
-    4-core runner instead. The page then shows the push + render steps in
-    place of the countdown. --no-auto-render / --auto-render override."""
-    return os.environ.get("CODESPACES", "").lower() != "true"
+def auto_render_default(github_url=None):
+    """Whether the picker should start step 3 on THIS machine by itself (60 s
+    countdown) once every scene has a clip. Yes only when there's nowhere
+    else to render: no GitHub remote. When this checkout is connected to a
+    GitHub repo, the free Actions render is one click away ("Render on
+    GitHub"), so the countdown is off and rendering here is an explicit
+    choice -- in a Codespace (CODESPACES=true) doubly so, since that 2-core
+    machine burns the free-hours quota. --auto-render / --no-auto-render
+    override either way."""
+    if os.environ.get("CODESPACES", "").lower() == "true":
+        return False
+    return not github_url
 
 
 # ---- "Render on GitHub" -----------------------------------------------------
@@ -3222,12 +3226,12 @@ PAGE_HTML = r"""<!doctype html>
         with default settings -- you don't need to do anything.</span>
       <span id="arcancelled" style="display:none"> Auto-render is paused. Click
         <b>Render now</b> whenever you're ready.</span>
-      <span id="arcloud" style="display:none"> You're in a Codespace, so rendering
-        here is off (it's slow and spends your free hours). Click <b>Render on
-        GitHub</b>: your picks are pushed and GitHub Actions renders the video for
-        free -- download <b>output.mp4</b> from that run's Artifacts box when it's
-        done. (Same thing by hand: <code id="arcloudcmd"></code>)
-        <b>Render here anyway</b> still works if you really want to.</span>
+      <span id="arcloud" style="display:none"> Click <b>Render on GitHub</b>: your
+        picks are pushed and GitHub Actions renders the video for free on its own
+        servers -- download <b>output.mp4</b> from that run's Artifacts box when it's
+        done. Nothing is encoded on this machine. (Same thing by hand:
+        <code id="arcloudcmd"></code>)
+        <b>Render here instead</b> encodes on this machine, right now.</span>
       <div style="margin-top:12px; display:flex; gap:10px; flex-wrap:wrap;">
         <button id="arcloudbtn" class="primary" style="display:none"
                 title="Commit + push this project's picks; GitHub Actions renders it for free.">&#9729; Render on GitHub (free)</button>
@@ -4304,7 +4308,7 @@ function maybeOfferRender() {
     $('arcloud').style.display = '';
     $('arcloudcmd').textContent =
       `git add projects/${projectPath} && git commit -m "render: ${projectPath}" && git push`;
-    $('arnow').textContent = 'Render here anyway';
+    $('arnow').textContent = 'Render here instead';
     $('arnow').className = '';
     $('arnow').onclick = startRender;
     box.style.display = 'block';
@@ -4649,6 +4653,8 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
             orientation = "portrait"
 
     STATE.update({
+        "auto_render": (auto_render_default(github_web_url()) if auto_render is None
+                        else bool(auto_render)),
         "project": project,
         "scenes": scenes,
         "clips_dir": clips_dir,
@@ -4672,7 +4678,6 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         "rtl": caption_style(Path(project).parts[0])["rtl"],
         "lang": Path(project).parts[0] if Path(project).parts else "en",
         "finish_requested": False,
-        "auto_render": auto_render_default() if auto_render is None else bool(auto_render),
         "github_url": github_web_url(),
         "cloud_render_busy": False,
         "highlight": set(highlight or []),
@@ -4749,10 +4754,12 @@ def main():
     parser.add_argument("--no-browser", action="store_true", help="Don't auto-open the browser")
     ar = parser.add_mutually_exclusive_group()
     ar.add_argument("--no-auto-render", dest="auto_render", action="store_false", default=None,
-                    help="Don't start step 3 automatically when the last scene is picked; show the "
-                    "push + GitHub Actions render steps instead. Default inside a GitHub Codespace.")
+                    help="Don't start step 3 on this machine automatically when the last scene is "
+                    "picked; offer 'Render on GitHub' instead. Default whenever this checkout has a "
+                    "GitHub remote, and always inside a Codespace.")
     ar.add_argument("--auto-render", dest="auto_render", action="store_true",
-                    help="Start step 3 here automatically (the default outside Codespaces).")
+                    help="Start step 3 here automatically after a 60 s countdown (the default only "
+                    "when there is no GitHub remote).")
     args = parser.parse_args()
 
     render_now = run(

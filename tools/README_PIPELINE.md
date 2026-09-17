@@ -200,7 +200,7 @@ Flags you'll actually reach for:
 | `--crf 18` | 3 | Higher quality, bigger file. `--crf 23` for smaller. |
 | `--preset slow` | 3 | Better compression, slower render. |
 | `--non-interactive` | 3 | Never open the step 2 picker for missing/unplayable clips; exit with the scene list instead. For CI/headless servers — the GitHub Actions render workflow uses it (see the root README). |
-| `--no-auto-render` | 2 | Don't start step 3 locally when the last scene is picked; offer **Render on GitHub** (commit as `render: <project>` + push → Actions renders) instead. Default inside a GitHub Codespace. `--auto-render` forces the local countdown. |
+| `--no-auto-render` / `--auto-render` | 2 | Whether the picker starts step 3 **on this machine** (60 s countdown) once the last scene is picked. Default is off whenever the checkout has a GitHub remote (and always in a Codespace) — the picker offers **☁ Render on GitHub (free)** instead, which commits the picks as `render: <project>`, pushes, and lets Actions render. `--auto-render` restores the local countdown. |
 
 Rules of thumb:
 
