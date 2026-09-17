@@ -95,14 +95,11 @@ for a couple of videos a week. Only your GitHub login can reach its ports.
 
 **Every video**
 
-```bash
-python launch.py --no-browser
-```
-
-Open the **Dashboard** port from the *Ports* tab (a toast also pops up). The
-dashboard works exactly as it does locally; when a run reaches step 2 the
-picker appears as its own forwarded port (8000) — the dashboard embeds it,
-or open it in its own tab.
+The dashboard starts by itself when the codespace starts. Open the
+**Dashboard** port from the *Ports* tab (a toast also pops up). It works
+exactly as it does locally; when a run reaches step 2 the picker appears as
+its own forwarded port (8000) — the dashboard embeds it, or open it in its
+own tab. (Not running? `bash .devcontainer/start.sh` in the terminal.)
 
 When the last scene is picked, the picker offers **☁ Render on GitHub
 (free)** — exactly as on the laptop. One click pushes the picks and starts

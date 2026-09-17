@@ -22,13 +22,14 @@ mkdir -p ~/.fonts
 cat <<'EOF'
 
 ============================================================
-  Ready. Start the dashboard with:
+  Ready. The dashboard starts by itself every time this
+  codespace starts -- open the "Dashboard" port from the PORTS
+  tab (or the toast that pops up). If it isn't running:
 
-      python launch.py --no-browser
+      bash .devcontainer/start.sh
 
-  then open the "Dashboard" port from the PORTS tab (or the
-  toast that pops up). Step 2's picker appears as its own
-  forwarded port (8000) when a run reaches it.
+  Step 2's picker appears as its own forwarded port (8000)
+  when a run reaches it.
 
   API keys: add them once as Codespaces Secrets at
   https://github.com/settings/codespaces  (PEXELS_API_KEY,

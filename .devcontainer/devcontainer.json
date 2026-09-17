@@ -13,6 +13,9 @@
   },
 
   "postCreateCommand": "bash .devcontainer/setup.sh",
+  // Every start: bring the dashboard up in the background (see start.sh), so
+  // opening the codespace is all it takes -- port 8765 pops up by itself.
+  "postStartCommand": "bash .devcontainer/start.sh",
 
   "forwardPorts": [8765, 8000, 8010],
   "portsAttributes": {
