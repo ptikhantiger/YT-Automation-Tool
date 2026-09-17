@@ -59,7 +59,8 @@ the encode — free, unlimited minutes on a public repo, no API keys needed:
 
 1. Write the script, run step 1, pick clips in step 2 as usual.
 2. When every scene has a clip, click **☁ Render on GitHub (free)** in the
-   picker. It commits the project's picks as `render: en/myvideo`, pushes, and
+   bar at the top of the picker (it shows "N to go" until then; **⟳ Sync
+   code** next to it pulls the latest fixes from GitHub). It commits the project's picks as `render: en/myvideo`, pushes, and
    shows you the link to the Actions run. (By hand, the same thing is
    `git add projects/en/myvideo && git commit -m "render: en/myvideo" && git push`
    — that commit message is the trigger.)

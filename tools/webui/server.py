@@ -57,6 +57,34 @@ SCRIPTS = {
     "step3": TOOLS_DIR / "step3_render_video.py",
 }
 
+def _git(*args, timeout=180):
+    return subprocess.run(["git", *args], cwd=REPO_ROOT, capture_output=True, text=True,
+                          encoding="utf-8", errors="replace", timeout=timeout)
+
+
+def _git_sync():
+    """git pull --rebase from origin; report whether code files changed (a
+    running server keeps the old Python until restarted)."""
+    try:
+        before = _git("rev-parse", "HEAD", timeout=15).stdout.strip()
+        branch = _git("rev-parse", "--abbrev-ref", "HEAD", timeout=15).stdout.strip() or "main"
+        r = _git("pull", "--rebase", "--autostash", "origin", branch)
+        out = (r.stdout + r.stderr).strip()
+        if r.returncode != 0:
+            _git("rebase", "--abort", timeout=30)
+            return {"ok": False, "error": "git pull --rebase failed.", "log": out}
+        after = _git("rev-parse", "HEAD", timeout=15).stdout.strip()
+        changed = []
+        if before != after:
+            changed = [l for l in _git("diff", "--name-only", before, after, timeout=30).stdout.splitlines() if l.strip()]
+        return {"ok": True, "updated": before != after, "changed": changed,
+                "code_changed": any(f.endswith((".py", ".html")) for f in changed), "log": out}
+    except subprocess.TimeoutExpired:
+        return {"ok": False, "error": "git took too long (network?).", "log": ""}
+    except OSError as e:
+        return {"ok": False, "error": f"git isn't available here: {e}", "log": ""}
+
+
 # run_id -> {"proc": Popen, "queue": Queue, "returncode": int|None}
 RUNS = {}
 RUNS_LOCK = threading.Lock()
@@ -296,6 +324,10 @@ class Handler(BaseHTTPRequestHandler):
             body = self._read_json()
             stopped = _stop_process(body.get("run_id", ""))
             self._json({"stopped": stopped})
+        elif self.path == "/api/git-sync":
+            # Pull the latest code from GitHub (same as the picker's Sync
+            # button). Plain git; nothing is executed from the pulled files.
+            self._json(_git_sync())
         else:
             self.send_error(404, "Not found")
 

@@ -183,6 +183,27 @@ def github_web_url():
     return f"https://github.com/{m.group(1)}/{m.group(2)}" if m else None
 
 
+def git_sync():
+    """Pull the latest code from GitHub (rebase, keeping any local commits
+    such as an unpushed render commit). Returns what changed so the page can
+    say whether a restart is needed to load new Python."""
+    log = []
+    before = _git("rev-parse", "HEAD", timeout=15).stdout.strip()
+    branch = _git("rev-parse", "--abbrev-ref", "HEAD", timeout=15).stdout.strip() or "main"
+    r = _git("pull", "--rebase", "--autostash", "origin", branch)
+    out = (r.stdout + r.stderr).strip()
+    log.append(f"$ git pull --rebase --autostash origin {branch}" + (f"\n{out}" if out else ""))
+    if r.returncode != 0:
+        _git("rebase", "--abort", timeout=30)
+        return {"ok": False, "error": "git pull --rebase failed.", "log": log}
+    after = _git("rev-parse", "HEAD", timeout=15).stdout.strip()
+    changed = []
+    if before and after and before != after:
+        changed = [l for l in _git("diff", "--name-only", before, after, timeout=30).stdout.splitlines() if l.strip()]
+    code_changed = any(f.endswith((".py", ".html")) for f in changed)
+    return {"ok": True, "updated": before != after, "changed": changed, "code_changed": code_changed, "log": log}
+
+
 def cloud_render(project):
     """git add projects/<project>; commit "render: <project>"; push. Returns
     what the browser shows: the Actions URL on success, else the failing
@@ -2775,6 +2796,16 @@ class Handler(BaseHTTPRequestHandler):
                 reviewed = sum(1 for v in selections.values() if v.get("reviewed"))
             return self._send_json({"ok": True, "reviewed": reviewed, "total": len(STATE["scenes"])})
 
+        if route == "/api/git-sync":
+            try:
+                result = git_sync()
+            except subprocess.TimeoutExpired:
+                result = {"ok": False, "error": "git took too long (network?).", "log": []}
+            except OSError as e:
+                result = {"ok": False, "error": f"git isn't available here: {e}", "log": []}
+            self._send_json(result)
+            return
+
         if route == "/api/cloud-render":
             # Commit + push with the "render: <project>" trigger message. Not
             # under STATE["lock"] (a push can take a minute and picking may
@@ -3004,6 +3035,16 @@ PAGE_HTML = r"""<!doctype html>
   .card button { margin:0 10px 10px; }
 
   #status { margin:14px 0; color:var(--dim); font-size:13px; min-height:20px; }
+  /* Sticky GitHub bar at the top of the work area: render + sync are always
+     one click away instead of at the bottom of a long page. */
+  #cloudbar { position:sticky; top:-24px; z-index:5; margin:-24px -28px 18px; padding:10px 28px;
+              background:var(--panel); border-bottom:1px solid var(--line);
+              display:none; align-items:center; gap:10px; flex-wrap:wrap; font-size:13px; }
+  #cloudbar .cbtext { color:var(--dim); }
+  #cloudbar .cbtext b { color:var(--text); }
+  #cloudbar .grow { flex:1; }
+  #cloudbarstatus { flex-basis:100%; display:none; white-space:pre-wrap; font-size:12.5px; }
+  @media (max-width: 900px) { #cloudbar { top:-12px; margin:-12px -12px 14px; padding:8px 12px; } }
   #status.err { color:#ff8f8f; }
   #pager { display:flex; gap:10px; align-items:center; margin:22px 0 10px; }
   #done { margin-top:30px; padding:16px; background:var(--panel); border:1px solid var(--ok);
@@ -3146,6 +3187,13 @@ PAGE_HTML = r"""<!doctype html>
     <div id="scenelist"></div>
   </div>
   <div id="main">
+    <div id="cloudbar">
+      <span class="cbtext" id="cloudbartext"></span>
+      <span class="grow"></span>
+      <button id="syncbtn" title="Pull the latest code from GitHub into this machine (git pull --rebase)">&#8635; Sync code</button>
+      <button id="cloudbtn" class="primary" title="Commit + push this project's picks; GitHub Actions renders the video for free.">&#9729; Render on GitHub (free)</button>
+      <div id="cloudbarstatus"></div>
+    </div>
     <div class="meta" id="scenemeta">Loading...</div>
     <div id="semanticbrief" style="display:none"></div>
     <div id="scenescript"></div>
@@ -3886,6 +3934,7 @@ async function boot() {
 }
 
 function renderSidebar() {
+  updateCloudBar();
   $('scenelist').innerHTML = scenes.map((s,i) => {
     const done = !!selections[s.index];
     const flagged = highlight.has(s.index);
@@ -4255,23 +4304,23 @@ async function startRender() {
   $('finished').scrollIntoView({ behavior: 'smooth' });
 }
 
-async function cloudRender() {
+async function cloudRender(statusEl) {
   // Stop a running local countdown first -- the whole point is NOT to render here.
   if (autoRenderTimer) clearTimeout(autoRenderTimer);
   if (autoRenderTick) clearInterval(autoRenderTick);
   autoRenderTimer = autoRenderTick = null;
   $('arcountdown').style.display = 'none';
-  const st = $('arcloudstatus');
+  const st = (statusEl && statusEl.id) ? statusEl : $('arcloudstatus');
   st.style.display = ''; st.style.color = '';
   st.textContent = 'Committing and pushing your picks to GitHub...';
-  $('arcloudbtn').disabled = true;
+  $('arcloudbtn').disabled = true; $('cloudbtn').disabled = true;
   let d;
   try {
     d = await (await fetch('/api/cloud-render', { method: 'POST' })).json();
   } catch (e) {
     d = { ok: false, error: 'Lost contact with the picker server: ' + e, log: [] };
   }
-  $('arcloudbtn').disabled = false;
+  $('arcloudbtn').disabled = false; updateCloudBar();
   if (d.ok) {
     st.innerHTML = `<b>Pushed (${esc(d.commit)} on ${esc(d.branch)}) -- GitHub is rendering now.</b><br>` +
       `Watch it, and download <b>output.mp4</b> from the run's Artifacts box when it finishes ` +
@@ -4279,12 +4328,60 @@ async function cloudRender() {
       `<a href="${esc(d.actions_url)}" target="_blank" rel="noopener">${esc(d.actions_url)}</a><br><br>` +
       `You can close this tab. To render again after changing picks, just click the button again.`;
     $('arcloudbtn').textContent = '\u2601 Render on GitHub again';
+    $('cloudbtn').textContent = '\u2601 Render on GitHub again';
   } else {
     st.style.color = 'var(--warn, #e66)';
     st.textContent = 'Could not hand off to GitHub: ' + (d.error || 'unknown error') +
       ((d.log && d.log.length) ? '\n\n' + d.log.join('\n\n') : '');
   }
 }
+
+// Top bar: always visible when this checkout has a GitHub remote. The render
+// button only arms once every scene has a clip; until then it says how many
+// are left, so the state of the project is readable from the top of the page.
+function updateCloudBar() {
+  const bar = $('cloudbar');
+  if (!cloudRenderAvailable || !scenes.length) { bar.style.display = 'none'; return; }
+  bar.style.display = 'flex';
+  const picked = scenes.filter(s => !!selections[s.index]).length;
+  const left = scenes.length - picked;
+  $('cloudbartext').innerHTML = left === 0
+    ? `<b>All ${scenes.length} scenes have a clip.</b> Render for free on GitHub Actions -- nothing is encoded on this machine.`
+    : `<b>${picked} / ${scenes.length}</b> scenes have a clip -- <b>${left}</b> to go before rendering.`;
+  const btn = $('cloudbtn');
+  btn.disabled = left !== 0;
+  btn.title = left === 0
+    ? "Commit + push this project's picks; GitHub Actions renders the video for free."
+    : `${left} scene(s) still need a clip.`;
+}
+
+async function syncCode() {
+  const st = $('cloudbarstatus');
+  st.style.display = ''; st.style.color = '';
+  st.textContent = 'Pulling the latest code from GitHub...';
+  $('syncbtn').disabled = true;
+  let d;
+  try {
+    d = await (await fetch('/api/git-sync', { method: 'POST' })).json();
+  } catch (e) {
+    d = { ok: false, error: 'Lost contact with the picker server: ' + e, log: [] };
+  }
+  $('syncbtn').disabled = false;
+  if (!d.ok) {
+    st.style.color = 'var(--warn, #e66)';
+    st.textContent = 'Sync failed: ' + (d.error || 'unknown error') +
+      ((d.log && d.log.length) ? '\n\n' + d.log.join('\n\n') : '');
+    return;
+  }
+  if (!d.updated) { st.textContent = 'Already up to date with GitHub.'; return; }
+  st.innerHTML = `<b>Updated:</b> ${d.changed.length} file(s) pulled.` +
+    (d.code_changed
+      ? ' Code changed -- to load it, stop this picker and start Step 2 again (the dashboard\'s Stop, then Run). Your picks are saved.'
+      : ' No code changes, nothing to restart.');
+}
+
+$('cloudbtn').onclick = () => cloudRender($('cloudbarstatus'));
+$('syncbtn').onclick = syncCode;
 
 function cancelAutoRender() {
   if (autoRenderTimer) clearTimeout(autoRenderTimer);

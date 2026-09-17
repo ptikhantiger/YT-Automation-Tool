@@ -186,7 +186,10 @@
   #livebar.busy .dot { background: var(--accent-2); animation: pulse 1.2s infinite; }
   #livebar .grow { flex: 1; }
   #livebar button { padding: 5px 12px; font-size: 12px; }
-  #themetoggle { margin-left: auto; background: var(--panel-2); border: 1px solid var(--border);
+  #syncbtn { margin-left: auto; background: var(--panel-2); border: 1px solid var(--border);
+             color: var(--text); border-radius: 8px; padding: 4px 10px; font-size: 12.5px; cursor: pointer; }
+  #syncbtn:disabled { opacity: .6; cursor: default; }
+  #themetoggle { margin-left: 8px; background: var(--panel-2); border: 1px solid var(--border);
     color: var(--text); padding: 6px 14px; border-radius: 999px; cursor: pointer; font-size: 12.5px; }
   #themetoggle:hover { border-color: var(--accent); }
   #livetext { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -237,6 +240,7 @@
     <div class="brand">
       <h1>🎬 Video Pipeline</h1>
       <span class="proj" id="projpill"></span>
+      <button id="syncbtn" title="Pull the latest code from GitHub (git pull --rebase). If code changed, restart the dashboard to load it.">&#8635; Sync code</button>
       <button id="themetoggle" title="Switch between light and dark mode"></button>
     </div>
     <div id="stepper"></div>
@@ -479,6 +483,20 @@ async function loadProjects() {
   try { knownProjects = (await (await fetch("/api/projects")).json()).projects || []; }
   catch { knownProjects = []; }
 }
+
+async function syncCode() {
+  const b = $("syncbtn"); b.disabled = true; toast("Pulling the latest code from GitHub...");
+  let d;
+  try { d = await (await fetch("/api/git-sync", { method: "POST" })).json(); }
+  catch (e) { d = { ok: false, error: String(e) }; }
+  b.disabled = false;
+  if (!d.ok) { toast("Sync failed: " + (d.error || "unknown error") + (d.log ? " -- " + d.log.split("\n").pop() : "")); return; }
+  if (!d.updated) { toast("Already up to date with GitHub."); return; }
+  toast(`Updated ${d.changed.length} file(s).` + (d.code_changed
+    ? " Code changed: in a Codespace run  bash .devcontainer/start.sh  after stopping this dashboard (pkill -f webui/server.py), or restart the codespace, to load it."
+    : " No code changes."));
+}
+document.addEventListener("DOMContentLoaded", () => { const b = $("syncbtn"); if (b) b.onclick = syncCode; });
 
 function toast(msg) {
   const t = $("toast");
