@@ -1,0 +1,867 @@
+[
+  {
+    "text": "Every",
+    "start": 0.111125,
+    "end": 0.361125
+  },
+  {
+    "text": "drop",
+    "start": 0.375,
+    "end": 0.722208
+  },
+  {
+    "text": "of",
+    "start": 0.736125,
+    "end": 0.902791
+  },
+  {
+    "text": "rain",
+    "start": 0.916666,
+    "end": 1.263874
+  },
+  {
+    "text": "that",
+    "start": 1.277791,
+    "end": 1.416666
+  },
+  {
+    "text": "falls",
+    "start": 1.430541,
+    "end": 1.861082
+  },
+  {
+    "text": "on",
+    "start": 1.875,
+    "end": 2.069458
+  },
+  {
+    "text": "land",
+    "start": 2.083333,
+    "end": 2.555541
+  },
+  {
+    "text": "begins",
+    "start": 2.625,
+    "end": 3.013875
+  },
+  {
+    "text": "a",
+    "start": 3.027791,
+    "end": 3.097249
+  },
+  {
+    "text": "slow",
+    "start": 3.111125,
+    "end": 3.555583
+  },
+  {
+    "text": "journey",
+    "start": 3.569458,
+    "end": 4.069458
+  },
+  {
+    "text": "back",
+    "start": 4.083333,
+    "end": 4.458333
+  },
+  {
+    "text": "to",
+    "start": 4.472208,
+    "end": 4.569416
+  },
+  {
+    "text": "the",
+    "start": 4.583333,
+    "end": 4.680541
+  },
+  {
+    "text": "sea",
+    "start": 4.694458,
+    "end": 5.124999
+  },
+  {
+    "text": "As",
+    "start": 5.583333,
+    "end": 5.749999
+  },
+  {
+    "text": "rainwater",
+    "start": 5.763875,
+    "end": 6.361083
+  },
+  {
+    "text": "runs",
+    "start": 6.375,
+    "end": 6.666666
+  },
+  {
+    "text": "over",
+    "start": 6.680541,
+    "end": 6.986082
+  },
+  {
+    "text": "rocks",
+    "start": 7.0,
+    "end": 7.513875
+  },
+  {
+    "text": "and",
+    "start": 7.638875,
+    "end": 7.861083
+  },
+  {
+    "text": "through",
+    "start": 7.875,
+    "end": 8.111125
+  },
+  {
+    "text": "soil",
+    "start": 8.125,
+    "end": 8.666666
+  },
+  {
+    "text": "it",
+    "start": 9.069458,
+    "end": 9.138916
+  },
+  {
+    "text": "dissolves",
+    "start": 9.152791,
+    "end": 9.694457
+  },
+  {
+    "text": "tiny",
+    "start": 9.708333,
+    "end": 10.180541
+  },
+  {
+    "text": "amounts",
+    "start": 10.194458,
+    "end": 10.555583
+  },
+  {
+    "text": "of",
+    "start": 10.569458,
+    "end": 10.652791
+  },
+  {
+    "text": "minerals",
+    "start": 10.666666,
+    "end": 11.347207
+  },
+  {
+    "text": "mostly",
+    "start": 11.597208,
+    "end": 11.999999
+  },
+  {
+    "text": "sodium",
+    "start": 12.013875,
+    "end": 12.52775
+  },
+  {
+    "text": "and",
+    "start": 12.75,
+    "end": 12.819458
+  },
+  {
+    "text": "chloride",
+    "start": 12.833333,
+    "end": 13.458333
+  },
+  {
+    "text": "Rivers",
+    "start": 13.916666,
+    "end": 14.305541
+  },
+  {
+    "text": "carry",
+    "start": 14.319458,
+    "end": 14.763916
+  },
+  {
+    "text": "those",
+    "start": 14.777791,
+    "end": 15.041666
+  },
+  {
+    "text": "minerals",
+    "start": 15.055541,
+    "end": 15.666666
+  },
+  {
+    "text": "downstream",
+    "start": 15.680541,
+    "end": 16.430541
+  },
+  {
+    "text": "mile",
+    "start": 16.833333,
+    "end": 17.111124
+  },
+  {
+    "text": "after",
+    "start": 17.125,
+    "end": 17.430541
+  },
+  {
+    "text": "mile",
+    "start": 17.444458,
+    "end": 17.819458
+  },
+  {
+    "text": "until",
+    "start": 18.263875,
+    "end": 18.5
+  },
+  {
+    "text": "they",
+    "start": 18.513875,
+    "end": 18.65275
+  },
+  {
+    "text": "reach",
+    "start": 18.666666,
+    "end": 18.958332
+  },
+  {
+    "text": "the",
+    "start": 18.972208,
+    "end": 19.111083
+  },
+  {
+    "text": "ocean",
+    "start": 19.125,
+    "end": 19.541666
+  },
+  {
+    "text": "The",
+    "start": 20.0,
+    "end": 20.111125
+  },
+  {
+    "text": "rivers",
+    "start": 20.125,
+    "end": 20.541666
+  },
+  {
+    "text": "themselves",
+    "start": 20.555541,
+    "end": 21.277749
+  },
+  {
+    "text": "taste",
+    "start": 21.291666,
+    "end": 21.680541
+  },
+  {
+    "text": "fresh",
+    "start": 21.694458,
+    "end": 22.388916
+  },
+  {
+    "text": "because",
+    "start": 22.652791,
+    "end": 22.999999
+  },
+  {
+    "text": "the",
+    "start": 23.013875,
+    "end": 23.111083
+  },
+  {
+    "text": "amount",
+    "start": 23.125,
+    "end": 23.444458
+  },
+  {
+    "text": "of",
+    "start": 23.458333,
+    "end": 23.555541
+  },
+  {
+    "text": "salt",
+    "start": 23.569458,
+    "end": 23.986124
+  },
+  {
+    "text": "in",
+    "start": 24.069458,
+    "end": 24.291666
+  },
+  {
+    "text": "any",
+    "start": 24.444458,
+    "end": 24.694458
+  },
+  {
+    "text": "single",
+    "start": 24.708333,
+    "end": 25.083333
+  },
+  {
+    "text": "drop",
+    "start": 25.097208,
+    "end": 25.541666
+  },
+  {
+    "text": "is",
+    "start": 25.805541,
+    "end": 25.944416
+  },
+  {
+    "text": "almost",
+    "start": 25.958333,
+    "end": 26.402791
+  },
+  {
+    "text": "nothing",
+    "start": 26.416666,
+    "end": 26.833332
+  },
+  {
+    "text": "But",
+    "start": 27.291666,
+    "end": 27.374999
+  },
+  {
+    "text": "the",
+    "start": 27.388875,
+    "end": 27.513875
+  },
+  {
+    "text": "ocean",
+    "start": 27.527791,
+    "end": 27.888916
+  },
+  {
+    "text": "has",
+    "start": 27.902791,
+    "end": 28.041666
+  },
+  {
+    "text": "been",
+    "start": 28.055541,
+    "end": 28.208332
+  },
+  {
+    "text": "collecting",
+    "start": 28.222208,
+    "end": 28.763874
+  },
+  {
+    "text": "those",
+    "start": 28.777791,
+    "end": 29.027791
+  },
+  {
+    "text": "drops",
+    "start": 29.041666,
+    "end": 29.555541
+  },
+  {
+    "text": "for",
+    "start": 29.569458,
+    "end": 29.777791
+  },
+  {
+    "text": "billions",
+    "start": 29.791666,
+    "end": 30.305541
+  },
+  {
+    "text": "of",
+    "start": 30.319458,
+    "end": 30.388916
+  },
+  {
+    "text": "years",
+    "start": 30.402791,
+    "end": 30.958332
+  },
+  {
+    "text": "Water",
+    "start": 31.416666,
+    "end": 31.749999
+  },
+  {
+    "text": "leaves",
+    "start": 31.763875,
+    "end": 32.055541
+  },
+  {
+    "text": "the",
+    "start": 32.069458,
+    "end": 32.180583
+  },
+  {
+    "text": "sea",
+    "start": 32.194458,
+    "end": 32.611124
+  },
+  {
+    "text": "by",
+    "start": 32.625,
+    "end": 32.888875
+  },
+  {
+    "text": "evaporation",
+    "start": 32.902791,
+    "end": 33.736124
+  },
+  {
+    "text": "It",
+    "start": 34.194458,
+    "end": 34.361124
+  },
+  {
+    "text": "rises",
+    "start": 34.375,
+    "end": 34.847208
+  },
+  {
+    "text": "as",
+    "start": 34.861125,
+    "end": 35.027791
+  },
+  {
+    "text": "vapor",
+    "start": 35.041666,
+    "end": 35.569457
+  },
+  {
+    "text": "forms",
+    "start": 35.861125,
+    "end": 36.22225
+  },
+  {
+    "text": "clouds",
+    "start": 36.236125,
+    "end": 36.916666
+  },
+  {
+    "text": "and",
+    "start": 37.166666,
+    "end": 37.263874
+  },
+  {
+    "text": "falls",
+    "start": 37.277791,
+    "end": 37.680582
+  },
+  {
+    "text": "again",
+    "start": 37.694458,
+    "end": 38.055583
+  },
+  {
+    "text": "as",
+    "start": 38.069458,
+    "end": 38.222249
+  },
+  {
+    "text": "rain",
+    "start": 38.236125,
+    "end": 38.652791
+  },
+  {
+    "text": "The",
+    "start": 39.125,
+    "end": 39.180541
+  },
+  {
+    "text": "salt",
+    "start": 39.194458,
+    "end": 39.555583
+  },
+  {
+    "text": "cannot",
+    "start": 39.569458,
+    "end": 39.916666
+  },
+  {
+    "text": "evaporate",
+    "start": 39.930541,
+    "end": 40.583332
+  },
+  {
+    "text": "so",
+    "start": 40.875,
+    "end": 41.069458
+  },
+  {
+    "text": "it",
+    "start": 41.083333,
+    "end": 41.152791
+  },
+  {
+    "text": "stays",
+    "start": 41.166666,
+    "end": 41.472207
+  },
+  {
+    "text": "behind",
+    "start": 41.486125,
+    "end": 42.027791
+  },
+  {
+    "text": "Deep",
+    "start": 42.513875,
+    "end": 42.736083
+  },
+  {
+    "text": "on",
+    "start": 42.75,
+    "end": 42.875
+  },
+  {
+    "text": "the",
+    "start": 42.888875,
+    "end": 43.013875
+  },
+  {
+    "text": "ocean",
+    "start": 43.027791,
+    "end": 43.458332
+  },
+  {
+    "text": "floor",
+    "start": 43.472208,
+    "end": 43.944416
+  },
+  {
+    "text": "volcanic",
+    "start": 44.208333,
+    "end": 44.791666
+  },
+  {
+    "text": "vents",
+    "start": 44.805541,
+    "end": 45.222207
+  },
+  {
+    "text": "add",
+    "start": 45.416666,
+    "end": 45.694457
+  },
+  {
+    "text": "even",
+    "start": 45.875,
+    "end": 46.152791
+  },
+  {
+    "text": "more",
+    "start": 46.166666,
+    "end": 46.458332
+  },
+  {
+    "text": "minerals",
+    "start": 46.472208,
+    "end": 47.277749
+  },
+  {
+    "text": "pumping",
+    "start": 47.527791,
+    "end": 47.902791
+  },
+  {
+    "text": "hot",
+    "start": 47.916666,
+    "end": 48.361124
+  },
+  {
+    "text": "mineral-rich",
+    "start": 48.694458,
+    "end": 49.361124
+  },
+  {
+    "text": "water",
+    "start": 49.375,
+    "end": 49.847208
+  },
+  {
+    "text": "into",
+    "start": 49.944458,
+    "end": 50.138916
+  },
+  {
+    "text": "the",
+    "start": 50.152791,
+    "end": 50.249999
+  },
+  {
+    "text": "dark",
+    "start": 50.263875,
+    "end": 50.680541
+  },
+  {
+    "text": "Over",
+    "start": 51.138875,
+    "end": 51.333333
+  },
+  {
+    "text": "time",
+    "start": 51.347208,
+    "end": 51.777749
+  },
+  {
+    "text": "the",
+    "start": 52.055541,
+    "end": 52.138874
+  },
+  {
+    "text": "balance",
+    "start": 52.152791,
+    "end": 52.541666
+  },
+  {
+    "text": "settled",
+    "start": 52.555541,
+    "end": 52.986082
+  },
+  {
+    "text": "Today",
+    "start": 53.444458,
+    "end": 53.777791
+  },
+  {
+    "text": "seawater",
+    "start": 54.055541,
+    "end": 54.638874
+  },
+  {
+    "text": "is",
+    "start": 54.652791,
+    "end": 54.791666
+  },
+  {
+    "text": "about",
+    "start": 54.805541,
+    "end": 55.097207
+  },
+  {
+    "text": "three",
+    "start": 55.111125,
+    "end": 55.486125
+  },
+  {
+    "text": "and",
+    "start": 55.5,
+    "end": 55.597208
+  },
+  {
+    "text": "a",
+    "start": 55.611125,
+    "end": 55.6527909
+  },
+  {
+    "text": "half",
+    "start": 55.666666,
+    "end": 55.986124
+  },
+  {
+    "text": "percent",
+    "start": 56.0,
+    "end": 56.375
+  },
+  {
+    "text": "salt",
+    "start": 56.388875,
+    "end": 56.805541
+  },
+  {
+    "text": "If",
+    "start": 57.263875,
+    "end": 57.388875
+  },
+  {
+    "text": "you",
+    "start": 57.402791,
+    "end": 57.513916
+  },
+  {
+    "text": "spread",
+    "start": 57.527791,
+    "end": 57.916666
+  },
+  {
+    "text": "all",
+    "start": 57.930541,
+    "end": 58.152749
+  },
+  {
+    "text": "of",
+    "start": 58.166666,
+    "end": 58.263874
+  },
+  {
+    "text": "it",
+    "start": 58.277791,
+    "end": 58.347249
+  },
+  {
+    "text": "across",
+    "start": 58.361125,
+    "end": 58.763916
+  },
+  {
+    "text": "the",
+    "start": 58.777791,
+    "end": 58.874999
+  },
+  {
+    "text": "land",
+    "start": 58.888875,
+    "end": 59.305541
+  },
+  {
+    "text": "it",
+    "start": 59.736125,
+    "end": 59.791666
+  },
+  {
+    "text": "would",
+    "start": 59.805541,
+    "end": 59.930541
+  },
+  {
+    "text": "form",
+    "start": 59.944458,
+    "end": 60.208333
+  },
+  {
+    "text": "a",
+    "start": 60.222208,
+    "end": 60.291666
+  },
+  {
+    "text": "layer",
+    "start": 60.305541,
+    "end": 60.722207
+  },
+  {
+    "text": "more",
+    "start": 60.736125,
+    "end": 61.111125
+  },
+  {
+    "text": "than",
+    "start": 61.125,
+    "end": 61.319458
+  },
+  {
+    "text": "one",
+    "start": 61.333333,
+    "end": 61.486124
+  },
+  {
+    "text": "hundred",
+    "start": 61.5,
+    "end": 61.861125
+  },
+  {
+    "text": "meters",
+    "start": 61.875,
+    "end": 62.263875
+  },
+  {
+    "text": "thick",
+    "start": 62.277791,
+    "end": 62.749999
+  },
+  {
+    "text": "So",
+    "start": 63.208333,
+    "end": 63.347208
+  },
+  {
+    "text": "the",
+    "start": 63.361125,
+    "end": 63.5
+  },
+  {
+    "text": "ocean",
+    "start": 63.513875,
+    "end": 63.916666
+  },
+  {
+    "text": "is",
+    "start": 63.930541,
+    "end": 64.055541
+  },
+  {
+    "text": "salty",
+    "start": 64.069458,
+    "end": 64.611124
+  },
+  {
+    "text": "for",
+    "start": 64.625,
+    "end": 64.805541
+  },
+  {
+    "text": "a",
+    "start": 64.819458,
+    "end": 64.874999
+  },
+  {
+    "text": "simple",
+    "start": 64.888875,
+    "end": 65.27775
+  },
+  {
+    "text": "reason",
+    "start": 65.291666,
+    "end": 65.666666
+  },
+  {
+    "text": "Everything",
+    "start": 66.125,
+    "end": 66.583333
+  },
+  {
+    "text": "flows",
+    "start": 66.597208,
+    "end": 66.972208
+  },
+  {
+    "text": "into",
+    "start": 66.986125,
+    "end": 67.375
+  },
+  {
+    "text": "it",
+    "start": 67.388875,
+    "end": 67.52775
+  },
+  {
+    "text": "and",
+    "start": 67.944458,
+    "end": 68.097249
+  },
+  {
+    "text": "only",
+    "start": 68.111125,
+    "end": 68.416666
+  },
+  {
+    "text": "the",
+    "start": 68.430541,
+    "end": 68.555541
+  },
+  {
+    "text": "water",
+    "start": 68.569458,
+    "end": 69.124999
+  },
+  {
+    "text": "ever",
+    "start": 69.263875,
+    "end": 69.486083
+  },
+  {
+    "text": "leaves",
+    "start": 69.5,
+    "end": 70.083333
+  }
+]

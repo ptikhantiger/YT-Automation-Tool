@@ -1,0 +1,1684 @@
+{
+  "meta": {
+    "mode": "semantic",
+    "sentences": 14,
+    "scenes": 11,
+    "llm_scenes": 11,
+    "multi_shot_scenes": 4,
+    "llm_failures": []
+  },
+  "words": [
+    {
+      "i": 0,
+      "text": "Every",
+      "start": 0.111,
+      "end": 0.361,
+      "scene": 1
+    },
+    {
+      "i": 1,
+      "text": "drop",
+      "start": 0.375,
+      "end": 0.722,
+      "scene": 1
+    },
+    {
+      "i": 2,
+      "text": "of",
+      "start": 0.736,
+      "end": 0.903,
+      "scene": 1
+    },
+    {
+      "i": 3,
+      "text": "rain",
+      "start": 0.917,
+      "end": 1.264,
+      "scene": 1
+    },
+    {
+      "i": 4,
+      "text": "that",
+      "start": 1.278,
+      "end": 1.417,
+      "scene": 1
+    },
+    {
+      "i": 5,
+      "text": "falls",
+      "start": 1.431,
+      "end": 1.861,
+      "scene": 1
+    },
+    {
+      "i": 6,
+      "text": "on",
+      "start": 1.875,
+      "end": 2.069,
+      "scene": 1
+    },
+    {
+      "i": 7,
+      "text": "land",
+      "start": 2.083,
+      "end": 2.556,
+      "scene": 1
+    },
+    {
+      "i": 8,
+      "text": "begins",
+      "start": 2.625,
+      "end": 3.014,
+      "scene": 1
+    },
+    {
+      "i": 9,
+      "text": "a",
+      "start": 3.028,
+      "end": 3.097,
+      "scene": 1
+    },
+    {
+      "i": 10,
+      "text": "slow",
+      "start": 3.111,
+      "end": 3.556,
+      "scene": 1
+    },
+    {
+      "i": 11,
+      "text": "journey",
+      "start": 3.569,
+      "end": 4.069,
+      "scene": 1
+    },
+    {
+      "i": 12,
+      "text": "back",
+      "start": 4.083,
+      "end": 4.458,
+      "scene": 1
+    },
+    {
+      "i": 13,
+      "text": "to",
+      "start": 4.472,
+      "end": 4.569,
+      "scene": 1
+    },
+    {
+      "i": 14,
+      "text": "the",
+      "start": 4.583,
+      "end": 4.681,
+      "scene": 1
+    },
+    {
+      "i": 15,
+      "text": "sea",
+      "start": 4.694,
+      "end": 5.125,
+      "scene": 1
+    },
+    {
+      "i": 16,
+      "text": "As",
+      "start": 5.583,
+      "end": 5.75,
+      "scene": 2
+    },
+    {
+      "i": 17,
+      "text": "rainwater",
+      "start": 5.764,
+      "end": 6.361,
+      "scene": 2
+    },
+    {
+      "i": 18,
+      "text": "runs",
+      "start": 6.375,
+      "end": 6.667,
+      "scene": 2
+    },
+    {
+      "i": 19,
+      "text": "over",
+      "start": 6.681,
+      "end": 6.986,
+      "scene": 2
+    },
+    {
+      "i": 20,
+      "text": "rocks",
+      "start": 7.0,
+      "end": 7.514,
+      "scene": 2
+    },
+    {
+      "i": 21,
+      "text": "and",
+      "start": 7.639,
+      "end": 7.861,
+      "scene": 2
+    },
+    {
+      "i": 22,
+      "text": "through",
+      "start": 7.875,
+      "end": 8.111,
+      "scene": 2
+    },
+    {
+      "i": 23,
+      "text": "soil",
+      "start": 8.125,
+      "end": 8.667,
+      "scene": 2
+    },
+    {
+      "i": 24,
+      "text": "it",
+      "start": 9.069,
+      "end": 9.139,
+      "scene": 2
+    },
+    {
+      "i": 25,
+      "text": "dissolves",
+      "start": 9.153,
+      "end": 9.694,
+      "scene": 2
+    },
+    {
+      "i": 26,
+      "text": "tiny",
+      "start": 9.708,
+      "end": 10.181,
+      "scene": 2
+    },
+    {
+      "i": 27,
+      "text": "amounts",
+      "start": 10.194,
+      "end": 10.556,
+      "scene": 2
+    },
+    {
+      "i": 28,
+      "text": "of",
+      "start": 10.569,
+      "end": 10.653,
+      "scene": 2
+    },
+    {
+      "i": 29,
+      "text": "minerals",
+      "start": 10.667,
+      "end": 11.347,
+      "scene": 2
+    },
+    {
+      "i": 30,
+      "text": "mostly",
+      "start": 11.597,
+      "end": 12.0,
+      "scene": 2
+    },
+    {
+      "i": 31,
+      "text": "sodium",
+      "start": 12.014,
+      "end": 12.528,
+      "scene": 2
+    },
+    {
+      "i": 32,
+      "text": "and",
+      "start": 12.75,
+      "end": 12.819,
+      "scene": 2
+    },
+    {
+      "i": 33,
+      "text": "chloride",
+      "start": 12.833,
+      "end": 13.458,
+      "scene": 2
+    },
+    {
+      "i": 34,
+      "text": "Rivers",
+      "start": 13.917,
+      "end": 14.306,
+      "scene": 3
+    },
+    {
+      "i": 35,
+      "text": "carry",
+      "start": 14.319,
+      "end": 14.764,
+      "scene": 3
+    },
+    {
+      "i": 36,
+      "text": "those",
+      "start": 14.778,
+      "end": 15.042,
+      "scene": 3
+    },
+    {
+      "i": 37,
+      "text": "minerals",
+      "start": 15.056,
+      "end": 15.667,
+      "scene": 3
+    },
+    {
+      "i": 38,
+      "text": "downstream",
+      "start": 15.681,
+      "end": 16.431,
+      "scene": 3
+    },
+    {
+      "i": 39,
+      "text": "mile",
+      "start": 16.833,
+      "end": 17.111,
+      "scene": 3
+    },
+    {
+      "i": 40,
+      "text": "after",
+      "start": 17.125,
+      "end": 17.431,
+      "scene": 3
+    },
+    {
+      "i": 41,
+      "text": "mile",
+      "start": 17.444,
+      "end": 17.819,
+      "scene": 3
+    },
+    {
+      "i": 42,
+      "text": "until",
+      "start": 18.264,
+      "end": 18.5,
+      "scene": 3
+    },
+    {
+      "i": 43,
+      "text": "they",
+      "start": 18.514,
+      "end": 18.653,
+      "scene": 3
+    },
+    {
+      "i": 44,
+      "text": "reach",
+      "start": 18.667,
+      "end": 18.958,
+      "scene": 3
+    },
+    {
+      "i": 45,
+      "text": "the",
+      "start": 18.972,
+      "end": 19.111,
+      "scene": 3
+    },
+    {
+      "i": 46,
+      "text": "ocean",
+      "start": 19.125,
+      "end": 19.542,
+      "scene": 3
+    },
+    {
+      "i": 47,
+      "text": "The",
+      "start": 20.0,
+      "end": 20.111,
+      "scene": 4
+    },
+    {
+      "i": 48,
+      "text": "rivers",
+      "start": 20.125,
+      "end": 20.542,
+      "scene": 4
+    },
+    {
+      "i": 49,
+      "text": "themselves",
+      "start": 20.556,
+      "end": 21.278,
+      "scene": 4
+    },
+    {
+      "i": 50,
+      "text": "taste",
+      "start": 21.292,
+      "end": 21.681,
+      "scene": 4
+    },
+    {
+      "i": 51,
+      "text": "fresh",
+      "start": 21.694,
+      "end": 22.389,
+      "scene": 4
+    },
+    {
+      "i": 52,
+      "text": "because",
+      "start": 22.653,
+      "end": 23.0,
+      "scene": 4
+    },
+    {
+      "i": 53,
+      "text": "the",
+      "start": 23.014,
+      "end": 23.111,
+      "scene": 4
+    },
+    {
+      "i": 54,
+      "text": "amount",
+      "start": 23.125,
+      "end": 23.444,
+      "scene": 4
+    },
+    {
+      "i": 55,
+      "text": "of",
+      "start": 23.458,
+      "end": 23.556,
+      "scene": 4
+    },
+    {
+      "i": 56,
+      "text": "salt",
+      "start": 23.569,
+      "end": 23.986,
+      "scene": 4
+    },
+    {
+      "i": 57,
+      "text": "in",
+      "start": 24.069,
+      "end": 24.292,
+      "scene": 4
+    },
+    {
+      "i": 58,
+      "text": "any",
+      "start": 24.444,
+      "end": 24.694,
+      "scene": 4
+    },
+    {
+      "i": 59,
+      "text": "single",
+      "start": 24.708,
+      "end": 25.083,
+      "scene": 4
+    },
+    {
+      "i": 60,
+      "text": "drop",
+      "start": 25.097,
+      "end": 25.542,
+      "scene": 4
+    },
+    {
+      "i": 61,
+      "text": "is",
+      "start": 25.806,
+      "end": 25.944,
+      "scene": 4
+    },
+    {
+      "i": 62,
+      "text": "almost",
+      "start": 25.958,
+      "end": 26.403,
+      "scene": 4
+    },
+    {
+      "i": 63,
+      "text": "nothing",
+      "start": 26.417,
+      "end": 26.833,
+      "scene": 4
+    },
+    {
+      "i": 64,
+      "text": "But",
+      "start": 27.292,
+      "end": 27.375,
+      "scene": 5
+    },
+    {
+      "i": 65,
+      "text": "the",
+      "start": 27.389,
+      "end": 27.514,
+      "scene": 5
+    },
+    {
+      "i": 66,
+      "text": "ocean",
+      "start": 27.528,
+      "end": 27.889,
+      "scene": 5
+    },
+    {
+      "i": 67,
+      "text": "has",
+      "start": 27.903,
+      "end": 28.042,
+      "scene": 5
+    },
+    {
+      "i": 68,
+      "text": "been",
+      "start": 28.056,
+      "end": 28.208,
+      "scene": 5
+    },
+    {
+      "i": 69,
+      "text": "collecting",
+      "start": 28.222,
+      "end": 28.764,
+      "scene": 5
+    },
+    {
+      "i": 70,
+      "text": "those",
+      "start": 28.778,
+      "end": 29.028,
+      "scene": 5
+    },
+    {
+      "i": 71,
+      "text": "drops",
+      "start": 29.042,
+      "end": 29.556,
+      "scene": 5
+    },
+    {
+      "i": 72,
+      "text": "for",
+      "start": 29.569,
+      "end": 29.778,
+      "scene": 5
+    },
+    {
+      "i": 73,
+      "text": "billions",
+      "start": 29.792,
+      "end": 30.306,
+      "scene": 5
+    },
+    {
+      "i": 74,
+      "text": "of",
+      "start": 30.319,
+      "end": 30.389,
+      "scene": 5
+    },
+    {
+      "i": 75,
+      "text": "years",
+      "start": 30.403,
+      "end": 30.958,
+      "scene": 5
+    },
+    {
+      "i": 76,
+      "text": "Water",
+      "start": 31.417,
+      "end": 31.75,
+      "scene": 5
+    },
+    {
+      "i": 77,
+      "text": "leaves",
+      "start": 31.764,
+      "end": 32.056,
+      "scene": 5
+    },
+    {
+      "i": 78,
+      "text": "the",
+      "start": 32.069,
+      "end": 32.181,
+      "scene": 5
+    },
+    {
+      "i": 79,
+      "text": "sea",
+      "start": 32.194,
+      "end": 32.611,
+      "scene": 5
+    },
+    {
+      "i": 80,
+      "text": "by",
+      "start": 32.625,
+      "end": 32.889,
+      "scene": 5
+    },
+    {
+      "i": 81,
+      "text": "evaporation",
+      "start": 32.903,
+      "end": 33.736,
+      "scene": 5
+    },
+    {
+      "i": 82,
+      "text": "It",
+      "start": 34.194,
+      "end": 34.361,
+      "scene": 6
+    },
+    {
+      "i": 83,
+      "text": "rises",
+      "start": 34.375,
+      "end": 34.847,
+      "scene": 6
+    },
+    {
+      "i": 84,
+      "text": "as",
+      "start": 34.861,
+      "end": 35.028,
+      "scene": 6
+    },
+    {
+      "i": 85,
+      "text": "vapor",
+      "start": 35.042,
+      "end": 35.569,
+      "scene": 6
+    },
+    {
+      "i": 86,
+      "text": "forms",
+      "start": 35.861,
+      "end": 36.222,
+      "scene": 6
+    },
+    {
+      "i": 87,
+      "text": "clouds",
+      "start": 36.236,
+      "end": 36.917,
+      "scene": 6
+    },
+    {
+      "i": 88,
+      "text": "and",
+      "start": 37.167,
+      "end": 37.264,
+      "scene": 6
+    },
+    {
+      "i": 89,
+      "text": "falls",
+      "start": 37.278,
+      "end": 37.681,
+      "scene": 6
+    },
+    {
+      "i": 90,
+      "text": "again",
+      "start": 37.694,
+      "end": 38.056,
+      "scene": 6
+    },
+    {
+      "i": 91,
+      "text": "as",
+      "start": 38.069,
+      "end": 38.222,
+      "scene": 6
+    },
+    {
+      "i": 92,
+      "text": "rain",
+      "start": 38.236,
+      "end": 38.653,
+      "scene": 6
+    },
+    {
+      "i": 93,
+      "text": "The",
+      "start": 39.125,
+      "end": 39.181,
+      "scene": 7
+    },
+    {
+      "i": 94,
+      "text": "salt",
+      "start": 39.194,
+      "end": 39.556,
+      "scene": 7
+    },
+    {
+      "i": 95,
+      "text": "cannot",
+      "start": 39.569,
+      "end": 39.917,
+      "scene": 7
+    },
+    {
+      "i": 96,
+      "text": "evaporate",
+      "start": 39.931,
+      "end": 40.583,
+      "scene": 7
+    },
+    {
+      "i": 97,
+      "text": "so",
+      "start": 40.875,
+      "end": 41.069,
+      "scene": 7
+    },
+    {
+      "i": 98,
+      "text": "it",
+      "start": 41.083,
+      "end": 41.153,
+      "scene": 7
+    },
+    {
+      "i": 99,
+      "text": "stays",
+      "start": 41.167,
+      "end": 41.472,
+      "scene": 7
+    },
+    {
+      "i": 100,
+      "text": "behind",
+      "start": 41.486,
+      "end": 42.028,
+      "scene": 7
+    },
+    {
+      "i": 101,
+      "text": "Deep",
+      "start": 42.514,
+      "end": 42.736,
+      "scene": 8
+    },
+    {
+      "i": 102,
+      "text": "on",
+      "start": 42.75,
+      "end": 42.875,
+      "scene": 8
+    },
+    {
+      "i": 103,
+      "text": "the",
+      "start": 42.889,
+      "end": 43.014,
+      "scene": 8
+    },
+    {
+      "i": 104,
+      "text": "ocean",
+      "start": 43.028,
+      "end": 43.458,
+      "scene": 8
+    },
+    {
+      "i": 105,
+      "text": "floor",
+      "start": 43.472,
+      "end": 43.944,
+      "scene": 8
+    },
+    {
+      "i": 106,
+      "text": "volcanic",
+      "start": 44.208,
+      "end": 44.792,
+      "scene": 8
+    },
+    {
+      "i": 107,
+      "text": "vents",
+      "start": 44.806,
+      "end": 45.222,
+      "scene": 8
+    },
+    {
+      "i": 108,
+      "text": "add",
+      "start": 45.417,
+      "end": 45.694,
+      "scene": 8
+    },
+    {
+      "i": 109,
+      "text": "even",
+      "start": 45.875,
+      "end": 46.153,
+      "scene": 8
+    },
+    {
+      "i": 110,
+      "text": "more",
+      "start": 46.167,
+      "end": 46.458,
+      "scene": 8
+    },
+    {
+      "i": 111,
+      "text": "minerals",
+      "start": 46.472,
+      "end": 47.278,
+      "scene": 8
+    },
+    {
+      "i": 112,
+      "text": "pumping",
+      "start": 47.528,
+      "end": 47.903,
+      "scene": 8
+    },
+    {
+      "i": 113,
+      "text": "hot",
+      "start": 47.917,
+      "end": 48.361,
+      "scene": 8
+    },
+    {
+      "i": 114,
+      "text": "mineral-rich",
+      "start": 48.694,
+      "end": 49.361,
+      "scene": 8
+    },
+    {
+      "i": 115,
+      "text": "water",
+      "start": 49.375,
+      "end": 49.847,
+      "scene": 8
+    },
+    {
+      "i": 116,
+      "text": "into",
+      "start": 49.944,
+      "end": 50.139,
+      "scene": 8
+    },
+    {
+      "i": 117,
+      "text": "the",
+      "start": 50.153,
+      "end": 50.25,
+      "scene": 8
+    },
+    {
+      "i": 118,
+      "text": "dark",
+      "start": 50.264,
+      "end": 50.681,
+      "scene": 8
+    },
+    {
+      "i": 119,
+      "text": "Over",
+      "start": 51.139,
+      "end": 51.333,
+      "scene": 8
+    },
+    {
+      "i": 120,
+      "text": "time",
+      "start": 51.347,
+      "end": 51.778,
+      "scene": 8
+    },
+    {
+      "i": 121,
+      "text": "the",
+      "start": 52.056,
+      "end": 52.139,
+      "scene": 8
+    },
+    {
+      "i": 122,
+      "text": "balance",
+      "start": 52.153,
+      "end": 52.542,
+      "scene": 8
+    },
+    {
+      "i": 123,
+      "text": "settled",
+      "start": 52.556,
+      "end": 52.986,
+      "scene": 8
+    },
+    {
+      "i": 124,
+      "text": "Today",
+      "start": 53.444,
+      "end": 53.778,
+      "scene": 9
+    },
+    {
+      "i": 125,
+      "text": "seawater",
+      "start": 54.056,
+      "end": 54.639,
+      "scene": 9
+    },
+    {
+      "i": 126,
+      "text": "is",
+      "start": 54.653,
+      "end": 54.792,
+      "scene": 9
+    },
+    {
+      "i": 127,
+      "text": "about",
+      "start": 54.806,
+      "end": 55.097,
+      "scene": 9
+    },
+    {
+      "i": 128,
+      "text": "three",
+      "start": 55.111,
+      "end": 55.486,
+      "scene": 9
+    },
+    {
+      "i": 129,
+      "text": "and",
+      "start": 55.5,
+      "end": 55.597,
+      "scene": 9
+    },
+    {
+      "i": 130,
+      "text": "a",
+      "start": 55.611,
+      "end": 55.653,
+      "scene": 9
+    },
+    {
+      "i": 131,
+      "text": "half",
+      "start": 55.667,
+      "end": 55.986,
+      "scene": 9
+    },
+    {
+      "i": 132,
+      "text": "percent",
+      "start": 56.0,
+      "end": 56.375,
+      "scene": 9
+    },
+    {
+      "i": 133,
+      "text": "salt",
+      "start": 56.389,
+      "end": 56.806,
+      "scene": 9
+    },
+    {
+      "i": 134,
+      "text": "If",
+      "start": 57.264,
+      "end": 57.389,
+      "scene": 10
+    },
+    {
+      "i": 135,
+      "text": "you",
+      "start": 57.403,
+      "end": 57.514,
+      "scene": 10
+    },
+    {
+      "i": 136,
+      "text": "spread",
+      "start": 57.528,
+      "end": 57.917,
+      "scene": 10
+    },
+    {
+      "i": 137,
+      "text": "all",
+      "start": 57.931,
+      "end": 58.153,
+      "scene": 10
+    },
+    {
+      "i": 138,
+      "text": "of",
+      "start": 58.167,
+      "end": 58.264,
+      "scene": 10
+    },
+    {
+      "i": 139,
+      "text": "it",
+      "start": 58.278,
+      "end": 58.347,
+      "scene": 10
+    },
+    {
+      "i": 140,
+      "text": "across",
+      "start": 58.361,
+      "end": 58.764,
+      "scene": 10
+    },
+    {
+      "i": 141,
+      "text": "the",
+      "start": 58.778,
+      "end": 58.875,
+      "scene": 10
+    },
+    {
+      "i": 142,
+      "text": "land",
+      "start": 58.889,
+      "end": 59.306,
+      "scene": 10
+    },
+    {
+      "i": 143,
+      "text": "it",
+      "start": 59.736,
+      "end": 59.792,
+      "scene": 10
+    },
+    {
+      "i": 144,
+      "text": "would",
+      "start": 59.806,
+      "end": 59.931,
+      "scene": 10
+    },
+    {
+      "i": 145,
+      "text": "form",
+      "start": 59.944,
+      "end": 60.208,
+      "scene": 10
+    },
+    {
+      "i": 146,
+      "text": "a",
+      "start": 60.222,
+      "end": 60.292,
+      "scene": 10
+    },
+    {
+      "i": 147,
+      "text": "layer",
+      "start": 60.306,
+      "end": 60.722,
+      "scene": 10
+    },
+    {
+      "i": 148,
+      "text": "more",
+      "start": 60.736,
+      "end": 61.111,
+      "scene": 10
+    },
+    {
+      "i": 149,
+      "text": "than",
+      "start": 61.125,
+      "end": 61.319,
+      "scene": 10
+    },
+    {
+      "i": 150,
+      "text": "one",
+      "start": 61.333,
+      "end": 61.486,
+      "scene": 10
+    },
+    {
+      "i": 151,
+      "text": "hundred",
+      "start": 61.5,
+      "end": 61.861,
+      "scene": 10
+    },
+    {
+      "i": 152,
+      "text": "meters",
+      "start": 61.875,
+      "end": 62.264,
+      "scene": 10
+    },
+    {
+      "i": 153,
+      "text": "thick",
+      "start": 62.278,
+      "end": 62.75,
+      "scene": 10
+    },
+    {
+      "i": 154,
+      "text": "So",
+      "start": 63.208,
+      "end": 63.347,
+      "scene": 11
+    },
+    {
+      "i": 155,
+      "text": "the",
+      "start": 63.361,
+      "end": 63.5,
+      "scene": 11
+    },
+    {
+      "i": 156,
+      "text": "ocean",
+      "start": 63.514,
+      "end": 63.917,
+      "scene": 11
+    },
+    {
+      "i": 157,
+      "text": "is",
+      "start": 63.931,
+      "end": 64.056,
+      "scene": 11
+    },
+    {
+      "i": 158,
+      "text": "salty",
+      "start": 64.069,
+      "end": 64.611,
+      "scene": 11
+    },
+    {
+      "i": 159,
+      "text": "for",
+      "start": 64.625,
+      "end": 64.806,
+      "scene": 11
+    },
+    {
+      "i": 160,
+      "text": "a",
+      "start": 64.819,
+      "end": 64.875,
+      "scene": 11
+    },
+    {
+      "i": 161,
+      "text": "simple",
+      "start": 64.889,
+      "end": 65.278,
+      "scene": 11
+    },
+    {
+      "i": 162,
+      "text": "reason",
+      "start": 65.292,
+      "end": 65.667,
+      "scene": 11
+    },
+    {
+      "i": 163,
+      "text": "Everything",
+      "start": 66.125,
+      "end": 66.583,
+      "scene": 11
+    },
+    {
+      "i": 164,
+      "text": "flows",
+      "start": 66.597,
+      "end": 66.972,
+      "scene": 11
+    },
+    {
+      "i": 165,
+      "text": "into",
+      "start": 66.986,
+      "end": 67.375,
+      "scene": 11
+    },
+    {
+      "i": 166,
+      "text": "it",
+      "start": 67.389,
+      "end": 67.528,
+      "scene": 11
+    },
+    {
+      "i": 167,
+      "text": "and",
+      "start": 67.944,
+      "end": 68.097,
+      "scene": 11
+    },
+    {
+      "i": 168,
+      "text": "only",
+      "start": 68.111,
+      "end": 68.417,
+      "scene": 11
+    },
+    {
+      "i": 169,
+      "text": "the",
+      "start": 68.431,
+      "end": 68.556,
+      "scene": 11
+    },
+    {
+      "i": 170,
+      "text": "water",
+      "start": 68.569,
+      "end": 69.125,
+      "scene": 11
+    },
+    {
+      "i": 171,
+      "text": "ever",
+      "start": 69.264,
+      "end": 69.486,
+      "scene": 11
+    },
+    {
+      "i": 172,
+      "text": "leaves",
+      "start": 69.5,
+      "end": 70.083,
+      "scene": 11
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "segment_id": "segment_001",
+      "index": 1,
+      "text": "Every drop of rain that falls on land begins a slow journey back to the sea.",
+      "word_from": 0,
+      "word_to": 15,
+      "start": 0.111,
+      "end": 5.125,
+      "duration": 5.014,
+      "semantic": {
+        "meaning": "Rain falls on land beginning its journey back to the sea.",
+        "subject": "Raindrops",
+        "action": "falling",
+        "object": "rain",
+        "location": "land",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "raindrops falling",
+        "land landscape"
+      ],
+      "visual_exclusions": [
+        "ocean",
+        "indoor scenes"
+      ],
+      "queries": [
+        "raindrops falling on land",
+        "rain falling on earth"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_002",
+      "segment_id": "segment_002",
+      "index": 2,
+      "text": "As rainwater runs over rocks and through soil, it dissolves tiny amounts of minerals, mostly sodium and chloride.",
+      "word_from": 16,
+      "word_to": 33,
+      "start": 5.583,
+      "end": 13.458,
+      "duration": 7.875,
+      "semantic": {
+        "meaning": "Rainwater runs over rocks and through soil, dissolving minerals like sodium and chloride.",
+        "subject": "Water",
+        "action": "flowing",
+        "object": "rocks and soil",
+        "location": "riverbed",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "water flowing over rocks",
+        "soil and stones"
+      ],
+      "visual_exclusions": [
+        "city street",
+        "ocean"
+      ],
+      "queries": [
+        "water flowing over rocks",
+        "rainwater running through soil"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_003",
+      "segment_id": "segment_003",
+      "index": 3,
+      "text": "Rivers carry those minerals downstream, mile after mile, until they reach the ocean.",
+      "word_from": 34,
+      "word_to": 46,
+      "start": 13.917,
+      "end": 19.542,
+      "duration": 5.625,
+      "semantic": {
+        "meaning": "Rivers carry minerals downstream toward the ocean.",
+        "subject": "Rivers",
+        "action": "flowing",
+        "object": "water and minerals",
+        "location": "river",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "river flowing downstream",
+        "winding river"
+      ],
+      "visual_exclusions": [
+        "desert",
+        "snow"
+      ],
+      "queries": [
+        "river flowing downstream",
+        "water moving down river"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_004",
+      "segment_id": "segment_004",
+      "index": 4,
+      "text": "The rivers themselves taste fresh, because the amount of salt in any single drop is almost nothing.",
+      "word_from": 47,
+      "word_to": 63,
+      "start": 20.0,
+      "end": 26.833,
+      "duration": 6.833,
+      "semantic": {
+        "meaning": "Rivers taste fresh because the salt content in single drops is minimal.",
+        "subject": "River water",
+        "action": "flowing",
+        "object": "fresh water",
+        "location": "river stream",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "clear fresh river water",
+        "stream flowing"
+      ],
+      "visual_exclusions": [
+        "ocean waves",
+        "salt flats"
+      ],
+      "queries": [
+        "fresh river water stream",
+        "clear river flow"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_005",
+      "segment_id": "segment_005",
+      "index": 5,
+      "text": "But the ocean has been collecting those drops for billions of years. Water leaves the sea by evaporation.",
+      "word_from": 64,
+      "word_to": 81,
+      "start": 27.292,
+      "end": 33.736,
+      "duration": 6.444,
+      "semantic": {
+        "meaning": "The ocean has accumulated these drops over billions of years.",
+        "subject": "Ocean",
+        "action": "moving",
+        "object": "water",
+        "location": "ocean",
+        "time": "geological time",
+        "entities": []
+      },
+      "visual_requirements": [
+        "vast ocean view",
+        "waves",
+        "sun shining on ocean",
+        "steam or vapor rising from water"
+      ],
+      "visual_exclusions": [
+        "swimming pool",
+        "lake",
+        "snow",
+        "night"
+      ],
+      "queries": [
+        "vast ocean aerial view",
+        "deep blue sea waves",
+        "water evaporation from ocean"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_005_shot_1",
+          "text": "But the ocean has been collecting those drops for billions of years.",
+          "word_from": 64,
+          "word_to": 75,
+          "start": 27.292,
+          "end": 30.958,
+          "duration": 3.667,
+          "query": "vast ocean aerial view"
+        },
+        {
+          "shot_id": "scene_005_shot_2",
+          "text": "Water leaves the sea by evaporation.",
+          "word_from": 76,
+          "word_to": 81,
+          "start": 31.417,
+          "end": 33.736,
+          "duration": 2.319,
+          "query": "water evaporation from ocean"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_006",
+      "segment_id": "segment_006",
+      "index": 6,
+      "text": "It rises as vapor, forms clouds, and falls again as rain.",
+      "word_from": 82,
+      "word_to": 92,
+      "start": 34.194,
+      "end": 38.653,
+      "duration": 4.458,
+      "semantic": {
+        "meaning": "Water rises as vapor, forms clouds, and falls again as rain.",
+        "subject": "Vapor and clouds",
+        "action": "rising and raining",
+        "object": "clouds and rain",
+        "location": "sky",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "clouds forming",
+        "rain falling from sky"
+      ],
+      "visual_exclusions": [
+        "dry desert",
+        "clear blue sky"
+      ],
+      "queries": [
+        "clouds forming and rain falling",
+        "vapor rising into clouds"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_006_shot_1",
+          "text": "It rises as vapor forms clouds",
+          "word_from": 82,
+          "word_to": 87,
+          "start": 34.194,
+          "end": 36.917,
+          "duration": 2.722,
+          "query": "clouds forming in sky"
+        },
+        {
+          "shot_id": "scene_006_shot_2",
+          "text": "and falls again as rain",
+          "word_from": 88,
+          "word_to": 92,
+          "start": 37.167,
+          "end": 38.653,
+          "duration": 1.486,
+          "query": "heavy rain falling"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_007",
+      "segment_id": "segment_007",
+      "index": 7,
+      "text": "The salt cannot evaporate, so it stays behind.",
+      "word_from": 93,
+      "word_to": 100,
+      "start": 39.125,
+      "end": 42.028,
+      "duration": 2.903,
+      "semantic": {
+        "meaning": "Salt cannot evaporate and stays behind in the sea.",
+        "subject": "Salt crystals",
+        "action": "remaining",
+        "object": "salt residue",
+        "location": "shoreline",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "salt crystals",
+        "sea water"
+      ],
+      "visual_exclusions": [
+        "freshwater lake"
+      ],
+      "queries": [
+        "salt crust on beach",
+        "sea salt crystals close up"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_008",
+      "segment_id": "segment_008",
+      "index": 8,
+      "text": "Deep on the ocean floor, volcanic vents add even more minerals, pumping hot, mineral-rich water into the dark. Over time, the balance settled.",
+      "word_from": 101,
+      "word_to": 123,
+      "start": 42.514,
+      "end": 52.986,
+      "duration": 10.472,
+      "semantic": {
+        "meaning": "Deep on the ocean floor, volcanic vents add minerals, pumping hot water into the dark.",
+        "subject": "Volcanic vents",
+        "action": "pumping",
+        "object": "mineral-rich water",
+        "location": "ocean floor",
+        "time": "underwater",
+        "entities": []
+      },
+      "visual_requirements": [
+        "hydrothermal vent",
+        "underwater volcanic activity",
+        "dark ocean depths",
+        "calm ocean waves",
+        "aerial sea view"
+      ],
+      "visual_exclusions": [
+        "sunlight",
+        "coral reef",
+        "storm",
+        "tsunami"
+      ],
+      "queries": [
+        "hydrothermal vent ocean floor",
+        "deep sea volcanic vent",
+        "calm ocean surface aerial"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_008_shot_1",
+          "text": "Deep on the ocean floor, volcanic vents add even more minerals, pumping hot, mineral-rich water into the dark.",
+          "word_from": 101,
+          "word_to": 118,
+          "start": 42.514,
+          "end": 50.681,
+          "duration": 8.167,
+          "query": "hydrothermal vent ocean floor"
+        },
+        {
+          "shot_id": "scene_008_shot_2",
+          "text": "Over time, the balance settled.",
+          "word_from": 119,
+          "word_to": 123,
+          "start": 51.139,
+          "end": 52.986,
+          "duration": 1.847,
+          "query": "calm ocean surface aerial"
+        }
+      ]
+    },
+    {
+      "scene_id": "scene_009",
+      "segment_id": "segment_009",
+      "index": 9,
+      "text": "Today, seawater is about three and a half percent salt.",
+      "word_from": 124,
+      "word_to": 133,
+      "start": 53.444,
+      "end": 56.806,
+      "duration": 3.361,
+      "semantic": {
+        "meaning": "Today, seawater is about three and a half percent salt.",
+        "subject": "Seawater",
+        "action": "splashing",
+        "object": "saltwater",
+        "location": "ocean shore",
+        "time": "today",
+        "entities": []
+      },
+      "visual_requirements": [
+        "ocean waves crashing",
+        "sea water"
+      ],
+      "visual_exclusions": [
+        "river",
+        "lake"
+      ],
+      "queries": [
+        "seawater splashing on rocks",
+        "ocean waves crashing"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_010",
+      "segment_id": "segment_010",
+      "index": 10,
+      "text": "If you spread all of it across the land, it would form a layer more than one hundred meters thick.",
+      "word_from": 134,
+      "word_to": 153,
+      "start": 57.264,
+      "end": 62.75,
+      "duration": 5.486,
+      "semantic": {
+        "meaning": "If you spread all of it across the land, it would form a layer over one hundred meters thick.",
+        "subject": "Salt layer",
+        "action": "covering",
+        "object": "land",
+        "location": "earth landscape",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "aerial land landscape",
+        "wide terrain"
+      ],
+      "visual_exclusions": [
+        "ocean water",
+        "swimming pool"
+      ],
+      "queries": [
+        "aerial view of land",
+        "vast earth landscape"
+      ],
+      "shots": []
+    },
+    {
+      "scene_id": "scene_011",
+      "segment_id": "segment_011",
+      "index": 11,
+      "text": "So the ocean is salty for a simple reason. Everything flows into it, and only the water ever leaves.",
+      "word_from": 154,
+      "word_to": 172,
+      "start": 63.208,
+      "end": 70.083,
+      "duration": 6.875,
+      "semantic": {
+        "meaning": "Explanation of why the ocean is salty due to water inflow and evaporation leaving minerals behind.",
+        "subject": "ocean and water cycle",
+        "action": "flowing",
+        "object": "water",
+        "location": "ocean",
+        "time": "",
+        "entities": []
+      },
+      "visual_requirements": [
+        "ocean water",
+        "sunlight or evaporation effect",
+        "rivers flowing"
+      ],
+      "visual_exclusions": [
+        "dry land desert",
+        "space view of earth"
+      ],
+      "queries": [
+        "ocean water evaporating",
+        "rivers flowing into ocean",
+        "salty ocean water"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_011_shot_1",
+          "text": "So the ocean is salty for a simple reason",
+          "word_from": 154,
+          "word_to": 162,
+          "start": 63.208,
+          "end": 65.667,
+          "duration": 2.458,
+          "query": "aerial view of ocean waves"
+        },
+        {
+          "shot_id": "scene_011_shot_2",
+          "text": "Everything flows into it and only the water ever leaves",
+          "word_from": 163,
+          "word_to": 172,
+          "start": 66.125,
+          "end": 70.083,
+          "duration": 3.958,
+          "query": "rivers flowing into the ocean"
+        }
+      ]
+    }
+  ]
+}

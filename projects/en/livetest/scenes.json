@@ -1,0 +1,586 @@
+[
+  {
+    "text": "Every drop of rain that falls on land begins a slow journey back to the sea.",
+    "word_from": 0,
+    "word_to": 15,
+    "query": "raindrops falling on land",
+    "queries": [
+      "raindrops falling on land",
+      "rain falling on earth"
+    ],
+    "keywords": [
+      "journey",
+      "begins",
+      "falls",
+      "drop",
+      "rain"
+    ],
+    "semantic": {
+      "meaning": "Rain falls on land beginning its journey back to the sea.",
+      "subject": "Raindrops",
+      "action": "falling",
+      "object": "rain",
+      "location": "land",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "raindrops falling",
+      "land landscape"
+    ],
+    "visual_exclusions": [
+      "ocean",
+      "indoor scenes"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.111125,
+    "end": 5.124999,
+    "duration": 5.0138739999999995,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "As rainwater runs over rocks and through soil, it dissolves tiny amounts of minerals, mostly sodium and chloride.",
+    "word_from": 16,
+    "word_to": 33,
+    "query": "water flowing over rocks",
+    "queries": [
+      "water flowing over rocks",
+      "rainwater running through soil"
+    ],
+    "keywords": [
+      "rainwater",
+      "dissolves",
+      "minerals",
+      "chloride",
+      "amounts"
+    ],
+    "semantic": {
+      "meaning": "Rainwater runs over rocks and through soil, dissolving minerals like sodium and chloride.",
+      "subject": "Water",
+      "action": "flowing",
+      "object": "rocks and soil",
+      "location": "riverbed",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "water flowing over rocks",
+      "soil and stones"
+    ],
+    "visual_exclusions": [
+      "city street",
+      "ocean"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 5.583333,
+    "end": 13.458333,
+    "duration": 7.875,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "Rivers carry those minerals downstream, mile after mile, until they reach the ocean.",
+    "word_from": 34,
+    "word_to": 46,
+    "query": "river flowing downstream",
+    "queries": [
+      "river flowing downstream",
+      "water moving down river"
+    ],
+    "keywords": [
+      "downstream",
+      "minerals",
+      "rivers",
+      "carry",
+      "reach"
+    ],
+    "semantic": {
+      "meaning": "Rivers carry minerals downstream toward the ocean.",
+      "subject": "Rivers",
+      "action": "flowing",
+      "object": "water and minerals",
+      "location": "river",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "river flowing downstream",
+      "winding river"
+    ],
+    "visual_exclusions": [
+      "desert",
+      "snow"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 3,
+    "sentence_to": 3,
+    "start": 13.916666,
+    "end": 19.541666,
+    "duration": 5.625,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "The rivers themselves taste fresh, because the amount of salt in any single drop is almost nothing.",
+    "word_from": 47,
+    "word_to": 63,
+    "query": "fresh river water stream",
+    "queries": [
+      "fresh river water stream",
+      "clear river flow"
+    ],
+    "keywords": [
+      "rivers",
+      "amount",
+      "single",
+      "taste",
+      "fresh"
+    ],
+    "semantic": {
+      "meaning": "Rivers taste fresh because the salt content in single drops is minimal.",
+      "subject": "River water",
+      "action": "flowing",
+      "object": "fresh water",
+      "location": "river stream",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "clear fresh river water",
+      "stream flowing"
+    ],
+    "visual_exclusions": [
+      "ocean waves",
+      "salt flats"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 20.0,
+    "end": 26.833332,
+    "duration": 6.833331999999999,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "But the ocean has been collecting those drops for billions of years. Water leaves the sea by evaporation.",
+    "word_from": 64,
+    "word_to": 81,
+    "query": "vast ocean aerial view",
+    "queries": [
+      "vast ocean aerial view",
+      "deep blue sea waves",
+      "water evaporation from ocean"
+    ],
+    "keywords": [
+      "collecting",
+      "billions",
+      "ocean",
+      "drops",
+      "years"
+    ],
+    "semantic": {
+      "meaning": "The ocean has accumulated these drops over billions of years.",
+      "subject": "Ocean",
+      "action": "moving",
+      "object": "water",
+      "location": "ocean",
+      "time": "geological time",
+      "entities": []
+    },
+    "visual_requirements": [
+      "vast ocean view",
+      "waves",
+      "sun shining on ocean",
+      "steam or vapor rising from water"
+    ],
+    "visual_exclusions": [
+      "swimming pool",
+      "lake",
+      "snow",
+      "night"
+    ],
+    "shots": [
+      {
+        "word_from": 64,
+        "word_to": 75,
+        "text": "But the ocean has been collecting those drops for billions of years.",
+        "query": "vast ocean aerial view",
+        "subject": "Ocean",
+        "action": "moving",
+        "start": 27.291666,
+        "end": 30.958332,
+        "duration": 3.6666659999999993,
+        "shot_id": "scene_005_shot_1"
+      },
+      {
+        "word_from": 76,
+        "word_to": 81,
+        "text": "Water leaves the sea by evaporation.",
+        "query": "water evaporation from ocean",
+        "subject": "Water",
+        "action": "evaporating",
+        "start": 31.416666,
+        "end": 33.736124,
+        "duration": 2.3194579999999974,
+        "shot_id": "scene_005_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 5,
+    "sentence_to": 6,
+    "start": 27.291666,
+    "end": 33.736124,
+    "duration": 6.444457999999997,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "It rises as vapor, forms clouds, and falls again as rain.",
+    "word_from": 82,
+    "word_to": 92,
+    "query": "clouds forming and rain falling",
+    "queries": [
+      "clouds forming and rain falling",
+      "vapor rising into clouds"
+    ],
+    "keywords": [
+      "clouds",
+      "rises",
+      "vapor",
+      "forms",
+      "falls"
+    ],
+    "semantic": {
+      "meaning": "Water rises as vapor, forms clouds, and falls again as rain.",
+      "subject": "Vapor and clouds",
+      "action": "rising and raining",
+      "object": "clouds and rain",
+      "location": "sky",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "clouds forming",
+      "rain falling from sky"
+    ],
+    "visual_exclusions": [
+      "dry desert",
+      "clear blue sky"
+    ],
+    "shots": [
+      {
+        "word_from": 82,
+        "word_to": 87,
+        "text": "It rises as vapor forms clouds",
+        "query": "clouds forming in sky",
+        "subject": "vapor",
+        "action": "rising",
+        "start": 34.194458,
+        "end": 36.916666,
+        "duration": 2.722208000000002,
+        "shot_id": "scene_006_shot_1"
+      },
+      {
+        "word_from": 88,
+        "word_to": 92,
+        "text": "and falls again as rain",
+        "query": "heavy rain falling",
+        "subject": "rain",
+        "action": "falling",
+        "start": 37.166666,
+        "end": 38.652791,
+        "duration": 1.4861250000000013,
+        "shot_id": "scene_006_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 7,
+    "sentence_to": 7,
+    "start": 34.194458,
+    "end": 38.652791,
+    "duration": 4.458333000000003,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "The salt cannot evaporate, so it stays behind.",
+    "word_from": 93,
+    "word_to": 100,
+    "query": "salt crust on beach",
+    "queries": [
+      "salt crust on beach",
+      "sea salt crystals close up"
+    ],
+    "keywords": [
+      "evaporate",
+      "behind",
+      "stays",
+      "salt"
+    ],
+    "semantic": {
+      "meaning": "Salt cannot evaporate and stays behind in the sea.",
+      "subject": "Salt crystals",
+      "action": "remaining",
+      "object": "salt residue",
+      "location": "shoreline",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "salt crystals",
+      "sea water"
+    ],
+    "visual_exclusions": [
+      "freshwater lake"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 8,
+    "sentence_to": 8,
+    "start": 39.125,
+    "end": 42.027791,
+    "duration": 2.9027910000000006,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "Deep on the ocean floor, volcanic vents add even more minerals, pumping hot, mineral-rich water into the dark. Over time, the balance settled.",
+    "word_from": 101,
+    "word_to": 123,
+    "query": "hydrothermal vent ocean floor",
+    "queries": [
+      "hydrothermal vent ocean floor",
+      "deep sea volcanic vent",
+      "calm ocean surface aerial"
+    ],
+    "keywords": [
+      "volcanic",
+      "minerals",
+      "pumping",
+      "mineral",
+      "ocean"
+    ],
+    "semantic": {
+      "meaning": "Deep on the ocean floor, volcanic vents add minerals, pumping hot water into the dark.",
+      "subject": "Volcanic vents",
+      "action": "pumping",
+      "object": "mineral-rich water",
+      "location": "ocean floor",
+      "time": "underwater",
+      "entities": []
+    },
+    "visual_requirements": [
+      "hydrothermal vent",
+      "underwater volcanic activity",
+      "dark ocean depths",
+      "calm ocean waves",
+      "aerial sea view"
+    ],
+    "visual_exclusions": [
+      "sunlight",
+      "coral reef",
+      "storm",
+      "tsunami"
+    ],
+    "shots": [
+      {
+        "word_from": 101,
+        "word_to": 118,
+        "text": "Deep on the ocean floor, volcanic vents add even more minerals, pumping hot, mineral-rich water into the dark.",
+        "query": "hydrothermal vent ocean floor",
+        "subject": "Volcanic vents",
+        "action": "pumping",
+        "start": 42.513875,
+        "end": 50.680541,
+        "duration": 8.166666,
+        "shot_id": "scene_008_shot_1"
+      },
+      {
+        "word_from": 119,
+        "word_to": 123,
+        "text": "Over time, the balance settled.",
+        "query": "calm ocean surface aerial",
+        "subject": "Ocean ecosystem",
+        "action": "balancing",
+        "start": 51.138875,
+        "end": 52.986082,
+        "duration": 1.8472070000000045,
+        "shot_id": "scene_008_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 10,
+    "start": 42.513875,
+    "end": 52.986082,
+    "duration": 10.472207000000004,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "Today, seawater is about three and a half percent salt.",
+    "word_from": 124,
+    "word_to": 133,
+    "query": "seawater splashing on rocks",
+    "queries": [
+      "seawater splashing on rocks",
+      "ocean waves crashing"
+    ],
+    "keywords": [
+      "seawater",
+      "percent",
+      "today",
+      "three",
+      "half"
+    ],
+    "semantic": {
+      "meaning": "Today, seawater is about three and a half percent salt.",
+      "subject": "Seawater",
+      "action": "splashing",
+      "object": "saltwater",
+      "location": "ocean shore",
+      "time": "today",
+      "entities": []
+    },
+    "visual_requirements": [
+      "ocean waves crashing",
+      "sea water"
+    ],
+    "visual_exclusions": [
+      "river",
+      "lake"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 11,
+    "sentence_to": 11,
+    "start": 53.444458,
+    "end": 56.805541,
+    "duration": 3.3610830000000007,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "If you spread all of it across the land, it would form a layer more than one hundred meters thick.",
+    "word_from": 134,
+    "word_to": 153,
+    "query": "aerial view of land",
+    "queries": [
+      "aerial view of land",
+      "vast earth landscape"
+    ],
+    "keywords": [
+      "hundred",
+      "spread",
+      "across",
+      "meters",
+      "layer"
+    ],
+    "semantic": {
+      "meaning": "If you spread all of it across the land, it would form a layer over one hundred meters thick.",
+      "subject": "Salt layer",
+      "action": "covering",
+      "object": "land",
+      "location": "earth landscape",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "aerial land landscape",
+      "wide terrain"
+    ],
+    "visual_exclusions": [
+      "ocean water",
+      "swimming pool"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 12,
+    "sentence_to": 12,
+    "start": 57.263875,
+    "end": 62.749999,
+    "duration": 5.486124000000004,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "So the ocean is salty for a simple reason. Everything flows into it, and only the water ever leaves.",
+    "word_from": 154,
+    "word_to": 172,
+    "query": "ocean water evaporating",
+    "queries": [
+      "ocean water evaporating",
+      "rivers flowing into ocean",
+      "salty ocean water"
+    ],
+    "keywords": [
+      "simple",
+      "reason",
+      "leaves",
+      "ocean",
+      "salty"
+    ],
+    "semantic": {
+      "meaning": "Explanation of why the ocean is salty due to water inflow and evaporation leaving minerals behind.",
+      "subject": "ocean and water cycle",
+      "action": "flowing",
+      "object": "water",
+      "location": "ocean",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "ocean water",
+      "sunlight or evaporation effect",
+      "rivers flowing"
+    ],
+    "visual_exclusions": [
+      "dry land desert",
+      "space view of earth"
+    ],
+    "shots": [
+      {
+        "word_from": 154,
+        "word_to": 162,
+        "text": "So the ocean is salty for a simple reason",
+        "query": "aerial view of ocean waves",
+        "subject": "ocean",
+        "action": "",
+        "start": 63.208333,
+        "end": 65.666666,
+        "duration": 2.458333000000003,
+        "shot_id": "scene_011_shot_1"
+      },
+      {
+        "word_from": 163,
+        "word_to": 172,
+        "text": "Everything flows into it and only the water ever leaves",
+        "query": "rivers flowing into the ocean",
+        "subject": "rivers and ocean",
+        "action": "flowing",
+        "start": 66.125,
+        "end": 70.083333,
+        "duration": 3.958332999999996,
+        "shot_id": "scene_011_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 13,
+    "sentence_to": 14,
+    "start": 63.208333,
+    "end": 70.083333,
+    "duration": 6.874999999999993,
+    "index": 11,
+    "segment_id": "segment_011"
+  }
+]
