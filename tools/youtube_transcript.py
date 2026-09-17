@@ -55,14 +55,35 @@ COOKIES_HELP = (
 )
 
 
+def normalize_cookies_text(text):
+    """Netscape cookie lines must be TAB-separated (7 fields), but a file
+    that went through a chat window, an editor or a web form usually comes
+    back with the tabs turned into spaces -- which MozillaCookieJar then
+    silently rejects. Re-split each cookie line on whitespace into its 7
+    fields and re-join with tabs; comments and blank lines pass through."""
+    out = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("#"):
+            out.append(stripped)
+            continue
+        parts = stripped.split(None, 6)
+        out.append("\t".join(parts) if len(parts) == 7 else stripped)
+    return "\n".join(out).strip() + "\n"
+
+
 def cookies_file():
-    """tools/cookies.txt if present; else written from $YT_COOKIES if that is
-    set; else None."""
+    """tools/cookies.txt (normalized in place if needed); else written from
+    $YT_COOKIES if that is set; else None."""
     if COOKIES_FILE.exists():
+        raw = COOKIES_FILE.read_text(encoding="utf-8", errors="replace")
+        fixed = normalize_cookies_text(raw)
+        if fixed != raw:
+            COOKIES_FILE.write_text(fixed, encoding="utf-8")
         return COOKIES_FILE
     text = os.environ.get(COOKIES_ENV, "")
     if text.strip():
-        COOKIES_FILE.write_text(text.strip() + "\n", encoding="utf-8")
+        COOKIES_FILE.write_text(normalize_cookies_text(text), encoding="utf-8")
         return COOKIES_FILE
     return None
 
