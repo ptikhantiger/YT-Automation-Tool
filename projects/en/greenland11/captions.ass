@@ -1,0 +1,240 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.44,Default,,0,0,0,,GREENLAND THE WORLD'S LARGEST ISLAND WHERE
+Dialogue: 0,0:00:02.44,0:00:04.49,Default,,0,0,0,,LIFE FIGHTS THE COLD
+Dialogue: 0,0:00:04.49,0:00:06.79,Default,,0,0,0,,Imagine living in a place where there are no
+Dialogue: 0,0:00:06.79,0:00:09.35,Default,,0,0,0,,roads connecting most towns
+Dialogue: 0,0:00:09.35,0:00:12.24,Default,,0,0,0,,Where winter can bring weeks of darkness
+Dialogue: 0,0:00:12.24,0:00:14.48,Default,,0,0,0,,Where the ocean can freeze solid enough to
+Dialogue: 0,0:00:14.48,0:00:16.22,Default,,0,0,0,,become a highway
+Dialogue: 0,0:00:16.22,0:00:18.57,Default,,0,0,0,,And where more than 80 percent of the land
+Dialogue: 0,0:00:18.57,0:00:20.74,Default,,0,0,0,,is covered by ice
+Dialogue: 0,0:00:20.74,0:00:22.60,Default,,0,0,0,,This is Greenland
+Dialogue: 0,0:00:22.60,0:00:25.53,Default,,0,0,0,,The world's largest island and one of the most
+Dialogue: 0,0:00:25.53,0:00:29.10,Default,,0,0,0,,extreme places where people have built a life
+Dialogue: 0,0:00:29.10,0:00:31.31,Default,,0,0,0,,But Greenland is changing
+Dialogue: 0,0:00:31.31,0:00:33.45,Default,,0,0,0,,And the changes happening here could affect
+Dialogue: 0,0:00:33.45,0:00:36.32,Default,,0,0,0,,people thousands of kilometers away
+Dialogue: 0,0:00:36.32,0:00:38.97,Default,,0,0,0,,Welcome to Extreme Earth Life
+Dialogue: 0,0:00:38.97,0:00:41.35,Default,,0,0,0,,A WORLD COVERED IN ICE
+Dialogue: 0,0:00:41.35,0:00:44.88,Default,,0,0,0,,From above Greenland looks almost unreal
+Dialogue: 0,0:00:44.88,0:00:47.46,Default,,0,0,0,,A huge white landscape stretches across the
+Dialogue: 0,0:00:47.46,0:00:50.78,Default,,0,0,0,,North Atlantic surrounded by dark freezing
+Dialogue: 0,0:00:50.78,0:00:51.92,Default,,0,0,0,,ocean
+Dialogue: 0,0:00:51.92,0:00:54.86,Default,,0,0,0,,Beneath this enormous ice sheet lies a landscape
+Dialogue: 0,0:00:54.86,0:00:57.36,Default,,0,0,0,,hidden for thousands of years
+Dialogue: 0,0:00:57.36,0:01:00.71,Default,,0,0,0,,In some areas the ice reaches several kilometers
+Dialogue: 0,0:01:00.71,0:01:02.21,Default,,0,0,0,,in thickness
+Dialogue: 0,0:01:02.21,0:01:05.36,Default,,0,0,0,,But despite its enormous size very little of
+Dialogue: 0,0:01:05.36,0:01:08.78,Default,,0,0,0,,Greenland is suitable for permanent settlement
+Dialogue: 0,0:01:08.78,0:01:12.70,Default,,0,0,0,,Most people live along a narrow strip of coastline
+Dialogue: 0,0:01:12.70,0:01:16.12,Default,,0,0,0,,Here small towns sit between mountains glaciers
+Dialogue: 0,0:01:16.12,0:01:17.54,Default,,0,0,0,,and the sea
+Dialogue: 0,0:01:17.54,0:01:20.84,Default,,0,0,0,,There are no major highways crossing the island
+Dialogue: 0,0:01:20.84,0:01:23.93,Default,,0,0,0,,No road connects Nuuk the capital with the
+Dialogue: 0,0:01:23.93,0:01:25.56,Default,,0,0,0,,other towns
+Dialogue: 0,0:01:25.56,0:01:28.21,Default,,0,0,0,,Instead Greenland's communities are separated
+Dialogue: 0,0:01:28.21,0:01:31.53,Default,,0,0,0,,by enormous distances mountains fjords and
+Dialogue: 0,0:01:31.53,0:01:32.84,Default,,0,0,0,,ice
+Dialogue: 0,0:01:32.84,0:01:36.20,Default,,0,0,0,,And that has shaped almost every part of life
+Dialogue: 0,0:01:36.20,0:01:38.77,Default,,0,0,0,,WHERE THE WEATHER DECIDES YOUR DAY
+Dialogue: 0,0:01:38.77,0:01:41.47,Default,,0,0,0,,In most countries you can look at a map and
+Dialogue: 0,0:01:41.47,0:01:44.51,Default,,0,0,0,,calculate how long a journey will take
+Dialogue: 0,0:01:44.51,0:01:48.06,Default,,0,0,0,,In Greenland that is not always enough
+Dialogue: 0,0:01:48.06,0:01:50.43,Default,,0,0,0,,A trip that looks short on a map can become
+Dialogue: 0,0:01:50.43,0:01:53.31,Default,,0,0,0,,a completely different experience when a snowstorm
+Dialogue: 0,0:01:53.31,0:01:54.71,Default,,0,0,0,,arrives
+Dialogue: 0,0:01:54.71,0:01:56.74,Default,,0,0,0,,Flights can be delayed
+Dialogue: 0,0:01:56.74,0:01:58.70,Default,,0,0,0,,Boats can be stopped
+Dialogue: 0,0:01:58.70,0:02:01.59,Default,,0,0,0,,Visibility can disappear in minutes
+Dialogue: 0,0:02:01.59,0:02:05.58,Default,,0,0,0,,For many communities airplanes boats helicopters
+Dialogue: 0,0:02:05.58,0:02:09.15,Default,,0,0,0,,snowmobiles and dog sleds are essential connections
+Dialogue: 0,0:02:09.15,0:02:11.22,Default,,0,0,0,,to the outside world
+Dialogue: 0,0:02:11.22,0:02:14.35,Default,,0,0,0,,During winter frozen sea ice can even become
+Dialogue: 0,0:02:14.35,0:02:16.64,Default,,0,0,0,,a natural travel route
+Dialogue: 0,0:02:16.64,0:02:19.52,Default,,0,0,0,,For generations Inuit communities have used
+Dialogue: 0,0:02:19.52,0:02:23.43,Default,,0,0,0,,knowledge of the ice weather animals and landscape
+Dialogue: 0,0:02:23.43,0:02:25.98,Default,,0,0,0,,to move through this environment
+Dialogue: 0,0:02:25.98,0:02:28.87,Default,,0,0,0,,That knowledge is not simply history
+Dialogue: 0,0:02:28.87,0:02:31.63,Default,,0,0,0,,In many places it is still part of everyday
+Dialogue: 0,0:02:31.63,0:02:32.89,Default,,0,0,0,,life
+Dialogue: 0,0:02:32.89,0:02:35.43,Default,,0,0,0,,LIFE THROUGH MONTHS OF DARKNESS
+Dialogue: 0,0:02:35.43,0:02:38.17,Default,,0,0,0,,Greenland's seasons can feel almost impossible
+Dialogue: 0,0:02:38.17,0:02:39.67,Default,,0,0,0,,to imagine
+Dialogue: 0,0:02:39.67,0:02:42.74,Default,,0,0,0,,In the far north winter brings extremely long
+Dialogue: 0,0:02:42.74,0:02:45.20,Default,,0,0,0,,periods with little sunlight
+Dialogue: 0,0:02:45.20,0:02:49.45,Default,,0,0,0,,The landscape becomes dark frozen and silent
+Dialogue: 0,0:02:49.45,0:02:52.75,Default,,0,0,0,,Temperatures can fall far below freezing
+Dialogue: 0,0:02:52.75,0:02:55.15,Default,,0,0,0,,Yet people still go to work
+Dialogue: 0,0:02:55.15,0:02:57.57,Default,,0,0,0,,Children still go to school
+Dialogue: 0,0:02:57.57,0:02:59.56,Default,,0,0,0,,Fishing continues
+Dialogue: 0,0:02:59.56,0:03:01.84,Default,,0,0,0,,Families gather indoors
+Dialogue: 0,0:03:01.84,0:03:05.23,Default,,0,0,0,,Life does not stop because winter arrives
+Dialogue: 0,0:03:05.23,0:03:08.88,Default,,0,0,0,,People simply adapt their routines to the environment
+Dialogue: 0,0:03:08.88,0:03:10.68,Default,,0,0,0,,Then comes summer
+Dialogue: 0,0:03:10.68,0:03:13.02,Default,,0,0,0,,And Greenland transforms
+Dialogue: 0,0:03:13.02,0:03:15.63,Default,,0,0,0,,In the northern parts of the island the sun
+Dialogue: 0,0:03:15.63,0:03:18.84,Default,,0,0,0,,can remain above the horizon for weeks
+Dialogue: 0,0:03:18.84,0:03:21.16,Default,,0,0,0,,The darkness disappears
+Dialogue: 0,0:03:21.16,0:03:23.96,Default,,0,0,0,,People spend more time outdoors
+Dialogue: 0,0:03:23.96,0:03:26.50,Default,,0,0,0,,Fishing activity increases
+Dialogue: 0,0:03:26.50,0:03:29.89,Default,,0,0,0,,Construction and other work becomes easier
+Dialogue: 0,0:03:29.89,0:03:31.70,Default,,0,0,0,,Families travel
+Dialogue: 0,0:03:31.70,0:03:34.04,Default,,0,0,0,,And the short summer becomes a race against
+Dialogue: 0,0:03:34.04,0:03:36.65,Default,,0,0,0,,time to make the most of the light
+Dialogue: 0,0:03:36.65,0:03:39.08,Default,,0,0,0,,Here daylight is not just something you take
+Dialogue: 0,0:03:39.08,0:03:40.54,Default,,0,0,0,,for granted
+Dialogue: 0,0:03:40.54,0:03:43.09,Default,,0,0,0,,It becomes something you notice
+Dialogue: 0,0:03:43.09,0:03:45.02,Default,,0,0,0,,Something you value
+Dialogue: 0,0:03:45.02,0:03:48.04,Default,,0,0,0,,THE PEOPLE WHO LEARNED TO LIVE WITH THE ICE
+Dialogue: 0,0:03:48.04,0:03:51.16,Default,,0,0,0,,For thousands of years Inuit communities have
+Dialogue: 0,0:03:51.16,0:03:54.07,Default,,0,0,0,,adapted to Greenland's environment
+Dialogue: 0,0:03:54.07,0:03:57.83,Default,,0,0,0,,The sea has always been central to that relationship
+Dialogue: 0,0:03:57.83,0:04:00.44,Default,,0,0,0,,Fishing hunting and knowledge of the Arctic
+Dialogue: 0,0:04:00.44,0:04:02.88,Default,,0,0,0,,environment have helped communities survive
+Dialogue: 0,0:04:02.88,0:04:06.16,Default,,0,0,0,,where agriculture is extremely difficult
+Dialogue: 0,0:04:06.16,0:04:09.52,Default,,0,0,0,,Traditional foods can include fish seal whale
+Dialogue: 0,0:04:09.52,0:04:13.63,Default,,0,0,0,,products and other locally available resources
+Dialogue: 0,0:04:13.63,0:04:16.81,Default,,0,0,0,,One example is mattak made from whale skin
+Dialogue: 0,0:04:16.81,0:04:18.11,Default,,0,0,0,,and blubber
+Dialogue: 0,0:04:18.11,0:04:21.62,Default,,0,0,0,,These foods are not simply unusual dishes
+Dialogue: 0,0:04:21.62,0:04:24.72,Default,,0,0,0,,They are connected to a much older story
+Dialogue: 0,0:04:24.72,0:04:27.36,Default,,0,0,0,,A story about surviving in a place where growing
+Dialogue: 0,0:04:27.36,0:04:30.07,Default,,0,0,0,,crops is difficult and where the ocean can
+Dialogue: 0,0:04:30.07,0:04:32.44,Default,,0,0,0,,mean the difference between having food and
+Dialogue: 0,0:04:32.44,0:04:34.04,Default,,0,0,0,,going without it
+Dialogue: 0,0:04:34.04,0:04:36.64,Default,,0,0,0,,But modern Greenland is changing
+Dialogue: 0,0:04:36.64,0:04:40.53,Default,,0,0,0,,Supermarkets smartphones modern transportation
+Dialogue: 0,0:04:40.53,0:04:43.88,Default,,0,0,0,,tourism and global culture now exist alongside
+Dialogue: 0,0:04:43.88,0:04:46.20,Default,,0,0,0,,traditional Arctic life
+Dialogue: 0,0:04:46.20,0:04:48.52,Default,,0,0,0,,Young Greenlanders are growing up between two
+Dialogue: 0,0:04:48.52,0:04:49.13,Default,,0,0,0,,worlds
+Dialogue: 0,0:04:50.24,0:04:52.60,Default,,0,0,0,,They are connected to the same global culture
+Dialogue: 0,0:04:52.60,0:04:55.85,Default,,0,0,0,,as teenagers anywhere else while also inheriting
+Dialogue: 0,0:04:55.85,0:04:59.64,Default,,0,0,0,,languages stories traditions and knowledge
+Dialogue: 0,0:04:59.64,0:05:02.42,Default,,0,0,0,,that have existed for generations
+Dialogue: 0,0:05:02.42,0:05:05.07,Default,,0,0,0,,THE COLORFUL TOWNS OF GREENLAND
+Dialogue: 0,0:05:05.07,0:05:07.49,Default,,0,0,0,,There is something surprising about Greenland's
+Dialogue: 0,0:05:07.49,0:05:08.91,Default,,0,0,0,,settlements
+Dialogue: 0,0:05:08.91,0:05:12.14,Default,,0,0,0,,Against enormous landscapes of white snow blue
+Dialogue: 0,0:05:12.14,0:05:15.66,Default,,0,0,0,,ice and dark rock the towns can look incredibly
+Dialogue: 0,0:05:15.66,0:05:16.98,Default,,0,0,0,,colorful
+Dialogue: 0,0:05:16.98,0:05:20.66,Default,,0,0,0,,Houses painted red yellow blue and green stand
+Dialogue: 0,0:05:20.66,0:05:23.23,Default,,0,0,0,,out against the Arctic landscape
+Dialogue: 0,0:05:23.23,0:05:25.64,Default,,0,0,0,,The colors create a striking contrast with
+Dialogue: 0,0:05:25.64,0:05:27.19,Default,,0,0,0,,the environment
+Dialogue: 0,0:05:27.19,0:05:30.01,Default,,0,0,0,,And in a place where winter can feel endless
+Dialogue: 0,0:05:30.01,0:05:32.28,Default,,0,0,0,,those bright buildings bring another kind of
+Dialogue: 0,0:05:32.28,0:05:33.52,Default,,0,0,0,,warmth
+Dialogue: 0,0:05:33.52,0:05:36.13,Default,,0,0,0,,Greenland may be one of the coldest inhabited
+Dialogue: 0,0:05:36.13,0:05:37.99,Default,,0,0,0,,regions on Earth
+Dialogue: 0,0:05:37.99,0:05:40.45,Default,,0,0,0,,But its communities are not defined only by
+Dialogue: 0,0:05:40.45,0:05:41.79,Default,,0,0,0,,the cold
+Dialogue: 0,0:05:41.79,0:05:46.15,Default,,0,0,0,,Family celebrations food music and social gatherings
+Dialogue: 0,0:05:46.15,0:05:48.82,Default,,0,0,0,,remain important parts of life
+Dialogue: 0,0:05:48.82,0:05:52.21,Default,,0,0,0,,In an environment where isolation is unavoidable
+Dialogue: 0,0:05:52.21,0:05:54.65,Default,,0,0,0,,community becomes essential
+Dialogue: 0,0:05:54.65,0:05:57.07,Default,,0,0,0,,THE SEA THAT FEEDS GREENLAND
+Dialogue: 0,0:05:57.07,0:05:59.92,Default,,0,0,0,,Look at a map of Greenland and one thing becomes
+Dialogue: 0,0:05:59.92,0:06:01.31,Default,,0,0,0,,obvious
+Dialogue: 0,0:06:01.31,0:06:04.05,Default,,0,0,0,,The island is surrounded by ocean
+Dialogue: 0,0:06:04.05,0:06:06.66,Default,,0,0,0,,And that ocean is the foundation of its modern
+Dialogue: 0,0:06:06.66,0:06:08.01,Default,,0,0,0,,economy
+Dialogue: 0,0:06:08.01,0:06:10.51,Default,,0,0,0,,Fishing is one of Greenland's most important
+Dialogue: 0,0:06:10.51,0:06:11.76,Default,,0,0,0,,industries
+Dialogue: 0,0:06:11.76,0:06:14.71,Default,,0,0,0,,with species such as shrimp and Greenland halibut
+Dialogue: 0,0:06:14.71,0:06:16.71,Default,,0,0,0,,playing a major role
+Dialogue: 0,0:06:16.71,0:06:19.50,Default,,0,0,0,,In coastal communities the harbor can be one
+Dialogue: 0,0:06:19.50,0:06:22.43,Default,,0,0,0,,of the most important places in town
+Dialogue: 0,0:06:22.43,0:06:24.92,Default,,0,0,0,,Boats leave in freezing waters and return with
+Dialogue: 0,0:06:24.92,0:06:28.45,Default,,0,0,0,,catches that support families and businesses
+Dialogue: 0,0:06:28.45,0:06:30.89,Default,,0,0,0,,But Greenland's relationship with the sea is
+Dialogue: 0,0:06:30.89,0:06:33.16,Default,,0,0,0,,becoming more complicated
+Dialogue: 0,0:06:33.16,0:06:35.73,Default,,0,0,0,,The Arctic climate is warming
+Dialogue: 0,0:06:35.73,0:06:37.85,Default,,0,0,0,,Sea ice is changing
+Dialogue: 0,0:06:37.85,0:06:40.96,Default,,0,0,0,,Weather patterns are becoming less predictable
+Dialogue: 0,0:06:40.96,0:06:43.45,Default,,0,0,0,,For people whose lives depend on the ocean
+Dialogue: 0,0:06:43.45,0:06:46.93,Default,,0,0,0,,and ice these changes are not abstract scientific
+Dialogue: 0,0:06:46.93,0:06:48.55,Default,,0,0,0,,statistics
+Dialogue: 0,0:06:48.55,0:06:51.70,Default,,0,0,0,,They can affect travel hunting fishing and
+Dialogue: 0,0:06:51.70,0:06:53.84,Default,,0,0,0,,everyday decisions
+Dialogue: 0,0:06:53.84,0:06:56.11,Default,,0,0,0,,THE ICE IS DISAPPEARING
+Dialogue: 0,0:06:56.11,0:06:58.46,Default,,0,0,0,,And this is where Greenland's story becomes
+Dialogue: 0,0:06:58.46,0:07:00.83,Default,,0,0,0,,much bigger than Greenland
+Dialogue: 0,0:07:00.83,0:07:04.02,Default,,0,0,0,,The island's ice sheet is losing mass
+Dialogue: 0,0:07:04.02,0:07:07.18,Default,,0,0,0,,As glaciers and ice move toward the ocean they
+Dialogue: 0,0:07:07.18,0:07:10.41,Default,,0,0,0,,contribute to global sea-level rise
+Dialogue: 0,0:07:10.41,0:07:13.27,Default,,0,0,0,,At the same time the land beneath and around
+Dialogue: 0,0:07:13.27,0:07:15.87,Default,,0,0,0,,the ice contains mineral resources that have
+Dialogue: 0,0:07:15.87,0:07:19.19,Default,,0,0,0,,attracted increasing international attention
+Dialogue: 0,0:07:19.19,0:07:21.26,Default,,0,0,0,,Rare earth elements and other minerals are
+Dialogue: 0,0:07:21.26,0:07:24.09,Default,,0,0,0,,important for modern technologies
+Dialogue: 0,0:07:24.09,0:07:26.76,Default,,0,0,0,,Greenland's location is also strategically
+Dialogue: 0,0:07:26.76,0:07:29.86,Default,,0,0,0,,important sitting between North America and
+Dialogue: 0,0:07:29.86,0:07:31.83,Default,,0,0,0,,Europe in the Arctic
+Dialogue: 0,0:07:31.83,0:07:35.92,Default,,0,0,0,,That combination of geography natural resources
+Dialogue: 0,0:07:35.92,0:07:39.22,Default,,0,0,0,,and a changing climate has made Greenland increasingly
+Dialogue: 0,0:07:39.22,0:07:41.75,Default,,0,0,0,,important to the rest of the world
+Dialogue: 0,0:07:41.75,0:07:46.03,Default,,0,0,0,,In 2019 then-US President Donald Trump publicly
+Dialogue: 0,0:07:46.03,0:07:48.29,Default,,0,0,0,,expressed interest in purchasing Greenland
+Dialogue: 0,0:07:48.29,0:07:49.89,Default,,0,0,0,,from Denmark
+Dialogue: 0,0:07:49.89,0:07:53.30,Default,,0,0,0,,Greenland and Denmark rejected the proposal
+Dialogue: 0,0:07:53.30,0:07:56.51,Default,,0,0,0,,But the episode revealed something important
+Dialogue: 0,0:07:56.51,0:07:59.73,Default,,0,0,0,,The island once viewed as a remote frozen territory
+Dialogue: 0,0:07:59.73,0:08:02.76,Default,,0,0,0,,had become strategically significant
+Dialogue: 0,0:08:02.76,0:08:05.34,Default,,0,0,0,,A FUTURE BETWEEN TWO WORLDS
+Dialogue: 0,0:08:05.34,0:08:08.46,Default,,0,0,0,,Greenland now stands at a crossroads
+Dialogue: 0,0:08:08.46,0:08:11.70,Default,,0,0,0,,Its natural resources could provide new economic
+Dialogue: 0,0:08:11.70,0:08:13.48,Default,,0,0,0,,opportunities
+Dialogue: 0,0:08:13.48,0:08:16.23,Default,,0,0,0,,Tourism could bring more visitors
+Dialogue: 0,0:08:16.23,0:08:18.75,Default,,0,0,0,,Fishing will remain important
+Dialogue: 0,0:08:18.75,0:08:21.25,Default,,0,0,0,,And greater economic independence could become
+Dialogue: 0,0:08:21.25,0:08:24.78,Default,,0,0,0,,increasingly significant for Greenland's future
+Dialogue: 0,0:08:24.78,0:08:28.56,Default,,0,0,0,,But development also brings difficult questions
+Dialogue: 0,0:08:28.56,0:08:31.61,Default,,0,0,0,,How much should the environment be changed
+Dialogue: 0,0:08:31.61,0:08:34.34,Default,,0,0,0,,How can economic opportunities coexist with
+Dialogue: 0,0:08:34.34,0:08:36.69,Default,,0,0,0,,traditional ways of life
+Dialogue: 0,0:08:36.69,0:08:39.51,Default,,0,0,0,,And how can Greenland adapt to a rapidly changing
+Dialogue: 0,0:08:39.51,0:08:41.90,Default,,0,0,0,,Arctic without losing the cultural identity
+Dialogue: 0,0:08:41.90,0:08:45.17,Default,,0,0,0,,that developed here over thousands of years
+Dialogue: 0,0:08:45.17,0:08:47.52,Default,,0,0,0,,There are no simple answers
+Dialogue: 0,0:08:47.52,0:08:50.17,Default,,0,0,0,,And perhaps the most important part of Greenland's
+Dialogue: 0,0:08:50.17,0:08:52.92,Default,,0,0,0,,future will not be decided by governments or
+Dialogue: 0,0:08:52.92,0:08:54.64,Default,,0,0,0,,corporations
+Dialogue: 0,0:08:54.64,0:08:57.17,Default,,0,0,0,,It will be decided by the people who actually
+Dialogue: 0,0:08:57.17,0:08:58.58,Default,,0,0,0,,live here
+Dialogue: 0,0:08:58.58,0:09:01.23,Default,,0,0,0,,For centuries Greenland has been a place where
+Dialogue: 0,0:09:01.23,0:09:05.52,Default,,0,0,0,,humans learned to live with ice darkness isolation
+Dialogue: 0,0:09:05.52,0:09:07.19,Default,,0,0,0,,and uncertainty
+Dialogue: 0,0:09:07.19,0:09:10.78,Default,,0,0,0,,Today the environment itself is changing
+Dialogue: 0,0:09:10.78,0:09:12.93,Default,,0,0,0,,The ice is retreating
+Dialogue: 0,0:09:12.93,0:09:15.45,Default,,0,0,0,,The Arctic is becoming warmer
+Dialogue: 0,0:09:15.45,0:09:18.27,Default,,0,0,0,,And a new generation is growing up in a Greenland
+Dialogue: 0,0:09:18.27,0:09:20.38,Default,,0,0,0,,that may look very different from the one their
+Dialogue: 0,0:09:20.38,0:09:22.17,Default,,0,0,0,,grandparents knew
+Dialogue: 0,0:09:22.17,0:09:25.68,Default,,0,0,0,,This is more than a story about a frozen island
+Dialogue: 0,0:09:25.68,0:09:28.43,Default,,0,0,0,,It is a story about adaptation
+Dialogue: 0,0:09:28.43,0:09:30.11,Default,,0,0,0,,About culture
+Dialogue: 0,0:09:30.11,0:09:31.88,Default,,0,0,0,,About survival
+Dialogue: 0,0:09:31.88,0:09:33.94,Default,,0,0,0,,And about what happens when one of Earth's
+Dialogue: 0,0:09:33.94,0:09:36.85,Default,,0,0,0,,most extreme environments begins to change
+Dialogue: 0,0:09:37.95,0:09:39.84,Default,,0,0,0,,This is Greenland
+Dialogue: 0,0:09:39.84,0:09:42.59,Default,,0,0,0,,A land between ice and ocean
+Dialogue: 0,0:09:42.59,0:09:44.87,Default,,0,0,0,,A place where life has survived against the
+Dialogue: 0,0:09:44.87,0:09:47.37,Default,,0,0,0,,cold for thousands of years
+Dialogue: 0,0:09:47.37,0:09:49.59,Default,,0,0,0,,And a place whose future could matter to the
+Dialogue: 0,0:09:49.59,0:09:51.43,Default,,0,0,0,,entire planet
+Dialogue: 0,0:09:51.43,0:09:53.90,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:09:53.90,0:09:55.29,Default,,0,0,0,,Life Beyond the Limits

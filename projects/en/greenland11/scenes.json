@@ -1,0 +1,4809 @@
+[
+  {
+    "text": "GREENLAND THE WORLD'S LARGEST ISLAND WHERE LIFE FIGHTS THE COLD.",
+    "word_from": 0,
+    "word_to": 9,
+    "query": "Greenland arctic aerial view",
+    "queries": [
+      "Greenland arctic aerial view",
+      "frozen island landscape"
+    ],
+    "keywords": [
+      "greenland",
+      "largest",
+      "island",
+      "fights",
+      "world"
+    ],
+    "semantic": {
+      "meaning": "Establishing Greenland as the world's largest island with harsh cold conditions.",
+      "subject": "Greenland landscape",
+      "action": "",
+      "object": "island, ice, cold environment",
+      "location": "Greenland",
+      "time": "day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "vast icy landscape",
+      "arctic island aerial view"
+    ],
+    "visual_exclusions": [
+      "tropical scenery",
+      "busy cities"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.105541,
+    "end": 3.758333,
+    "duration": 3.652792,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "Imagine living in a place where there are no roads connecting most towns. Where winter can bring weeks of darkness.",
+    "word_from": 10,
+    "word_to": 29,
+    "query": "remote arctic village snow",
+    "queries": [
+      "remote arctic village snow",
+      "isolated town no roads",
+      "arctic winter darkness"
+    ],
+    "keywords": [
+      "connecting",
+      "imagine",
+      "living",
+      "place",
+      "roads"
+    ],
+    "semantic": {
+      "meaning": "Describing isolated towns in Greenland with no connecting roads.",
+      "subject": "isolated town",
+      "action": "",
+      "object": "snow-covered settlement, no roads",
+      "location": "Greenland settlement",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "remote arctic village",
+      "snowy houses",
+      "absence of roads",
+      "dark winter scene",
+      "arctic night",
+      "snow under moonlight"
+    ],
+    "visual_exclusions": [
+      "highways",
+      "cars",
+      "urban traffic",
+      "bright sunlight",
+      "summer landscape"
+    ],
+    "shots": [
+      {
+        "word_from": 10,
+        "word_to": 22,
+        "text": "Imagine living in a place where there are no roads connecting most towns.",
+        "query": "remote arctic village snow",
+        "subject": "isolated town",
+        "action": "",
+        "start": 4.488875,
+        "end": 8.627791,
+        "duration": 4.138916,
+        "shot_id": "scene_002_shot_1"
+      },
+      {
+        "word_from": 23,
+        "word_to": 29,
+        "text": "Where winter can bring weeks of darkness.",
+        "query": "arctic winter darkness",
+        "subject": "dark winter landscape",
+        "action": "",
+        "start": 9.352791,
+        "end": 11.519416,
+        "duration": 2.166625,
+        "shot_id": "scene_002_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 3,
+    "start": 4.488875,
+    "end": 11.519416,
+    "duration": 7.0305409999999995,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "Where the ocean can freeze solid enough to become a highway.",
+    "word_from": 30,
+    "word_to": 40,
+    "query": "frozen ocean ice highway",
+    "queries": [
+      "frozen ocean ice highway",
+      "sea ice winter travel"
+    ],
+    "keywords": [
+      "highway",
+      "freeze",
+      "become",
+      "ocean",
+      "solid"
+    ],
+    "semantic": {
+      "meaning": "Showing the frozen ocean serving as a solid ice highway.",
+      "subject": "frozen ocean",
+      "action": "freezing solid",
+      "object": "ice sheet, sea ice highway",
+      "location": "arctic ocean",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frozen sea ice",
+      "ice road",
+      "snowmobile on ice"
+    ],
+    "visual_exclusions": [
+      "open water",
+      "ships sailing"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 12.244458,
+    "end": 15.494458,
+    "duration": 3.25,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "And where more than 80 percent of the land is covered by ice. This is Greenland.",
+    "word_from": 41,
+    "word_to": 55,
+    "query": "Greenland ice sheet aerial",
+    "queries": [
+      "Greenland ice sheet aerial",
+      "vast glacier landscape",
+      "Greenland fjord mountains"
+    ],
+    "keywords": [
+      "percent",
+      "covered",
+      "land"
+    ],
+    "semantic": {
+      "meaning": "Illustrating the massive ice sheet covering most of the land.",
+      "subject": "ice sheet",
+      "action": "covering land",
+      "object": "glacier, ice cap",
+      "location": "Greenland ice sheet",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "vast ice sheet",
+      "glacier expanse",
+      "white ice desert",
+      "dramatic arctic coastline",
+      "fjords and ice"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "forests",
+      "tropical beaches"
+    ],
+    "shots": [
+      {
+        "word_from": 41,
+        "word_to": 52,
+        "text": "And where more than 80 percent of the land is covered by ice.",
+        "query": "Greenland ice sheet aerial",
+        "subject": "ice sheet",
+        "action": "covering land",
+        "start": 16.219458,
+        "end": 20.011124,
+        "duration": 3.7916659999999993,
+        "shot_id": "scene_004_shot_1"
+      },
+      {
+        "word_from": 53,
+        "word_to": 55,
+        "text": "This is Greenland.",
+        "query": "Greenland fjord mountains",
+        "subject": "Greenland coastline",
+        "action": "",
+        "start": 20.736125,
+        "end": 21.861124,
+        "duration": 1.124998999999999,
+        "shot_id": "scene_004_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 5,
+    "sentence_to": 6,
+    "start": 16.219458,
+    "end": 21.861124,
+    "duration": 5.641666000000001,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "The world's largest island and one of the most extreme places where people have built a life. But Greenland is changing.",
+    "word_from": 56,
+    "word_to": 76,
+    "query": "people living in Greenland",
+    "queries": [
+      "people living in Greenland",
+      "arctic village colorful houses",
+      "melting glacier Greenland climate"
+    ],
+    "keywords": [
+      "largest",
+      "extreme",
+      "island",
+      "places",
+      "people"
+    ],
+    "semantic": {
+      "meaning": "Highlighting human life and survival in this extreme environment.",
+      "subject": "inhabitants",
+      "action": "building life",
+      "object": "wooden houses, people in extreme environment",
+      "location": "Greenlandic village",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "colorful arctic houses",
+      "people living in extreme cold",
+      "melting ice",
+      "water flowing on glacier"
+    ],
+    "visual_exclusions": [
+      "skyscrapers",
+      "warm weather",
+      "stable static ice sheet"
+    ],
+    "shots": [
+      {
+        "word_from": 56,
+        "word_to": 72,
+        "text": "The world's largest island and one of the most extreme places where people have built a life.",
+        "query": "people living in Greenland",
+        "subject": "inhabitants",
+        "action": "building life",
+        "start": 22.6,
+        "end": 28.363916,
+        "duration": 5.763915999999998,
+        "shot_id": "scene_005_shot_1"
+      },
+      {
+        "word_from": 73,
+        "word_to": 76,
+        "text": "But Greenland is changing.",
+        "query": "melting glacier Greenland climate",
+        "subject": "melting glacier",
+        "action": "changing",
+        "start": 29.102791,
+        "end": 30.588916,
+        "duration": 1.4861250000000013,
+        "shot_id": "scene_005_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 7,
+    "sentence_to": 8,
+    "start": 22.6,
+    "end": 30.588916,
+    "duration": 7.988916,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "And the changes happening here could affect people thousands of kilometers away. Welcome to Extreme Earth Life. A WORLD COVERED IN ICE.",
+    "word_from": 77,
+    "word_to": 98,
+    "query": "rising sea levels ocean",
+    "queries": [
+      "rising sea levels ocean",
+      "global climate change impact",
+      "arctic ice texture close up"
+    ],
+    "keywords": [
+      "kilometers",
+      "happening",
+      "thousands",
+      "changes",
+      "affect"
+    ],
+    "semantic": {
+      "meaning": "Explaining global impacts of local arctic changes.",
+      "subject": "rising sea level",
+      "action": "affecting distant places",
+      "object": "ocean water, global impact",
+      "location": "global ocean / coastline",
+      "time": "day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "ocean waves",
+      "rising sea levels concept",
+      "dramatic nature backdrop",
+      "cinematic title card space",
+      "close up ice texture",
+      "frozen surface"
+    ],
+    "visual_exclusions": [
+      "frozen landscapes",
+      "green forests"
+    ],
+    "shots": [
+      {
+        "word_from": 77,
+        "word_to": 88,
+        "text": "And the changes happening here could affect people thousands of kilometers away.",
+        "query": "rising sea levels ocean",
+        "subject": "rising sea level",
+        "action": "affecting distant places",
+        "start": 31.313875,
+        "end": 35.591666,
+        "duration": 4.277790999999997,
+        "shot_id": "scene_006_shot_1"
+      },
+      {
+        "word_from": 89,
+        "word_to": 93,
+        "text": "Welcome to Extreme Earth Life.",
+        "query": "cinematic nature documentary title",
+        "subject": "title text",
+        "action": "appearing",
+        "start": 36.316666,
+        "end": 38.247208,
+        "duration": 1.9305420000000026,
+        "shot_id": "scene_006_shot_2"
+      },
+      {
+        "word_from": 94,
+        "word_to": 98,
+        "text": "A WORLD COVERED IN ICE.",
+        "query": "arctic ice texture close up",
+        "subject": "ice-covered planet",
+        "action": "shining",
+        "start": 38.972208,
+        "end": 40.624999,
+        "duration": 1.6527910000000006,
+        "shot_id": "scene_006_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 11,
+    "start": 31.313875,
+    "end": 40.624999,
+    "duration": 9.311124000000003,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "From above Greenland looks almost unreal.",
+    "word_from": 99,
+    "word_to": 104,
+    "query": "Greenland from space aerial",
+    "queries": [
+      "Greenland from space aerial",
+      "surreal arctic landscape aerial"
+    ],
+    "keywords": [
+      "greenland",
+      "unreal",
+      "above",
+      "looks"
+    ],
+    "semantic": {
+      "meaning": "Providing an unreal aerial perspective of Greenland from above.",
+      "subject": "aerial view",
+      "action": "looking unreal",
+      "object": "mountains, glaciers, ice patterns",
+      "location": "Greenland from above",
+      "time": "day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "high altitude aerial shot",
+      "surreal arctic landscape patterns"
+    ],
+    "visual_exclusions": [
+      "ground level views"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 12,
+    "sentence_to": 12,
+    "start": 41.35,
+    "end": 44.155582,
+    "duration": 2.805582000000001,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "A huge white landscape stretches across the North Atlantic surrounded by dark freezing ocean.",
+    "word_from": 105,
+    "word_to": 118,
+    "query": "greenland ice sheet aerial ocean",
+    "queries": [
+      "greenland ice sheet aerial ocean",
+      "arctic landscape aerial view"
+    ],
+    "keywords": [
+      "surrounded",
+      "landscape",
+      "stretches",
+      "atlantic",
+      "freezing"
+    ],
+    "semantic": {
+      "meaning": "An aerial view of the vast white Greenland ice sheet surrounded by the dark North Atlantic ocean.",
+      "subject": "Greenland ice sheet",
+      "action": "stretching",
+      "object": "landscape",
+      "location": "North Atlantic",
+      "time": "",
+      "entities": [
+        "North Atlantic",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "ice sheet",
+      "ocean",
+      "white ice",
+      "dark water"
+    ],
+    "visual_exclusions": [
+      "cities",
+      "people",
+      "cars"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 13,
+    "sentence_to": 13,
+    "start": 44.880541,
+    "end": 51.199999,
+    "duration": 6.319457999999997,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "Beneath this enormous ice sheet lies a landscape hidden for thousands of years.",
+    "word_from": 119,
+    "word_to": 131,
+    "query": "subglacial landscape animation greenland",
+    "queries": [
+      "subglacial landscape animation greenland",
+      "bedrock under ice sheet"
+    ],
+    "keywords": [
+      "landscape",
+      "thousands",
+      "enormous",
+      "beneath",
+      "hidden"
+    ],
+    "semantic": {
+      "meaning": "A hidden ancient land terrain exists deep beneath the massive Greenland ice sheet.",
+      "subject": "hidden landscape",
+      "action": "lying",
+      "object": "land beneath ice",
+      "location": "beneath ice sheet",
+      "time": "thousands of years",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "ice sheet",
+      "underground terrain concept",
+      "rock underneath ice"
+    ],
+    "visual_exclusions": [
+      "modern cities",
+      "highways"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 14,
+    "sentence_to": 14,
+    "start": 51.925,
+    "end": 56.633333,
+    "duration": 4.708333000000003,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "In some areas the ice reaches several kilometers in thickness.",
+    "word_from": 132,
+    "word_to": 141,
+    "query": "thick glacier ice cross section",
+    "queries": [
+      "thick glacier ice cross section",
+      "ice sheet depth greenland"
+    ],
+    "keywords": [
+      "kilometers",
+      "thickness",
+      "reaches",
+      "several",
+      "areas"
+    ],
+    "semantic": {
+      "meaning": "The thick ice sheet reaches kilometers in depth across parts of Greenland.",
+      "subject": "ice",
+      "action": "reaching",
+      "object": "thickness",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "thick ice cross section",
+      "glacier ice layers"
+    ],
+    "visual_exclusions": [
+      "green fields",
+      "people"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 15,
+    "sentence_to": 15,
+    "start": 57.358333,
+    "end": 61.483332,
+    "duration": 4.124998999999995,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "But despite its enormous size very little of Greenland is suitable for permanent settlement.",
+    "word_from": 142,
+    "word_to": 155,
+    "query": "barren greenland landscape aerial",
+    "queries": [
+      "barren greenland landscape aerial",
+      "uninhabited arctic wilderness"
+    ],
+    "keywords": [
+      "settlement",
+      "greenland",
+      "permanent",
+      "enormous",
+      "suitable"
+    ],
+    "semantic": {
+      "meaning": "Despite the huge land size, very little of Greenland is livable for permanent towns.",
+      "subject": "Greenland",
+      "action": "",
+      "object": "land area",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "vast barren landscape",
+      "mountainous terrain",
+      "uninhabited land"
+    ],
+    "visual_exclusions": [
+      "dense cities",
+      "suburbs"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 16,
+    "sentence_to": 16,
+    "start": 62.208333,
+    "end": 68.055541,
+    "duration": 5.847208000000002,
+    "index": 11,
+    "segment_id": "segment_011"
+  },
+  {
+    "text": "Most people live along a narrow strip of coastline.",
+    "word_from": 156,
+    "word_to": 164,
+    "query": "greenland coastal village aerial",
+    "queries": [
+      "greenland coastal village aerial",
+      "houses along fjord greenland"
+    ],
+    "keywords": [
+      "coastline",
+      "people",
+      "narrow",
+      "along",
+      "strip"
+    ],
+    "semantic": {
+      "meaning": "The human population primarily inhabits a thin strip of coastal land.",
+      "subject": "people",
+      "action": "living",
+      "object": "coastline strip",
+      "location": "Greenland coastline",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "coastal settlement",
+      "houses near water",
+      "shoreline"
+    ],
+    "visual_exclusions": [
+      "inland highways",
+      "forests"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 17,
+    "sentence_to": 17,
+    "start": 68.780541,
+    "end": 71.975,
+    "duration": 3.194458999999995,
+    "index": 12,
+    "segment_id": "segment_012"
+  },
+  {
+    "text": "Here small towns sit between mountains glaciers and the sea.",
+    "word_from": 165,
+    "word_to": 174,
+    "query": "greenland coastal town mountains",
+    "queries": [
+      "greenland coastal town mountains",
+      "village between mountains and sea"
+    ],
+    "keywords": [
+      "mountains",
+      "glaciers",
+      "small",
+      "towns"
+    ],
+    "semantic": {
+      "meaning": "Small coastal towns are nestled between towering mountains, glaciers, and the ocean.",
+      "subject": "small towns",
+      "action": "sitting",
+      "object": "towns between mountains and sea",
+      "location": "Greenland coast",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "coastal town",
+      "mountains",
+      "glacier",
+      "sea"
+    ],
+    "visual_exclusions": [
+      "skyscrapers",
+      "heavy traffic"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 18,
+    "sentence_to": 18,
+    "start": 72.7,
+    "end": 76.811082,
+    "duration": 4.111081999999996,
+    "index": 13,
+    "segment_id": "segment_013"
+  },
+  {
+    "text": "There are no major highways crossing the island.",
+    "word_from": 175,
+    "word_to": 182,
+    "query": "barren arctic mountains no roads",
+    "queries": [
+      "barren arctic mountains no roads",
+      "remote greenland wilderness aerial"
+    ],
+    "keywords": [
+      "highways",
+      "crossing",
+      "island",
+      "major"
+    ],
+    "semantic": {
+      "meaning": "There are no major highway systems crossing the island of Greenland.",
+      "subject": "highways",
+      "action": "crossing",
+      "object": "island",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "barren mountains",
+      "no roads",
+      "wilderness"
+    ],
+    "visual_exclusions": [
+      "roads",
+      "cars",
+      "highways"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 19,
+    "sentence_to": 19,
+    "start": 77.536125,
+    "end": 80.119416,
+    "duration": 2.5832910000000027,
+    "index": 14,
+    "segment_id": "segment_014"
+  },
+  {
+    "text": "No road connects Nuuk the capital with the other towns.",
+    "word_from": 183,
+    "word_to": 191,
+    "query": "nuuk capital greenland aerial",
+    "queries": [
+      "nuuk capital greenland aerial",
+      "isolated arctic town aerial"
+    ],
+    "keywords": [
+      "connects",
+      "capital",
+      "towns",
+      "road",
+      "nuuk"
+    ],
+    "semantic": {
+      "meaning": "The capital city Nuuk is not connected to other towns by any road network.",
+      "subject": "road",
+      "action": "connecting",
+      "object": "Nuuk and other towns",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Nuuk"
+      ]
+    },
+    "visual_requirements": [
+      "Nuuk city aerial",
+      "isolated coastal capital"
+    ],
+    "visual_exclusions": [
+      "interstate highway",
+      "traffic jams"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 20,
+    "sentence_to": 20,
+    "start": 80.844458,
+    "end": 84.816666,
+    "duration": 3.972207999999995,
+    "index": 15,
+    "segment_id": "segment_015"
+  },
+  {
+    "text": "Instead Greenland's communities are separated by enormous distances mountains fjords and ice.",
+    "word_from": 192,
+    "word_to": 203,
+    "query": "fjords and mountains greenland",
+    "queries": [
+      "fjords and mountains greenland",
+      "isolated arctic fjord landscape"
+    ],
+    "keywords": [
+      "communities",
+      "greenland",
+      "separated",
+      "distances",
+      "mountains"
+    ],
+    "semantic": {
+      "meaning": "Greenland communities remain isolated from each other by vast distances, mountains, fjords, and ice.",
+      "subject": "Greenland communities",
+      "action": "separated",
+      "object": "distances and mountains",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "fjords",
+      "mountains",
+      "isolated settlements",
+      "icy waters"
+    ],
+    "visual_exclusions": [
+      "bridges",
+      "highways"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 21,
+    "sentence_to": 21,
+    "start": 85.555541,
+    "end": 92.097249,
+    "duration": 6.541708,
+    "index": 16,
+    "segment_id": "segment_016"
+  },
+  {
+    "text": "And that has shaped almost every part of life. WHERE THE WEATHER DECIDES YOUR DAY.",
+    "word_from": 204,
+    "word_to": 218,
+    "query": "daily life greenland winter",
+    "queries": [
+      "daily life greenland winter",
+      "arctic resident looking outside",
+      "snowstorm arctic weather wind"
+    ],
+    "keywords": [
+      "shaped",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "This geographic isolation has shaped almost every aspect of daily life in Greenland.",
+      "subject": "geographic isolation",
+      "action": "shaping",
+      "object": "every part of life",
+      "location": "Greenland",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "daily life in arctic",
+      "local resident looking out",
+      "window view snow",
+      "stormy arctic weather",
+      "snow falling",
+      "windy snowy day"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "bustling metropolis",
+      "sunny tropical beach"
+    ],
+    "shots": [
+      {
+        "word_from": 204,
+        "word_to": 212,
+        "text": "And that has shaped almost every part of life.",
+        "query": "daily life greenland winter",
+        "subject": "geographic isolation",
+        "action": "shaping",
+        "start": 92.836125,
+        "end": 95.461125,
+        "duration": 2.625,
+        "shot_id": "scene_017_shot_1"
+      },
+      {
+        "word_from": 213,
+        "word_to": 218,
+        "text": "WHERE THE WEATHER DECIDES YOUR DAY.",
+        "query": "snowstorm arctic weather wind",
+        "subject": "weather",
+        "action": "decides",
+        "start": 96.2,
+        "end": 98.047208,
+        "duration": 1.8472079999999949,
+        "shot_id": "scene_017_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 22,
+    "sentence_to": 23,
+    "start": 92.836125,
+    "end": 98.047208,
+    "duration": 5.211083000000002,
+    "index": 17,
+    "segment_id": "segment_017"
+  },
+  {
+    "text": "In most countries you can look at a map and calculate how long a journey will take.",
+    "word_from": 219,
+    "word_to": 235,
+    "query": "looking at paper map",
+    "queries": [
+      "looking at paper map",
+      "person planning route on map"
+    ],
+    "keywords": [
+      "countries",
+      "calculate",
+      "journey"
+    ],
+    "semantic": {
+      "meaning": "Unlike other countries where maps allow travelers to easily calculate travel time, Greenland is different.",
+      "subject": "traveler",
+      "action": "calculating journey",
+      "object": "map and travel time",
+      "location": "map",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person looking at map",
+      "globe or regional map",
+      "travel planning"
+    ],
+    "visual_exclusions": [
+      "gps navigation screen"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 24,
+    "sentence_to": 24,
+    "start": 98.772208,
+    "end": 103.786083,
+    "duration": 5.013874999999999,
+    "index": 18,
+    "segment_id": "segment_018"
+  },
+  {
+    "text": "In Greenland that is not always enough.",
+    "word_from": 236,
+    "word_to": 242,
+    "query": "Greenland snowy wilderness",
+    "queries": [
+      "Greenland snowy wilderness",
+      "remote arctic landscape",
+      "harsh Greenland nature"
+    ],
+    "keywords": [
+      "greenland"
+    ],
+    "semantic": {
+      "meaning": "In Greenland, standard preparation or maps are not always enough.",
+      "subject": "Greenland landscape",
+      "action": "",
+      "object": "snowy terrain",
+      "location": "Greenland",
+      "time": "daytime",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Greenland landscape",
+      "snow and ice",
+      "remote area"
+    ],
+    "visual_exclusions": [
+      "city",
+      "traffic",
+      "summer"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 25,
+    "sentence_to": 25,
+    "start": 104.511125,
+    "end": 107.316666,
+    "duration": 2.805540999999991,
+    "index": 19,
+    "segment_id": "segment_019"
+  },
+  {
+    "text": "A trip that looks short on a map can become a completely different experience when a snowstorm arrives. Flights can be delayed. Boats can be stopped. Visibility can disappear in minutes.",
+    "word_from": 243,
+    "word_to": 273,
+    "query": "arctic snowstorm rolling in",
+    "queries": [
+      "arctic snowstorm rolling in",
+      "blizzard over snow landscape",
+      "arctic whiteout snow storm"
+    ],
+    "keywords": [
+      "completely",
+      "experience",
+      "different",
+      "snowstorm",
+      "arrives"
+    ],
+    "semantic": {
+      "meaning": "A short trip on a map becomes a different experience when a snowstorm arrives.",
+      "subject": "snowstorm",
+      "action": "arriving",
+      "object": "storm clouds over landscape",
+      "location": "arctic",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snowstorm",
+      "blizzard",
+      "landscape changing",
+      "airplane",
+      "snowy runway",
+      "bad weather",
+      "boat trapped in ice",
+      "frozen harbor"
+    ],
+    "visual_exclusions": [
+      "sunny day",
+      "green grass",
+      "traffic jams",
+      "taking off into clear sky",
+      "summer airport",
+      "boat sailing fast",
+      "summer ocean",
+      "clear sunny day"
+    ],
+    "shots": [
+      {
+        "word_from": 243,
+        "word_to": 260,
+        "text": "A trip that looks short on a map can become a completely different experience when a snowstorm arrives.",
+        "query": "arctic snowstorm rolling in",
+        "subject": "snowstorm",
+        "action": "arriving",
+        "start": 108.055541,
+        "end": 113.986082,
+        "duration": 5.930540999999991,
+        "shot_id": "scene_020_shot_1"
+      },
+      {
+        "word_from": 261,
+        "word_to": 264,
+        "text": "Flights can be delayed.",
+        "query": "grounded airplane snowstorm",
+        "subject": "airplanes",
+        "action": "grounded",
+        "start": 114.711125,
+        "end": 116.016666,
+        "duration": 1.3055410000000052,
+        "shot_id": "scene_020_shot_2"
+      },
+      {
+        "word_from": 265,
+        "word_to": 268,
+        "text": "Boats can be stopped.",
+        "query": "boat stuck in sea ice",
+        "subject": "boats",
+        "action": "stopped",
+        "start": 116.741666,
+        "end": 117.963874,
+        "duration": 1.222208000000009,
+        "shot_id": "scene_020_shot_3"
+      },
+      {
+        "word_from": 269,
+        "word_to": 273,
+        "text": "Visibility can disappear in minutes.",
+        "query": "arctic whiteout snow storm",
+        "subject": "fog and snow",
+        "action": "falling",
+        "start": 118.702791,
+        "end": 120.855541,
+        "duration": 2.1527499999999975,
+        "shot_id": "scene_020_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 26,
+    "sentence_to": 29,
+    "start": 108.055541,
+    "end": 120.855541,
+    "duration": 12.799999999999997,
+    "index": 20,
+    "segment_id": "segment_020"
+  },
+  {
+    "text": "For many communities airplanes boats helicopters snowmobiles and dog sleds are essential connections to the outside world.",
+    "word_from": 274,
+    "word_to": 290,
+    "query": "dog sled snowmobile Greenland transport",
+    "queries": [
+      "dog sled snowmobile Greenland transport",
+      "arctic helicopter and snowmobile",
+      "remote community transport arctic"
+    ],
+    "keywords": [
+      "communities",
+      "helicopters",
+      "snowmobiles",
+      "connections",
+      "airplanes"
+    ],
+    "semantic": {
+      "meaning": "Airplanes, boats, helicopters, snowmobiles and dog sleds connect communities to the outside world.",
+      "subject": "transportation vehicles",
+      "action": "moving",
+      "object": "airplanes boats snowmobiles dog sleds",
+      "location": "Greenland",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snowmobile and dog sled",
+      "helicopter in snow",
+      "arctic transport"
+    ],
+    "visual_exclusions": [
+      "modern highway",
+      "cars",
+      "trains"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 30,
+    "sentence_to": 30,
+    "start": 121.594458,
+    "end": 130.483333,
+    "duration": 8.888874999999985,
+    "index": 21,
+    "segment_id": "segment_021"
+  },
+  {
+    "text": "During winter frozen sea ice can even become a natural travel route.",
+    "word_from": 291,
+    "word_to": 302,
+    "query": "frozen sea ice travel route",
+    "queries": [
+      "frozen sea ice travel route",
+      "driving on sea ice arctic",
+      "natural ice road winter"
+    ],
+    "keywords": [
+      "natural",
+      "during",
+      "winter",
+      "frozen",
+      "become"
+    ],
+    "semantic": {
+      "meaning": "Frozen sea ice can become a natural travel route during winter.",
+      "subject": "frozen sea ice",
+      "action": "acting as road",
+      "object": "ice highway",
+      "location": "arctic sea ice",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frozen sea ice",
+      "travel route on ice",
+      "snowmobile on ice"
+    ],
+    "visual_exclusions": [
+      "open ocean water",
+      "summer beach"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 31,
+    "sentence_to": 31,
+    "start": 131.222208,
+    "end": 135.916666,
+    "duration": 4.694457999999997,
+    "index": 22,
+    "segment_id": "segment_022"
+  },
+  {
+    "text": "For generations Inuit communities have used knowledge of the ice weather animals and landscape to move through this environment. That knowledge is not simply history.",
+    "word_from": 303,
+    "word_to": 327,
+    "query": "Inuit people arctic travel",
+    "queries": [
+      "Inuit people arctic travel",
+      "traditional dog sledding Greenland",
+      "modern Inuit daily life"
+    ],
+    "keywords": [
+      "generations",
+      "communities",
+      "environment",
+      "knowledge",
+      "landscape"
+    ],
+    "semantic": {
+      "meaning": "Inuit communities have used knowledge of ice, weather, animals, and landscape to travel.",
+      "subject": "Inuit people",
+      "action": "moving",
+      "object": "landscape and ice",
+      "location": "Arctic",
+      "time": "winter",
+      "entities": [
+        "Inuit"
+      ]
+    },
+    "visual_requirements": [
+      "Inuit travelers",
+      "traditional arctic clothing",
+      "dog sled team",
+      "Inuit elder or traveler",
+      "arctic village",
+      "traditional tools"
+    ],
+    "visual_exclusions": [
+      "modern city",
+      "tourists in resort",
+      "ancient museum artifacts",
+      "history book"
+    ],
+    "shots": [
+      {
+        "word_from": 303,
+        "word_to": 321,
+        "text": "For generations Inuit communities have used knowledge of the ice weather animals and landscape to move through this environment.",
+        "query": "Inuit people arctic travel",
+        "subject": "Inuit people",
+        "action": "moving",
+        "start": 136.641666,
+        "end": 145.252791,
+        "duration": 8.611125000000015,
+        "shot_id": "scene_023_shot_1"
+      },
+      {
+        "word_from": 322,
+        "word_to": 327,
+        "text": "That knowledge is not simply history.",
+        "query": "modern Inuit daily life",
+        "subject": "traditional knowledge",
+        "action": "persisting",
+        "start": 145.977791,
+        "end": 148.144458,
+        "duration": 2.1666669999999897,
+        "shot_id": "scene_023_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 32,
+    "sentence_to": 33,
+    "start": 136.641666,
+    "end": 148.144458,
+    "duration": 11.502792,
+    "index": 23,
+    "segment_id": "segment_023"
+  },
+  {
+    "text": "In many places it is still part of everyday life. LIFE THROUGH MONTHS OF DARKNESS.",
+    "word_from": 328,
+    "word_to": 342,
+    "query": "daily life arctic village",
+    "queries": [
+      "daily life arctic village",
+      "Greenland settlement winter",
+      "arctic polar night darkness"
+    ],
+    "keywords": [
+      "everyday",
+      "places",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "In many places it is still part of everyday life.",
+      "subject": "people",
+      "action": "living",
+      "object": "daily routines",
+      "location": "arctic settlement",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "arctic village houses",
+      "people walking in snow",
+      "daily life in Greenland",
+      "dark arctic landscape",
+      "polar night",
+      "twilight snow"
+    ],
+    "visual_exclusions": [
+      "desert",
+      "tropical beach",
+      "bright sunny day",
+      "summer daylight"
+    ],
+    "shots": [
+      {
+        "word_from": 328,
+        "word_to": 337,
+        "text": "In many places it is still part of everyday life.",
+        "query": "daily life arctic village",
+        "subject": "people",
+        "action": "living",
+        "start": 148.869458,
+        "end": 152.147208,
+        "duration": 3.2777499999999975,
+        "shot_id": "scene_024_shot_1"
+      },
+      {
+        "word_from": 338,
+        "word_to": 342,
+        "text": "LIFE THROUGH MONTHS OF DARKNESS.",
+        "query": "arctic polar night darkness",
+        "subject": "polar night landscape",
+        "action": "existing",
+        "start": 152.886125,
+        "end": 154.705541,
+        "duration": 1.8194160000000181,
+        "shot_id": "scene_024_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 34,
+    "sentence_to": 35,
+    "start": 148.869458,
+    "end": 154.705541,
+    "duration": 5.836083000000002,
+    "index": 24,
+    "segment_id": "segment_024"
+  },
+  {
+    "text": "Greenland's seasons can feel almost impossible to imagine.",
+    "word_from": 343,
+    "word_to": 350,
+    "query": "Greenland dramatic seasons nature",
+    "queries": [
+      "Greenland dramatic seasons nature",
+      "extreme arctic landscape beauty",
+      "Greenland wilderness aerial"
+    ],
+    "keywords": [
+      "impossible",
+      "greenland",
+      "seasons",
+      "imagine",
+      "feel"
+    ],
+    "semantic": {
+      "meaning": "Greenland's seasons can feel almost impossible to imagine.",
+      "subject": "Greenland seasons",
+      "action": "changing",
+      "object": "extreme landscape",
+      "location": "Greenland",
+      "time": "year round",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "dramatic arctic landscape",
+      "extreme weather seasons",
+      "Greenland scenery"
+    ],
+    "visual_exclusions": [
+      "subtropical landscape",
+      "city skyline"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 36,
+    "sentence_to": 36,
+    "start": 155.430541,
+    "end": 158.944458,
+    "duration": 3.513916999999992,
+    "index": 25,
+    "segment_id": "segment_025"
+  },
+  {
+    "text": "In the far north winter brings extremely long periods with little sunlight.",
+    "word_from": 351,
+    "word_to": 362,
+    "query": "arctic winter dark landscape",
+    "queries": [
+      "arctic winter dark landscape",
+      "polar night snow scene"
+    ],
+    "keywords": [
+      "extremely",
+      "sunlight",
+      "periods",
+      "winter",
+      "brings"
+    ],
+    "semantic": {
+      "meaning": "Extreme winter darkness and lack of sunlight in the far north.",
+      "subject": "winter landscape",
+      "action": "",
+      "object": "sunlight",
+      "location": "far north",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "dark winter sky",
+      "snowy landscape",
+      "minimal light"
+    ],
+    "visual_exclusions": [
+      "bright summer sun",
+      "palm trees"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 37,
+    "sentence_to": 37,
+    "start": 159.669458,
+    "end": 164.474999,
+    "duration": 4.805541000000005,
+    "index": 26,
+    "segment_id": "segment_026"
+  },
+  {
+    "text": "The landscape becomes dark frozen and silent.",
+    "word_from": 363,
+    "word_to": 369,
+    "query": "frozen arctic landscape",
+    "queries": [
+      "frozen arctic landscape",
+      "ice covered wilderness"
+    ],
+    "keywords": [
+      "landscape",
+      "becomes",
+      "frozen",
+      "silent",
+      "dark"
+    ],
+    "semantic": {
+      "meaning": "The landscape turns dark, frozen, and silent.",
+      "subject": "landscape",
+      "action": "freezing",
+      "object": "snow and ice",
+      "location": "arctic",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "frozen ground",
+      "ice and snow",
+      "silent snowy wilderness"
+    ],
+    "visual_exclusions": [
+      "crowded city",
+      "summer greenery"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 38,
+    "sentence_to": 38,
+    "start": 165.2,
+    "end": 168.72775,
+    "duration": 3.5277499999999975,
+    "index": 27,
+    "segment_id": "segment_027"
+  },
+  {
+    "text": "Temperatures can fall far below freezing. Yet people still go to work. Children still go to school. Fishing continues. Families gather indoors.",
+    "word_from": 370,
+    "word_to": 391,
+    "query": "extreme cold frost ice",
+    "queries": [
+      "extreme cold frost ice",
+      "freezing arctic weather",
+      "family gathering indoors home"
+    ],
+    "keywords": [
+      "temperatures",
+      "freezing",
+      "below",
+      "fall"
+    ],
+    "semantic": {
+      "meaning": "Temperatures drop far below freezing in the cold environment.",
+      "subject": "temperature",
+      "action": "falling",
+      "object": "frost and ice",
+      "location": "arctic",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "heavy frost",
+      "icy conditions",
+      "subzero environment",
+      "people walking in snow",
+      "winter clothing",
+      "commuting to work",
+      "children with backpacks",
+      "winter coats"
+    ],
+    "visual_exclusions": [
+      "warm weather",
+      "tropical beach",
+      "summer clothing",
+      "beach scene",
+      "summer school",
+      "adults only",
+      "boat on open tropical water",
+      "outdoor summer picnic"
+    ],
+    "shots": [
+      {
+        "word_from": 370,
+        "word_to": 375,
+        "text": "Temperatures can fall far below freezing.",
+        "query": "extreme cold frost ice",
+        "subject": "temperature",
+        "action": "falling",
+        "start": 169.452791,
+        "end": 172.022249,
+        "duration": 2.5694579999999974,
+        "shot_id": "scene_028_shot_1"
+      },
+      {
+        "word_from": 376,
+        "word_to": 381,
+        "text": "Yet people still go to work.",
+        "query": "people walking snow commute",
+        "subject": "people",
+        "action": "commuting",
+        "start": 172.747208,
+        "end": 174.427749,
+        "duration": 1.6805410000000052,
+        "shot_id": "scene_028_shot_2"
+      },
+      {
+        "word_from": 382,
+        "word_to": 386,
+        "text": "Children still go to school.",
+        "query": "children walking to school snow",
+        "subject": "children",
+        "action": "walking",
+        "start": 175.152791,
+        "end": 176.833333,
+        "duration": 1.6805420000000026,
+        "shot_id": "scene_028_shot_3"
+      },
+      {
+        "word_from": 387,
+        "word_to": 388,
+        "text": "Fishing continues.",
+        "query": "ice fishing winter",
+        "subject": "fishermen",
+        "action": "fishing",
+        "start": 177.572208,
+        "end": 178.836124,
+        "duration": 1.2639160000000231,
+        "shot_id": "scene_028_shot_4"
+      },
+      {
+        "word_from": 389,
+        "word_to": 391,
+        "text": "Families gather indoors.",
+        "query": "family gathering indoors home",
+        "subject": "families",
+        "action": "gathering",
+        "start": 179.561125,
+        "end": 181.102791,
+        "duration": 1.5416659999999922,
+        "shot_id": "scene_028_shot_5"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 39,
+    "sentence_to": 43,
+    "start": 169.452791,
+    "end": 181.102791,
+    "duration": 11.650000000000006,
+    "index": 28,
+    "segment_id": "segment_028"
+  },
+  {
+    "text": "Life does not stop because winter arrives.",
+    "word_from": 392,
+    "word_to": 398,
+    "query": "daily life arctic winter",
+    "queries": [
+      "daily life arctic winter",
+      "people walking snowy streets"
+    ],
+    "keywords": [
+      "arrives",
+      "winter",
+      "life",
+      "stop"
+    ],
+    "semantic": {
+      "meaning": "Life continues normally despite the arrival of winter.",
+      "subject": "people",
+      "action": "living",
+      "object": "daily life",
+      "location": "northern settlement",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "active winter town",
+      "people going about daily life",
+      "snowy streets"
+    ],
+    "visual_exclusions": [
+      "ghost town",
+      "deserted landscape"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 44,
+    "sentence_to": 44,
+    "start": 181.841666,
+    "end": 184.508332,
+    "duration": 2.666665999999992,
+    "index": 29,
+    "segment_id": "segment_029"
+  },
+  {
+    "text": "People simply adapt their routines to the environment. Then comes summer. And Greenland transforms.",
+    "word_from": 399,
+    "word_to": 412,
+    "query": "arctic community winter routine",
+    "queries": [
+      "arctic community winter routine",
+      "people adapting to cold",
+      "Greenland summer landscape"
+    ],
+    "keywords": [
+      "environment",
+      "routines",
+      "people",
+      "adapt"
+    ],
+    "semantic": {
+      "meaning": "People adapt their daily routines to the harsh environment.",
+      "subject": "people",
+      "action": "adapting",
+      "object": "daily routines",
+      "location": "arctic community",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "locals in winter gear",
+      "snow removal or preparation",
+      "arctic daily routine",
+      "transition to summer",
+      "melting snow",
+      "brighter daylight",
+      "green arctic landscape",
+      "melted snow"
+    ],
+    "visual_exclusions": [
+      "tropical setting",
+      "dark winter night",
+      "frozen winter ice"
+    ],
+    "shots": [
+      {
+        "word_from": 399,
+        "word_to": 406,
+        "text": "People simply adapt their routines to the environment.",
+        "query": "arctic community winter routine",
+        "subject": "people",
+        "action": "adapting",
+        "start": 185.233333,
+        "end": 188.136124,
+        "duration": 2.9027910000000077,
+        "shot_id": "scene_030_shot_1"
+      },
+      {
+        "word_from": 407,
+        "word_to": 409,
+        "text": "Then comes summer.",
+        "query": "summer arriving arctic",
+        "subject": "summer season",
+        "action": "arriving",
+        "start": 188.875,
+        "end": 189.944458,
+        "duration": 1.0694579999999974,
+        "shot_id": "scene_030_shot_2"
+      },
+      {
+        "word_from": 410,
+        "word_to": 412,
+        "text": "And Greenland transforms.",
+        "query": "Greenland summer landscape",
+        "subject": "Greenland landscape",
+        "action": "transforming",
+        "start": 190.683333,
+        "end": 192.294416,
+        "duration": 1.6110830000000078,
+        "shot_id": "scene_030_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 45,
+    "sentence_to": 47,
+    "start": 185.233333,
+    "end": 192.294416,
+    "duration": 7.061083000000025,
+    "index": 30,
+    "segment_id": "segment_030"
+  },
+  {
+    "text": "In the northern parts of the island the sun can remain above the horizon for weeks. The darkness disappears. People spend more time outdoors. Fishing activity increases.",
+    "word_from": 413,
+    "word_to": 439,
+    "query": "midnight sun arctic summer",
+    "queries": [
+      "midnight sun arctic summer",
+      "sun low on horizon summer",
+      "arctic fishing boat"
+    ],
+    "keywords": [
+      "northern",
+      "horizon",
+      "island",
+      "remain",
+      "parts"
+    ],
+    "semantic": {
+      "meaning": "The sun remains above the horizon for weeks in the northern parts during summer.",
+      "subject": "sun",
+      "action": "shining",
+      "object": "midnight sun",
+      "location": "northern Greenland",
+      "time": "summer",
+      "entities": []
+    },
+    "visual_requirements": [
+      "midnight sun",
+      "sun above horizon",
+      "bright arctic summer sky",
+      "sunrise or brightening landscape",
+      "snow or ice",
+      "illuminated horizon",
+      "people outside",
+      "daylight"
+    ],
+    "visual_exclusions": [
+      "dark night",
+      "stormy clouds",
+      "night",
+      "artificial lights",
+      "darkness",
+      "winter coats",
+      "blizzards",
+      "frozen ice sheet"
+    ],
+    "shots": [
+      {
+        "word_from": 413,
+        "word_to": 428,
+        "text": "In the northern parts of the island the sun can remain above the horizon for weeks.",
+        "query": "midnight sun arctic summer",
+        "subject": "sun",
+        "action": "shining",
+        "start": 193.019458,
+        "end": 198.116666,
+        "duration": 5.097208000000023,
+        "shot_id": "scene_031_shot_1"
+      },
+      {
+        "word_from": 429,
+        "word_to": 431,
+        "text": "The darkness disappears.",
+        "query": "Arctic sunrise brightening",
+        "subject": "landscape",
+        "action": "brightening",
+        "start": 198.841666,
+        "end": 200.438875,
+        "duration": 1.5972089999999923,
+        "shot_id": "scene_031_shot_2"
+      },
+      {
+        "word_from": 432,
+        "word_to": 436,
+        "text": "People spend more time outdoors.",
+        "query": "people walking outdoors summer arctic",
+        "subject": "people",
+        "action": "walking",
+        "start": 201.163875,
+        "end": 203.233333,
+        "duration": 2.0694579999999974,
+        "shot_id": "scene_031_shot_3"
+      },
+      {
+        "word_from": 437,
+        "word_to": 439,
+        "text": "Fishing activity increases.",
+        "query": "arctic fishing boat",
+        "subject": "fishermen",
+        "action": "fishing",
+        "start": 203.958333,
+        "end": 205.777791,
+        "duration": 1.8194579999999974,
+        "shot_id": "scene_031_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 48,
+    "sentence_to": 51,
+    "start": 193.019458,
+    "end": 205.777791,
+    "duration": 12.758333000000022,
+    "index": 31,
+    "segment_id": "segment_031"
+  },
+  {
+    "text": "Construction and other work becomes easier. Families travel.",
+    "word_from": 440,
+    "word_to": 447,
+    "query": "construction work arctic summer",
+    "queries": [
+      "construction work arctic summer",
+      "builders working outdoors arctic",
+      "family traveling arctic landscape"
+    ],
+    "keywords": [
+      "construction",
+      "becomes",
+      "easier",
+      "work"
+    ],
+    "semantic": {
+      "meaning": "Construction and outdoor work taking place easily.",
+      "subject": "workers",
+      "action": "building",
+      "object": "construction materials",
+      "location": "arctic village",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "construction work",
+      "workers outside",
+      "buildings",
+      "family together",
+      "traveling",
+      "landscape"
+    ],
+    "visual_exclusions": [
+      "heavy winter snow",
+      "darkness",
+      "indoor scenes",
+      "nighttime"
+    ],
+    "shots": [
+      {
+        "word_from": 440,
+        "word_to": 445,
+        "text": "Construction and other work becomes easier.",
+        "query": "construction work arctic summer",
+        "subject": "workers",
+        "action": "building",
+        "start": 206.502791,
+        "end": 209.169458,
+        "duration": 2.6666669999999897,
+        "shot_id": "scene_032_shot_1"
+      },
+      {
+        "word_from": 446,
+        "word_to": 447,
+        "text": "Families travel.",
+        "query": "family traveling arctic landscape",
+        "subject": "family",
+        "action": "traveling",
+        "start": 209.894458,
+        "end": 210.97775,
+        "duration": 1.0832920000000001,
+        "shot_id": "scene_032_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 52,
+    "sentence_to": 53,
+    "start": 206.502791,
+    "end": 210.97775,
+    "duration": 4.474958999999984,
+    "index": 32,
+    "segment_id": "segment_032"
+  },
+  {
+    "text": "And the short summer becomes a race against time to make the most of the light.",
+    "word_from": 448,
+    "word_to": 463,
+    "query": "sunny arctic landscape summer",
+    "queries": [
+      "sunny arctic landscape summer",
+      "people enjoying arctic sun"
+    ],
+    "keywords": [
+      "becomes",
+      "summer",
+      "short",
+      "light",
+      "race"
+    ],
+    "semantic": {
+      "meaning": "The short summer is a race against time to enjoy the light.",
+      "subject": "people",
+      "action": "moving quickly",
+      "object": "summer light",
+      "location": "arctic landscape",
+      "time": "summer",
+      "entities": []
+    },
+    "visual_requirements": [
+      "sunny arctic landscape",
+      "active people",
+      "bright daylight"
+    ],
+    "visual_exclusions": [
+      "winter darkness",
+      "night"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 54,
+    "sentence_to": 54,
+    "start": 211.702791,
+    "end": 215.924999,
+    "duration": 4.222208000000023,
+    "index": 33,
+    "segment_id": "segment_033"
+  },
+  {
+    "text": "Here daylight is not just something you take for granted. It becomes something you notice. Something you value. THE PEOPLE WHO LEARNED TO LIVE WITH THE ICE.",
+    "word_from": 464,
+    "word_to": 490,
+    "query": "person enjoying sunlight arctic",
+    "queries": [
+      "person enjoying sunlight arctic",
+      "face lit by sun arctic",
+      "Inuit people Greenland ice"
+    ],
+    "keywords": [
+      "daylight",
+      "granted"
+    ],
+    "semantic": {
+      "meaning": "Daylight is deeply appreciated here, not taken for granted.",
+      "subject": "person",
+      "action": "experiencing",
+      "object": "sunlight",
+      "location": "arctic",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person looking at sun",
+      "bright light",
+      "outdoor portrait",
+      "person looking up",
+      "bright sky",
+      "sunlight",
+      "calm person",
+      "sunny day"
+    ],
+    "visual_exclusions": [
+      "darkness",
+      "interior",
+      "night",
+      "indoor scenes",
+      "tropical environments",
+      "modern cities"
+    ],
+    "shots": [
+      {
+        "word_from": 464,
+        "word_to": 473,
+        "text": "Here daylight is not just something you take for granted.",
+        "query": "person enjoying sunlight arctic",
+        "subject": "person",
+        "action": "experiencing",
+        "start": 216.65,
+        "end": 219.816666,
+        "duration": 3.166665999999992,
+        "shot_id": "scene_034_shot_1"
+      },
+      {
+        "word_from": 474,
+        "word_to": 478,
+        "text": "It becomes something you notice.",
+        "query": "person looking at bright sun",
+        "subject": "person",
+        "action": "noticing",
+        "start": 220.541666,
+        "end": 222.361124,
+        "duration": 1.8194579999999974,
+        "shot_id": "scene_034_shot_2"
+      },
+      {
+        "word_from": 479,
+        "word_to": 481,
+        "text": "Something you value.",
+        "query": "person appreciating sunlight arctic",
+        "subject": "person",
+        "action": "valuing",
+        "start": 223.086125,
+        "end": 224.294458,
+        "duration": 1.208332999999982,
+        "shot_id": "scene_034_shot_3"
+      },
+      {
+        "word_from": 482,
+        "word_to": 490,
+        "text": "THE PEOPLE WHO LEARNED TO LIVE WITH THE ICE.",
+        "query": "Inuit people Greenland ice",
+        "subject": "Inuit people",
+        "action": "living",
+        "start": 225.019458,
+        "end": 227.311082,
+        "duration": 2.291624000000013,
+        "shot_id": "scene_034_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 55,
+    "sentence_to": 58,
+    "start": 216.65,
+    "end": 227.311082,
+    "duration": 10.661081999999993,
+    "index": 34,
+    "segment_id": "segment_034"
+  },
+  {
+    "text": "For thousands of years Inuit communities have adapted to Greenland's environment.",
+    "word_from": 491,
+    "word_to": 501,
+    "query": "Inuit community Greenland landscape",
+    "queries": [
+      "Inuit community Greenland landscape",
+      "indigenous people Greenland arctic"
+    ],
+    "keywords": [
+      "communities",
+      "environment",
+      "thousands",
+      "greenland",
+      "adapted"
+    ],
+    "semantic": {
+      "meaning": "Inuit communities have adapted to Greenland's environment for thousands of years.",
+      "subject": "Inuit communities",
+      "action": "adapting",
+      "object": "environment",
+      "location": "Greenland",
+      "time": "thousands of years",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Inuit community",
+      "Greenland landscape",
+      "traditional or modern arctic living"
+    ],
+    "visual_exclusions": [
+      "urban cities",
+      "forests"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 59,
+    "sentence_to": 59,
+    "start": 228.036125,
+    "end": 233.341666,
+    "duration": 5.305541000000005,
+    "index": 35,
+    "segment_id": "segment_035"
+  },
+  {
+    "text": "The sea has always been central to that relationship.",
+    "word_from": 502,
+    "word_to": 510,
+    "query": "Greenland ocean icebergs coast",
+    "queries": [
+      "Greenland ocean icebergs coast",
+      "arctic sea water icebergs"
+    ],
+    "keywords": [
+      "relationship",
+      "central"
+    ],
+    "semantic": {
+      "meaning": "The sea has always been central to that relationship.",
+      "subject": "sea",
+      "action": "flowing",
+      "object": "ocean water",
+      "location": "Greenland coast",
+      "time": "daytime",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "ocean water",
+      "icebergs or coastline",
+      "Greenland sea"
+    ],
+    "visual_exclusions": [
+      "desert",
+      "forests"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 60,
+    "sentence_to": 60,
+    "start": 234.066666,
+    "end": 237.094458,
+    "duration": 3.027792000000005,
+    "index": 36,
+    "segment_id": "segment_036"
+  },
+  {
+    "text": "Fishing hunting and knowledge of the Arctic environment have helped communities survive where agriculture is extremely difficult.",
+    "word_from": 511,
+    "word_to": 527,
+    "query": "Arctic indigenous hunters fishing",
+    "queries": [
+      "Arctic indigenous hunters fishing",
+      "ice fishing arctic community",
+      "hunting in snow landscape"
+    ],
+    "keywords": [
+      "environment",
+      "communities",
+      "agriculture",
+      "knowledge",
+      "extremely"
+    ],
+    "semantic": {
+      "meaning": "Arctic communities survive through fishing, hunting, and environmental knowledge where farming is impossible.",
+      "subject": "Arctic community members",
+      "action": "hunting and fishing",
+      "object": "fish and game",
+      "location": "Arctic landscape",
+      "time": "present day",
+      "entities": [
+        "Arctic"
+      ]
+    },
+    "visual_requirements": [
+      "Indigenous hunters or fishermen",
+      "snowy Arctic landscape",
+      "traditional gear"
+    ],
+    "visual_exclusions": [
+      "modern skyscrapers",
+      "green farmland",
+      "tropical setting"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 61,
+    "sentence_to": 61,
+    "start": 237.833333,
+    "end": 245.430541,
+    "duration": 7.597207999999995,
+    "index": 37,
+    "segment_id": "segment_037"
+  },
+  {
+    "text": "Traditional foods can include fish seal whale products and other locally available resources.",
+    "word_from": 528,
+    "word_to": 540,
+    "query": "traditional arctic food seal whale",
+    "queries": [
+      "traditional arctic food seal whale",
+      "Inuit country food displayed",
+      "whale meat blubber food"
+    ],
+    "keywords": [
+      "traditional",
+      "available",
+      "resources",
+      "products",
+      "include"
+    ],
+    "semantic": {
+      "meaning": "Traditional diet consists of fish, seal, whale, and local resources.",
+      "subject": "Traditional food",
+      "action": "displayed",
+      "object": "fish seal whale meat",
+      "location": "Arctic kitchen or outdoor table",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "seal meat or whale blubber",
+      "fish on table",
+      "traditional food preparation"
+    ],
+    "visual_exclusions": [
+      "fast food burgers",
+      "pizza",
+      "greenhouse vegetables"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 62,
+    "sentence_to": 62,
+    "start": 246.155541,
+    "end": 252.905541,
+    "duration": 6.75,
+    "index": 38,
+    "segment_id": "segment_038"
+  },
+  {
+    "text": "One example is mattak made from whale skin and blubber.",
+    "word_from": 541,
+    "word_to": 550,
+    "query": "mattak whale skin blubber",
+    "queries": [
+      "mattak whale skin blubber",
+      "Greenlandic food mattak close up"
+    ],
+    "keywords": [
+      "example",
+      "blubber",
+      "mattak",
+      "whale",
+      "skin"
+    ],
+    "semantic": {
+      "meaning": "Mattak is a specific example made from whale skin and blubber.",
+      "subject": "Mattak",
+      "action": "being prepared or served",
+      "object": "whale skin and blubber",
+      "location": "Greenlandic home",
+      "time": "present day",
+      "entities": [
+        "Mattak"
+      ]
+    },
+    "visual_requirements": [
+      "whale skin and blubber delicacy",
+      "cube of mattak food",
+      "close up food dish"
+    ],
+    "visual_exclusions": [
+      "cooked steak",
+      "salad bowls",
+      "sushi rolls"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 63,
+    "sentence_to": 63,
+    "start": 253.630541,
+    "end": 257.380541,
+    "duration": 3.75,
+    "index": 39,
+    "segment_id": "segment_039"
+  },
+  {
+    "text": "These foods are not simply unusual dishes. They are connected to a much older story.",
+    "word_from": 551,
+    "word_to": 565,
+    "query": "elder sharing traditional food",
+    "queries": [
+      "elder sharing traditional food",
+      "Inuit cultural heritage storytelling"
+    ],
+    "keywords": [
+      "connected",
+      "unusual",
+      "dishes",
+      "foods",
+      "older"
+    ],
+    "semantic": {
+      "meaning": "These foods represent much more than unusual dishes, connecting to a deep ancient history.",
+      "subject": "Traditional food",
+      "action": "representing history",
+      "object": "ancient story",
+      "location": "Greenlandic home",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "elder sharing food",
+      "cultural heritage artifacts",
+      "traditional meal setting"
+    ],
+    "visual_exclusions": [
+      "modern restaurant menu",
+      "fast food drive thru"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 64,
+    "sentence_to": 65,
+    "start": 258.105541,
+    "end": 263.997249,
+    "duration": 5.891707999999994,
+    "index": 40,
+    "segment_id": "segment_040"
+  },
+  {
+    "text": "A story about surviving in a place where growing crops is difficult and where the ocean can mean the difference between having food and going without it. But modern Greenland is changing.",
+    "word_from": 566,
+    "word_to": 597,
+    "query": "arctic ocean coast ice",
+    "queries": [
+      "arctic ocean coast ice",
+      "hunting boat icy water",
+      "modern Greenland town changing"
+    ],
+    "keywords": [
+      "difference",
+      "surviving",
+      "difficult",
+      "growing",
+      "story"
+    ],
+    "semantic": {
+      "meaning": "The narrative centers on survival in a harsh climate where the ocean dictates food availability.",
+      "subject": "Ocean and Arctic landscape",
+      "action": "sustaining life",
+      "object": "ocean water and ice",
+      "location": "Arctic coastal region",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "icy ocean coast",
+      "hunting boat in icy water",
+      "dramatic Arctic sea",
+      "modern buildings in Greenland",
+      "town landscape transition",
+      "contemporary Greenland"
+    ],
+    "visual_exclusions": [
+      "desert landscape",
+      "busy highway",
+      "tropical beach",
+      "ancient historical reenactment",
+      "medieval village"
+    ],
+    "shots": [
+      {
+        "word_from": 566,
+        "word_to": 592,
+        "text": "A story about surviving in a place where growing crops is difficult and where the ocean can mean the difference between having food and going without it.",
+        "query": "arctic ocean coast ice",
+        "subject": "Ocean and Arctic landscape",
+        "action": "sustaining life",
+        "start": 264.72225,
+        "end": 273.319457,
+        "duration": 8.597207000000026,
+        "shot_id": "scene_041_shot_1"
+      },
+      {
+        "word_from": 593,
+        "word_to": 597,
+        "text": "But modern Greenland is changing.",
+        "query": "modern Greenland town changing",
+        "subject": "Modern Greenland",
+        "action": "changing",
+        "start": 274.044458,
+        "end": 275.919458,
+        "duration": 1.875,
+        "shot_id": "scene_041_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 66,
+    "sentence_to": 67,
+    "start": 264.72225,
+    "end": 275.919458,
+    "duration": 11.197208000000046,
+    "index": 41,
+    "segment_id": "segment_041"
+  },
+  {
+    "text": "Supermarkets smartphones modern transportation tourism and global culture now exist alongside traditional Arctic life.",
+    "word_from": 598,
+    "word_to": 611,
+    "query": "smartphone in snowy town",
+    "queries": [
+      "smartphone in snowy town",
+      "supermarket in Greenland",
+      "modern life Arctic town"
+    ],
+    "keywords": [
+      "transportation",
+      "supermarkets",
+      "smartphones",
+      "traditional",
+      "alongside"
+    ],
+    "semantic": {
+      "meaning": "Supermarkets, smartphones, transport, tourism, and global culture blend with traditional Arctic life.",
+      "subject": "Supermarkets and smartphones and modern transport",
+      "action": "existing alongside tradition",
+      "object": "modern technology and traditional life",
+      "location": "Greenlandic town",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person using smartphone in snow",
+      "supermarket exterior in Greenland",
+      "tourists and locals together"
+    ],
+    "visual_exclusions": [
+      "isolated primitive village with no tech",
+      "purely industrial city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 68,
+    "sentence_to": 68,
+    "start": 276.644458,
+    "end": 285.463916,
+    "duration": 8.819457999999997,
+    "index": 42,
+    "segment_id": "segment_042"
+  },
+  {
+    "text": "Young Greenlanders are growing up between two worlds. They are connected to the same global culture as teenagers anywhere else while also inheriting languages stories traditions and knowledge that have existed for generations. THE COLORFUL TOWNS OF GREENLAND.",
+    "word_from": 612,
+    "word_to": 649,
+    "query": "Greenlandic teenagers modern clothes",
+    "queries": [
+      "Greenlandic teenagers modern clothes",
+      "young people Greenland settlement",
+      "colorful towns of Greenland"
+    ],
+    "keywords": [
+      "greenlanders",
+      "generations",
+      "inheriting",
+      "traditions",
+      "connected"
+    ],
+    "semantic": {
+      "meaning": "Young Greenlanders navigate two worlds, linked to global teen culture and ancient generational heritage.",
+      "subject": "Young Greenlanders",
+      "action": "growing up between two worlds",
+      "object": "global culture and traditions",
+      "location": "Greenlandic settlement",
+      "time": "present day",
+      "entities": []
+    },
+    "visual_requirements": [
+      "Greenlandic teenagers",
+      "youth with smartphones and traditional clothing",
+      "modern youth in Arctic town",
+      "brightly colored wooden houses",
+      "coastal Greenland settlement",
+      "scenic colorful village"
+    ],
+    "visual_exclusions": [
+      "elderly people only",
+      "historical villagers from 1800s",
+      "monochrome buildings",
+      "concrete megacity"
+    ],
+    "shots": [
+      {
+        "word_from": 612,
+        "word_to": 644,
+        "text": "Young Greenlanders are growing up between two worlds. They are connected to the same global culture as teenagers anywhere else while also inheriting languages stories traditions and knowledge that have existed for generations.",
+        "query": "Greenlandic teenagers modern clothes",
+        "subject": "Young Greenlanders",
+        "action": "growing up between two worlds",
+        "start": 286.202791,
+        "end": 301.685999,
+        "duration": 15.48320799999999,
+        "shot_id": "scene_043_shot_1"
+      },
+      {
+        "word_from": 645,
+        "word_to": 649,
+        "text": "THE COLORFUL TOWNS OF GREENLAND.",
+        "query": "colorful towns of Greenland",
+        "subject": "Colorful towns of Greenland",
+        "action": "displayed as title",
+        "start": 302.416541,
+        "end": 304.347083,
+        "duration": 1.9305420000000026,
+        "shot_id": "scene_043_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 69,
+    "sentence_to": 71,
+    "start": 286.202791,
+    "end": 304.347083,
+    "duration": 18.144292000000007,
+    "index": 43,
+    "segment_id": "segment_043"
+  },
+  {
+    "text": "There is something surprising about Greenland's settlements.",
+    "word_from": 650,
+    "word_to": 656,
+    "query": "Greenland settlements panoramic view",
+    "queries": [
+      "Greenland settlements panoramic view",
+      "colorful houses rocky coast Greenland"
+    ],
+    "keywords": [
+      "settlements",
+      "surprising",
+      "greenland"
+    ],
+    "semantic": {
+      "meaning": "There is something surprising about Greenland's settlements.",
+      "subject": "Greenland settlements",
+      "action": "appearing surprising",
+      "object": "coastal towns",
+      "location": "Greenland",
+      "time": "present day",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "panoramic view of Greenland town",
+      "colorful houses on rocky coast",
+      "surprising Arctic settlement"
+    ],
+    "visual_exclusions": [
+      "empty wasteland",
+      "dense tropical forest"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 72,
+    "sentence_to": 72,
+    "start": 305.072125,
+    "end": 308.183249,
+    "duration": 3.111123999999961,
+    "index": 44,
+    "segment_id": "segment_044"
+  },
+  {
+    "text": "Against enormous landscapes of white snow blue ice and dark rock the towns can look incredibly colorful.",
+    "word_from": 657,
+    "word_to": 673,
+    "query": "colorful arctic town snow",
+    "queries": [
+      "colorful arctic town snow",
+      "greenland village winter landscape"
+    ],
+    "keywords": [
+      "landscapes",
+      "incredibly",
+      "enormous",
+      "colorful",
+      "white"
+    ],
+    "semantic": {
+      "meaning": "Colorful towns stand out against vast snowy and icy Arctic landscapes.",
+      "subject": "Arctic towns",
+      "action": "standing",
+      "object": "colorful houses",
+      "location": "Arctic landscape",
+      "time": "daytime",
+      "entities": [
+        "Arctic"
+      ]
+    },
+    "visual_requirements": [
+      "snowy landscape",
+      "colorful houses",
+      "ice and rock"
+    ],
+    "visual_exclusions": [
+      "tropical scenery",
+      "modern skyscrapers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 73,
+    "sentence_to": 73,
+    "start": 308.908208,
+    "end": 316.255416,
+    "duration": 7.347208000000023,
+    "index": 45,
+    "segment_id": "segment_045"
+  },
+  {
+    "text": "Houses painted red yellow blue and green stand out against the Arctic landscape.",
+    "word_from": 674,
+    "word_to": 686,
+    "query": "colorful houses arctic village",
+    "queries": [
+      "colorful houses arctic village",
+      "painted wooden houses snow"
+    ],
+    "keywords": [
+      "landscape",
+      "painted",
+      "houses",
+      "yellow",
+      "arctic"
+    ],
+    "semantic": {
+      "meaning": "Red, yellow, blue, and green painted houses contrast with the surroundings.",
+      "subject": "Houses",
+      "action": "standing",
+      "object": "painted houses",
+      "location": "Arctic village",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "red yellow blue green houses",
+      "snowy ground"
+    ],
+    "visual_exclusions": [
+      "monochrome buildings"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 74,
+    "sentence_to": 74,
+    "start": 316.980458,
+    "end": 322.494333,
+    "duration": 5.5138749999999845,
+    "index": 46,
+    "segment_id": "segment_046"
+  },
+  {
+    "text": "The colors create a striking contrast with the environment.",
+    "word_from": 687,
+    "word_to": 695,
+    "query": "bright colored houses snow",
+    "queries": [
+      "bright colored houses snow",
+      "contrast arctic village"
+    ],
+    "keywords": [
+      "environment",
+      "striking",
+      "contrast",
+      "colors",
+      "create"
+    ],
+    "semantic": {
+      "meaning": "The bright colors create a striking contrast against the natural environment.",
+      "subject": "Colors",
+      "action": "contrasting",
+      "object": "environment",
+      "location": "Arctic settlement",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "bright houses",
+      "white snow background"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 75,
+    "sentence_to": 75,
+    "start": 323.233208,
+    "end": 326.469333,
+    "duration": 3.2361250000000155,
+    "index": 47,
+    "segment_id": "segment_047"
+  },
+  {
+    "text": "And in a place where winter can feel endless those bright buildings bring another kind of warmth.",
+    "word_from": 696,
+    "word_to": 712,
+    "query": "colorful arctic winter buildings",
+    "queries": [
+      "colorful arctic winter buildings",
+      "cozy bright houses snow"
+    ],
+    "keywords": [
+      "buildings",
+      "endless",
+      "winter",
+      "bright",
+      "warmth"
+    ],
+    "semantic": {
+      "meaning": "In the endless winter, these bright buildings provide a sense of warmth.",
+      "subject": "Bright buildings",
+      "action": "bringing warmth",
+      "object": "bright buildings",
+      "location": "Arctic town",
+      "time": "winter",
+      "entities": []
+    },
+    "visual_requirements": [
+      "colorful buildings",
+      "snowy winter setting"
+    ],
+    "visual_exclusions": [
+      "summer green grass"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 76,
+    "sentence_to": 76,
+    "start": 327.194333,
+    "end": 332.777666,
+    "duration": 5.583333000000039,
+    "index": 48,
+    "segment_id": "segment_048"
+  },
+  {
+    "text": "Greenland may be one of the coldest inhabited regions on Earth.",
+    "word_from": 713,
+    "word_to": 723,
+    "query": "greenland cold icy landscape",
+    "queries": [
+      "greenland cold icy landscape",
+      "arctic ice sheet aerial"
+    ],
+    "keywords": [
+      "greenland",
+      "inhabited",
+      "coldest",
+      "regions",
+      "earth"
+    ],
+    "semantic": {
+      "meaning": "Greenland is among the coldest inhabited regions on Earth.",
+      "subject": "Greenland",
+      "action": "existing as cold region",
+      "object": "cold region",
+      "location": "Greenland",
+      "time": "present",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "cold region",
+      "ice and snow"
+    ],
+    "visual_exclusions": [
+      "desert",
+      "palm trees"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 77,
+    "sentence_to": 77,
+    "start": 333.516541,
+    "end": 337.266541,
+    "duration": 3.75,
+    "index": 49,
+    "segment_id": "segment_049"
+  },
+  {
+    "text": "But its communities are not defined only by the cold.",
+    "word_from": 724,
+    "word_to": 733,
+    "query": "greenland local people community",
+    "queries": [
+      "greenland local people community",
+      "inhabitants arctic village"
+    ],
+    "keywords": [
+      "communities",
+      "defined",
+      "cold"
+    ],
+    "semantic": {
+      "meaning": "The communities are defined by more than just the cold weather.",
+      "subject": "Communities",
+      "action": "existing",
+      "object": "communities",
+      "location": "Greenland",
+      "time": "present",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people in arctic settlement",
+      "inhabitants"
+    ],
+    "visual_exclusions": [
+      "empty landscapes"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 78,
+    "sentence_to": 78,
+    "start": 337.991541,
+    "end": 341.061,
+    "duration": 3.069458999999995,
+    "index": 50,
+    "segment_id": "segment_050"
+  },
+  {
+    "text": "Family celebrations food music and social gatherings remain important parts of life.",
+    "word_from": 734,
+    "word_to": 745,
+    "query": "greenland community gathering celebration",
+    "queries": [
+      "greenland community gathering celebration",
+      "arctic people eating music"
+    ],
+    "keywords": [
+      "celebrations",
+      "gatherings",
+      "important",
+      "family",
+      "social"
+    ],
+    "semantic": {
+      "meaning": "Family celebrations, food, music, and gatherings are central to life.",
+      "subject": "Family celebrations and gatherings",
+      "action": "gathering",
+      "object": "music and food",
+      "location": "Greenland community",
+      "time": "present",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people gathering",
+      "food and music",
+      "family celebration"
+    ],
+    "visual_exclusions": [
+      "isolation",
+      "empty streets"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 79,
+    "sentence_to": 79,
+    "start": 341.786,
+    "end": 348.091541,
+    "duration": 6.305541000000005,
+    "index": 51,
+    "segment_id": "segment_051"
+  },
+  {
+    "text": "In an environment where isolation is unavoidable community becomes essential. THE SEA THAT FEEDS GREENLAND.",
+    "word_from": 746,
+    "word_to": 760,
+    "query": "remote arctic community",
+    "queries": [
+      "remote arctic community",
+      "greenland social gathering",
+      "ocean waves arctic sea"
+    ],
+    "keywords": [
+      "environment",
+      "unavoidable",
+      "isolation",
+      "community",
+      "essential"
+    ],
+    "semantic": {
+      "meaning": "In a place of unavoidable isolation, community is essential.",
+      "subject": "Community",
+      "action": "being essential",
+      "object": "community bonds",
+      "location": "Greenland",
+      "time": "present",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people together",
+      "remote arctic settlement",
+      "title text",
+      "ocean theme"
+    ],
+    "visual_exclusions": [
+      "crowded city metropolis"
+    ],
+    "shots": [
+      {
+        "word_from": 746,
+        "word_to": 755,
+        "text": "In an environment where isolation is unavoidable community becomes essential.",
+        "query": "remote arctic community",
+        "subject": "Community",
+        "action": "being essential",
+        "start": 348.816541,
+        "end": 353.927666,
+        "duration": 5.1111250000000155,
+        "shot_id": "scene_052_shot_1"
+      },
+      {
+        "word_from": 756,
+        "word_to": 760,
+        "text": "THE SEA THAT FEEDS GREENLAND.",
+        "query": "ocean waves arctic sea",
+        "subject": "Title card",
+        "action": "displaying text",
+        "start": 354.652666,
+        "end": 356.347125,
+        "duration": 1.6944589999999948,
+        "shot_id": "scene_052_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 80,
+    "sentence_to": 81,
+    "start": 348.816541,
+    "end": 356.347125,
+    "duration": 7.530584000000033,
+    "index": 52,
+    "segment_id": "segment_052"
+  },
+  {
+    "text": "Look at a map of Greenland and one thing becomes obvious. The island is surrounded by ocean.",
+    "word_from": 761,
+    "word_to": 777,
+    "query": "map of greenland ocean",
+    "queries": [
+      "map of greenland ocean",
+      "satellite view greenland island"
+    ],
+    "keywords": [
+      "surrounded",
+      "greenland",
+      "becomes",
+      "obvious",
+      "island"
+    ],
+    "semantic": {
+      "meaning": "A map of Greenland shows that the island is entirely surrounded by ocean.",
+      "subject": "Map and island",
+      "action": "showing",
+      "object": "ocean surrounding island",
+      "location": "map",
+      "time": "present",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "map of greenland",
+      "surrounding ocean"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 82,
+    "sentence_to": 83,
+    "start": 357.072125,
+    "end": 363.324916,
+    "duration": 6.252790999999945,
+    "index": 53,
+    "segment_id": "segment_053"
+  },
+  {
+    "text": "And that ocean is the foundation of its modern economy.",
+    "word_from": 778,
+    "word_to": 787,
+    "query": "greenland fishing industry ocean",
+    "queries": [
+      "greenland fishing industry ocean",
+      "arctic ocean economy coastal"
+    ],
+    "keywords": [
+      "foundation",
+      "economy",
+      "modern",
+      "ocean"
+    ],
+    "semantic": {
+      "meaning": "The ocean serves as the foundation of the modern economy.",
+      "subject": "Ocean",
+      "action": "acting as foundation",
+      "object": "modern economy",
+      "location": "Greenland",
+      "time": "present",
+      "entities": []
+    },
+    "visual_requirements": [
+      "ocean water",
+      "fishing boat or coastal economy"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 84,
+    "sentence_to": 84,
+    "start": 364.049875,
+    "end": 367.286,
+    "duration": 3.2361250000000155,
+    "index": 54,
+    "segment_id": "segment_054"
+  },
+  {
+    "text": "Fishing is one of Greenland's most important industries with species such as shrimp and Greenland halibut playing a major role.",
+    "word_from": 788,
+    "word_to": 807,
+    "query": "Greenland fishing industry",
+    "queries": [
+      "Greenland fishing industry",
+      "shrimp and halibut catch",
+      "commercial fishing Greenland"
+    ],
+    "keywords": [
+      "industries",
+      "greenland",
+      "important",
+      "fishing",
+      "species"
+    ],
+    "semantic": {
+      "meaning": "Greenland fishing industry featuring shrimp and halibut.",
+      "subject": "Fishing industry",
+      "action": "processing fish",
+      "object": "shrimp and Greenland halibut",
+      "location": "Greenland",
+      "time": "daytime",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Greenland landscape",
+      "seafood catch",
+      "fishing industry workers"
+    ],
+    "visual_exclusions": [
+      "tropical beach",
+      "warm weather"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 85,
+    "sentence_to": 85,
+    "start": 368.011,
+    "end": 375.983208,
+    "duration": 7.972207999999966,
+    "index": 55,
+    "segment_id": "segment_055"
+  },
+  {
+    "text": "In coastal communities the harbor can be one of the most important places in town.",
+    "word_from": 808,
+    "word_to": 822,
+    "query": "Greenland coastal harbor",
+    "queries": [
+      "Greenland coastal harbor",
+      "Arctic village port",
+      "fishing boats docked harbor"
+    ],
+    "keywords": [
+      "communities",
+      "important",
+      "coastal",
+      "harbor",
+      "places"
+    ],
+    "semantic": {
+      "meaning": "Coastal harbor as a central place in the town.",
+      "subject": "Harbor",
+      "action": "functioning",
+      "object": "boats and docks",
+      "location": "Greenland coastal community",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "harbor",
+      "coastal village",
+      "boats docked"
+    ],
+    "visual_exclusions": [
+      "large metropolis",
+      "palm trees"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 86,
+    "sentence_to": 86,
+    "start": 376.708208,
+    "end": 381.694333,
+    "duration": 4.986124999999959,
+    "index": 56,
+    "segment_id": "segment_056"
+  },
+  {
+    "text": "Boats leave in freezing waters and return with catches that support families and businesses.",
+    "word_from": 823,
+    "word_to": 836,
+    "query": "fishing boat freezing waters Arctic",
+    "queries": [
+      "fishing boat freezing waters Arctic",
+      "boat returning with fish catch",
+      "Greenland fishing vessels at sea"
+    ],
+    "keywords": [
+      "businesses",
+      "freezing",
+      "families",
+      "catches",
+      "support"
+    ],
+    "semantic": {
+      "meaning": "Boats navigating freezing waters and returning with catches.",
+      "subject": "Fishing boats",
+      "action": "sailing in freezing waters",
+      "object": "fish catches",
+      "location": "Arctic ocean",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "fishing boat",
+      "freezing water",
+      "icebergs",
+      "fish catch"
+    ],
+    "visual_exclusions": [
+      "warm ocean",
+      "sunbathers"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 87,
+    "sentence_to": 87,
+    "start": 382.433208,
+    "end": 387.724874,
+    "duration": 5.291666000000021,
+    "index": 57,
+    "segment_id": "segment_057"
+  },
+  {
+    "text": "But Greenland's relationship with the sea is becoming more complicated. The Arctic climate is warming. Sea ice is changing. Weather patterns are becoming less predictable.",
+    "word_from": 837,
+    "word_to": 861,
+    "query": "Greenland coastline ocean view",
+    "queries": [
+      "Greenland coastline ocean view",
+      "Arctic ocean landscape",
+      "stormy Arctic sky weather"
+    ],
+    "keywords": [
+      "relationship",
+      "complicated",
+      "greenland",
+      "becoming"
+    ],
+    "semantic": {
+      "meaning": "Greenland relationship with the sea becoming complicated.",
+      "subject": "Greenland relationship with sea",
+      "action": "changing",
+      "object": "ocean",
+      "location": "Greenland",
+      "time": "daytime",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Greenland coastline",
+      "ocean waves",
+      "dramatic landscape",
+      "melting ice",
+      "Arctic landscape",
+      "sun over glacier",
+      "sea ice",
+      "ice floes"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 837,
+        "word_to": 846,
+        "text": "But Greenland's relationship with the sea is becoming more complicated.",
+        "query": "Greenland coastline ocean view",
+        "subject": "Greenland relationship with sea",
+        "action": "changing",
+        "start": 388.449875,
+        "end": 392.435999,
+        "duration": 3.986123999999961,
+        "shot_id": "scene_058_shot_1"
+      },
+      {
+        "word_from": 847,
+        "word_to": 851,
+        "text": "The Arctic climate is warming.",
+        "query": "Arctic climate warming melting",
+        "subject": "Arctic climate",
+        "action": "warming",
+        "start": 393.161,
+        "end": 394.994333,
+        "duration": 1.833332999999982,
+        "shot_id": "scene_058_shot_2"
+      },
+      {
+        "word_from": 852,
+        "word_to": 855,
+        "text": "Sea ice is changing.",
+        "query": "sea ice changing Arctic",
+        "subject": "Sea ice",
+        "action": "breaking apart",
+        "start": 395.733208,
+        "end": 397.122082,
+        "duration": 1.388873999999987,
+        "shot_id": "scene_058_shot_3"
+      },
+      {
+        "word_from": 856,
+        "word_to": 861,
+        "text": "Weather patterns are becoming less predictable.",
+        "query": "stormy Arctic sky weather",
+        "subject": "Weather patterns",
+        "action": "shifting",
+        "start": 397.847125,
+        "end": 400.235999,
+        "duration": 2.388873999999987,
+        "shot_id": "scene_058_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 88,
+    "sentence_to": 91,
+    "start": 388.449875,
+    "end": 400.235999,
+    "duration": 11.786123999999973,
+    "index": 58,
+    "segment_id": "segment_058"
+  },
+  {
+    "text": "For people whose lives depend on the ocean and ice these changes are not abstract scientific statistics.",
+    "word_from": 862,
+    "word_to": 878,
+    "query": "Greenland local person looking at sea",
+    "queries": [
+      "Greenland local person looking at sea",
+      "Arctic resident gazing at ice",
+      "inhabitant looking at ocean"
+    ],
+    "keywords": [
+      "scientific",
+      "statistics",
+      "abstract",
+      "changes",
+      "people"
+    ],
+    "semantic": {
+      "meaning": "Changes are not abstract statistics for people depending on ocean and ice.",
+      "subject": "Local residents",
+      "action": "observing landscape",
+      "object": "environment",
+      "location": "Greenland",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "Greenlandic person",
+      "looking at ocean",
+      "traditional clothing or winter gear"
+    ],
+    "visual_exclusions": [
+      "laboratory",
+      "computer screens with graphs"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 92,
+    "sentence_to": 92,
+    "start": 400.961,
+    "end": 407.822083,
+    "duration": 6.861083000000008,
+    "index": 59,
+    "segment_id": "segment_059"
+  },
+  {
+    "text": "They can affect travel hunting fishing and everyday decisions. THE ICE IS DISAPPEARING.",
+    "word_from": 879,
+    "word_to": 891,
+    "query": "snowmobile on thin ice Arctic",
+    "queries": [
+      "snowmobile on thin ice Arctic",
+      "fisherman checking ice conditions",
+      "glacier ice disappearing fast"
+    ],
+    "keywords": [
+      "decisions",
+      "everyday",
+      "hunting",
+      "fishing",
+      "affect"
+    ],
+    "semantic": {
+      "meaning": "Effects on travel, hunting, fishing, and everyday decisions.",
+      "subject": "Daily life activities",
+      "action": "navigating",
+      "object": "difficult terrain",
+      "location": "Greenland ice and coast",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "snowmobile on thin ice",
+      "fisherman on ice",
+      "traveling in Arctic",
+      "rapidly melting glacier",
+      "ice calving",
+      "disappearing ice sheet"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 879,
+        "word_to": 887,
+        "text": "They can affect travel hunting fishing and everyday decisions.",
+        "query": "snowmobile on thin ice Arctic",
+        "subject": "Daily life activities",
+        "action": "navigating",
+        "start": 408.547125,
+        "end": 413.116541,
+        "duration": 4.56941599999999,
+        "shot_id": "scene_060_shot_1"
+      },
+      {
+        "word_from": 888,
+        "word_to": 891,
+        "text": "THE ICE IS DISAPPEARING.",
+        "query": "glacier ice disappearing fast",
+        "subject": "Ice",
+        "action": "disappearing",
+        "start": 413.841541,
+        "end": 415.383208,
+        "duration": 1.541667000000018,
+        "shot_id": "scene_060_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 93,
+    "sentence_to": 94,
+    "start": 408.547125,
+    "end": 415.383208,
+    "duration": 6.8360830000000306,
+    "index": 60,
+    "segment_id": "segment_060"
+  },
+  {
+    "text": "And this is where Greenland's story becomes much bigger than Greenland. The island's ice sheet is losing mass.",
+    "word_from": 892,
+    "word_to": 909,
+    "query": "wide aerial view Greenland ice",
+    "queries": [
+      "wide aerial view Greenland ice",
+      "global climate change perspective",
+      "Greenland ice sheet losing mass"
+    ],
+    "keywords": [
+      "greenland",
+      "becomes",
+      "bigger",
+      "story"
+    ],
+    "semantic": {
+      "meaning": "Greenland story becomes much bigger than Greenland.",
+      "subject": "Greenland landscape",
+      "action": "expanding",
+      "object": "global perspective",
+      "location": "Earth from space or broad Arctic view",
+      "time": "daytime",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "wide aerial view of Greenland",
+      "Arctic region map or view",
+      "Greenland ice sheet aerial",
+      "melting ice sheet rivers",
+      "retreating glacier ice"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 892,
+        "word_to": 902,
+        "text": "And this is where Greenland's story becomes much bigger than Greenland.",
+        "query": "wide aerial view Greenland ice",
+        "subject": "Greenland landscape",
+        "action": "expanding",
+        "start": 416.108208,
+        "end": 420.094333,
+        "duration": 3.9861250000000155,
+        "shot_id": "scene_061_shot_1"
+      },
+      {
+        "word_from": 903,
+        "word_to": 909,
+        "text": "The island's ice sheet is losing mass.",
+        "query": "Greenland ice sheet losing mass",
+        "subject": "Ice sheet",
+        "action": "losing mass",
+        "start": 420.833208,
+        "end": 423.291541,
+        "duration": 2.458332999999982,
+        "shot_id": "scene_061_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 95,
+    "sentence_to": 96,
+    "start": 416.108208,
+    "end": 423.291541,
+    "duration": 7.183333000000005,
+    "index": 61,
+    "segment_id": "segment_061"
+  },
+  {
+    "text": "As glaciers and ice move toward the ocean they contribute to global sea-level rise.",
+    "word_from": 910,
+    "word_to": 923,
+    "query": "glaciers melting into ocean",
+    "queries": [
+      "glaciers melting into ocean",
+      "ice flowing to sea",
+      "ice sheet calving ocean"
+    ],
+    "keywords": [
+      "contribute",
+      "glaciers",
+      "global",
+      "ocean",
+      "level"
+    ],
+    "semantic": {
+      "meaning": "Glaciers and ice move toward the ocean, contributing to global sea-level rise.",
+      "subject": "glaciers and ice",
+      "action": "moving toward ocean",
+      "object": "ocean",
+      "location": "arctic landscape",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "glaciers",
+      "ocean",
+      "ice sheet"
+    ],
+    "visual_exclusions": [
+      "urban areas",
+      "crowds"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 97,
+    "sentence_to": 97,
+    "start": 424.016541,
+    "end": 429.669332,
+    "duration": 5.652790999999979,
+    "index": 62,
+    "segment_id": "segment_062"
+  },
+  {
+    "text": "At the same time the land beneath and around the ice contains mineral resources that have attracted increasing international attention.",
+    "word_from": 924,
+    "word_to": 943,
+    "query": "arctic mining landscape",
+    "queries": [
+      "arctic mining landscape",
+      "mineral rich land",
+      "exposed rock arctic"
+    ],
+    "keywords": [
+      "international",
+      "increasing",
+      "resources",
+      "attracted",
+      "attention"
+    ],
+    "semantic": {
+      "meaning": "Land beneath and around the ice contains mineral resources attracting international attention.",
+      "subject": "land beneath ice",
+      "action": "revealing mineral resources",
+      "object": "minerals",
+      "location": "Greenland landscape",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "rocky terrain",
+      "exposed land",
+      "mountains"
+    ],
+    "visual_exclusions": [
+      "green forests",
+      "tropical beaches"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 98,
+    "sentence_to": 98,
+    "start": 430.408208,
+    "end": 438.463749,
+    "duration": 8.055541000000005,
+    "index": 63,
+    "segment_id": "segment_063"
+  },
+  {
+    "text": "Rare earth elements and other minerals are important for modern technologies.",
+    "word_from": 944,
+    "word_to": 954,
+    "query": "rare earth elements ore",
+    "queries": [
+      "rare earth elements ore",
+      "technology minerals samples",
+      "modern tech manufacturing"
+    ],
+    "keywords": [
+      "technologies",
+      "important",
+      "elements",
+      "minerals",
+      "modern"
+    ],
+    "semantic": {
+      "meaning": "Rare earth elements and other minerals are important for modern technologies.",
+      "subject": "minerals and rare earth elements",
+      "action": "being used for technology",
+      "object": "modern technologies",
+      "location": "industrial or laboratory setting",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "minerals",
+      "technology components",
+      "ore samples"
+    ],
+    "visual_exclusions": [
+      "ancient artifacts",
+      "primitive tools"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 99,
+    "sentence_to": 99,
+    "start": 439.188791,
+    "end": 443.369332,
+    "duration": 4.180541000000005,
+    "index": 64,
+    "segment_id": "segment_064"
+  },
+  {
+    "text": "Greenland's location is also strategically important sitting between North America and Europe in the Arctic.",
+    "word_from": 955,
+    "word_to": 969,
+    "query": "arctic map view",
+    "queries": [
+      "arctic map view",
+      "Greenland between continents",
+      "globe arctic region"
+    ],
+    "keywords": [
+      "strategically",
+      "greenland",
+      "important",
+      "location",
+      "sitting"
+    ],
+    "semantic": {
+      "meaning": "Greenland's location is strategically important between North America and Europe in the Arctic.",
+      "subject": "Greenland",
+      "action": "sitting in the Arctic",
+      "object": "location between continents",
+      "location": "Arctic region on globe",
+      "time": "",
+      "entities": [
+        "North America",
+        "Europe",
+        "Arctic",
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "globe view",
+      "arctic region",
+      "map of North Atlantic"
+    ],
+    "visual_exclusions": [
+      "street level traffic",
+      "indoor rooms"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 100,
+    "sentence_to": 100,
+    "start": 444.094333,
+    "end": 451.094333,
+    "duration": 7.0,
+    "index": 65,
+    "segment_id": "segment_065"
+  },
+  {
+    "text": "That combination of geography natural resources and a changing climate has made Greenland increasingly important to the rest of the world.",
+    "word_from": 970,
+    "word_to": 990,
+    "query": "Greenland landscape aerial",
+    "queries": [
+      "Greenland landscape aerial",
+      "arctic wilderness wide",
+      "global interest concept"
+    ],
+    "keywords": [
+      "increasingly",
+      "combination",
+      "geography",
+      "resources",
+      "greenland"
+    ],
+    "semantic": {
+      "meaning": "Geography, natural resources, and changing climate make Greenland important to the world.",
+      "subject": "Greenland",
+      "action": "becoming important to world",
+      "object": "global interest",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "vast arctic landscape",
+      "global connectivity",
+      "landscape view"
+    ],
+    "visual_exclusions": [
+      "indoor settings"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 101,
+    "sentence_to": 101,
+    "start": 451.833208,
+    "end": 461.013749,
+    "duration": 9.180541000000005,
+    "index": 66,
+    "segment_id": "segment_066"
+  },
+  {
+    "text": "In 2019 then-US President Donald Trump publicly expressed interest in purchasing Greenland from Denmark.",
+    "word_from": 991,
+    "word_to": 1003,
+    "query": "Donald Trump news conference 2019",
+    "queries": [
+      "Donald Trump news conference 2019",
+      "US president speaking press",
+      "political press briefing"
+    ],
+    "keywords": [
+      "purchasing",
+      "president",
+      "expressed",
+      "greenland",
+      "publicly"
+    ],
+    "semantic": {
+      "meaning": "In 2019 US President Donald Trump expressed interest in purchasing Greenland from Denmark.",
+      "subject": "Donald Trump",
+      "action": "expressing interest in purchasing Greenland",
+      "object": "Greenland",
+      "location": "Washington DC or press conference",
+      "time": "2019",
+      "entities": [
+        "Donald Trump",
+        "US",
+        "Greenland",
+        "Denmark"
+      ]
+    },
+    "visual_requirements": [
+      "Donald Trump speaking",
+      "press conference",
+      "news footage"
+    ],
+    "visual_exclusions": [
+      "Greenland scenery without people"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 102,
+    "sentence_to": 102,
+    "start": 461.752666,
+    "end": 469.155458,
+    "duration": 7.402792000000034,
+    "index": 67,
+    "segment_id": "segment_067"
+  },
+  {
+    "text": "Greenland and Denmark rejected the proposal. But the episode revealed something important.",
+    "word_from": 1004,
+    "word_to": 1015,
+    "query": "Denmark flag official",
+    "queries": [
+      "Denmark flag official",
+      "European politicians press",
+      "news broadcast screen"
+    ],
+    "keywords": [
+      "greenland",
+      "rejected",
+      "proposal",
+      "denmark"
+    ],
+    "semantic": {
+      "meaning": "Greenland and Denmark rejected the proposal.",
+      "subject": "Greenland and Denmark",
+      "action": "rejecting proposal",
+      "object": "purchase proposal",
+      "location": "European government office",
+      "time": "",
+      "entities": [
+        "Greenland",
+        "Denmark"
+      ]
+    },
+    "visual_requirements": [
+      "politicians speaking",
+      "press statement",
+      "flag of Denmark",
+      "news broadcast concept",
+      "geopolitical discussion",
+      "global map"
+    ],
+    "visual_exclusions": [
+      "US landmarks",
+      "nature documentary footage"
+    ],
+    "shots": [
+      {
+        "word_from": 1004,
+        "word_to": 1009,
+        "text": "Greenland and Denmark rejected the proposal.",
+        "query": "Denmark flag official",
+        "subject": "Greenland and Denmark",
+        "action": "rejecting proposal",
+        "start": 469.894333,
+        "end": 472.574874,
+        "duration": 2.680541000000005,
+        "shot_id": "scene_068_shot_1"
+      },
+      {
+        "word_from": 1010,
+        "word_to": 1015,
+        "text": "But the episode revealed something important.",
+        "query": "news broadcast screen",
+        "subject": "the episode",
+        "action": "revealing significance",
+        "start": 473.299875,
+        "end": 475.785999,
+        "duration": 2.486124000000018,
+        "shot_id": "scene_068_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 103,
+    "sentence_to": 104,
+    "start": 469.894333,
+    "end": 475.785999,
+    "duration": 5.8916659999999865,
+    "index": 68,
+    "segment_id": "segment_068"
+  },
+  {
+    "text": "The island once viewed as a remote frozen territory had become strategically significant. A FUTURE BETWEEN TWO WORLDS. Greenland now stands at a crossroads.",
+    "word_from": 1016,
+    "word_to": 1039,
+    "query": "remote arctic island aerial",
+    "queries": [
+      "remote arctic island aerial",
+      "frozen territory landscape",
+      "crossroads concept landscape"
+    ],
+    "keywords": [
+      "strategically",
+      "significant",
+      "territory",
+      "island",
+      "viewed"
+    ],
+    "semantic": {
+      "meaning": "The island once viewed as a remote frozen territory became strategically significant.",
+      "subject": "Greenland island",
+      "action": "becoming strategically significant",
+      "object": "strategic territory",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "remote arctic island",
+      "aerial view of ice and rock",
+      "strategic location",
+      "cinematic title card",
+      "abstract arctic horizon",
+      "light and dark contrast",
+      "arctic landscape",
+      "fork in road concept"
+    ],
+    "visual_exclusions": [
+      "densely populated cities",
+      "busy streets",
+      "people",
+      "indoor office"
+    ],
+    "shots": [
+      {
+        "word_from": 1016,
+        "word_to": 1028,
+        "text": "The island once viewed as a remote frozen territory had become strategically significant.",
+        "query": "remote arctic island aerial",
+        "subject": "Greenland island",
+        "action": "becoming strategically significant",
+        "start": 476.511,
+        "end": 482.024875,
+        "duration": 5.5138749999999845,
+        "shot_id": "scene_069_shot_1"
+      },
+      {
+        "word_from": 1029,
+        "word_to": 1033,
+        "text": "A FUTURE BETWEEN TWO WORLDS.",
+        "query": "cinematic title background",
+        "subject": "future",
+        "action": "existing between two worlds",
+        "start": 482.763791,
+        "end": 484.610999,
+        "duration": 1.8472079999999664,
+        "shot_id": "scene_069_shot_2"
+      },
+      {
+        "word_from": 1034,
+        "word_to": 1039,
+        "text": "Greenland now stands at a crossroads.",
+        "query": "crossroads concept landscape",
+        "subject": "Greenland",
+        "action": "standing at a crossroads",
+        "start": 485.336,
+        "end": 487.738749,
+        "duration": 2.4027489999999716,
+        "shot_id": "scene_069_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 105,
+    "sentence_to": 107,
+    "start": 476.511,
+    "end": 487.738749,
+    "duration": 11.22774899999996,
+    "index": 69,
+    "segment_id": "segment_069"
+  },
+  {
+    "text": "Its natural resources could provide new economic opportunities. Tourism could bring more visitors. Fishing will remain important.",
+    "word_from": 1040,
+    "word_to": 1056,
+    "query": "arctic economic development",
+    "queries": [
+      "arctic economic development",
+      "resource extraction potential",
+      "fisherman hauling nets"
+    ],
+    "keywords": [
+      "opportunities",
+      "resources",
+      "economic",
+      "natural",
+      "provide"
+    ],
+    "semantic": {
+      "meaning": "Its natural resources could provide new economic opportunities.",
+      "subject": "natural resources",
+      "action": "providing economic opportunities",
+      "object": "economy",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "mining potential",
+      "economic growth concept",
+      "arctic resources",
+      "tourists",
+      "scenic landscape",
+      "fisherman",
+      "fishing boat"
+    ],
+    "visual_exclusions": [
+      "ancient history objects",
+      "crowded urban beaches",
+      "modern cruise ship"
+    ],
+    "shots": [
+      {
+        "word_from": 1040,
+        "word_to": 1047,
+        "text": "Its natural resources could provide new economic opportunities.",
+        "query": "arctic economic development",
+        "subject": "natural resources",
+        "action": "providing economic opportunities",
+        "start": 488.463791,
+        "end": 492.755416,
+        "duration": 4.2916250000000105,
+        "shot_id": "scene_070_shot_1"
+      },
+      {
+        "word_from": 1048,
+        "word_to": 1052,
+        "text": "Tourism could bring more visitors.",
+        "query": "tourists walking Greenland landscape",
+        "subject": "tourists",
+        "action": "walking",
+        "start": 493.480458,
+        "end": 495.508208,
+        "duration": 2.027750000000026,
+        "shot_id": "scene_070_shot_2"
+      },
+      {
+        "word_from": 1053,
+        "word_to": 1056,
+        "text": "Fishing will remain important.",
+        "query": "fisherman hauling nets",
+        "subject": "fisherman",
+        "action": "fishing",
+        "start": 496.233208,
+        "end": 498.024874,
+        "duration": 1.7916660000000206,
+        "shot_id": "scene_070_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 108,
+    "sentence_to": 110,
+    "start": 488.463791,
+    "end": 498.024874,
+    "duration": 9.561082999999996,
+    "index": 70,
+    "segment_id": "segment_070"
+  },
+  {
+    "text": "And greater economic independence could become increasingly significant for Greenland's future.",
+    "word_from": 1057,
+    "word_to": 1067,
+    "query": "Greenland flag waving",
+    "queries": [
+      "Greenland flag waving",
+      "modern Greenland town"
+    ],
+    "keywords": [
+      "independence",
+      "increasingly",
+      "significant",
+      "greenland",
+      "economic"
+    ],
+    "semantic": {
+      "meaning": "Economic independence could become significant for Greenland's future",
+      "subject": "Greenlandic flag",
+      "action": "waving",
+      "object": "flag",
+      "location": "Greenland town",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "flag",
+      "townscape"
+    ],
+    "visual_exclusions": [
+      "futuristic scifi cities"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 111,
+    "sentence_to": 111,
+    "start": 498.749875,
+    "end": 504.055458,
+    "duration": 5.305583000000013,
+    "index": 71,
+    "segment_id": "segment_071"
+  },
+  {
+    "text": "But development also brings difficult questions. How much should the environment be changed.",
+    "word_from": 1068,
+    "word_to": 1080,
+    "query": "person looking out to sea",
+    "queries": [
+      "person looking out to sea",
+      "thoughtful local arctic",
+      "mining machinery arctic landscape"
+    ],
+    "keywords": [
+      "development",
+      "difficult",
+      "questions",
+      "brings"
+    ],
+    "semantic": {
+      "meaning": "Development brings difficult questions and contemplation",
+      "subject": "person",
+      "action": "thinking",
+      "object": "landscape",
+      "location": "Greenland coast",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "person looking thoughtfully",
+      "arctic landscape",
+      "heavy machinery",
+      "landscape alteration"
+    ],
+    "visual_exclusions": [
+      "happy celebratory crowds",
+      "pristine untouched nature only"
+    ],
+    "shots": [
+      {
+        "word_from": 1068,
+        "word_to": 1073,
+        "text": "But development also brings difficult questions.",
+        "query": "person looking out to sea",
+        "subject": "person",
+        "action": "thinking",
+        "start": 504.780458,
+        "end": 507.835999,
+        "duration": 3.055541000000005,
+        "shot_id": "scene_072_shot_1"
+      },
+      {
+        "word_from": 1074,
+        "word_to": 1080,
+        "text": "How much should the environment be changed.",
+        "query": "mining machinery arctic landscape",
+        "subject": "industrial machinery",
+        "action": "mining",
+        "start": 508.561,
+        "end": 510.880458,
+        "duration": 2.3194579999999974,
+        "shot_id": "scene_072_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 112,
+    "sentence_to": 113,
+    "start": 504.780458,
+    "end": 510.880458,
+    "duration": 6.099999999999966,
+    "index": 72,
+    "segment_id": "segment_072"
+  },
+  {
+    "text": "How can economic opportunities coexist with traditional ways of life.",
+    "word_from": 1081,
+    "word_to": 1090,
+    "query": "hunter on snowmobile arctic",
+    "queries": [
+      "hunter on snowmobile arctic",
+      "traditional lifestyle modern arctic"
+    ],
+    "keywords": [
+      "opportunities",
+      "traditional",
+      "economic",
+      "coexist",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Balancing economic opportunities with traditional ways of life",
+      "subject": "local hunter",
+      "action": "driving",
+      "object": "snowmobile",
+      "location": "snowy landscape",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "hunter",
+      "snowmobile or dog sled"
+    ],
+    "visual_exclusions": [
+      "modern highways"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 114,
+    "sentence_to": 114,
+    "start": 511.605458,
+    "end": 515.966541,
+    "duration": 4.361083000000008,
+    "index": 73,
+    "segment_id": "segment_073"
+  },
+  {
+    "text": "And how can Greenland adapt to a rapidly changing Arctic without losing the cultural identity that developed here over thousands of years. There are no simple answers.",
+    "word_from": 1091,
+    "word_to": 1117,
+    "query": "Greenlandic family together",
+    "queries": [
+      "Greenlandic family together",
+      "indigenous culture Arctic",
+      "person looking at horizon arctic"
+    ],
+    "keywords": [
+      "greenland",
+      "developed",
+      "thousands",
+      "changing",
+      "cultural"
+    ],
+    "semantic": {
+      "meaning": "Adapting to a rapidly changing Arctic without losing cultural identity",
+      "subject": "indigenous family",
+      "action": "gathering",
+      "object": "traditional clothing",
+      "location": "Greenland settlement",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "indigenous people",
+      "traditional clothing",
+      "person",
+      "vast horizon"
+    ],
+    "visual_exclusions": [
+      "tropical settings",
+      "bright sunny beach"
+    ],
+    "shots": [
+      {
+        "word_from": 1091,
+        "word_to": 1112,
+        "text": "And how can Greenland adapt to a rapidly changing Arctic without losing the cultural identity that developed here over thousands of years.",
+        "query": "Greenlandic family together",
+        "subject": "indigenous family",
+        "action": "gathering",
+        "start": 516.691541,
+        "end": 524.441541,
+        "duration": 7.75,
+        "shot_id": "scene_074_shot_1"
+      },
+      {
+        "word_from": 1113,
+        "word_to": 1117,
+        "text": "There are no simple answers.",
+        "query": "person looking at horizon arctic",
+        "subject": "person",
+        "action": "looking",
+        "start": 525.166541,
+        "end": 526.791582,
+        "duration": 1.6250409999998965,
+        "shot_id": "scene_074_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 115,
+    "sentence_to": 116,
+    "start": 516.691541,
+    "end": 526.791582,
+    "duration": 10.10004099999992,
+    "index": 74,
+    "segment_id": "segment_074"
+  },
+  {
+    "text": "And perhaps the most important part of Greenland's future will not be decided by governments or corporations.",
+    "word_from": 1118,
+    "word_to": 1134,
+    "query": "empty government building exterior",
+    "queries": [
+      "empty government building exterior",
+      "corporate office exterior Greenland"
+    ],
+    "keywords": [
+      "corporations",
+      "governments",
+      "important",
+      "greenland",
+      "decided"
+    ],
+    "semantic": {
+      "meaning": "Future not decided by governments or corporations",
+      "subject": "empty government building",
+      "action": "standing",
+      "object": "architecture",
+      "location": "city",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "modern building exterior"
+    ],
+    "visual_exclusions": [
+      "crowded politicians"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 117,
+    "sentence_to": 117,
+    "start": 527.516541,
+    "end": 533.919333,
+    "duration": 6.40279200000009,
+    "index": 75,
+    "segment_id": "segment_075"
+  },
+  {
+    "text": "It will be decided by the people who actually live here.",
+    "word_from": 1135,
+    "word_to": 1145,
+    "query": "local Greenland residents talking",
+    "queries": [
+      "local Greenland residents talking",
+      "community members village arctic"
+    ],
+    "keywords": [
+      "decided",
+      "people",
+      "live"
+    ],
+    "semantic": {
+      "meaning": "Future decided by the local people living there",
+      "subject": "local residents",
+      "action": "talking",
+      "object": "community members",
+      "location": "Greenland village",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "local residents",
+      "small village"
+    ],
+    "visual_exclusions": [
+      "tourist groups"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 118,
+    "sentence_to": 118,
+    "start": 534.644333,
+    "end": 537.852666,
+    "duration": 3.2083330000000387,
+    "index": 76,
+    "segment_id": "segment_076"
+  },
+  {
+    "text": "For centuries Greenland has been a place where humans learned to live with ice darkness isolation and uncertainty.",
+    "word_from": 1146,
+    "word_to": 1163,
+    "query": "vast Greenland glacier ice",
+    "queries": [
+      "vast Greenland glacier ice",
+      "arctic ice sheet landscape"
+    ],
+    "keywords": [
+      "uncertainty",
+      "centuries",
+      "greenland",
+      "isolation",
+      "darkness"
+    ],
+    "semantic": {
+      "meaning": "Greenland as a place of ice darkness isolation and uncertainty for centuries",
+      "subject": "ice landscape",
+      "action": "melting",
+      "object": "glacier",
+      "location": "Greenland",
+      "time": "historical or moody lighting",
+      "entities": []
+    },
+    "visual_requirements": [
+      "massive glacier",
+      "ice sheet"
+    ],
+    "visual_exclusions": [
+      "green tropical islands"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 119,
+    "sentence_to": 119,
+    "start": 538.577666,
+    "end": 546.466541,
+    "duration": 7.8888749999999845,
+    "index": 77,
+    "segment_id": "segment_077"
+  },
+  {
+    "text": "Today the environment itself is changing. The ice is retreating. The Arctic is becoming warmer.",
+    "word_from": 1164,
+    "word_to": 1178,
+    "query": "melting glacier ice arctic",
+    "queries": [
+      "melting glacier ice arctic",
+      "climate change ice breaking",
+      "warm Arctic landscape"
+    ],
+    "keywords": [
+      "environment",
+      "changing",
+      "today"
+    ],
+    "semantic": {
+      "meaning": "The environment itself is changing today",
+      "subject": "ice",
+      "action": "melting",
+      "object": "glacier ice",
+      "location": "arctic ocean",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "melting ice",
+      "water runoff",
+      "glacier face",
+      "sparse Arctic landscape",
+      "warm sunlight"
+    ],
+    "visual_exclusions": [
+      "stable thick ice sheets",
+      "green grass",
+      "tropical settings",
+      "snowstorms",
+      "heavy blizzards"
+    ],
+    "shots": [
+      {
+        "word_from": 1164,
+        "word_to": 1169,
+        "text": "Today the environment itself is changing.",
+        "query": "melting glacier ice arctic",
+        "subject": "ice",
+        "action": "melting",
+        "start": 547.191541,
+        "end": 550.052666,
+        "duration": 2.8611250000000155,
+        "shot_id": "scene_078_shot_1"
+      },
+      {
+        "word_from": 1170,
+        "word_to": 1173,
+        "text": "The ice is retreating.",
+        "query": "retreating Arctic ice",
+        "subject": "ice",
+        "action": "retreating",
+        "start": 550.777666,
+        "end": 552.194333,
+        "duration": 1.416667000000075,
+        "shot_id": "scene_078_shot_2"
+      },
+      {
+        "word_from": 1174,
+        "word_to": 1178,
+        "text": "The Arctic is becoming warmer.",
+        "query": "warm Arctic landscape",
+        "subject": "Arctic region",
+        "action": "becoming warmer",
+        "start": 552.93325,
+        "end": 554.724916,
+        "duration": 1.7916659999999638,
+        "shot_id": "scene_078_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 120,
+    "sentence_to": 122,
+    "start": 547.191541,
+    "end": 554.724916,
+    "duration": 7.533374999999978,
+    "index": 78,
+    "segment_id": "segment_078"
+  },
+  {
+    "text": "And a new generation is growing up in a Greenland that may look very different from the one their grandparents knew.",
+    "word_from": 1179,
+    "word_to": 1199,
+    "query": "Greenland children growing up",
+    "queries": [
+      "Greenland children growing up",
+      "Greenlandic youth outdoors"
+    ],
+    "keywords": [
+      "grandparents",
+      "generation",
+      "greenland",
+      "different",
+      "growing"
+    ],
+    "semantic": {
+      "meaning": "A new generation of Greenlandic children growing up in a changing environment.",
+      "subject": "new generation",
+      "action": "growing up",
+      "object": "Greenland landscape",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "Greenlandic children",
+      "coastal village",
+      "rocky landscape"
+    ],
+    "visual_exclusions": [
+      "urban city skyline",
+      "crowded metropolis"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 123,
+    "sentence_to": 123,
+    "start": 555.449916,
+    "end": 561.449875,
+    "duration": 5.99995899999999,
+    "index": 79,
+    "segment_id": "segment_079"
+  },
+  {
+    "text": "This is more than a story about a frozen island. It is a story about adaptation. About culture. About survival.",
+    "word_from": 1200,
+    "word_to": 1219,
+    "query": "vast frozen island",
+    "queries": [
+      "vast frozen island",
+      "aerial glacier view",
+      "Arctic survival"
+    ],
+    "keywords": [
+      "frozen",
+      "island",
+      "story"
+    ],
+    "semantic": {
+      "meaning": "Introduction of the documentary theme regarding a frozen island.",
+      "subject": "story",
+      "action": "representing",
+      "object": "frozen island",
+      "location": "Greenland",
+      "time": "",
+      "entities": [
+        "Greenland"
+      ]
+    },
+    "visual_requirements": [
+      "vast frozen island",
+      "aerial view ice sheet",
+      "Arctic wildlife or people adapting",
+      "rugged terrain",
+      "traditional clothing",
+      "cultural artifact",
+      "local community",
+      "rugged survivor"
+    ],
+    "visual_exclusions": [
+      "deserts",
+      "forests",
+      "indoor offices",
+      "factory settings",
+      "modern skyscrapers",
+      "beaches",
+      "luxury hotels",
+      "tropical islands"
+    ],
+    "shots": [
+      {
+        "word_from": 1200,
+        "word_to": 1209,
+        "text": "This is more than a story about a frozen island.",
+        "query": "vast frozen island",
+        "subject": "story",
+        "action": "representing",
+        "start": 562.174916,
+        "end": 564.952666,
+        "duration": 2.777749999999969,
+        "shot_id": "scene_080_shot_1"
+      },
+      {
+        "word_from": 1210,
+        "word_to": 1215,
+        "text": "It is a story about adaptation.",
+        "query": "Arctic adaptation",
+        "subject": "story",
+        "action": "focusing",
+        "start": 565.677666,
+        "end": 567.705458,
+        "duration": 2.0277919999999767,
+        "shot_id": "scene_080_shot_2"
+      },
+      {
+        "word_from": 1216,
+        "word_to": 1217,
+        "text": "About culture.",
+        "query": "Greenlandic culture",
+        "subject": "culture",
+        "action": "representing",
+        "start": 568.430458,
+        "end": 569.388791,
+        "duration": 0.958332999999925,
+        "shot_id": "scene_080_shot_3"
+      },
+      {
+        "word_from": 1218,
+        "word_to": 1219,
+        "text": "About survival.",
+        "query": "Arctic survival",
+        "subject": "survival",
+        "action": "depicting",
+        "start": 570.113791,
+        "end": 571.155457,
+        "duration": 1.0416659999999638,
+        "shot_id": "scene_080_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 124,
+    "sentence_to": 127,
+    "start": 562.174916,
+    "end": 571.155457,
+    "duration": 8.980540999999903,
+    "index": 80,
+    "segment_id": "segment_080"
+  },
+  {
+    "text": "And about what happens when one of Earth's most extreme environments begins to change. This is Greenland. A land between ice and ocean.",
+    "word_from": 1220,
+    "word_to": 1242,
+    "query": "changing Earth environment",
+    "queries": [
+      "changing Earth environment",
+      "global climate change Arctic",
+      "ice meeting ocean Greenland"
+    ],
+    "keywords": [
+      "environments",
+      "happens",
+      "extreme",
+      "begins",
+      "change"
+    ],
+    "semantic": {
+      "meaning": "Global implications of an extreme environment beginning to change.",
+      "subject": "Earth environment",
+      "action": "beginning to change",
+      "object": "extreme environment",
+      "location": "Earth",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "changing Earth environment",
+      "melting ice sheet",
+      "global climate shift",
+      "Greenland landscape",
+      "fjord",
+      "mountains",
+      "ice sheet meeting ocean",
+      "coastline glacier"
+    ],
+    "visual_exclusions": [
+      "static studio shots",
+      "city streets",
+      "deserts",
+      "forests",
+      "farmland"
+    ],
+    "shots": [
+      {
+        "word_from": 1220,
+        "word_to": 1233,
+        "text": "And about what happens when one of Earth's most extreme environments begins to change.",
+        "query": "changing Earth environment",
+        "subject": "Earth environment",
+        "action": "beginning to change",
+        "start": 571.880458,
+        "end": 576.852666,
+        "duration": 4.972208000000023,
+        "shot_id": "scene_081_shot_1"
+      },
+      {
+        "word_from": 1234,
+        "word_to": 1236,
+        "text": "This is Greenland.",
+        "query": "Greenland landscape overview",
+        "subject": "Greenland",
+        "action": "appearing",
+        "start": 577.953541,
+        "end": 579.092457,
+        "duration": 1.1389159999999947,
+        "shot_id": "scene_081_shot_2"
+      },
+      {
+        "word_from": 1237,
+        "word_to": 1242,
+        "text": "A land between ice and ocean.",
+        "query": "ice meeting ocean Greenland",
+        "subject": "land",
+        "action": "stretching",
+        "start": 579.836875,
+        "end": 581.864666,
+        "duration": 2.027791000000093,
+        "shot_id": "scene_081_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 128,
+    "sentence_to": 130,
+    "start": 571.880458,
+    "end": 581.864666,
+    "duration": 9.98420800000008,
+    "index": 81,
+    "segment_id": "segment_081"
+  },
+  {
+    "text": "A place where life has survived against the cold for thousands of years.",
+    "word_from": 1243,
+    "word_to": 1255,
+    "query": "life surviving Arctic cold",
+    "queries": [
+      "life surviving Arctic cold",
+      "indigenous survival Greenland"
+    ],
+    "keywords": [
+      "thousands",
+      "survived",
+      "place",
+      "years",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Historical persistence of life against the cold over millennia.",
+      "subject": "life",
+      "action": "surviving",
+      "object": "against the cold",
+      "location": "Greenland",
+      "time": "thousands of years",
+      "entities": []
+    },
+    "visual_requirements": [
+      "Arctic wildlife",
+      "resilient indigenous people",
+      "snowy landscape"
+    ],
+    "visual_exclusions": [
+      "modern technology",
+      "cars"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 131,
+    "sentence_to": 131,
+    "start": 582.589666,
+    "end": 586.645249,
+    "duration": 4.05558300000007,
+    "index": 82,
+    "segment_id": "segment_082"
+  },
+  {
+    "text": "And a place whose future could matter to the entire planet.",
+    "word_from": 1256,
+    "word_to": 1266,
+    "query": "planet Earth view",
+    "queries": [
+      "planet Earth view",
+      "global climate impact"
+    ],
+    "keywords": [
+      "future",
+      "matter",
+      "entire",
+      "planet",
+      "place"
+    ],
+    "semantic": {
+      "meaning": "The future of Greenland mattering to the entire planet.",
+      "subject": "future",
+      "action": "affecting",
+      "object": "entire planet",
+      "location": "Earth",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [
+      "planet Earth view from space",
+      "global climate visualization"
+    ],
+    "visual_exclusions": [
+      "indoor rooms"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 132,
+    "sentence_to": 132,
+    "start": 587.370208,
+    "end": 590.703583,
+    "duration": 3.3333749999999327,
+    "index": 83,
+    "segment_id": "segment_083"
+  },
+  {
+    "text": "This is Extreme Earth Life. Life Beyond the Limits.",
+    "word_from": 1267,
+    "word_to": 1275,
+    "query": "extreme earth life title",
+    "queries": [
+      "extreme earth life title",
+      "cinematic title card science",
+      "documentary title sequence"
+    ],
+    "keywords": [
+      "extreme",
+      "beyond",
+      "limits",
+      "earth",
+      "life"
+    ],
+    "semantic": {
+      "meaning": "Title cards introducing the series about extreme life on Earth and beyond the limits.",
+      "subject": "Title text",
+      "action": "displaying",
+      "object": "title cards",
+      "location": "abstract background",
+      "time": "",
+      "entities": [
+        "Extreme Earth Life"
+      ]
+    },
+    "visual_requirements": [
+      "bold title text",
+      "cinematic background",
+      "high contrast font"
+    ],
+    "visual_exclusions": [
+      "low quality graphics",
+      "cluttered text"
+    ],
+    "shots": [
+      {
+        "word_from": 1267,
+        "word_to": 1271,
+        "text": "This is Extreme Earth Life",
+        "query": "extreme earth life title card",
+        "subject": "title text",
+        "action": "displaying",
+        "start": 591.428541,
+        "end": 593.164666,
+        "duration": 1.7361250000000155,
+        "shot_id": "scene_084_shot_1"
+      },
+      {
+        "word_from": 1272,
+        "word_to": 1275,
+        "text": "Life Beyond the Limits",
+        "query": "life beyond the limits title",
+        "subject": "subtitle text",
+        "action": "displaying",
+        "start": 593.903541,
+        "end": 595.292458,
+        "duration": 1.3889169999999922,
+        "shot_id": "scene_084_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 133,
+    "sentence_to": 134,
+    "start": 591.428541,
+    "end": 595.292458,
+    "duration": 3.863917000000015,
+    "index": 84,
+    "segment_id": "segment_084"
+  }
+]
