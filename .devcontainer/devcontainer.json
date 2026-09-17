@@ -33,7 +33,7 @@
 
   "customizations": {
     "codespaces": {
-      "openFiles": ["README.md"]
+      "openFiles": ["INFO.md"]
     },
     "vscode": {
       "extensions": ["ms-python.python"]

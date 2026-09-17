@@ -148,6 +148,9 @@ next when one hits its quota.
 
 ## Documentation
 
+- **[INFO.md](INFO.md)** — day-to-day cloud guide: the workflow, and the exact
+  command for every way it can get stuck (dashboard 502, render not starting,
+  secrets, cookies, restarts).
 - **[SETUP.md](SETUP.md)** — fresh-laptop install, API keys, troubleshooting.
 - [`tools/README_PIPELINE.md`](tools/README_PIPELINE.md) — full flag reference,
   the news-article workflow, caption styles, and gotchas.
