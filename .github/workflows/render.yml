@@ -131,7 +131,17 @@ jobs:
             flags+=(--no-4k)
           fi
           echo "python step3_render_video.py $PROJECT ${flags[*]}"
-          python step3_render_video.py "$PROJECT" "${flags[@]}"
+          set -o pipefail
+          python step3_render_video.py "$PROJECT" "${flags[@]}" 2>&1 | tee ../render.log
+
+      - name: Explain failure
+        if: failure()
+        # The tail of the render log as a check annotation: annotations are
+        # readable without signing in, the full job log is not.
+        run: |
+          if [ -f render.log ]; then
+            tail -c 3500 render.log | python3 -c 'import sys; t = sys.stdin.read(); print("::error title=Render failed -- last lines of the log::" + t.replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A"))'
+          fi
 
       - name: Summarize
         if: success()
@@ -168,11 +178,13 @@ jobs:
           retention-days: 30
           compression-level: 0
 
-      - name: Upload render report on failure
+      - name: Upload render log on failure
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: render-report-${{ steps.inputs.outputs.slug }}
-          path: projects/${{ env.PROJECT }}/render_report.json
+          name: render-log-${{ steps.inputs.outputs.slug }}
+          path: |
+            render.log
+            projects/${{ env.PROJECT }}/render_report.json
           if-no-files-found: ignore
           retention-days: 7
