@@ -1099,8 +1099,8 @@ AUTOMATCH_SOFT_FLOOR = 45
 # weighted word-overlap pre-rank first. These were tiny (18/10) under Groq's
 # 12k-token/minute free tier; Gemini's is ~250k/min, so a wider net and a
 # bigger judge batch cost nothing and catch matches the old sizes missed.
-AUTOMATCH_POOL = 32
-AUTOMATCH_JUDGE = 14
+AUTOMATCH_POOL = 40
+AUTOMATCH_JUDGE = 18
 # If the first JUDGE-sized batch produces nothing at or above the acceptance
 # bar and the pool still has candidates, score up to this many batches total
 # before giving up on the search results (cheap now, and the right clip is
@@ -1110,6 +1110,123 @@ AUTOMATCH_MAX_BATCHES = 2
 # _expand_queries) -- one keyword phrase almost never matches stock
 # catalogues, several angles on the same visual do.
 AUTOMATCH_QUERY_VARIANTS = 7
+# Clip diversity. A stock clip with many broad tags ("drone, landscape,
+# greenland, iceberg, sea, arctic, ...") surfaces for every query about the
+# region and reads as a strong match every time, so before this a single clip
+# could fill a quarter of a video (measured: 26 of 129 placements). Each
+# prior use of the same asset elsewhere in the video now costs this many
+# points after judging, more if the prior use is close by, so a fresh
+# candidate that is merely "ok" beats a reused one that is "strong" -- but a
+# reused clip can still win when nothing fresh fits at all. The same asset
+# twice inside one multi-shot scene is never allowed.
+AUTOMATCH_REUSE_PENALTY = 25
+AUTOMATCH_NEARBY_PENALTY = 15
+AUTOMATCH_NEARBY_SCENES = 6
+
+
+def _asset_key(source, ident):
+    return (source or "pexels", str(ident))
+
+
+def _stock_items(sel):
+    """The stock (Pexels/Pixabay/Coverr) items of one selection record --
+    local uploads and AI images are per-scene files, never 'repeats'."""
+    for it in (sel.get("items") or [sel]):
+        if not it or it.get("source") in ("local", "ai") or it.get("pexels_id") in (None, ""):
+            continue
+        yield it
+
+
+def used_assets_map(selections, exclude_scene=None):
+    """(source, id) -> sorted scene indices already using that stock asset."""
+    used = {}
+    for k, sel in selections.items():
+        idx = int(k)
+        if exclude_scene is not None and idx == exclude_scene:
+            continue
+        for it in _stock_items(sel):
+            used.setdefault(_asset_key(it.get("source"), it.get("pexels_id")), set()).add(idx)
+    return {k: sorted(v) for k, v in used.items()}
+
+
+def repeated_scene_indices(selections):
+    """Scenes that reuse a stock asset an earlier scene already uses, or use
+    the same asset twice within themselves -- what "Replace repeated clips"
+    re-matches. The first scene to use an asset keeps it."""
+    first, targets = {}, set()
+    for k in sorted(selections, key=int):
+        idx = int(k)
+        seen_here = set()
+        for it in _stock_items(selections[k]):
+            key = _asset_key(it.get("source"), it.get("pexels_id"))
+            if key in seen_here:
+                targets.add(idx)
+                continue
+            seen_here.add(key)
+            if key in first and first[key] != idx:
+                targets.add(idx)
+            else:
+                first.setdefault(key, idx)
+    return sorted(targets)
+
+
+class Diversity:
+    """What one scene's auto-match knows about the rest of the video:
+    `used` from used_assets_map() (this scene excluded), and `in_scene`, the
+    assets already chosen for earlier shots of this same scene."""
+
+    def __init__(self, used, scene_index, in_scene=None):
+        self.used = used or {}
+        self.scene_index = scene_index
+        self.in_scene = in_scene if in_scene is not None else set()
+
+    def penalty(self, cand):
+        """Points to subtract from a judged score; None = forbidden."""
+        key = _asset_key(cand.get("source"), cand.get("id"))
+        if key in self.in_scene:
+            return None
+        uses = self.used.get(key) or []
+        if not uses:
+            return 0
+        pen = AUTOMATCH_REUSE_PENALTY * len(uses)
+        if any(abs(i - self.scene_index) <= AUTOMATCH_NEARBY_SCENES for i in uses):
+            pen += AUTOMATCH_NEARBY_PENALTY
+        return pen
+
+    def prepare(self, pool):
+        """Drop forbidden candidates, tag the rest with used_in / reuse_penalty."""
+        out = []
+        for c in pool:
+            pen = self.penalty(c)
+            if pen is None:
+                continue
+            c["used_in"] = self.used.get(_asset_key(c.get("source"), c.get("id"))) or []
+            c["reuse_penalty"] = pen
+            out.append(c)
+        return out
+
+
+_DESC_NORM = re.compile(r"[^a-z0-9]+")
+
+
+def _dedupe_similar(pool):
+    """Collapse near-duplicate results -- the same uploader with the same
+    tag set is the same footage re-uploaded or re-cut -- so a judge batch
+    holds distinct options instead of five copies of one clip."""
+    seen, out = set(), []
+    for c in pool:
+        words = sorted(set(_DESC_NORM.sub(" ", (c.get("desc") or "").lower()).split()))
+        key = (c.get("source"), (c.get("author") or "").strip().lower(), " ".join(words))
+        if words and key in seen:
+            continue
+        seen.add(key)
+        out.append(c)
+    return out
+
+
+def _prepare_pool(pool, diversity):
+    pool = _dedupe_similar(pool)
+    return diversity.prepare(pool) if diversity else pool
 
 
 class AutomatchUnavailable(RuntimeError):
@@ -1158,6 +1275,16 @@ Rules:
   shows something adjacent.
 - Reward matching the time period, named objects, and mood on top of a
   correct subject+action.
+- A description that is just a LIST OF KEYWORD TAGS (no sentence) can show a
+  subject and a setting but never proves an action: cap it at "ok" (<= 74).
+  A tag list made of broad words (landscape, nature, travel, drone, sky) with
+  no specific subject noun from the brief is "weak", not "ok".
+- Prefer the SPECIFIC over the generic: when the brief names a specific
+  subject (a village, colorful houses, a person doing something, an animal),
+  generic scenery of the right region is "weak".
+- A candidate marked [ALREADY USED ...] is footage the viewer has already
+  seen in this video. Score it on its merits, but do not rate it above a
+  fresh candidate that is at least "ok" -- repetition is a real cost.
 - Judge every candidate independently and on its own description only.
 
 Return STRICT JSON only, nothing else -- no prose, no extra keys:
@@ -1438,7 +1565,8 @@ def _prerank(pool, weighted, exclusions, keep):
 
     def rank(c):
         return (
-            _desc_match_score(c.get("desc"), weighted, exclusions, wset),
+            _desc_match_score(c.get("desc"), weighted, exclusions, wset)
+            - c.get("reuse_penalty", 0) / 5.0,  # fresh footage first among near-equals
             1 if c.get("duration") else 0,
             1 if c.get("width") else 0,
         )
@@ -1446,7 +1574,7 @@ def _prerank(pool, weighted, exclusions, keep):
     return sorted(pool, key=rank, reverse=True)[:keep]
 
 
-def _heuristic_pick(pool, signals):
+def _heuristic_pick(pool, signals, diversity=None):
     """Deterministic fallback for when the Gemini judge is unavailable
     (per-day quota hit, sustained rate-limit) partway through a long
     "auto-match all" run: instead of stopping the whole run, choose the
@@ -1456,13 +1584,14 @@ def _heuristic_pick(pool, signals):
     review-me pick -- never as a confident match. Returns (best, score,
     reason) or (None, -1, "") for an empty pool."""
     weighted, exclusions = signals or ({}, set())
+    pool = _prepare_pool(pool, diversity)
     if not pool:
         return None, -1, ""
     wset = set(weighted)
     scored = sorted(
         pool,
         key=lambda c: (
-            _desc_match_score(c.get("desc"), weighted, exclusions, wset),
+            _desc_match_score(c.get("desc"), weighted, exclusions, wset) - c.get("reuse_penalty", 0) / 3.5,
             1 if c.get("duration") else 0,
             1 if c.get("width") else 0,
         ),
@@ -1475,6 +1604,7 @@ def _heuristic_pick(pool, signals):
     # filled rather than left empty, but never near a strictness bar -- a
     # keyword-only pick has to be flagged and re-judged later.
     score = int(max(30, min(66, 40 + raw * 3.5)))
+    score = max(0, score - best.get("reuse_penalty", 0))
     reason = (
         f'keyword-overlap fallback (Gemini judge unavailable): best match by '
         f'term overlap vs "{(best.get("desc") or "")[:80]}"'
@@ -1507,7 +1637,10 @@ def _judge_batch(brief, batch, entry_candidates):
         via = c.get("matched_query")
         via_txt = f', via "{via}"' if via else ""
         kind = "photo" if c.get("is_photo") or c.get("kind") == "photo" else f"{c.get('duration') or '?'}s"
-        listing.append(f'C{i}: "{desc}" ({kind}, {dims}, {c.get("source")}{via_txt})')
+        used = c.get("used_in") or []
+        used_txt = (f' [ALREADY USED in scene{"s" if len(used) > 1 else ""} '
+                    f'{", ".join(str(u) for u in used[:4])}{"..." if len(used) > 4 else ""}]') if used else ""
+        listing.append(f'C{i}: "{desc}" ({kind}, {dims}, {c.get("source")}{via_txt}){used_txt}')
     user = (brief + "\n\nCANDIDATE CLIPS:\n" + "\n".join(listing)
             + "\n\nScore AND give a verdict for every candidate. STRICT JSON only.")
     data, last_err = None, None
@@ -1544,18 +1677,25 @@ def _judge_batch(brief, batch, entry_candidates):
     for i, c in enumerate(batch, start=1):
         score, verdict, raw = scored.get(f"C{i}", (0, "unscored", 0))
         note = f" [{verdict}]" if verdict not in ("ok", "unscored") else ""
-        reason = f'judged {score}/100{note} vs "{(c.get("desc") or "")[:80]}"'
+        penalty = c.get("reuse_penalty", 0)
+        judged = score
+        if penalty:
+            score = max(0, score - penalty)
+            used = c.get("used_in") or []
+            note += f" -{penalty} already used in scene{'s' if len(used) > 1 else ''} {', '.join(str(u) for u in used[:4])}"
+        reason = f'judged {judged}/100{note} vs "{(c.get("desc") or "")[:80]}"'
         entry_candidates.append({
             "id": c.get("id"), "source": c.get("source"), "desc": c.get("desc"),
             "duration": c.get("duration"), "query": c.get("matched_query"),
             "score": score, "verdict": verdict, "raw_score": raw, "reason": reason,
+            "used_in": c.get("used_in") or [], "reuse_penalty": penalty,
         })
         if score > best_score:
             best, best_score, best_reason = c, score, reason
     return best, best_score, best_reason
 
 
-def _pick_best(brief, pool, entry_candidates, signals=None, accept=0):
+def _pick_best(brief, pool, entry_candidates, signals=None, accept=0, diversity=None):
     """Pre-rank `pool`, then LLM-judge it in batches of AUTOMATCH_JUDGE.
 
     Judges the strongest batch first; only judges the next batch (up to
@@ -1564,6 +1704,7 @@ def _pick_best(brief, pool, entry_candidates, signals=None, accept=0):
     another batch is cheap on Gemini's budget. Returns (best, score, reason)
     across every batch judged."""
     weighted, exclusions = signals or ({}, set())
+    pool = _prepare_pool(pool, diversity)
     ranked = _prerank(pool, weighted, exclusions, AUTOMATCH_POOL)
     best, best_score, best_reason = None, -1, ""
     for b in range(AUTOMATCH_MAX_BATCHES):
@@ -1678,7 +1819,7 @@ _PHOTO_BRIEF_NOTE = (
 
 
 def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out,
-                       errors_out, threshold, signals=None, photo_queries=None):
+                       errors_out, threshold, signals=None, photo_queries=None, diversity=None):
     """search -> judge -> (while nothing reaches the bar) revise queries and
     retry, up to two repair rounds -> a dedicated still-photo round. Photos
     are also folded into the FIRST judge round when the video pool is thin,
@@ -1705,7 +1846,7 @@ def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out
         # An earlier scene in this run already found the Gemini judge out of
         # room -- don't spend this scene's retries rediscovering that, go
         # straight to the keyword-overlap fallback.
-        best, score, reason = _heuristic_pick(pool, signals)
+        best, score, reason = _heuristic_pick(pool, signals, diversity)
         heuristic = best is not None
         if heuristic:
             errors_out.append(
@@ -1714,14 +1855,14 @@ def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out
             )
     elif pool:
         try:
-            best, score, reason = _pick_best(used_brief, pool, candidates_out, signals, threshold)
+            best, score, reason = _pick_best(used_brief, pool, candidates_out, signals, threshold, diversity)
         except AutomatchUnavailable as e:
             # Gemini can't score anything right now. Rather than stop the whole
             # "auto-match all" run (and leave every remaining scene empty),
             # remember it's down and fill this scene with the best
             # keyword-overlap match, flagged soft for a later re-judge.
             STATE["llm_down"] = str(e)
-            best, score, reason = _heuristic_pick(pool, signals)
+            best, score, reason = _heuristic_pick(pool, signals, diversity)
             heuristic = best is not None
             errors_out.append(
                 f"Gemini scoring unavailable ({e}). Picked the closest match by "
@@ -1766,7 +1907,7 @@ def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out
         pool = pool2 or pool
         if pool2:
             try:
-                best2, score2, reason2 = _pick_best(brief, pool2, candidates_out, signals, threshold)
+                best2, score2, reason2 = _pick_best(brief, pool2, candidates_out, signals, threshold, diversity)
             except AutomatchUnavailable as e:
                 STATE["llm_down"] = str(e)
                 errors_out.append(f"Gemini went unavailable mid-repair ({e}) -- keeping the best pick so far.")
@@ -1786,7 +1927,7 @@ def _match_with_repair(brief, queries, min_duration, min_quality, candidates_out
             errors_out.append(f"Photo round judged {len(photos)} still photo(s).")
             try:
                 pbest, pscore, preason = _pick_best(
-                    brief + _PHOTO_BRIEF_NOTE, photos, candidates_out, signals, threshold
+                    brief + _PHOTO_BRIEF_NOTE, photos, candidates_out, signals, threshold, diversity
                 )
                 if pscore > score:
                     best, score, reason = pbest, pscore, f"[photo] {preason}"
@@ -1850,6 +1991,8 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
     entry["shots"] = []
     any_soft = False
     ai_used = False
+    used_elsewhere = used_assets_map(load_selections(), exclude_scene=scene["index"])
+    chosen_here = set()  # assets taken by earlier shots of THIS scene: never repeat within a scene
     # One (shot, asset_or_None, score_or_None, is_ai) per shot, in shot order --
     # kept aligned with `shots` so step3's shot-exact cut boundaries still line
     # up even when some shots were AI-filled.
@@ -1877,6 +2020,7 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
         best, score, reason, _relaxed, heuristic = _match_with_repair(
             _shot_brief(scene, shot), queries, min_duration, min_quality,
             entry["candidates"], entry["failure_reasons"], accept, signals=signals,
+            diversity=Diversity(used_elsewhere, scene["index"], chosen_here),
         )
         shot_entry["score"] = score if score >= 0 else None
         if heuristic:
@@ -1886,6 +2030,7 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
             any_soft = any_soft or score < threshold or heuristic
             shot_entry["chosen"] = {"id": best.get("id"), "source": best.get("source"), "desc": best.get("desc")}
             shot_entry["reason"] = reason
+            chosen_here.add(_asset_key(best.get("source"), best.get("id")))
             outcomes.append((shot, best, score, False))
             continue
         # No stock clip for this shot -- generate one if AI fallback is on,
@@ -2015,6 +2160,7 @@ def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD, soft
     best, best_score, best_reason, duration_relaxed, heuristic = _match_with_repair(
         _scene_brief(scene), queries, min_duration, min_quality,
         entry["candidates"], entry["failure_reasons"], accept, signals=signals,
+        diversity=Diversity(used_assets_map(load_selections(), exclude_scene=scene["index"]), scene["index"]),
     )
     entry["candidates"].sort(key=lambda c: -c["score"])
     entry["score"] = best_score if best_score >= 0 else None
@@ -2297,6 +2443,9 @@ class Handler(BaseHTTPRequestHandler):
                 "automatch_available": bool(STATE.get("llm_keys")),
                 "auto_render": STATE.get("auto_render", True),
                 "cloud_render": bool(STATE.get("github_url")),
+                # Scenes reusing a stock clip an earlier scene already shows
+                # (drives the "Replace repeated clips" button + review chips).
+                "repeats": repeated_scene_indices(selections),
                 # AI illustration tab -- always available (Pollinations needs
                 # no key); a token just makes it faster and watermark-free.
                 "ai_available": True,
@@ -2668,10 +2817,16 @@ class Handler(BaseHTTPRequestHandler):
                         except (TypeError, ValueError):
                             pass
                 selections = load_selections()
+                repeats_mode = bool(body.get("repeats"))
+                repeat_set = set(repeated_scene_indices(selections)) if repeats_mode else set()
 
                 def _needs_match(s):
                     if s["index"] in exclude:
                         return False
+                    if repeats_mode:
+                        # "Replace repeated clips": only scenes reusing an asset
+                        # some earlier scene already shows (first use keeps it).
+                        return s["index"] in repeat_set
                     sel = selections.get(str(s["index"]))
                     if sel is None:
                         return True
@@ -2743,7 +2898,19 @@ class Handler(BaseHTTPRequestHandler):
             ai_filled = sum(1 for e in entries if e.get("ai_generated"))
             after = load_selections()
 
+            done_now = {e["scene_index"] for e in entries}
+            excluded = set()
+            if body.get("all") and isinstance(body.get("exclude"), list):
+                for x in body["exclude"]:
+                    try:
+                        excluded.add(int(x))
+                    except (TypeError, ValueError):
+                        pass
+
             def _still_pending(s):
+                if body.get("all") and body.get("repeats"):
+                    return (s["index"] in set(repeated_scene_indices(after))
+                            and s["index"] not in excluded and s["index"] not in done_now)
                 sel = after.get(str(s["index"]))
                 if sel is None:
                     return True
@@ -3024,6 +3191,8 @@ PAGE_HTML = r"""<!doctype html>
   .card.picked { border-color:var(--accent); box-shadow:0 0 0 1px var(--accent); }
 
   #grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+  .card .usedtag { color:var(--accent); font-weight:600; }
+  .card.reused { opacity:.8; }
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden;
           display:flex; flex-direction:column; }
   .card.chosen { border-color:var(--ok); box-shadow:0 0 0 1px var(--ok); }
@@ -3181,6 +3350,7 @@ PAGE_HTML = r"""<!doctype html>
       </select>
       <label id="aifallbackwrap" title="After stock search + the still-photo round fail, generate a warm house-style AI illustration (Pollinations / FLUX, free) for that scene or shot instead of leaving it empty. Flagged for review in sync_report.json.">
         <input type="checkbox" id="aifallback"> Fill scenes stock can't match with an AI illustration</label>
+      <button id="repeatsbtn" style="display:none" title="Some scenes show a stock clip that an earlier scene already shows. Re-run auto-match for just those scenes, preferring footage not used anywhere else in this video (the first scene to use each clip keeps it). Click again to stop.">&#128257; Replace repeated clips</button>
       <button id="reviewall" style="display:none" title="Open a side-by-side review: every scene's narration next to the clip picked for it. Catch any mismatch and replace it before the render. Opens automatically once 'Auto-match all' fills every scene.">&#128269; Review picked clips</button>
     </div>
     <div id="flagged"></div>
@@ -3353,6 +3523,7 @@ let source = 'pexels-video'; // key into SOURCES
 let localAsset = null;
 let renderOffered = false; // ask at most once per page load
 let autoRenderEnabled = true, cloudRenderAvailable = false, projectPath = '';  // from /api/scenes
+let repeatScenes = [];  // scene indices reusing a clip an earlier scene shows
 let aiStop = false;         // set by the AI panel's Stop button mid-generate
 let aiWatermarked = true;   // no Pollinations token -> free tier adds a small watermark
 
@@ -3524,7 +3695,17 @@ let matchNotes = {}; // scene index -> {ok, text} from the last auto-match
 async function refreshSelections() {
   const d = await (await fetch('/api/scenes')).json();
   selections = d.selections;
+  repeatScenes = d.repeats || [];
   renderSidebar();
+}
+
+function updateRepeatsButton() {
+  const b = $('repeatsbtn');
+  if (!b) return;
+  const n = repeatScenes.length;
+  if (!n || !automatchAvailable) { b.style.display = 'none'; return; }
+  b.style.display = '';
+  if (!b.classList.contains('busy')) b.textContent = `\uD83D\uDD01 Replace repeated clips (${n})`;
 }
 
 function automatchNote(e) {
@@ -3582,6 +3763,7 @@ const reviewIO = ('IntersectionObserver' in window) ? new IntersectionObserver((
 
 function reviewFlagged(row) {
   if (!row.preview) return true;                     // no clip picked at all
+  if (repeatScenes.includes(row.index)) return true; // same clip as an earlier scene
   const sel = row.selection || {};
   if (sel.heuristic || sel.soft) return true;
   const r = row.report;
@@ -3619,6 +3801,7 @@ function reviewChips(row) {
   else if (r && r.status === 'PASS') out.push(`<span class="rev-chip ok">auto-matched${r.score ? ' ' + r.score + '/100' : ''}</span>`);
   else if (r && r.status && r.status !== 'PASS') out.push('<span class="rev-chip bad">auto-match failed</span>');
   if (!r && row.preview) out.push('<span class="rev-chip ok">picked</span>');
+  if (repeatScenes.includes(row.index)) out.push('<span class="rev-chip warn" title="This clip is also used by an earlier scene">repeated clip</span>');
   if (row.reviewed) out.push('<span class="rev-chip ok">checked</span>');
   return out.join('');
 }
@@ -3788,8 +3971,8 @@ async function postAutomatch(body) {
   return r.json();
 }
 
-async function runAutomatch(all) {
-  const btn = all ? $('automatchall') : $('automatchbtn');
+async function runAutomatch(all, repeats) {
+  const btn = repeats ? $('repeatsbtn') : (all ? $('automatchall') : $('automatchbtn'));
   // A second click while "all" is running = stop after the scene in flight.
   if (all && btn.classList.contains('busy')) {
     automatchStop = true;
@@ -3825,7 +4008,7 @@ async function runAutomatch(all) {
     // dropped connection never loses the scenes already done, and Gemini's
     // free-tier pacing doesn't hide behind one silent multi-minute request.
     automatchStop = false;
-    btn.textContent = '⏹ Stop auto-match';
+    btn.textContent = repeats ? '⏹ Stop replacing' : '⏹ Stop auto-match';
     const attempted = [];
     // Below the strictness bar but this close to it -> still fill the scene
     // (flagged "soft") rather than leave it empty. Scales with strictness:
@@ -3835,6 +4018,7 @@ async function runAutomatch(all) {
     let sawLlmDown = false;
     while (!automatchStop) {
       const body = {all:true, limit:1, threshold, soft_floor: softFloor, exclude: attempted, ai_fallback: aiFallback};
+      if (repeats) body.repeats = true;
       if (mq) body.min_quality = mq;
       let d;
       try { d = await postAutomatch(body); }
@@ -3879,17 +4063,24 @@ async function runAutomatch(all) {
     // Every scene now has a clip -- go straight into the side-by-side review
     // so mismatches get caught before the render, exactly when the whole
     // script is freshly matched and easiest to scan.
-    if (!automatchStop) {
+    if (!automatchStop && !repeats) {
       await refreshSelections();
       if (scenes.length && Object.keys(selections).length === scenes.length) {
         setTimeout(openReview, 400);
       }
     }
+    if (repeats) {
+      await refreshSelections();
+      $('status').textContent += repeatScenes.length
+        ? ` ${repeatScenes.length} scene(s) still repeat a clip (nothing fresh fit them) -- pick those by hand.`
+        : ' No repeated clips left.';
+    }
   } catch (err) {
     $('status').className = 'err'; $('status').textContent = 'Auto-match failed: ' + err;
   } finally {
     btn.classList.remove('busy');
-    if (all) btn.textContent = AUTOMATCH_ALL_LABEL;
+    if (all && !repeats) btn.textContent = AUTOMATCH_ALL_LABEL;
+    updateRepeatsButton();
     automatchStop = false;
   }
 }
@@ -3902,6 +4093,7 @@ async function boot() {
   autoRenderEnabled = d.auto_render !== false;
   cloudRenderAvailable = !!d.cloud_render;
   projectPath = d.project || '';
+  repeatScenes = d.repeats || [];
   // Always show the buttons -- with no Gemini key the endpoint returns a clear
   // one-line reason on click, which is more discoverable than a button that
   // silently isn't there. The strictness dropdown only matters when usable.
@@ -3935,6 +4127,7 @@ async function boot() {
 
 function renderSidebar() {
   updateCloudBar();
+  updateRepeatsButton();
   $('scenelist').innerHTML = scenes.map((s,i) => {
     const done = !!selections[s.index];
     const flagged = highlight.has(s.index);
@@ -4121,6 +4314,16 @@ function renderGrid() {
   const isMultiSel = selType === 'multi';
   const wantType = isPhoto ? 'image' : 'video';
   const cartKeys = new Set(multiPicks.map(assetKey));
+  // Which stock assets other scenes already use -> "used in scene N" badges.
+  const usedMap = new Map();
+  for (const [k, selRec] of Object.entries(selections)) {
+    for (const it of (selRec.items || [selRec])) {
+      if (!it || it.source === 'local' || it.source === 'ai' || it.pexels_id == null) continue;
+      const key = `${it.source || 'pexels'}:${it.pexels_id}:${it.type || 'video'}`;
+      if (!usedMap.has(key)) usedMap.set(key, []);
+      usedMap.get(key).push(+k);
+    }
+  }
   $('grid').innerHTML = results.map((v,i) => {
     const short = !isPhoto && v.duration < s.duration;
     const isChosen = !bulkMode && !multiMode && !isMultiSel
@@ -4134,15 +4337,19 @@ function renderGrid() {
       ? `<img class="thumb" src="${v.preview_url}" loading="lazy">`
       : `<video src="${v.preview_url}" muted loop preload="metadata" playsinline></video>`;
     const dims = (v.width && v.height) ? `${v.width}x${v.height}` : ''; // Coverr doesn't report dimensions
+    const usedElsewhere = (usedMap.get(`${meta.provider}:${v.id}:${wantType}`) || []).filter(x => x !== s.index);
+    const usedTag = usedElsewhere.length
+      ? `<span class="usedtag" title="This exact clip is already picked for scene${usedElsewhere.length > 1 ? 's' : ''} ${usedElsewhere.join(', ')}">used in scene ${usedElsewhere.slice(0, 3).join(', ')}${usedElsewhere.length > 3 ? '...' : ''}</span>`
+      : '';
     const info = isPhoto
-      ? `<span>${dims}</span><span>${esc(v.author || '')}</span>`
-      : `<span class="${short?'short':''}">${v.duration}s${short?' (will loop)':''}</span><span>${dims}</span>`;
+      ? `<span>${dims}</span><span>${esc(v.author || '')}</span>${usedTag}`
+      : `<span class="${short?'short':''}">${v.duration}s${short?' (will loop)':''}</span><span>${dims}</span>${usedTag}`;
     const label = multiMode
       ? (inCart ? 'Remove from picks' : 'Add to picks')
       : (bulkMode ? bulkLabel()
         : (isChosen ? 'Selected &#10003;'
           : (wasMultiItem ? 'Used in this scene &#10003;' : (isPhoto ? 'Use this image' : 'Use this clip'))));
-    const cardClass = (isChosen || wasMultiItem) ? 'chosen' : (inCart ? 'picked' : '');
+    const cardClass = ((isChosen || wasMultiItem) ? 'chosen' : (inCart ? 'picked' : '')) + (usedElsewhere.length ? ' reused' : '');
     return `<div class="card ${cardClass}" data-i="${i}">
       ${media}
       <div class="info">${info}</div>
@@ -4654,6 +4861,7 @@ $('uselocalbtn').onclick = () => {
 $('resetall').onclick = resetAll;
 $('automatchbtn').onclick = () => runAutomatch(false);
 $('automatchall').onclick = () => runAutomatch(true);
+$('repeatsbtn').onclick = () => runAutomatch(true, true);
 $('clearall').onclick = () => setTags([]);
 $('searchbtn').onclick = () => {
   // Commit whatever's half-typed in the box, otherwise just re-run the search.

@@ -122,6 +122,21 @@ each scene/shot it:
    reload or a picker restart. **Looks good — render** starts step 3, but
    only once every scene actually has a clip.
 
+8. **Clip diversity.** Every scene's match knows which stock clips the rest
+   of the video already uses. A clip already placed elsewhere loses 25
+   points per prior use after judging (plus 15 if that use is within 6
+   scenes), fresh footage is pre-ranked first, near-duplicate results (same
+   uploader, same tags) are collapsed, and the same clip twice inside one
+   multi-shot scene is never allowed. A reused clip can still win when
+   nothing fresh fits. The judge also caps keyword-tag-only descriptions at
+   "ok" and downgrades generic scenery when the brief names a specific
+   subject — the two things that let one 16-tag Greenland drone clip fill 26
+   of 129 placements before this. Sidebar **🔁 Replace repeated clips (N)**
+   re-matches only the scenes that reuse an earlier scene's clip (the first
+   use keeps it); on that same project it took repeats from 35% to 0% in
+   seven minutes. Result cards show **used in scene N** for clips already
+   picked elsewhere, and the Review page flags "repeated clip".
+
 Auto-selects above the threshold (60 by default); multi-shot scenes are
 matched shot-by-shot into a multi-clip pick with shot-exact timing.
 Anything below threshold is left for you with reasons — unless you tick
