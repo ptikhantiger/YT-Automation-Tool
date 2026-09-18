@@ -1109,7 +1109,16 @@ AUTOMATCH_MAX_BATCHES = 2
 # How many distinct search phrasings to build per scene/shot (see
 # _expand_queries) -- one keyword phrase almost never matches stock
 # catalogues, several angles on the same visual do.
-AUTOMATCH_QUERY_VARIANTS = 7
+AUTOMATCH_QUERY_VARIANTS = 10
+# Of those, up to this many are systematic two-word PAIRS of the scene's own
+# nouns (subject x object / location / requirement terms). Two words is what
+# stock uploaders actually tag: one word is too broad, four returns nothing.
+AUTOMATCH_PAIR_QUERIES = 3
+# Pre-rank bonus per extra search phrasing that surfaced the same clip (cap
+# 3 extra). A clip found by several different phrasings of one scene is far
+# more likely on-topic than one found by a single broad query -- a free
+# relevance signal that costs no Gemini calls.
+AUTOMATCH_AGREEMENT_BONUS = 2
 # Clip diversity. A stock clip with many broad tags ("drone, landscape,
 # greenland, iceberg, sea, arctic, ...") surfaces for every query about the
 # region and reads as a strong match every time, so before this a single clip
@@ -1213,13 +1222,15 @@ def _dedupe_similar(pool):
     """Collapse near-duplicate results -- the same uploader with the same
     tag set is the same footage re-uploaded or re-cut -- so a judge batch
     holds distinct options instead of five copies of one clip."""
-    seen, out = set(), []
+    seen, out = {}, []
     for c in pool:
         words = sorted(set(_DESC_NORM.sub(" ", (c.get("desc") or "").lower()).split()))
         key = (c.get("source"), (c.get("author") or "").strip().lower(), " ".join(words))
         if words and key in seen:
+            kept = seen[key]
+            kept["hits"] = max(kept.get("hits") or 1, c.get("hits") or 1)
             continue
-        seen.add(key)
+        seen[key] = c
         out.append(c)
     return out
 
@@ -1383,6 +1394,74 @@ def _norm_query(q):
     return " ".join((q or "").split()).strip().lower()
 
 
+# Words that make a useless two-word stock query: prepositions and vague
+# size/quantity adjectives that survive _QUERY_STOP ("small towns" -> "small
+# between"). Head nouns are what uploaders tag.
+_PAIR_STOP = {
+    "between", "along", "near", "across", "through", "among", "around", "against",
+    "above", "below", "beside", "behind", "inside", "outside", "toward", "towards",
+    "small", "large", "big", "little", "huge", "tiny", "enormous", "vast", "narrow",
+    "wide", "many", "most", "several", "various", "some", "few", "other", "same",
+    "strip", "part", "kind", "sort", "thing", "things", "area", "areas", "way",
+    "stand", "standing", "sit", "sitting", "live", "living", "lives", "located",
+}
+
+
+def _head_noun(text):
+    """The head (last content) word of a noun phrase -- 'towns' in 'small
+    towns', 'houses' in 'colorful wooden houses'. English NPs are head-final,
+    so the last word is the noun the phrase is about."""
+    terms = [t for t in _core_terms(text or "", 4) if t not in _PAIR_STOP]
+    return terms[-1] if terms else None
+
+
+def _term_pairs(sem, requirements, base_queries, limit=AUTOMATCH_PAIR_QUERIES):
+    """Two-word queries built from the scene's own nouns: the subject's head
+    noun paired with the object's, the location's, and each requirement's
+    head noun, then requirement x requirement. Two words is what stock
+    uploaders actually tag -- one is too broad, four returns nothing."""
+    sem = sem or {}
+    anchor = _head_noun(sem.get("subject"))
+
+    def _stem(w):
+        return w[:-1] if w and w.endswith("s") and len(w) > 3 else w
+
+    def _same(a, b):
+        return a == b or _stem(a) == _stem(b)
+
+    others = []
+    for text in (sem.get("object"), sem.get("location"), *(requirements or [])[:3]):
+        t = _head_noun(text)
+        if t and not (anchor and _same(t, anchor)) and not any(_same(t, o) for o in others):
+            others.append(t)
+    # LLM queries: every content word, as a second-tier source of partners
+    for q in (base_queries or [])[:2]:
+        for t in _core_terms(q, 4):
+            if t in _PAIR_STOP or (anchor and _same(t, anchor)) or any(_same(t, o) for o in others):
+                continue
+            others.append(t)
+    pairs = []
+    if anchor:
+        for t in others:
+            pairs.append(f"{anchor} {t}")
+    req_terms = []
+    for r in (requirements or [])[:3]:
+        t = _head_noun(r)
+        if t and t != anchor and t not in req_terms:
+            req_terms.append(t)
+    for i in range(len(req_terms)):
+        for j in range(i + 1, len(req_terms)):
+            pairs.append(f"{req_terms[i]} {req_terms[j]}")
+    out, seen = [], set()
+    for q in pairs:
+        if q not in seen:
+            seen.add(q)
+            out.append(q)
+        if len(out) >= limit:
+            break
+    return out
+
+
 def _expand_queries(sem, base_queries, requirements, keywords, fallback_text, lang="en",
                     limit=AUTOMATCH_QUERY_VARIANTS):
     """Build several DISTINCT search phrasings for one scene/shot instead of
@@ -1411,6 +1490,7 @@ def _expand_queries(sem, base_queries, requirements, keywords, fallback_text, la
         ordered.append(f"{subj} {obj}")
     if subj and loc:
         ordered.append(f"{subj} {loc}")
+    ordered.extend(_term_pairs(sem, requirements, base_queries))
     for r in (requirements or [])[:3]:
         ordered.append(r)
     primary = (base_queries or [None])[0] or subj or fallback_text
@@ -1434,9 +1514,12 @@ def _expand_queries(sem, base_queries, requirements, keywords, fallback_text, la
         n = _norm_query(q)
         if not n or n in seen:
             continue
+        # Collapse a word repeated inside one phrasing (subject + object often
+        # share their noun: "small towns towns between mountains").
+        words = list(dict.fromkeys(n.split()))
+        n = " ".join(words)
         # Trim absurdly long phrases -- keep the first 5 words, no catalogue
         # matches a full sentence.
-        words = n.split()
         if len(words) > 5:
             n = " ".join(words[:5])
             if n in seen:
@@ -1566,6 +1649,7 @@ def _prerank(pool, weighted, exclusions, keep):
     def rank(c):
         return (
             _desc_match_score(c.get("desc"), weighted, exclusions, wset)
+            + AUTOMATCH_AGREEMENT_BONUS * min((c.get("hits") or 1) - 1, 3)
             - c.get("reuse_penalty", 0) / 5.0,  # fresh footage first among near-equals
             1 if c.get("duration") else 0,
             1 if c.get("width") else 0,
@@ -1591,7 +1675,9 @@ def _heuristic_pick(pool, signals, diversity=None):
     scored = sorted(
         pool,
         key=lambda c: (
-            _desc_match_score(c.get("desc"), weighted, exclusions, wset) - c.get("reuse_penalty", 0) / 3.5,
+            _desc_match_score(c.get("desc"), weighted, exclusions, wset)
+            + AUTOMATCH_AGREEMENT_BONUS * min((c.get("hits") or 1) - 1, 3)
+            - c.get("reuse_penalty", 0) / 3.5,
             1 if c.get("duration") else 0,
             1 if c.get("width") else 0,
         ),
@@ -1635,7 +1721,8 @@ def _judge_batch(brief, batch, entry_candidates):
         desc = ((c.get("desc") or "").strip() or "(no description)")[:140]
         dims = f"{c.get('width')}x{c.get('height')}" if c.get("width") else "res n/a"
         via = c.get("matched_query")
-        via_txt = f', via "{via}"' if via else ""
+        extra = max(0, (c.get("hits") or 1) - 1)
+        via_txt = (f', via "{via}"' + (f" +{extra} more phrasing{'s' if extra > 1 else ''}" if extra else "")) if via else ""
         kind = "photo" if c.get("is_photo") or c.get("kind") == "photo" else f"{c.get('duration') or '?'}s"
         used = c.get("used_in") or []
         used_txt = (f' [ALREADY USED in scene{"s" if len(used) > 1 else ""} '
@@ -1689,6 +1776,7 @@ def _judge_batch(brief, batch, entry_candidates):
             "duration": c.get("duration"), "query": c.get("matched_query"),
             "score": score, "verdict": verdict, "raw_score": raw, "reason": reason,
             "used_in": c.get("used_in") or [], "reuse_penalty": penalty,
+            "hits": c.get("hits") or 1, "queries": c.get("matched_queries") or ([via] if (via := c.get("matched_query")) else []),
         })
         if score > best_score:
             best, best_score, best_reason = c, score, reason
@@ -1722,10 +1810,14 @@ def _pick_best(brief, pool, entry_candidates, signals=None, accept=0, diversity=
 def _interleave_by_source(pool):
     """Round-robin the pool by provider so trimming to AUTOMATCH_POOL keeps a
     spread of sources instead of whatever one prolific provider returned
-    first -- more variety for the pre-rank and judge to choose from."""
+    first -- more variety for the pre-rank and judge to choose from. Within
+    each provider, clips several phrasings agreed on come first, so the trim
+    never drops a multi-hit clip in favour of a single-hit one."""
     buckets = {}
     for c in pool:
         buckets.setdefault(c.get("source") or "?", []).append(c)
+    for src in buckets:
+        buckets[src].sort(key=lambda c: -(c.get("hits") or 1))
     out = []
     while any(buckets.values()):
         for src in list(buckets):
@@ -1740,7 +1832,7 @@ def _search_pool(queries, min_duration, min_quality, errors_out):
     relaxed). Page 2 is pulled for the first few queries while the pool is
     thin -- exact matches are found by judging MORE candidates, not by
     settling for the first page."""
-    pool, seen = [], set()
+    pool, seen, by_key = [], set(), {}
 
     def gather(min_dur, page=1, qs=None):
         targets = list(qs or queries)
@@ -1763,20 +1855,35 @@ def _search_pool(queries, min_duration, min_quality, errors_out):
                 if key not in seen:
                     seen.add(key)
                     c["matched_query"] = query
-                    pool.append(c)
+                    c["matched_queries"] = [query]
+                    c["hits"] = 1
+                    by_key[key] = c
+                else:
+                    # Same clip surfaced by another phrasing: agreement.
+                    first = by_key[key]
+                    if query not in first["matched_queries"]:
+                        first["matched_queries"].append(query)
+                        first["hits"] = len(first["matched_queries"])
+
+    def _pool():
+        return list(by_key.values())
 
     gather(min_duration)
+    pool = _pool()
     # Only reach for page 2 while the pool is still thin -- once there are
     # comfortably more than one judge batch's worth, extra pages just cost
     # requests without changing which clip wins.
     if queries and len(pool) < AUTOMATCH_JUDGE * 2:
         gather(min_duration, page=2, qs=queries[:2])
+        pool = _pool()
     relaxed = False
     if not pool:
         relaxed = True
         gather(None)
+        pool = _pool()
         if queries and len(pool) < AUTOMATCH_JUDGE * 2:
             gather(None, page=2, qs=queries[:2])
+            pool = _pool()
     return _interleave_by_source(pool)[:AUTOMATCH_POOL], relaxed
 
 
@@ -3192,6 +3299,8 @@ PAGE_HTML = r"""<!doctype html>
 
   #grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
   .card .usedtag { color:var(--accent); font-weight:600; }
+  .card .via { display:block; color:var(--dim); font-size:10.5px; margin-top:2px; }
+  .card .via b { color:var(--text); font-weight:600; }
   .card.reused { opacity:.8; }
   .card { background:var(--panel); border:1px solid var(--line); border-radius:10px; overflow:hidden;
           display:flex; flex-direction:column; }
@@ -3430,6 +3539,7 @@ PAGE_HTML = r"""<!doctype html>
     </div>
 
     <div id="opts">
+      <label id="pairmodewrap" title="With 3 or more tags, search every two-tag pair (plus all tags together) and merge the results, ranked by how many searches agree on a clip. One tag is too broad, all tags at once usually returns nothing -- two words is what stock uploaders actually tag."><input type="checkbox" id="pairmode" checked> Search tags in pairs (3+ tags)</label>
       <label id="longenoughwrap"><input type="checkbox" id="longenough" checked> Only clips long enough to cover the scene</label>
       <label id="qualitywrap">Minimum quality:
         <select id="minquality">
@@ -4239,7 +4349,71 @@ async function search() {
   }
   $('grid').innerHTML = ''; $('status').className = '';
   $('status').textContent = `Searching ${PROVIDER_LABELS[SOURCES[source].provider]}...`;
+  if (pairSearchActive()) { await fetchPairs(); return; }
   await fetchPage();
+}
+
+// Pair search: with 3+ tags, one all-tags query is usually too narrow. Fire
+// every two-tag pair (capped) plus the full query in parallel, merge, and
+// rank each clip by how many of those searches returned it -- agreement
+// between phrasings is a strong on-topic signal. Coverr's free tier is 50
+// requests/hour, so that tab keeps the single query.
+function pairSearchActive() {
+  const meta = SOURCES[source];
+  return $('pairmode').checked && searchTags.length >= 3 && meta.endpoint && meta.provider !== 'coverr' && meta.provider !== 'ai';
+}
+
+function tagPairs(tags, cap) {
+  const out = [];
+  for (let i = 0; i < tags.length && out.length < cap; i++)
+    for (let j = i + 1; j < tags.length && out.length < cap; j++)
+      out.push(`${tags[i]} ${tags[j]}`);
+  return out;
+}
+
+async function fetchPairs() {
+  const meta = SOURCES[source];
+  const s = scenes[cur];
+  const full = searchTags.join(' ').trim();
+  const pairs = tagPairs(searchTags, 6);
+  const queries = [full, ...pairs.filter(q => q !== full)];
+  const base = `&min_quality=${$('minquality').value}` +
+    (meta.media === 'video' ? `&min_duration=${$('longenough').checked ? Math.ceil(s.duration) : ''}` : '');
+  const fetches = queries.map(q =>
+    fetch(`${meta.endpoint}?q=${encodeURIComponent(q)}&page=1${base}`).then(r => r.json()).catch(e => ({ error: String(e) }))
+  );
+  const answers = await Promise.all(fetches);
+  const byId = new Map();
+  let errors = [], rate = null, order = 0;
+  answers.forEach((d, qi) => {
+    const q = queries[qi];
+    if (!d || d.error) { errors.push(`"${q}": ${d && d.error || 'failed'}`); return; }
+    if (d.rate_remaining != null) rate = d.rate_remaining;
+    for (const v of d.videos || []) {
+      let e = byId.get(v.id);
+      if (!e) { e = { v, via: [], full: false, order: order++ }; byId.set(v.id, e); }
+      if (qi === 0) e.full = true; else e.via.push(q);
+    }
+  });
+  const merged = [...byId.values()]
+    .sort((a, b) => ((b.full ? 3 : 0) + b.via.length) - ((a.full ? 3 : 0) + a.via.length) || a.order - b.order)
+    .map(e => { e.v.via = e.via; e.v.viaFull = e.full; return e.v; });
+  results = merged; hasNext = false;
+  $('rate').textContent = rate != null ? `${PROVIDER_LABELS[meta.provider]} quota left: ${rate}` : '';
+  $('pageinfo').textContent = `${queries.length} searches merged`;
+  $('loadmore').style.display = 'none';
+  if (!merged.length) {
+    $('status').className = errors.length === queries.length ? 'err' : '';
+    $('status').textContent = errors.length === queries.length
+      ? `Search failed: ${errors[0]}`
+      : 'No results from any tag pair -- try different words.';
+  } else {
+    const agree = merged.filter(v => (v.via.length + (v.viaFull ? 1 : 0)) >= 2).length;
+    $('status').textContent = `${merged.length} clips from ${queries.length} searches (all tags + ${pairs.length} pairs)` +
+      ` -- ${agree} found by 2+ searches, shown first` +
+      (errors.length ? ` (${errors.length} search${errors.length > 1 ? 'es' : ''} failed)` : '') + '.';
+  }
+  renderGrid();
 }
 
 // Fetches the current `page` for the active tags/source and merges it into
@@ -4278,7 +4452,7 @@ async function fetchPage() {
 // next page and appends it, so paging through hundreds of clips never needs
 // a manual "next page" click.
 async function loadMore() {
-  if (loadingMore || !hasNext || source === 'local') return;
+  if (loadingMore || !hasNext || source === 'local' || pairSearchActive()) return;
   loadingMore = true;
   page++;
   $('loadmore').textContent = 'Loading more...';
@@ -4341,9 +4515,12 @@ function renderGrid() {
     const usedTag = usedElsewhere.length
       ? `<span class="usedtag" title="This exact clip is already picked for scene${usedElsewhere.length > 1 ? 's' : ''} ${usedElsewhere.join(', ')}">used in scene ${usedElsewhere.slice(0, 3).join(', ')}${usedElsewhere.length > 3 ? '...' : ''}</span>`
       : '';
-    const info = isPhoto
+    const nVia = (v.via ? v.via.length : 0) + (v.viaFull ? 1 : 0);
+    const viaTag = v.via ? `<span class="via" title="${esc((v.viaFull ? ['all tags'] : []).concat(v.via).join(' | '))}">` +
+      `<b>${nVia}</b> search${nVia === 1 ? '' : 'es'}: ${esc((v.viaFull ? ['all tags'] : []).concat(v.via).slice(0, 2).join(', '))}${nVia > 2 ? '...' : ''}</span>` : '';
+    const info = (isPhoto
       ? `<span>${dims}</span><span>${esc(v.author || '')}</span>${usedTag}`
-      : `<span class="${short?'short':''}">${v.duration}s${short?' (will loop)':''}</span><span>${dims}</span>${usedTag}`;
+      : `<span class="${short?'short':''}">${v.duration}s${short?' (will loop)':''}</span><span>${dims}</span>${usedTag}`) + viaTag;
     const label = multiMode
       ? (inCart ? 'Remove from picks' : 'Add to picks')
       : (bulkMode ? bulkLabel()
@@ -4862,6 +5039,7 @@ $('resetall').onclick = resetAll;
 $('automatchbtn').onclick = () => runAutomatch(false);
 $('automatchall').onclick = () => runAutomatch(true);
 $('repeatsbtn').onclick = () => runAutomatch(true, true);
+$('pairmode').onchange = () => { if (searchTags.length >= 3) search(); };
 $('clearall').onclick = () => setTags([]);
 $('searchbtn').onclick = () => {
   // Commit whatever's half-typed in the box, otherwise just re-run the search.

@@ -137,6 +137,15 @@ each scene/shot it:
    seven minutes. Result cards show **used in scene N** for clips already
    picked elsewhere, and the Review page flags "repeated clip".
 
+9. **Pair phrasings + agreement.** Besides the LLM phrasings, up to 3
+   two-word queries are built from the scene's own head nouns (`towns sea`,
+   `houses village`, `greenland landscape`) — two words is what uploaders
+   tag; one is too broad, four returns nothing. Every clip remembers how many
+   of the ~10 phrasings surfaced it (`hits`), and the pre-rank gives +2 per
+   extra phrasing (cap 3): a clip five phrasings agree on outranks one a
+   single broad query returned. Shown to the judge as `via "…" +4 more
+   phrasings` and kept in `sync_report.json` per candidate.
+
 Auto-selects above the threshold (60 by default); multi-shot scenes are
 matched shot-by-shot into a multi-clip pick with shot-exact timing.
 Anything below threshold is left for you with reasons — unless you tick
@@ -561,6 +570,13 @@ Opens a local page at `http://localhost:8000/` that walks scene by scene:
   when shot 1's line ends, then clip 2 begins, etc. (not an even time split;
   the tray shows each shot's real length). For a scene with no shots, the
   time is divided evenly between the clips.
+- **Search tags in pairs** (on by default, 3+ tags): instead of one
+  all-tags query that returns almost nothing, the picker runs every two-tag
+  pair (up to 6) plus the full query in parallel, merges them, and ranks each
+  clip by how many searches agreed on it — the card says e.g. **3 searches:
+  all tags, greenland village**. Four tags typically yield ~60 distinct clips
+  instead of 12. Untick it to get the strict all-tags search back. (Coverr's
+  free tier is 50 requests/hour, so that tab always uses the single query.)
 - **The search box** is the real control — the auto-generated query is only a
   starting point. Edit it and press Enter to search anything you want; the
   same tags carry over when you switch source tabs.
