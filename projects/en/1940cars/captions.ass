@@ -1,0 +1,367 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:02.54,Default,,0,0,0,,Imagine a world in 1940
+Dialogue: 0,0:00:02.54,0:00:05.42,Default,,0,0,0,,The automobile was no longer just a machine
+Dialogue: 0,0:00:05.42,0:00:07.81,Default,,0,0,0,,for getting from one place to another
+Dialogue: 0,0:00:07.81,0:00:10.88,Default,,0,0,0,,It had become a symbol of wealth technology
+Dialogue: 0,0:00:10.88,0:00:13.28,Default,,0,0,0,,freedom and social status
+Dialogue: 0,0:00:13.28,0:00:16.43,Default,,0,0,0,,Across America manufacturers were competing
+Dialogue: 0,0:00:16.43,0:00:19.71,Default,,0,0,0,,to build cars that were longer smoother more
+Dialogue: 0,0:00:19.71,0:00:23.29,Default,,0,0,0,,powerful and more luxurious than ever before
+Dialogue: 0,0:00:23.29,0:00:26.21,Default,,0,0,0,,At the same time European manufacturers were
+Dialogue: 0,0:00:26.21,0:00:28.54,Default,,0,0,0,,taking a very different approach
+Dialogue: 0,0:00:28.54,0:00:31.88,Default,,0,0,0,,Their cars emphasized engineering performance
+Dialogue: 0,0:00:31.88,0:00:34.58,Default,,0,0,0,,craftsmanship and individuality
+Dialogue: 0,0:00:34.58,0:00:37.32,Default,,0,0,0,,And then history suddenly changed
+Dialogue: 0,0:00:37.32,0:00:40.74,Default,,0,0,0,,World War II was beginning to reshape the world
+Dialogue: 0,0:00:40.74,0:00:43.33,Default,,0,0,0,,and the automobile industry was approaching
+Dialogue: 0,0:00:43.33,0:00:46.40,Default,,0,0,0,,one of the biggest turning points in its history
+Dialogue: 0,0:00:46.40,0:00:49.33,Default,,0,0,0,,But before that happened 1940 produced some
+Dialogue: 0,0:00:49.33,0:00:51.38,Default,,0,0,0,,remarkable automobiles
+Dialogue: 0,0:00:51.38,0:00:54.79,Default,,0,0,0,,From Buick and Cadillac to Packard Lincoln
+Dialogue: 0,0:00:54.79,0:00:58.25,Default,,0,0,0,,Ford and Alfa Romeo these cars represented
+Dialogue: 0,0:00:58.25,0:01:01.76,Default,,0,0,0,,the final years of a remarkable pre-war era
+Dialogue: 0,0:01:01.76,0:01:05.26,Default,,0,0,0,,Today let's travel back to 1940 and explore
+Dialogue: 0,0:01:05.26,0:01:08.01,Default,,0,0,0,,nine extraordinary automobiles that defined
+Dialogue: 0,0:01:08.01,0:01:09.06,Default,,0,0,0,,their time
+Dialogue: 0,0:01:09.06,0:01:11.22,Default,,0,0,0,,1940 Buick Special
+Dialogue: 0,0:01:11.22,0:01:13.75,Default,,0,0,0,,Let's begin with a car designed to bring Buick
+Dialogue: 0,0:01:13.75,0:01:16.44,Default,,0,0,0,,engineering to a wider audience
+Dialogue: 0,0:01:16.44,0:01:19.88,Default,,0,0,0,,The 1940 Buick Special was Buick's more affordable
+Dialogue: 0,0:01:19.88,0:01:22.79,Default,,0,0,0,,offering but calling it simply an entry-level
+Dialogue: 0,0:01:22.79,0:01:24.72,Default,,0,0,0,,Buick would be misleading
+Dialogue: 0,0:01:24.72,0:01:27.39,Default,,0,0,0,,It still carried the styling and engineering
+Dialogue: 0,0:01:27.39,0:01:30.19,Default,,0,0,0,,characteristics that made Buick an important
+Dialogue: 0,0:01:30.19,0:01:32.39,Default,,0,0,0,,American automobile brand
+Dialogue: 0,0:01:32.39,0:01:35.79,Default,,0,0,0,,The 1940 Special featured Buick's famous straight-eight
+Dialogue: 0,0:01:35.79,0:01:38.76,Default,,0,0,0,,engine giving the car the smooth power delivery
+Dialogue: 0,0:01:38.76,0:01:41.57,Default,,0,0,0,,that buyers expected from a premium American
+Dialogue: 0,0:01:41.57,0:01:42.82,Default,,0,0,0,,automobile
+Dialogue: 0,0:01:42.82,0:01:46.24,Default,,0,0,0,,And the styling was unmistakably 1940s
+Dialogue: 0,0:01:46.24,0:01:49.51,Default,,0,0,0,,The body was wide and substantial with flowing
+Dialogue: 0,0:01:49.51,0:01:53.22,Default,,0,0,0,,fenders a prominent grille and carefully integrated
+Dialogue: 0,0:01:53.22,0:01:54.44,Default,,0,0,0,,headlights
+Dialogue: 0,0:01:54.44,0:01:57.22,Default,,0,0,0,,Inside Buick focused on comfort
+Dialogue: 0,0:01:57.22,0:02:00.71,Default,,0,0,0,,Large seats quality materials and a spacious
+Dialogue: 0,0:02:00.71,0:02:03.43,Default,,0,0,0,,cabin reflected the priorities of American
+Dialogue: 0,0:02:03.43,0:02:05.62,Default,,0,0,0,,car buyers during this period
+Dialogue: 0,0:02:05.62,0:02:08.69,Default,,0,0,0,,The Special demonstrated an important idea
+Dialogue: 0,0:02:08.69,0:02:10.79,Default,,0,0,0,,You didn't necessarily need to buy the most
+Dialogue: 0,0:02:10.79,0:02:13.93,Default,,0,0,0,,expensive Buick to experience the character
+Dialogue: 0,0:02:13.93,0:02:15.07,Default,,0,0,0,,of a Buick
+Dialogue: 0,0:02:15.07,0:02:17.21,Default,,0,0,0,,It was a car designed for people who wanted
+Dialogue: 0,0:02:17.21,0:02:20.03,Default,,0,0,0,,refinement without moving all the way into
+Dialogue: 0,0:02:20.03,0:02:22.83,Default,,0,0,0,,the most expensive luxury classes
+Dialogue: 0,0:02:22.83,0:02:25.07,Default,,0,0,0,,And that made the Buick Special an important
+Dialogue: 0,0:02:25.07,0:02:26.83,Default,,0,0,0,,part of Buick's lineup
+Dialogue: 0,0:02:26.83,0:02:28.96,Default,,0,0,0,,1940 Buick Super
+Dialogue: 0,0:02:28.96,0:02:31.65,Default,,0,0,0,,If the Special represented accessible Buick
+Dialogue: 0,0:02:31.65,0:02:35.71,Default,,0,0,0,,luxury the 1940 Buick Super moved further toward
+Dialogue: 0,0:02:35.71,0:02:37.88,Default,,0,0,0,,the premium end of the market
+Dialogue: 0,0:02:37.88,0:02:41.18,Default,,0,0,0,,The Super was larger and more substantial offering
+Dialogue: 0,0:02:41.18,0:02:44.92,Default,,0,0,0,,buyers more space equipment and prestige
+Dialogue: 0,0:02:44.92,0:02:47.94,Default,,0,0,0,,Under the hood was a Buick straight-eight engine
+Dialogue: 0,0:02:47.94,0:02:50.76,Default,,0,0,0,,delivering the smooth effortless performance
+Dialogue: 0,0:02:50.76,0:02:53.51,Default,,0,0,0,,that was becoming associated with the brand
+Dialogue: 0,0:02:53.51,0:02:56.97,Default,,0,0,0,,But in 1940 horsepower wasn't the only measure
+Dialogue: 0,0:02:56.97,0:02:58.49,Default,,0,0,0,,of a luxury car
+Dialogue: 0,0:02:58.49,0:03:00.10,Default,,0,0,0,,Ride quality mattered
+Dialogue: 0,0:03:00.10,0:03:01.32,Default,,0,0,0,,Noise mattered
+Dialogue: 0,0:03:01.32,0:03:03.11,Default,,0,0,0,,Interior space mattered
+Dialogue: 0,0:03:03.11,0:03:06.31,Default,,0,0,0,,And perhaps most importantly appearance mattered
+Dialogue: 0,0:03:06.31,0:03:08.64,Default,,0,0,0,,The Buick Super had the kind of presence that
+Dialogue: 0,0:03:08.64,0:03:10.86,Default,,0,0,0,,could make a car seem important before the
+Dialogue: 0,0:03:10.86,0:03:12.74,Default,,0,0,0,,engine was even started
+Dialogue: 0,0:03:12.74,0:03:16.75,Default,,0,0,0,,Its long body sweeping fenders chrome details
+Dialogue: 0,0:03:16.75,0:03:19.83,Default,,0,0,0,,and imposing front grille represented the American
+Dialogue: 0,0:03:19.83,0:03:22.50,Default,,0,0,0,,idea of automotive luxury
+Dialogue: 0,0:03:22.50,0:03:25.14,Default,,0,0,0,,This was an era when cars were becoming rolling
+Dialogue: 0,0:03:25.14,0:03:27.21,Default,,0,0,0,,works of industrial design
+Dialogue: 0,0:03:27.21,0:03:30.60,Default,,0,0,0,,And Buick was very much part of that transformation
+Dialogue: 0,0:03:30.60,0:03:33.25,Default,,0,0,0,,1940 Packard One Twenty
+Dialogue: 0,0:03:33.25,0:03:36.28,Default,,0,0,0,,Now we move to one of America's most respected
+Dialogue: 0,0:03:36.28,0:03:38.39,Default,,0,0,0,,luxury manufacturers
+Dialogue: 0,0:03:38.39,0:03:39.29,Default,,0,0,0,,Packard
+Dialogue: 0,0:03:39.29,0:03:43.12,Default,,0,0,0,,By 1940 Packard had already established a reputation
+Dialogue: 0,0:03:43.12,0:03:45.89,Default,,0,0,0,,for building sophisticated automobiles for
+Dialogue: 0,0:03:45.89,0:03:47.46,Default,,0,0,0,,wealthy customers
+Dialogue: 0,0:03:47.46,0:03:49.76,Default,,0,0,0,,But the Packard One Twenty was particularly
+Dialogue: 0,0:03:49.76,0:03:50.99,Default,,0,0,0,,significant
+Dialogue: 0,0:03:50.99,0:03:53.40,Default,,0,0,0,,It helped Packard reach customers who wanted
+Dialogue: 0,0:03:53.40,0:03:56.40,Default,,0,0,0,,the prestige of the Packard name without paying
+Dialogue: 0,0:03:56.40,0:03:59.75,Default,,0,0,0,,the price of the company's most expensive models
+Dialogue: 0,0:03:59.75,0:04:02.76,Default,,0,0,0,,The One Twenty was powered by a smooth inline-eight
+Dialogue: 0,0:04:02.76,0:04:03.58,Default,,0,0,0,,engine
+Dialogue: 0,0:04:03.58,0:04:06.36,Default,,0,0,0,,Its design combined traditional luxury-car
+Dialogue: 0,0:04:06.36,0:04:09.53,Default,,0,0,0,,proportions with a more modern appearance
+Dialogue: 0,0:04:09.53,0:04:11.83,Default,,0,0,0,,Compared with some earlier automobiles the
+Dialogue: 0,0:04:11.83,0:04:15.65,Default,,0,0,0,,1940 Packard looked cleaner and more streamlined
+Dialogue: 0,0:04:15.65,0:04:18.11,Default,,0,0,0,,That was important because the automotive world
+Dialogue: 0,0:04:18.11,0:04:19.29,Default,,0,0,0,,was changing
+Dialogue: 0,0:04:19.29,0:04:21.61,Default,,0,0,0,,Designers were beginning to move away from
+Dialogue: 0,0:04:21.61,0:04:25.03,Default,,0,0,0,,extremely upright bodies and exposed mechanical
+Dialogue: 0,0:04:25.03,0:04:26.33,Default,,0,0,0,,components
+Dialogue: 0,0:04:26.33,0:04:28.39,Default,,0,0,0,,Fenders were becoming integrated
+Dialogue: 0,0:04:28.39,0:04:30.25,Default,,0,0,0,,Bodies were becoming smoother
+Dialogue: 0,0:04:30.25,0:04:32.82,Default,,0,0,0,,And cars were beginning to look less like carriages
+Dialogue: 0,0:04:32.82,0:04:36.39,Default,,0,0,0,,with engines and more like modern automobiles
+Dialogue: 0,0:04:36.39,0:04:39.04,Default,,0,0,0,,The Packard One Twenty captured that transition
+Dialogue: 0,0:04:39.04,0:04:40.11,Default,,0,0,0,,beautifully
+Dialogue: 0,0:04:40.11,0:04:43.63,Default,,0,0,0,,It was elegant without being excessively extravagant
+Dialogue: 0,0:04:43.63,0:04:46.08,Default,,0,0,0,,And for Packard it became one of the company's
+Dialogue: 0,0:04:46.08,0:04:48.00,Default,,0,0,0,,most important models
+Dialogue: 0,0:04:48.00,0:04:50.56,Default,,0,0,0,,1940 Packard Super Eight
+Dialogue: 0,0:04:50.56,0:04:53.68,Default,,0,0,0,,At the top of our Packard story sits the 1940
+Dialogue: 0,0:04:53.68,0:04:55.38,Default,,0,0,0,,Packard Super Eight
+Dialogue: 0,0:04:55.38,0:04:57.92,Default,,0,0,0,,This was a different level of automobile
+Dialogue: 0,0:04:57.92,0:05:00.61,Default,,0,0,0,,The Super Eight represented Packard's traditional
+Dialogue: 0,0:05:00.61,0:05:04.78,Default,,0,0,0,,philosophy of luxury engineering and prestige
+Dialogue: 0,0:05:04.78,0:05:07.24,Default,,0,0,0,,Its large straight-eight engine provided the
+Dialogue: 0,0:05:07.24,0:05:10.17,Default,,0,0,0,,effortless performance expected from a premium
+Dialogue: 0,0:05:10.17,0:05:11.42,Default,,0,0,0,,automobile
+Dialogue: 0,0:05:11.42,0:05:14.81,Default,,0,0,0,,But the real attraction was the complete experience
+Dialogue: 0,0:05:14.81,0:05:17.32,Default,,0,0,0,,A Packard Super Eight was designed to feel
+Dialogue: 0,0:05:17.32,0:05:18.54,Default,,0,0,0,,substantial
+Dialogue: 0,0:05:18.54,0:05:20.15,Default,,0,0,0,,The doors were large
+Dialogue: 0,0:05:20.15,0:05:21.97,Default,,0,0,0,,The cabin was spacious
+Dialogue: 0,0:05:21.97,0:05:24.38,Default,,0,0,0,,The materials were carefully selected
+Dialogue: 0,0:05:24.38,0:05:26.65,Default,,0,0,0,,And the ride was designed to be smooth and
+Dialogue: 0,0:05:26.65,0:05:27.68,Default,,0,0,0,,quiet
+Dialogue: 0,0:05:27.68,0:05:30.74,Default,,0,0,0,,During this era owning a car like this wasn't
+Dialogue: 0,0:05:30.74,0:05:32.83,Default,,0,0,0,,simply about transportation
+Dialogue: 0,0:05:32.83,0:05:35.07,Default,,0,0,0,,It communicated social status
+Dialogue: 0,0:05:35.07,0:05:37.40,Default,,0,0,0,,A Packard in the driveway could say something
+Dialogue: 0,0:05:37.40,0:05:40.17,Default,,0,0,0,,about its owner before the owner said a word
+Dialogue: 0,0:05:40.17,0:05:42.79,Default,,0,0,0,,And Packard's reputation was strong enough
+Dialogue: 0,0:05:42.79,0:05:45.65,Default,,0,0,0,,that the brand became associated with American
+Dialogue: 0,0:05:45.65,0:05:47.79,Default,,0,0,0,,wealth and sophistication
+Dialogue: 0,0:05:47.79,0:05:50.83,Default,,0,0,0,,Today the Super Eight gives us a fascinating
+Dialogue: 0,0:05:50.83,0:05:53.90,Default,,0,0,0,,glimpse into what pre-war American luxury looked
+Dialogue: 0,0:05:53.90,0:05:57.39,Default,,0,0,0,,like before mass production and post-war design
+Dialogue: 0,0:05:57.39,0:06:00.14,Default,,0,0,0,,completely transformed the industry
+Dialogue: 0,0:06:00.14,0:06:03.58,Default,,0,0,0,,1940 Cadillac Series 62
+Dialogue: 0,0:06:03.58,0:06:06.21,Default,,0,0,0,,Now we arrive at one of the most recognizable
+Dialogue: 0,0:06:06.21,0:06:09.11,Default,,0,0,0,,names in American automotive history
+Dialogue: 0,0:06:09.11,0:06:10.11,Default,,0,0,0,,Cadillac
+Dialogue: 0,0:06:10.11,0:06:14.42,Default,,0,0,0,,The 1940 Series 62 represented Cadillac's modern
+Dialogue: 0,0:06:14.42,0:06:18.10,Default,,0,0,0,,direction as the company entered a new decade
+Dialogue: 0,0:06:18.10,0:06:21.44,Default,,0,0,0,,The Series 62 was designed to appeal to buyers
+Dialogue: 0,0:06:21.44,0:06:23.99,Default,,0,0,0,,who wanted Cadillac prestige while sitting
+Dialogue: 0,0:06:23.99,0:06:27.25,Default,,0,0,0,,below the most expensive models in the lineup
+Dialogue: 0,0:06:27.25,0:06:30.39,Default,,0,0,0,,And visually it had the unmistakable Cadillac
+Dialogue: 0,0:06:30.39,0:06:31.42,Default,,0,0,0,,identity
+Dialogue: 0,0:06:31.42,0:06:34.17,Default,,0,0,0,,A bold grille Long proportions
+Dialogue: 0,0:06:34.17,0:06:35.58,Default,,0,0,0,,Elegant fenders
+Dialogue: 0,0:06:35.58,0:06:36.99,Default,,0,0,0,,Extensive chrome
+Dialogue: 0,0:06:36.99,0:06:39.68,Default,,0,0,0,,And a presence that was difficult to ignore
+Dialogue: 0,0:06:39.68,0:06:43.07,Default,,0,0,0,,Cadillac was also becoming increasingly associated
+Dialogue: 0,0:06:43.07,0:06:44.82,Default,,0,0,0,,with advanced engineering
+Dialogue: 0,0:06:44.82,0:06:48.49,Default,,0,0,0,,Its V8 engine provided strong performance while
+Dialogue: 0,0:06:48.49,0:06:51.43,Default,,0,0,0,,Cadillac's engineering philosophy emphasized
+Dialogue: 0,0:06:51.43,0:06:53.67,Default,,0,0,0,,smoothness and refinement
+Dialogue: 0,0:06:53.67,0:06:55.67,Default,,0,0,0,,But perhaps the most important thing about
+Dialogue: 0,0:06:55.67,0:06:58.47,Default,,0,0,0,,the Series 62 was its design
+Dialogue: 0,0:06:58.47,0:07:02.40,Default,,0,0,0,,By 1940 Cadillac was moving toward a more streamlined
+Dialogue: 0,0:07:02.40,0:07:04.44,Default,,0,0,0,,interpretation of luxury
+Dialogue: 0,0:07:04.44,0:07:07.99,Default,,0,0,0,,The enormous upright shapes of the early 1930s
+Dialogue: 0,0:07:07.99,0:07:11.39,Default,,0,0,0,,were gradually giving way to smoother bodies
+Dialogue: 0,0:07:11.39,0:07:14.61,Default,,0,0,0,,The automobile was becoming more aerodynamic
+Dialogue: 0,0:07:14.61,0:07:17.64,Default,,0,0,0,,And Cadillac was helping define what the American
+Dialogue: 0,0:07:17.64,0:07:20.88,Default,,0,0,0,,luxury car would look like for the coming decade
+Dialogue: 0,0:07:20.88,0:07:23.86,Default,,0,0,0,,1940 Cadillac Sixty Special
+Dialogue: 0,0:07:23.86,0:07:26.44,Default,,0,0,0,,Then there was the Cadillac Sixty Special
+Dialogue: 0,0:07:26.44,0:07:30.40,Default,,0,0,0,,If the Series 62 represented Cadillac's mainstream
+Dialogue: 0,0:07:30.40,0:07:33.26,Default,,0,0,0,,luxury direction the Sixty Special was one
+Dialogue: 0,0:07:33.26,0:07:36.36,Default,,0,0,0,,of the company's most distinctive designs
+Dialogue: 0,0:07:36.36,0:07:38.67,Default,,0,0,0,,The Sixty Special had been introduced in the
+Dialogue: 0,0:07:38.67,0:07:42.18,Default,,0,0,0,,late 1930s and quickly became famous for its
+Dialogue: 0,0:07:42.18,0:07:44.28,Default,,0,0,0,,sophisticated proportions
+Dialogue: 0,0:07:44.28,0:07:47.00,Default,,0,0,0,,It had a lower cleaner appearance than many
+Dialogue: 0,0:07:47.00,0:07:49.06,Default,,0,0,0,,traditional luxury cars
+Dialogue: 0,0:07:49.06,0:07:51.67,Default,,0,0,0,,The roof was more integrated with the body
+Dialogue: 0,0:07:51.67,0:07:53.69,Default,,0,0,0,,The running boards were disappearing
+Dialogue: 0,0:07:53.69,0:07:56.14,Default,,0,0,0,,And the overall silhouette looked surprisingly
+Dialogue: 0,0:07:56.14,0:07:57.78,Default,,0,0,0,,modern for its time
+Dialogue: 0,0:07:57.78,0:08:00.46,Default,,0,0,0,,The car demonstrated an important change in
+Dialogue: 0,0:08:00.46,0:08:01.94,Default,,0,0,0,,automotive design
+Dialogue: 0,0:08:01.94,0:08:04.35,Default,,0,0,0,,Luxury no longer had to mean simply making
+Dialogue: 0,0:08:04.35,0:08:07.10,Default,,0,0,0,,a car larger and adding more chrome
+Dialogue: 0,0:08:07.10,0:08:10.22,Default,,0,0,0,,Designers were beginning to understand proportion
+Dialogue: 0,0:08:10.22,0:08:13.13,Default,,0,0,0,,aerodynamics and visual simplicity
+Dialogue: 0,0:08:13.13,0:08:15.81,Default,,0,0,0,,The Sixty Special became one of the defining
+Dialogue: 0,0:08:15.81,0:08:18.47,Default,,0,0,0,,Cadillac designs of its generation
+Dialogue: 0,0:08:18.47,0:08:20.74,Default,,0,0,0,,And its influence could be seen in American
+Dialogue: 0,0:08:20.74,0:08:23.74,Default,,0,0,0,,automobile styling for years afterward
+Dialogue: 0,0:08:23.74,0:08:26.31,Default,,0,0,0,,1940 Lincoln Continental
+Dialogue: 0,0:08:26.31,0:08:29.33,Default,,0,0,0,,Few American cars from this era are as culturally
+Dialogue: 0,0:08:29.33,0:08:33.00,Default,,0,0,0,,important as the 1940 Lincoln Continental
+Dialogue: 0,0:08:33.00,0:08:35.47,Default,,0,0,0,,The Continental was created from a very different
+Dialogue: 0,0:08:35.47,0:08:36.38,Default,,0,0,0,,idea
+Dialogue: 0,0:08:36.38,0:08:40.50,Default,,0,0,0,,Instead of focusing entirely on excessive ornamentation
+Dialogue: 0,0:08:40.50,0:08:42.65,Default,,0,0,0,,Lincoln pursued elegance
+Dialogue: 0,0:08:42.65,0:08:46.57,Default,,0,0,0,,The car's long hood clean body low roofline
+Dialogue: 0,0:08:46.57,0:08:49.36,Default,,0,0,0,,and distinctive rear-mounted spare tire created
+Dialogue: 0,0:08:49.36,0:08:53.07,Default,,0,0,0,,a silhouette that became instantly recognizable
+Dialogue: 0,0:08:53.07,0:08:55.68,Default,,0,0,0,,The Continental was powered by Ford's large
+Dialogue: 0,0:08:55.68,0:08:59.07,Default,,0,0,0,,V12 engine giving it the kind of smooth power
+Dialogue: 0,0:08:59.07,0:09:01.86,Default,,0,0,0,,associated with high-end automobiles
+Dialogue: 0,0:09:01.86,0:09:03.83,Default,,0,0,0,,But its greatest achievement may have been
+Dialogue: 0,0:09:03.83,0:09:04.83,Default,,0,0,0,,design
+Dialogue: 0,0:09:04.83,0:09:07.22,Default,,0,0,0,,The Continental looked expensive without needing
+Dialogue: 0,0:09:07.22,0:09:08.26,Default,,0,0,0,,to shout
+Dialogue: 0,0:09:08.26,0:09:10.36,Default,,0,0,0,,Its proportions were graceful
+Dialogue: 0,0:09:10.36,0:09:12.64,Default,,0,0,0,,Its body was relatively clean
+Dialogue: 0,0:09:12.64,0:09:15.71,Default,,0,0,0,,And its design influenced the way luxury automobiles
+Dialogue: 0,0:09:15.71,0:09:18.42,Default,,0,0,0,,would be styled in the years that followed
+Dialogue: 0,0:09:18.42,0:09:21.38,Default,,0,0,0,,The Continental also became closely associated
+Dialogue: 0,0:09:21.38,0:09:23.97,Default,,0,0,0,,with American culture and celebrity
+Dialogue: 0,0:09:23.97,0:09:26.57,Default,,0,0,0,,It wasn't merely another luxury car
+Dialogue: 0,0:09:26.57,0:09:28.51,Default,,0,0,0,,It became a design icon
+Dialogue: 0,0:09:28.51,0:09:31.43,Default,,0,0,0,,And decades later automotive historians would
+Dialogue: 0,0:09:31.43,0:09:34.36,Default,,0,0,0,,still look back at the original Continental
+Dialogue: 0,0:09:34.36,0:09:37.61,Default,,0,0,0,,as one of the most influential American automobiles
+Dialogue: 0,0:09:37.61,0:09:39.25,Default,,0,0,0,,of the pre-war era
+Dialogue: 0,0:09:39.25,0:09:41.47,Default,,0,0,0,,1940 Ford Deluxe
+Dialogue: 0,0:09:41.47,0:09:44.40,Default,,0,0,0,,After looking at luxury cars costing dramatically
+Dialogue: 0,0:09:44.40,0:09:47.38,Default,,0,0,0,,more than the average automobile let's return
+Dialogue: 0,0:09:47.38,0:09:49.68,Default,,0,0,0,,to something much more accessible
+Dialogue: 0,0:09:49.68,0:09:52.01,Default,,0,0,0,,The 1940 Ford Deluxe
+Dialogue: 0,0:09:52.01,0:09:54.21,Default,,0,0,0,,Ford had a completely different mission
+Dialogue: 0,0:09:54.21,0:09:56.96,Default,,0,0,0,,The company had helped make automobile ownership
+Dialogue: 0,0:09:56.96,0:10:00.32,Default,,0,0,0,,possible for millions of ordinary Americans
+Dialogue: 0,0:10:00.32,0:10:03.81,Default,,0,0,0,,By 1940 Ford's cars were becoming increasingly
+Dialogue: 0,0:10:03.81,0:10:07.53,Default,,0,0,0,,sophisticated while remaining relatively affordable
+Dialogue: 0,0:10:07.53,0:10:10.53,Default,,0,0,0,,The Deluxe featured modern styling a comfortable
+Dialogue: 0,0:10:10.53,0:10:13.97,Default,,0,0,0,,interior and Ford's familiar V8 engine
+Dialogue: 0,0:10:13.97,0:10:16.69,Default,,0,0,0,,Its design was much more streamlined than earlier
+Dialogue: 0,0:10:16.69,0:10:17.79,Default,,0,0,0,,Fords
+Dialogue: 0,0:10:17.79,0:10:19.40,Default,,0,0,0,,The grille was wider
+Dialogue: 0,0:10:19.40,0:10:21.75,Default,,0,0,0,,The fenders were integrated into the overall
+Dialogue: 0,0:10:21.75,0:10:23.08,Default,,0,0,0,,body design
+Dialogue: 0,0:10:23.08,0:10:25.71,Default,,0,0,0,,And the car had a more sophisticated appearance
+Dialogue: 0,0:10:25.71,0:10:28.19,Default,,0,0,0,,than the utilitarian automobiles of previous
+Dialogue: 0,0:10:28.19,0:10:29.32,Default,,0,0,0,,decades
+Dialogue: 0,0:10:29.32,0:10:32.17,Default,,0,0,0,,The 1940 Ford Deluxe is important because it
+Dialogue: 0,0:10:32.17,0:10:35.39,Default,,0,0,0,,demonstrates how quickly automotive technology
+Dialogue: 0,0:10:35.39,0:10:37.39,Default,,0,0,0,,was moving down the market
+Dialogue: 0,0:10:37.39,0:10:40.50,Default,,0,0,0,,Features and styling ideas that once belonged
+Dialogue: 0,0:10:40.50,0:10:43.97,Default,,0,0,0,,to expensive cars were gradually becoming available
+Dialogue: 0,0:10:43.97,0:10:45.69,Default,,0,0,0,,to ordinary buyers
+Dialogue: 0,0:10:45.69,0:10:48.60,Default,,0,0,0,,That democratization of automotive technology
+Dialogue: 0,0:10:48.60,0:10:51.32,Default,,0,0,0,,would become one of the defining characteristics
+Dialogue: 0,0:10:51.32,0:10:54.03,Default,,0,0,0,,of the American automobile industry
+Dialogue: 0,0:10:54.03,0:10:58.26,Default,,0,0,0,,1940 Alfa Romeo 6C 2500
+Dialogue: 0,0:10:58.26,0:11:00.99,Default,,0,0,0,,And finally we cross the Atlantic
+Dialogue: 0,0:11:00.99,0:11:03.49,Default,,0,0,0,,While American manufacturers were building
+Dialogue: 0,0:11:03.49,0:11:07.75,Default,,0,0,0,,large powerful luxury automobiles Italian engineers
+Dialogue: 0,0:11:07.75,0:11:10.22,Default,,0,0,0,,were developing something very different
+Dialogue: 0,0:11:10.22,0:11:14.46,Default,,0,0,0,,The Alfa Romeo 6C 2500 represented the European
+Dialogue: 0,0:11:14.46,0:11:17.43,Default,,0,0,0,,philosophy of automotive engineering
+Dialogue: 0,0:11:17.43,0:11:21.19,Default,,0,0,0,,The 6C name referred to Alfa Romeo's six-cylinder
+Dialogue: 0,0:11:21.19,0:11:24.58,Default,,0,0,0,,engine family while the 2500 indicated its
+Dialogue: 0,0:11:24.58,0:11:28.51,Default,,0,0,0,,approximately 2.5-liter engine displacement
+Dialogue: 0,0:11:28.51,0:11:30.97,Default,,0,0,0,,Compared with the enormous American automobiles
+Dialogue: 0,0:11:30.97,0:11:33.82,Default,,0,0,0,,of the period the Alfa Romeo was relatively
+Dialogue: 0,0:11:33.82,0:11:35.01,Default,,0,0,0,,compact
+Dialogue: 0,0:11:35.01,0:11:36.78,Default,,0,0,0,,But its focus was different
+Dialogue: 0,0:11:36.78,0:11:40.32,Default,,0,0,0,,It emphasized engineering handling performance
+Dialogue: 0,0:11:40.32,0:11:41.76,Default,,0,0,0,,and craftsmanship
+Dialogue: 0,0:11:41.76,0:11:46.82,Default,,0,0,0,,The 6C 2500 became one of Alfa Romeo's important
+Dialogue: 0,0:11:46.82,0:11:49.75,Default,,0,0,0,,pre-war designs and different body styles were
+Dialogue: 0,0:11:49.75,0:11:53.08,Default,,0,0,0,,produced by specialist Italian coachbuilders
+Dialogue: 0,0:11:53.08,0:11:55.63,Default,,0,0,0,,That meant two examples of the same mechanical
+Dialogue: 0,0:11:55.63,0:11:58.57,Default,,0,0,0,,automobile could look dramatically different
+Dialogue: 0,0:11:58.57,0:12:01.07,Default,,0,0,0,,This was a world where the relationship between
+Dialogue: 0,0:12:01.07,0:12:04.31,Default,,0,0,0,,manufacturer and coachbuilder was still extremely
+Dialogue: 0,0:12:04.31,0:12:05.35,Default,,0,0,0,,important
+Dialogue: 0,0:12:05.35,0:12:07.96,Default,,0,0,0,,And it created automobiles that were not simply
+Dialogue: 0,0:12:07.96,0:12:09.33,Default,,0,0,0,,transportation
+Dialogue: 0,0:12:09.33,0:12:12.10,Default,,0,0,0,,They were individual works of automotive art
+Dialogue: 0,0:12:12.10,0:12:16.63,Default,,0,0,0,,The Alfa Romeo 6C 2500 also reminds us
+Dialogue: 0,0:12:16.63,0:12:19.00,Default,,0,0,0,,that there was no single definition of the
+Dialogue: 0,0:12:19.00,0:12:22.08,Default,,0,0,0,,perfect automobile in 1940
+Dialogue: 0,0:12:22.08,0:12:26.75,Default,,0,0,0,,In America luxury often meant size power comfort
+Dialogue: 0,0:12:26.75,0:12:27.94,Default,,0,0,0,,and presence
+Dialogue: 0,0:12:27.94,0:12:31.28,Default,,0,0,0,,In Europe luxury could mean lightweight engineering
+Dialogue: 0,0:12:31.28,0:12:34.06,Default,,0,0,0,,craftsmanship and driving character
+Dialogue: 0,0:12:34.06,0:12:37.75,Default,,0,0,0,,Both philosophies produced extraordinary machines
+Dialogue: 0,0:12:37.75,0:12:39.07,Default,,0,0,0,,A TURNING POINT
+Dialogue: 0,0:12:39.07,0:12:41.26,Default,,0,0,0,,Looking at these nine automobiles together
+Dialogue: 0,0:12:41.26,0:12:43.40,Default,,0,0,0,,tells us something fascinating
+Dialogue: 0,0:12:43.40,0:12:45.08,Default,,0,0,0,,They came from the same year
+Dialogue: 0,0:12:45.08,0:12:47.38,Default,,0,0,0,,But they represented very different visions
+Dialogue: 0,0:12:47.38,0:12:48.54,Default,,0,0,0,,of the future
+Dialogue: 0,0:12:48.54,0:12:51.63,Default,,0,0,0,,The Buick Special and Buick Super demonstrated
+Dialogue: 0,0:12:51.63,0:12:54.64,Default,,0,0,0,,the growth of American comfort and mass-market
+Dialogue: 0,0:12:54.64,0:12:55.64,Default,,0,0,0,,luxury
+Dialogue: 0,0:12:55.64,0:12:58.38,Default,,0,0,0,,Packard showed how prestige could be combined
+Dialogue: 0,0:12:58.38,0:13:00.54,Default,,0,0,0,,with sophisticated engineering
+Dialogue: 0,0:13:00.54,0:13:03.60,Default,,0,0,0,,Cadillac pushed American luxury toward modern
+Dialogue: 0,0:13:03.60,0:13:04.64,Default,,0,0,0,,styling
+Dialogue: 0,0:13:04.64,0:13:07.36,Default,,0,0,0,,The Lincoln Continental demonstrated the power
+Dialogue: 0,0:13:07.36,0:13:09.07,Default,,0,0,0,,of elegant design
+Dialogue: 0,0:13:09.07,0:13:12.06,Default,,0,0,0,,Ford showed how automotive technology was becoming
+Dialogue: 0,0:13:12.06,0:13:14.99,Default,,0,0,0,,accessible to ordinary Americans
+Dialogue: 0,0:13:14.99,0:13:18.17,Default,,0,0,0,,And Alfa Romeo represented a European tradition
+Dialogue: 0,0:13:18.17,0:13:21.43,Default,,0,0,0,,built around engineering and craftsmanship
+Dialogue: 0,0:13:21.43,0:13:24.32,Default,,0,0,0,,But there was something else happening in 1940
+Dialogue: 0,0:13:24.32,0:13:26.24,Default,,0,0,0,,The world was entering war
+Dialogue: 0,0:13:26.24,0:13:29.31,Default,,0,0,0,,Within a short time automobile production would
+Dialogue: 0,0:13:29.31,0:13:31.22,Default,,0,0,0,,be dramatically affected
+Dialogue: 0,0:13:31.22,0:13:33.92,Default,,0,0,0,,Factories would be redirected toward military
+Dialogue: 0,0:13:33.92,0:13:34.96,Default,,0,0,0,,production
+Dialogue: 0,0:13:34.96,0:13:38.06,Default,,0,0,0,,Civilian automobile development would slow
+Dialogue: 0,0:13:38.06,0:13:40.88,Default,,0,0,0,,And the elegant pre-war automobile era would
+Dialogue: 0,0:13:40.88,0:13:42.28,Default,,0,0,0,,come to an end
+Dialogue: 0,0:13:42.28,0:13:45.18,Default,,0,0,0,,When civilian production eventually returned
+Dialogue: 0,0:13:45.18,0:13:48.05,Default,,0,0,0,,the automobile would look very different
+Dialogue: 0,0:13:48.05,0:13:51.68,Default,,0,0,0,,The massive chrome-heavy cars of the late 1930s
+Dialogue: 0,0:13:51.68,0:13:54.94,Default,,0,0,0,,and early 1940s would gradually evolve into
+Dialogue: 0,0:13:54.94,0:13:57.61,Default,,0,0,0,,a new post-war design language
+Dialogue: 0,0:13:57.61,0:14:01.75,Default,,0,0,0,,The cars of 1940 occupy a unique place in automotive
+Dialogue: 0,0:14:01.75,0:14:02.72,Default,,0,0,0,,history
+Dialogue: 0,0:14:02.72,0:14:05.80,Default,,0,0,0,,They represent the end of one era and the beginning
+Dialogue: 0,0:14:05.80,0:14:06.86,Default,,0,0,0,,of another
+Dialogue: 0,0:14:06.86,0:14:09.66,Default,,0,0,0,,They were built before computers electronic
+Dialogue: 0,0:14:09.66,0:14:11.16,Default,,0,0,0,,fuel injection
+Dialogue: 0,0:14:11.16,0:14:15.05,Default,,0,0,0,,airbags navigation systems and modern driver-assistance
+Dialogue: 0,0:14:15.05,0:14:16.25,Default,,0,0,0,,technology
+Dialogue: 0,0:14:16.25,0:14:18.96,Default,,0,0,0,,Yet their designers were already experimenting
+Dialogue: 0,0:14:18.96,0:14:22.28,Default,,0,0,0,,with aerodynamics advanced engines improved
+Dialogue: 0,0:14:22.28,0:14:25.87,Default,,0,0,0,,suspension systems integrated body construction
+Dialogue: 0,0:14:25.87,0:14:28.59,Default,,0,0,0,,and new approaches to automotive styling
+Dialogue: 0,0:14:28.59,0:14:31.28,Default,,0,0,0,,And perhaps that's why these cars remain fascinating
+Dialogue: 0,0:14:31.28,0:14:32.12,Default,,0,0,0,,today
+Dialogue: 0,0:14:32.12,0:14:33.58,Default,,0,0,0,,The Buick Special
+Dialogue: 0,0:14:33.58,0:14:34.94,Default,,0,0,0,,The Buick Super
+Dialogue: 0,0:14:34.94,0:14:36.64,Default,,0,0,0,,The Packard One Twenty
+Dialogue: 0,0:14:36.64,0:14:38.34,Default,,0,0,0,,The Packard Super Eight
+Dialogue: 0,0:14:38.34,0:14:40.72,Default,,0,0,0,,The Cadillac Series 62
+Dialogue: 0,0:14:40.72,0:14:42.83,Default,,0,0,0,,The Cadillac Sixty Special
+Dialogue: 0,0:14:42.83,0:14:44.53,Default,,0,0,0,,The Lincoln Continental
+Dialogue: 0,0:14:44.53,0:14:46.00,Default,,0,0,0,,The Ford Deluxe
+Dialogue: 0,0:14:46.00,0:14:49.54,Default,,0,0,0,,And the Alfa Romeo 6C 2500
+Dialogue: 0,0:14:49.54,0:14:51.54,Default,,0,0,0,,They weren't simply old cars
+Dialogue: 0,0:14:51.54,0:14:53.89,Default,,0,0,0,,They were snapshots of a world on the edge
+Dialogue: 0,0:14:53.89,0:14:55.57,Default,,0,0,0,,of enormous change
+Dialogue: 0,0:14:55.57,0:14:58.93,Default,,0,0,0,,A world where the automobile was becoming faster
+Dialogue: 0,0:14:58.93,0:15:02.57,Default,,0,0,0,,more comfortable more beautiful and more technologically
+Dialogue: 0,0:15:02.57,0:15:03.96,Default,,0,0,0,,sophisticated
+Dialogue: 0,0:15:03.96,0:15:06.79,Default,,0,0,0,,And just before history changed everything
+Dialogue: 0,0:15:06.79,0:15:09.00,Default,,0,0,0,,these machines represented some of the most
+Dialogue: 0,0:15:09.00,0:15:12.26,Default,,0,0,0,,ambitious ideas the automotive industry had
+Dialogue: 0,0:15:12.26,0:15:13.50,Default,,0,0,0,,ever created
+Dialogue: 0,0:15:13.50,0:15:16.87,Default,,0,0,0,,That was 1940 one of the most fascinating years
+Dialogue: 0,0:15:16.87,0:15:18.82,Default,,0,0,0,,in the history of the automobile

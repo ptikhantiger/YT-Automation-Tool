@@ -1,0 +1,943 @@
+[
+  {
+    "text": "Imagine a world in 1940 The automobile was no longer just a machine for getting from one place to another It had become a symbol of wealth technology freedom and social status Across America manufacturers were competing to build cars that were longer smoother more powerful and more luxurious than ever before At the same time European manufacturers were taking a very different approach Their cars emphasized engineering performance craftsmanship and individuality And then history suddenly changed World War II was beginning to reshape the world and the automobile industry was approaching one of the biggest turning points in its history But before that happened 1940 produced some remarkable automobiles.",
+    "word_from": 0,
+    "word_to": 108,
+    "query": "1940 vintage cars driving",
+    "queries": [
+      "1940 vintage cars driving",
+      "classic car assembly line 1940s",
+      "historic automobiles street scene"
+    ],
+    "keywords": [
+      "manufacturers",
+      "craftsmanship",
+      "individuality",
+      "engineering",
+      "performance"
+    ],
+    "semantic": {
+      "meaning": "Introduction to the world of 1940 automobiles as symbols of status and industry transformation just before World War II.",
+      "subject": "Automobiles",
+      "action": "evolving",
+      "object": "cars",
+      "location": "America and Europe",
+      "time": "1940",
+      "entities": [
+        "World War II",
+        "America",
+        "Europe"
+      ]
+    },
+    "visual_requirements": [
+      "vintage cars from 1940",
+      "archival footage style",
+      "automotive manufacturing"
+    ],
+    "visual_exclusions": [
+      "modern cars",
+      "modern highways"
+    ],
+    "shots": [
+      {
+        "word_from": 0,
+        "word_to": 30,
+        "text": "Imagine a world in 1940 The automobile was no longer just a machine for getting from one place to another It had become a symbol of wealth technology freedom and social status",
+        "query": "1940 vintage cars driving",
+        "subject": "Automobiles",
+        "action": "evolving",
+        "start": 0.097208,
+        "end": 12.805541,
+        "duration": 12.708333,
+        "shot_id": "scene_001_shot_1"
+      },
+      {
+        "word_from": 31,
+        "word_to": 75,
+        "text": "Across America manufacturers were competing to build cars that were longer smoother more powerful and more luxurious than ever before At the same time European manufacturers were taking a very different approach Their cars emphasized engineering performance craftsmanship and individuality And then history suddenly changed",
+        "query": "classic car assembly line 1940s",
+        "subject": "Automobiles",
+        "action": "evolving",
+        "start": 13.277791,
+        "end": 36.847208,
+        "duration": 23.569417,
+        "shot_id": "scene_001_shot_2"
+      },
+      {
+        "word_from": 76,
+        "word_to": 108,
+        "text": "World War II was beginning to reshape the world and the automobile industry was approaching one of the biggest turning points in its history But before that happened 1940 produced some remarkable automobiles",
+        "query": "historic automobiles street scene",
+        "subject": "Automobiles",
+        "action": "evolving",
+        "start": 37.319458,
+        "end": 50.861083,
+        "duration": 13.541625000000003,
+        "shot_id": "scene_001_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.097208,
+    "end": 50.861083,
+    "duration": 50.763875,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "From Buick and Cadillac to Packard Lincoln Ford and Alfa Romeo these cars represented the final years of a remarkable pre-war era Today let's travel back to 1940 and explore nine extraordinary automobiles that defined their time 1940 Buick Special Let's begin with a car designed to bring Buick engineering to a wider audience The 1940 Buick Special was Buick's more affordable offering but calling it simply an entry-level Buick would be misleading It still carried the styling and engineering characteristics that made Buick an important American automobile brand The 1940 Special featured Buick's famous straight-eight engine giving the car the smooth power delivery that buyers expected from a premium American automobile And the styling was unmistakably 1940s The body was wide and substantial with flowing fenders a prominent grille and carefully integrated headlights Inside Buick focused on comfort Large seats quality materials and a spacious cabin reflected the priorities of American car buyers during this period The Special demonstrated an important idea You didn't necessarily need to buy the most expensive Buick to experience the character of a Buick It was a car designed for people who wanted refinement without moving all the way into the most expensive luxury classes And that made the Buick Special an important part of Buick's lineup 1940 Buick Super If the Special represented accessible Buick luxury the 1940 Buick Super moved further toward the premium end of the market The Super was larger and more substantial offering buyers more space equipment and prestige Under the hood was a Buick straight-eight engine delivering the smooth effortless performance that was becoming associated with the brand But in 1940 horsepower wasn't the only measure of a luxury car Ride quality mattered Noise mattered Interior space mattered And perhaps most importantly appearance mattered The Buick Super had the kind of presence that could make a car seem important before the engine was even started Its long body sweeping fenders chrome details and imposing front grille represented the American idea of automotive luxury This was an era when cars were becoming rolling works of industrial design And Buick was very much part of that transformation 1940 Packard One Twenty Now we move to one of America's most respected luxury manufacturers Packard By 1940 Packard had already established a reputation for building sophisticated automobiles for wealthy customers But the Packard One Twenty was particularly significant It helped Packard reach customers who wanted the prestige of the Packard name without paying the price of the company's most expensive models The One Twenty was powered by a smooth inline-eight engine Its design combined traditional luxury-car proportions with a more modern appearance Compared with some earlier automobiles the 1940 Packard looked cleaner and more streamlined That was important because the automotive world was changing Designers were beginning to move away from extremely upright bodies and exposed mechanical components.",
+    "word_from": 109,
+    "word_to": 582,
+    "query": "1940 Buick vintage car exterior",
+    "queries": [
+      "1940 Buick vintage car exterior",
+      "classic car dashboard 1940s",
+      "Packard and Ford classic cars"
+    ],
+    "keywords": [
+      "characteristics",
+      "transformation",
+      "extraordinary",
+      "manufacturers",
+      "sophisticated"
+    ],
+    "semantic": {
+      "meaning": "Detailed overview of the 1940 Buick Special and Buick Super, showcasing pre-war American luxury and design features.",
+      "subject": "Buick Special and Buick Super",
+      "action": "driving",
+      "object": "luxury cars",
+      "location": "America",
+      "time": "1940",
+      "entities": [
+        "Buick",
+        "Cadillac",
+        "Packard",
+        "Lincoln",
+        "Ford",
+        "Alfa Romeo"
+      ]
+    },
+    "visual_requirements": [
+      "1940 Buick classic car",
+      "shiny chrome details",
+      "vintage luxury automobile interior"
+    ],
+    "visual_exclusions": [
+      "modern traffic",
+      "plastic parts"
+    ],
+    "shots": [
+      {
+        "word_from": 109,
+        "word_to": 442,
+        "text": "From Buick and Cadillac to Packard Lincoln Ford and Alfa Romeo these cars represented the final years of a remarkable pre-war era Today let's travel back to 1940 and explore nine extraordinary automobiles that defined their time 1940 Buick Special Let's begin with a car designed to bring Buick engineering to a wider audience The 1940 Buick Special was Buick's more affordable offering but calling it simply an entry-level Buick would be misleading It still carried the styling and engineering characteristics that made Buick an important American automobile brand The 1940 Special featured Buick's famous straight-eight engine giving the car the smooth power delivery that buyers expected from a premium American automobile And the styling was unmistakably 1940s The body was wide and substantial with flowing fenders a prominent grille and carefully integrated headlights Inside Buick focused on comfort Large seats quality materials and a spacious cabin reflected the priorities of American car buyers during this period The Special demonstrated an important idea You didn't necessarily need to buy the most expensive Buick to experience the character of a Buick It was a car designed for people who wanted refinement without moving all the way into the most expensive luxury classes And that made the Buick Special an important part of Buick's lineup 1940 Buick Super If the Special represented accessible Buick luxury the 1940 Buick Super moved further toward the premium end of the market The Super was larger and more substantial offering buyers more space equipment and prestige Under the hood was a Buick straight-eight engine delivering the smooth effortless performance that was becoming associated with the brand But in 1940 horsepower wasn't the only measure of a luxury car Ride quality mattered Noise mattered Interior space mattered And perhaps most importantly appearance mattered The Buick Super had the kind of presence that could make a car seem important before the engine was even started Its long body sweeping fenders chrome details and imposing front grille represented the American idea of automotive luxury",
+        "query": "1940 Buick vintage car exterior",
+        "subject": "Buick Special and Buick Super",
+        "action": "driving",
+        "start": 51.375,
+        "end": 202.027749,
+        "duration": 150.652749,
+        "shot_id": "scene_002_shot_1"
+      },
+      {
+        "word_from": 443,
+        "word_to": 480,
+        "text": "This was an era when cars were becoming rolling works of industrial design And Buick was very much part of that transformation 1940 Packard One Twenty Now we move to one of America's most respected luxury manufacturers Packard",
+        "query": "classic car dashboard 1940s",
+        "subject": "Buick Special and Buick Super",
+        "action": "driving",
+        "start": 202.5,
+        "end": 218.819416,
+        "duration": 16.31941599999999,
+        "shot_id": "scene_002_shot_2"
+      },
+      {
+        "word_from": 481,
+        "word_to": 525,
+        "text": "By 1940 Packard had already established a reputation for building sophisticated automobiles for wealthy customers But the Packard One Twenty was particularly significant It helped Packard reach customers who wanted the prestige of the Packard name without paying the price of the company's most expensive models",
+        "query": "Packard and Ford classic cars",
+        "subject": "Buick Special and Buick Super",
+        "action": "driving",
+        "start": 219.291666,
+        "end": 239.277791,
+        "duration": 19.986125000000015,
+        "shot_id": "scene_002_shot_3"
+      },
+      {
+        "word_from": 526,
+        "word_to": 559,
+        "text": "The One Twenty was powered by a smooth inline-eight engine Its design combined traditional luxury-car proportions with a more modern appearance Compared with some earlier automobiles the 1940 Packard looked cleaner and more streamlined",
+        "query": "Packard and Ford classic cars",
+        "subject": "Buick Special and Buick Super",
+        "action": "driving",
+        "start": 239.75,
+        "end": 255.180541,
+        "duration": 15.430541000000005,
+        "shot_id": "scene_002_shot_4"
+      },
+      {
+        "word_from": 560,
+        "word_to": 582,
+        "text": "That was important because the automotive world was changing Designers were beginning to move away from extremely upright bodies and exposed mechanical components",
+        "query": "Packard and Ford classic cars",
+        "subject": "Buick Special and Buick Super",
+        "action": "driving",
+        "start": 255.652791,
+        "end": 265.819457,
+        "duration": 10.166665999999992,
+        "shot_id": "scene_002_shot_5"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 51.375,
+    "end": 265.819457,
+    "duration": 214.444457,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "Fenders were becoming integrated Bodies were becoming smoother And cars were beginning to look less like carriages with engines and more like modern automobiles.",
+    "word_from": 583,
+    "word_to": 606,
+    "query": "streamlined classic car design",
+    "queries": [
+      "streamlined classic car design",
+      "vintage car fender close up"
+    ],
+    "keywords": [
+      "automobiles",
+      "integrated",
+      "beginning",
+      "carriages",
+      "becoming"
+    ],
+    "semantic": {
+      "meaning": "Design transition showing integrated fenders and smoother bodies on cars.",
+      "subject": "Car bodies",
+      "action": "transitioning",
+      "object": "fenders and bodies",
+      "location": "America",
+      "time": "1940",
+      "entities": []
+    },
+    "visual_requirements": [
+      "smooth car fenders",
+      "streamlined classic car body",
+      "automotive design progression"
+    ],
+    "visual_exclusions": [
+      "horse-drawn carriages"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 3,
+    "sentence_to": 3,
+    "start": 266.333333,
+    "end": 275.833333,
+    "duration": 9.5,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "The Packard One Twenty captured that transition beautifully It was elegant without being excessively extravagant And for Packard it became one of the company's most important models 1940 Packard Super Eight At the top of our Packard story sits the 1940 Packard Super Eight This was a different level of automobile The Super Eight represented Packard's traditional philosophy of luxury engineering and prestige Its large straight-eight engine provided the effortless performance expected from a premium automobile But the real attraction was the complete experience A Packard Super Eight was designed to feel substantial The doors were large The cabin was spacious The materials were carefully selected And the ride was designed to be smooth and quiet During this era owning a car like this wasn't simply about transportation It communicated social status A Packard in the driveway could say something about its owner before the owner said a word And Packard's reputation was strong enough that the brand became associated with American wealth and sophistication Today the Super Eight gives us a fascinating glimpse into what pre-war American luxury looked like before mass production and post-war design completely transformed the industry 1940 Cadillac Series 62 Now we arrive at one of the most recognizable names in American automotive history Cadillac The 1940 Series 62 represented Cadillac's modern direction as the company entered a new decade The Series 62 was designed to appeal to buyers who wanted Cadillac prestige while sitting below the most expensive models in the lineup And visually it had the unmistakable Cadillac identity A bold grille Long proportions Elegant fenders Extensive chrome And a presence that was difficult to ignore Cadillac was also becoming increasingly associated with advanced engineering Its V8 engine provided strong performance while Cadillac's engineering philosophy emphasized smoothness and refinement But perhaps the most important thing about the Series 62 was its design By 1940 Cadillac was moving toward a more streamlined interpretation of luxury The enormous upright shapes of the early 1930s were gradually giving way to smoother bodies The automobile was becoming more aerodynamic And Cadillac was helping define what the American luxury car would look like for the coming decade 1940 Cadillac Sixty Special Then there was the Cadillac Sixty Special If the Series 62 represented Cadillac's mainstream luxury direction the Sixty Special was one of the company's most distinctive designs The Sixty Special had been introduced in the late 1930s and quickly became famous for its sophisticated proportions It had a lower cleaner appearance than many traditional luxury cars The roof was more integrated with the body The running boards were disappearing And the overall silhouette looked surprisingly modern for its time The car demonstrated an important change in automotive design Luxury no longer had to mean simply making a car larger and adding more chrome Designers were beginning to understand proportion aerodynamics and visual simplicity The Sixty Special became one of the defining Cadillac designs of its generation And its influence could be seen in American automobile styling for years afterward 1940 Lincoln Continental.",
+    "word_from": 607,
+    "word_to": 1110,
+    "query": "1940 Packard Super Eight exterior",
+    "queries": [
+      "1940 Packard Super Eight exterior",
+      "vintage Cadillac Series 62 driving",
+      "classic luxury car chrome grille"
+    ],
+    "keywords": [
+      "transportation",
+      "sophistication",
+      "interpretation",
+      "sophisticated",
+      "communicated"
+    ],
+    "semantic": {
+      "meaning": "Exploration of Packard One Twenty, Packard Super Eight, Cadillac Series 62, and Cadillac Sixty Special.",
+      "subject": "Packard and Cadillac cars",
+      "action": "showcasing",
+      "object": "luxury automobiles",
+      "location": "America",
+      "time": "1940",
+      "entities": [
+        "Packard",
+        "Cadillac"
+      ]
+    },
+    "visual_requirements": [
+      "1940 Packard luxury car",
+      "1940 Cadillac Sixty Special",
+      "classic steering wheel"
+    ],
+    "visual_exclusions": [
+      "modern car badges"
+    ],
+    "shots": [
+      {
+        "word_from": 607,
+        "word_to": 902,
+        "text": "The Packard One Twenty captured that transition beautifully It was elegant without being excessively extravagant And for Packard it became one of the company's most important models 1940 Packard Super Eight At the top of our Packard story sits the 1940 Packard Super Eight This was a different level of automobile The Super Eight represented Packard's traditional philosophy of luxury engineering and prestige Its large straight-eight engine provided the effortless performance expected from a premium automobile But the real attraction was the complete experience A Packard Super Eight was designed to feel substantial The doors were large The cabin was spacious The materials were carefully selected And the ride was designed to be smooth and quiet During this era owning a car like this wasn't simply about transportation It communicated social status A Packard in the driveway could say something about its owner before the owner said a word And Packard's reputation was strong enough that the brand became associated with American wealth and sophistication Today the Super Eight gives us a fascinating glimpse into what pre-war American luxury looked like before mass production and post-war design completely transformed the industry 1940 Cadillac Series 62 Now we arrive at one of the most recognizable names in American automotive history Cadillac The 1940 Series 62 represented Cadillac's modern direction as the company entered a new decade The Series 62 was designed to appeal to buyers who wanted Cadillac prestige while sitting below the most expensive models in the lineup And visually it had the unmistakable Cadillac identity A bold grille Long proportions Elegant fenders Extensive chrome And a presence that was difficult to ignore Cadillac was also becoming increasingly associated with advanced engineering Its V8 engine provided strong performance while Cadillac's engineering philosophy emphasized smoothness and refinement",
+        "query": "1940 Packard Super Eight exterior",
+        "subject": "Packard and Cadillac cars",
+        "action": "showcasing",
+        "start": 276.389,
+        "end": 413.194541,
+        "duration": 136.805541,
+        "shot_id": "scene_004_shot_1"
+      },
+      {
+        "word_from": 903,
+        "word_to": 975,
+        "text": "But perhaps the most important thing about the Series 62 was its design By 1940 Cadillac was moving toward a more streamlined interpretation of luxury The enormous upright shapes of the early 1930s were gradually giving way to smoother bodies The automobile was becoming more aerodynamic And Cadillac was helping define what the American luxury car would look like for the coming decade 1940 Cadillac Sixty Special Then there was the Cadillac Sixty Special",
+        "query": "vintage Cadillac Series 62 driving",
+        "subject": "Packard and Cadillac cars",
+        "action": "showcasing",
+        "start": 413.666791,
+        "end": 445.972332,
+        "duration": 32.305541000000005,
+        "shot_id": "scene_004_shot_2"
+      },
+      {
+        "word_from": 976,
+        "word_to": 1047,
+        "text": "If the Series 62 represented Cadillac's mainstream luxury direction the Sixty Special was one of the company's most distinctive designs The Sixty Special had been introduced in the late 1930s and quickly became famous for its sophisticated proportions It had a lower cleaner appearance than many traditional luxury cars The roof was more integrated with the body The running boards were disappearing And the overall silhouette looked surprisingly modern for its time",
+        "query": "classic luxury car chrome grille",
+        "subject": "Packard and Cadillac cars",
+        "action": "showcasing",
+        "start": 446.444541,
+        "end": 477.305666,
+        "duration": 30.86112499999996,
+        "shot_id": "scene_004_shot_3"
+      },
+      {
+        "word_from": 1048,
+        "word_to": 1081,
+        "text": "The car demonstrated an important change in automotive design Luxury no longer had to mean simply making a car larger and adding more chrome Designers were beginning to understand proportion aerodynamics and visual simplicity",
+        "query": "classic luxury car chrome grille",
+        "subject": "Packard and Cadillac cars",
+        "action": "showcasing",
+        "start": 477.777875,
+        "end": 492.652874,
+        "duration": 14.874999000000003,
+        "shot_id": "scene_004_shot_4"
+      },
+      {
+        "word_from": 1082,
+        "word_to": 1110,
+        "text": "The Sixty Special became one of the defining Cadillac designs of its generation And its influence could be seen in American automobile styling for years afterward 1940 Lincoln Continental",
+        "query": "classic luxury car chrome grille",
+        "subject": "Packard and Cadillac cars",
+        "action": "showcasing",
+        "start": 493.125125,
+        "end": 505.763999,
+        "duration": 12.638873999999987,
+        "shot_id": "scene_004_shot_5"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 276.389,
+    "end": 505.763999,
+    "duration": 229.374999,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "Few American cars from this era are as culturally important as the 1940 Lincoln Continental The Continental was created from a very different idea Instead of focusing entirely on excessive ornamentation Lincoln pursued elegance The car's long hood clean body low roofline and distinctive rear-mounted spare tire created a silhouette that became instantly recognizable The Continental was powered by Ford's large V12 engine giving it the kind of smooth power associated with high-end automobiles But its greatest achievement may have been design The Continental looked expensive without needing to shout Its proportions were graceful Its body was relatively clean.",
+    "word_from": 1111,
+    "word_to": 1209,
+    "query": "1940 Lincoln Continental profile",
+    "queries": [
+      "1940 Lincoln Continental profile",
+      "classic Lincoln Continental spare tire",
+      "vintage V12 engine bay"
+    ],
+    "keywords": [
+      "ornamentation",
+      "recognizable",
+      "continental",
+      "distinctive",
+      "automobiles"
+    ],
+    "semantic": {
+      "meaning": "Introduction of the iconic 1940 Lincoln Continental and its distinct design philosophy.",
+      "subject": "Lincoln Continental",
+      "action": "appearing",
+      "object": "luxury car",
+      "location": "America",
+      "time": "1940",
+      "entities": [
+        "Lincoln",
+        "Ford"
+      ]
+    },
+    "visual_requirements": [
+      "1940 Lincoln Continental",
+      "rear-mounted spare tire",
+      "low roofline classic car"
+    ],
+    "visual_exclusions": [
+      "suvs",
+      "hatchbacks"
+    ],
+    "shots": [
+      {
+        "word_from": 1111,
+        "word_to": 1144,
+        "text": "Few American cars from this era are as culturally important as the 1940 Lincoln Continental The Continental was created from a very different idea Instead of focusing entirely on excessive ornamentation Lincoln pursued elegance",
+        "query": "1940 Lincoln Continental profile",
+        "subject": "Lincoln Continental",
+        "action": "appearing",
+        "start": 506.305666,
+        "end": 522.16675,
+        "duration": 15.861084000000005,
+        "shot_id": "scene_005_shot_1"
+      },
+      {
+        "word_from": 1145,
+        "word_to": 1164,
+        "text": "The car's long hood clean body low roofline and distinctive rear-mounted spare tire created a silhouette that became instantly recognizable",
+        "query": "classic Lincoln Continental spare tire",
+        "subject": "Lincoln Continental",
+        "action": "appearing",
+        "start": 522.652875,
+        "end": 532.583416,
+        "duration": 9.930541000000062,
+        "shot_id": "scene_005_shot_2"
+      },
+      {
+        "word_from": 1165,
+        "word_to": 1184,
+        "text": "The Continental was powered by Ford's large V12 engine giving it the kind of smooth power associated with high-end automobiles",
+        "query": "vintage V12 engine bay",
+        "subject": "Lincoln Continental",
+        "action": "appearing",
+        "start": 533.069541,
+        "end": 541.388999,
+        "duration": 8.319458000000054,
+        "shot_id": "scene_005_shot_3"
+      },
+      {
+        "word_from": 1185,
+        "word_to": 1209,
+        "text": "But its greatest achievement may have been design The Continental looked expensive without needing to shout Its proportions were graceful Its body was relatively clean",
+        "query": "vintage V12 engine bay",
+        "subject": "Lincoln Continental",
+        "action": "appearing",
+        "start": 541.86125,
+        "end": 552.083458,
+        "duration": 10.22220799999991,
+        "shot_id": "scene_005_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 5,
+    "sentence_to": 5,
+    "start": 506.305666,
+    "end": 552.083458,
+    "duration": 45.77779199999998,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "And its design influenced the way luxury automobiles would be styled in the years that followed The Continental also became closely associated with American culture and celebrity It wasn't merely another luxury car It became a design icon And decades later automotive historians would still look back at the original Continental as one of the most influential American automobiles of the pre-war era 1940 Ford Deluxe After looking at luxury cars costing dramatically more than the average automobile let's return to something much more accessible The 1940 Ford Deluxe.",
+    "word_from": 1210,
+    "word_to": 1298,
+    "query": "1940 Ford Deluxe exterior",
+    "queries": [
+      "1940 Ford Deluxe exterior",
+      "classic Ford parked on street",
+      "vintage car design icon"
+    ],
+    "keywords": [
+      "dramatically",
+      "automobiles",
+      "continental",
+      "influential",
+      "influenced"
+    ],
+    "semantic": {
+      "meaning": "Cultural impact of the Lincoln Continental followed by the introduction of the 1940 Ford Deluxe.",
+      "subject": "Lincoln Continental and Ford Deluxe",
+      "action": "transitioning",
+      "object": "automobiles",
+      "location": "America",
+      "time": "1940",
+      "entities": [
+        "Ford"
+      ]
+    },
+    "visual_requirements": [
+      "1940 Ford Deluxe car",
+      "classic American street scene",
+      "vintage automobile parked"
+    ],
+    "visual_exclusions": [
+      "modern skyscrapers",
+      "traffic lights"
+    ],
+    "shots": [
+      {
+        "word_from": 1210,
+        "word_to": 1242,
+        "text": "And its design influenced the way luxury automobiles would be styled in the years that followed The Continental also became closely associated with American culture and celebrity It wasn't merely another luxury car",
+        "query": "1940 Ford Deluxe exterior",
+        "subject": "Lincoln Continental and Ford Deluxe",
+        "action": "transitioning",
+        "start": 552.639125,
+        "end": 566.111332,
+        "duration": 13.472206999999912,
+        "shot_id": "scene_006_shot_1"
+      },
+      {
+        "word_from": 1243,
+        "word_to": 1272,
+        "text": "It became a design icon And decades later automotive historians would still look back at the original Continental as one of the most influential American automobiles of the pre-war era",
+        "query": "classic Ford parked on street",
+        "subject": "Lincoln Continental and Ford Deluxe",
+        "action": "transitioning",
+        "start": 566.569666,
+        "end": 578.791875,
+        "duration": 12.22220900000002,
+        "shot_id": "scene_006_shot_2"
+      },
+      {
+        "word_from": 1273,
+        "word_to": 1298,
+        "text": "1940 Ford Deluxe After looking at luxury cars costing dramatically more than the average automobile let's return to something much more accessible The 1940 Ford Deluxe",
+        "query": "vintage car design icon",
+        "subject": "Lincoln Continental and Ford Deluxe",
+        "action": "transitioning",
+        "start": 579.250208,
+        "end": 591.514125,
+        "duration": 12.263916999999992,
+        "shot_id": "scene_006_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 6,
+    "sentence_to": 6,
+    "start": 552.639125,
+    "end": 591.514125,
+    "duration": 38.875,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "Ford had a completely different mission The company had helped make automobile ownership possible for millions of ordinary Americans By 1940 Ford's cars were becoming increasingly sophisticated while remaining relatively affordable The Deluxe featured modern styling a comfortable interior and Ford's familiar V8 engine Its design was much more streamlined than earlier Fords The grille was wider The fenders were integrated into the overall body design And the car had a more sophisticated appearance than the utilitarian automobiles of previous decades The 1940 Ford Deluxe is important because it demonstrates how quickly automotive technology was moving down the market.",
+    "word_from": 1299,
+    "word_to": 1396,
+    "query": "1940 Ford front grille",
+    "queries": [
+      "1940 Ford front grille",
+      "vintage mass produced cars"
+    ],
+    "keywords": [
+      "sophisticated",
+      "increasingly",
+      "demonstrates",
+      "comfortable",
+      "streamlined"
+    ],
+    "semantic": {
+      "meaning": "Ford's mass-market democratization of automotive styling and technology.",
+      "subject": "Ford",
+      "action": "producing",
+      "object": "affordable cars",
+      "location": "America",
+      "time": "1940",
+      "entities": [
+        "Ford"
+      ]
+    },
+    "visual_requirements": [
+      "affordable vintage Ford",
+      "wide grille classic car",
+      "factory built automobiles"
+    ],
+    "visual_exclusions": [
+      "sports cars"
+    ],
+    "shots": [
+      {
+        "word_from": 1299,
+        "word_to": 1328,
+        "text": "Ford had a completely different mission The company had helped make automobile ownership possible for millions of ordinary Americans By 1940 Ford's cars were becoming increasingly sophisticated while remaining relatively affordable",
+        "query": "1940 Ford front grille",
+        "subject": "Ford",
+        "action": "producing",
+        "start": 592.014125,
+        "end": 607.055791,
+        "duration": 15.041665999999964,
+        "shot_id": "scene_007_shot_1"
+      },
+      {
+        "word_from": 1329,
+        "word_to": 1350,
+        "text": "The Deluxe featured modern styling a comfortable interior and Ford's familiar V8 engine Its design was much more streamlined than earlier Fords",
+        "query": "vintage mass produced cars",
+        "subject": "Ford",
+        "action": "producing",
+        "start": 607.528,
+        "end": 617.319666,
+        "duration": 9.791665999999964,
+        "shot_id": "scene_007_shot_2"
+      },
+      {
+        "word_from": 1351,
+        "word_to": 1378,
+        "text": "The grille was wider The fenders were integrated into the overall body design And the car had a more sophisticated appearance than the utilitarian automobiles of previous decades",
+        "query": "vintage mass produced cars",
+        "subject": "Ford",
+        "action": "producing",
+        "start": 617.791875,
+        "end": 628.847457,
+        "duration": 11.055581999999958,
+        "shot_id": "scene_007_shot_3"
+      },
+      {
+        "word_from": 1379,
+        "word_to": 1396,
+        "text": "The 1940 Ford Deluxe is important because it demonstrates how quickly automotive technology was moving down the market",
+        "query": "vintage mass produced cars",
+        "subject": "Ford",
+        "action": "producing",
+        "start": 629.319666,
+        "end": 636.847416,
+        "duration": 7.527749999999969,
+        "shot_id": "scene_007_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 7,
+    "sentence_to": 7,
+    "start": 592.014125,
+    "end": 636.847416,
+    "duration": 44.83329099999992,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "Features and styling ideas that once belonged to expensive cars were gradually becoming available to ordinary buyers That democratization of automotive technology would become one of the defining characteristics of the American automobile industry 1940 Alfa Romeo 6C 2500 And finally we cross the Atlantic While American manufacturers were building large powerful luxury automobiles Italian engineers were developing something very different The Alfa Romeo 6C 2500 represented the European philosophy of automotive engineering The 6C name referred to Alfa Romeo's six-cylinder engine family while the 2500 indicated its approximately 2.5-liter engine displacement Compared with the enormous American automobiles of the period the Alfa Romeo was relatively compact But its focus was different It emphasized engineering handling performance and craftsmanship The 6C 2500 became one of Alfa Romeo's important pre-war designs and different body styles were produced by specialist Italian coachbuilders That meant two examples of the same mechanical automobile could look dramatically different This was a world where the relationship between manufacturer and coachbuilder was still extremely important And it created automobiles that were not simply transportation They were individual works of automotive art The Alfa Romeo 6C 2500 also reminds us that there was no single definition of the perfect automobile in 1940 In America luxury often meant size power comfort and presence In Europe luxury could mean lightweight engineering craftsmanship and driving character Both philosophies produced extraordinary machines A TURNING POINT Looking at these nine automobiles together tells us something fascinating They came from the same year But they represented very different visions of the future The Buick Special and Buick Super demonstrated the growth of American comfort and mass-market luxury Packard showed how prestige could be combined with sophisticated engineering Cadillac pushed American luxury toward modern styling The Lincoln Continental demonstrated the power of elegant design.",
+    "word_from": 1397,
+    "word_to": 1694,
+    "query": "Alfa Romeo 6C 2500 classic car",
+    "queries": [
+      "Alfa Romeo 6C 2500 classic car",
+      "vintage European sports car driving",
+      "coachbuilt classic car detail"
+    ],
+    "keywords": [
+      "democratization",
+      "characteristics",
+      "transportation",
+      "manufacturers",
+      "approximately"
+    ],
+    "semantic": {
+      "meaning": "Transition to European engineering with the Alfa Romeo 6C 2500 and contrast with American luxury.",
+      "subject": "Alfa Romeo 6C 2500",
+      "action": "driving",
+      "object": "European sports car",
+      "location": "Europe",
+      "time": "1940",
+      "entities": [
+        "Alfa Romeo"
+      ]
+    },
+    "visual_requirements": [
+      "Alfa Romeo 6C 2500 vintage",
+      "European classic coachbuilt car",
+      "winding European road"
+    ],
+    "visual_exclusions": [
+      "American gas stations"
+    ],
+    "shots": [
+      {
+        "word_from": 1397,
+        "word_to": 1503,
+        "text": "Features and styling ideas that once belonged to expensive cars were gradually becoming available to ordinary buyers That democratization of automotive technology would become one of the defining characteristics of the American automobile industry 1940 Alfa Romeo 6C 2500 And finally we cross the Atlantic While American manufacturers were building large powerful luxury automobiles Italian engineers were developing something very different The Alfa Romeo 6C 2500 represented the European philosophy of automotive engineering The 6C name referred to Alfa Romeo's six-cylinder engine family while the 2500 indicated its approximately 2.5-liter engine displacement Compared with the enormous American automobiles of the period the Alfa Romeo was relatively compact",
+        "query": "Alfa Romeo 6C 2500 classic car",
+        "subject": "Alfa Romeo 6C 2500",
+        "action": "driving",
+        "start": 637.389125,
+        "end": 694.541874,
+        "duration": 57.15274899999997,
+        "shot_id": "scene_008_shot_1"
+      },
+      {
+        "word_from": 1504,
+        "word_to": 1620,
+        "text": "But its focus was different It emphasized engineering handling performance and craftsmanship The 6C 2500 became one of Alfa Romeo's important pre-war designs and different body styles were produced by specialist Italian coachbuilders That meant two examples of the same mechanical automobile could look dramatically different This was a world where the relationship between manufacturer and coachbuilder was still extremely important And it created automobiles that were not simply transportation They were individual works of automotive art The Alfa Romeo 6C 2500 also reminds us that there was no single definition of the perfect automobile in 1940 In America luxury often meant size power comfort and presence In Europe luxury could mean lightweight engineering craftsmanship and driving character",
+        "query": "vintage European sports car driving",
+        "subject": "Alfa Romeo 6C 2500",
+        "action": "driving",
+        "start": 695.014125,
+        "end": 753.583541,
+        "duration": 58.56941599999993,
+        "shot_id": "scene_008_shot_2"
+      },
+      {
+        "word_from": 1621,
+        "word_to": 1668,
+        "text": "Both philosophies produced extraordinary machines A TURNING POINT Looking at these nine automobiles together tells us something fascinating They came from the same year But they represented very different visions of the future The Buick Special and Buick Super demonstrated the growth of American comfort and mass-market luxury",
+        "query": "coachbuilt classic car detail",
+        "subject": "Alfa Romeo 6C 2500",
+        "action": "driving",
+        "start": 754.055791,
+        "end": 775.166916,
+        "duration": 21.111125000000015,
+        "shot_id": "scene_008_shot_3"
+      },
+      {
+        "word_from": 1669,
+        "word_to": 1694,
+        "text": "Packard showed how prestige could be combined with sophisticated engineering Cadillac pushed American luxury toward modern styling The Lincoln Continental demonstrated the power of elegant design",
+        "query": "coachbuilt classic car detail",
+        "subject": "Alfa Romeo 6C 2500",
+        "action": "driving",
+        "start": 775.639125,
+        "end": 788.555791,
+        "duration": 12.916665999999964,
+        "shot_id": "scene_008_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 8,
+    "sentence_to": 8,
+    "start": 637.389125,
+    "end": 788.555791,
+    "duration": 151.16666599999996,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "Ford showed how automotive technology was becoming accessible to ordinary Americans And Alfa Romeo represented a European tradition built around engineering and craftsmanship But there was something else happening in 1940 The world was entering war Within a short time automobile production would be dramatically affected.",
+    "word_from": 1695,
+    "word_to": 1739,
+    "query": "1940s industrial factory exterior",
+    "queries": [
+      "1940s industrial factory exterior",
+      "vintage cars lineup montage",
+      "historic war beginning archive"
+    ],
+    "keywords": [
+      "craftsmanship",
+      "dramatically",
+      "represented",
+      "engineering",
+      "automotive"
+    ],
+    "semantic": {
+      "meaning": "Recap of the nine automobiles and the looming shadow of World War II affecting production.",
+      "subject": "World War II",
+      "action": "approaching",
+      "object": "global conflict",
+      "location": "Global",
+      "time": "1940",
+      "entities": [
+        "World War II"
+      ]
+    },
+    "visual_requirements": [
+      "historic war clouds",
+      "industrial factory exterior",
+      "classic cars montage"
+    ],
+    "visual_exclusions": [
+      "modern soldiers",
+      "jet planes"
+    ],
+    "shots": [
+      {
+        "word_from": 1695,
+        "word_to": 1717,
+        "text": "Ford showed how automotive technology was becoming accessible to ordinary Americans And Alfa Romeo represented a European tradition built around engineering and craftsmanship",
+        "query": "1940s industrial factory exterior",
+        "subject": "World War II",
+        "action": "approaching",
+        "start": 789.069666,
+        "end": 800.958541,
+        "duration": 11.888874999999985,
+        "shot_id": "scene_009_shot_1"
+      },
+      {
+        "word_from": 1718,
+        "word_to": 1739,
+        "text": "But there was something else happening in 1940 The world was entering war Within a short time automobile production would be dramatically affected",
+        "query": "vintage cars lineup montage",
+        "subject": "World War II",
+        "action": "approaching",
+        "start": 801.430791,
+        "end": 810.694666,
+        "duration": 9.263874999999985,
+        "shot_id": "scene_009_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 9,
+    "start": 789.069666,
+    "end": 810.694666,
+    "duration": 21.625,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "Factories would be redirected toward military production Civilian automobile development would slow And the elegant pre-war automobile era would come to an end When civilian production eventually returned the automobile would look very different.",
+    "word_from": 1740,
+    "word_to": 1773,
+    "query": "WWII military factory assembly line",
+    "queries": [
+      "WWII military factory assembly line",
+      "1940s industrial workers manufacturing"
+    ],
+    "keywords": [
+      "development",
+      "redirected",
+      "production",
+      "automobile",
+      "eventually"
+    ],
+    "semantic": {
+      "meaning": "Factories turning toward military production and the temporary halt of civilian car eras.",
+      "subject": "Factories",
+      "action": "converting",
+      "object": "military equipment",
+      "location": "America and Europe",
+      "time": "1940s",
+      "entities": []
+    },
+    "visual_requirements": [
+      "WWII factory production",
+      "assembly line manufacturing",
+      "industrial workers 1940s"
+    ],
+    "visual_exclusions": [
+      "computer screens"
+    ],
+    "shots": [
+      {
+        "word_from": 1740,
+        "word_to": 1762,
+        "text": "Factories would be redirected toward military production Civilian automobile development would slow And the elegant pre-war automobile era would come to an end",
+        "query": "WWII military factory assembly line",
+        "subject": "Factories",
+        "action": "converting",
+        "start": 811.222458,
+        "end": 821.819666,
+        "duration": 10.597208000000023,
+        "shot_id": "scene_010_shot_1"
+      },
+      {
+        "word_from": 1763,
+        "word_to": 1773,
+        "text": "When civilian production eventually returned the automobile would look very different",
+        "query": "1940s industrial workers manufacturing",
+        "subject": "Factories",
+        "action": "converting",
+        "start": 822.278,
+        "end": 827.486374,
+        "duration": 5.208373999999935,
+        "shot_id": "scene_010_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 10,
+    "sentence_to": 10,
+    "start": 811.222458,
+    "end": 827.486374,
+    "duration": 16.263915999999995,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "The massive chrome-heavy cars of the late 1930s and early 1940s would gradually evolve into a new post-war design language The cars of 1940 occupy a unique place in automotive history They represent the end of one era and the beginning of another They were built before computers electronic fuel injection airbags navigation systems and modern driver-assistance technology Yet their designers were already experimenting with aerodynamics advanced engines improved suspension systems integrated body construction and new approaches to automotive styling And perhaps that's why these cars remain fascinating today The Buick Special The Buick Super The Packard One Twenty The Packard Super Eight The Cadillac Series 62 The Cadillac Sixty Special The Lincoln Continental The Ford Deluxe And the Alfa Romeo 6C 2500 They weren't simply old cars They were snapshots of a world on the edge of enormous change A world where the automobile was becoming faster more comfortable more beautiful and more technologically sophisticated And just before history changed everything these machines represented some of the most ambitious ideas the automotive industry had ever created That was 1940 one of the most fascinating years in the history of the automobile.",
+    "word_from": 1774,
+    "word_to": 1965,
+    "query": "classic cars exhibition showroom",
+    "queries": [
+      "classic cars exhibition showroom",
+      "vintage 1940s cars parked beautifully",
+      "historic automobile close up details"
+    ],
+    "keywords": [
+      "technologically",
+      "experimenting",
+      "sophisticated",
+      "aerodynamics",
+      "construction"
+    ],
+    "semantic": {
+      "meaning": "Conclusion reflecting on the unique historical place of the 1940 automobiles on the edge of massive change.",
+      "subject": "1940 automobiles",
+      "action": "resting",
+      "object": "classic cars",
+      "location": "Museum or scenic road",
+      "time": "1940",
+      "entities": []
+    },
+    "visual_requirements": [
+      "showcase of classic 1940 cars",
+      "vintage gleaming chrome",
+      "sunset over vintage cars"
+    ],
+    "visual_exclusions": [
+      "modern digital dashboards"
+    ],
+    "shots": [
+      {
+        "word_from": 1774,
+        "word_to": 1901,
+        "text": "The massive chrome-heavy cars of the late 1930s and early 1940s would gradually evolve into a new post-war design language The cars of 1940 occupy a unique place in automotive history They represent the end of one era and the beginning of another They were built before computers electronic fuel injection airbags navigation systems and modern driver-assistance technology Yet their designers were already experimenting with aerodynamics advanced engines improved suspension systems integrated body construction and new approaches to automotive styling And perhaps that's why these cars remain fascinating today The Buick Special The Buick Super The Packard One Twenty The Packard Super Eight The Cadillac Series 62 The Cadillac Sixty Special The Lincoln Continental The Ford Deluxe And the Alfa Romeo 6C 2500 They weren't simply old cars",
+        "query": "classic cars exhibition showroom",
+        "subject": "1940 automobiles",
+        "action": "resting",
+        "start": 828.053,
+        "end": 891.066874,
+        "duration": 63.01387399999999,
+        "shot_id": "scene_011_shot_1"
+      },
+      {
+        "word_from": 1902,
+        "word_to": 1929,
+        "text": "They were snapshots of a world on the edge of enormous change A world where the automobile was becoming faster more comfortable more beautiful and more technologically sophisticated",
+        "query": "vintage 1940s cars parked beautifully",
+        "subject": "1940 automobiles",
+        "action": "resting",
+        "start": 891.539125,
+        "end": 903.497416,
+        "duration": 11.958291000000031,
+        "shot_id": "scene_011_shot_2"
+      },
+      {
+        "word_from": 1930,
+        "word_to": 1965,
+        "text": "And just before history changed everything these machines represented some of the most ambitious ideas the automotive industry had ever created That was 1940 one of the most fascinating years in the history of the automobile",
+        "query": "historic automobile close up details",
+        "subject": "1940 automobiles",
+        "action": "resting",
+        "start": 903.955791,
+        "end": 918.816874,
+        "duration": 14.861083000000008,
+        "shot_id": "scene_011_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 11,
+    "sentence_to": 11,
+    "start": 828.053,
+    "end": 918.816874,
+    "duration": 90.76387399999999,
+    "index": 11,
+    "segment_id": "segment_011"
+  }
+]
