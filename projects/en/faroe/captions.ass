@@ -1,0 +1,650 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.53,Default,,0,0,0,,Living in the Faroe Islands
+Dialogue: 0,0:00:02.53,0:00:05.23,Default,,0,0,0,,How People Live at the End of Europe
+Dialogue: 0,0:00:05.23,0:00:07.74,Default,,0,0,0,,Imagine waking up in a village surrounded by
+Dialogue: 0,0:00:07.74,0:00:10.12,Default,,0,0,0,,enormous green mountains
+Dialogue: 0,0:00:10.12,0:00:13.36,Default,,0,0,0,,Outside your window the Atlantic Ocean stretches
+Dialogue: 0,0:00:13.36,0:00:15.14,Default,,0,0,0,,in every direction
+Dialogue: 0,0:00:15.14,0:00:17.92,Default,,0,0,0,,There may be no trees for miles
+Dialogue: 0,0:00:17.92,0:00:21.39,Default,,0,0,0,,The wind is strong enough to change your plans
+Dialogue: 0,0:00:21.39,0:00:23.91,Default,,0,0,0,,Fog can arrive without warning
+Dialogue: 0,0:00:23.91,0:00:26.94,Default,,0,0,0,,And between one village and another the landscape
+Dialogue: 0,0:00:26.94,0:00:30.48,Default,,0,0,0,,can be so dramatic that it looks almost unreal
+Dialogue: 0,0:00:30.48,0:00:33.58,Default,,0,0,0,,Yet this is not an abandoned wilderness
+Dialogue: 0,0:00:33.58,0:00:35.32,Default,,0,0,0,,People live here
+Dialogue: 0,0:00:35.32,0:00:37.68,Default,,0,0,0,,Children go to school here
+Dialogue: 0,0:00:37.68,0:00:40.92,Default,,0,0,0,,Fishing boats leave the harbors every morning
+Dialogue: 0,0:00:40.92,0:00:43.48,Default,,0,0,0,,Families gather in warm homes while storms
+Dialogue: 0,0:00:43.48,0:00:45.67,Default,,0,0,0,,move across the mountains
+Dialogue: 0,0:00:45.67,0:00:48.34,Default,,0,0,0,,And modern roads and tunnels connect communities
+Dialogue: 0,0:00:48.34,0:00:51.04,Default,,0,0,0,,that were once separated by the sea
+Dialogue: 0,0:00:51.04,0:00:53.43,Default,,0,0,0,,This is the Faroe Islands
+Dialogue: 0,0:00:53.43,0:00:57.01,Default,,0,0,0,,An archipelago of 18 islands in the North Atlantic
+Dialogue: 0,0:00:57.01,0:01:00.06,Default,,0,0,0,,located between Iceland and Norway
+Dialogue: 0,0:01:00.06,0:01:02.59,Default,,0,0,0,,A place where steep mountains rise directly
+Dialogue: 0,0:01:02.59,0:01:05.52,Default,,0,0,0,,from the ocean where sheep wander across green
+Dialogue: 0,0:01:05.52,0:01:08.42,Default,,0,0,0,,hillsides and where life has been shaped by
+Dialogue: 0,0:01:08.42,0:01:12.62,Default,,0,0,0,,wind water isolation and community
+Dialogue: 0,0:01:12.62,0:01:15.48,Default,,0,0,0,,To a visitor the Faroe Islands can look like
+Dialogue: 0,0:01:15.48,0:01:17.08,Default,,0,0,0,,another world
+Dialogue: 0,0:01:17.08,0:01:19.48,Default,,0,0,0,,But for the people who call them home these
+Dialogue: 0,0:01:19.48,0:01:22.31,Default,,0,0,0,,dramatic landscapes are simply part of everyday
+Dialogue: 0,0:01:22.31,0:01:23.54,Default,,0,0,0,,life
+Dialogue: 0,0:01:23.54,0:01:26.44,Default,,0,0,0,,So what is it actually like to live here
+Dialogue: 0,0:01:26.44,0:01:29.10,Default,,0,0,0,,Welcome to Extreme Earth Life
+Dialogue: 0,0:01:29.10,0:01:32.01,Default,,0,0,0,,THE ISLANDS AT THE EDGE OF THE ATLANTIC
+Dialogue: 0,0:01:32.01,0:01:35.19,Default,,0,0,0,,The Faroe Islands are a small archipelago surrounded
+Dialogue: 0,0:01:35.19,0:01:38.58,Default,,0,0,0,,by one of the most powerful oceans on Earth
+Dialogue: 0,0:01:38.58,0:01:41.27,Default,,0,0,0,,The islands are volcanic in origin and their
+Dialogue: 0,0:01:41.27,0:01:43.63,Default,,0,0,0,,landscapes have been shaped over thousands
+Dialogue: 0,0:01:43.63,0:01:47.87,Default,,0,0,0,,of years by geological forces glaciers rain
+Dialogue: 0,0:01:47.87,0:01:50.16,Default,,0,0,0,,wind and the sea
+Dialogue: 0,0:01:50.16,0:01:53.34,Default,,0,0,0,,Today steep mountains dominate many parts of
+Dialogue: 0,0:01:53.34,0:01:54.83,Default,,0,0,0,,the islands
+Dialogue: 0,0:01:54.83,0:01:57.61,Default,,0,0,0,,Deep valleys cut through the landscape
+Dialogue: 0,0:01:57.61,0:02:00.13,Default,,0,0,0,,Cliffs rise above the ocean
+Dialogue: 0,0:02:00.13,0:02:02.77,Default,,0,0,0,,And small villages appear in places that seem
+Dialogue: 0,0:02:02.77,0:02:05.37,Default,,0,0,0,,almost impossible to build on
+Dialogue: 0,0:02:05.37,0:02:08.16,Default,,0,0,0,,From the air the islands look like pieces of
+Dialogue: 0,0:02:08.16,0:02:11.78,Default,,0,0,0,,green land scattered across a vast blue ocean
+Dialogue: 0,0:02:11.78,0:02:15.26,Default,,0,0,0,,But there is something unusual about the landscape
+Dialogue: 0,0:02:15.26,0:02:18.00,Default,,0,0,0,,The Faroe Islands are incredibly green
+Dialogue: 0,0:02:18.00,0:02:21.18,Default,,0,0,0,,yet they have very few natural trees
+Dialogue: 0,0:02:21.18,0:02:24.70,Default,,0,0,0,,Instead grass covers much of the hillsides
+Dialogue: 0,0:02:24.70,0:02:27.53,Default,,0,0,0,,During summer the mountains can appear almost
+Dialogue: 0,0:02:27.53,0:02:31.06,Default,,0,0,0,,like enormous green walls rising from the sea
+Dialogue: 0,0:02:31.06,0:02:33.39,Default,,0,0,0,,And then the weather changes
+Dialogue: 0,0:02:33.39,0:02:36.17,Default,,0,0,0,,Clouds move across the mountains
+Dialogue: 0,0:02:36.17,0:02:37.88,Default,,0,0,0,,Rain arrives
+Dialogue: 0,0:02:37.88,0:02:40.55,Default,,0,0,0,,Fog hides entire valleys
+Dialogue: 0,0:02:40.55,0:02:42.84,Default,,0,0,0,,The ocean becomes darker
+Dialogue: 0,0:02:42.84,0:02:45.06,Default,,0,0,0,,And suddenly the same landscape that looked
+Dialogue: 0,0:02:45.06,0:02:47.87,Default,,0,0,0,,peaceful only minutes earlier can feel wild
+Dialogue: 0,0:02:47.87,0:02:49.34,Default,,0,0,0,,and powerful
+Dialogue: 0,0:02:49.34,0:02:52.36,Default,,0,0,0,,For people living here this is normal
+Dialogue: 0,0:02:52.36,0:02:54.64,Default,,0,0,0,,THE WEATHER IS PART OF LIFE
+Dialogue: 0,0:02:54.64,0:02:56.36,Default,,0,0,0,,In the Faroe Islands
+Dialogue: 0,0:02:56.36,0:02:58.67,Default,,0,0,0,,weather is not simply something people talk
+Dialogue: 0,0:02:58.67,0:02:59.92,Default,,0,0,0,,about
+Dialogue: 0,0:02:59.92,0:03:02.80,Default,,0,0,0,,It can determine what happens next
+Dialogue: 0,0:03:02.80,0:03:05.34,Default,,0,0,0,,A person may have plans to travel to another
+Dialogue: 0,0:03:05.34,0:03:09.02,Default,,0,0,0,,island go fishing work outdoors or take a boat
+Dialogue: 0,0:03:09.02,0:03:10.30,Default,,0,0,0,,somewhere
+Dialogue: 0,0:03:10.30,0:03:12.97,Default,,0,0,0,,But before doing any of that they need to know
+Dialogue: 0,0:03:12.97,0:03:15.00,Default,,0,0,0,,what the weather is doing
+Dialogue: 0,0:03:15.00,0:03:18.13,Default,,0,0,0,,Strong winds can make travel difficult
+Dialogue: 0,0:03:18.13,0:03:20.99,Default,,0,0,0,,Heavy rain can reduce visibility
+Dialogue: 0,0:03:20.99,0:03:23.76,Default,,0,0,0,,Fog can cover mountain roads
+Dialogue: 0,0:03:23.76,0:03:27.23,Default,,0,0,0,,And storms can disrupt ferries and flights
+Dialogue: 0,0:03:27.23,0:03:29.86,Default,,0,0,0,,The weather can change quickly which means
+Dialogue: 0,0:03:29.86,0:03:32.67,Default,,0,0,0,,people learn to remain flexible
+Dialogue: 0,0:03:32.67,0:03:34.08,Default,,0,0,0,,Plans are made
+Dialogue: 0,0:03:34.08,0:03:36.77,Default,,0,0,0,,but plans can also change
+Dialogue: 0,0:03:36.77,0:03:38.91,Default,,0,0,0,,This is one of the first things an outsider
+Dialogue: 0,0:03:38.91,0:03:41.85,Default,,0,0,0,,begins to understand about life here
+Dialogue: 0,0:03:41.85,0:03:44.16,Default,,0,0,0,,Nature is not something that exists in the
+Dialogue: 0,0:03:44.16,0:03:45.63,Default,,0,0,0,,background
+Dialogue: 0,0:03:45.63,0:03:48.12,Default,,0,0,0,,Nature is part of the schedule
+Dialogue: 0,0:03:48.12,0:03:50.25,Default,,0,0,0,,THE SMALL COMMUNITIES
+Dialogue: 0,0:03:50.25,0:03:53.58,Default,,0,0,0,,The Faroe Islands have a relatively small population
+Dialogue: 0,0:03:53.58,0:03:55.88,Default,,0,0,0,,spread across their islands
+Dialogue: 0,0:03:55.88,0:03:58.61,Default,,0,0,0,,That creates a very different social environment
+Dialogue: 0,0:03:58.61,0:04:00.89,Default,,0,0,0,,from life in a large city
+Dialogue: 0,0:04:00.89,0:04:04.19,Default,,0,0,0,,In many villages people know one another
+Dialogue: 0,0:04:04.19,0:04:06.58,Default,,0,0,0,,Families may have lived in the same area for
+Dialogue: 0,0:04:06.58,0:04:08.28,Default,,0,0,0,,generations
+Dialogue: 0,0:04:08.28,0:04:11.90,Default,,0,0,0,,A person's relatives neighbors classmates and
+Dialogue: 0,0:04:11.90,0:04:14.44,Default,,0,0,0,,coworkers can all be connected through a small
+Dialogue: 0,0:04:14.44,0:04:16.76,Default,,0,0,0,,network of relationships
+Dialogue: 0,0:04:16.76,0:04:19.07,Default,,0,0,0,,There is a sense of familiarity that can be
+Dialogue: 0,0:04:19.07,0:04:22.70,Default,,0,0,0,,difficult to find in large urban societies
+Dialogue: 0,0:04:22.70,0:04:25.75,Default,,0,0,0,,Even Tórshavn the capital has a scale that
+Dialogue: 0,0:04:25.75,0:04:29.44,Default,,0,0,0,,feels very different from major European cities
+Dialogue: 0,0:04:29.44,0:04:33.14,Default,,0,0,0,,It has modern shops restaurants schools government
+Dialogue: 0,0:04:33.14,0:04:35.49,Default,,0,0,0,,buildings and businesses
+Dialogue: 0,0:04:35.49,0:04:37.88,Default,,0,0,0,,But you do not have to travel far before the
+Dialogue: 0,0:04:37.88,0:04:41.11,Default,,0,0,0,,urban landscape gives way to mountains grass
+Dialogue: 0,0:04:41.11,0:04:43.22,Default,,0,0,0,,villages and ocean
+Dialogue: 0,0:04:43.22,0:04:46.21,Default,,0,0,0,,That closeness between modern life and wilderness
+Dialogue: 0,0:04:46.21,0:04:48.61,Default,,0,0,0,,is one of the defining characteristics of the
+Dialogue: 0,0:04:48.61,0:04:49.69,Default,,0,0,0,,Faroe Islands
+Dialogue: 0,0:04:50.79,0:04:52.98,Default,,0,0,0,,THE VILLAGE WAY OF LIFE
+Dialogue: 0,0:04:52.98,0:04:55.97,Default,,0,0,0,,In the smaller settlements everyday life often
+Dialogue: 0,0:04:55.97,0:04:58.64,Default,,0,0,0,,revolves around simple routines
+Dialogue: 0,0:04:58.64,0:05:00.35,Default,,0,0,0,,People wake up
+Dialogue: 0,0:05:00.35,0:05:02.00,Default,,0,0,0,,They go to work
+Dialogue: 0,0:05:02.00,0:05:04.09,Default,,0,0,0,,Children go to school
+Dialogue: 0,0:05:04.09,0:05:06.54,Default,,0,0,0,,Fishing boats leave the harbor
+Dialogue: 0,0:05:06.54,0:05:08.32,Default,,0,0,0,,Businesses open
+Dialogue: 0,0:05:08.32,0:05:10.59,Default,,0,0,0,,Families prepare meals
+Dialogue: 0,0:05:10.59,0:05:13.07,Default,,0,0,0,,And people keep an eye on the weather
+Dialogue: 0,0:05:13.07,0:05:15.75,Default,,0,0,0,,The villages are often built close to the water
+Dialogue: 0,0:05:15.75,0:05:18.31,Default,,0,0,0,,because the sea has historically been essential
+Dialogue: 0,0:05:18.31,0:05:19.84,Default,,0,0,0,,to life here
+Dialogue: 0,0:05:19.84,0:05:23.12,Default,,0,0,0,,The harbor can be a workplace a meeting point
+Dialogue: 0,0:05:23.12,0:05:25.84,Default,,0,0,0,,and a connection to the outside world
+Dialogue: 0,0:05:25.84,0:05:29.26,Default,,0,0,0,,But community life extends beyond the harbor
+Dialogue: 0,0:05:29.26,0:05:31.47,Default,,0,0,0,,People visit relatives
+Dialogue: 0,0:05:31.47,0:05:33.60,Default,,0,0,0,,Neighbors help one another
+Dialogue: 0,0:05:33.60,0:05:37.01,Default,,0,0,0,,Families gather for meals and celebrations
+Dialogue: 0,0:05:37.01,0:05:39.91,Default,,0,0,0,,And because the population is small personal
+Dialogue: 0,0:05:39.91,0:05:42.31,Default,,0,0,0,,relationships can play an important role in
+Dialogue: 0,0:05:42.31,0:05:43.86,Default,,0,0,0,,daily life
+Dialogue: 0,0:05:43.86,0:05:46.84,Default,,0,0,0,,In a place where the environment can be difficult
+Dialogue: 0,0:05:46.84,0:05:50.58,Default,,0,0,0,,community becomes more than a social convenience
+Dialogue: 0,0:05:50.58,0:05:53.35,Default,,0,0,0,,It becomes part of how people live
+Dialogue: 0,0:05:53.35,0:05:55.30,Default,,0,0,0,,HOME AND COMMUNITY
+Dialogue: 0,0:05:55.30,0:05:58.98,Default,,0,0,0,,When the weather outside is cold wet and windy
+Dialogue: 0,0:05:58.98,0:06:01.99,Default,,0,0,0,,the home becomes especially important
+Dialogue: 0,0:06:01.99,0:06:04.76,Default,,0,0,0,,Warm lights shine through windows
+Dialogue: 0,0:06:04.76,0:06:07.33,Default,,0,0,0,,Families gather around tables
+Dialogue: 0,0:06:07.33,0:06:09.11,Default,,0,0,0,,Coffee is shared
+Dialogue: 0,0:06:09.11,0:06:12.25,Default,,0,0,0,,Conversations continue into the evening
+Dialogue: 0,0:06:12.25,0:06:15.31,Default,,0,0,0,,And people spend time together indoors
+Dialogue: 0,0:06:15.31,0:06:18.24,Default,,0,0,0,,This feeling of warmth and comfort is particularly
+Dialogue: 0,0:06:18.24,0:06:20.89,Default,,0,0,0,,important during the darker months
+Dialogue: 0,0:06:20.89,0:06:23.70,Default,,0,0,0,,The Faroe Islands may be surrounded by enormous
+Dialogue: 0,0:06:23.70,0:06:27.30,Default,,0,0,0,,natural landscapes but people do not necessarily
+Dialogue: 0,0:06:27.30,0:06:31.01,Default,,0,0,0,,spend all their time trying to escape indoors
+Dialogue: 0,0:06:31.01,0:06:34.05,Default,,0,0,0,,Instead the home becomes a place where community
+Dialogue: 0,0:06:34.05,0:06:36.89,Default,,0,0,0,,and family life can become stronger
+Dialogue: 0,0:06:36.89,0:06:39.25,Default,,0,0,0,,A meal can become a gathering
+Dialogue: 0,0:06:39.25,0:06:42.76,Default,,0,0,0,,A visit can become an evening of conversation
+Dialogue: 0,0:06:42.76,0:06:45.48,Default,,0,0,0,,And a simple cup of coffee can turn into hours
+Dialogue: 0,0:06:45.48,0:06:47.37,Default,,0,0,0,,spent with friends
+Dialogue: 0,0:06:47.37,0:06:50.48,Default,,0,0,0,,In a small society these ordinary moments can
+Dialogue: 0,0:06:50.48,0:06:52.75,Default,,0,0,0,,carry a lot of importance
+Dialogue: 0,0:06:52.75,0:06:55.74,Default,,0,0,0,,A CULTURE THAT SURVIVED ISOLATION
+Dialogue: 0,0:06:55.74,0:06:58.38,Default,,0,0,0,,The Faroe Islands have a cultural identity
+Dialogue: 0,0:06:58.38,0:07:01.13,Default,,0,0,0,,that developed over centuries of geographic
+Dialogue: 0,0:07:01.13,0:07:02.70,Default,,0,0,0,,isolation
+Dialogue: 0,0:07:02.70,0:07:05.28,Default,,0,0,0,,The Faroese language is closely related to
+Dialogue: 0,0:07:05.28,0:07:07.87,Default,,0,0,0,,the languages of the North Germanic world and
+Dialogue: 0,0:07:07.87,0:07:11.23,Default,,0,0,0,,has historical connections to Old Norse
+Dialogue: 0,0:07:11.23,0:07:13.98,Default,,0,0,0,,For generations stories and traditions were
+Dialogue: 0,0:07:13.98,0:07:16.91,Default,,0,0,0,,passed from one generation to another
+Dialogue: 0,0:07:16.91,0:07:19.22,Default,,0,0,0,,One of the most distinctive traditions is the
+Dialogue: 0,0:07:19.22,0:07:21.58,Default,,0,0,0,,Faroese chain dance
+Dialogue: 0,0:07:21.58,0:07:25.05,Default,,0,0,0,,People form a circle link arms and move together
+Dialogue: 0,0:07:25.05,0:07:27.72,Default,,0,0,0,,while singing traditional ballads
+Dialogue: 0,0:07:27.72,0:07:30.96,Default,,0,0,0,,There is no need for a large orchestra
+Dialogue: 0,0:07:30.96,0:07:33.38,Default,,0,0,0,,The voices and the rhythm of the movement create
+Dialogue: 0,0:07:33.38,0:07:35.06,Default,,0,0,0,,the atmosphere
+Dialogue: 0,0:07:35.06,0:07:37.70,Default,,0,0,0,,Many of the songs preserve stories connected
+Dialogue: 0,0:07:37.70,0:07:41.59,Default,,0,0,0,,to history legends heroes and life in the North
+Dialogue: 0,0:07:41.59,0:07:43.01,Default,,0,0,0,,Atlantic
+Dialogue: 0,0:07:43.01,0:07:45.18,Default,,0,0,0,,It is a tradition that connects the present
+Dialogue: 0,0:07:45.18,0:07:47.51,Default,,0,0,0,,with a much older past
+Dialogue: 0,0:07:47.51,0:07:50.42,Default,,0,0,0,,And that connection remains important
+Dialogue: 0,0:07:50.42,0:07:52.85,Default,,0,0,0,,The Faroe Islands are highly connected to the
+Dialogue: 0,0:07:52.85,0:07:54.88,Default,,0,0,0,,modern world today
+Dialogue: 0,0:07:54.88,0:07:57.29,Default,,0,0,0,,People use smartphones
+Dialogue: 0,0:07:57.29,0:07:59.68,Default,,0,0,0,,They have modern education
+Dialogue: 0,0:07:59.68,0:08:01.69,Default,,0,0,0,,They travel abroad
+Dialogue: 0,0:08:01.69,0:08:04.53,Default,,0,0,0,,They work with international companies
+Dialogue: 0,0:08:04.53,0:08:07.04,Default,,0,0,0,,But their cultural identity has not simply
+Dialogue: 0,0:08:07.04,0:08:09.74,Default,,0,0,0,,disappeared under globalization
+Dialogue: 0,0:08:09.74,0:08:12.84,Default,,0,0,0,,Instead older traditions continue alongside
+Dialogue: 0,0:08:12.84,0:08:14.40,Default,,0,0,0,,modern life
+Dialogue: 0,0:08:14.40,0:08:16.18,Default,,0,0,0,,LIVING WITH THE SEA
+Dialogue: 0,0:08:16.18,0:08:18.43,Default,,0,0,0,,If the mountains define the appearance of the
+Dialogue: 0,0:08:18.43,0:08:21.25,Default,,0,0,0,,Faroe Islands the sea has helped define their
+Dialogue: 0,0:08:21.25,0:08:22.54,Default,,0,0,0,,history
+Dialogue: 0,0:08:22.54,0:08:25.28,Default,,0,0,0,,For centuries people here have depended on
+Dialogue: 0,0:08:25.28,0:08:26.61,Default,,0,0,0,,the ocean
+Dialogue: 0,0:08:26.61,0:08:28.92,Default,,0,0,0,,Fishing became one of the foundations of the
+Dialogue: 0,0:08:28.92,0:08:30.30,Default,,0,0,0,,economy
+Dialogue: 0,0:08:30.30,0:08:32.41,Default,,0,0,0,,The sea provided food
+Dialogue: 0,0:08:32.41,0:08:34.62,Default,,0,0,0,,It provided employment
+Dialogue: 0,0:08:34.62,0:08:38.00,Default,,0,0,0,,And it connected the islands to the wider world
+Dialogue: 0,0:08:38.00,0:08:42.10,Default,,0,0,0,,Even today fishing remains extremely important
+Dialogue: 0,0:08:42.10,0:08:44.84,Default,,0,0,0,,In coastal communities the harbor can be one
+Dialogue: 0,0:08:44.84,0:08:47.50,Default,,0,0,0,,of the busiest places in town
+Dialogue: 0,0:08:47.50,0:08:49.67,Default,,0,0,0,,Boats arrive and depart
+Dialogue: 0,0:08:49.67,0:08:51.84,Default,,0,0,0,,Seafood is processed
+Dialogue: 0,0:08:51.84,0:08:54.24,Default,,0,0,0,,Workers maintain equipment
+Dialogue: 0,0:08:54.24,0:08:57.39,Default,,0,0,0,,And businesses support the fishing industry
+Dialogue: 0,0:08:57.39,0:08:59.82,Default,,0,0,0,,For many families the connection to the sea
+Dialogue: 0,0:08:59.82,0:09:01.37,Default,,0,0,0,,is personal
+Dialogue: 0,0:09:01.37,0:09:04.06,Default,,0,0,0,,A parent may have worked in fishing
+Dialogue: 0,0:09:04.06,0:09:06.76,Default,,0,0,0,,A relative may operate a boat
+Dialogue: 0,0:09:06.76,0:09:09.78,Default,,0,0,0,,Someone may work in seafood processing
+Dialogue: 0,0:09:09.78,0:09:12.53,Default,,0,0,0,,The ocean can be both a source of opportunity
+Dialogue: 0,0:09:12.53,0:09:14.47,Default,,0,0,0,,and a source of risk
+Dialogue: 0,0:09:14.47,0:09:17.64,Default,,0,0,0,,Storms can make conditions dangerous
+Dialogue: 0,0:09:17.64,0:09:20.13,Default,,0,0,0,,The weather can change rapidly
+Dialogue: 0,0:09:20.13,0:09:22.85,Default,,0,0,0,,And every fishing trip depends on forces that
+Dialogue: 0,0:09:22.85,0:09:25.68,Default,,0,0,0,,humans cannot completely control
+Dialogue: 0,0:09:25.68,0:09:28.79,Default,,0,0,0,,Yet generation after generation people have
+Dialogue: 0,0:09:28.79,0:09:31.92,Default,,0,0,0,,continued to make their living from these waters
+Dialogue: 0,0:09:31.92,0:09:34.60,Default,,0,0,0,,FROM FISHING TO A MODERN ECONOMY
+Dialogue: 0,0:09:34.60,0:09:38.25,Default,,0,0,0,,The Faroe Islands are not frozen in the past
+Dialogue: 0,0:09:38.25,0:09:39.98,Default,,0,0,0,,The economy has changed
+Dialogue: 0,0:09:41.10,0:09:44.50,Default,,0,0,0,,Fishing and aquaculture remain major industries
+Dialogue: 0,0:09:44.50,0:09:48.16,Default,,0,0,0,,but tourism has become increasingly important
+Dialogue: 0,0:09:48.16,0:09:50.76,Default,,0,0,0,,Visitors arrive to experience the mountains
+Dialogue: 0,0:09:50.76,0:09:55.71,Default,,0,0,0,,cliffs villages waterfalls and ocean landscapes
+Dialogue: 0,0:09:55.71,0:09:59.19,Default,,0,0,0,,Small businesses have developed around tourism
+Dialogue: 0,0:09:59.19,0:10:02.47,Default,,0,0,0,,Restaurants accommodation providers guides
+Dialogue: 0,0:10:02.47,0:10:05.50,Default,,0,0,0,,transport companies and other services all
+Dialogue: 0,0:10:05.50,0:10:07.60,Default,,0,0,0,,benefit from visitors
+Dialogue: 0,0:10:07.60,0:10:10.81,Default,,0,0,0,,Other modern industries are also developing
+Dialogue: 0,0:10:10.81,0:10:13.23,Default,,0,0,0,,Technology makes it possible for people to
+Dialogue: 0,0:10:13.23,0:10:15.76,Default,,0,0,0,,work with companies and customers far beyond
+Dialogue: 0,0:10:15.76,0:10:17.20,Default,,0,0,0,,the islands
+Dialogue: 0,0:10:17.20,0:10:20.62,Default,,0,0,0,,Creative businesses design music and other
+Dialogue: 0,0:10:20.62,0:10:24.01,Default,,0,0,0,,industries contribute to a changing economy
+Dialogue: 0,0:10:24.01,0:10:26.30,Default,,0,0,0,,But the sea remains deeply connected to the
+Dialogue: 0,0:10:26.30,0:10:27.67,Default,,0,0,0,,islands
+Dialogue: 0,0:10:27.67,0:10:30.54,Default,,0,0,0,,Even when people work in modern industries
+Dialogue: 0,0:10:30.54,0:10:33.06,Default,,0,0,0,,they are still living in a place whose geography
+Dialogue: 0,0:10:33.06,0:10:35.16,Default,,0,0,0,,was shaped by the ocean
+Dialogue: 0,0:10:35.16,0:10:37.55,Default,,0,0,0,,FOOD FROM THE LAND AND SEA
+Dialogue: 0,0:10:37.55,0:10:41.24,Default,,0,0,0,,Food in the Faroe Islands reflects the environment
+Dialogue: 0,0:10:41.24,0:10:44.80,Default,,0,0,0,,The surrounding ocean provides fish and seafood
+Dialogue: 0,0:10:44.80,0:10:48.15,Default,,0,0,0,,Sheep are a familiar sight across the hills
+Dialogue: 0,0:10:48.15,0:10:50.51,Default,,0,0,0,,And traditional methods of preserving food
+Dialogue: 0,0:10:50.51,0:10:52.97,Default,,0,0,0,,developed because people historically had to
+Dialogue: 0,0:10:52.97,0:10:56.24,Default,,0,0,0,,make the most of what was available locally
+Dialogue: 0,0:10:56.24,0:10:58.95,Default,,0,0,0,,One traditional method involves allowing meat
+Dialogue: 0,0:10:58.95,0:11:01.79,Default,,0,0,0,,or fish to dry and mature in the cool salty
+Dialogue: 0,0:11:01.79,0:11:02.91,Default,,0,0,0,,air
+Dialogue: 0,0:11:02.91,0:11:05.96,Default,,0,0,0,,Before modern refrigeration preservation was
+Dialogue: 0,0:11:05.96,0:11:07.31,Default,,0,0,0,,essential
+Dialogue: 0,0:11:07.31,0:11:09.91,Default,,0,0,0,,Food had to survive through seasons when fresh
+Dialogue: 0,0:11:09.91,0:11:11.93,Default,,0,0,0,,supplies were limited
+Dialogue: 0,0:11:11.93,0:11:14.33,Default,,0,0,0,,These techniques became part of the culinary
+Dialogue: 0,0:11:14.33,0:11:15.61,Default,,0,0,0,,culture
+Dialogue: 0,0:11:15.61,0:11:19.07,Default,,0,0,0,,Today traditional foods exist alongside modern
+Dialogue: 0,0:11:19.07,0:11:21.92,Default,,0,0,0,,restaurants and contemporary cooking
+Dialogue: 0,0:11:21.92,0:11:25.63,Default,,0,0,0,,A simple meal of fish potatoes or lamb can
+Dialogue: 0,0:11:25.63,0:11:27.95,Default,,0,0,0,,still connect people with the landscape around
+Dialogue: 0,0:11:27.95,0:11:28.96,Default,,0,0,0,,them
+Dialogue: 0,0:11:28.96,0:11:31.37,Default,,0,0,0,,The ingredients tell a story
+Dialogue: 0,0:11:31.37,0:11:33.54,Default,,0,0,0,,The fish comes from the sea
+Dialogue: 0,0:11:33.54,0:11:35.86,Default,,0,0,0,,The sheep come from the hills
+Dialogue: 0,0:11:35.86,0:11:38.14,Default,,0,0,0,,And the methods used to prepare food carry
+Dialogue: 0,0:11:38.14,0:11:41.07,Default,,0,0,0,,memories from previous generations
+Dialogue: 0,0:11:41.07,0:11:43.38,Default,,0,0,0,,SHEEP AND THE LANDSCAPE
+Dialogue: 0,0:11:43.38,0:11:45.84,Default,,0,0,0,,There is one animal you quickly notice across
+Dialogue: 0,0:11:45.84,0:11:47.79,Default,,0,0,0,,the Faroe Islands
+Dialogue: 0,0:11:47.79,0:11:49.08,Default,,0,0,0,,Sheep
+Dialogue: 0,0:11:49.08,0:11:50.79,Default,,0,0,0,,They are everywhere
+Dialogue: 0,0:11:50.79,0:11:53.70,Default,,0,0,0,,They move across grassy hillsides
+Dialogue: 0,0:11:53.70,0:11:56.06,Default,,0,0,0,,They appear beside roads
+Dialogue: 0,0:11:56.06,0:11:58.45,Default,,0,0,0,,They stand on steep slopes overlooking the
+Dialogue: 0,0:11:58.45,0:11:59.65,Default,,0,0,0,,ocean
+Dialogue: 0,0:11:59.65,0:12:01.81,Default,,0,0,0,,And they have been part of Faroese life for
+Dialogue: 0,0:12:01.81,0:12:03.33,Default,,0,0,0,,centuries
+Dialogue: 0,0:12:03.33,0:12:05.86,Default,,0,0,0,,Sheep provide wool and meat
+Dialogue: 0,0:12:05.86,0:12:08.63,Default,,0,0,0,,Their presence is also connected to the traditional
+Dialogue: 0,0:12:08.63,0:12:10.70,Default,,0,0,0,,use of the landscape
+Dialogue: 0,0:12:10.70,0:12:13.67,Default,,0,0,0,,In many places the hills are not simply empty
+Dialogue: 0,0:12:13.67,0:12:15.13,Default,,0,0,0,,wilderness
+Dialogue: 0,0:12:15.13,0:12:17.45,Default,,0,0,0,,They are working landscapes
+Dialogue: 0,0:12:17.45,0:12:21.21,Default,,0,0,0,,People and animals have shared them for generations
+Dialogue: 0,0:12:21.21,0:12:23.83,Default,,0,0,0,,This relationship has helped shape the visual
+Dialogue: 0,0:12:23.83,0:12:26.15,Default,,0,0,0,,identity of the islands
+Dialogue: 0,0:12:26.15,0:12:27.98,Default,,0,0,0,,Green mountains
+Dialogue: 0,0:12:27.98,0:12:29.71,Default,,0,0,0,,Stone walls
+Dialogue: 0,0:12:29.71,0:12:31.01,Default,,0,0,0,,Sheep
+Dialogue: 0,0:12:31.01,0:12:33.01,Default,,0,0,0,,Small villages
+Dialogue: 0,0:12:33.01,0:12:35.67,Default,,0,0,0,,And the ocean stretching beyond them
+Dialogue: 0,0:12:35.67,0:12:37.63,Default,,0,0,0,,THE BIRDS OF THE CLIFFS
+Dialogue: 0,0:12:37.63,0:12:40.27,Default,,0,0,0,,The Faroe Islands are also home to enormous
+Dialogue: 0,0:12:40.27,0:12:42.31,Default,,0,0,0,,numbers of seabirds
+Dialogue: 0,0:12:42.31,0:12:45.05,Default,,0,0,0,,The steep cliffs provide nesting places above
+Dialogue: 0,0:12:45.05,0:12:46.59,Default,,0,0,0,,the Atlantic
+Dialogue: 0,0:12:46.59,0:12:49.44,Default,,0,0,0,,Puffins and other seabirds are closely associated
+Dialogue: 0,0:12:49.44,0:12:51.12,Default,,0,0,0,,with the islands
+Dialogue: 0,0:12:51.12,0:12:54.12,Default,,0,0,0,,For centuries birds and eggs also formed part
+Dialogue: 0,0:12:54.12,0:12:58.15,Default,,0,0,0,,of the food resources available to local communities
+Dialogue: 0,0:12:58.15,0:13:00.46,Default,,0,0,0,,Living near these cliffs required knowledge
+Dialogue: 0,0:13:00.46,0:13:01.82,Default,,0,0,0,,and skill
+Dialogue: 0,0:13:01.82,0:13:04.03,Default,,0,0,0,,The landscape is beautiful
+Dialogue: 0,0:13:04.03,0:13:06.64,Default,,0,0,0,,but it can also be dangerous
+Dialogue: 0,0:13:06.64,0:13:09.33,Default,,0,0,0,,A steep cliff above the ocean is not a normal
+Dialogue: 0,0:13:09.33,0:13:10.88,Default,,0,0,0,,workplace
+Dialogue: 0,0:13:10.88,0:13:15.08,Default,,0,0,0,,It demands experience and respect for the environment
+Dialogue: 0,0:13:15.08,0:13:18.71,Default,,0,0,0,,Today the relationship between people and wildlife
+Dialogue: 0,0:13:18.71,0:13:22.22,Default,,0,0,0,,is also changing as conservation becomes increasingly
+Dialogue: 0,0:13:22.22,0:13:23.64,Default,,0,0,0,,important
+Dialogue: 0,0:13:23.64,0:13:26.54,Default,,0,0,0,,The islands are not only home to people
+Dialogue: 0,0:13:26.54,0:13:30.10,Default,,0,0,0,,They are part of a much larger marine ecosystem
+Dialogue: 0,0:13:30.10,0:13:32.94,Default,,0,0,0,,A MODERN WORLD UNDER THE MOUNTAINS
+Dialogue: 0,0:13:32.94,0:13:35.01,Default,,0,0,0,,One of the most surprising things about the
+Dialogue: 0,0:13:35.01,0:13:37.86,Default,,0,0,0,,Faroe Islands is how modern the infrastructure
+Dialogue: 0,0:13:37.86,0:13:39.11,Default,,0,0,0,,can be
+Dialogue: 0,0:13:39.11,0:13:42.89,Default,,0,0,0,,At first glance the islands appear isolated
+Dialogue: 0,0:13:42.89,0:13:45.89,Default,,0,0,0,,Mountains rise directly from the ocean
+Dialogue: 0,0:13:45.89,0:13:48.73,Default,,0,0,0,,Villages are separated by water
+Dialogue: 0,0:13:48.73,0:13:52.20,Default,,0,0,0,,Some roads seem to disappear into the landscape
+Dialogue: 0,0:13:52.20,0:13:54.81,Default,,0,0,0,,But modern engineering has changed how people
+Dialogue: 0,0:13:54.81,0:13:56.96,Default,,0,0,0,,move around the islands
+Dialogue: 0,0:13:56.96,0:14:01.18,Default,,0,0,0,,Roads bridges tunnels ferries and subsea connections
+Dialogue: 0,0:14:01.18,0:14:03.31,Default,,0,0,0,,link many communities
+Dialogue: 0,0:14:03.31,0:14:06.21,Default,,0,0,0,,Some tunnels travel beneath the ocean
+Dialogue: 0,0:14:06.21,0:14:08.64,Default,,0,0,0,,This means that a journey that once required
+Dialogue: 0,0:14:08.64,0:14:12.35,Default,,0,0,0,,a boat can now sometimes be completed by car
+Dialogue: 0,0:14:12.35,0:14:15.04,Default,,0,0,0,,The contrast is extraordinary
+Dialogue: 0,0:14:15.04,0:14:17.30,Default,,0,0,0,,You can drive through a modern tunnel beneath
+Dialogue: 0,0:14:17.30,0:14:20.18,Default,,0,0,0,,the Atlantic and emerge on another island surrounded
+Dialogue: 0,0:14:20.18,0:14:22.29,Default,,0,0,0,,by mountains and ocean
+Dialogue: 0,0:14:22.29,0:14:24.96,Default,,0,0,0,,Technology has reduced some of the geographic
+Dialogue: 0,0:14:24.96,0:14:28.79,Default,,0,0,0,,isolation without removing the landscape itself
+Dialogue: 0,0:14:28.79,0:14:30.35,Default,,0,0,0,,THE ISLANDS WITHOUT THE CITY
+Dialogue: 0,0:14:31.45,0:14:33.77,Default,,0,0,0,,Imagine living in a village where the nearest
+Dialogue: 0,0:14:33.77,0:14:37.25,Default,,0,0,0,,large city is small by global standards
+Dialogue: 0,0:14:37.25,0:14:40.42,Default,,0,0,0,,There may be no huge shopping districts
+Dialogue: 0,0:14:40.42,0:14:42.56,Default,,0,0,0,,No endless traffic
+Dialogue: 0,0:14:42.56,0:14:46.01,Default,,0,0,0,,No skyline filled with skyscrapers
+Dialogue: 0,0:14:46.01,0:14:48.39,Default,,0,0,0,,Instead there are mountains
+Dialogue: 0,0:14:48.39,0:14:49.64,Default,,0,0,0,,Ocean
+Dialogue: 0,0:14:49.64,0:14:51.00,Default,,0,0,0,,Grass
+Dialogue: 0,0:14:51.00,0:14:52.35,Default,,0,0,0,,Birds
+Dialogue: 0,0:14:52.35,0:14:53.56,Default,,0,0,0,,Wind
+Dialogue: 0,0:14:53.56,0:14:55.61,Default,,0,0,0,,And a small community
+Dialogue: 0,0:14:55.61,0:14:59.01,Default,,0,0,0,,For some people that would feel restrictive
+Dialogue: 0,0:14:59.01,0:15:02.52,Default,,0,0,0,,For others it is exactly what they want
+Dialogue: 0,0:15:02.52,0:15:06.17,Default,,0,0,0,,Children can grow up with easy access to nature
+Dialogue: 0,0:15:06.17,0:15:09.13,Default,,0,0,0,,Families may live close to one another
+Dialogue: 0,0:15:09.13,0:15:11.47,Default,,0,0,0,,People can walk through villages where familiar
+Dialogue: 0,0:15:11.47,0:15:13.30,Default,,0,0,0,,faces are common
+Dialogue: 0,0:15:13.30,0:15:15.53,Default,,0,0,0,,The pace can be slower
+Dialogue: 0,0:15:15.53,0:15:18.16,Default,,0,0,0,,But there is also another side
+Dialogue: 0,0:15:18.16,0:15:21.70,Default,,0,0,0,,A small population means fewer choices
+Dialogue: 0,0:15:21.70,0:15:24.77,Default,,0,0,0,,There may be fewer specialized jobs
+Dialogue: 0,0:15:24.77,0:15:27.20,Default,,0,0,0,,Some young people need to travel abroad for
+Dialogue: 0,0:15:27.20,0:15:28.79,Default,,0,0,0,,university
+Dialogue: 0,0:15:28.79,0:15:30.90,Default,,0,0,0,,And certain products and services are more
+Dialogue: 0,0:15:30.90,0:15:33.01,Default,,0,0,0,,difficult to access than they would be in a
+Dialogue: 0,0:15:33.01,0:15:35.22,Default,,0,0,0,,major European city
+Dialogue: 0,0:15:35.22,0:15:38.31,Default,,0,0,0,,This is the trade-off of island life
+Dialogue: 0,0:15:38.31,0:15:40.23,Default,,0,0,0,,THE YOUNG GENERATION
+Dialogue: 0,0:15:40.23,0:15:42.84,Default,,0,0,0,,For young people growing up in the Faroe Islands
+Dialogue: 0,0:15:42.84,0:15:45.46,Default,,0,0,0,,the world outside is much closer than it was
+Dialogue: 0,0:15:45.46,0:15:47.84,Default,,0,0,0,,for previous generations
+Dialogue: 0,0:15:47.84,0:15:50.26,Default,,0,0,0,,The internet has removed many of the barriers
+Dialogue: 0,0:15:50.26,0:15:53.15,Default,,0,0,0,,created by geographic distance
+Dialogue: 0,0:15:53.15,0:15:55.91,Default,,0,0,0,,Young Faroese people can communicate with people
+Dialogue: 0,0:15:55.91,0:15:57.56,Default,,0,0,0,,around the world
+Dialogue: 0,0:15:57.56,0:16:00.29,Default,,0,0,0,,They can study foreign languages
+Dialogue: 0,0:16:00.29,0:16:03.74,Default,,0,0,0,,They can follow international music and culture
+Dialogue: 0,0:16:03.74,0:16:05.38,Default,,0,0,0,,They can travel
+Dialogue: 0,0:16:05.38,0:16:08.80,Default,,0,0,0,,And many leave the islands for higher education
+Dialogue: 0,0:16:08.80,0:16:11.34,Default,,0,0,0,,Denmark and other European countries can become
+Dialogue: 0,0:16:11.34,0:16:14.56,Default,,0,0,0,,important destinations for study and work
+Dialogue: 0,0:16:14.56,0:16:17.42,Default,,0,0,0,,For some leaving is temporary
+Dialogue: 0,0:16:17.42,0:16:20.68,Default,,0,0,0,,They gain education and experience and eventually
+Dialogue: 0,0:16:20.68,0:16:22.28,Default,,0,0,0,,return home
+Dialogue: 0,0:16:22.28,0:16:25.35,Default,,0,0,0,,For others the outside world offers opportunities
+Dialogue: 0,0:16:25.35,0:16:28.61,Default,,0,0,0,,that may be difficult to find on the islands
+Dialogue: 0,0:16:28.61,0:16:31.91,Default,,0,0,0,,This creates a challenge for small communities
+Dialogue: 0,0:16:31.91,0:16:34.39,Default,,0,0,0,,How do you give young people enough opportunities
+Dialogue: 0,0:16:34.39,0:16:36.57,Default,,0,0,0,,to build a future at home
+Dialogue: 0,0:16:36.57,0:16:38.77,Default,,0,0,0,,The answer is not simple
+Dialogue: 0,0:16:38.77,0:16:42.80,Default,,0,0,0,,The islands need modern jobs and new industries
+Dialogue: 0,0:16:42.80,0:16:45.07,Default,,0,0,0,,But they also need to preserve the qualities
+Dialogue: 0,0:16:45.07,0:16:47.55,Default,,0,0,0,,that make people want to return
+Dialogue: 0,0:16:47.55,0:16:49.76,Default,,0,0,0,,THE LONG SUMMER DAYS
+Dialogue: 0,0:16:49.76,0:16:52.64,Default,,0,0,0,,The location of the Faroe Islands also affects
+Dialogue: 0,0:16:52.64,0:16:54.44,Default,,0,0,0,,the rhythm of the year
+Dialogue: 0,0:16:54.44,0:16:57.22,Default,,0,0,0,,During summer daylight lasts for a very long
+Dialogue: 0,0:16:57.22,0:16:58.42,Default,,0,0,0,,time
+Dialogue: 0,0:16:58.42,0:17:00.73,Default,,0,0,0,,The evenings remain bright
+Dialogue: 0,0:17:00.73,0:17:03.30,Default,,0,0,0,,People can stay outside later
+Dialogue: 0,0:17:03.30,0:17:05.50,Default,,0,0,0,,Hiking becomes easier
+Dialogue: 0,0:17:05.50,0:17:09.04,Default,,0,0,0,,Fishing and outdoor work can continue for longer
+Dialogue: 0,0:17:09.04,0:17:11.64,Default,,0,0,0,,Villages become more active
+Dialogue: 0,0:17:11.64,0:17:14.22,Default,,0,0,0,,And the landscape seems to stay awake almost
+Dialogue: 0,0:17:14.22,0:17:15.89,Default,,0,0,0,,around the clock
+Dialogue: 0,0:17:15.89,0:17:18.70,Default,,0,0,0,,The long summer days are precious
+Dialogue: 0,0:17:18.70,0:17:20.87,Default,,0,0,0,,People make use of them because they know that
+Dialogue: 0,0:17:20.87,0:17:23.94,Default,,0,0,0,,the darker season will eventually return
+Dialogue: 0,0:17:23.94,0:17:26.92,Default,,0,0,0,,It is a different relationship with time
+Dialogue: 0,0:17:26.92,0:17:29.35,Default,,0,0,0,,In places where daylight is abundant throughout
+Dialogue: 0,0:17:29.35,0:17:32.49,Default,,0,0,0,,the year people may barely notice it
+Dialogue: 0,0:17:32.49,0:17:34.99,Default,,0,0,0,,Here seasonal light becomes something much
+Dialogue: 0,0:17:34.99,0:17:36.69,Default,,0,0,0,,more obvious
+Dialogue: 0,0:17:36.69,0:17:39.08,Default,,0,0,0,,WINTER IN THE FAROE ISLANDS
+Dialogue: 0,0:17:39.08,0:17:41.82,Default,,0,0,0,,Winter brings a different atmosphere
+Dialogue: 0,0:17:41.82,0:17:44.03,Default,,0,0,0,,The days become shorter
+Dialogue: 0,0:17:44.03,0:17:46.28,Default,,0,0,0,,The weather can become rougher
+Dialogue: 0,0:17:46.28,0:17:48.88,Default,,0,0,0,,Storms cross the Atlantic
+Dialogue: 0,0:17:48.88,0:17:51.16,Default,,0,0,0,,The wind hits the mountains
+Dialogue: 0,0:17:51.16,0:17:54.25,Default,,0,0,0,,Rain and fog can cover the landscape
+Dialogue: 0,0:17:54.25,0:17:57.11,Default,,0,0,0,,And darkness arrives much earlier
+Dialogue: 0,0:17:57.11,0:18:00.04,Default,,0,0,0,,Outdoor life becomes more limited
+Dialogue: 0,0:18:00.04,0:18:02.70,Default,,0,0,0,,People spend more time indoors
+Dialogue: 0,0:18:02.70,0:18:05.42,Default,,0,0,0,,Homes become brighter and warmer
+Dialogue: 0,0:18:05.42,0:18:07.16,Default,,0,0,0,,Families gather
+Dialogue: 0,0:18:07.16,0:18:08.83,Default,,0,0,0,,Friends meet
+Dialogue: 0,0:18:08.83,0:18:12.22,Default,,0,0,0,,And the community becomes especially important
+Dialogue: 0,0:18:12.22,0:18:15.84,Default,,0,0,0,,The landscape outside may look wild and empty
+Dialogue: 0,0:18:15.84,0:18:19.09,Default,,0,0,0,,But behind the windows life continues
+Dialogue: 0,0:18:19.09,0:18:21.02,Default,,0,0,0,,Meals are prepared
+Dialogue: 0,0:18:21.02,0:18:23.08,Default,,0,0,0,,Children do homework
+Dialogue: 0,0:18:23.08,0:18:24.63,Default,,0,0,0,,People talk
+Dialogue: 0,0:18:24.63,0:18:26.41,Default,,0,0,0,,Music plays
+Dialogue: 0,0:18:26.41,0:18:29.11,Default,,0,0,0,,And another winter evening passes
+Dialogue: 0,0:18:29.11,0:18:31.74,Default,,0,0,0,,This contrast between the dramatic landscape
+Dialogue: 0,0:18:31.74,0:18:34.48,Default,,0,0,0,,outside and the warmth of life indoors is one
+Dialogue: 0,0:18:34.48,0:18:37.80,Default,,0,0,0,,of the most beautiful aspects of the islands
+Dialogue: 0,0:18:37.80,0:18:40.56,Default,,0,0,0,,WHEN NATURE CONTROLS YOUR PLANS
+Dialogue: 0,0:18:40.56,0:18:43.52,Default,,0,0,0,,Island life comes with limitations
+Dialogue: 0,0:18:43.52,0:18:45.96,Default,,0,0,0,,A storm can delay a ferry
+Dialogue: 0,0:18:45.96,0:18:48.38,Default,,0,0,0,,Fog can affect flights
+Dialogue: 0,0:18:48.38,0:18:51.82,Default,,0,0,0,,Strong winds can make roads more difficult
+Dialogue: 0,0:18:51.82,0:18:54.14,Default,,0,0,0,,And the ocean can separate communities in a
+Dialogue: 0,0:18:54.14,0:18:56.65,Default,,0,0,0,,way that people living on the mainland rarely
+Dialogue: 0,0:18:56.65,0:18:58.24,Default,,0,0,0,,experience
+Dialogue: 0,0:18:58.24,0:19:00.79,Default,,0,0,0,,Modern infrastructure has reduced many of these
+Dialogue: 0,0:19:00.79,0:19:02.00,Default,,0,0,0,,problems
+Dialogue: 0,0:19:02.00,0:19:04.57,Default,,0,0,0,,but it cannot eliminate nature
+Dialogue: 0,0:19:04.57,0:19:06.79,Default,,0,0,0,,That is an important lesson of life in the
+Dialogue: 0,0:19:06.79,0:19:08.55,Default,,0,0,0,,Faroe Islands
+Dialogue: 0,0:19:08.55,0:19:11.11,Default,,0,0,0,,Technology can build tunnels
+Dialogue: 0,0:19:11.11,0:19:13.23,Default,,0,0,0,,It can improve roads
+Dialogue: 0,0:19:13.23,0:19:16.04,Default,,0,0,0,,It can provide high-speed internet
+Dialogue: 0,0:19:16.04,0:19:19.16,Default,,0,0,0,,But it cannot tell the ocean to become calm
+Dialogue: 0,0:19:19.16,0:19:21.32,Default,,0,0,0,,It cannot stop the wind
+Dialogue: 0,0:19:21.32,0:19:24.24,Default,,0,0,0,,And it cannot make a mountain disappear
+Dialogue: 0,0:19:24.24,0:19:26.52,Default,,0,0,0,,People have learned to work with these forces
+Dialogue: 0,0:19:26.52,0:19:29.20,Default,,0,0,0,,instead of expecting to control them completely
+Dialogue: 0,0:19:30.32,0:19:32.55,Default,,0,0,0,,THE PRICE OF REMOTENESS
+Dialogue: 0,0:19:32.55,0:19:35.58,Default,,0,0,0,,Living in such a remote place also has economic
+Dialogue: 0,0:19:35.58,0:19:37.21,Default,,0,0,0,,challenges
+Dialogue: 0,0:19:37.21,0:19:40.70,Default,,0,0,0,,Many goods have to be transported from outside
+Dialogue: 0,0:19:40.70,0:19:43.34,Default,,0,0,0,,Fresh produce and consumer products can be
+Dialogue: 0,0:19:43.34,0:19:45.20,Default,,0,0,0,,more expensive
+Dialogue: 0,0:19:45.20,0:19:48.03,Default,,0,0,0,,Housing and employment opportunities vary between
+Dialogue: 0,0:19:48.03,0:19:49.60,Default,,0,0,0,,communities
+Dialogue: 0,0:19:49.60,0:19:52.42,Default,,0,0,0,,And small populations cannot support the same
+Dialogue: 0,0:19:52.42,0:19:55.98,Default,,0,0,0,,range of services available in major cities
+Dialogue: 0,0:19:55.98,0:20:00.04,Default,,0,0,0,,For some people this is a serious disadvantage
+Dialogue: 0,0:20:00.04,0:20:02.82,Default,,0,0,0,,For others the benefits are worth it
+Dialogue: 0,0:20:02.82,0:20:04.27,Default,,0,0,0,,The quiet
+Dialogue: 0,0:20:04.27,0:20:06.37,Default,,0,0,0,,The clean environment
+Dialogue: 0,0:20:06.37,0:20:08.50,Default,,0,0,0,,The strong communities
+Dialogue: 0,0:20:08.50,0:20:10.80,Default,,0,0,0,,The dramatic landscapes
+Dialogue: 0,0:20:10.80,0:20:13.79,Default,,0,0,0,,And the ability to live close to nature
+Dialogue: 0,0:20:13.79,0:20:16.64,Default,,0,0,0,,The Faroe Islands offer a different definition
+Dialogue: 0,0:20:16.64,0:20:18.35,Default,,0,0,0,,of convenience
+Dialogue: 0,0:20:18.35,0:20:21.05,Default,,0,0,0,,Perhaps convenience here is not having everything
+Dialogue: 0,0:20:21.05,0:20:22.41,Default,,0,0,0,,nearby
+Dialogue: 0,0:20:22.41,0:20:24.55,Default,,0,0,0,,Perhaps it is having the things that matter
+Dialogue: 0,0:20:24.55,0:20:26.52,Default,,0,0,0,,most close to home
+Dialogue: 0,0:20:26.52,0:20:28.68,Default,,0,0,0,,THE CHALLENGE OF TOURISM
+Dialogue: 0,0:20:28.68,0:20:31.35,Default,,0,0,0,,Tourism is bringing more attention to the Faroe
+Dialogue: 0,0:20:31.35,0:20:32.74,Default,,0,0,0,,Islands
+Dialogue: 0,0:20:32.74,0:20:35.03,Default,,0,0,0,,Visitors arrive from around the world to see
+Dialogue: 0,0:20:35.03,0:20:37.54,Default,,0,0,0,,landscapes that were once known mainly to the
+Dialogue: 0,0:20:37.54,0:20:39.34,Default,,0,0,0,,people living there
+Dialogue: 0,0:20:39.34,0:20:41.70,Default,,0,0,0,,This creates opportunities
+Dialogue: 0,0:20:41.70,0:20:44.04,Default,,0,0,0,,Local businesses can grow
+Dialogue: 0,0:20:44.04,0:20:46.18,Default,,0,0,0,,New jobs can appear
+Dialogue: 0,0:20:46.18,0:20:48.78,Default,,0,0,0,,And the outside world becomes more aware of
+Dialogue: 0,0:20:48.78,0:20:50.59,Default,,0,0,0,,Faroese culture
+Dialogue: 0,0:20:50.59,0:20:53.48,Default,,0,0,0,,But tourism also creates pressure
+Dialogue: 0,0:20:53.48,0:20:56.33,Default,,0,0,0,,Fragile landscapes can be damaged
+Dialogue: 0,0:20:56.33,0:20:59.54,Default,,0,0,0,,Popular hiking paths can become crowded
+Dialogue: 0,0:20:59.54,0:21:02.65,Default,,0,0,0,,More visitors require infrastructure
+Dialogue: 0,0:21:02.65,0:21:05.53,Default,,0,0,0,,And communities must decide how much tourism
+Dialogue: 0,0:21:05.53,0:21:07.39,Default,,0,0,0,,they actually want
+Dialogue: 0,0:21:07.39,0:21:11.03,Default,,0,0,0,,The challenge is not simply attracting visitors
+Dialogue: 0,0:21:11.03,0:21:13.89,Default,,0,0,0,,It is making sure that visitors can experience
+Dialogue: 0,0:21:13.89,0:21:16.27,Default,,0,0,0,,the islands without destroying what makes them
+Dialogue: 0,0:21:16.27,0:21:17.56,Default,,0,0,0,,special
+Dialogue: 0,0:21:17.56,0:21:21.50,Default,,0,0,0,,For a small archipelago that balance matters
+Dialogue: 0,0:21:21.50,0:21:24.51,Default,,0,0,0,,A PLACE BETWEEN THE OLD AND THE NEW
+Dialogue: 0,0:21:24.51,0:21:27.15,Default,,0,0,0,,The Faroe Islands are constantly negotiating
+Dialogue: 0,0:21:27.15,0:21:29.15,Default,,0,0,0,,between two worlds
+Dialogue: 0,0:21:29.15,0:21:31.39,Default,,0,0,0,,Traditional and modern
+Dialogue: 0,0:21:31.39,0:21:33.27,Default,,0,0,0,,Local and global
+Dialogue: 0,0:21:33.27,0:21:35.72,Default,,0,0,0,,Isolation and connection
+Dialogue: 0,0:21:35.72,0:21:38.97,Default,,0,0,0,,The old fishing culture remains important
+Dialogue: 0,0:21:38.97,0:21:42.56,Default,,0,0,0,,But technology has transformed communication
+Dialogue: 0,0:21:42.56,0:21:45.78,Default,,0,0,0,,Traditional music and language continue
+Dialogue: 0,0:21:45.78,0:21:48.35,Default,,0,0,0,,But young people travel abroad
+Dialogue: 0,0:21:48.35,0:21:50.66,Default,,0,0,0,,Small villages remain
+Dialogue: 0,0:21:50.66,0:21:53.53,Default,,0,0,0,,But modern tunnels connect islands
+Dialogue: 0,0:21:53.53,0:21:56.07,Default,,0,0,0,,The landscape remains wild
+Dialogue: 0,0:21:56.07,0:21:59.23,Default,,0,0,0,,But people live with advanced infrastructure
+Dialogue: 0,0:21:59.23,0:22:02.03,Default,,0,0,0,,This combination is what makes the Faroe Islands
+Dialogue: 0,0:22:02.03,0:22:03.77,Default,,0,0,0,,so interesting
+Dialogue: 0,0:22:03.77,0:22:06.83,Default,,0,0,0,,They are not a place trapped in the past
+Dialogue: 0,0:22:06.83,0:22:09.04,Default,,0,0,0,,And they are not a place that has completely
+Dialogue: 0,0:22:09.04,0:22:11.29,Default,,0,0,0,,abandoned its traditions
+Dialogue: 0,0:22:11.29,0:22:13.59,Default,,0,0,0,,Instead they are adapting
+Dialogue: 0,0:22:13.59,0:22:16.13,Default,,0,0,0,,WHY DO PEOPLE CHOOSE TO STAY
+Dialogue: 0,0:22:16.13,0:22:18.91,Default,,0,0,0,,So why remain on a small group of islands in
+Dialogue: 0,0:22:18.91,0:22:20.73,Default,,0,0,0,,the North Atlantic
+Dialogue: 0,0:22:20.73,0:22:23.37,Default,,0,0,0,,Why not move to a larger city
+Dialogue: 0,0:22:23.37,0:22:26.19,Default,,0,0,0,,Why accept the unpredictable weather the long
+Dialogue: 0,0:22:26.19,0:22:29.43,Default,,0,0,0,,winter darkness the distance from major population
+Dialogue: 0,0:22:29.43,0:22:33.21,Default,,0,0,0,,centers and the limitations of island life
+Dialogue: 0,0:22:33.21,0:22:36.32,Default,,0,0,0,,For many people the answer is simple
+Dialogue: 0,0:22:36.32,0:22:37.50,Default,,0,0,0,,Home
+Dialogue: 0,0:22:37.50,0:22:39.09,Default,,0,0,0,,It is family
+Dialogue: 0,0:22:39.09,0:22:40.86,Default,,0,0,0,,It is community
+Dialogue: 0,0:22:40.86,0:22:42.80,Default,,0,0,0,,It is familiarity
+Dialogue: 0,0:22:42.80,0:22:45.14,Default,,0,0,0,,It is the landscape they grew up seeing every
+Dialogue: 0,0:22:45.14,0:22:46.32,Default,,0,0,0,,day
+Dialogue: 0,0:22:46.32,0:22:48.56,Default,,0,0,0,,It is the feeling of knowing the people around
+Dialogue: 0,0:22:48.56,0:22:49.53,Default,,0,0,0,,you
+Dialogue: 0,0:22:49.53,0:22:52.27,Default,,0,0,0,,It is being able to walk outside and immediately
+Dialogue: 0,0:22:52.27,0:22:54.44,Default,,0,0,0,,see mountains and ocean
+Dialogue: 0,0:22:54.44,0:22:56.18,Default,,0,0,0,,It is the quiet
+Dialogue: 0,0:22:56.18,0:22:57.86,Default,,0,0,0,,It is the freedom
+Dialogue: 0,0:22:57.86,0:23:00.19,Default,,0,0,0,,And it is the feeling that life does not have
+Dialogue: 0,0:23:00.19,0:23:02.76,Default,,0,0,0,,to move at the same speed as the rest of the
+Dialogue: 0,0:23:02.76,0:23:04.02,Default,,0,0,0,,world
+Dialogue: 0,0:23:04.02,0:23:06.62,Default,,0,0,0,,THE FUTURE OF THE FAROE ISLANDS
+Dialogue: 0,0:23:06.62,0:23:09.12,Default,,0,0,0,,The Faroe Islands are changing
+Dialogue: 0,0:23:09.12,0:23:12.20,Default,,0,0,0,,Technology is changing how people work
+Dialogue: 0,0:23:12.20,0:23:14.87,Default,,0,0,0,,Tourism is changing the economy
+Dialogue: 0,0:23:14.87,0:23:18.52,Default,,0,0,0,,Modern infrastructure is changing transportation
+Dialogue: 0,0:23:18.52,0:23:20.85,Default,,0,0,0,,And younger generations are more connected
+Dialogue: 0,0:23:20.85,0:23:23.82,Default,,0,0,0,,to the outside world than ever before
+Dialogue: 0,0:23:23.82,0:23:26.98,Default,,0,0,0,,But the fundamental geography remains
+Dialogue: 0,0:23:26.98,0:23:29.19,Default,,0,0,0,,The mountains are still there
+Dialogue: 0,0:23:29.19,0:23:32.07,Default,,0,0,0,,The ocean still surrounds the islands
+Dialogue: 0,0:23:32.07,0:23:34.64,Default,,0,0,0,,The weather still changes quickly
+Dialogue: 0,0:23:34.64,0:23:37.91,Default,,0,0,0,,And communities still depend on one another
+Dialogue: 0,0:23:37.91,0:23:39.98,Default,,0,0,0,,The challenge for the future will be finding
+Dialogue: 0,0:23:39.98,0:23:41.77,Default,,0,0,0,,the right balance
+Dialogue: 0,0:23:41.77,0:23:44.19,Default,,0,0,0,,How can the islands modernize without losing
+Dialogue: 0,0:23:44.19,0:23:45.70,Default,,0,0,0,,their identity
+Dialogue: 0,0:23:45.70,0:23:49.46,Default,,0,0,0,,How can tourism grow without damaging the landscape
+Dialogue: 0,0:23:49.46,0:23:52.11,Default,,0,0,0,,How can young people find opportunities without
+Dialogue: 0,0:23:52.11,0:23:54.29,Default,,0,0,0,,needing to leave permanently
+Dialogue: 0,0:23:54.29,0:23:56.70,Default,,0,0,0,,And how can traditional culture survive in
+Dialogue: 0,0:23:56.70,0:23:59.39,Default,,0,0,0,,an increasingly connected world
+Dialogue: 0,0:23:59.39,0:24:01.62,Default,,0,0,0,,These questions will shape the future of the
+Dialogue: 0,0:24:01.62,0:24:03.38,Default,,0,0,0,,Faroe Islands
+Dialogue: 0,0:24:03.38,0:24:05.62,Default,,0,0,0,,A LIFE SHAPED BY NATURE
+Dialogue: 0,0:24:05.62,0:24:08.15,Default,,0,0,0,,Perhaps the most fascinating thing about living
+Dialogue: 0,0:24:08.15,0:24:10.93,Default,,0,0,0,,in the Faroe Islands is the relationship between
+Dialogue: 0,0:24:10.93,0:24:13.19,Default,,0,0,0,,people and their environment
+Dialogue: 0,0:24:13.19,0:24:15.79,Default,,0,0,0,,The mountains are not just scenery
+Dialogue: 0,0:24:15.79,0:24:18.28,Default,,0,0,0,,The ocean is not just a view
+Dialogue: 0,0:24:18.28,0:24:21.13,Default,,0,0,0,,The weather is not just a forecast
+Dialogue: 0,0:24:21.13,0:24:23.09,Default,,0,0,0,,They are all part of everyday life
+Dialogue: 0,0:24:24.20,0:24:26.45,Default,,0,0,0,,A fisherman looks at the sea before leaving
+Dialogue: 0,0:24:26.45,0:24:27.81,Default,,0,0,0,,the harbor
+Dialogue: 0,0:24:27.81,0:24:30.27,Default,,0,0,0,,A driver checks the road conditions before
+Dialogue: 0,0:24:30.27,0:24:32.34,Default,,0,0,0,,crossing the mountains
+Dialogue: 0,0:24:32.34,0:24:34.69,Default,,0,0,0,,A farmer watches the weather
+Dialogue: 0,0:24:34.69,0:24:38.32,Default,,0,0,0,,A family gathers indoors when the storm arrives
+Dialogue: 0,0:24:38.32,0:24:40.87,Default,,0,0,0,,A child grows up seeing the same cliffs and
+Dialogue: 0,0:24:40.87,0:24:44.01,Default,,0,0,0,,ocean that generations before them saw
+Dialogue: 0,0:24:44.01,0:24:47.29,Default,,0,0,0,,Life here is not about escaping nature
+Dialogue: 0,0:24:47.29,0:24:49.75,Default,,0,0,0,,It is about understanding it
+Dialogue: 0,0:24:49.75,0:24:51.65,Default,,0,0,0,,And adapting to it
+Dialogue: 0,0:24:51.65,0:24:54.38,Default,,0,0,0,,THE QUIET LIFE AT THE EDGE OF EUROPE
+Dialogue: 0,0:24:54.38,0:24:58.58,Default,,0,0,0,,From far away the Faroe Islands may look isolated
+Dialogue: 0,0:24:58.58,0:25:01.07,Default,,0,0,0,,A handful of green mountains rising from a
+Dialogue: 0,0:25:01.07,0:25:02.64,Default,,0,0,0,,cold ocean
+Dialogue: 0,0:25:02.64,0:25:05.91,Default,,0,0,0,,But look closer and another picture appears
+Dialogue: 0,0:25:05.91,0:25:07.73,Default,,0,0,0,,There are schools
+Dialogue: 0,0:25:07.73,0:25:09.05,Default,,0,0,0,,Homes
+Dialogue: 0,0:25:09.05,0:25:10.61,Default,,0,0,0,,Businesses
+Dialogue: 0,0:25:10.61,0:25:12.36,Default,,0,0,0,,Fishing boats
+Dialogue: 0,0:25:12.36,0:25:14.20,Default,,0,0,0,,Modern roads
+Dialogue: 0,0:25:14.20,0:25:16.28,Default,,0,0,0,,Tunnels beneath the sea
+Dialogue: 0,0:25:16.28,0:25:17.83,Default,,0,0,0,,Cafes
+Dialogue: 0,0:25:17.83,0:25:19.32,Default,,0,0,0,,Families
+Dialogue: 0,0:25:19.32,0:25:20.68,Default,,0,0,0,,Children
+Dialogue: 0,0:25:20.68,0:25:22.06,Default,,0,0,0,,Music
+Dialogue: 0,0:25:22.06,0:25:23.69,Default,,0,0,0,,Traditions
+Dialogue: 0,0:25:23.69,0:25:25.98,Default,,0,0,0,,And communities that have learned how to live
+Dialogue: 0,0:25:25.98,0:25:28.37,Default,,0,0,0,,in one of the most dramatic environments in
+Dialogue: 0,0:25:28.37,0:25:29.62,Default,,0,0,0,,Europe
+Dialogue: 0,0:25:29.62,0:25:32.40,Default,,0,0,0,,The Faroe Islands show us that remoteness does
+Dialogue: 0,0:25:32.40,0:25:35.75,Default,,0,0,0,,not necessarily mean being disconnected
+Dialogue: 0,0:25:35.75,0:25:38.79,Default,,0,0,0,,A place can be geographically distant and still
+Dialogue: 0,0:25:38.79,0:25:40.14,Default,,0,0,0,,be modern
+Dialogue: 0,0:25:40.14,0:25:42.96,Default,,0,0,0,,A community can be small and still be connected
+Dialogue: 0,0:25:42.96,0:25:44.38,Default,,0,0,0,,to the world
+Dialogue: 0,0:25:44.38,0:25:46.96,Default,,0,0,0,,And a society can embrace the future without
+Dialogue: 0,0:25:46.96,0:25:49.80,Default,,0,0,0,,completely abandoning its past
+Dialogue: 0,0:25:49.80,0:25:52.87,Default,,0,0,0,,Here the ocean can be a barrier
+Dialogue: 0,0:25:52.87,0:25:55.32,Default,,0,0,0,,But it can also be a highway
+Dialogue: 0,0:25:55.32,0:25:58.24,Default,,0,0,0,,The mountains can make travel difficult
+Dialogue: 0,0:25:58.24,0:26:00.84,Default,,0,0,0,,But they can also provide a home
+Dialogue: 0,0:26:00.84,0:26:03.24,Default,,0,0,0,,The weather can disrupt life
+Dialogue: 0,0:26:03.24,0:26:06.91,Default,,0,0,0,,But it can also teach patience and adaptation
+Dialogue: 0,0:26:06.91,0:26:09.80,Default,,0,0,0,,And the isolation that seems like a disadvantage
+Dialogue: 0,0:26:09.80,0:26:12.47,Default,,0,0,0,,to an outsider can feel like freedom to someone
+Dialogue: 0,0:26:12.47,0:26:14.92,Default,,0,0,0,,who calls these islands home
+Dialogue: 0,0:26:14.92,0:26:17.39,Default,,0,0,0,,As the wind moves across the green hills and
+Dialogue: 0,0:26:17.39,0:26:20.57,Default,,0,0,0,,waves crash against the cliffs life continues
+Dialogue: 0,0:26:20.57,0:26:22.49,Default,,0,0,0,,in the villages below
+Dialogue: 0,0:26:22.49,0:26:24.57,Default,,0,0,0,,Boats leave the harbors
+Dialogue: 0,0:26:24.57,0:26:26.76,Default,,0,0,0,,Children walk to school
+Dialogue: 0,0:26:26.76,0:26:29.40,Default,,0,0,0,,Sheep move across the mountains
+Dialogue: 0,0:26:29.40,0:26:32.76,Default,,0,0,0,,Lights appear in windows as evening arrives
+Dialogue: 0,0:26:32.76,0:26:34.97,Default,,0,0,0,,And another day comes to an end beneath the
+Dialogue: 0,0:26:34.97,0:26:37.45,Default,,0,0,0,,clouds of the North Atlantic
+Dialogue: 0,0:26:37.45,0:26:39.82,Default,,0,0,0,,This is the Faroe Islands
+Dialogue: 0,0:26:39.82,0:26:44.34,Default,,0,0,0,,A place of mountains ocean wind and community
+Dialogue: 0,0:26:44.34,0:26:47.31,Default,,0,0,0,,A place where modern life exists beside ancient
+Dialogue: 0,0:26:47.31,0:26:48.84,Default,,0,0,0,,traditions
+Dialogue: 0,0:26:48.84,0:26:51.92,Default,,0,0,0,,A place where nature still sets the rhythm
+Dialogue: 0,0:26:51.92,0:26:54.18,Default,,0,0,0,,And a place where people have built a home
+Dialogue: 0,0:26:54.18,0:26:55.96,Default,,0,0,0,,at the edge of Europe
+Dialogue: 0,0:26:55.96,0:26:58.43,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:26:58.43,0:26:59.82,Default,,0,0,0,,Life Beyond the Limits
