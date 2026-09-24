@@ -54,8 +54,51 @@ on:
         type: boolean
 
 jobs:
-  render:
+  # Decide whether this push is a render request, case-SENSITIVELY. The
+  # expression startsWith() is case-insensitive, so a code commit titled
+  # "Render: ..." used to start a render of project "ffmpeg watchdog; ..."
+  # and fail. This tiny job does the exact match in bash; anything that isn't
+  # exactly "render: <lang>/<slug>" ends here as a success and the render job
+  # is skipped. A typo'd project on the manual form still fails loudly.
+  check:
     if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'render:')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      project: ${{ steps.resolve.outputs.project }}
+      slug: ${{ steps.resolve.outputs.slug }}
+    steps:
+      - name: Resolve project
+        id: resolve
+        env:
+          INPUT_PROJECT: ${{ inputs.project }}
+          HEAD_MESSAGE: ${{ github.event.head_commit.message }}
+        run: |
+          valid='^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$'
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            first=$(printf '%s' "$HEAD_MESSAGE" | head -n1 | sed -E 's/[[:space:]]+$//')
+            cand=""
+            [[ "$first" =~ ^render:[[:space:]]*(.+)$ ]] && cand="${BASH_REMATCH[1]}"
+            if [ -n "$cand" ] && [[ "$cand" =~ $valid ]]; then
+              PROJECT="$cand"
+            else
+              echo "Not a render request: '$first' (expects exactly 'render: <lang>/<slug>'). Nothing to do."
+              exit 0
+            fi
+          else
+            PROJECT="$INPUT_PROJECT"
+            if ! [[ "$PROJECT" =~ $valid ]]; then
+              echo "::error::project must look like <lang>/<slug>, e.g. en/greenland1 (got '$PROJECT')"
+              exit 1
+            fi
+          fi
+          echo "Rendering project: $PROJECT"
+          echo "project=$PROJECT" >> "$GITHUB_OUTPUT"
+          echo "slug=${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
+
+  render:
+    needs: check
+    if: needs.check.outputs.project != ''
     runs-on: ubuntu-latest
     timeout-minutes: 360
     # contents: write -> publish the finished video as a GitHub Release.
@@ -67,28 +110,9 @@ jobs:
     env:
       PYTHONUNBUFFERED: "1"
       PYTHONUTF8: "1"
+      PROJECT: ${{ needs.check.outputs.project }}
 
     steps:
-      - name: Resolve project
-        id: inputs
-        env:
-          INPUT_PROJECT: ${{ inputs.project }}
-          HEAD_MESSAGE: ${{ github.event.head_commit.message }}
-        run: |
-          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
-            # first line of "render: en/slug" -> "en/slug"
-            PROJECT=$(echo "$HEAD_MESSAGE" | head -n1 | sed -E 's/^render:[[:space:]]*//; s/[[:space:]]+$//')
-          else
-            PROJECT="$INPUT_PROJECT"
-          fi
-          if ! [[ "$PROJECT" =~ ^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$ ]]; then
-            echo "::error::project must look like <lang>/<slug>, e.g. en/greenland1 (got '$PROJECT')"
-            exit 1
-          fi
-          echo "Rendering project: $PROJECT"
-          echo "PROJECT=$PROJECT" >> "$GITHUB_ENV"
-          echo "slug=${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
-
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -152,7 +176,7 @@ jobs:
       - name: Summarize
         if: success()
         env:
-          SLUG: ${{ steps.inputs.outputs.slug }}
+          SLUG: ${{ needs.check.outputs.slug }}
         run: |
           out="projects/$PROJECT/output.mp4"
           size=$(du -h "$out" | cut -f1)
@@ -178,7 +202,7 @@ jobs:
         if: success()
         env:
           GH_TOKEN: ${{ github.token }}
-          SLUG: ${{ steps.inputs.outputs.slug }}
+          SLUG: ${{ needs.check.outputs.slug }}
         run: |
           dir="projects/$PROJECT"
           tag="video-${SLUG}-${GITHUB_RUN_NUMBER}"
@@ -199,7 +223,7 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: render-log-${{ steps.inputs.outputs.slug }}
+          name: render-log-${{ needs.check.outputs.slug }}
           path: |
             render.log
             projects/${{ env.PROJECT }}/render_report.json
