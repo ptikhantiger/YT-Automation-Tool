@@ -64,8 +64,10 @@ the encode — free, unlimited minutes on a public repo, no API keys needed:
    shows you the link to the Actions run. (By hand, the same thing is
    `git add projects/en/myvideo && git commit -m "render: en/myvideo" && git push`
    — that commit message is the trigger.)
-3. 20–40 minutes later (45–90 for a 30-minute video), download `output.mp4`
-   from the run's **Artifacts** box (kept 30 days).
+3. 20–40 minutes later (1.5–2.5 hours for a 30-minute video), download
+   `output.mp4` from the repo's **Releases** (right sidebar) →
+   `video-en-myvideo-<run number>`. Releases, not Artifacts: private repos only
+   get 500 MB of artifact storage, and release files can be 2 GB each.
 
 The workflow is [`.github/workflows/render.yml`](.github/workflows/render.yml).
 It runs `step3_render_video.py --non-interactive --no-4k`. To change quality
@@ -105,7 +107,7 @@ own tab. (Not running? `bash .devcontainer/start.sh` in the terminal.)
 When the last scene is picked, the picker offers **☁ Render on GitHub
 (free)** — exactly as on the laptop. One click pushes the picks and starts
 the render; the page shows the link to the run. Download `output.mp4` from
-its Artifacts when it finishes. "Render here instead" would encode on the
+the repo's Releases when it finishes. "Render here instead" would encode on the
 2-core codespace, which is slow and spends your free hours — avoid it.
 
 Notes:

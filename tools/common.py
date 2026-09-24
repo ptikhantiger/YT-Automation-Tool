@@ -1306,11 +1306,25 @@ def load_json(path):
         return json.load(f)
 
 
-def run_ffmpeg(args, description=""):
+class FFmpegTimeout(RuntimeError):
+    """ffmpeg ran past its watchdog and was killed."""
+
+
+def run_ffmpeg(args, description="", timeout=None):
     """Run ffmpeg with the given argument list (excluding the 'ffmpeg'
-    binary name itself), raising with captured stderr on failure."""
+    binary name itself), raising with captured stderr on failure.
+
+    `timeout` (seconds) is a watchdog: a wedged ffmpeg -- seen on a CI runner
+    stuck on one scene for 30+ minutes with no output -- is killed and
+    FFmpegTimeout raised, instead of silently eating the job's 6 hours."""
     cmd = ["ffmpeg", "-y", "-hide_banner", "-loglevel", "error"] + args
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
+    except subprocess.TimeoutExpired:
+        raise FFmpegTimeout(
+            f"ffmpeg timed out after {timeout:.0f}s"
+            f"{' (' + description + ')' if description else ''} -- killed."
+        )
     if result.returncode != 0:
         raise RuntimeError(
             f"ffmpeg failed{' (' + description + ')' if description else ''}:\n"

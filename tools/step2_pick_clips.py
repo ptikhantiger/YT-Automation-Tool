@@ -3566,7 +3566,7 @@ PAGE_HTML = r"""<!doctype html>
         <b>Render now</b> whenever you're ready.</span>
       <span id="arcloud" style="display:none"> Click <b>Render on GitHub</b>: your
         picks are pushed and GitHub Actions renders the video for free on its own
-        servers -- download <b>output.mp4</b> from that run's Artifacts box when it's
+        servers -- download <b>output.mp4</b> from the repo's <b>Releases</b> when it's
         done. Nothing is encoded on this machine. (Same thing by hand:
         <code id="arcloudcmd"></code>)
         <b>Render here instead</b> encodes on this machine, right now.</span>
@@ -4707,7 +4707,8 @@ async function cloudRender(statusEl) {
   $('arcloudbtn').disabled = false; updateCloudBar();
   if (d.ok) {
     st.innerHTML = `<b>Pushed (${esc(d.commit)} on ${esc(d.branch)}) -- GitHub is rendering now.</b><br>` +
-      `Watch it, and download <b>output.mp4</b> from the run's Artifacts box when it finishes ` +
+      `Watch it; when it finishes, download <b>output.mp4</b> from the repo's <b>Releases</b> ` +
+      `(right sidebar on the repo page) ` +
       `(a 30-minute video takes roughly 45-90 minutes):<br>` +
       `<a href="${esc(d.actions_url)}" target="_blank" rel="noopener">${esc(d.actions_url)}</a><br><br>` +
       `You can close this tab. To render again after changing picks, just click the button again.`;

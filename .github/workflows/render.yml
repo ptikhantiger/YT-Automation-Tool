@@ -58,6 +58,12 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'render:')
     runs-on: ubuntu-latest
     timeout-minutes: 360
+    # contents: write -> publish the finished video as a GitHub Release.
+    # Release assets (up to 2 GB each) don't count toward the 500 MB Actions
+    # storage a private repo gets on the free plan -- a 27-minute video is
+    # ~1.2 GB and would fail an artifact upload after hours of rendering.
+    permissions:
+      contents: write
     env:
       PYTHONUNBUFFERED: "1"
       PYTHONUTF8: "1"
@@ -145,6 +151,8 @@ jobs:
 
       - name: Summarize
         if: success()
+        env:
+          SLUG: ${{ steps.inputs.outputs.slug }}
         run: |
           out="projects/$PROJECT/output.mp4"
           size=$(du -h "$out" | cut -f1)
@@ -153,7 +161,8 @@ jobs:
             echo "## Rendered \`$PROJECT\`"
             echo
             echo "- **output.mp4**: $size, $((dur / 60)) min $((dur % 60)) s"
-            echo "- Download it from the **Artifacts** box at the bottom of this page."
+            echo "- Download: **Releases** (repo page, right sidebar) -> \`video-${SLUG}-${GITHUB_RUN_NUMBER}\`"
+            echo "  or <${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/video-${SLUG}-${GITHUB_RUN_NUMBER}>"
             if [ -f "projects/$PROJECT/credits.txt" ]; then
               echo
               echo "<details><summary>credits.txt</summary>"
@@ -165,18 +174,26 @@ jobs:
             fi
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Upload output.mp4
+      - name: Publish output.mp4 as a release
         if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: video-${{ steps.inputs.outputs.slug }}
-          path: |
-            projects/${{ env.PROJECT }}/output.mp4
-            projects/${{ env.PROJECT }}/credits.txt
-            projects/${{ env.PROJECT }}/render_report.json
-          if-no-files-found: error
-          retention-days: 30
-          compression-level: 0
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SLUG: ${{ steps.inputs.outputs.slug }}
+        run: |
+          dir="projects/$PROJECT"
+          tag="video-${SLUG}-${GITHUB_RUN_NUMBER}"
+          files=("$dir/output.mp4")
+          [ -f "$dir/credits.txt" ] && files+=("$dir/credits.txt")
+          [ -f "$dir/render_report.json" ] && files+=("$dir/render_report.json")
+          notes="Rendered from ${GITHUB_SHA::7} by run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          if [ -f "$dir/credits.txt" ]; then
+            notes="$notes"$'\n\n'"Credits for the description:"$'\n\n```\n'"$(cat "$dir/credits.txt")"$'\n```'
+          fi
+          gh release create "$tag" "${files[@]}" \
+            --target "$GITHUB_SHA" \
+            --title "$PROJECT (run $GITHUB_RUN_NUMBER)" \
+            --notes "$notes"
+          echo "Published: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/$tag"
 
       - name: Upload render log on failure
         if: failure()

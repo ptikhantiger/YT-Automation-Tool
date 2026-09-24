@@ -71,6 +71,7 @@ import sys
 from pathlib import Path
 
 from common import (
+    FFmpegTimeout,
     build_duck_envelope,
     concat_audio_files,
     DownloadError,
@@ -198,6 +199,14 @@ def fit_strategy(source_duration, needed):
     return 0.0, f"loop x{needed / source_duration:.1f} ({source_duration:.1f}s source)"
 
 
+def _segment_timeout(n_frames, fps):
+    """Watchdog for one segment render. A few seconds of 1080p at
+    `-preset veryfast` takes seconds even on a 2-core runner, so this is
+    generous (60x realtime, 4 minutes minimum) and only ever fires on a real
+    hang."""
+    return max(240.0, (n_frames / max(fps, 1)) * 60.0)
+
+
 def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H,
                    trim_start=0.0):
     """Render clip_path as exactly `n_frames` frames of CFR `fps` video at
@@ -244,7 +253,23 @@ def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OU
         "-pix_fmt", "yuv420p",
         str(out_path),
     ]
-    run_ffmpeg(args, description=f"rendering segment for {clip_path.name}")
+    timeout = _segment_timeout(n_frames, fps)
+    try:
+        run_ffmpeg(args, description=f"rendering segment for {clip_path.name}", timeout=timeout)
+        return
+    except FFmpegTimeout as e:
+        print(f"    ! {e} Retrying {clip_path.name} without -stream_loop "
+              f"(last frame held instead of looping).", flush=True)
+    # Fallback that cannot loop forever: no -stream_loop; a source shorter
+    # than the slot holds its last frame (tpad) until -frames:v is reached.
+    fb_vf = vf + ",tpad=stop_mode=clone:stop=-1"
+    fb = (["-ss", f"{trim_start:.3f}"] if trim_start > 0.01 else []) + [
+        "-i", str(clip_path), "-an", "-vf", fb_vf,
+        "-frames:v", str(int(n_frames)), "-fps_mode", "cfr",
+        "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-pix_fmt", "yuv420p",
+        str(out_path),
+    ]
+    run_ffmpeg(fb, description=f"rendering segment for {clip_path.name} (fallback)", timeout=timeout)
 
 
 def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H):
@@ -280,7 +305,8 @@ def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, he
         "-pix_fmt", "yuv420p",
         str(out_path),
     ]
-    run_ffmpeg(args, description=f"rendering image segment for {image_path.name}")
+    run_ffmpeg(args, description=f"rendering image segment for {image_path.name}",
+               timeout=_segment_timeout(zoom_frames, fps))
 
 
 def selection_authors(sel):

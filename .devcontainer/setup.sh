@@ -39,7 +39,7 @@ cat <<'EOF'
   Rendering: when every scene has a clip, click "Render on
   GitHub (free)" in the picker -- it pushes the picks and
   GitHub Actions renders the video. Download output.mp4 from
-  that run's Artifacts. (By hand: commit with the message
+  the repo's Releases. (By hand: commit with the message
   "render: en/<slug>" and push -- that message is the trigger.)
 ============================================================
 EOF

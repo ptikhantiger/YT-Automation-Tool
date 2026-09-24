@@ -36,9 +36,14 @@ unless it says otherwise.
    in that top bar. It commits, pulls, pushes, and shows a link to the run.
 7. Open the link (Actions page). The run is called `render: en/myvideo`.
    Rough time: 2–3 minutes per minute of video (a 30-min video ≈ 60–75 min).
-8. Green ✓ → click the run → **Artifacts** (bottom) → `video-en-myvideo`.
-   The zip has `output.mp4`, `credits.txt` (paste into the description),
-   `render_report.json`.
+8. Green ✓ → the video is published as a **Release**: repo page → right
+   sidebar **Releases** → `video-en-myvideo-<run number>` → download
+   `output.mp4`. Also there: `credits.txt` (paste into the description) and
+   `render_report.json`. The run's summary page links straight to it.
+   (Releases, not Artifacts: the repo is private, and private repos only get
+   500 MB of artifact storage — a 27-minute video is ~1.2 GB. Release files
+   can be up to 2 GB each and don't count against that. Delete old releases
+   you've already downloaded to keep the list tidy.)
 9. Close the tab. The codespace stops itself after 30 idle minutes.
 
 **You never push manually.** The Render button is the only "push".
@@ -247,6 +252,15 @@ scene is shown; pick a different clip, click Render again.
 **`is not in the repository -- run 'git add ...'`** → the project files were
 never pushed. Click Render again, or push by hand (section 3).
 
+**The log stops moving for a long time on one scene** (e.g. `[176/218]`
+is the last line for 20+ minutes). First reload the run page — GitHub's live
+log sometimes just stops updating while the job keeps going. If it is truly
+stuck: every ffmpeg call now has a watchdog (4 minutes minimum per scene);
+a wedged one is killed and retried without looping, and you'll see a line
+starting with `! ffmpeg timed out` in the log. If a run from before that fix
+is stuck, **Cancel workflow** (top right of the run page) and start it again
+(section 3: "Re-render, nothing changed").
+
 **Timeout after 6 hours** → the job limit. Only happens on very long 4K renders;
 use the website form with `allow_4k` off and `preset` = `veryfast`.
 
@@ -390,7 +404,7 @@ on the 2-core machine, 15 GB storage. Renders on Actions are unlimited (public r
 
 Everything is a web page behind your GitHub login, so it works in a mobile
 browser. Turn on **Desktop site**. Waking the codespace, Step 0 with a
-`--yt-link`, Step 1, Auto-match, Render on GitHub, and downloading the artifact
+`--yt-link`, Step 1, Auto-match, Render on GitHub, and downloading the release
 are all fine on a phone. Picking clips by hand is cramped; use Auto-match plus
 the **Review picked clips** page.
 
