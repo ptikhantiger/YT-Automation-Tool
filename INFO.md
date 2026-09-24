@@ -66,6 +66,59 @@ cat /tmp/ytat/dashboard.log
 Look for a `[FAIL]` line. Typical one: `Pexels (stock clips) -- missing` →
 the `PEXELS_API_KEY` secret isn't visible → see section 6.
 
+### The Dashboard URL shows "HTTP ERROR 404"
+
+Different from 502: something **did** answer, so either the wrong server has
+port 8765 or GitHub's proxy is refusing the tab. Find out which — is the app
+itself healthy?
+
+```bash
+curl -s -o /dev/null -w "local: %{http_code}\n" http://127.0.0.1:8765/
+ps aux | grep -E "server\.py|step2_pick|launch\.py" | grep -v grep
+```
+
+- **`local: 200`** — the app is fine, it's the browser/proxy. The tab isn't
+  authenticated to that private port (different Chrome profile, stale
+  cookie, or a pasted URL). Open it from the **PORTS** tab instead of pasting
+  the address, in the same browser profile you're signed into GitHub with.
+  Still 404? Right-click the Dashboard row → **Port Visibility → Public**,
+  then reload.
+- **`local: 404`** — the process on 8765 isn't the dashboard (the `ps` output
+  names it; usually a picker that grabbed the port). Do the full restart
+  below.
+- **connection refused / 000** — nothing is listening. Same restart.
+
+### Kill everything and restart cleanly
+
+The recipe for any "wrong server on the port" / "stuck picker" / "changed
+code" situation:
+
+```bash
+# 1. what's running
+ps aux | grep -E "server\.py|step2_pick|step_music|launch\.py" | grep -v grep
+
+# 2. stop all of it (no output = nothing was running, fine)
+pkill -f webui/server.py; pkill -f step2_pick_clips.py; pkill -f step_music_picker.py; pkill -f launch.py
+
+# 3. confirm the ports are free
+ss -ltnp 2>/dev/null | grep -E "8765|8000|8010" || echo "ports free"
+
+# 4. if one is still held, kill by port
+fuser -k 8765/tcp; fuser -k 8000/tcp; fuser -k 8010/tcp
+
+# 5. start the dashboard again
+bash .devcontainer/start.sh
+
+# 6. check it answers before opening the browser
+curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/
+```
+
+`200` in step 6 means healthy — open the Dashboard link from the **PORTS**
+tab. Anything else: `cat /tmp/ytat/dashboard.log`.
+
+Killing these never affects a render already running on GitHub Actions, and
+picks already made are saved in `selections.json`.
+
 ### The Ports tab is empty / I deleted the ports
 
 Restart the codespace (section 7) — the ports come back automatically.
@@ -88,6 +141,19 @@ pkill -f webui/server.py; pkill -f launch.py; bash .devcontainer/start.sh
 ```
 
 Then reload the dashboard tab. Running renders on GitHub are not affected.
+(See "Kill everything and restart cleanly" above for the thorough version.)
+
+### A project pushed from somewhere else isn't in the codespace
+
+The codespace pulls from GitHub **only when it boots**. A project pushed
+while it is already running will not appear on its own.
+
+```bash
+git pull --rebase --autostash origin main && ls projects/en
+```
+
+Or click **⟳ Sync code** in the dashboard header. In the Explorer panel, hit
+the refresh icon if the folder still doesn't show.
 
 ---
 
@@ -290,6 +356,11 @@ on the 2-core machine, 15 GB storage. Renders on Actions are unlimited (public r
 
 ## 8. Projects: files, safety, cleanup
 
+- **Name projects with letters, digits, `-` and `_` only** — no spaces. The
+  render workflow rejects anything else (`en/faroe` renders, `en/faroe Island`
+  does not). Creating a project means creating a **folder** with a
+  `script.txt` inside it; a file created straight in `projects/en/` from the
+  GitHub website is not a project and is just clutter.
 - A project is `projects/<lang>/<slug>/`. The repo tracks only the small files
   (`script.txt`, `audio.mp3`, `scenes.json`, `selections.json`, `captions.ass`,
   `timeline.json`, `word_timings.json`, `render.json`, `bg*.mp3`, local uploads
@@ -330,7 +401,12 @@ the **Review picked clips** page.
 | Situation | Command (codespace terminal) |
 |---|---|
 | Dashboard not running / 502 | `bash .devcontainer/start.sh` |
+| Dashboard 404 — is the app or the proxy at fault? | `curl -s -o /dev/null -w "%{http_code}\n" http://127.0.0.1:8765/` |
+| What's running on the pipeline ports | `ps aux \| grep -E "server\.py\|step2_pick\|launch\.py" \| grep -v grep` |
+| Kill every pipeline server | `pkill -f webui/server.py; pkill -f step2_pick_clips.py; pkill -f step_music_picker.py; pkill -f launch.py` |
+| Free a stuck port | `fuser -k 8765/tcp` (or 8000 / 8010) |
 | Restart the dashboard | `pkill -f webui/server.py; pkill -f launch.py; bash .devcontainer/start.sh` |
+| New project not visible in the codespace | `git pull --rebase --autostash origin main && ls projects/en` |
 | Dashboard log | `cat /tmp/ytat/dashboard.log` |
 | Get latest code | `git pull --rebase origin main` |
 | Render commit stuck in codespace | `git pull --rebase origin main && git push` |
