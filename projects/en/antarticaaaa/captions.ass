@@ -1,0 +1,625 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.46,Default,,0,0,0,,Imagine waking up in a place where stepping
+Dialogue: 0,0:00:02.46,0:00:05.46,Default,,0,0,0,,outside without protection could become dangerous
+Dialogue: 0,0:00:05.46,0:00:06.85,Default,,0,0,0,,within minutes
+Dialogue: 0,0:00:06.85,0:00:08.35,Default,,0,0,0,,There are no forests
+Dialogue: 0,0:00:08.35,0:00:09.53,Default,,0,0,0,,No cities
+Dialogue: 0,0:00:09.53,0:00:12.38,Default,,0,0,0,,No ordinary roads stretching from one town
+Dialogue: 0,0:00:12.38,0:00:13.50,Default,,0,0,0,,to another
+Dialogue: 0,0:00:13.50,0:00:16.22,Default,,0,0,0,,For months the sun can disappear below the
+Dialogue: 0,0:00:16.22,0:00:17.29,Default,,0,0,0,,horizon
+Dialogue: 0,0:00:17.29,0:00:20.21,Default,,0,0,0,,Temperatures can fall to levels found nowhere
+Dialogue: 0,0:00:20.21,0:00:23.25,Default,,0,0,0,,else on Earth while powerful winds turn an
+Dialogue: 0,0:00:23.25,0:00:26.44,Default,,0,0,0,,ordinary walk between buildings into a serious
+Dialogue: 0,0:00:26.44,0:00:27.33,Default,,0,0,0,,journey
+Dialogue: 0,0:00:27.33,0:00:29.29,Default,,0,0,0,,And yet people live here
+Dialogue: 0,0:00:29.29,0:00:30.39,Default,,0,0,0,,They work here
+Dialogue: 0,0:00:30.39,0:00:34.35,Default,,0,0,0,,They cook meals repair machines conduct experiments
+Dialogue: 0,0:00:34.35,0:00:37.56,Default,,0,0,0,,exercise celebrate birthdays and even build
+Dialogue: 0,0:00:37.56,0:00:38.82,Default,,0,0,0,,communities
+Dialogue: 0,0:00:38.82,0:00:41.81,Default,,0,0,0,,But Antarctica is not a normal place to live
+Dialogue: 0,0:00:41.81,0:00:45.15,Default,,0,0,0,,It is the coldest driest windiest continent
+Dialogue: 0,0:00:45.15,0:00:46.24,Default,,0,0,0,,on Earth
+Dialogue: 0,0:00:46.24,0:00:48.67,Default,,0,0,0,,So how do people actually survive here
+Dialogue: 0,0:00:48.67,0:00:50.04,Default,,0,0,0,,How do they get food
+Dialogue: 0,0:00:50.04,0:00:51.85,Default,,0,0,0,,Where does their water come from
+Dialogue: 0,0:00:51.85,0:00:53.94,Default,,0,0,0,,What happens when someone becomes seriously
+Dialogue: 0,0:00:53.94,0:00:54.68,Default,,0,0,0,,ill
+Dialogue: 0,0:00:54.68,0:00:57.01,Default,,0,0,0,,And what is it like to spend an entire winter
+Dialogue: 0,0:00:57.01,0:00:59.31,Default,,0,0,0,,cut off from the rest of humanity
+Dialogue: 0,0:00:59.31,0:01:01.26,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:01.26,0:01:03.71,Default,,0,0,0,,And today we are going to Antarctica
+Dialogue: 0,0:01:03.71,0:01:06.46,Default,,0,0,0,,THE CONTINENT AT THE BOTTOM OF THE WORLD
+Dialogue: 0,0:01:06.46,0:01:09.85,Default,,0,0,0,,Antarctica sits around the South Pole surrounded
+Dialogue: 0,0:01:09.85,0:01:11.35,Default,,0,0,0,,by the Southern Ocean
+Dialogue: 0,0:01:11.35,0:01:12.74,Default,,0,0,0,,It is enormous
+Dialogue: 0,0:01:12.74,0:01:15.28,Default,,0,0,0,,The continent is larger than the United States
+Dialogue: 0,0:01:15.28,0:01:18.90,Default,,0,0,0,,and Mexico combined yet almost all of its surface
+Dialogue: 0,0:01:18.90,0:01:20.71,Default,,0,0,0,,is covered by ice
+Dialogue: 0,0:01:20.71,0:01:23.31,Default,,0,0,0,,That ice contains an extraordinary amount of
+Dialogue: 0,0:01:23.31,0:01:25.00,Default,,0,0,0,,Earth's fresh water
+Dialogue: 0,0:01:25.00,0:01:27.53,Default,,0,0,0,,But there is a strange contradiction here
+Dialogue: 0,0:01:27.53,0:01:30.97,Default,,0,0,0,,Antarctica contains so much frozen water yet
+Dialogue: 0,0:01:30.97,0:01:33.96,Default,,0,0,0,,much of the continent is technically a desert
+Dialogue: 0,0:01:33.96,0:01:34.74,Default,,0,0,0,,Why
+Dialogue: 0,0:01:34.74,0:01:37.89,Default,,0,0,0,,Because a desert is defined by precipitation
+Dialogue: 0,0:01:37.89,0:01:39.15,Default,,0,0,0,,not temperature
+Dialogue: 0,0:01:39.15,0:01:41.89,Default,,0,0,0,,The interior of Antarctica receives extremely
+Dialogue: 0,0:01:41.89,0:01:43.29,Default,,0,0,0,,little snowfall
+Dialogue: 0,0:01:43.29,0:01:47.00,Default,,0,0,0,,Some regions are so dry that measurable precipitation
+Dialogue: 0,0:01:47.00,0:01:50.04,Default,,0,0,0,,is almost nonexistent for extraordinarily long
+Dialogue: 0,0:01:50.04,0:01:51.24,Default,,0,0,0,,periods
+Dialogue: 0,0:01:51.24,0:01:53.67,Default,,0,0,0,,The landscape can look like an endless white
+Dialogue: 0,0:01:53.67,0:01:57.07,Default,,0,0,0,,ocean but underneath that surface is a continent
+Dialogue: 0,0:01:57.07,0:02:01.29,Default,,0,0,0,,of rock mountains valleys and ancient geological
+Dialogue: 0,0:02:01.29,0:02:02.60,Default,,0,0,0,,formations
+Dialogue: 0,0:02:02.60,0:02:05.54,Default,,0,0,0,,In some places the ice is several kilometers
+Dialogue: 0,0:02:05.54,0:02:06.46,Default,,0,0,0,,thick
+Dialogue: 0,0:02:06.46,0:02:09.15,Default,,0,0,0,,And in others exposed rock breaks through the
+Dialogue: 0,0:02:09.15,0:02:10.68,Default,,0,0,0,,frozen landscape
+Dialogue: 0,0:02:10.68,0:02:12.86,Default,,0,0,0,,This is the environment humans have chosen
+Dialogue: 0,0:02:12.86,0:02:13.88,Default,,0,0,0,,to enter
+Dialogue: 0,0:02:13.88,0:02:16.06,Default,,0,0,0,,But they did not come here to build ordinary
+Dialogue: 0,0:02:16.06,0:02:17.11,Default,,0,0,0,,cities
+Dialogue: 0,0:02:17.11,0:02:19.53,Default,,0,0,0,,They came for something much more specific
+Dialogue: 0,0:02:19.53,0:02:20.58,Default,,0,0,0,,Science
+Dialogue: 0,0:02:20.58,0:02:22.96,Default,,0,0,0,,LIFE IN THE RESEARCH STATIONS
+Dialogue: 0,0:02:22.96,0:02:25.43,Default,,0,0,0,,Most people living in Antarctica are connected
+Dialogue: 0,0:02:25.43,0:02:28.47,Default,,0,0,0,,to scientific research or the enormous support
+Dialogue: 0,0:02:28.47,0:02:31.81,Default,,0,0,0,,system required to make that research possible
+Dialogue: 0,0:02:31.81,0:02:34.07,Default,,0,0,0,,There are research stations scattered across
+Dialogue: 0,0:02:34.07,0:02:36.78,Default,,0,0,0,,the continent and nearby islands
+Dialogue: 0,0:02:36.78,0:02:39.07,Default,,0,0,0,,Some are occupied throughout the year
+Dialogue: 0,0:02:39.07,0:02:41.96,Default,,0,0,0,,Others operate mainly during the warmer Antarctic
+Dialogue: 0,0:02:41.96,0:02:42.90,Default,,0,0,0,,summer
+Dialogue: 0,0:02:42.90,0:02:46.03,Default,,0,0,0,,From the outside these stations can look almost
+Dialogue: 0,0:02:46.03,0:02:47.08,Default,,0,0,0,,unreal
+Dialogue: 0,0:02:47.08,0:02:50.01,Default,,0,0,0,,Buildings surrounded by nothing but ice
+Dialogue: 0,0:02:50.01,0:02:53.19,Default,,0,0,0,,Snow vehicles parked beside laboratories
+Dialogue: 0,0:02:53.19,0:02:56.49,Default,,0,0,0,,Fuel tanks standing against a white horizon
+Dialogue: 0,0:02:56.49,0:02:59.00,Default,,0,0,0,,Communications equipment pointing toward the
+Dialogue: 0,0:02:59.00,0:02:59.96,Default,,0,0,0,,sky
+Dialogue: 0,0:02:59.96,0:03:04.01,Default,,0,0,0,,Inside however the environment can feel surprisingly
+Dialogue: 0,0:03:04.01,0:03:05.11,Default,,0,0,0,,familiar
+Dialogue: 0,0:03:05.11,0:03:06.43,Default,,0,0,0,,There are kitchens
+Dialogue: 0,0:03:06.43,0:03:07.46,Default,,0,0,0,,Bedrooms
+Dialogue: 0,0:03:07.46,0:03:08.56,Default,,0,0,0,,Offices
+Dialogue: 0,0:03:08.56,0:03:10.18,Default,,0,0,0,,Medical facilities
+Dialogue: 0,0:03:10.18,0:03:11.28,Default,,0,0,0,,Workshops
+Dialogue: 0,0:03:11.28,0:03:12.79,Default,,0,0,0,,Recreation rooms
+Dialogue: 0,0:03:12.79,0:03:14.86,Default,,0,0,0,,And places where people simply sit down and
+Dialogue: 0,0:03:14.86,0:03:15.83,Default,,0,0,0,,talk
+Dialogue: 0,0:03:15.83,0:03:18.06,Default,,0,0,0,,That normality is important
+Dialogue: 0,0:03:18.06,0:03:20.40,Default,,0,0,0,,Because the greatest challenge in Antarctica
+Dialogue: 0,0:03:20.40,0:03:22.33,Default,,0,0,0,,isn't simply staying warm
+Dialogue: 0,0:03:22.33,0:03:25.07,Default,,0,0,0,,It is creating a functioning human environment
+Dialogue: 0,0:03:25.07,0:03:27.58,Default,,0,0,0,,in a place that provides almost none of the
+Dialogue: 0,0:03:27.58,0:03:30.04,Default,,0,0,0,,things humans normally depend on
+Dialogue: 0,0:03:30.04,0:03:32.57,Default,,0,0,0,,THE FIRST CHALLENGE STAYING WARM
+Dialogue: 0,0:03:32.57,0:03:35.25,Default,,0,0,0,,In most parts of the world cold weather is
+Dialogue: 0,0:03:35.25,0:03:36.86,Default,,0,0,0,,an inconvenience
+Dialogue: 0,0:03:36.86,0:03:40.50,Default,,0,0,0,,In Antarctica cold controls almost everything
+Dialogue: 0,0:03:40.50,0:03:43.31,Default,,0,0,0,,Buildings must be designed to retain heat
+Dialogue: 0,0:03:43.31,0:03:46.00,Default,,0,0,0,,Doors and entrances have to minimize the amount
+Dialogue: 0,0:03:46.00,0:03:47.75,Default,,0,0,0,,of warm air escaping
+Dialogue: 0,0:03:47.75,0:03:50.25,Default,,0,0,0,,Pipes and machinery must be protected from
+Dialogue: 0,0:03:50.25,0:03:51.22,Default,,0,0,0,,freezing
+Dialogue: 0,0:03:51.22,0:03:53.92,Default,,0,0,0,,Vehicles require special preparation
+Dialogue: 0,0:03:53.92,0:03:56.92,Default,,0,0,0,,Even small mistakes can become dangerous
+Dialogue: 0,0:03:56.92,0:04:00.06,Default,,0,0,0,,The human body is constantly producing heat
+Dialogue: 0,0:04:00.06,0:04:02.86,Default,,0,0,0,,but extreme cold can remove that heat much
+Dialogue: 0,0:04:02.86,0:04:05.40,Default,,0,0,0,,faster than the body can replace it
+Dialogue: 0,0:04:05.40,0:04:08.15,Default,,0,0,0,,That is why Antarctic clothing is not simply
+Dialogue: 0,0:04:08.15,0:04:10.24,Default,,0,0,0,,about wearing a thick jacket
+Dialogue: 0,0:04:10.24,0:04:12.90,Default,,0,0,0,,People use multiple layers designed for different
+Dialogue: 0,0:04:12.90,0:04:14.08,Default,,0,0,0,,purposes
+Dialogue: 0,0:04:14.08,0:04:16.49,Default,,0,0,0,,The inner layer manages moisture
+Dialogue: 0,0:04:16.49,0:04:18.88,Default,,0,0,0,,The middle layers provide insulation
+Dialogue: 0,0:04:18.88,0:04:22.26,Default,,0,0,0,,The outer layer protects against wind and snow
+Dialogue: 0,0:04:22.26,0:04:25.36,Default,,0,0,0,,When conditions become severe exposed skin
+Dialogue: 0,0:04:25.36,0:04:27.85,Default,,0,0,0,,can become vulnerable very quickly
+Dialogue: 0,0:04:27.85,0:04:29.56,Default,,0,0,0,,And then there is the wind
+Dialogue: 0,0:04:29.56,0:04:32.30,Default,,0,0,0,,A temperature that already feels extreme can
+Dialogue: 0,0:04:32.30,0:04:34.99,Default,,0,0,0,,become much more dangerous when strong winds
+Dialogue: 0,0:04:34.99,0:04:36.95,Default,,0,0,0,,strip heat from the body
+Dialogue: 0,0:04:36.95,0:04:40.67,Default,,0,0,0,,During major storms visibility can collapse
+Dialogue: 0,0:04:40.67,0:04:42.78,Default,,0,0,0,,The horizon disappears
+Dialogue: 0,0:04:42.78,0:04:45.35,Default,,0,0,0,,Snow moves through the air like smoke
+Dialogue: 0,0:04:45.35,0:04:47.81,Default,,0,0,0,,Buildings that seem close can become difficult
+Dialogue: 0,0:04:47.81,0:04:48.99,Default,,0,0,0,,to locate
+Dialogue: 0,0:04:48.99,0:04:52.18,Default,,0,0,0,,At some stations ropes and marked routes help
+Dialogue: 0,0:04:52.18,0:04:55.16,Default,,0,0,0,,workers navigate between buildings when visibility
+Dialogue: 0,0:04:55.16,0:04:57.23,Default,,0,0,0,,becomes dangerously poor
+Dialogue: 0,0:04:57.23,0:04:59.63,Default,,0,0,0,,In Antarctica knowing where you are can be
+Dialogue: 0,0:04:59.63,0:05:02.17,Default,,0,0,0,,just as important as staying warm
+Dialogue: 0,0:05:02.17,0:05:03.56,Default,,0,0,0,,THE WATER PROBLEM
+Dialogue: 0,0:05:03.56,0:05:06.16,Default,,0,0,0,,Now comes one of the strangest problems
+Dialogue: 0,0:05:06.16,0:05:08.41,Default,,0,0,0,,How do you get drinking water in a continent
+Dialogue: 0,0:05:08.41,0:05:09.98,Default,,0,0,0,,covered by ice
+Dialogue: 0,0:05:09.98,0:05:11.91,Default,,0,0,0,,The answer depends on the station
+Dialogue: 0,0:05:11.91,0:05:14.43,Default,,0,0,0,,Some facilities process seawater
+Dialogue: 0,0:05:14.43,0:05:17.27,Default,,0,0,0,,Others melt snow or ice and then treat the
+Dialogue: 0,0:05:17.27,0:05:18.77,Default,,0,0,0,,resulting water
+Dialogue: 0,0:05:18.77,0:05:21.21,Default,,0,0,0,,But melting ice requires energy
+Dialogue: 0,0:05:21.21,0:05:23.07,Default,,0,0,0,,And energy is precious
+Dialogue: 0,0:05:23.07,0:05:26.09,Default,,0,0,0,,A research station needs power for heating
+Dialogue: 0,0:05:26.09,0:05:30.23,Default,,0,0,0,,lighting laboratories communications vehicles
+Dialogue: 0,0:05:30.23,0:05:34.32,Default,,0,0,0,,workshops refrigeration water systems and countless
+Dialogue: 0,0:05:34.32,0:05:35.88,Default,,0,0,0,,other operations
+Dialogue: 0,0:05:35.88,0:05:38.21,Default,,0,0,0,,So water is not something people simply turn
+Dialogue: 0,0:05:38.21,0:05:40.34,Default,,0,0,0,,on from an unlimited supply
+Dialogue: 0,0:05:40.34,0:05:42.53,Default,,0,0,0,,It is part of an engineered system
+Dialogue: 0,0:05:42.53,0:05:45.66,Default,,0,0,0,,Wastewater also has to be carefully managed
+Dialogue: 0,0:05:45.66,0:05:47.84,Default,,0,0,0,,Antarctica is not a place where people can
+Dialogue: 0,0:05:47.84,0:05:51.21,Default,,0,0,0,,simply throw waste outside and walk away
+Dialogue: 0,0:05:51.21,0:05:54.05,Default,,0,0,0,,The environment is extremely sensitive
+Dialogue: 0,0:05:54.05,0:05:56.34,Default,,0,0,0,,That means modern Antarctic operations are
+Dialogue: 0,0:05:56.34,0:05:59.78,Default,,0,0,0,,designed around reducing their impact and where
+Dialogue: 0,0:05:59.78,0:06:00.85,Default,,0,0,0,,required
+Dialogue: 0,0:06:00.85,0:06:03.16,Default,,0,0,0,,removing waste from the continent
+Dialogue: 0,0:06:03.16,0:06:05.05,Default,,0,0,0,,FOOD AT THE END OF THE WORLD
+Dialogue: 0,0:06:05.05,0:06:07.66,Default,,0,0,0,,Imagine going grocery shopping when the nearest
+Dialogue: 0,0:06:07.66,0:06:10.81,Default,,0,0,0,,supermarket is thousands of kilometers away
+Dialogue: 0,0:06:10.81,0:06:13.11,Default,,0,0,0,,That is essentially the logistical problem
+Dialogue: 0,0:06:13.11,0:06:15.21,Default,,0,0,0,,Antarctic stations face
+Dialogue: 0,0:06:15.21,0:06:18.31,Default,,0,0,0,,Almost everything needed to support human life
+Dialogue: 0,0:06:18.31,0:06:20.82,Default,,0,0,0,,has to be brought from somewhere else
+Dialogue: 0,0:06:20.82,0:06:21.64,Default,,0,0,0,,Food
+Dialogue: 0,0:06:21.64,0:06:22.46,Default,,0,0,0,,Fuel
+Dialogue: 0,0:06:22.46,0:06:23.96,Default,,0,0,0,,Medical supplies
+Dialogue: 0,0:06:23.96,0:06:25.48,Default,,0,0,0,,Building materials
+Dialogue: 0,0:06:25.48,0:06:26.35,Default,,0,0,0,,Clothing
+Dialogue: 0,0:06:26.35,0:06:27.30,Default,,0,0,0,,Tools
+Dialogue: 0,0:06:27.30,0:06:28.60,Default,,0,0,0,,Machine parts
+Dialogue: 0,0:06:28.60,0:06:30.30,Default,,0,0,0,,Scientific equipment
+Dialogue: 0,0:06:30.30,0:06:32.75,Default,,0,0,0,,Even something as ordinary as a replacement
+Dialogue: 0,0:06:32.75,0:06:36.18,Default,,0,0,0,,component can become a major logistical issue
+Dialogue: 0,0:06:36.18,0:06:38.89,Default,,0,0,0,,During the Antarctic summer supply operations
+Dialogue: 0,0:06:38.89,0:06:40.70,Default,,0,0,0,,become much easier
+Dialogue: 0,0:06:40.70,0:06:43.30,Default,,0,0,0,,Ships can reach coastal areas when sea-ice
+Dialogue: 0,0:06:43.30,0:06:44.82,Default,,0,0,0,,conditions allow it
+Dialogue: 0,0:06:44.82,0:06:47.27,Default,,0,0,0,,Aircraft can operate more frequently
+Dialogue: 0,0:06:47.27,0:06:49.75,Default,,0,0,0,,Cargo is delivered and stored for the months
+Dialogue: 0,0:06:49.75,0:06:50.63,Default,,0,0,0,,ahead
+Dialogue: 0,0:06:50.63,0:06:53.09,Default,,0,0,0,,The timing matters because winter can close
+Dialogue: 0,0:06:53.09,0:06:55.31,Default,,0,0,0,,the door to the outside world
+Dialogue: 0,0:06:55.31,0:06:57.64,Default,,0,0,0,,A forgotten piece of equipment might not be
+Dialogue: 0,0:06:57.64,0:07:00.06,Default,,0,0,0,,replaceable for a very long time
+Dialogue: 0,0:07:00.06,0:07:03.17,Default,,0,0,0,,That is why Antarctic stations plan carefully
+Dialogue: 0,0:07:03.17,0:07:04.48,Default,,0,0,0,,Food is stored
+Dialogue: 0,0:07:04.48,0:07:05.99,Default,,0,0,0,,Fuel is stockpiled
+Dialogue: 0,0:07:05.99,0:07:07.85,Default,,0,0,0,,Equipment is inspected
+Dialogue: 0,0:07:07.85,0:07:10.20,Default,,0,0,0,,Critical spare parts are maintained
+Dialogue: 0,0:07:10.20,0:07:13.05,Default,,0,0,0,,And every major system has to be treated as
+Dialogue: 0,0:07:13.05,0:07:15.53,Default,,0,0,0,,something that could fail at exactly the wrong
+Dialogue: 0,0:07:15.53,0:07:16.43,Default,,0,0,0,,moment
+Dialogue: 0,0:07:16.43,0:07:18.30,Default,,0,0,0,,A TASTE OF NORMAL LIFE
+Dialogue: 0,0:07:18.30,0:07:21.42,Default,,0,0,0,,Despite all this preparation people still need
+Dialogue: 0,0:07:21.42,0:07:24.30,Default,,0,0,0,,something more than calories and shelter
+Dialogue: 0,0:07:24.30,0:07:25.80,Default,,0,0,0,,They need normality
+Dialogue: 0,0:07:25.80,0:07:28.17,Default,,0,0,0,,And this is where Antarctic stations become
+Dialogue: 0,0:07:28.17,0:07:29.92,Default,,0,0,0,,surprisingly human
+Dialogue: 0,0:07:29.92,0:07:31.82,Default,,0,0,0,,People cook meals together
+Dialogue: 0,0:07:31.82,0:07:33.24,Default,,0,0,0,,They watch movies
+Dialogue: 0,0:07:33.24,0:07:34.63,Default,,0,0,0,,They play games
+Dialogue: 0,0:07:34.63,0:07:36.07,Default,,0,0,0,,They exercise
+Dialogue: 0,0:07:36.07,0:07:38.73,Default,,0,0,0,,They celebrate holidays and birthdays
+Dialogue: 0,0:07:38.73,0:07:42.88,Default,,0,0,0,,Some stations have libraries gyms lounges music
+Dialogue: 0,0:07:42.88,0:07:46.93,Default,,0,0,0,,rooms bars or other recreational spaces
+Dialogue: 0,0:07:46.93,0:07:50.17,Default,,0,0,0,,During the summer larger stations can temporarily
+Dialogue: 0,0:07:50.17,0:07:52.32,Default,,0,0,0,,become busy communities
+Dialogue: 0,0:07:52.32,0:07:56.13,Default,,0,0,0,,Scientists work alongside engineers electricians
+Dialogue: 0,0:07:56.13,0:08:00.38,Default,,0,0,0,,mechanics cooks pilots doctors construction
+Dialogue: 0,0:08:00.38,0:08:02.84,Default,,0,0,0,,workers and logistics crews
+Dialogue: 0,0:08:02.84,0:08:04.68,Default,,0,0,0,,Everyone has a different job
+Dialogue: 0,0:08:04.68,0:08:07.77,Default,,0,0,0,,But everyone depends on the same system A scientist
+Dialogue: 0,0:08:07.77,0:08:10.53,Default,,0,0,0,,may be studying atmospheric chemistry
+Dialogue: 0,0:08:10.53,0:08:14.18,Default,,0,0,0,,A mechanic may be keeping a snow vehicle operational
+Dialogue: 0,0:08:14.18,0:08:17.02,Default,,0,0,0,,A cook may be feeding an entire station
+Dialogue: 0,0:08:17.02,0:08:20.45,Default,,0,0,0,,A technician may be maintaining communications
+Dialogue: 0,0:08:20.45,0:08:22.57,Default,,0,0,0,,None of these jobs are secondary
+Dialogue: 0,0:08:22.57,0:08:25.24,Default,,0,0,0,,If one part of the system stops working the
+Dialogue: 0,0:08:25.24,0:08:28.57,Default,,0,0,0,,effects can spread throughout the entire community
+Dialogue: 0,0:08:28.57,0:08:31.39,Default,,0,0,0,,Antarctica turns cooperation from a social
+Dialogue: 0,0:08:31.39,0:08:34.27,Default,,0,0,0,,ideal into a practical necessity
+Dialogue: 0,0:08:34.27,0:08:36.60,Default,,0,0,0,,THE MOST DANGEROUS EMERGENCY
+Dialogue: 0,0:08:36.60,0:08:39.71,Default,,0,0,0,,There is another problem people often underestimate
+Dialogue: 0,0:08:39.71,0:08:40.57,Default,,0,0,0,,Fire
+Dialogue: 0,0:08:40.57,0:08:43.70,Default,,0,0,0,,Antarctica is frozen but a research station
+Dialogue: 0,0:08:43.70,0:08:46.31,Default,,0,0,0,,contains plenty of things that can burn
+Dialogue: 0,0:08:46.31,0:08:47.68,Default,,0,0,0,,Buildings are heated
+Dialogue: 0,0:08:47.68,0:08:48.99,Default,,0,0,0,,Fuel is stored
+Dialogue: 0,0:08:48.99,0:08:52.05,Default,,0,0,0,,Electrical systems operate continuously
+Dialogue: 0,0:08:52.05,0:08:55.18,Default,,0,0,0,,Workshops contain machinery and materials
+Dialogue: 0,0:08:55.18,0:08:57.71,Default,,0,0,0,,And outside assistance may be extremely far
+Dialogue: 0,0:08:57.71,0:08:58.57,Default,,0,0,0,,away
+Dialogue: 0,0:08:58.57,0:09:01.70,Default,,0,0,0,,In an isolated Antarctic station a serious
+Dialogue: 0,0:09:01.70,0:09:04.82,Default,,0,0,0,,fire cannot simply be treated like a normal
+Dialogue: 0,0:09:04.82,0:09:06.46,Default,,0,0,0,,urban emergency
+Dialogue: 0,0:09:06.46,0:09:09.04,Default,,0,0,0,,There may be no neighboring fire department
+Dialogue: 0,0:09:09.04,0:09:10.68,Default,,0,0,0,,No nearby hospital
+Dialogue: 0,0:09:10.68,0:09:12.57,Default,,0,0,0,,No road to another city
+Dialogue: 0,0:09:12.57,0:09:15.09,Default,,0,0,0,,That means stations train their own emergency
+Dialogue: 0,0:09:15.09,0:09:16.17,Default,,0,0,0,,teams
+Dialogue: 0,0:09:16.17,0:09:18.85,Default,,0,0,0,,Fire prevention and emergency drills become
+Dialogue: 0,0:09:18.85,0:09:20.99,Default,,0,0,0,,part of everyday life
+Dialogue: 0,0:09:20.99,0:09:24.22,Default,,0,0,0,,The same principle applies to mechanical failures
+Dialogue: 0,0:09:24.22,0:09:27.49,Default,,0,0,0,,power outages fuel problems and communication
+Dialogue: 0,0:09:27.49,0:09:28.59,Default,,0,0,0,,failures
+Dialogue: 0,0:09:28.59,0:09:31.52,Default,,0,0,0,,In Antarctica preparedness isn't an optional
+Dialogue: 0,0:09:31.52,0:09:32.46,Default,,0,0,0,,extra
+Dialogue: 0,0:09:32.46,0:09:34.14,Default,,0,0,0,,It is part of survival
+Dialogue: 0,0:09:34.14,0:09:35.84,Default,,0,0,0,,WHEN SOMEONE GETS SICK
+Dialogue: 0,0:09:35.84,0:09:39.31,Default,,0,0,0,,Medical care is another extraordinary challenge
+Dialogue: 0,0:09:39.31,0:09:41.93,Default,,0,0,0,,Large research stations may have doctors and
+Dialogue: 0,0:09:41.93,0:09:44.67,Default,,0,0,0,,medical facilities but they cannot provide
+Dialogue: 0,0:09:44.67,0:09:46.36,Default,,0,0,0,,every type of treatment
+Dialogue: 0,0:09:46.36,0:09:49.29,Default,,0,0,0,,If someone suffers a serious injury or develops
+Dialogue: 0,0:09:49.29,0:09:52.31,Default,,0,0,0,,a condition that requires specialized care
+Dialogue: 0,0:09:52.31,0:09:55.45,Default,,0,0,0,,evacuation may eventually be necessary
+Dialogue: 0,0:09:55.45,0:09:58.53,Default,,0,0,0,,But evacuation depends heavily on weather and
+Dialogue: 0,0:09:58.53,0:10:00.31,Default,,0,0,0,,aircraft availability
+Dialogue: 0,0:10:00.31,0:10:02.82,Default,,0,0,0,,During the Antarctic winter conditions can
+Dialogue: 0,0:10:02.82,0:10:06.50,Default,,0,0,0,,make flying extremely difficult or impossible
+Dialogue: 0,0:10:06.50,0:10:08.71,Default,,0,0,0,,This means medical teams sometimes have to
+Dialogue: 0,0:10:08.71,0:10:10.86,Default,,0,0,0,,stabilize patients and wait
+Dialogue: 0,0:10:10.86,0:10:14.11,Default,,0,0,0,,And Antarctic history contains remarkable examples
+Dialogue: 0,0:10:14.11,0:10:17.50,Default,,0,0,0,,of doctors being forced to rely on extraordinary
+Dialogue: 0,0:10:17.50,0:10:19.29,Default,,0,0,0,,levels of preparation
+Dialogue: 0,0:10:19.29,0:10:22.56,Default,,0,0,0,,One of the most famous occurred in 1961
+Dialogue: 0,0:10:22.56,0:10:25.70,Default,,0,0,0,,Soviet physician Leonid Rogozov was wintering
+Dialogue: 0,0:10:25.70,0:10:28.63,Default,,0,0,0,,at Novolazarevskaya Station when he developed
+Dialogue: 0,0:10:28.63,0:10:30.06,Default,,0,0,0,,appendicitis
+Dialogue: 0,0:10:30.06,0:10:32.92,Default,,0,0,0,,With no other surgeon available and evacuation
+Dialogue: 0,0:10:32.92,0:10:35.82,Default,,0,0,0,,impossible he performed an appendectomy on
+Dialogue: 0,0:10:35.82,0:10:38.79,Default,,0,0,0,,himself with assistance from two colleagues
+Dialogue: 0,0:10:38.79,0:10:41.75,Default,,0,0,0,,The operation lasted less than two hours
+Dialogue: 0,0:10:41.75,0:10:42.95,Default,,0,0,0,,He survived
+Dialogue: 0,0:10:42.95,0:10:45.49,Default,,0,0,0,,The story became one of the most remarkable
+Dialogue: 0,0:10:45.49,0:10:48.82,Default,,0,0,0,,examples of medical self-reliance in an isolated
+Dialogue: 0,0:10:48.82,0:10:50.00,Default,,0,0,0,,environment
+Dialogue: 0,0:10:50.00,0:10:53.00,Default,,0,0,0,,It also illustrates a fundamental reality of
+Dialogue: 0,0:10:53.00,0:10:54.52,Default,,0,0,0,,Antarctic life
+Dialogue: 0,0:10:54.52,0:10:57.64,Default,,0,0,0,,When distance becomes extreme preparation can
+Dialogue: 0,0:10:57.64,0:10:59.95,Default,,0,0,0,,mean the difference between a problem and a
+Dialogue: 0,0:10:59.95,0:11:01.28,Default,,0,0,0,,catastrophe
+Dialogue: 0,0:11:01.28,0:11:03.59,Default,,0,0,0,,THE LAST FLIGHT BEFORE WINTER
+Dialogue: 0,0:11:03.59,0:11:06.95,Default,,0,0,0,,For many Antarctic workers one moment defines
+Dialogue: 0,0:11:06.95,0:11:08.67,Default,,0,0,0,,the beginning of winter
+Dialogue: 0,0:11:08.67,0:11:11.09,Default,,0,0,0,,The departure of the final aircraft
+Dialogue: 0,0:11:11.09,0:11:13.56,Default,,0,0,0,,During the summer season stations may see a
+Dialogue: 0,0:11:13.56,0:11:17.85,Default,,0,0,0,,steady flow of personnel supplies and aircraft
+Dialogue: 0,0:11:17.85,0:11:20.02,Default,,0,0,0,,Then conditions begin changing
+Dialogue: 0,0:11:20.02,0:11:21.45,Default,,0,0,0,,Temperatures fall
+Dialogue: 0,0:11:21.45,0:11:23.13,Default,,0,0,0,,Darkness increases
+Dialogue: 0,0:11:23.13,0:11:25.00,Default,,0,0,0,,Flights become more difficult
+Dialogue: 0,0:11:25.00,0:11:27.36,Default,,0,0,0,,Eventually the seasonal connection with the
+Dialogue: 0,0:11:27.36,0:11:29.68,Default,,0,0,0,,outside world can close
+Dialogue: 0,0:11:29.68,0:11:32.32,Default,,0,0,0,,The people who remain are known as winter-over
+Dialogue: 0,0:11:32.32,0:11:33.35,Default,,0,0,0,,crews
+Dialogue: 0,0:11:33.35,0:11:35.36,Default,,0,0,0,,They know that they may spend months without
+Dialogue: 0,0:11:35.36,0:11:37.88,Default,,0,0,0,,seeing another aircraft arrive
+Dialogue: 0,0:11:37.88,0:11:41.21,Default,,0,0,0,,At the South Pole the isolation becomes especially
+Dialogue: 0,0:11:41.21,0:11:42.39,Default,,0,0,0,,intense
+Dialogue: 0,0:11:42.39,0:11:44.88,Default,,0,0,0,,The station sits thousands of kilometers from
+Dialogue: 0,0:11:44.88,0:11:47.75,Default,,0,0,0,,the nearest major population centers
+Dialogue: 0,0:11:47.75,0:11:50.70,Default,,0,0,0,,There is no normal road network leading away
+Dialogue: 0,0:11:50.70,0:11:53.14,Default,,0,0,0,,There is no possibility of simply deciding
+Dialogue: 0,0:11:53.14,0:11:55.29,Default,,0,0,0,,to leave on a difficult day
+Dialogue: 0,0:11:55.29,0:11:58.25,Default,,0,0,0,,For months the station becomes an isolated
+Dialogue: 0,0:11:58.25,0:12:01.13,Default,,0,0,0,,human settlement surrounded by one of the harshest
+Dialogue: 0,0:12:01.13,0:12:02.88,Default,,0,0,0,,environments on Earth
+Dialogue: 0,0:12:02.88,0:12:04.13,Default,,0,0,0,,THE POLAR NIGHT
+Dialogue: 0,0:12:04.13,0:12:06.78,Default,,0,0,0,,Then the sunlight begins to disappear
+Dialogue: 0,0:12:06.78,0:12:10.06,Default,,0,0,0,,At the South Pole the sun rises and sets only
+Dialogue: 0,0:12:10.06,0:12:11.46,Default,,0,0,0,,once each year
+Dialogue: 0,0:12:11.46,0:12:13.81,Default,,0,0,0,,That means winter brings an extraordinarily
+Dialogue: 0,0:12:13.81,0:12:16.85,Default,,0,0,0,,long period without a normal sunrise
+Dialogue: 0,0:12:16.85,0:12:19.70,Default,,0,0,0,,Imagine waking up and realizing that the darkness
+Dialogue: 0,0:12:19.70,0:12:22.04,Default,,0,0,0,,outside isn't nighttime
+Dialogue: 0,0:12:22.04,0:12:23.32,Default,,0,0,0,,It is the season
+Dialogue: 0,0:12:23.32,0:12:26.11,Default,,0,0,0,,For weeks and months the environment outside
+Dialogue: 0,0:12:26.11,0:12:28.21,Default,,0,0,0,,the station can remain dark
+Dialogue: 0,0:12:28.21,0:12:31.11,Default,,0,0,0,,The psychological effect can be significant
+Dialogue: 0,0:12:31.11,0:12:33.91,Default,,0,0,0,,Humans evolved with regular cycles of daylight
+Dialogue: 0,0:12:33.91,0:12:35.20,Default,,0,0,0,,and darkness
+Dialogue: 0,0:12:35.20,0:12:38.78,Default,,0,0,0,,Our sleep patterns hormones mood and sense
+Dialogue: 0,0:12:38.78,0:12:41.24,Default,,0,0,0,,of time are influenced by light
+Dialogue: 0,0:12:41.24,0:12:44.14,Default,,0,0,0,,In Antarctica those natural signals become
+Dialogue: 0,0:12:44.14,0:12:45.70,Default,,0,0,0,,radically different
+Dialogue: 0,0:12:45.70,0:12:47.52,Default,,0,0,0,,That is why routines matter
+Dialogue: 0,0:12:47.52,0:12:49.39,Default,,0,0,0,,People maintain schedules
+Dialogue: 0,0:12:49.39,0:12:51.78,Default,,0,0,0,,They eat meals at regular times
+Dialogue: 0,0:12:51.78,0:12:53.22,Default,,0,0,0,,They exercise
+Dialogue: 0,0:12:53.22,0:12:54.17,Default,,0,0,0,,They work
+Dialogue: 0,0:12:54.17,0:12:55.50,Default,,0,0,0,,They socialize
+Dialogue: 0,0:12:55.50,0:12:57.27,Default,,0,0,0,,They create activities
+Dialogue: 0,0:12:57.27,0:12:59.07,Default,,0,0,0,,And they look after one another
+Dialogue: 0,0:12:59.07,0:13:01.31,Default,,0,0,0,,The goal is not to pretend the environment
+Dialogue: 0,0:13:01.31,0:13:02.34,Default,,0,0,0,,is normal
+Dialogue: 0,0:13:02.34,0:13:04.97,Default,,0,0,0,,It is to create enough structure to keep human
+Dialogue: 0,0:13:04.97,0:13:06.99,Default,,0,0,0,,life functioning inside it
+Dialogue: 0,0:13:06.99,0:13:09.02,Default,,0,0,0,,THE IMPORTANCE OF COMMUNITY
+Dialogue: 0,0:13:09.02,0:13:11.42,Default,,0,0,0,,Perhaps the most important piece of Antarctic
+Dialogue: 0,0:13:11.42,0:13:14.11,Default,,0,0,0,,survival is something that cannot be stored
+Dialogue: 0,0:13:14.11,0:13:15.53,Default,,0,0,0,,in a warehouse
+Dialogue: 0,0:13:15.53,0:13:16.57,Default,,0,0,0,,Community
+Dialogue: 0,0:13:16.57,0:13:20.04,Default,,0,0,0,,When only a few people share an isolated station
+Dialogue: 0,0:13:20.04,0:13:22.93,Default,,0,0,0,,relationships become extremely important
+Dialogue: 0,0:13:22.93,0:13:25.06,Default,,0,0,0,,You work beside the same people
+Dialogue: 0,0:13:25.06,0:13:26.06,Default,,0,0,0,,Eat with them
+Dialogue: 0,0:13:26.06,0:13:27.54,Default,,0,0,0,,See them every day
+Dialogue: 0,0:13:27.54,0:13:30.63,Default,,0,0,0,,And during winter there are very few opportunities
+Dialogue: 0,0:13:30.63,0:13:32.18,Default,,0,0,0,,to escape the group
+Dialogue: 0,0:13:32.18,0:13:33.78,Default,,0,0,0,,That can create tension
+Dialogue: 0,0:13:33.78,0:13:36.50,Default,,0,0,0,,Small disagreements can feel larger when there
+Dialogue: 0,0:13:36.50,0:13:38.28,Default,,0,0,0,,is nowhere else to go
+Dialogue: 0,0:13:38.28,0:13:41.44,Default,,0,0,0,,But the same closeness can also create extraordinary
+Dialogue: 0,0:13:41.44,0:13:42.52,Default,,0,0,0,,bonds
+Dialogue: 0,0:13:42.52,0:13:44.35,Default,,0,0,0,,People celebrate together
+Dialogue: 0,0:13:44.35,0:13:45.56,Default,,0,0,0,,Help one another
+Dialogue: 0,0:13:45.56,0:13:47.51,Default,,0,0,0,,Notice when someone is struggling
+Dialogue: 0,0:13:47.51,0:13:50.01,Default,,0,0,0,,And develop traditions that make the long winter
+Dialogue: 0,0:13:50.01,0:13:52.17,Default,,0,0,0,,feel less endless
+Dialogue: 0,0:13:52.17,0:13:55.35,Default,,0,0,0,,Midwinter celebrations are especially important
+Dialogue: 0,0:13:55.35,0:13:58.48,Default,,0,0,0,,People prepare special meals exchange gifts
+Dialogue: 0,0:13:58.48,0:14:01.95,Default,,0,0,0,,organize events and create their own traditions
+Dialogue: 0,0:14:01.95,0:14:04.35,Default,,0,0,0,,These moments aren't just entertainment
+Dialogue: 0,0:14:04.35,0:14:06.16,Default,,0,0,0,,They create milestones
+Dialogue: 0,0:14:06.16,0:14:08.91,Default,,0,0,0,,They divide the endless darkness into something
+Dialogue: 0,0:14:08.91,0:14:10.84,Default,,0,0,0,,people can understand
+Dialogue: 0,0:14:10.84,0:14:13.55,Default,,0,0,0,,Human beings have always used rituals to give
+Dialogue: 0,0:14:13.55,0:14:16.10,Default,,0,0,0,,meaning to difficult periods
+Dialogue: 0,0:14:16.10,0:14:18.84,Default,,0,0,0,,Antarctica simply makes that need impossible
+Dialogue: 0,0:14:18.84,0:14:19.99,Default,,0,0,0,,to ignore
+Dialogue: 0,0:14:19.99,0:14:21.98,Default,,0,0,0,,LIFE OUTSIDE THE STATION
+Dialogue: 0,0:14:21.98,0:14:25.08,Default,,0,0,0,,Eventually however people have to leave the
+Dialogue: 0,0:14:25.08,0:14:26.66,Default,,0,0,0,,warmth of the station
+Dialogue: 0,0:14:26.66,0:14:28.91,Default,,0,0,0,,And Antarctica outside the buildings is an
+Dialogue: 0,0:14:28.91,0:14:30.85,Default,,0,0,0,,entirely different world
+Dialogue: 0,0:14:30.85,0:14:33.94,Default,,0,0,0,,The continent contains enormous ice shelves
+Dialogue: 0,0:14:33.94,0:14:37.77,Default,,0,0,0,,glaciers mountains frozen valleys and coastal
+Dialogue: 0,0:14:37.77,0:14:39.08,Default,,0,0,0,,environments
+Dialogue: 0,0:14:39.08,0:14:43.05,Default,,0,0,0,,Near the coast wildlife becomes much more visible
+Dialogue: 0,0:14:43.05,0:14:45.19,Default,,0,0,0,,Penguins gather in colonies
+Dialogue: 0,0:14:45.19,0:14:47.20,Default,,0,0,0,,Seals rest on sea ice
+Dialogue: 0,0:14:47.20,0:14:50.30,Default,,0,0,0,,Seabirds move between land and ocean
+Dialogue: 0,0:14:50.30,0:14:52.73,Default,,0,0,0,,And whales appear in the surrounding waters
+Dialogue: 0,0:14:52.73,0:14:55.05,Default,,0,0,0,,during the productive summer season
+Dialogue: 0,0:14:55.05,0:14:57.95,Default,,0,0,0,,But Antarctica is not an ecosystem built around
+Dialogue: 0,0:14:57.95,0:15:00.08,Default,,0,0,0,,forests and grasslands
+Dialogue: 0,0:15:00.08,0:15:02.94,Default,,0,0,0,,The foundation of much of its marine food web
+Dialogue: 0,0:15:02.94,0:15:04.05,Default,,0,0,0,,is tiny
+Dialogue: 0,0:15:04.05,0:15:04.84,Default,,0,0,0,,Krill
+Dialogue: 0,0:15:04.84,0:15:08.59,Default,,0,0,0,,These small crustaceans exist in enormous numbers
+Dialogue: 0,0:15:08.59,0:15:12.24,Default,,0,0,0,,and form a critical part of the Antarctic ecosystem
+Dialogue: 0,0:15:12.24,0:15:13.44,Default,,0,0,0,,Fish feed on them
+Dialogue: 0,0:15:13.44,0:15:14.88,Default,,0,0,0,,Penguins feed on them
+Dialogue: 0,0:15:14.88,0:15:17.73,Default,,0,0,0,,Seals depend on food chains built around them
+Dialogue: 0,0:15:17.73,0:15:20.76,Default,,0,0,0,,And whales can consume enormous quantities
+Dialogue: 0,0:15:20.76,0:15:23.52,Default,,0,0,0,,The result is a remarkable contrast
+Dialogue: 0,0:15:23.52,0:15:26.05,Default,,0,0,0,,One of the largest animals ever to live on
+Dialogue: 0,0:15:26.05,0:15:29.24,Default,,0,0,0,,Earth depends heavily on creatures small enough
+Dialogue: 0,0:15:29.24,0:15:30.92,Default,,0,0,0,,to fit in your hand
+Dialogue: 0,0:15:30.92,0:15:33.72,Default,,0,0,0,,The Antarctic ecosystem is a reminder that
+Dialogue: 0,0:15:33.72,0:15:36.41,Default,,0,0,0,,size does not determine importance
+Dialogue: 0,0:15:36.41,0:15:38.37,Default,,0,0,0,,PENGUINS AND THE COLD
+Dialogue: 0,0:15:38.37,0:15:41.28,Default,,0,0,0,,Few animals represent Antarctica more strongly
+Dialogue: 0,0:15:41.28,0:15:42.62,Default,,0,0,0,,than penguins
+Dialogue: 0,0:15:42.62,0:15:45.97,Default,,0,0,0,,But even penguins don't simply ignore the cold
+Dialogue: 0,0:15:45.97,0:15:48.88,Default,,0,0,0,,They have evolved specialized feathers body
+Dialogue: 0,0:15:48.88,0:15:52.27,Default,,0,0,0,,structures behavior and fat reserves that allow
+Dialogue: 0,0:15:52.27,0:15:54.88,Default,,0,0,0,,them to survive conditions that would be fatal
+Dialogue: 0,0:15:54.88,0:15:56.05,Default,,0,0,0,,to humans
+Dialogue: 0,0:15:56.05,0:15:58.76,Default,,0,0,0,,Emperor penguins provide one of the most dramatic
+Dialogue: 0,0:15:58.76,0:15:59.99,Default,,0,0,0,,examples
+Dialogue: 0,0:15:59.99,0:16:02.51,Default,,0,0,0,,During the Antarctic winter they form dense
+Dialogue: 0,0:16:02.51,0:16:03.55,Default,,0,0,0,,groups
+Dialogue: 0,0:16:03.55,0:16:07.30,Default,,0,0,0,,Individuals move and rotate positions allowing
+Dialogue: 0,0:16:07.30,0:16:09.83,Default,,0,0,0,,different penguins to spend time closer to
+Dialogue: 0,0:16:09.83,0:16:12.62,Default,,0,0,0,,the warmer center and then move outward
+Dialogue: 0,0:16:12.62,0:16:15.23,Default,,0,0,0,,It is a simple principle with an extraordinary
+Dialogue: 0,0:16:15.23,0:16:16.22,Default,,0,0,0,,result
+Dialogue: 0,0:16:16.22,0:16:19.05,Default,,0,0,0,,Cooperation reduces exposure
+Dialogue: 0,0:16:19.05,0:16:23.22,Default,,0,0,0,,Humans use buildings heaters clothing technology
+Dialogue: 0,0:16:23.22,0:16:24.59,Default,,0,0,0,,and logistics
+Dialogue: 0,0:16:24.59,0:16:28.15,Default,,0,0,0,,Penguins use evolution and collective behavior
+Dialogue: 0,0:16:28.15,0:16:29.63,Default,,0,0,0,,Different solutions
+Dialogue: 0,0:16:29.63,0:16:30.77,Default,,0,0,0,,Same problem
+Dialogue: 0,0:16:30.77,0:16:32.90,Default,,0,0,0,,A CONTINENT WITH NO CITIES
+Dialogue: 0,0:16:32.90,0:16:35.45,Default,,0,0,0,,One of the strangest things about Antarctica
+Dialogue: 0,0:16:35.45,0:16:37.01,Default,,0,0,0,,is what you don't see
+Dialogue: 0,0:16:37.01,0:16:38.73,Default,,0,0,0,,There are no normal cities
+Dialogue: 0,0:16:38.73,0:16:41.49,Default,,0,0,0,,No permanent highways connecting communities
+Dialogue: 0,0:16:41.49,0:16:43.03,Default,,0,0,0,,across the continent
+Dialogue: 0,0:16:43.03,0:16:44.73,Default,,0,0,0,,No shopping districts
+Dialogue: 0,0:16:44.73,0:16:46.49,Default,,0,0,0,,No ordinary farms
+Dialogue: 0,0:16:46.49,0:16:50.01,Default,,0,0,0,,No large civilian population living independently
+Dialogue: 0,0:16:50.01,0:16:51.69,Default,,0,0,0,,from outside support
+Dialogue: 0,0:16:51.69,0:16:54.20,Default,,0,0,0,,The people who live here are part of temporary
+Dialogue: 0,0:16:54.20,0:16:56.41,Default,,0,0,0,,or research-based communities
+Dialogue: 0,0:16:56.41,0:17:00.05,Default,,0,0,0,,Their presence is connected to scientific logistical
+Dialogue: 0,0:17:00.05,0:17:03.05,Default,,0,0,0,,environmental or governmental activity
+Dialogue: 0,0:17:03.05,0:17:05.54,Default,,0,0,0,,That makes Antarctica fundamentally different
+Dialogue: 0,0:17:05.54,0:17:08.72,Default,,0,0,0,,from almost every other inhabited region of
+Dialogue: 0,0:17:08.72,0:17:09.80,Default,,0,0,0,,the planet
+Dialogue: 0,0:17:09.80,0:17:11.51,Default,,0,0,0,,Humans are visitors here
+Dialogue: 0,0:17:11.51,0:17:13.98,Default,,0,0,0,,Even when someone spends an entire year on
+Dialogue: 0,0:17:13.98,0:17:16.84,Default,,0,0,0,,the continent the surrounding environment remains
+Dialogue: 0,0:17:16.84,0:17:20.24,Default,,0,0,0,,vastly larger than the settlement they occupy
+Dialogue: 0,0:17:20.24,0:17:21.90,Default,,0,0,0,,WHY DO PEOPLE COME HERE
+Dialogue: 0,0:17:21.90,0:17:24.31,Default,,0,0,0,,So why would anyone choose this life
+Dialogue: 0,0:17:24.31,0:17:26.12,Default,,0,0,0,,For some it is science
+Dialogue: 0,0:17:26.12,0:17:28.87,Default,,0,0,0,,Antarctica is a natural laboratory
+Dialogue: 0,0:17:28.87,0:17:32.27,Default,,0,0,0,,Researchers study climate atmospheric chemistry
+Dialogue: 0,0:17:32.27,0:17:36.90,Default,,0,0,0,,astronomy geology ice behavior marine ecosystems
+Dialogue: 0,0:17:36.90,0:17:38.29,Default,,0,0,0,,and Earth's history
+Dialogue: 0,0:17:38.29,0:17:41.26,Default,,0,0,0,,Deep ice can contain tiny bubbles of ancient
+Dialogue: 0,0:17:41.26,0:17:42.48,Default,,0,0,0,,atmosphere
+Dialogue: 0,0:17:42.48,0:17:45.98,Default,,0,0,0,,By analyzing these layers scientists can investigate
+Dialogue: 0,0:17:45.98,0:17:49.19,Default,,0,0,0,,conditions from far back in Earth's history
+Dialogue: 0,0:17:49.19,0:17:52.24,Default,,0,0,0,,In other words the ice is not simply frozen
+Dialogue: 0,0:17:52.24,0:17:53.16,Default,,0,0,0,,water
+Dialogue: 0,0:17:53.16,0:17:54.35,Default,,0,0,0,,It is a record
+Dialogue: 0,0:17:54.35,0:17:56.23,Default,,0,0,0,,A record of the atmosphere
+Dialogue: 0,0:17:56.23,0:17:57.72,Default,,0,0,0,,A record of climate
+Dialogue: 0,0:17:57.72,0:18:00.15,Default,,0,0,0,,A record of environmental change
+Dialogue: 0,0:18:00.15,0:18:03.48,Default,,0,0,0,,For others Antarctica offers something different
+Dialogue: 0,0:18:03.48,0:18:04.52,Default,,0,0,0,,Adventure
+Dialogue: 0,0:18:04.52,0:18:05.67,Default,,0,0,0,,Isolation
+Dialogue: 0,0:18:05.67,0:18:09.09,Default,,0,0,0,,The opportunity to experience a place few humans
+Dialogue: 0,0:18:09.09,0:18:10.26,Default,,0,0,0,,ever see
+Dialogue: 0,0:18:10.26,0:18:13.00,Default,,0,0,0,,And for many workers there is also the simple
+Dialogue: 0,0:18:13.00,0:18:15.86,Default,,0,0,0,,satisfaction of doing a difficult job in a
+Dialogue: 0,0:18:15.86,0:18:17.71,Default,,0,0,0,,remarkable environment
+Dialogue: 0,0:18:17.71,0:18:20.30,Default,,0,0,0,,THE CONTINENT THAT BELONGS TO EVERYONE AND
+Dialogue: 0,0:18:20.30,0:18:21.32,Default,,0,0,0,,NO ONE
+Dialogue: 0,0:18:21.32,0:18:24.60,Default,,0,0,0,,Antarctica has another unusual characteristic
+Dialogue: 0,0:18:24.60,0:18:27.42,Default,,0,0,0,,No country owns the entire continent
+Dialogue: 0,0:18:27.42,0:18:31.71,Default,,0,0,0,,The Antarctic Treaty signed in 1959 established
+Dialogue: 0,0:18:31.71,0:18:34.50,Default,,0,0,0,,a framework focused on peaceful activity and
+Dialogue: 0,0:18:34.50,0:18:36.47,Default,,0,0,0,,scientific cooperation
+Dialogue: 0,0:18:36.47,0:18:39.18,Default,,0,0,0,,The treaty helped prevent Antarctica from becoming
+Dialogue: 0,0:18:39.18,0:18:42.10,Default,,0,0,0,,another arena for military competition during
+Dialogue: 0,0:18:42.10,0:18:43.35,Default,,0,0,0,,the Cold War
+Dialogue: 0,0:18:43.35,0:18:46.79,Default,,0,0,0,,Today the Antarctic Treaty System governs many
+Dialogue: 0,0:18:46.79,0:18:49.97,Default,,0,0,0,,aspects of human activity on the continent
+Dialogue: 0,0:18:49.97,0:18:52.42,Default,,0,0,0,,This includes environmental protection and
+Dialogue: 0,0:18:52.42,0:18:55.28,Default,,0,0,0,,restrictions on certain types of activity
+Dialogue: 0,0:18:55.28,0:18:57.83,Default,,0,0,0,,The basic idea is remarkable
+Dialogue: 0,0:18:57.83,0:19:00.64,Default,,0,0,0,,Antarctica is not treated like an ordinary
+Dialogue: 0,0:19:00.64,0:19:03.67,Default,,0,0,0,,piece of territory waiting to be divided into
+Dialogue: 0,0:19:03.67,0:19:06.01,Default,,0,0,0,,conventional national borders
+Dialogue: 0,0:19:06.01,0:19:09.11,Default,,0,0,0,,Instead international cooperation has allowed
+Dialogue: 0,0:19:09.11,0:19:11.79,Default,,0,0,0,,scientific research to remain at the center
+Dialogue: 0,0:19:11.79,0:19:12.99,Default,,0,0,0,,of activity
+Dialogue: 0,0:19:12.99,0:19:15.72,Default,,0,0,0,,That arrangement is one of the most unusual
+Dialogue: 0,0:19:15.72,0:19:18.79,Default,,0,0,0,,experiments in international cooperation ever
+Dialogue: 0,0:19:18.79,0:19:19.82,Default,,0,0,0,,created
+Dialogue: 0,0:19:19.82,0:19:22.53,Default,,0,0,0,,THE FUTURE OF LIFE IN ANTARCTICA
+Dialogue: 0,0:19:22.53,0:19:24.49,Default,,0,0,0,,But Antarctica is changing
+Dialogue: 0,0:19:24.49,0:19:27.24,Default,,0,0,0,,The continent is deeply connected to the global
+Dialogue: 0,0:19:27.24,0:19:28.53,Default,,0,0,0,,climate system
+Dialogue: 0,0:19:28.53,0:19:32.46,Default,,0,0,0,,Changes in temperature sea ice glaciers ocean
+Dialogue: 0,0:19:32.46,0:19:35.92,Default,,0,0,0,,conditions and ice shelves can affect ecosystems
+Dialogue: 0,0:19:35.92,0:19:38.54,Default,,0,0,0,,far beyond the continent itself
+Dialogue: 0,0:19:38.54,0:19:41.35,Default,,0,0,0,,At the same time human activity creates its
+Dialogue: 0,0:19:41.35,0:19:42.79,Default,,0,0,0,,own challenges
+Dialogue: 0,0:19:42.79,0:19:45.64,Default,,0,0,0,,Research stations consume energy
+Dialogue: 0,0:19:45.64,0:19:48.18,Default,,0,0,0,,Ships and aircraft bring supplies
+Dialogue: 0,0:19:48.18,0:19:51.17,Default,,0,0,0,,Tourism brings increasing numbers of visitors
+Dialogue: 0,0:19:51.17,0:19:52.75,Default,,0,0,0,,to parts of Antarctica
+Dialogue: 0,0:19:52.75,0:19:54.79,Default,,0,0,0,,That creates a difficult question
+Dialogue: 0,0:19:54.79,0:19:57.94,Default,,0,0,0,,How can humans study and experience Antarctica
+Dialogue: 0,0:19:57.94,0:20:00.60,Default,,0,0,0,,without damaging the very environment they
+Dialogue: 0,0:20:00.60,0:20:02.19,Default,,0,0,0,,came to understand
+Dialogue: 0,0:20:02.19,0:20:04.82,Default,,0,0,0,,The answer requires careful management
+Dialogue: 0,0:20:04.82,0:20:06.46,Default,,0,0,0,,Waste must be controlled
+Dialogue: 0,0:20:06.46,0:20:08.60,Default,,0,0,0,,Wildlife must be protected
+Dialogue: 0,0:20:08.60,0:20:11.10,Default,,0,0,0,,Visitors must follow strict rules
+Dialogue: 0,0:20:11.10,0:20:13.87,Default,,0,0,0,,Research must continue with environmental impact
+Dialogue: 0,0:20:13.87,0:20:14.86,Default,,0,0,0,,in mind
+Dialogue: 0,0:20:14.86,0:20:18.53,Default,,0,0,0,,Because Antarctica is not simply another destination
+Dialogue: 0,0:20:18.53,0:20:21.54,Default,,0,0,0,,It is part of a much larger planetary system
+Dialogue: 0,0:20:21.54,0:20:24.49,Default,,0,0,0,,WHAT IT REALLY MEANS TO LIVE IN ANTARCTICA
+Dialogue: 0,0:20:24.49,0:20:27.50,Default,,0,0,0,,After everything we've seen Antarctic life
+Dialogue: 0,0:20:27.50,0:20:30.82,Default,,0,0,0,,may seem like a story about surviving the cold
+Dialogue: 0,0:20:30.82,0:20:32.80,Default,,0,0,0,,But it is actually a story about something
+Dialogue: 0,0:20:32.80,0:20:34.47,Default,,0,0,0,,much more complicated
+Dialogue: 0,0:20:34.47,0:20:35.54,Default,,0,0,0,,Engineering
+Dialogue: 0,0:20:35.54,0:20:36.61,Default,,0,0,0,,Preparation
+Dialogue: 0,0:20:36.61,0:20:37.80,Default,,0,0,0,,Cooperation
+Dialogue: 0,0:20:37.80,0:20:38.76,Default,,0,0,0,,Discipline
+Dialogue: 0,0:20:38.76,0:20:40.12,Default,,0,0,0,,And adaptation
+Dialogue: 0,0:20:40.12,0:20:42.72,Default,,0,0,0,,People don't survive Antarctica by defeating
+Dialogue: 0,0:20:42.72,0:20:44.05,Default,,0,0,0,,the environment
+Dialogue: 0,0:20:44.05,0:20:46.19,Default,,0,0,0,,They survive by respecting it
+Dialogue: 0,0:20:46.19,0:20:48.90,Default,,0,0,0,,They build insulated shelters because the cold
+Dialogue: 0,0:20:48.90,0:20:50.14,Default,,0,0,0,,is stronger
+Dialogue: 0,0:20:50.14,0:20:52.69,Default,,0,0,0,,They stock supplies because distance is greater
+Dialogue: 0,0:20:52.69,0:20:54.15,Default,,0,0,0,,than convenience
+Dialogue: 0,0:20:54.15,0:20:56.46,Default,,0,0,0,,They train for emergencies because help may
+Dialogue: 0,0:20:56.46,0:20:58.05,Default,,0,0,0,,not arrive quickly
+Dialogue: 0,0:20:58.05,0:21:00.76,Default,,0,0,0,,They create routines because the darkness can
+Dialogue: 0,0:21:00.76,0:21:03.40,Default,,0,0,0,,distort the normal rhythm of life
+Dialogue: 0,0:21:03.40,0:21:05.87,Default,,0,0,0,,And they build communities because isolation
+Dialogue: 0,0:21:05.87,0:21:08.24,Default,,0,0,0,,becomes easier when it is shared
+Dialogue: 0,0:21:08.24,0:21:11.00,Default,,0,0,0,,The continent constantly reminds them of one
+Dialogue: 0,0:21:11.00,0:21:12.35,Default,,0,0,0,,simple fact
+Dialogue: 0,0:21:12.35,0:21:15.25,Default,,0,0,0,,Humans are not naturally suited to live here
+Dialogue: 0,0:21:15.25,0:21:17.10,Default,,0,0,0,,Everything must be designed
+Dialogue: 0,0:21:17.10,0:21:18.87,Default,,0,0,0,,THE LIGHTS IN THE DARK
+Dialogue: 0,0:21:18.87,0:21:21.64,Default,,0,0,0,,During the Antarctic winter look at a research
+Dialogue: 0,0:21:21.64,0:21:23.49,Default,,0,0,0,,station from a distance
+Dialogue: 0,0:21:23.49,0:21:25.72,Default,,0,0,0,,Beyond the buildings there may be nothing but
+Dialogue: 0,0:21:25.72,0:21:28.69,Default,,0,0,0,,darkness ice and wind
+Dialogue: 0,0:21:28.69,0:21:31.55,Default,,0,0,0,,But inside those buildings there are people
+Dialogue: 0,0:21:31.55,0:21:33.37,Default,,0,0,0,,Someone is preparing dinner
+Dialogue: 0,0:21:33.37,0:21:35.51,Default,,0,0,0,,Someone is repairing equipment
+Dialogue: 0,0:21:35.51,0:21:38.36,Default,,0,0,0,,Someone is analyzing scientific data
+Dialogue: 0,0:21:38.36,0:21:40.01,Default,,0,0,0,,Someone is exercising
+Dialogue: 0,0:21:40.01,0:21:42.78,Default,,0,0,0,,Someone is calling family thousands of kilometers
+Dialogue: 0,0:21:42.78,0:21:43.65,Default,,0,0,0,,away
+Dialogue: 0,0:21:43.65,0:21:45.80,Default,,0,0,0,,Someone is looking out through a window at
+Dialogue: 0,0:21:45.80,0:21:49.24,Default,,0,0,0,,a world that few people will ever experience
+Dialogue: 0,0:21:49.24,0:21:51.94,Default,,0,0,0,,Small lights glow against the darkness
+Dialogue: 0,0:21:51.94,0:21:54.51,Default,,0,0,0,,They may look insignificant compared with the
+Dialogue: 0,0:21:54.51,0:21:56.99,Default,,0,0,0,,enormous continent surrounding them
+Dialogue: 0,0:21:56.99,0:22:00.03,Default,,0,0,0,,But those lights represent something extraordinary
+Dialogue: 0,0:22:00.03,0:22:02.60,Default,,0,0,0,,Human beings have entered one of the most hostile
+Dialogue: 0,0:22:02.60,0:22:05.44,Default,,0,0,0,,environments on Earth and created temporary
+Dialogue: 0,0:22:05.44,0:22:09.75,Default,,0,0,0,,islands of warmth cooperation science and everyday
+Dialogue: 0,0:22:09.75,0:22:10.72,Default,,0,0,0,,life
+Dialogue: 0,0:22:10.72,0:22:13.05,Default,,0,0,0,,Not because Antarctica is easy
+Dialogue: 0,0:22:13.05,0:22:14.21,Default,,0,0,0,,Because it isn't
+Dialogue: 0,0:22:14.21,0:22:16.75,Default,,0,0,0,,And perhaps that is exactly why people continue
+Dialogue: 0,0:22:16.75,0:22:17.89,Default,,0,0,0,,to return
+Dialogue: 0,0:22:17.89,0:22:19.05,Default,,0,0,0,,FINAL THOUGHT
+Dialogue: 0,0:22:19.05,0:22:21.99,Default,,0,0,0,,Antarctica teaches us that survival is rarely
+Dialogue: 0,0:22:21.99,0:22:23.65,Default,,0,0,0,,about strength alone
+Dialogue: 0,0:22:23.65,0:22:25.33,Default,,0,0,0,,It is about preparation
+Dialogue: 0,0:22:25.33,0:22:27.04,Default,,0,0,0,,It is about technology
+Dialogue: 0,0:22:27.04,0:22:29.61,Default,,0,0,0,,It is about understanding the environment
+Dialogue: 0,0:22:29.61,0:22:30.79,Default,,0,0,0,,And above all
+Dialogue: 0,0:22:30.79,0:22:33.57,Default,,0,0,0,,it is about people depending on one another
+Dialogue: 0,0:22:33.57,0:22:36.03,Default,,0,0,0,,At the bottom of the world where temperatures
+Dialogue: 0,0:22:36.03,0:22:39.26,Default,,0,0,0,,can fall beyond anything most humans will ever
+Dialogue: 0,0:22:39.26,0:22:42.87,Default,,0,0,0,,experience people still wake up every morning
+Dialogue: 0,0:22:42.87,0:22:43.80,Default,,0,0,0,,They work
+Dialogue: 0,0:22:43.80,0:22:44.73,Default,,0,0,0,,They eat
+Dialogue: 0,0:22:44.73,0:22:45.78,Default,,0,0,0,,They laugh
+Dialogue: 0,0:22:45.78,0:22:46.75,Default,,0,0,0,,They study
+Dialogue: 0,0:22:46.75,0:22:48.32,Default,,0,0,0,,They look after each other
+Dialogue: 0,0:22:48.32,0:22:51.73,Default,,0,0,0,,And eventually when the long winter ends sunlight
+Dialogue: 0,0:22:51.73,0:22:52.90,Default,,0,0,0,,returns
+Dialogue: 0,0:22:52.90,0:22:55.62,Default,,0,0,0,,The frozen continent begins to change
+Dialogue: 0,0:22:55.62,0:22:57.05,Default,,0,0,0,,Aircraft return
+Dialogue: 0,0:22:57.05,0:22:58.32,Default,,0,0,0,,Ships approach
+Dialogue: 0,0:22:58.32,0:23:01.01,Default,,0,0,0,,The isolated world opens again
+Dialogue: 0,0:23:01.01,0:23:03.89,Default,,0,0,0,,For a short time Antarctica becomes connected
+Dialogue: 0,0:23:03.89,0:23:05.72,Default,,0,0,0,,to the rest of humanity
+Dialogue: 0,0:23:05.72,0:23:07.73,Default,,0,0,0,,And then the cycle begins again
+Dialogue: 0,0:23:07.73,0:23:10.54,Default,,0,0,0,,A place that seems impossible to live in becomes
+Dialogue: 0,0:23:10.54,0:23:11.40,Default,,0,0,0,,home
+Dialogue: 0,0:23:11.40,0:23:12.93,Default,,0,0,0,,at least for a season
+Dialogue: 0,0:23:12.93,0:23:14.32,Default,,0,0,0,,This is Antarctica
+Dialogue: 0,0:23:14.32,0:23:16.44,Default,,0,0,0,,The coldest continent on Earth
+Dialogue: 0,0:23:16.44,0:23:18.61,Default,,0,0,0,,The driest desert on the planet
+Dialogue: 0,0:23:18.61,0:23:21.66,Default,,0,0,0,,A place where humans survive not by conquering
+Dialogue: 0,0:23:21.66,0:23:24.47,Default,,0,0,0,,nature but by learning how to live within its
+Dialogue: 0,0:23:24.47,0:23:25.53,Default,,0,0,0,,limits
+Dialogue: 0,0:23:25.53,0:23:27.48,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:23:27.48,0:23:28.86,Default,,0,0,0,,Life Beyond the Limits

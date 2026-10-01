@@ -1,0 +1,1632 @@
+[
+  {
+    "text": "Imagine waking up in a place where stepping outside without protection could become dangerous within minutes There are no forests No cities No ordinary roads stretching from one town to another For months the sun can disappear below the horizon Temperatures can fall to levels found nowhere else on Earth while powerful winds turn an ordinary walk between buildings into a serious journey And yet people live here They work here They cook meals repair machines conduct experiments exercise celebrate birthdays and even build communities But Antarctica is not a normal place to live It is the coldest driest windiest continent on Earth So how do people actually survive here How do they get food Where does their water come from What happens when someone becomes seriously ill And what is it like to spend an entire winter cut off from the rest of humanity This is Extreme Earth Life And today we are going to Antarctica THE CONTINENT AT THE BOTTOM OF THE WORLD Antarctica sits around the South Pole surrounded by the Southern Ocean It is enormous The continent is larger than the United States and Mexico combined yet almost all of its surface is covered by ice That ice contains an extraordinary amount of Earth's fresh water But there is a strange contradiction here Antarctica contains so much frozen water yet much of the continent is technically a desert Why Because a desert is defined by precipitation not temperature The interior of Antarctica receives extremely little snowfall Some regions are so dry that measurable precipitation is almost nonexistent for extraordinarily long periods The landscape can look like an endless white ocean but underneath that surface is a continent of rock mountains valleys and ancient geological formations In some places the ice is several kilometers thick And in others exposed rock breaks through the frozen landscape This is the environment humans have chosen to enter But they did not come here to build ordinary cities They came for something much more specific Science LIFE IN THE RESEARCH STATIONS Most people living in Antarctica are connected to scientific research or the enormous support system required to make that research possible There are research stations scattered across the continent and nearby islands Some are occupied throughout the year Others operate mainly during the warmer Antarctic summer.",
+    "word_from": 0,
+    "word_to": 385,
+    "query": "antarctica frozen landscape extreme weather",
+    "queries": [
+      "antarctica frozen landscape extreme weather",
+      "antarctic research station exterior blizzard"
+    ],
+    "keywords": [
+      "extraordinarily",
+      "extraordinary",
+      "contradiction",
+      "precipitation",
+      "temperatures"
+    ],
+    "semantic": {
+      "meaning": "Introduction to the harsh, uninhabited, and extreme environment of Antarctica where people live and work despite the extreme cold, lack of normal infrastructure, and unique lifestyle.",
+      "subject": "Antarctica environment and inhabitants",
+      "action": "living and working",
+      "object": "research stations and extreme landscape",
+      "location": "Antarctica",
+      "time": "present day",
+      "entities": [
+        "Antarctica",
+        "South Pole"
+      ]
+    },
+    "visual_requirements": [
+      "frozen landscape",
+      "harsh winds",
+      "research station"
+    ],
+    "visual_exclusions": [
+      "green forests",
+      "city streets",
+      "crowds"
+    ],
+    "shots": [
+      {
+        "word_from": 0,
+        "word_to": 178,
+        "text": "Imagine waking up in a place where stepping outside without protection could become dangerous within minutes There are no forests No cities No ordinary roads stretching from one town to another For months the sun can disappear below the horizon Temperatures can fall to levels found nowhere else on Earth while powerful winds turn an ordinary walk between buildings into a serious journey And yet people live here They work here They cook meals repair machines conduct experiments exercise celebrate birthdays and even build communities But Antarctica is not a normal place to live It is the coldest driest windiest continent on Earth So how do people actually survive here How do they get food Where does their water come from What happens when someone becomes seriously ill And what is it like to spend an entire winter cut off from the rest of humanity This is Extreme Earth Life And today we are going to Antarctica THE CONTINENT AT THE BOTTOM OF THE WORLD Antarctica sits around the South Pole surrounded by the Southern Ocean It is enormous",
+        "query": "antarctica frozen landscape extreme weather",
+        "subject": "Antarctica environment and inhabitants",
+        "action": "living and working",
+        "start": 0.111125,
+        "end": 72.249999,
+        "duration": 72.138874,
+        "shot_id": "scene_001_shot_1"
+      },
+      {
+        "word_from": 179,
+        "word_to": 232,
+        "text": "The continent is larger than the United States and Mexico combined yet almost all of its surface is covered by ice That ice contains an extraordinary amount of Earth's fresh water But there is a strange contradiction here Antarctica contains so much frozen water yet much of the continent is technically a desert Why",
+        "query": "antarctic research station exterior blizzard",
+        "subject": "Antarctica environment and inhabitants",
+        "action": "living and working",
+        "start": 72.736125,
+        "end": 94.263874,
+        "duration": 21.527749,
+        "shot_id": "scene_001_shot_2"
+      },
+      {
+        "word_from": 233,
+        "word_to": 326,
+        "text": "Because a desert is defined by precipitation not temperature The interior of Antarctica receives extremely little snowfall Some regions are so dry that measurable precipitation is almost nonexistent for extraordinarily long periods The landscape can look like an endless white ocean but underneath that surface is a continent of rock mountains valleys and ancient geological formations In some places the ice is several kilometers thick And in others exposed rock breaks through the frozen landscape This is the environment humans have chosen to enter But they did not come here to build ordinary cities",
+        "query": "antarctic research station exterior blizzard",
+        "subject": "Antarctica environment and inhabitants",
+        "action": "living and working",
+        "start": 94.736125,
+        "end": 136.638874,
+        "duration": 41.902748999999986,
+        "shot_id": "scene_001_shot_3"
+      },
+      {
+        "word_from": 327,
+        "word_to": 360,
+        "text": "They came for something much more specific Science LIFE IN THE RESEARCH STATIONS Most people living in Antarctica are connected to scientific research or the enormous support system required to make that research possible",
+        "query": "antarctic research station exterior blizzard",
+        "subject": "Antarctica environment and inhabitants",
+        "action": "living and working",
+        "start": 137.111125,
+        "end": 151.333333,
+        "duration": 14.222208000000023,
+        "shot_id": "scene_001_shot_4"
+      },
+      {
+        "word_from": 361,
+        "word_to": 385,
+        "text": "There are research stations scattered across the continent and nearby islands Some are occupied throughout the year Others operate mainly during the warmer Antarctic summer",
+        "query": "antarctic research station exterior blizzard",
+        "subject": "Antarctica environment and inhabitants",
+        "action": "living and working",
+        "start": 151.805541,
+        "end": 162.402791,
+        "duration": 10.597250000000003,
+        "shot_id": "scene_001_shot_5"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.111125,
+    "end": 162.402791,
+    "duration": 162.29166600000002,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "From the outside these stations can look almost unreal Buildings surrounded by nothing but ice Snow vehicles parked beside laboratories.",
+    "word_from": 386,
+    "word_to": 405,
+    "query": "antarctic station buildings snow vehicles",
+    "queries": [
+      "antarctic station buildings snow vehicles",
+      "remote polar station exterior ice"
+    ],
+    "keywords": [
+      "laboratories",
+      "surrounded",
+      "buildings",
+      "stations",
+      "vehicles"
+    ],
+    "semantic": {
+      "meaning": "Exterior view of Antarctic research stations looking unreal, surrounded by ice with snow vehicles parked nearby.",
+      "subject": "Antarctic research station",
+      "action": "standing",
+      "object": "snow vehicles and buildings",
+      "location": "Antarctica",
+      "time": "daytime",
+      "entities": [
+        "Antarctic research station"
+      ]
+    },
+    "visual_requirements": [
+      "snow vehicles",
+      "remote buildings",
+      "ice surroundings"
+    ],
+    "visual_exclusions": [
+      "green grass",
+      "urban city"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 162.902791,
+    "end": 172.680583,
+    "duration": 9.777792000000005,
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "Fuel tanks standing against a white horizon Communications equipment pointing toward the sky Inside however the environment can feel surprisingly familiar There are kitchens Bedrooms Offices Medical facilities Workshops Recreation rooms And places where people simply sit down and talk That normality is important Because the greatest challenge in Antarctica isn't simply staying warm It is creating a functioning human environment in a place that provides almost none of the things humans normally depend on THE FIRST CHALLENGE STAYING WARM In most parts of the world cold weather is an inconvenience In Antarctica cold controls almost everything Buildings must be designed to retain heat Doors and entrances have to minimize the amount of warm air escaping Pipes and machinery must be protected from freezing Vehicles require special preparation Even small mistakes can become dangerous The human body is constantly producing heat but extreme cold can remove that heat much faster than the body can replace it That is why Antarctic clothing is not simply about wearing a thick jacket People use multiple layers designed for different purposes The inner layer manages moisture The middle layers provide insulation The outer layer protects against wind and snow When conditions become severe exposed skin can become vulnerable very quickly And then there is the wind.",
+    "word_from": 406,
+    "word_to": 617,
+    "query": "fuel tanks polar station horizon",
+    "queries": [
+      "fuel tanks polar station horizon",
+      "antarctic station interior workshop kitchen"
+    ],
+    "keywords": [
+      "communications",
+      "inconvenience",
+      "surprisingly",
+      "environment",
+      "functioning"
+    ],
+    "semantic": {
+      "meaning": "Fuel tanks, communications equipment, and familiar indoor facilities like kitchens, workshops, and recreation rooms inside research stations.",
+      "subject": "Antarctic station interior and exterior",
+      "action": "operating",
+      "object": "fuel tanks, communications dishes, and station interior rooms",
+      "location": "Antarctic research station",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "fuel tanks",
+      "satellite dish",
+      "station interior kitchen workshop"
+    ],
+    "visual_exclusions": [
+      "tropical scenery"
+    ],
+    "shots": [
+      {
+        "word_from": 406,
+        "word_to": 418,
+        "text": "Fuel tanks standing against a white horizon Communications equipment pointing toward the sky",
+        "query": "fuel tanks satellite dish polar station",
+        "subject": "fuel tanks and communication equipment",
+        "action": "standing",
+        "start": 173.194458,
+        "end": 179.5,
+        "duration": 6.305542000000003,
+        "shot_id": "scene_003_shot_1"
+      },
+      {
+        "word_from": 419,
+        "word_to": 445,
+        "text": "Inside however the environment can feel surprisingly familiar There are kitchens Bedrooms Offices Medical facilities Workshops Recreation rooms And places where people simply sit down and talk",
+        "query": "antarctic station indoor rooms people talking",
+        "subject": "people inside station",
+        "action": "talking and relaxing",
+        "start": 179.958333,
+        "end": 195.361125,
+        "duration": 15.402791999999977,
+        "shot_id": "scene_003_shot_2"
+      },
+      {
+        "word_from": 446,
+        "word_to": 617,
+        "text": "That normality is important Because the greatest challenge in Antarctica isn't simply staying warm It is creating a functioning human environment in a place that provides almost none of the things humans normally depend on THE FIRST CHALLENGE STAYING WARM In most parts of the world cold weather is an inconvenience In Antarctica cold controls almost everything Buildings must be designed to retain heat Doors and entrances have to minimize the amount of warm air escaping Pipes and machinery must be protected from freezing Vehicles require special preparation Even small mistakes can become dangerous The human body is constantly producing heat but extreme cold can remove that heat much faster than the body can replace it That is why Antarctic clothing is not simply about wearing a thick jacket People use multiple layers designed for different purposes The inner layer manages moisture The middle layers provide insulation The outer layer protects against wind and snow When conditions become severe exposed skin can become vulnerable very quickly And then there is the wind",
+        "query": "polar expedition clothing layering extreme cold",
+        "subject": "person in polar gear",
+        "action": "walking in cold",
+        "start": 195.833333,
+        "end": 269.013916,
+        "duration": 73.18058299999998,
+        "shot_id": "scene_003_shot_3"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 3,
+    "sentence_to": 3,
+    "start": 173.194458,
+    "end": 269.013916,
+    "duration": 95.819458,
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "A temperature that already feels extreme can become much more dangerous when strong winds strip heat from the body During major storms visibility can collapse The horizon disappears Snow moves through the air like smoke Buildings that seem close can become difficult to locate At some stations ropes and marked routes help workers navigate between buildings when visibility becomes dangerously poor In Antarctica knowing where you are can be just as important as staying warm THE WATER PROBLEM Now comes one of the strangest problems How do you get drinking water in a continent covered by ice The answer depends on the station Some facilities process seawater Others melt snow or ice and then treat the resulting water But melting ice requires energy And energy is precious A research station needs power for heating lighting laboratories communications vehicles workshops refrigeration water systems and countless other operations So water is not something people simply turn on from an unlimited supply It is part of an engineered system Wastewater also has to be carefully managed Antarctica is not a place where people can simply throw waste outside and walk away The environment is extremely sensitive That means modern Antarctic operations are designed around reducing their impact and where required removing waste from the continent.",
+    "word_from": 618,
+    "word_to": 829,
+    "query": "antarctic blizzard whiteout storm",
+    "queries": [
+      "antarctic blizzard whiteout storm",
+      "researchers using guideline rope in storm"
+    ],
+    "keywords": [
+      "communications",
+      "refrigeration",
+      "laboratories",
+      "temperature",
+      "dangerously"
+    ],
+    "semantic": {
+      "meaning": "Strong winds stripping heat, reduced visibility during storms, and using ropes to navigate between station buildings.",
+      "subject": "blizzard and storm conditions",
+      "action": "blowing snow and navigating",
+      "object": "guidelines and ropes between buildings",
+      "location": "Antarctica",
+      "time": "storm",
+      "entities": []
+    },
+    "visual_requirements": [
+      "whiteout blizzard",
+      "safety rope",
+      "polar storm"
+    ],
+    "visual_exclusions": [
+      "clear sunny day"
+    ],
+    "shots": [
+      {
+        "word_from": 618,
+        "word_to": 714,
+        "text": "A temperature that already feels extreme can become much more dangerous when strong winds strip heat from the body During major storms visibility can collapse The horizon disappears Snow moves through the air like smoke Buildings that seem close can become difficult to locate At some stations ropes and marked routes help workers navigate between buildings when visibility becomes dangerously poor In Antarctica knowing where you are can be just as important as staying warm THE WATER PROBLEM Now comes one of the strangest problems How do you get drinking water in a continent covered by ice",
+        "query": "antarctic blizzard whiteout storm",
+        "subject": "blizzard and storm conditions",
+        "action": "blowing snow and navigating",
+        "start": 269.559125,
+        "end": 309.503541,
+        "duration": 39.94441599999999,
+        "shot_id": "scene_004_shot_1"
+      },
+      {
+        "word_from": 715,
+        "word_to": 783,
+        "text": "The answer depends on the station Some facilities process seawater Others melt snow or ice and then treat the resulting water But melting ice requires energy And energy is precious A research station needs power for heating lighting laboratories communications vehicles workshops refrigeration water systems and countless other operations So water is not something people simply turn on from an unlimited supply It is part of an engineered system",
+        "query": "researchers using guideline rope in storm",
+        "subject": "blizzard and storm conditions",
+        "action": "blowing snow and navigating",
+        "start": 309.975791,
+        "end": 342.059083,
+        "duration": 32.08329199999997,
+        "shot_id": "scene_004_shot_2"
+      },
+      {
+        "word_from": 784,
+        "word_to": 805,
+        "text": "Wastewater also has to be carefully managed Antarctica is not a place where people can simply throw waste outside and walk away",
+        "query": "researchers using guideline rope in storm",
+        "subject": "blizzard and storm conditions",
+        "action": "blowing snow and navigating",
+        "start": 342.531333,
+        "end": 350.753541,
+        "duration": 8.222207999999966,
+        "shot_id": "scene_004_shot_3"
+      },
+      {
+        "word_from": 806,
+        "word_to": 829,
+        "text": "The environment is extremely sensitive That means modern Antarctic operations are designed around reducing their impact and where required removing waste from the continent",
+        "query": "researchers using guideline rope in storm",
+        "subject": "blizzard and storm conditions",
+        "action": "blowing snow and navigating",
+        "start": 351.211875,
+        "end": 362.628541,
+        "duration": 11.416665999999964,
+        "shot_id": "scene_004_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 269.559125,
+    "end": 362.628541,
+    "duration": 93.06941599999999,
+    "index": 4,
+    "segment_id": "segment_004"
+  },
+  {
+    "text": "FOOD AT THE END OF THE WORLD Imagine going grocery shopping when the nearest supermarket is thousands of kilometers away That is essentially the logistical problem Antarctic stations face Almost everything needed to support human life has to be brought from somewhere else.",
+    "word_from": 830,
+    "word_to": 872,
+    "query": "polar station cargo supplies logistics",
+    "queries": [
+      "polar station cargo supplies logistics",
+      "remote polar base supply containers"
+    ],
+    "keywords": [
+      "supermarket",
+      "essentially",
+      "kilometers",
+      "logistical",
+      "thousands"
+    ],
+    "semantic": {
+      "meaning": "Grocery shopping challenge when the nearest supermarket is thousands of kilometers away from Antarctic stations.",
+      "subject": "antarctic station logistics",
+      "action": "planning supply chain",
+      "object": "cargo and supplies",
+      "location": "Antarctica",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "cargo crates",
+      "remote polar station"
+    ],
+    "visual_exclusions": [
+      "supermarket aisles"
+    ],
+    "shots": [
+      {
+        "word_from": 830,
+        "word_to": 849,
+        "text": "FOOD AT THE END OF THE WORLD Imagine going grocery shopping when the nearest supermarket is thousands of kilometers away",
+        "query": "polar station cargo supplies logistics",
+        "subject": "antarctic station logistics",
+        "action": "planning supply chain",
+        "start": 363.156333,
+        "end": 370.336875,
+        "duration": 7.180542000000003,
+        "shot_id": "scene_005_shot_1"
+      },
+      {
+        "word_from": 850,
+        "word_to": 872,
+        "text": "That is essentially the logistical problem Antarctic stations face Almost everything needed to support human life has to be brought from somewhere else",
+        "query": "remote polar base supply containers",
+        "subject": "antarctic station logistics",
+        "action": "planning supply chain",
+        "start": 370.809125,
+        "end": 380.323,
+        "duration": 9.513874999999985,
+        "shot_id": "scene_005_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 5,
+    "sentence_to": 5,
+    "start": 363.156333,
+    "end": 380.323,
+    "duration": 17.16666699999996,
+    "index": 5,
+    "segment_id": "segment_005"
+  },
+  {
+    "text": "Food Fuel Medical supplies Building materials Clothing Tools Machine parts Scientific equipment Even something as ordinary as a replacement component can become a major logistical issue During the Antarctic summer supply operations become much easier Ships can reach coastal areas when sea-ice conditions allow it Aircraft can operate more frequently Cargo is delivered and stored for the months ahead The timing matters because winter can close the door to the outside world A forgotten piece of equipment might not be replaceable for a very long time That is why Antarctic stations plan carefully. Food is stored.",
+    "word_from": 873,
+    "word_to": 968,
+    "query": "cargo ship unloading ice shelf antarctica",
+    "queries": [
+      "cargo ship unloading ice shelf antarctica",
+      "cargo plane landing snow runway antarctica",
+      "polar station food storage warehouse"
+    ],
+    "keywords": [
+      "replacement",
+      "replaceable",
+      "scientific",
+      "logistical",
+      "operations"
+    ],
+    "semantic": {
+      "meaning": "Delivery of food, fuel, medical supplies, and equipment via ships and aircraft during the Antarctic summer before winter closes access.",
+      "subject": "cargo ships and aircraft",
+      "action": "delivering supplies",
+      "object": "cargo and equipment",
+      "location": "Antarctic coast",
+      "time": "Antarctic summer",
+      "entities": []
+    },
+    "visual_requirements": [
+      "cargo ship ice edge",
+      "transport aircraft landing snow",
+      "warehouse shelves",
+      "food boxes"
+    ],
+    "visual_exclusions": [
+      "green trees"
+    ],
+    "shots": [
+      {
+        "word_from": 873,
+        "word_to": 965,
+        "text": "Food Fuel Medical supplies Building materials Clothing Tools Machine parts Scientific equipment Even something as ordinary as a replacement component can become a major logistical issue During the Antarctic summer supply operations become much easier Ships can reach coastal areas when sea-ice conditions allow it Aircraft can operate more frequently Cargo is delivered and stored for the months ahead The timing matters because winter can close the door to the outside world A forgotten piece of equipment might not be replaceable for a very long time That is why Antarctic stations plan carefully.",
+        "query": "cargo ship unloading ice shelf antarctica",
+        "subject": "cargo ships and aircraft",
+        "action": "delivering supplies",
+        "start": 380.823,
+        "end": 422.642458,
+        "duration": 41.819458,
+        "shot_id": "scene_006_shot_1"
+      },
+      {
+        "word_from": 966,
+        "word_to": 968,
+        "text": "Food is stored.",
+        "query": "polar station food storage warehouse",
+        "subject": "food supplies",
+        "action": "being stored",
+        "start": 423.170208,
+        "end": 423.961874,
+        "duration": 0.7916660000000206,
+        "shot_id": "scene_006_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 6,
+    "sentence_to": 7,
+    "start": 380.823,
+    "end": 423.961874,
+    "duration": 43.138874000000044,
+    "index": 6,
+    "segment_id": "segment_006"
+  },
+  {
+    "text": "Fuel is stockpiled Equipment is inspected Critical spare parts are maintained And every major system has to be treated as something that could fail at exactly the wrong moment A TASTE OF NORMAL LIFE Despite all this preparation people still need something more than calories and shelter They need normality And this is where Antarctic stations become surprisingly human People cook meals together They watch movies They play games They exercise They celebrate holidays and birthdays Some stations have libraries gyms lounges music rooms bars or other recreational spaces During the summer larger stations can temporarily become busy communities Scientists work alongside engineers electricians mechanics cooks pilots doctors construction workers and logistics crews Everyone has a different job But everyone depends on the same system A scientist may be studying atmospheric chemistry A mechanic may be keeping a snow vehicle operational A cook may be feeding an entire station A technician may be maintaining communications None of these jobs are secondary If one part of the system stops working the effects can spread throughout the entire community Antarctica turns cooperation from a social ideal into a practical necessity THE MOST DANGEROUS EMERGENCY There is another problem people often underestimate.",
+    "word_from": 969,
+    "word_to": 1167,
+    "query": "fuel barrels polar station stockpile",
+    "queries": [
+      "fuel barrels polar station stockpile",
+      "scientists engineers working antarctic station indoor"
+    ],
+    "keywords": [
+      "communications",
+      "underestimate",
+      "surprisingly",
+      "recreational",
+      "electricians"
+    ],
+    "semantic": {
+      "meaning": "Fuel stockpiling, equipment inspection, and daily life routines including cooking, movies, exercise, and diverse jobs within the station community.",
+      "subject": "station residents and maintenance crews",
+      "action": "working and socializing",
+      "object": "machinery, food, and recreational areas",
+      "location": "Antarctic station",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "fuel drums",
+      "scientists working",
+      "people relaxing inside station"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 969,
+        "word_to": 1057,
+        "text": "Fuel is stockpiled Equipment is inspected Critical spare parts are maintained And every major system has to be treated as something that could fail at exactly the wrong moment A TASTE OF NORMAL LIFE Despite all this preparation people still need something more than calories and shelter They need normality And this is where Antarctic stations become surprisingly human People cook meals together They watch movies They play games They exercise They celebrate holidays and birthdays Some stations have libraries gyms lounges music rooms bars or other recreational spaces",
+        "query": "fuel barrels polar station stockpile",
+        "subject": "station residents and maintenance crews",
+        "action": "working and socializing",
+        "start": 424.475791,
+        "end": 466.461874,
+        "duration": 41.98608300000001,
+        "shot_id": "scene_007_shot_1"
+      },
+      {
+        "word_from": 1058,
+        "word_to": 1086,
+        "text": "During the summer larger stations can temporarily become busy communities Scientists work alongside engineers electricians mechanics cooks pilots doctors construction workers and logistics crews Everyone has a different job",
+        "query": "scientists engineers working antarctic station indoor",
+        "subject": "station residents and maintenance crews",
+        "action": "working and socializing",
+        "start": 466.934125,
+        "end": 484.211875,
+        "duration": 17.277750000000026,
+        "shot_id": "scene_007_shot_2"
+      },
+      {
+        "word_from": 1087,
+        "word_to": 1145,
+        "text": "But everyone depends on the same system A scientist may be studying atmospheric chemistry A mechanic may be keeping a snow vehicle operational A cook may be feeding an entire station A technician may be maintaining communications None of these jobs are secondary If one part of the system stops working the effects can spread throughout the entire community",
+        "query": "scientists engineers working antarctic station indoor",
+        "subject": "station residents and maintenance crews",
+        "action": "working and socializing",
+        "start": 484.684125,
+        "end": 508.100791,
+        "duration": 23.41666600000002,
+        "shot_id": "scene_007_shot_3"
+      },
+      {
+        "word_from": 1146,
+        "word_to": 1167,
+        "text": "Antarctica turns cooperation from a social ideal into a practical necessity THE MOST DANGEROUS EMERGENCY There is another problem people often underestimate",
+        "query": "scientists engineers working antarctic station indoor",
+        "subject": "station residents and maintenance crews",
+        "action": "working and socializing",
+        "start": 508.573,
+        "end": 519.184125,
+        "duration": 10.611125000000015,
+        "shot_id": "scene_007_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 8,
+    "sentence_to": 8,
+    "start": 424.475791,
+    "end": 519.184125,
+    "duration": 94.70833399999998,
+    "index": 7,
+    "segment_id": "segment_007"
+  },
+  {
+    "text": "Fire Antarctica is frozen but a research station contains plenty of things that can burn Buildings are heated.",
+    "word_from": 1168,
+    "word_to": 1185,
+    "query": "antarctic station building exterior snow",
+    "queries": [
+      "antarctic station building exterior snow",
+      "polar station heating infrastructure"
+    ],
+    "keywords": [
+      "antarctica",
+      "buildings",
+      "research",
+      "contains",
+      "station"
+    ],
+    "semantic": {
+      "meaning": "The serious danger of fire in a frozen research station containing combustible materials and heating systems.",
+      "subject": "research station building",
+      "action": "heating",
+      "object": "building structure",
+      "location": "Antarctic station",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "polar research station exterior",
+      "heating vents"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 9,
+    "sentence_to": 9,
+    "start": 519.711875,
+    "end": 527.170208,
+    "duration": 7.458333000000039,
+    "index": 8,
+    "segment_id": "segment_008"
+  },
+  {
+    "text": "Fuel is stored Electrical systems operate continuously Workshops contain machinery and materials And outside assistance may be extremely far away In an isolated Antarctic station a serious fire cannot simply be treated like a normal urban emergency.",
+    "word_from": 1186,
+    "word_to": 1222,
+    "query": "power generator room polar station",
+    "queries": [
+      "power generator room polar station",
+      "fuel storage tanks antarctica"
+    ],
+    "keywords": [
+      "continuously",
+      "electrical",
+      "assistance",
+      "workshops",
+      "machinery"
+    ],
+    "semantic": {
+      "meaning": "Fuel storage, electrical systems, and machinery operating continuously in isolated stations far from outside assistance.",
+      "subject": "station infrastructure",
+      "action": "operating",
+      "object": "generators and fuel tanks",
+      "location": "Antarctic station",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "generator room",
+      "fuel tanks"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1186,
+        "word_to": 1197,
+        "text": "Fuel is stored Electrical systems operate continuously Workshops contain machinery and materials",
+        "query": "power generator room polar station",
+        "subject": "station infrastructure",
+        "action": "operating",
+        "start": 527.684125,
+        "end": 534.725791,
+        "duration": 7.041665999999964,
+        "shot_id": "scene_009_shot_1"
+      },
+      {
+        "word_from": 1198,
+        "word_to": 1222,
+        "text": "And outside assistance may be extremely far away In an isolated Antarctic station a serious fire cannot simply be treated like a normal urban emergency",
+        "query": "fuel storage tanks antarctica",
+        "subject": "station infrastructure",
+        "action": "operating",
+        "start": 535.184125,
+        "end": 545.892458,
+        "duration": 10.708333000000039,
+        "shot_id": "scene_009_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 10,
+    "sentence_to": 10,
+    "start": 527.684125,
+    "end": 545.892458,
+    "duration": 18.20833300000004,
+    "index": 9,
+    "segment_id": "segment_009"
+  },
+  {
+    "text": "There may be no neighboring fire department No nearby hospital No road to another city That means stations train their own emergency teams.",
+    "word_from": 1223,
+    "word_to": 1244,
+    "query": "antarctic station fire drill team",
+    "queries": [
+      "antarctic station fire drill team",
+      "polar researchers firefighting training"
+    ],
+    "keywords": [
+      "neighboring",
+      "department",
+      "emergency",
+      "hospital",
+      "stations"
+    ],
+    "semantic": {
+      "meaning": "Stations training their own emergency response teams due to the absence of neighboring fire departments or hospitals.",
+      "subject": "station crew",
+      "action": "training for emergency",
+      "object": "firefighting gear",
+      "location": "Antarctic station",
+      "time": "daytime",
+      "entities": []
+    },
+    "visual_requirements": [
+      "people in firefighter suits",
+      "polar station"
+    ],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 11,
+    "sentence_to": 11,
+    "start": 546.461,
+    "end": 555.641541,
+    "duration": 9.180540999999948,
+    "index": 10,
+    "segment_id": "segment_010"
+  },
+  {
+    "text": "Fire prevention and emergency drills become part of everyday life The same principle applies to mechanical failures power outages fuel problems and communication failures In Antarctica preparedness isn't an optional extra It is part of survival WHEN SOMEONE GETS SICK Medical care is another extraordinary challenge Large research stations may have doctors and medical facilities but they cannot provide every type of treatment If someone suffers a serious injury or develops a condition that requires specialized care evacuation may eventually be necessary But evacuation depends heavily on weather and aircraft availability During the Antarctic winter conditions can make flying extremely difficult or impossible This means medical teams sometimes have to stabilize patients and wait And Antarctic history contains remarkable examples of doctors being forced to rely on extraordinary levels of preparation One of the most famous occurred in 1961 Soviet physician Leonid Rogozov was wintering at Novolazarevskaya Station when he developed appendicitis With no other surgeon available and evacuation impossible he performed an appendectomy on himself with assistance from two colleagues The operation lasted less than two hours He survived The story became one of the most remarkable examples of medical self-reliance in an isolated environment It also illustrates a fundamental reality of Antarctic life When distance becomes extreme preparation can mean the difference between a problem and a catastrophe THE LAST FLIGHT BEFORE WINTER.",
+    "word_from": 1245,
+    "word_to": 1468,
+    "query": "antarctic station medical clinic interior",
+    "queries": [
+      "antarctic station medical clinic interior",
+      "historic polar exploration medical surgery archive"
+    ],
+    "keywords": [
+      "novolazarevskaya",
+      "communication",
+      "extraordinary",
+      "preparedness",
+      "availability"
+    ],
+    "semantic": {
+      "meaning": "Medical challenges, evacuation limitations during winter storms, and historical medical self-reliance in Antarctica.",
+      "subject": "medical facility and historic medical events",
+      "action": "treating patients and preparing for emergencies",
+      "object": "medical equipment",
+      "location": "Antarctic medical bay",
+      "time": "winter",
+      "entities": [
+        "Leonid Rogozov",
+        "Novolazarevskaya Station"
+      ]
+    },
+    "visual_requirements": [
+      "medical clinic interior",
+      "doctor examining patient"
+    ],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1245,
+        "word_to": 1326,
+        "text": "Fire prevention and emergency drills become part of everyday life The same principle applies to mechanical failures power outages fuel problems and communication failures In Antarctica preparedness isn't an optional extra It is part of survival WHEN SOMEONE GETS SICK Medical care is another extraordinary challenge Large research stations may have doctors and medical facilities but they cannot provide every type of treatment If someone suffers a serious injury or develops a condition that requires specialized care evacuation may eventually be necessary",
+        "query": "antarctic station medical clinic interior",
+        "subject": "medical facility and historic medical events",
+        "action": "treating patients and preparing for emergencies",
+        "start": 556.169333,
+        "end": 594.974874,
+        "duration": 38.80554099999995,
+        "shot_id": "scene_011_shot_1"
+      },
+      {
+        "word_from": 1327,
+        "word_to": 1421,
+        "text": "But evacuation depends heavily on weather and aircraft availability During the Antarctic winter conditions can make flying extremely difficult or impossible This means medical teams sometimes have to stabilize patients and wait And Antarctic history contains remarkable examples of doctors being forced to rely on extraordinary levels of preparation One of the most famous occurred in 1961 Soviet physician Leonid Rogozov was wintering at Novolazarevskaya Station when he developed appendicitis With no other surgeon available and evacuation impossible he performed an appendectomy on himself with assistance from two colleagues The operation lasted less than two hours",
+        "query": "historic polar exploration medical surgery archive",
+        "subject": "medical facility and historic medical events",
+        "action": "treating patients and preparing for emergencies",
+        "start": 595.447125,
+        "end": 641.266541,
+        "duration": 45.81941599999993,
+        "shot_id": "scene_011_shot_2"
+      },
+      {
+        "word_from": 1422,
+        "word_to": 1448,
+        "text": "He survived The story became one of the most remarkable examples of medical self-reliance in an isolated environment It also illustrates a fundamental reality of Antarctic life",
+        "query": "historic polar exploration medical surgery archive",
+        "subject": "medical facility and historic medical events",
+        "action": "treating patients and preparing for emergencies",
+        "start": 641.752666,
+        "end": 654.044332,
+        "duration": 12.291666000000077,
+        "shot_id": "scene_011_shot_3"
+      },
+      {
+        "word_from": 1449,
+        "word_to": 1468,
+        "text": "When distance becomes extreme preparation can mean the difference between a problem and a catastrophe THE LAST FLIGHT BEFORE WINTER",
+        "query": "historic polar exploration medical surgery archive",
+        "subject": "medical facility and historic medical events",
+        "action": "treating patients and preparing for emergencies",
+        "start": 654.516541,
+        "end": 663.072082,
+        "duration": 8.555541000000062,
+        "shot_id": "scene_011_shot_4"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 12,
+    "sentence_to": 12,
+    "start": 556.169333,
+    "end": 663.072082,
+    "duration": 106.90274899999997,
+    "index": 11,
+    "segment_id": "segment_011"
+  },
+  {
+    "text": "For many Antarctic workers one moment defines the beginning of winter The departure of the final aircraft During the summer season stations may see a steady flow of personnel supplies and aircraft Then conditions begin changing Temperatures fall Darkness increases.",
+    "word_from": 1469,
+    "word_to": 1508,
+    "query": "temperatures conditions antarctic beginning departure",
+    "queries": [
+      "temperatures conditions antarctic beginning departure"
+    ],
+    "keywords": [
+      "temperatures",
+      "conditions",
+      "antarctic",
+      "beginning",
+      "departure"
+    ],
+    "semantic": {
+      "meaning": "For many Antarctic workers one moment defines the beginning of winter The departure of the final aircraft During the summer season stations may see a steady flow of personnel supplies and aircraft Then conditions begin changing Temperatures fall Darkness increases.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1469,
+        "word_to": 1485,
+        "text": "For many Antarctic workers one moment defines the beginning of winter The departure of the final aircraft",
+        "query": "temperatures conditions antarctic beginning departure",
+        "subject": "",
+        "action": "",
+        "start": 663.586,
+        "end": 670.613791,
+        "duration": 7.027790999999979,
+        "shot_id": "scene_012_shot_1"
+      },
+      {
+        "word_from": 1486,
+        "word_to": 1508,
+        "text": "During the summer season stations may see a steady flow of personnel supplies and aircraft Then conditions begin changing Temperatures fall Darkness increases",
+        "query": "temperatures conditions antarctic beginning departure",
+        "subject": "",
+        "action": "",
+        "start": 671.086,
+        "end": 682.613791,
+        "duration": 11.52779099999998,
+        "shot_id": "scene_012_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 13,
+    "sentence_to": 13,
+    "start": 663.586,
+    "end": 682.613791,
+    "duration": 19.02779099999998,
+    "index": 12,
+    "segment_id": "segment_012"
+  },
+  {
+    "text": "Flights become more difficult Eventually the seasonal connection with the outside world can close The people who remain are known as winter-over crews They know that they may spend months without seeing another aircraft arrive At the South Pole the isolation becomes especially intense The station sits thousands of kilometers from the nearest major population centers There is no normal road network leading away There is no possibility of simply deciding to leave on a difficult day.",
+    "word_from": 1509,
+    "word_to": 1585,
+    "query": "possibility eventually connection especially kilometers",
+    "queries": [
+      "possibility eventually connection especially kilometers"
+    ],
+    "keywords": [
+      "possibility",
+      "eventually",
+      "connection",
+      "especially",
+      "kilometers"
+    ],
+    "semantic": {
+      "meaning": "Flights become more difficult Eventually the seasonal connection with the outside world can close The people who remain are known as winter-over crews They know that they may spend months without seeing another aircraft arrive At the South Pole the isolation becomes especially intense The station sits thousands of kilometers from the nearest major population centers There is no normal road network leading away There is no possibility of simply deciding to leave on a difficult day.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1509,
+        "word_to": 1564,
+        "text": "Flights become more difficult Eventually the seasonal connection with the outside world can close The people who remain are known as winter-over crews They know that they may spend months without seeing another aircraft arrive At the South Pole the isolation becomes especially intense The station sits thousands of kilometers from the nearest major population centers",
+        "query": "possibility eventually connection especially kilometers",
+        "subject": "",
+        "action": "",
+        "start": 683.127666,
+        "end": 707.280416,
+        "duration": 24.15274999999997,
+        "shot_id": "scene_013_shot_1"
+      },
+      {
+        "word_from": 1565,
+        "word_to": 1585,
+        "text": "There is no normal road network leading away There is no possibility of simply deciding to leave on a difficult day",
+        "query": "possibility eventually connection especially kilometers",
+        "subject": "",
+        "action": "",
+        "start": 707.752666,
+        "end": 714.794332,
+        "duration": 7.0416660000000775,
+        "shot_id": "scene_013_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 14,
+    "sentence_to": 14,
+    "start": 683.127666,
+    "end": 714.794332,
+    "duration": 31.666666000000077,
+    "index": 13,
+    "segment_id": "segment_013"
+  },
+  {
+    "text": "For months the station becomes an isolated human settlement surrounded by one of the harshest environments on Earth THE POLAR NIGHT Then the sunlight begins to disappear At the South Pole the sun rises and sets only once each year That means winter brings an extraordinarily long period without a normal sunrise Imagine waking up and realizing that the darkness outside isn't nighttime It is the season.",
+    "word_from": 1586,
+    "word_to": 1652,
+    "query": "extraordinarily environments settlement surrounded disappear",
+    "queries": [
+      "extraordinarily environments settlement surrounded disappear"
+    ],
+    "keywords": [
+      "extraordinarily",
+      "environments",
+      "settlement",
+      "surrounded",
+      "disappear"
+    ],
+    "semantic": {
+      "meaning": "For months the station becomes an isolated human settlement surrounded by one of the harshest environments on Earth THE POLAR NIGHT Then the sunlight begins to disappear At the South Pole the sun rises and sets only once each year That means winter brings an extraordinarily long period without a normal sunrise Imagine waking up and realizing that the darkness outside isn't nighttime It is the season.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1586,
+        "word_to": 1625,
+        "text": "For months the station becomes an isolated human settlement surrounded by one of the harshest environments on Earth THE POLAR NIGHT Then the sunlight begins to disappear At the South Pole the sun rises and sets only once each year",
+        "query": "extraordinarily environments settlement surrounded disappear",
+        "subject": "",
+        "action": "",
+        "start": 715.294333,
+        "end": 730.988791,
+        "duration": 15.69445799999994,
+        "shot_id": "scene_014_shot_1"
+      },
+      {
+        "word_from": 1626,
+        "word_to": 1652,
+        "text": "That means winter brings an extraordinarily long period without a normal sunrise Imagine waking up and realizing that the darkness outside isn't nighttime It is the season",
+        "query": "extraordinarily environments settlement surrounded disappear",
+        "subject": "",
+        "action": "",
+        "start": 731.461,
+        "end": 742.822083,
+        "duration": 11.361083000000008,
+        "shot_id": "scene_014_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 15,
+    "sentence_to": 15,
+    "start": 715.294333,
+    "end": 742.822083,
+    "duration": 27.52774999999997,
+    "index": 14,
+    "segment_id": "segment_014"
+  },
+  {
+    "text": "For weeks and months the environment outside the station can remain dark The psychological effect can be significant Humans evolved with regular cycles of daylight and darkness Our sleep patterns hormones mood and sense of time are influenced by light In Antarctica those natural signals become radically different That is why routines matter People maintain schedules They eat meals at regular times They exercise They work They socialize They create activities And they look after one another The goal is not to pretend the environment is normal It is to create enough structure to keep human life functioning inside it THE IMPORTANCE OF COMMUNITY Perhaps the most important piece of Antarctic survival is something that cannot be stored in a warehouse Community When only a few people share an isolated station relationships become extremely important You work beside the same people Eat with them See them every day And during winter there are very few opportunities to escape the group That can create tension Small disagreements can feel larger when there is nowhere else to go.",
+    "word_from": 1653,
+    "word_to": 1828,
+    "query": "psychological relationships opportunities disagreements environment",
+    "queries": [
+      "psychological relationships opportunities disagreements environment"
+    ],
+    "keywords": [
+      "psychological",
+      "relationships",
+      "opportunities",
+      "disagreements",
+      "environment"
+    ],
+    "semantic": {
+      "meaning": "For weeks and months the environment outside the station can remain dark The psychological effect can be significant Humans evolved with regular cycles of daylight and darkness Our sleep patterns hormones mood and sense of time are influenced by light In Antarctica those natural signals become radically different That is why routines matter People maintain schedules They eat meals at regular times They exercise They work They socialize They create activities And they look after one another The goal is not to pretend the environment is normal It is to create enough structure to keep human life functioning inside it THE IMPORTANCE OF COMMUNITY Perhaps the most important piece of Antarctic survival is something that cannot be stored in a warehouse Community When only a few people share an isolated station relationships become extremely important You work beside the same people Eat with them See them every day And during winter there are very few opportunities to escape the group That can create tension Small disagreements can feel larger when there is nowhere else to go.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1653,
+        "word_to": 1729,
+        "text": "For weeks and months the environment outside the station can remain dark The psychological effect can be significant Humans evolved with regular cycles of daylight and darkness Our sleep patterns hormones mood and sense of time are influenced by light In Antarctica those natural signals become radically different That is why routines matter People maintain schedules They eat meals at regular times They exercise They work They socialize They create activities And they look after one another",
+        "query": "psychological relationships opportunities disagreements environment",
+        "subject": "",
+        "action": "",
+        "start": 743.322125,
+        "end": 778.599874,
+        "duration": 35.27774899999997,
+        "shot_id": "scene_015_shot_1"
+      },
+      {
+        "word_from": 1730,
+        "word_to": 1774,
+        "text": "The goal is not to pretend the environment is normal It is to create enough structure to keep human life functioning inside it THE IMPORTANCE OF COMMUNITY Perhaps the most important piece of Antarctic survival is something that cannot be stored in a warehouse Community",
+        "query": "psychological relationships opportunities disagreements environment",
+        "subject": "",
+        "action": "",
+        "start": 779.072125,
+        "end": 796.099916,
+        "duration": 17.02779099999998,
+        "shot_id": "scene_015_shot_2"
+      },
+      {
+        "word_from": 1775,
+        "word_to": 1796,
+        "text": "When only a few people share an isolated station relationships become extremely important You work beside the same people Eat with them",
+        "query": "psychological relationships opportunities disagreements environment",
+        "subject": "",
+        "action": "",
+        "start": 796.572125,
+        "end": 805.585999,
+        "duration": 9.013873999999987,
+        "shot_id": "scene_015_shot_3"
+      },
+      {
+        "word_from": 1797,
+        "word_to": 1828,
+        "text": "See them every day And during winter there are very few opportunities to escape the group That can create tension Small disagreements can feel larger when there is nowhere else to go",
+        "query": "psychological relationships opportunities disagreements environment",
+        "subject": "",
+        "action": "",
+        "start": 806.058208,
+        "end": 817.724874,
+        "duration": 11.666665999999964,
+        "shot_id": "scene_015_shot_4"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 16,
+    "sentence_to": 16,
+    "start": 743.322125,
+    "end": 817.724874,
+    "duration": 74.40274899999997,
+    "index": 15,
+    "segment_id": "segment_015"
+  },
+  {
+    "text": "But the same closeness can also create extraordinary bonds People celebrate together Help one another Notice when someone is struggling And develop traditions that make the long winter feel less endless Midwinter celebrations are especially important People prepare special meals exchange gifts organize events and create their own traditions These moments aren't just entertainment They create milestones They divide the endless darkness into something people can understand Human beings have always used rituals to give meaning to difficult periods Antarctica simply makes that need impossible to ignore LIFE OUTSIDE THE STATION Eventually however people have to leave the warmth of the station And Antarctica outside the buildings is an entirely different world The continent contains enormous ice shelves glaciers mountains frozen valleys and coastal environments Near the coast wildlife becomes much more visible Penguins gather in colonies Seals rest on sea ice Seabirds move between land and ocean And whales appear in the surrounding waters during the productive summer season But Antarctica is not an ecosystem built around forests and grasslands The foundation of much of its marine food web is tiny Krill These small crustaceans exist in enormous numbers and form a critical part of the Antarctic ecosystem.",
+    "word_from": 1829,
+    "word_to": 2027,
+    "query": "extraordinary entertainment celebrations environments surrounding",
+    "queries": [
+      "extraordinary entertainment celebrations environments surrounding"
+    ],
+    "keywords": [
+      "extraordinary",
+      "entertainment",
+      "celebrations",
+      "environments",
+      "surrounding"
+    ],
+    "semantic": {
+      "meaning": "But the same closeness can also create extraordinary bonds People celebrate together Help one another Notice when someone is struggling And develop traditions that make the long winter feel less endless Midwinter celebrations are especially important People prepare special meals exchange gifts organize events and create their own traditions These moments aren't just entertainment They create milestones They divide the endless darkness into something people can understand Human beings have always used rituals to give meaning to difficult periods Antarctica simply makes that need impossible to ignore LIFE OUTSIDE THE STATION Eventually however people have to leave the warmth of the station And Antarctica outside the buildings is an entirely different world The continent contains enormous ice shelves glaciers mountains frozen valleys and coastal environments Near the coast wildlife becomes much more visible Penguins gather in colonies Seals rest on sea ice Seabirds move between land and ocean And whales appear in the surrounding waters during the productive summer season But Antarctica is not an ecosystem built around forests and grasslands The foundation of much of its marine food web is tiny Krill These small crustaceans exist in enormous numbers and form a critical part of the Antarctic ecosystem.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 1829,
+        "word_to": 1907,
+        "text": "But the same closeness can also create extraordinary bonds People celebrate together Help one another Notice when someone is struggling And develop traditions that make the long winter feel less endless Midwinter celebrations are especially important People prepare special meals exchange gifts organize events and create their own traditions These moments aren't just entertainment They create milestones They divide the endless darkness into something people can understand Human beings have always used rituals to give meaning to difficult periods",
+        "query": "extraordinary entertainment celebrations environments surrounding",
+        "subject": "",
+        "action": "",
+        "start": 818.285,
+        "end": 855.632208,
+        "duration": 37.34720800000002,
+        "shot_id": "scene_016_shot_1"
+      },
+      {
+        "word_from": 1908,
+        "word_to": 1940,
+        "text": "Antarctica simply makes that need impossible to ignore LIFE OUTSIDE THE STATION Eventually however people have to leave the warmth of the station And Antarctica outside the buildings is an entirely different world",
+        "query": "extraordinary entertainment celebrations environments surrounding",
+        "subject": "",
+        "action": "",
+        "start": 856.104458,
+        "end": 870.382208,
+        "duration": 14.277749999999969,
+        "shot_id": "scene_016_shot_2"
+      },
+      {
+        "word_from": 1941,
+        "word_to": 1999,
+        "text": "The continent contains enormous ice shelves glaciers mountains frozen valleys and coastal environments Near the coast wildlife becomes much more visible Penguins gather in colonies Seals rest on sea ice Seabirds move between land and ocean And whales appear in the surrounding waters during the productive summer season But Antarctica is not an ecosystem built around forests and grasslands",
+        "query": "extraordinary entertainment celebrations environments surrounding",
+        "subject": "",
+        "action": "",
+        "start": 870.854458,
+        "end": 899.604416,
+        "duration": 28.749957999999992,
+        "shot_id": "scene_016_shot_3"
+      },
+      {
+        "word_from": 2000,
+        "word_to": 2027,
+        "text": "The foundation of much of its marine food web is tiny Krill These small crustaceans exist in enormous numbers and form a critical part of the Antarctic ecosystem",
+        "query": "extraordinary entertainment celebrations environments surrounding",
+        "subject": "",
+        "action": "",
+        "start": 900.076666,
+        "end": 911.729457,
+        "duration": 11.65279099999998,
+        "shot_id": "scene_016_shot_4"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 17,
+    "sentence_to": 17,
+    "start": 818.285,
+    "end": 911.729457,
+    "duration": 93.44445700000006,
+    "index": 16,
+    "segment_id": "segment_016"
+  },
+  {
+    "text": "Fish feed on them Penguins feed on them Seals depend on food chains built around them And whales can consume enormous quantities The result is a remarkable contrast One of the largest animals ever to live on Earth depends heavily on creatures small enough to fit in your hand The Antarctic ecosystem is a reminder that size does not determine importance PENGUINS AND THE COLD.",
+    "word_from": 2028,
+    "word_to": 2092,
+    "query": "quantities remarkable importance creatures antarctic",
+    "queries": [
+      "quantities remarkable importance creatures antarctic"
+    ],
+    "keywords": [
+      "quantities",
+      "remarkable",
+      "importance",
+      "creatures",
+      "antarctic"
+    ],
+    "semantic": {
+      "meaning": "Fish feed on them Penguins feed on them Seals depend on food chains built around them And whales can consume enormous quantities The result is a remarkable contrast One of the largest animals ever to live on Earth depends heavily on creatures small enough to fit in your hand The Antarctic ecosystem is a reminder that size does not determine importance PENGUINS AND THE COLD.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 2028,
+        "word_to": 2049,
+        "text": "Fish feed on them Penguins feed on them Seals depend on food chains built around them And whales can consume enormous quantities",
+        "query": "quantities remarkable importance creatures antarctic",
+        "subject": "",
+        "action": "",
+        "start": 912.243333,
+        "end": 920.284999,
+        "duration": 8.041665999999964,
+        "shot_id": "scene_017_shot_1"
+      },
+      {
+        "word_from": 2050,
+        "word_to": 2076,
+        "text": "The result is a remarkable contrast One of the largest animals ever to live on Earth depends heavily on creatures small enough to fit in your hand",
+        "query": "quantities remarkable importance creatures antarctic",
+        "subject": "",
+        "action": "",
+        "start": 920.757208,
+        "end": 930.451666,
+        "duration": 9.694458000000054,
+        "shot_id": "scene_017_shot_2"
+      },
+      {
+        "word_from": 2077,
+        "word_to": 2092,
+        "text": "The Antarctic ecosystem is a reminder that size does not determine importance PENGUINS AND THE COLD",
+        "query": "quantities remarkable importance creatures antarctic",
+        "subject": "",
+        "action": "",
+        "start": 930.923875,
+        "end": 937.826666,
+        "duration": 6.902791000000093,
+        "shot_id": "scene_017_shot_3"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 18,
+    "sentence_to": 18,
+    "start": 912.243333,
+    "end": 937.826666,
+    "duration": 25.58333300000004,
+    "index": 17,
+    "segment_id": "segment_017"
+  },
+  {
+    "text": "Few animals represent Antarctica more strongly than penguins But even penguins don't simply ignore the cold They have evolved specialized feathers body structures behavior and fat reserves that allow them to survive conditions that would be fatal to humans Emperor penguins provide one of the most dramatic examples During the Antarctic winter they form dense groups Individuals move and rotate positions allowing different penguins to spend time closer to the warmer center and then move outward It is a simple principle with an extraordinary result Cooperation reduces exposure Humans use buildings heaters clothing technology and logistics Penguins use evolution and collective behavior Different solutions Same problem A CONTINENT WITH NO CITIES One of the strangest things about Antarctica is what you don't see There are no normal cities No permanent highways connecting communities across the continent No shopping districts No ordinary farms No large civilian population living independently from outside support The people who live here are part of temporary or research-based communities Their presence is connected to scientific logistical environmental or governmental activity That makes Antarctica fundamentally different from almost every other inhabited region of the planet Humans are visitors here Even when someone spends an entire year on the continent the surrounding environment remains vastly larger than the settlement they occupy WHY DO PEOPLE COME HERE So why would anyone choose this life For some it is science Antarctica is a natural laboratory Researchers study climate atmospheric chemistry astronomy geology ice behavior marine ecosystems and Earth's history Deep ice can contain tiny bubbles of ancient atmosphere By analyzing these layers scientists can investigate conditions from far back in Earth's history In other words the ice is not simply frozen water It is a record A record of the atmosphere A record of climate A record of environmental change.",
+    "word_from": 2093,
+    "word_to": 2392,
+    "query": "extraordinary independently environmental fundamentally governmental",
+    "queries": [
+      "extraordinary independently environmental fundamentally governmental"
+    ],
+    "keywords": [
+      "extraordinary",
+      "independently",
+      "environmental",
+      "fundamentally",
+      "governmental"
+    ],
+    "semantic": {
+      "meaning": "Few animals represent Antarctica more strongly than penguins But even penguins don't simply ignore the cold They have evolved specialized feathers body structures behavior and fat reserves that allow them to survive conditions that would be fatal to humans Emperor penguins provide one of the most dramatic examples During the Antarctic winter they form dense groups Individuals move and rotate positions allowing different penguins to spend time closer to the warmer center and then move outward It is a simple principle with an extraordinary result Cooperation reduces exposure Humans use buildings heaters clothing technology and logistics Penguins use evolution and collective behavior Different solutions Same problem A CONTINENT WITH NO CITIES One of the strangest things about Antarctica is what you don't see There are no normal cities No permanent highways connecting communities across the continent No shopping districts No ordinary farms No large civilian population living independently from outside support The people who live here are part of temporary or research-based communities Their presence is connected to scientific logistical environmental or governmental activity That makes Antarctica fundamentally different from almost every other inhabited region of the planet Humans are visitors here Even when someone spends an entire year on the continent the surrounding environment remains vastly larger than the settlement they occupy WHY DO PEOPLE COME HERE So why would anyone choose this life For some it is science Antarctica is a natural laboratory Researchers study climate atmospheric chemistry astronomy geology ice behavior marine ecosystems and Earth's history Deep ice can contain tiny bubbles of ancient atmosphere By analyzing these layers scientists can investigate conditions from far back in Earth's history In other words the ice is not simply frozen water It is a record A record of the atmosphere A record of climate A record of environmental change.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 2093,
+        "word_to": 2317,
+        "text": "Few animals represent Antarctica more strongly than penguins But even penguins don't simply ignore the cold They have evolved specialized feathers body structures behavior and fat reserves that allow them to survive conditions that would be fatal to humans Emperor penguins provide one of the most dramatic examples During the Antarctic winter they form dense groups Individuals move and rotate positions allowing different penguins to spend time closer to the warmer center and then move outward It is a simple principle with an extraordinary result Cooperation reduces exposure Humans use buildings heaters clothing technology and logistics Penguins use evolution and collective behavior Different solutions Same problem A CONTINENT WITH NO CITIES One of the strangest things about Antarctica is what you don't see There are no normal cities No permanent highways connecting communities across the continent No shopping districts No ordinary farms No large civilian population living independently from outside support The people who live here are part of temporary or research-based communities Their presence is connected to scientific logistical environmental or governmental activity That makes Antarctica fundamentally different from almost every other inhabited region of the planet Humans are visitors here Even when someone spends an entire year on the continent the surrounding environment remains vastly larger than the settlement they occupy WHY DO PEOPLE COME HERE So why would anyone choose this life",
+        "query": "extraordinary independently environmental fundamentally governmental",
+        "subject": "",
+        "action": "",
+        "start": 938.368333,
+        "end": 1043.826666,
+        "duration": 105.45833299999993,
+        "shot_id": "scene_018_shot_1"
+      },
+      {
+        "word_from": 2318,
+        "word_to": 2341,
+        "text": "For some it is science Antarctica is a natural laboratory Researchers study climate atmospheric chemistry astronomy geology ice behavior marine ecosystems and Earth's history",
+        "query": "extraordinary independently environmental fundamentally governmental",
+        "subject": "",
+        "action": "",
+        "start": 1044.312791,
+        "end": 1057.812749,
+        "duration": 13.499957999999879,
+        "shot_id": "scene_018_shot_2"
+      },
+      {
+        "word_from": 2342,
+        "word_to": 2364,
+        "text": "Deep ice can contain tiny bubbles of ancient atmosphere By analyzing these layers scientists can investigate conditions from far back in Earth's history",
+        "query": "extraordinary independently environmental fundamentally governmental",
+        "subject": "",
+        "action": "",
+        "start": 1058.285,
+        "end": 1068.729457,
+        "duration": 10.44445699999983,
+        "shot_id": "scene_018_shot_3"
+      },
+      {
+        "word_from": 2365,
+        "word_to": 2392,
+        "text": "In other words the ice is not simply frozen water It is a record A record of the atmosphere A record of climate A record of environmental change",
+        "query": "extraordinary independently environmental fundamentally governmental",
+        "subject": "",
+        "action": "",
+        "start": 1069.187791,
+        "end": 1079.646124,
+        "duration": 10.458333000000039,
+        "shot_id": "scene_018_shot_4"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 19,
+    "sentence_to": 19,
+    "start": 938.368333,
+    "end": 1079.646124,
+    "duration": 141.2777910000001,
+    "index": 18,
+    "segment_id": "segment_018"
+  },
+  {
+    "text": "For others Antarctica offers something different Adventure Isolation The opportunity to experience a place few humans ever see.",
+    "word_from": 2393,
+    "word_to": 2410,
+    "query": "opportunity antarctica experience different adventure",
+    "queries": [
+      "opportunity antarctica experience different adventure"
+    ],
+    "keywords": [
+      "opportunity",
+      "antarctica",
+      "experience",
+      "different",
+      "adventure"
+    ],
+    "semantic": {
+      "meaning": "For others Antarctica offers something different Adventure Isolation The opportunity to experience a place few humans ever see.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [],
+    "llm": false,
+    "sentence_from": 20,
+    "sentence_to": 20,
+    "start": 1080.146125,
+    "end": 1089.715583,
+    "duration": 9.56945799999994,
+    "index": 19,
+    "segment_id": "segment_019"
+  },
+  {
+    "text": "And for many workers there is also the simple satisfaction of doing a difficult job in a remarkable environment THE CONTINENT THAT BELONGS TO EVERYONE AND NO ONE Antarctica has another unusual characteristic No country owns the entire continent The Antarctic Treaty signed in 1959 established a framework focused on peaceful activity and scientific cooperation The treaty helped prevent Antarctica from becoming another arena for military competition during the Cold War Today the Antarctic Treaty System governs many aspects of human activity on the continent This includes environmental protection and restrictions on certain types of activity The basic idea is remarkable Antarctica is not treated like an ordinary piece of territory waiting to be divided into conventional national borders Instead international cooperation has allowed scientific research to remain at the center of activity That arrangement is one of the most unusual experiments in international cooperation ever created THE FUTURE OF LIFE IN ANTARCTICA But Antarctica is changing The continent is deeply connected to the global climate system Changes in temperature sea ice glaciers ocean conditions and ice shelves can affect ecosystems far beyond the continent itself At the same time human activity creates its own challenges Research stations consume energy Ships and aircraft bring supplies Tourism brings increasing numbers of visitors to parts of Antarctica That creates a difficult question How can humans study and experience Antarctica without damaging the very environment they came to understand The answer requires careful management Waste must be controlled Wildlife must be protected Visitors must follow strict rules Research must continue with environmental impact in mind Because Antarctica is not simply another destination It is part of a much larger planetary system WHAT IT REALLY MEANS TO LIVE IN ANTARCTICA After everything we've seen Antarctic life may seem like a story about surviving the cold But it is actually a story about something much more complicated Engineering Preparation Cooperation Discipline And adaptation People don't survive Antarctica by defeating the environment They survive by respecting it They build insulated shelters because the cold is stronger They stock supplies because distance is greater than convenience They train for emergencies because help may not arrive quickly They create routines because the darkness can distort the normal rhythm of life And they build communities because isolation becomes easier when it is shared The continent constantly reminds them of one simple fact Humans are not naturally suited to live here Everything must be designed THE LIGHTS IN THE DARK During the Antarctic winter look at a research station from a distance Beyond the buildings there may be nothing but darkness ice and wind But inside those buildings there are people Someone is preparing dinner Someone is repairing equipment Someone is analyzing scientific data Someone is exercising Someone is calling family thousands of kilometers away Someone is looking out through a window at a world that few people will ever experience Small lights glow against the darkness They may look insignificant compared with the enormous continent surrounding them But those lights represent something extraordinary Human beings have entered one of the most hostile environments on Earth and created temporary islands of warmth cooperation science and everyday life Not because Antarctica is easy Because it isn't And perhaps that is exactly why people continue to return.",
+    "word_from": 2411,
+    "word_to": 2954,
+    "query": "long empty road horizon",
+    "queries": [
+      "long empty road horizon"
+    ],
+    "keywords": [
+      "characteristic",
+      "environmental",
+      "international",
+      "insignificant",
+      "extraordinary"
+    ],
+    "semantic": {
+      "meaning": "And for many workers there is also the simple satisfaction of doing a difficult job in a remarkable environment THE CONTINENT THAT BELONGS TO EVERYONE AND NO ONE Antarctica has another unusual characteristic No country owns the entire continent The Antarctic Treaty signed in 1959 established a framework focused on peaceful activity and scientific cooperation The treaty helped prevent Antarctica from becoming another arena for military competition during the Cold War Today the Antarctic Treaty System governs many aspects of human activity on the continent This includes environmental protection and restrictions on certain types of activity The basic idea is remarkable Antarctica is not treated like an ordinary piece of territory waiting to be divided into conventional national borders Instead international cooperation has allowed scientific research to remain at the center of activity That arrangement is one of the most unusual experiments in international cooperation ever created THE FUTURE OF LIFE IN ANTARCTICA But Antarctica is changing The continent is deeply connected to the global climate system Changes in temperature sea ice glaciers ocean conditions and ice shelves can affect ecosystems far beyond the continent itself At the same time human activity creates its own challenges Research stations consume energy Ships and aircraft bring supplies Tourism brings increasing numbers of visitors to parts of Antarctica That creates a difficult question How can humans study and experience Antarctica without damaging the very environment they came to understand The answer requires careful management Waste must be controlled Wildlife must be protected Visitors must follow strict rules Research must continue with environmental impact in mind Because Antarctica is not simply another destination It is part of a much larger planetary system WHAT IT REALLY MEANS TO LIVE IN ANTARCTICA After everything we've seen Antarctic life may seem like a story about surviving the cold But it is actually a story about something much more complicated Engineering Preparation Cooperation Discipline And adaptation People don't survive Antarctica by defeating the environment They survive by respecting it They build insulated shelters because the cold is stronger They stock supplies because distance is greater than convenience They train for emergencies because help may not arrive quickly They create routines because the darkness can distort the normal rhythm of life And they build communities because isolation becomes easier when it is shared The continent constantly reminds them of one simple fact Humans are not naturally suited to live here Everything must be designed THE LIGHTS IN THE DARK During the Antarctic winter look at a research station from a distance Beyond the buildings there may be nothing but darkness ice and wind But inside those buildings there are people Someone is preparing dinner Someone is repairing equipment Someone is analyzing scientific data Someone is exercising Someone is calling family thousands of kilometers away Someone is looking out through a window at a world that few people will ever experience Small lights glow against the darkness They may look insignificant compared with the enormous continent surrounding them But those lights represent something extraordinary Human beings have entered one of the most hostile environments on Earth and created temporary islands of warmth cooperation science and everyday life Not because Antarctica is easy Because it isn't And perhaps that is exactly why people continue to return.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 2411,
+        "word_to": 2671,
+        "text": "And for many workers there is also the simple satisfaction of doing a difficult job in a remarkable environment THE CONTINENT THAT BELONGS TO EVERYONE AND NO ONE Antarctica has another unusual characteristic No country owns the entire continent The Antarctic Treaty signed in 1959 established a framework focused on peaceful activity and scientific cooperation The treaty helped prevent Antarctica from becoming another arena for military competition during the Cold War Today the Antarctic Treaty System governs many aspects of human activity on the continent This includes environmental protection and restrictions on certain types of activity The basic idea is remarkable Antarctica is not treated like an ordinary piece of territory waiting to be divided into conventional national borders Instead international cooperation has allowed scientific research to remain at the center of activity That arrangement is one of the most unusual experiments in international cooperation ever created THE FUTURE OF LIFE IN ANTARCTICA But Antarctica is changing The continent is deeply connected to the global climate system Changes in temperature sea ice glaciers ocean conditions and ice shelves can affect ecosystems far beyond the continent itself At the same time human activity creates its own challenges Research stations consume energy Ships and aircraft bring supplies Tourism brings increasing numbers of visitors to parts of Antarctica That creates a difficult question How can humans study and experience Antarctica without damaging the very environment they came to understand The answer requires careful management Waste must be controlled Wildlife must be protected Visitors must follow strict rules Research must continue with environmental impact in mind",
+        "query": "long empty road horizon",
+        "subject": "",
+        "action": "",
+        "start": 1090.263125,
+        "end": 1214.388082,
+        "duration": 124.124957,
+        "shot_id": "scene_020_shot_1"
+      },
+      {
+        "word_from": 2672,
+        "word_to": 2831,
+        "text": "Because Antarctica is not simply another destination It is part of a much larger planetary system WHAT IT REALLY MEANS TO LIVE IN ANTARCTICA After everything we've seen Antarctic life may seem like a story about surviving the cold But it is actually a story about something much more complicated Engineering Preparation Cooperation Discipline And adaptation People don't survive Antarctica by defeating the environment They survive by respecting it They build insulated shelters because the cold is stronger They stock supplies because distance is greater than convenience They train for emergencies because help may not arrive quickly They create routines because the darkness can distort the normal rhythm of life And they build communities because isolation becomes easier when it is shared The continent constantly reminds them of one simple fact Humans are not naturally suited to live here Everything must be designed THE LIGHTS IN THE DARK During the Antarctic winter look at a research station from a distance",
+        "query": "long empty road horizon",
+        "subject": "",
+        "action": "",
+        "start": 1214.860333,
+        "end": 1283.013082,
+        "duration": 68.15274899999986,
+        "shot_id": "scene_020_shot_2"
+      },
+      {
+        "word_from": 2832,
+        "word_to": 2913,
+        "text": "Beyond the buildings there may be nothing but darkness ice and wind But inside those buildings there are people Someone is preparing dinner Someone is repairing equipment Someone is analyzing scientific data Someone is exercising Someone is calling family thousands of kilometers away Someone is looking out through a window at a world that few people will ever experience Small lights glow against the darkness They may look insignificant compared with the enormous continent surrounding them But those lights represent something extraordinary",
+        "query": "long empty road horizon",
+        "subject": "",
+        "action": "",
+        "start": 1283.485333,
+        "end": 1319.540875,
+        "duration": 36.05554199999983,
+        "shot_id": "scene_020_shot_3"
+      },
+      {
+        "word_from": 2914,
+        "word_to": 2941,
+        "text": "Human beings have entered one of the most hostile environments on Earth and created temporary islands of warmth cooperation science and everyday life Not because Antarctica is easy",
+        "query": "long empty road horizon",
+        "subject": "",
+        "action": "",
+        "start": 1320.027,
+        "end": 1332.582541,
+        "duration": 12.555540999999948,
+        "shot_id": "scene_020_shot_4"
+      },
+      {
+        "word_from": 2942,
+        "word_to": 2954,
+        "text": "Because it isn't And perhaps that is exactly why people continue to return",
+        "query": "long empty road horizon",
+        "subject": "",
+        "action": "",
+        "start": 1333.054791,
+        "end": 1337.374208,
+        "duration": 4.31941699999993,
+        "shot_id": "scene_020_shot_5"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 21,
+    "sentence_to": 21,
+    "start": 1090.263125,
+    "end": 1337.374208,
+    "duration": 247.111083,
+    "index": 20,
+    "segment_id": "segment_020"
+  },
+  {
+    "text": "FINAL THOUGHT Antarctica teaches us that survival is rarely about strength alone It is about preparation It is about technology It is about understanding the environment And above all it is about people depending on one another.",
+    "word_from": 2955,
+    "word_to": 2991,
+    "query": "understanding preparation environment antarctica technology",
+    "queries": [
+      "understanding preparation environment antarctica technology"
+    ],
+    "keywords": [
+      "understanding",
+      "preparation",
+      "environment",
+      "antarctica",
+      "technology"
+    ],
+    "semantic": {
+      "meaning": "FINAL THOUGHT Antarctica teaches us that survival is rarely about strength alone It is about preparation It is about technology It is about understanding the environment And above all it is about people depending on one another.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 2955,
+        "word_to": 2966,
+        "text": "FINAL THOUGHT Antarctica teaches us that survival is rarely about strength alone",
+        "query": "understanding preparation environment antarctica technology",
+        "subject": "",
+        "action": "",
+        "start": 1337.888125,
+        "end": 1343.193666,
+        "duration": 5.305540999999948,
+        "shot_id": "scene_021_shot_1"
+      },
+      {
+        "word_from": 2967,
+        "word_to": 2991,
+        "text": "It is about preparation It is about technology It is about understanding the environment And above all it is about people depending on one another",
+        "query": "understanding preparation environment antarctica technology",
+        "subject": "",
+        "action": "",
+        "start": 1343.652,
+        "end": 1352.99925,
+        "duration": 9.347250000000031,
+        "shot_id": "scene_021_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 22,
+    "sentence_to": 22,
+    "start": 1337.888125,
+    "end": 1352.99925,
+    "duration": 15.11112500000013,
+    "index": 21,
+    "segment_id": "segment_021"
+  },
+  {
+    "text": "At the bottom of the world where temperatures can fall beyond anything most humans will ever experience people still wake up every morning They work They eat They laugh They study They look after each other And eventually when the long winter ends sunlight returns The frozen continent begins to change Aircraft return Ships approach The isolated world opens again.",
+    "word_from": 2992,
+    "word_to": 3051,
+    "query": "temperatures experience eventually continent sunlight",
+    "queries": [
+      "temperatures experience eventually continent sunlight"
+    ],
+    "keywords": [
+      "temperatures",
+      "experience",
+      "eventually",
+      "continent",
+      "sunlight"
+    ],
+    "semantic": {
+      "meaning": "At the bottom of the world where temperatures can fall beyond anything most humans will ever experience people still wake up every morning They work They eat They laugh They study They look after each other And eventually when the long winter ends sunlight returns The frozen continent begins to change Aircraft return Ships approach The isolated world opens again.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 2992,
+        "word_to": 3018,
+        "text": "At the bottom of the world where temperatures can fall beyond anything most humans will ever experience people still wake up every morning They work They eat",
+        "query": "temperatures experience eventually continent sunlight",
+        "subject": "",
+        "action": "",
+        "start": 1353.567125,
+        "end": 1364.261541,
+        "duration": 10.694416000000047,
+        "shot_id": "scene_022_shot_1"
+      },
+      {
+        "word_from": 3019,
+        "word_to": 3036,
+        "text": "They laugh They study They look after each other And eventually when the long winter ends sunlight returns",
+        "query": "temperatures experience eventually continent sunlight",
+        "subject": "",
+        "action": "",
+        "start": 1364.733791,
+        "end": 1372.428249,
+        "duration": 7.6944579999999405,
+        "shot_id": "scene_022_shot_2"
+      },
+      {
+        "word_from": 3037,
+        "word_to": 3051,
+        "text": "The frozen continent begins to change Aircraft return Ships approach The isolated world opens again",
+        "query": "temperatures experience eventually continent sunlight",
+        "subject": "",
+        "action": "",
+        "start": 1372.900458,
+        "end": 1380.497666,
+        "duration": 7.59720799999991,
+        "shot_id": "scene_022_shot_3"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 23,
+    "sentence_to": 23,
+    "start": 1353.567125,
+    "end": 1380.497666,
+    "duration": 26.93054099999995,
+    "index": 22,
+    "segment_id": "segment_022"
+  },
+  {
+    "text": "For a short time Antarctica becomes connected to the rest of humanity And then the cycle begins again A place that seems impossible to live in becomes home at least for a season This is Antarctica The coldest continent on Earth The driest desert on the planet A place where humans survive not by conquering nature but by learning how to live within its limits This is Extreme Earth Life Life Beyond the Limits.",
+    "word_from": 3052,
+    "word_to": 3125,
+    "query": "antarctica impossible conquering connected continent",
+    "queries": [
+      "antarctica impossible conquering connected continent"
+    ],
+    "keywords": [
+      "antarctica",
+      "impossible",
+      "conquering",
+      "connected",
+      "continent"
+    ],
+    "semantic": {
+      "meaning": "For a short time Antarctica becomes connected to the rest of humanity And then the cycle begins again A place that seems impossible to live in becomes home at least for a season This is Antarctica The coldest continent on Earth The driest desert on the planet A place where humans survive not by conquering nature but by learning how to live within its limits This is Extreme Earth Life Life Beyond the Limits.",
+      "subject": "",
+      "action": "",
+      "object": "",
+      "location": "",
+      "time": "",
+      "entities": []
+    },
+    "visual_requirements": [],
+    "visual_exclusions": [],
+    "shots": [
+      {
+        "word_from": 3052,
+        "word_to": 3092,
+        "text": "For a short time Antarctica becomes connected to the rest of humanity And then the cycle begins again A place that seems impossible to live in becomes home at least for a season This is Antarctica The coldest continent on Earth",
+        "query": "antarctica impossible conquering connected continent",
+        "subject": "",
+        "action": "",
+        "start": 1381.011541,
+        "end": 1395.969874,
+        "duration": 14.958332999999811,
+        "shot_id": "scene_023_shot_1"
+      },
+      {
+        "word_from": 3093,
+        "word_to": 3125,
+        "text": "The driest desert on the planet A place where humans survive not by conquering nature but by learning how to live within its limits This is Extreme Earth Life Life Beyond the Limits",
+        "query": "antarctica impossible conquering connected continent",
+        "subject": "",
+        "action": "",
+        "start": 1396.442125,
+        "end": 1408.858791,
+        "duration": 12.416666000000077,
+        "shot_id": "scene_023_shot_2"
+      }
+    ],
+    "llm": false,
+    "sentence_from": 24,
+    "sentence_to": 24,
+    "start": 1381.011541,
+    "end": 1408.858791,
+    "duration": 27.84725000000003,
+    "index": 23,
+    "segment_id": "segment_023"
+  }
+]
