@@ -601,6 +601,22 @@ def analyze_script(sentences, words, lang, llm_keys, model=None, verbose=True,
                 break
             except (LLMError, ValueError, json.JSONDecodeError) as e:
                 last_err = e
+        if batch_segments is None and len(batch) > 1 and not isinstance(last_err, LLMError):
+            # Broken JSON is almost always a long reply going wrong; two
+            # half-size requests usually both come back clean, keeping the
+            # planned visuals instead of degrading 10 sentences to keywords.
+            # (An LLMError -- quota, auth -- won't be fixed by halving.)
+            half = len(batch) // 2
+            parts = []
+            for sub in (batch[:half], batch[half:]):
+                try:
+                    raw = _llm_segment_batch(sub, lang, llm_keys, model, prev_meaning, verbose=verbose)
+                    parts.extend(_repair_coverage(raw, sub))
+                except (LLMError, ValueError, json.JSONDecodeError) as e:
+                    last_err = e
+                    failures.append(f"sentences {sub[0]['index']}-{sub[-1]['index']}: {e}")
+                    parts.extend(_fallback_segment(x) for x in sub)
+            batch_segments = parts
         if batch_segments is None:
             failures.append(f"sentences {batch[0]['index']}-{batch[-1]['index']}: {last_err}")
             batch_segments = [_fallback_segment(s) for s in batch]

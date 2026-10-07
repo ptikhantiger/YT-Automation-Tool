@@ -30,6 +30,14 @@ unless it says otherwise.
      (writes the script from that video's transcript, then rewrites it).
 4. Dashboard → **Step 1** → project `en/myvideo` → **Run**. Wait for
    `captions.ass written`. The clip picker (Step 2) opens by itself.
+   The log shows the visual plan — every sentence gets its own short shot:
+   ```
+   visual plan: 522 shots for 464 sentences (every sentence has its own shot; longest shot 6.0s, cap 6s)
+   plan check: OK -- 522 visuals cover all 464 sentences, median 2.6s, longest 6.0s
+   ```
+   `plan check: CHECK` or a `! plan problem` line means something isn't
+   covered — re-run Step 1 (and tell me if it repeats). Want calmer cutting?
+   Add `--max-shot-seconds 8` in Step 1's flags.
 5. **Picker.** Sidebar → **✨ Auto-match all unpicked** (or pick by hand).
    The bar at the top shows `N / M scenes have a clip — X to go`.
 6. When it says **All M scenes have a clip** → click **☁ Render on GitHub (free)**
