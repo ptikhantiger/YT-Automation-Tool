@@ -66,6 +66,7 @@ from semantic_timeline import (
     MAX_SCENE_SECONDS,
     MIN_SCENE_SECONDS,
     build_scenes,
+    MAX_SHOT_SECONDS,
     print_plan,
     refresh_times,
     write_timeline,
@@ -158,14 +159,16 @@ def main():
     )
     parser.add_argument(
         "--semantic-min-seconds", type=float, default=MIN_SCENE_SECONDS,
-        help="Semantic mode: scenes shorter than this are folded into a neighbor as an "
-        "extra shot (the visual event keeps its exact timing; it just doesn't force a "
-        "separate full-scene clip pick).",
+        help="Semantic mode: a story scene shorter than this joins the previous scene "
+        "(its shots and their visuals are kept; it just isn't a separate scene in step 2).",
     )
     parser.add_argument(
-        "--semantic-max-seconds", type=float, default=MAX_SCENE_SECONDS,
-        help="Semantic mode: scenes longer than this are subdivided into continuation "
-        "shots at sentence bounds / natural pauses so one visual never runs stale.",
+        "--max-shot-seconds", "--semantic-max-seconds", dest="max_shot_seconds",
+        type=float, default=MAX_SHOT_SECONDS,
+        help="Longest a single visual may stay on screen. Every sentence already gets its "
+        "own shot; a shot longer than this is split at natural pauses into complementary "
+        "continuation shots of the same subject. Default 6s; raise it for slower, calmer "
+        "cutting. (--semantic-max-seconds is the old name, kept as an alias.)",
     )
     parser.add_argument(
         "--long-scene-every", type=int, default=0, metavar="N",
@@ -405,7 +408,7 @@ def main():
             except Exception:
                 llm_keys = None
             if llm_keys:
-                print("  analyzing script semantics with Gemini (one scene per visual idea)...")
+                print("  planning the visual timeline with Gemini (story scenes, one or more shots per sentence)...")
             else:
                 print(
                     "  no Gemini key found -- semantic scenes fall back to exact sentence "
@@ -414,7 +417,7 @@ def main():
             scenes, timeline_meta = build_scenes(
                 words, text, lang, llm_keys,
                 min_scene_seconds=args.semantic_min_seconds,
-                max_scene_seconds=args.semantic_max_seconds,
+                max_shot_seconds=args.max_shot_seconds,
             )
         if args.pause_every:
             before_end = words[-1]["end"]
@@ -469,8 +472,15 @@ def main():
                 f"  scenes.json written ({len(scenes)} {kind} scenes from "
                 f"{timeline_meta['sentences']} sentences, mode: {timeline_meta['mode']}"
                 + (f", {n_multi} multi-shot" if n_multi else "")
-                + f" -- that's {len(scenes)} clip picks in step 2)"
+                + ")"
             )
+            if timeline_meta.get("shots"):
+                print(
+                    f"  visual plan: {timeline_meta['shots']} shots for "
+                    f"{timeline_meta['sentences']} sentences (every sentence has its own shot; "
+                    f"longest shot {timeline_meta.get('longest_shot_seconds', 0):.1f}s, cap "
+                    f"{timeline_meta.get('max_shot_seconds', 0):.0f}s) -- one clip per shot in step 2"
+                )
             print("  timeline.json written (word -> timestamp -> scene master map)")
             for f in timeline_meta.get("llm_failures") or []:
                 print(f"  [warn] LLM batch fell back to sentence grouping: {f}")

@@ -47,6 +47,48 @@ Spanish, keeping the Master Prompt tone and content rules.
 
 ## Semantic script → voice → scene synchronization
 
+### The visual plan is sentence-driven
+
+**Scene = story section. Shot = one short visual for the words being spoken.**
+Step 1 asks Gemini for a visual plan: consecutive sentences on one topic form
+a scene, and every sentence gets **at least one shot of its own** with a
+one-line *planned visual* (what the camera sees), a stock query, subject /
+action / location, and a continuity flag (`continue` = same subject and
+place as the previous shot, `new` = the narration moved on). Long or
+multi-idea sentences get 2–3 shots, each tied to its exact quoted words.
+
+The rules are enforced in code, whatever the model returns:
+
+- every sentence has its own shot — two sentences never share a clip;
+- a shot longer than `--max-shot-seconds` (default 6 s) is split at natural
+  pauses into continuation shots that search **their own words** anchored on
+  the same subject (never a query borrowed from another part of the scene);
+- a sub-1 s fragment ("Home.") joins the previous shot instead of flashing;
+- shots tile the scene's words exactly, scenes tile the whole narration, and
+  step 3 cuts each clip at its shot's narration boundary — audio and video
+  lengths match to the frame.
+
+Each shot in `timeline.json` carries: narration text, sentence number,
+start / end / duration, planned visual, query, subject, action, location,
+continuity, and context (scene meaning, previous and next shot's visual).
+The step 2 judge scores clips against the planned visual and the continuity
+note ("continues the previous shot — same subject, different angle" vs "the
+narration moves on — a different visual is right"), the picker shows each
+shot's planned visual, and AI illustrations draw the planned visual.
+
+With **"Use an AI illustration instead of weakly related stock"** ticked,
+auto-match won't accept a "weak" stock clip (related theme, subject not
+shown) just to fill a shot: it keeps searching to the strictness bar and
+only then draws the planned visual.
+
+Sentence detection aligns the script to the TTS words with a sequence
+alignment, so edge-tts merging or splitting words ("in 1940" spoken as one
+word, "$5,000" as three) no longer discards punctuation. Before, a single
+mismatch made a 173-sentence script read as 11 "sentences".
+
+Per-project numbers are printed by step 1 (`visual plan: N shots for M
+sentences, longest shot X s`) and stored in `timeline.json` → `meta`.
+
 Scenes are no longer cut at random durations. By default step 1 builds a
 **semantic timeline** (`semantic_timeline.py`): the exact script is aligned
 1:1 with edge-tts's word-level timestamps, whole sentences are grouped/split
@@ -165,9 +207,9 @@ yourself (Local file / AI illustration) line up line-for-line with the
 narration and there's no guesswork matching them to grouped scenes. Still
 word-index exact, so pause splicing and step 3's frame plan stay exact.
 `--no-semantic` restores the old random-duration grouping;
-`--semantic-min-seconds`/`--semantic-max-seconds` tune scene length bounds
-(short scenes fold into a neighbor as a shot; long ones subdivide at
-sentence bounds/pauses). Debug any project's timeline without re-running
+`--max-shot-seconds` (old name `--semantic-max-seconds`) caps how long one
+visual stays on screen, default 6 s; `--semantic-min-seconds` merges a very
+short story scene into the previous one (its shots are kept). Debug any project's timeline without re-running
 audio: `python semantic_timeline.py en/slug` (add `--write` to regenerate
 scenes.json/timeline.json — refuses if clips are already picked).
 

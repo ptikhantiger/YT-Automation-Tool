@@ -719,6 +719,8 @@ def _ai_scene_subject(scene):
     semantic brief when the timeline provided one, else its search query /
     keywords / raw narration."""
     sem = scene.get("semantic") or {}
+    if sem.get("visual"):
+        return str(sem["visual"]).strip()[:220]
     bits = [str(sem[k]) for k in ("subject", "action", "object") if sem.get(k)]
     if sem.get("location"):
         bits.append("in " + str(sem["location"]))
@@ -737,6 +739,8 @@ def _ai_scene_subject(scene):
 def _ai_shot_subject(shot, scene):
     """Same idea as _ai_scene_subject but for one shot of a multi-shot scene:
     the shot's own subject/action/words, inheriting the scene's location."""
+    if shot.get("visual") and not str(shot["visual"]).startswith("Continuing from:"):
+        return str(shot["visual"]).strip()[:220]
     sem = scene.get("semantic") or {}
     parts = [p for p in (shot.get("subject") or sem.get("subject"), shot.get("action")) if p]
     if sem.get("location"):
@@ -1535,10 +1539,15 @@ def _scene_brief(scene):
     """The exact-script requirements block the judge scores against."""
     sem = scene.get("semantic") or {}
     lines = [f'NARRATION (exact script): "{scene["text"]}"']
+    if sem.get("visual"):
+        lines.append(f"PLANNED VISUAL (what the camera should show): {sem['visual']}")
     for label, key in (("Subject", "subject"), ("Action", "action"), ("Object", "object"),
                        ("Location", "location"), ("Time/era", "time")):
         if sem.get(key):
             lines.append(f"{label}: {sem[key]}")
+    ctx = scene.get("shot_context") or {}
+    if ctx.get("previous_visual"):
+        lines.append(f"Previous shot showed: {ctx['previous_visual']} (keep continuity when the narration continues the same subject)")
     if sem.get("entities"):
         lines.append(f"Entities: {', '.join(sem['entities'])}")
     if scene.get("visual_requirements"):
@@ -1554,13 +1563,25 @@ def _shot_brief(scene, shot):
     shot's own exact words/subject/action, inheriting the scene's location,
     era, and exclusions."""
     sem = scene.get("semantic") or {}
+    ctx = shot.get("context") or {}
     lines = [f'NARRATION (the exact words this clip covers): "{shot.get("text") or ""}"']
+    if shot.get("visual"):
+        lines.append(f"PLANNED VISUAL (what the camera should show): {shot['visual']}")
     if shot.get("subject") or sem.get("subject"):
         lines.append(f"Subject: {shot.get('subject') or sem.get('subject')}")
     if shot.get("action"):
         lines.append(f"Action: {shot['action']}")
-    if sem.get("location"):
-        lines.append(f"Location: {sem['location']}")
+    if shot.get("location") or sem.get("location"):
+        lines.append(f"Location: {shot.get('location') or sem.get('location')}")
+    if ctx.get("scene_meaning"):
+        lines.append(f"Story context (this scene): {ctx['scene_meaning']}")
+    if ctx.get("previous_visual"):
+        if shot.get("continuity") == "continue":
+            lines.append(f"CONTINUITY: this shot continues the previous one ({ctx['previous_visual']}) -- "
+                         f"same subject/place/people, a different angle or detail, not an unrelated scene.")
+        else:
+            lines.append(f"Previous shot showed: {ctx['previous_visual']} (the narration moves on here -- "
+                         f"a clearly different visual is right).")
     if sem.get("time"):
         lines.append(f"Time/era: {sem['time']}")
     if scene.get("visual_exclusions"):
@@ -2094,6 +2115,12 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
     to the floor and the scene is flagged "soft" if any shot came in under the
     strictness threshold."""
     accept = soft_floor if soft_floor is not None else threshold
+    if STATE.get("ai_fallback"):
+        # With AI fill on, a "weak" stock clip (related theme, subject not
+        # shown) loses to a generated illustration of the PLANNED visual --
+        # the soft floor only exists so a scene isn't left empty, and here
+        # it won't be. No unrelated footage just to fill time.
+        accept = threshold
     shots = scene.get("shots") or []
     entry["shots"] = []
     any_soft = False
@@ -2115,7 +2142,10 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
         sem = scene.get("semantic") or {}
         shot_sem = {"subject": shot.get("subject") or sem.get("subject"),
                     "action": shot.get("action") or sem.get("action"),
-                    "object": sem.get("object"), "location": sem.get("location")}
+                    # a shot's own subject/location beat the scene's: the
+                    # scene-wide object is often about a different sentence
+                    "object": None if shot.get("visual") else sem.get("object"),
+                    "location": shot.get("location") or sem.get("location")}
         queries = _expand_queries(
             shot_sem, base_qs, scene.get("visual_requirements"),
             scene.get("keywords"), shot.get("text") or scene.get("text"),
@@ -2264,6 +2294,12 @@ def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD, soft
     # soft floor for an "all" run -- instead of burning extra Gemini calls
     # chasing the full strictness threshold it may never reach.
     accept = soft_floor if soft_floor is not None else threshold
+    if STATE.get("ai_fallback"):
+        # With AI fill on, a "weak" stock clip (related theme, subject not
+        # shown) loses to a generated illustration of the PLANNED visual --
+        # the soft floor only exists so a scene isn't left empty, and here
+        # it won't be. No unrelated footage just to fill time.
+        accept = threshold
     best, best_score, best_reason, duration_relaxed, heuristic = _match_with_repair(
         _scene_brief(scene), queries, min_duration, min_quality,
         entry["candidates"], entry["failure_reasons"], accept, signals=signals,
@@ -2534,9 +2570,12 @@ class Handler(BaseHTTPRequestHandler):
                             "start": sh.get("start"),
                             "end": sh.get("end"),
                             "duration": sh.get("duration"),
+                            "visual": sh.get("visual"),
+                            "continuity": sh.get("continuity"),
                         }
                         for sh in s.get("shots") or []
                     ],
+                    "visual": (s.get("semantic") or {}).get("visual"),
                 }
                 for s in STATE["scenes"]
             ]
@@ -3457,8 +3496,8 @@ PAGE_HTML = r"""<!doctype html>
         <option value="85">Match strictness: exact only</option>
         <option value="50">Match strictness: relaxed</option>
       </select>
-      <label id="aifallbackwrap" title="After stock search + the still-photo round fail, generate a warm house-style AI illustration (Pollinations / FLUX, free) for that scene or shot instead of leaving it empty. Flagged for review in sync_report.json.">
-        <input type="checkbox" id="aifallback"> Fill scenes stock can't match with an AI illustration</label>
+      <label id="aifallbackwrap" title="When no stock clip clearly shows what a shot's narration says (below the strictness bar), generate a warm house-style AI illustration of that shot's PLANNED visual (Pollinations / FLUX, free) instead of filling it with weakly related footage. Flagged for review in sync_report.json.">
+        <input type="checkbox" id="aifallback"> Use an AI illustration instead of weakly related stock</label>
       <button id="repeatsbtn" style="display:none" title="Some scenes show a stock clip that an earlier scene already shows. Re-run auto-match for just those scenes, preferring footage not used anywhere else in this video (the first scene to use each clip keeps it). Click again to stop.">&#128257; Replace repeated clips</button>
       <button id="reviewall" style="display:none" title="Open a side-by-side review: every scene's narration next to the clip picked for it. Catch any mismatch and replace it before the render. Opens automatically once 'Auto-match all' fills every scene.">&#128269; Review picked clips</button>
     </div>
@@ -3726,13 +3765,18 @@ function renderBrief(s) {
   if ((s.queries||[]).length)
     html += `<div style="margin-top:5px">${s.queries.map(q => `<span class="qchip" data-q="${esc(q)}">&#128269; ${esc(q)}</span>`).join('')}</div>`;
   if ((s.shots||[]).length) {
-    html += `<div class="briefline" style="margin-top:6px">This scene has ${s.shots.length} visual moments -- ` +
-            `use "more than one clip" below to give each its own footage:</div>`;
-    html += s.shots.map(sh =>
-      `<div class="shotrow">${fmt(sh.start)}-${fmt(sh.end)} (${(sh.duration||0).toFixed(1)}s) ` +
+    html += `<div class="briefline" style="margin-top:6px">This scene has ${s.shots.length} shots -- one per ` +
+            `narration line. Use "more than one clip" below to give each its own footage (Auto-match does this for you):</div>`;
+    html += s.shots.map((sh, k) =>
+      `<div class="shotrow"><b>${k + 1}.</b> ${fmt(sh.start)}-${fmt(sh.end)} (${(sh.duration||0).toFixed(1)}s) ` +
+      (sh.continuity === 'continue' && k > 0 ? '<span title="continues the previous shot: same subject/place">&#8618;</span> ' : '') +
       `<span class="t">"${esc(sh.text)}"</span>` +
-      (sh.query ? ` <span class="qchip" data-q="${esc(sh.query)}">&#128269; ${esc(sh.query)}</span>` : '')
+      (sh.query ? ` <span class="qchip" data-q="${esc(sh.query)}">&#128269; ${esc(sh.query)}</span>` : '') +
+      (sh.visual ? `<div class="meta" style="margin:2px 0 0 18px">&#127909; ${esc(sh.visual)}</div>` : '') +
+      `</div>`
     ).join('');
+  } else if (s.visual) {
+    html += `<div class="meta" style="margin-top:6px">&#127909; Planned visual: ${esc(s.visual)}</div>`;
   }
   const note = matchNotes[s.index];
   if (note) html += `<div class="matchnote ${note.ok?'':'fail'}">${esc(note.text)}</div>`;

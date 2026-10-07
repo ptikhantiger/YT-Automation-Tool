@@ -89,6 +89,75 @@ def _trailing_punct(tok):
     return tok[i:]
 
 
+_ALIGN_NORM = re.compile(r"[^\w]", re.UNICODE)
+
+
+def align_tokens_to_words(tokens, words):
+    """Map every script token to the index of the TTS word that spoke it.
+
+    Returns (tok_to_word, quality): tok_to_word[k] is a word index (or None
+    when nothing sensible exists), quality is the fraction of tokens that
+    matched a word exactly.
+
+    The old rule was all-or-nothing -- align only when the counts were equal.
+    But edge-tts regularly merges or splits words relative to the script: it
+    reports "in 1940" as ONE word boundary, and expands "$5,000" into several.
+    A single such difference used to throw away every punctuation mark in the
+    script and fall back to pause-guessing (measured: a 1,973-token script
+    with 173 sentence ends was read as 11 "sentences", so shots ran up to
+    150 s). A sequence alignment survives any number of local differences:
+    equal runs map 1:1; inside a differing block each token maps
+    END-aligned onto the block's words, so the LAST token of a block always
+    lands on the block's LAST word -- exactly where a sentence-ending
+    punctuation mark belongs."""
+    import difflib
+
+    a = [_ALIGN_NORM.sub("", t.lower()) for t in tokens]
+    b = [_ALIGN_NORM.sub("", (w.get("text") or "").lower()) for w in words]
+    tok_to_word = [None] * len(tokens)
+    matched = 0
+    sm = difflib.SequenceMatcher(None, a, b, autojunk=False)
+    for op, i1, i2, j1, j2 in sm.get_opcodes():
+        if op == "equal":
+            for k in range(i2 - i1):
+                tok_to_word[i1 + k] = j1 + k
+            matched += i2 - i1
+        elif op == "replace":
+            nt, nw = i2 - i1, j2 - j1
+            for k in range(nt):
+                # end-aligned proportional mapping: token k -> word
+                # ceil((k+1)*nw/nt)-1, so the block's last token hits j2-1
+                tok_to_word[i1 + k] = j1 + max(0, -(-(k + 1) * nw // nt) - 1)
+        elif op == "delete":
+            # script tokens TTS didn't speak as words: attach to the previous
+            # spoken word so their punctuation still counts there
+            for k in range(i1, i2):
+                tok_to_word[k] = j1 - 1 if j1 > 0 else None
+        # "insert" (words with no token) needs nothing: no punctuation to carry
+    quality = matched / max(len(tokens), 1)
+    return tok_to_word, quality
+
+
+def word_token_ranges(words, script_text):
+    """For each TTS word, the (first, last) script-token indices it covers,
+    or None for a word no token maps to. Lets callers rebuild text with the
+    script's real punctuation and casing even when counts differ."""
+    tokens = _tokenize_for_alignment(script_text)
+    tok_to_word, _q = align_tokens_to_words(tokens, words)
+    ranges = [None] * len(words)
+    for k, w in enumerate(tok_to_word):
+        if w is None or not (0 <= w < len(words)):
+            continue
+        ranges[w] = (ranges[w][0], k) if ranges[w] else (k, k)
+    return tokens, ranges
+
+
+# Below this match quality the script and the narration have diverged too
+# far for punctuation to be trusted (e.g. script.txt edited after step 1);
+# pause-based detection is the honest fallback then.
+ALIGN_MIN_QUALITY = 0.6
+
+
 def _compute_sentence_ends(words, script_text, pause_fallback=0.5):
     """Shared alignment pass behind compute_sentence_end_flags and
     compute_sentence_end_punctuation -- returns (flags, punctuation) so
@@ -96,13 +165,17 @@ def _compute_sentence_ends(words, script_text, pause_fallback=0.5):
     (or both) of them a caller needs. See compute_sentence_end_flags for why
     this alignment is necessary at all."""
     tokens = _tokenize_for_alignment(script_text)
-    if len(tokens) == len(words):
-        flags, punct = [], []
-        for tok in tokens:
+    tok_to_word, quality = align_tokens_to_words(tokens, words)
+    if tokens and quality >= ALIGN_MIN_QUALITY:
+        flags = [False] * len(words)
+        punct = [""] * len(words)
+        for tok, w in zip(tokens, tok_to_word):
+            if w is None or not (0 <= w < len(words)):
+                continue
             stripped = tok.rstrip(TRAILING_QUOTE_CHARS)
-            is_end = bool(stripped) and stripped[-1] in SENTENCE_END_CHARS
-            flags.append(is_end)
-            punct.append(_trailing_punct(tok) if is_end else "")
+            if stripped and stripped[-1] in SENTENCE_END_CHARS:
+                flags[w] = True
+                punct[w] = _trailing_punct(tok)
         return flags, punct
     flags = []
     for i, w in enumerate(words):
