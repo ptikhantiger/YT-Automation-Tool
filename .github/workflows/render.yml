@@ -113,6 +113,17 @@ jobs:
       PROJECT: ${{ needs.check.outputs.project }}
 
     steps:
+      - name: Free disk space
+        # Private repos run on 2-core runners with ~14 GB of free disk. A
+        # 500+ shot video downloads ~8 GB of clips plus segments plus the
+        # final file. Deleting preinstalled SDKs this pipeline never uses
+        # frees ~20 GB more, in seconds.
+        run: |
+          df -h / | tail -1 | awk '{print "free before: " $4}'
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL \
+                      /usr/local/share/boost /usr/local/.ghcup 2>/dev/null || true
+          df -h / | tail -1 | awk '{print "free after:  " $4}'
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
@@ -207,9 +218,31 @@ jobs:
           dir="projects/$PROJECT"
           tag="video-${SLUG}-${GITHUB_RUN_NUMBER}"
           files=("$dir/output.mp4")
+          # A release file may be at most 2 GB (~40 min of 1080p at crf 20).
+          # Bigger: upload byte-split parts plus the one-line command that
+          # joins them back into a playable output.mp4.
+          limit=$((1900 * 1024 * 1024))
+          size=$(stat -c %s "$dir/output.mp4")
+          joined_note=""
+          if [ "$size" -gt "$limit" ]; then
+            (cd "$dir" && split -b 1900M -d -a 2 --additional-suffix=.part output.mp4 output.mp4.)
+            files=("$dir"/output.mp4.*.part)
+            parts=$(cd "$dir" && ls output.mp4.*.part | tr '\n' ' ')
+            win=$(cd "$dir" && ls output.mp4.*.part | paste -sd+)
+            printf '%s\n' \
+              "output.mp4 was $((size / 1024 / 1024)) MB -- over GitHub's 2 GB per-file limit -- so it is split into: $parts" \
+              "" \
+              "Download every part into one folder, then join them:" \
+              "  Windows (Command Prompt):  copy /b $win output.mp4" \
+              "  macOS / Linux:             cat output.mp4.*.part > output.mp4" \
+              > "$dir/HOW_TO_JOIN.txt"
+            files+=("$dir/HOW_TO_JOIN.txt")
+            joined_note=$'\n\n'"**The video is split into parts** (over 2 GB). See HOW_TO_JOIN.txt -- one command rejoins them."
+            echo "output.mp4 is $((size / 1024 / 1024)) MB -> uploading ${#files[@]} files (parts + HOW_TO_JOIN.txt)"
+          fi
           [ -f "$dir/credits.txt" ] && files+=("$dir/credits.txt")
           [ -f "$dir/render_report.json" ] && files+=("$dir/render_report.json")
-          notes="Rendered from ${GITHUB_SHA::7} by run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          notes="Rendered from ${GITHUB_SHA::7} by run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}${joined_note}"
           if [ -f "$dir/credits.txt" ]; then
             notes="$notes"$'\n\n'"Credits for the description:"$'\n\n```\n'"$(cat "$dir/credits.txt")"$'\n```'
           fi

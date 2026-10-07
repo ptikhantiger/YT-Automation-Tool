@@ -369,6 +369,30 @@ Repo page → **Code** → **Codespaces** → **Create codespace on main**. Secr
 already in place. The new codespace has a **different name**, so the URLs
 change: read them from the PORTS tab, and update the bookmark.
 
+### Private repo limits (this repo is private)
+
+Everything works on a private repo — verified: release tags
+`video-en-faroe-27` and `video-en-antarticaaaa-28` were published after the
+repo went private. The differences from a public repo:
+
+| | Private (free plan) | Public |
+|---|---|---|
+| Render minutes (Actions) | **2,000 / month** | unlimited |
+| Render machine | 2 cores, 7 GB RAM, 14 GB disk (+~20 GB freed by the workflow) | 4 cores, 16 GB RAM |
+| Artifact storage | 500 MB (only the failure log uses it) | — |
+| Release file | up to 2 GB each; bigger videos are split automatically | same |
+| Codespace hours | same as public | same |
+
+A 27-minute video costs roughly 120–180 render minutes on the 2-core
+machine, so budget about 11–15 long videos a month; shorter videos cost
+proportionally less. A video over ~40 minutes exceeds 2 GB: the release
+then holds `output.mp4.00.part`, `.01.part`, … plus `HOW_TO_JOIN.txt` —
+download all parts into one folder and run the one command in that file
+(`copy /b output.mp4.00.part+output.mp4.01.part output.mp4` on Windows).
+
+Making the repo public again restores unlimited minutes and the 4-core
+machine; nothing else needs changing.
+
 ### Check free-tier usage
 
 <https://github.com/settings/billing/summary> → Codespaces. Free: 60 hours/month
