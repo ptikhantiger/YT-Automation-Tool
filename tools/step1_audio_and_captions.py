@@ -481,6 +481,18 @@ def main():
                     f"longest shot {timeline_meta.get('longest_shot_seconds', 0):.1f}s, cap "
                     f"{timeline_meta.get('max_shot_seconds', 0):.0f}s) -- one clip per shot in step 2"
                 )
+            check = timeline_meta.get("plan_check")
+            if check:
+                status = "OK" if check["ok"] and not check["sentences_without_own_shot_count"] else "CHECK"
+                print(
+                    f"  plan check: {status} -- {check['visual_units']} visuals cover all "
+                    f"{check['sentences']} sentences, median {check['median_seconds']:.1f}s, "
+                    f"longest {check['longest_seconds']:.1f}s"
+                    + (f"; {check['sentences_without_own_shot_count']} sentence(s) share a visual: "
+                       f"{check['sentences_without_own_shot']}" if check["sentences_without_own_shot_count"] else "")
+                )
+                for prob in check["problems"]:
+                    print(f"  ! plan problem: {prob}")
             print("  timeline.json written (word -> timestamp -> scene master map)")
             for f in timeline_meta.get("llm_failures") or []:
                 print(f"  [warn] LLM batch fell back to sentence grouping: {f}")

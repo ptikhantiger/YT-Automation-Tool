@@ -75,10 +75,13 @@ BATCH_SENTENCES = 10
 #     with another sentence;
 #   * a shot longer than MAX_SHOT_SECONDS is split at natural pauses into
 #     complementary continuation shots of the same subject;
-#   * a shot shorter than MIN_SHOT_SECONDS (a one-word "Home.") joins the
-#     previous shot rather than flashing on screen.
+#   * a shot ON SCREEN for less than MIN_SHOT_SECONDS joins the previous
+#     shot rather than flashing. On-screen time runs to the next shot's
+#     start, so it includes the breath after the words: "Rain arrives." is
+#     ~1.0 s spoken but ~1.4 s on screen -- a valid quick cut that keeps
+#     its own visual.
 MAX_SHOT_SECONDS = 6.0
-MIN_SHOT_SECONDS = 1.0
+MIN_SHOT_SECONDS = 0.8
 # Upper bound on sentences per scene, purely so one scene in the clip picker
 # stays a manageable unit; longer story sections continue in the next scene
 # with the same semantics.
@@ -538,25 +541,36 @@ def _plan_segment_shots(segment, sentences_by_index, words, lang, max_shot=MAX_S
                     )
             split.append(_shot(words, x, y, base, sh["sentence_index"], part=j + 1))
 
-    # tiny shots join the previous one (or the next, at the very start)
+    # Shots that would only FLASH (on screen < MIN_SHOT_SECONDS, measured to
+    # the next shot's start) join the previous shot; only a flash at the
+    # very start of the segment is absorbed forward.
+    def on_screen(k):
+        start = words[split[k]["word_from"]]["start"]
+        if k + 1 < len(split):
+            return words[split[k + 1]["word_from"]]["start"] - start
+        nxt = split[k]["word_to"] + 1
+        return (words[nxt]["start"] if nxt < len(words) else words[split[k]["word_to"]]["end"]) - start
+
     merged = []
-    for sh in split:
-        st, en = _word_span_times(words, sh["word_from"], sh["word_to"])
-        if en - st < MIN_SHOT_SECONDS and merged:
+    carry = None  # a leading flash waiting to join the next shot
+    for k, sh in enumerate(split):
+        flash = on_screen(k) < MIN_SHOT_SECONDS
+        if carry is not None:
+            sh = dict(sh)
+            sh["word_from"] = carry["word_from"]
+            sh["text"] = carry["text"] + " " + sh["text"]
+            carry = None
+        if flash and merged:
             prev = merged[-1]
             prev["word_to"] = sh["word_to"]
             prev["text"] = prev["text"] + " " + sh["text"]
             continue
-        if merged and merged[-1].get("_tiny"):
-            nxt = dict(sh)
-            nxt["word_from"] = merged[-1]["word_from"]
-            nxt["text"] = merged[-1]["text"] + " " + sh["text"]
-            merged[-1] = nxt
+        if flash and k + 1 < len(split):
+            carry = sh
             continue
-        sh["_tiny"] = (en - st < MIN_SHOT_SECONDS)
         merged.append(sh)
-    for sh in merged:
-        sh.pop("_tiny", None)
+    if carry is not None:
+        merged.append(carry)
     return merged
 
 
@@ -703,6 +717,60 @@ def _merge_short_scenes(scenes, words, min_seconds):
             host[key] = merged[:8]
         host["queries"] = (host.get("queries") or [])[:2] + [scene["query"]]
     return out
+
+
+def validate_plan(scenes, sentences, words, max_shot):
+    """Check the finished visual plan against the rules and report, so every
+    step-1 run proves its own coverage instead of trusting it:
+      - scenes tile every narrated word, in order, no gaps or overlaps;
+      - each scene's shots tile that scene's words exactly;
+      - every sentence starts its own visual (no sentence begins mid-shot,
+        except a sub-MIN_SHOT_SECONDS fragment merged on purpose);
+      - no visual is longer than max_shot (+ a merged fragment).
+    Returns a dict for timeline.json meta; `ok` is False on any hard
+    violation (gaps/overlaps), which would desynchronize step 3."""
+    units = []  # (word_from, word_to) of every visual, in order
+    gaps = []
+    expect = 0
+    for sc in scenes:
+        if sc["word_from"] != expect:
+            gaps.append(f"scene {sc.get('index')}: starts at word {sc['word_from']}, expected {expect}")
+        expect = sc["word_to"] + 1
+        shots = sc.get("shots") or []
+        if shots:
+            if shots[0]["word_from"] != sc["word_from"] or shots[-1]["word_to"] != sc["word_to"]:
+                gaps.append(f"scene {sc.get('index')}: shots don't cover the scene edges")
+            for a, b in zip(shots, shots[1:]):
+                if b["word_from"] != a["word_to"] + 1:
+                    gaps.append(f"scene {sc.get('index')}: gap/overlap between shots")
+            units.extend((sh["word_from"], sh["word_to"]) for sh in shots)
+        else:
+            units.append((sc["word_from"], sc["word_to"]))
+    if words and expect != len(words):
+        gaps.append(f"narration words {expect}..{len(words) - 1} have no scene")
+
+    starts = {u[0] for u in units}
+    shared = []
+    for k, snt in enumerate(sentences):
+        if snt["word_from"] not in starts:
+            nxt = sentences[k + 1]["word_from"] if k + 1 < len(sentences) else None
+            end = words[nxt]["start"] if nxt is not None else words[snt["word_to"]]["end"]
+            if end - words[snt["word_from"]]["start"] >= MIN_SHOT_SECONDS:
+                shared.append(snt["index"])
+    durs = [words[b]["end"] - words[a]["start"] for a, b in units]
+    tolerance = max_shot + MIN_SHOT_SECONDS
+    too_long = sum(1 for d in durs if d > tolerance)
+    return {
+        "ok": not gaps,
+        "visual_units": len(units),
+        "sentences": len(sentences),
+        "sentences_without_own_shot": shared[:20],
+        "sentences_without_own_shot_count": len(shared),
+        "longest_seconds": round(max(durs), 2) if durs else 0,
+        "median_seconds": round(sorted(durs)[len(durs) // 2], 2) if durs else 0,
+        "over_cap": too_long,
+        "problems": gaps[:20],
+    }
 
 
 def _finalize_shots(scenes):
@@ -930,9 +998,11 @@ def build_scenes(
     shot_secs = [
         sh["duration"] for sc in scenes for sh in (sc.get("shots") or [])
     ] + [sc["duration"] for sc in scenes if not sc.get("shots")]
+    check = validate_plan(scenes, sentences, words, max_shot_seconds)
     meta = {
         "mode": mode,
         "planner": "sentence-driven",
+        "plan_check": check,
         "sentences": len(sentences),
         "scenes": len(scenes),
         "shots": total_shots,
