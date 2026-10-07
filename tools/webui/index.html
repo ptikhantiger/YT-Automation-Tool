@@ -1016,36 +1016,28 @@ const PICKER_PROBE = { step2: "/api/scenes", music: "/api/queue" };
 const pickerPort = { step2: null, music: null };  // port currently embedded
 
 async function pickerInfo(key, port) {
-  // Step 1 -- is ANYTHING listening? A no-cors ping resolves (opaquely) for
-  // any live server and rejects only on connection failure. Without this, a
-  // server that blocks cross-origin reads (an old picker built before CORS
-  // was enabled, or something else entirely on the port) would look
-  // identical to a free port -- which is exactly how stale pickers used to
-  // get silently reused.
-  const ping = new AbortController();
-  const tp = setTimeout(() => ping.abort(), 1500);
-  try {
-    await fetch(`${pickerBase(port)}/`, { mode: "no-cors", signal: ping.signal, cache: "no-store" });
-    clearTimeout(tp);
-  } catch {
-    clearTimeout(tp);
-    return { occupied: false };
-  }
-  // Step 2 -- it's alive: which project is it serving? Unreadable (CORS
-  // blocked / not a picker) reports occupied with project unknown, so the
-  // caller treats it as foreign and moves to the next port.
+  // Asked of the dashboard's own server, which checks 127.0.0.1:<port> from
+  // inside the machine. (Checking from the browser broke in a Codespace:
+  // each port is a separate private address behind GitHub's login, so the
+  // fetch got a sign-in redirect and a running picker looked dead.)
   const ctl = new AbortController();
-  const t = setTimeout(() => ctl.abort(), 1500);
+  const t = setTimeout(() => ctl.abort(), 4000);
   try {
-    const r = await fetch(`${pickerBase(port)}${PICKER_PROBE[key]}`, { signal: ctl.signal, cache: "no-store" });
+    const r = await fetch(`/api/picker-info?port=${port}&path=${encodeURIComponent(PICKER_PROBE[key])}`,
+                          { signal: ctl.signal, cache: "no-store" });
     clearTimeout(t);
     if (!r.ok) return { occupied: true, project: null };
     const d = await r.json();
-    return { occupied: true, project: d.project || null };
+    return { occupied: !!d.occupied, project: d.project || null };
   } catch {
     clearTimeout(t);
-    return { occupied: true, project: null };
+    return { occupied: true, project: null };  // unknown -> treat as foreign, never double-start
   }
+}
+
+// True when this page is served through GitHub Codespaces port forwarding.
+function inCodespace() {
+  return /-\d+\.(app\.github\.dev|githubpreview\.dev)$/.test(location.hostname);
 }
 
 async function stopAndWait(key, timeoutMs = 8000) {
@@ -1061,12 +1053,29 @@ function embedIframe(key, port) {
   pickerEmbedded[key] = true;
   pickerPort[key] = port;
   const wrap = $("embedwrap");
-  if (wrap) wrap.innerHTML =
+  if (!wrap) return;
+  const url = `${pickerBase(port)}/?theme=${currentTheme()}`;
+  const label = key === "music" ? "music picker" : "clip picker";
+  if (inCodespace()) {
+    // In a Codespace the picker's port is its own private address: a new
+    // tab signs in with your GitHub session automatically, while an iframe
+    // is blocked by the browser's third-party-cookie rules. So: a button.
+    wrap.innerHTML =
+      `<div class="banner" style="display:flex; gap:14px; align-items:center; flex-wrap:wrap">
+         <span>&#10003; The ${label} for <b>${esc(project)}</b> is running (port ${port}).</span>
+         <a class="btn primary" href="${url}" target="_blank" rel="noopener"
+            style="text-decoration:none; padding:8px 16px; border-radius:8px; font-weight:600">&#8599; Open the ${label}</a>
+       </div>
+       <div class="meta" style="margin-top:8px">It opens in its own tab (GitHub keeps each port behind your login,
+         so it can't be embedded here). Keep this dashboard tab open for the log and the Stop button.</div>`;
+    return;
+  }
+  wrap.innerHTML =
     `<div style="display:flex; justify-content:space-between; align-items:center; margin:4px 2px 6px">
        <span class="status-pill">picker for <b>${esc(project)}</b> on port ${port}</span>
-       <a href="http://127.0.0.1:${port}/" target="_blank" style="font-size:12.5px">↗ open in its own tab</a>
+       <a href="${url}" target="_blank" style="font-size:12.5px">↗ open in its own tab</a>
      </div>
-     <iframe class="embed" src="http://127.0.0.1:${port}/?theme=${currentTheme()}"></iframe>`;
+     <iframe class="embed" src="${url}"></iframe>`;
 }
 
 function embedNote(msg, cls = "warn") {

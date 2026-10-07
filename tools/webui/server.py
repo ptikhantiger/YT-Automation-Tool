@@ -85,6 +85,29 @@ def _git_sync():
         return {"ok": False, "error": f"git isn't available here: {e}", "log": ""}
 
 
+_PICKER_PROBE_PATHS = {"/api/scenes", "/api/queue"}
+
+
+def _picker_info(port, probe):
+    """{occupied, project} for whatever listens on 127.0.0.1:port.
+    occupied=False only when nothing accepts the connection; a server that
+    answers but isn't a picker for any project reports project=None."""
+    import socket
+    import urllib.error
+    import urllib.request
+    try:
+        with socket.create_connection(("127.0.0.1", port), timeout=1.0):
+            pass
+    except OSError:
+        return {"occupied": False, "project": None}
+    try:
+        with urllib.request.urlopen(f"http://127.0.0.1:{port}{probe}", timeout=2.0) as r:
+            data = json.loads(r.read().decode("utf-8", "replace") or "{}")
+        return {"occupied": True, "project": data.get("project")}
+    except (urllib.error.URLError, ValueError, OSError):
+        return {"occupied": True, "project": None}
+
+
 # run_id -> {"proc": Popen, "queue": Queue, "returncode": int|None}
 RUNS = {}
 RUNS_LOCK = threading.Lock()
@@ -282,6 +305,21 @@ class Handler(BaseHTTPRequestHandler):
             self._serve_index()
         elif path == "/api/projects":
             self._json({"projects": _list_projects()})
+        elif path == "/api/picker-info":
+            # Server-side readiness check for a picker. The browser can't do
+            # it in a Codespace: every forwarded port is a separate private
+            # address behind GitHub's login, so a cross-port fetch gets a
+            # sign-in redirect (CORS-blocked) and a running picker looks
+            # dead. From here it's plain 127.0.0.1, no login involved.
+            try:
+                port = int(qs.get("port", ["0"])[0])
+            except ValueError:
+                port = 0
+            probe = qs.get("path", ["/api/scenes"])[0]
+            if not (1024 <= port <= 65535) or probe not in _PICKER_PROBE_PATHS:
+                self._json({"error": "bad port or path"}, status=400)
+            else:
+                self._json(_picker_info(port, probe))
         elif path == "/api/stream":
             self._stream(qs.get("run_id", [None])[0])
         elif path == "/api/status":

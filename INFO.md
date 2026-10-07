@@ -141,11 +141,20 @@ Or, without a restart: **PORTS** tab → **Forward a Port** → type `8765` → 
 
 Normal when no Step 2 is running. Start Step 2 from the dashboard first.
 
-### The picker is embedded in the dashboard but the box is blank
+### Pick Clips stays on "Starting the clip picker…"
 
-GitHub needs to set a cookie for that port once. **PORTS** tab → row
-**Clip picker (8000)** → globe icon → it opens in its own tab. Use it there,
-or go back to the dashboard and reload.
+Fixed in the code (dashboard ≥ commit "Dashboard: check pickers server-side").
+If you still see it, the dashboard is running old code: **⟳ Sync code**, then
+restart it (`pkill -f webui/server.py; pkill -f launch.py; bash .devcontainer/start.sh`)
+and reload the tab.
+
+In a codespace the picker no longer embeds inside the dashboard — GitHub keeps
+each port behind your login, and browsers block that inside an iframe. Pick
+Clips shows **↗ Open the clip picker**, which opens it in its own tab. Keep the
+dashboard tab open for the log and the Stop button.
+
+Workaround on old code: the picker is usually running fine anyway — open it from
+the **PORTS** tab → **Clip picker (8000)** → globe icon.
 
 ### Restart the dashboard (after a code update, or if it misbehaves)
 
