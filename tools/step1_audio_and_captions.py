@@ -365,7 +365,22 @@ def main():
         print(f"Reusing existing timings ({len(words)} words) -- audio and scenes untouched.")
     else:
         print(f"Synthesizing with voice '{voice}' (rate {args.rate})...")
-        words = asyncio.run(synthesize(text, voice, args.rate, audio_path))
+        try:
+            words = asyncio.run(synthesize(text, voice, args.rate, audio_path))
+        except Exception as e:
+            # Microsoft's TTS endpoint answers 403 to older edge-tts releases,
+            # which still send the retired v1 Sec-MS-GEC security token. It is
+            # a version problem, not a network/key/voice problem, so say that
+            # instead of dumping an aiohttp handshake traceback.
+            if "403" in str(e) or "WSServerHandshakeError" in type(e).__name__:
+                sys.exit(
+                    "\nEdge's text-to-speech service rejected the request (HTTP 403).\n"
+                    "This is an out-of-date edge-tts package: Microsoft now requires the\n"
+                    "v2 Sec-MS-GEC token, which older releases don't send.\n\n"
+                    "  Fix:  pip install --upgrade \"edge-tts>=7.3.1\"\n\n"
+                    "Then run this step again. Nothing was lost -- the script is untouched."
+                )
+            raise
         if not words:
             sys.exit("No word timing data returned by edge-tts -- check your internet connection and voice name.")
         print(f"  audio.mp3 written ({words[-1]['end']:.1f}s), {len(words)} words timed")

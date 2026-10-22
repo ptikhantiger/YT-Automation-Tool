@@ -1,4 +1,7 @@
-edge-tts>=6.1.0
+# 7.3.1+ is required: Microsoft's TTS endpoint now rejects the old v1
+# Sec-MS-GEC token (HTTP 403 "Invalid response status") that every older
+# edge-tts sends. A plain synthesize() dies on the first word without it.
+edge-tts>=7.3.1
 Pillow>=10.0.0
 youtube-transcript-api>=1.0.0
 yt-dlp>=2024.1.0

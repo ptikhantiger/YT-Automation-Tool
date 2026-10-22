@@ -35,6 +35,12 @@ CORE_PACKAGES = [("edge_tts", "edge-tts"), ("PIL", "Pillow")]
 # Needed only for step 0 --yt-link and the music picker.
 OPTIONAL_PACKAGES = [("youtube_transcript_api", "youtube-transcript-api"), ("yt_dlp", "yt-dlp")]
 
+# Minimum versions for packages whose older releases no longer work against
+# the live services. edge-tts < 7.3.1 still sends the retired v1 Sec-MS-GEC
+# token, which Microsoft's TTS endpoint now rejects with HTTP 403 -- so a
+# perfectly importable old copy fails on the first word of narration.
+MIN_PACKAGE_VERSIONS = {"edge-tts": (7, 3, 1)}
+
 # key file -> (env var, label, required, signup url). A key can come from
 # either: the file under tools/ (this laptop) or the env var (a GitHub
 # Codespace, where keys are stored as Codespaces Secrets and arrive as env).
@@ -77,9 +83,44 @@ def check_ffmpeg():
     return ok
 
 
+def _version_tuple(text):
+    """'7.3.1' -> (7, 3, 1), ignoring any pre-release suffix. Enough for the
+    simple 'at least this release' checks below -- avoids depending on
+    `packaging`, which isn't a project requirement."""
+    parts = []
+    for piece in text.split("."):
+        digits = ""
+        for ch in piece:
+            if not ch.isdigit():
+                break
+            digits += ch
+        if not digits:
+            break
+        parts.append(int(digits))
+    return tuple(parts)
+
+
 def missing_packages(packages):
+    """Packages that are either not importable, or importable but older than
+    MIN_PACKAGE_VERSIONS requires -- see the edge-tts 403 note above."""
+    import importlib.metadata
     import importlib.util
-    return [(mod, pip) for mod, pip in packages if importlib.util.find_spec(mod) is None]
+
+    missing = []
+    for mod, pip_name in packages:
+        if importlib.util.find_spec(mod) is None:
+            missing.append((mod, pip_name))
+            continue
+        minimum = MIN_PACKAGE_VERSIONS.get(pip_name)
+        if not minimum:
+            continue
+        try:
+            installed = importlib.metadata.version(pip_name)
+        except importlib.metadata.PackageNotFoundError:
+            continue
+        if _version_tuple(installed) < minimum:
+            missing.append((mod, pip_name))
+    return missing
 
 
 def check_dependencies(auto_yes=False):
@@ -88,7 +129,7 @@ def check_dependencies(auto_yes=False):
         print("  [ OK ] Python packages (edge-tts, Pillow)")
     else:
         names = ", ".join(pip for _, pip in missing)
-        print(f"  [FAIL] Missing required package(s): {names}")
+        print(f"  [FAIL] Missing or out-of-date required package(s): {names}")
         if not REQUIREMENTS.exists():
             print(f"         Expected {REQUIREMENTS} -- install manually: pip install {names}")
             return False
