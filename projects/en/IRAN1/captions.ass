@@ -1,0 +1,694 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.19,Default,,0,0,0,,Welcome Back to my youtube channel
+Dialogue: 0,0:00:02.19,0:00:05.43,Default,,0,0,0,,Today we will Explore the Life in Iran
+Dialogue: 0,0:00:05.43,0:00:07.78,Default,,0,0,0,,How Ordinary People Still Live
+Dialogue: 0,0:00:07.78,0:00:12.01,Default,,0,0,0,,Eat Work and Survive Imagine waking up in Tehran
+Dialogue: 0,0:00:12.01,0:00:15.03,Default,,0,0,0,,to the sound of a city coming alive
+Dialogue: 0,0:00:15.03,0:00:17.65,Default,,0,0,0,,Bakeries opening before sunrise
+Dialogue: 0,0:00:17.65,0:00:19.65,Default,,0,0,0,,Cars filling the streets
+Dialogue: 0,0:00:19.65,0:00:21.74,Default,,0,0,0,,Families buying fresh bread
+Dialogue: 0,0:00:21.74,0:00:24.61,Default,,0,0,0,,Young people meeting friends in cafes
+Dialogue: 0,0:00:24.61,0:00:26.64,Default,,0,0,0,,Children getting ready for school
+Dialogue: 0,0:00:26.64,0:00:29.97,Default,,0,0,0,,Shopkeepers lifting the shutters of their stores
+Dialogue: 0,0:00:29.97,0:00:32.56,Default,,0,0,0,,Women walking through crowded streets
+Dialogue: 0,0:00:32.56,0:00:33.93,Default,,0,0,0,,Men heading to work
+Dialogue: 0,0:00:33.93,0:00:36.10,Default,,0,0,0,,And somewhere in the middle of all of this
+Dialogue: 0,0:00:36.10,0:00:39.64,Default,,0,0,0,,a family sitting down together for breakfast
+Dialogue: 0,0:00:39.64,0:00:42.75,Default,,0,0,0,,This is the Iran that existed before the war
+Dialogue: 0,0:00:42.75,0:00:44.50,Default,,0,0,0,,changed everything
+Dialogue: 0,0:00:44.50,0:00:49.24,Default,,0,0,0,,Then on February 28, 2026 the sound of
+Dialogue: 0,0:00:49.24,0:00:52.83,Default,,0,0,0,,everyday life was interrupted by explosions
+Dialogue: 0,0:00:52.83,0:00:56.56,Default,,0,0,0,,The United States and Israel launched a major
+Dialogue: 0,0:00:56.56,0:00:59.61,Default,,0,0,0,,military campaign against Iran
+Dialogue: 0,0:00:59.61,0:01:02.96,Default,,0,0,0,,For millions of ordinary people the war was
+Dialogue: 0,0:01:02.96,0:01:05.94,Default,,0,0,0,,not a story happening on television anymore
+Dialogue: 0,0:01:05.94,0:01:08.47,Default,,0,0,0,,It was suddenly outside their homes
+Dialogue: 0,0:01:08.47,0:01:10.86,Default,,0,0,0,,And yet something remarkable happened
+Dialogue: 0,0:01:10.86,0:01:14.76,Default,,0,0,0,,Iranian life did not simply disappear
+Dialogue: 0,0:01:14.76,0:01:16.10,Default,,0,0,0,,People were frightened
+Dialogue: 0,0:01:16.10,0:01:17.86,Default,,0,0,0,,People lost jobs
+Dialogue: 0,0:01:17.86,0:01:19.49,Default,,0,0,0,,Families were separated
+Dialogue: 0,0:01:19.49,0:01:21.04,Default,,0,0,0,,Schools were disrupted
+Dialogue: 0,0:01:21.04,0:01:22.43,Default,,0,0,0,,Prices climbed
+Dialogue: 0,0:01:22.43,0:01:24.04,Default,,0,0,0,,Buildings were damaged
+Dialogue: 0,0:01:24.04,0:01:25.79,Default,,0,0,0,,But people still cooked
+Dialogue: 0,0:01:25.79,0:01:27.53,Default,,0,0,0,,They still went to markets
+Dialogue: 0,0:01:27.53,0:01:29.04,Default,,0,0,0,,They still drank tea
+Dialogue: 0,0:01:29.04,0:01:31.28,Default,,0,0,0,,They still visited relatives
+Dialogue: 0,0:01:31.28,0:01:33.14,Default,,0,0,0,,They still laughed with friends
+Dialogue: 0,0:01:33.14,0:01:35.60,Default,,0,0,0,,They still worried about their children
+Dialogue: 0,0:01:35.60,0:01:38.21,Default,,0,0,0,,And they still tried to imagine tomorrow
+Dialogue: 0,0:01:38.21,0:01:41.17,Default,,0,0,0,,This is the story of Iran before and after
+Dialogue: 0,0:01:41.17,0:01:42.36,Default,,0,0,0,,the war began
+Dialogue: 0,0:01:42.36,0:01:45.54,Default,,0,0,0,,Not the story of presidents or generals
+Dialogue: 0,0:01:45.54,0:01:49.14,Default,,0,0,0,,Not the story of missiles and military bases
+Dialogue: 0,0:01:49.14,0:01:51.88,Default,,0,0,0,,But the story of ordinary people
+Dialogue: 0,0:01:51.88,0:01:55.08,Default,,0,0,0,,THE IRAN THAT EXISTED BEFORE THE WAR Before
+Dialogue: 0,0:01:55.08,0:01:58.85,Default,,0,0,0,,the war Iran was already a complicated country
+Dialogue: 0,0:01:58.85,0:02:02.62,Default,,0,0,0,,It had political tensions international sanctions
+Dialogue: 0,0:02:02.62,0:02:05.96,Default,,0,0,0,,inflation and economic difficulties
+Dialogue: 0,0:02:05.96,0:02:09.01,Default,,0,0,0,,But everyday life was far more ordinary than
+Dialogue: 0,0:02:09.01,0:02:10.99,Default,,0,0,0,,many outsiders imagine
+Dialogue: 0,0:02:10.99,0:02:12.24,Default,,0,0,0,,In Tehran
+Dialogue: 0,0:02:12.24,0:02:14.90,Default,,0,0,0,,millions of people moved through a huge modern
+Dialogue: 0,0:02:14.90,0:02:18.11,Default,,0,0,0,,city surrounded by the Alborz Mountains
+Dialogue: 0,0:02:18.11,0:02:20.92,Default,,0,0,0,,The streets could be crowded with cars buses
+Dialogue: 0,0:02:20.92,0:02:22.49,Default,,0,0,0,,and motorcycles
+Dialogue: 0,0:02:22.49,0:02:25.99,Default,,0,0,0,,Markets were full of fruit vegetables spices
+Dialogue: 0,0:02:25.99,0:02:28.36,Default,,0,0,0,,clothes and household goods
+Dialogue: 0,0:02:28.36,0:02:31.17,Default,,0,0,0,,Restaurants served traditional Persian dishes
+Dialogue: 0,0:02:31.17,0:02:33.61,Default,,0,0,0,,alongside modern fast food
+Dialogue: 0,0:02:33.61,0:02:36.65,Default,,0,0,0,,And cafes had become an important part of urban
+Dialogue: 0,0:02:36.65,0:02:37.69,Default,,0,0,0,,life
+Dialogue: 0,0:02:37.69,0:02:40.11,Default,,0,0,0,,especially for young Iranians
+Dialogue: 0,0:02:40.11,0:02:41.93,Default,,0,0,0,,For many young people
+Dialogue: 0,0:02:41.93,0:02:45.72,Default,,0,0,0,,a cafe was not simply somewhere to drink coffee
+Dialogue: 0,0:02:45.72,0:02:48.61,Default,,0,0,0,,It was a place to meet friends study
+Dialogue: 0,0:02:48.61,0:02:50.40,Default,,0,0,0,,work talk
+Dialogue: 0,0:02:50.40,0:02:53.24,Default,,0,0,0,,listen to music or simply escape the pressure
+Dialogue: 0,0:02:53.24,0:02:54.68,Default,,0,0,0,,of everyday life
+Dialogue: 0,0:02:54.68,0:02:58.53,Default,,0,0,0,,In northern Tehran streets around Tajrish combined
+Dialogue: 0,0:02:58.53,0:03:02.26,Default,,0,0,0,,old neighborhoods markets restaurants and modern
+Dialogue: 0,0:03:02.26,0:03:03.56,Default,,0,0,0,,cafes
+Dialogue: 0,0:03:03.56,0:03:06.89,Default,,0,0,0,,The bazaar was filled with colorful fruit vegetables
+Dialogue: 0,0:03:06.89,0:03:11.46,Default,,0,0,0,,spices saffron sweets clothing and traditional
+Dialogue: 0,0:03:11.46,0:03:12.47,Default,,0,0,0,,goods
+Dialogue: 0,0:03:12.47,0:03:15.17,Default,,0,0,0,,Families could shop there while also treating
+Dialogue: 0,0:03:15.17,0:03:17.40,Default,,0,0,0,,the market as a place to walk
+Dialogue: 0,0:03:17.40,0:03:19.56,Default,,0,0,0,,eat and spend time together
+Dialogue: 0,0:03:19.56,0:03:22.28,Default,,0,0,0,,This mixture of old and new is one of the most
+Dialogue: 0,0:03:22.28,0:03:24.24,Default,,0,0,0,,interesting things about Iran
+Dialogue: 0,0:03:24.24,0:03:27.69,Default,,0,0,0,,A country can have ancient traditions and modern
+Dialogue: 0,0:03:27.69,0:03:30.22,Default,,0,0,0,,smartphones in the same household
+Dialogue: 0,0:03:30.22,0:03:32.93,Default,,0,0,0,,A grandmother can prepare a traditional meal
+Dialogue: 0,0:03:32.93,0:03:36.10,Default,,0,0,0,,while her grandchildren sit nearby using the
+Dialogue: 0,0:03:36.10,0:03:37.65,Default,,0,0,0,,latest technology
+Dialogue: 0,0:03:37.65,0:03:39.79,Default,,0,0,0,,And a teenager can spend the afternoon in a
+Dialogue: 0,0:03:39.79,0:03:43.68,Default,,0,0,0,,modern cafe before returning home to a family
+Dialogue: 0,0:03:43.68,0:03:47.04,Default,,0,0,0,,dinner based on recipes passed down through
+Dialogue: 0,0:03:47.04,0:03:48.46,Default,,0,0,0,,generations
+Dialogue: 0,0:03:48.46,0:03:51.11,Default,,0,0,0,,THE FOOD THAT CONNECTS PEOPLE If you want to
+Dialogue: 0,0:03:51.11,0:03:54.06,Default,,0,0,0,,understand Iran one of the best places to start
+Dialogue: 0,0:03:54.06,0:03:55.25,Default,,0,0,0,,is the kitchen
+Dialogue: 0,0:03:55.25,0:03:58.33,Default,,0,0,0,,Iranian food is not simply about filling your
+Dialogue: 0,0:03:58.33,0:03:59.40,Default,,0,0,0,,stomach
+Dialogue: 0,0:03:59.40,0:04:04.11,Default,,0,0,0,,Food is connected to family hospitality celebrations
+Dialogue: 0,0:04:04.11,0:04:05.29,Default,,0,0,0,,and memory
+Dialogue: 0,0:04:05.29,0:04:08.50,Default,,0,0,0,,Rice is one of the foundations of Persian cooking
+Dialogue: 0,0:04:08.50,0:04:11.72,Default,,0,0,0,,It appears in countless combinations with meat
+Dialogue: 0,0:04:11.72,0:04:15.61,Default,,0,0,0,,vegetables herbs fruits and nuts
+Dialogue: 0,0:04:15.61,0:04:18.06,Default,,0,0,0,,There are stews known as khoresh
+Dialogue: 0,0:04:18.06,0:04:20.17,Default,,0,0,0,,There are different varieties of kebab
+Dialogue: 0,0:04:20.17,0:04:23.11,Default,,0,0,0,,There is ash a thick and comforting family
+Dialogue: 0,0:04:23.11,0:04:24.32,Default,,0,0,0,,of soups
+Dialogue: 0,0:04:24.32,0:04:26.68,Default,,0,0,0,,There are breads yogurt
+Dialogue: 0,0:04:26.68,0:04:30.51,Default,,0,0,0,,herbs pickles sweets and countless regional
+Dialogue: 0,0:04:30.51,0:04:31.56,Default,,0,0,0,,dishes
+Dialogue: 0,0:04:31.56,0:04:33.17,Default,,0,0,0,,And then there is tahdig
+Dialogue: 0,0:04:33.17,0:04:34.81,Default,,0,0,0,,That golden
+Dialogue: 0,0:04:34.81,0:04:37.82,Default,,0,0,0,,crispy layer of rice at the bottom of the pot
+Dialogue: 0,0:04:37.82,0:04:40.04,Default,,0,0,0,,that can become one of the most fought-over
+Dialogue: 0,0:04:40.04,0:04:41.94,Default,,0,0,0,,parts of a family meal
+Dialogue: 0,0:04:41.94,0:04:44.62,Default,,0,0,0,,Persian cooking also makes extensive use of
+Dialogue: 0,0:04:44.62,0:04:49.99,Default,,0,0,0,,herbs vegetables fruits nuts and dairy products
+Dialogue: 0,0:04:49.99,0:04:53.93,Default,,0,0,0,,Saffron turmeric cinnamon and other seasonings
+Dialogue: 0,0:04:53.93,0:04:56.74,Default,,0,0,0,,create dishes that are often fragrant rather
+Dialogue: 0,0:04:56.74,0:04:59.03,Default,,0,0,0,,than overwhelmingly spicy
+Dialogue: 0,0:04:59.03,0:05:00.50,Default,,0,0,0,,But during war
+Dialogue: 0,0:05:00.50,0:05:02.48,Default,,0,0,0,,food means something different
+Dialogue: 0,0:05:02.48,0:05:05.36,Default,,0,0,0,,A normal meal can become a symbol of normal
+Dialogue: 0,0:05:05.36,0:05:06.28,Default,,0,0,0,,life
+Dialogue: 0,0:05:06.28,0:05:08.31,Default,,0,0,0,,A mother preparing rice
+Dialogue: 0,0:05:08.31,0:05:10.43,Default,,0,0,0,,A father bringing home bread
+Dialogue: 0,0:05:10.43,0:05:12.16,Default,,0,0,0,,Children waiting for dinner
+Dialogue: 0,0:05:12.16,0:05:14.95,Default,,0,0,0,,Grandparents sitting at the same table
+Dialogue: 0,0:05:14.95,0:05:17.70,Default,,0,0,0,,These small moments become important because
+Dialogue: 0,0:05:17.70,0:05:21.78,Default,,0,0,0,,they remind families that life is still continuing
+Dialogue: 0,0:05:21.78,0:05:25.23,Default,,0,0,0,,THE STREETS BEFORE THE WAR Before the attacks
+Dialogue: 0,0:05:25.23,0:05:28.84,Default,,0,0,0,,Tehran's streets could be incredibly energetic
+Dialogue: 0,0:05:28.84,0:05:32.18,Default,,0,0,0,,Cars moved through huge intersections
+Dialogue: 0,0:05:32.18,0:05:34.13,Default,,0,0,0,,People crowded the metro
+Dialogue: 0,0:05:34.13,0:05:35.71,Default,,0,0,0,,Markets stayed busy
+Dialogue: 0,0:05:35.71,0:05:38.39,Default,,0,0,0,,Restaurants filled with customers
+Dialogue: 0,0:05:38.39,0:05:40.96,Default,,0,0,0,,Young people gathered in parks
+Dialogue: 0,0:05:40.96,0:05:42.68,Default,,0,0,0,,Friends met for coffee
+Dialogue: 0,0:05:42.68,0:05:45.21,Default,,0,0,0,,And families went outside in the evening when
+Dialogue: 0,0:05:45.21,0:05:47.67,Default,,0,0,0,,the temperature became more comfortable
+Dialogue: 0,0:05:47.67,0:05:50.21,Default,,0,0,0,,Iranian cities have their own rhythm
+Dialogue: 0,0:05:50.21,0:05:53.10,Default,,0,0,0,,Morning begins with work and school
+Dialogue: 0,0:05:53.10,0:05:54.78,Default,,0,0,0,,Markets become busy
+Dialogue: 0,0:05:54.78,0:05:58.13,Default,,0,0,0,,Lunch brings people home or into restaurants
+Dialogue: 0,0:05:58.13,0:05:59.23,Default,,0,0,0,,And later
+Dialogue: 0,0:05:59.23,0:06:01.61,Default,,0,0,0,,streets can become lively again
+Dialogue: 0,0:06:01.61,0:06:03.50,Default,,0,0,0,,Parks are especially important
+Dialogue: 0,0:06:03.50,0:06:05.23,Default,,0,0,0,,Families sit together
+Dialogue: 0,0:06:05.23,0:06:06.46,Default,,0,0,0,,Children play
+Dialogue: 0,0:06:06.46,0:06:09.31,Default,,0,0,0,,Older men sometimes gather for games such as
+Dialogue: 0,0:06:09.31,0:06:10.42,Default,,0,0,0,,backgammon
+Dialogue: 0,0:06:10.42,0:06:11.77,Default,,0,0,0,,Young people talk
+Dialogue: 0,0:06:11.77,0:06:15.05,Default,,0,0,0,,And for a few hours the pressures of politics
+Dialogue: 0,0:06:15.05,0:06:17.88,Default,,0,0,0,,and economics can feel far away
+Dialogue: 0,0:06:17.88,0:06:19.16,Default,,0,0,0,,During the war
+Dialogue: 0,0:06:19.16,0:06:22.14,Default,,0,0,0,,some of these ordinary scenes disappeared
+Dialogue: 0,0:06:22.14,0:06:24.32,Default,,0,0,0,,Others simply became smaller
+Dialogue: 0,0:06:24.32,0:06:27.00,Default,,0,0,0,,But they did not completely disappear
+Dialogue: 0,0:06:27.00,0:06:29.16,Default,,0,0,0,,LIFE WHEN THE BOMBS STARTED
+Dialogue: 0,0:06:29.16,0:06:32.80,Default,,0,0,0,,When the war began the atmosphere changed almost
+Dialogue: 0,0:06:32.80,0:06:34.17,Default,,0,0,0,,immediately
+Dialogue: 0,0:06:34.17,0:06:35.88,Default,,0,0,0,,Some streets emptied
+Dialogue: 0,0:06:35.88,0:06:37.50,Default,,0,0,0,,Businesses closed
+Dialogue: 0,0:06:37.50,0:06:40.67,Default,,0,0,0,,People rushed to buy essential supplies
+Dialogue: 0,0:06:40.67,0:06:42.95,Default,,0,0,0,,Families worried about where the next strike
+Dialogue: 0,0:06:42.95,0:06:44.10,Default,,0,0,0,,might happen
+Dialogue: 0,0:06:44.10,0:06:47.45,Default,,0,0,0,,The internet became unreliable or was cut in
+Dialogue: 0,0:06:47.45,0:06:48.88,Default,,0,0,0,,large areas
+Dialogue: 0,0:06:48.88,0:06:51.86,Default,,0,0,0,,And information itself became something people
+Dialogue: 0,0:06:51.86,0:06:53.96,Default,,0,0,0,,struggled to access
+Dialogue: 0,0:06:53.96,0:06:56.80,Default,,0,0,0,,For many families the biggest question was
+Dialogue: 0,0:06:56.80,0:06:59.66,Default,,0,0,0,,no longer what they wanted to do that day
+Dialogue: 0,0:06:59.66,0:07:01.45,Default,,0,0,0,,It was whether they were safe
+Dialogue: 0,0:07:01.45,0:07:03.89,Default,,0,0,0,,Some people left major cities
+Dialogue: 0,0:07:03.89,0:07:06.05,Default,,0,0,0,,Others stayed with relatives
+Dialogue: 0,0:07:06.05,0:07:09.21,Default,,0,0,0,,Some moved temporarily to quieter areas
+Dialogue: 0,0:07:09.21,0:07:11.71,Default,,0,0,0,,Others remained in their homes and tried to
+Dialogue: 0,0:07:11.71,0:07:13.10,Default,,0,0,0,,continue working
+Dialogue: 0,0:07:13.10,0:07:16.28,Default,,0,0,0,,The difference between a normal day and a wartime
+Dialogue: 0,0:07:16.28,0:07:20.00,Default,,0,0,0,,day could be as simple as hearing an aircraft
+Dialogue: 0,0:07:20.00,0:07:21.00,Default,,0,0,0,,overhead
+Dialogue: 0,0:07:21.00,0:07:24.20,Default,,0,0,0,,A cafe that once felt relaxing could suddenly
+Dialogue: 0,0:07:24.20,0:07:25.81,Default,,0,0,0,,feel frightening
+Dialogue: 0,0:07:25.81,0:07:28.10,Default,,0,0,0,,A family dinner could be interrupted by an
+Dialogue: 0,0:07:28.10,0:07:29.34,Default,,0,0,0,,explosion
+Dialogue: 0,0:07:29.34,0:07:31.48,Default,,0,0,0,,A child who should have been thinking about
+Dialogue: 0,0:07:31.48,0:07:34.52,Default,,0,0,0,,homework could instead be asking whether it
+Dialogue: 0,0:07:34.52,0:07:36.16,Default,,0,0,0,,was safe to sleep
+Dialogue: 0,0:07:36.16,0:07:38.77,Default,,0,0,0,,Reports from Tehran during the fighting described
+Dialogue: 0,0:07:38.77,0:07:42.56,Default,,0,0,0,,streets becoming quieter businesses struggling
+Dialogue: 0,0:07:42.56,0:07:45.42,Default,,0,0,0,,and civilians trying to maintain routines between
+Dialogue: 0,0:07:45.42,0:07:46.63,Default,,0,0,0,,attacks
+Dialogue: 0,0:07:46.63,0:07:49.56,Default,,0,0,0,,THE CHILDREN Perhaps nowhere is the change
+Dialogue: 0,0:07:49.56,0:07:52.93,Default,,0,0,0,,more obvious than in the lives of children
+Dialogue: 0,0:07:52.93,0:07:55.64,Default,,0,0,0,,Before the war children had school
+Dialogue: 0,0:07:55.64,0:07:57.16,Default,,0,0,0,,They played with friends
+Dialogue: 0,0:07:57.16,0:07:58.85,Default,,0,0,0,,They attended classes
+Dialogue: 0,0:07:58.85,0:08:00.16,Default,,0,0,0,,They went to parks
+Dialogue: 0,0:08:00.16,0:08:01.80,Default,,0,0,0,,They watched videos
+Dialogue: 0,0:08:01.80,0:08:03.21,Default,,0,0,0,,They played games
+Dialogue: 0,0:08:03.21,0:08:06.20,Default,,0,0,0,,They argued with their brothers and sisters
+Dialogue: 0,0:08:06.20,0:08:08.06,Default,,0,0,0,,They worried about exams
+Dialogue: 0,0:08:08.06,0:08:11.17,Default,,0,0,0,,They dreamed about becoming doctors engineers
+Dialogue: 0,0:08:11.17,0:08:14.85,Default,,0,0,0,,teachers artists athletes or something their
+Dialogue: 0,0:08:14.85,0:08:16.86,Default,,0,0,0,,parents could not even imagine
+Dialogue: 0,0:08:16.86,0:08:18.96,Default,,0,0,0,,Then war changed the routine
+Dialogue: 0,0:08:18.96,0:08:21.78,Default,,0,0,0,,Schools were closed for long periods
+Dialogue: 0,0:08:21.78,0:08:24.64,Default,,0,0,0,,For many children the classroom moved onto
+Dialogue: 0,0:08:24.64,0:08:25.73,Default,,0,0,0,,a phone
+Dialogue: 0,0:08:25.73,0:08:27.60,Default,,0,0,0,,tablet or computer
+Dialogue: 0,0:08:27.60,0:08:30.78,Default,,0,0,0,,But online education was not easy
+Dialogue: 0,0:08:30.78,0:08:34.48,Default,,0,0,0,,Internet disruptions made lessons difficult
+Dialogue: 0,0:08:34.48,0:08:37.93,Default,,0,0,0,,Some families did not have reliable devices
+Dialogue: 0,0:08:37.93,0:08:40.04,Default,,0,0,0,,Parents had to work while also helping their
+Dialogue: 0,0:08:40.04,0:08:41.39,Default,,0,0,0,,children study
+Dialogue: 0,0:08:41.39,0:08:45.13,Default,,0,0,0,,Teachers had to teach through unstable connections
+Dialogue: 0,0:08:45.13,0:08:48.16,Default,,0,0,0,,And children lost something that technology
+Dialogue: 0,0:08:48.16,0:08:50.48,Default,,0,0,0,,cannot fully replace
+Dialogue: 0,0:08:50.48,0:08:54.07,Default,,0,0,0,,The simple experience of sitting beside classmates
+Dialogue: 0,0:08:54.07,0:08:56.38,Default,,0,0,0,,By the beginning of the new school year
+Dialogue: 0,0:08:56.38,0:08:59.91,Default,,0,0,0,,many Iranian children were returning to classrooms
+Dialogue: 0,0:08:59.91,0:09:02.63,Default,,0,0,0,,But the shadow of the conflict remained
+Dialogue: 0,0:09:02.63,0:09:04.50,Default,,0,0,0,,Some schools had been damaged
+Dialogue: 0,0:09:04.50,0:09:08.31,Default,,0,0,0,,Some students had missed months of normal education
+Dialogue: 0,0:09:08.31,0:09:10.92,Default,,0,0,0,,And teachers and parents worried about what
+Dialogue: 0,0:09:10.92,0:09:13.50,Default,,0,0,0,,would happen if fighting returned
+Dialogue: 0,0:09:13.50,0:09:14.74,Default,,0,0,0,,For a child
+Dialogue: 0,0:09:14.74,0:09:17.38,Default,,0,0,0,,war does not always look like a battlefield
+Dialogue: 0,0:09:17.38,0:09:19.77,Default,,0,0,0,,Sometimes it looks like an empty classroom
+Dialogue: 0,0:09:19.77,0:09:21.56,Default,,0,0,0,,Sometimes it looks like a parent checking the
+Dialogue: 0,0:09:21.56,0:09:22.66,Default,,0,0,0,,news
+Dialogue: 0,0:09:22.66,0:09:25.50,Default,,0,0,0,,Sometimes it is a night spent away from home
+Dialogue: 0,0:09:25.50,0:09:28.63,Default,,0,0,0,,And sometimes it is simply the fear that tomorrow
+Dialogue: 0,0:09:28.63,0:09:30.16,Default,,0,0,0,,will not be normal
+Dialogue: 0,0:09:30.16,0:09:33.92,Default,,0,0,0,,THE GIRLS Iranian girls live between several
+Dialogue: 0,0:09:33.92,0:09:35.36,Default,,0,0,0,,different worlds
+Dialogue: 0,0:09:35.36,0:09:38.63,Default,,0,0,0,,There is the world of school and education
+Dialogue: 0,0:09:38.63,0:09:40.06,Default,,0,0,0,,The world of family
+Dialogue: 0,0:09:40.06,0:09:43.39,Default,,0,0,0,,The world of social media and modern technology
+Dialogue: 0,0:09:43.39,0:09:46.56,Default,,0,0,0,,The world of friendships and ambitions
+Dialogue: 0,0:09:46.56,0:09:49.56,Default,,0,0,0,,And the world of laws and restrictions governing
+Dialogue: 0,0:09:49.56,0:09:50.92,Default,,0,0,0,,public life
+Dialogue: 0,0:09:50.92,0:09:54.34,Default,,0,0,0,,For years Iranian women and girls have faced
+Dialogue: 0,0:09:54.34,0:09:58.20,Default,,0,0,0,,mandatory public dress rules including requirements
+Dialogue: 0,0:09:58.20,0:09:59.98,Default,,0,0,0,,concerning the hijab
+Dialogue: 0,0:09:59.98,0:10:03.87,Default,,0,0,0,,At the same time Iranian women have built careers
+Dialogue: 0,0:10:03.87,0:10:07.24,Default,,0,0,0,,attended universities run businesses created
+Dialogue: 0,0:10:07.24,0:10:08.13,Default,,0,0,0,,art
+Dialogue: 0,0:10:08.13,0:10:11.02,Default,,0,0,0,,worked in professional fields and played important
+Dialogue: 0,0:10:11.02,0:10:13.38,Default,,0,0,0,,roles inside their families
+Dialogue: 0,0:10:13.38,0:10:16.35,Default,,0,0,0,,The war added another layer of pressure
+Dialogue: 0,0:10:16.35,0:10:19.73,Default,,0,0,0,,When prices rise and jobs disappear
+Dialogue: 0,0:10:19.73,0:10:22.41,Default,,0,0,0,,women are affected economically as well as
+Dialogue: 0,0:10:22.41,0:10:23.55,Default,,0,0,0,,socially
+Dialogue: 0,0:10:23.55,0:10:27.16,Default,,0,0,0,,When schools close mothers often become responsible
+Dialogue: 0,0:10:27.16,0:10:30.06,Default,,0,0,0,,for managing children's education at home
+Dialogue: 0,0:10:30.06,0:10:33.27,Default,,0,0,0,,When family income falls household decisions
+Dialogue: 0,0:10:33.27,0:10:34.92,Default,,0,0,0,,become more difficult
+Dialogue: 0,0:10:34.92,0:10:37.60,Default,,0,0,0,,And when uncertainty grows
+Dialogue: 0,0:10:37.60,0:10:40.70,Default,,0,0,0,,women often carry a large part of the emotional
+Dialogue: 0,0:10:40.70,0:10:44.45,Default,,0,0,0,,responsibility for keeping a family functioning
+Dialogue: 0,0:10:44.45,0:10:47.35,Default,,0,0,0,,Yet Iranian women are not simply victims of
+Dialogue: 0,0:10:47.35,0:10:48.94,Default,,0,0,0,,circumstances
+Dialogue: 0,0:10:48.94,0:10:50.30,Default,,0,0,0,,They are students
+Dialogue: 0,0:10:50.30,0:10:51.35,Default,,0,0,0,,Teachers
+Dialogue: 0,0:10:51.35,0:10:52.45,Default,,0,0,0,,Doctors
+Dialogue: 0,0:10:52.45,0:10:53.66,Default,,0,0,0,,Engineers
+Dialogue: 0,0:10:53.66,0:10:54.98,Default,,0,0,0,,Shop owners
+Dialogue: 0,0:10:54.98,0:10:55.99,Default,,0,0,0,,Artists
+Dialogue: 0,0:10:55.99,0:10:56.99,Default,,0,0,0,,Mothers
+Dialogue: 0,0:10:56.99,0:10:58.03,Default,,0,0,0,,Daughters
+Dialogue: 0,0:10:58.03,0:11:00.81,Default,,0,0,0,,And young women trying to build a future in
+Dialogue: 0,0:11:00.81,0:11:04.44,Default,,0,0,0,,a country experiencing enormous change
+Dialogue: 0,0:11:04.44,0:11:05.63,Default,,0,0,0,,THE BOYS
+Dialogue: 0,0:11:05.63,0:11:09.01,Default,,0,0,0,,For Iranian boys life also changed
+Dialogue: 0,0:11:09.01,0:11:11.59,Default,,0,0,0,,A teenage boy who might have spent his afternoon
+Dialogue: 0,0:11:11.59,0:11:14.81,Default,,0,0,0,,playing football or meeting friends could suddenly
+Dialogue: 0,0:11:14.81,0:11:16.56,Default,,0,0,0,,find himself at home
+Dialogue: 0,0:11:16.56,0:11:19.31,Default,,0,0,0,,A young man trying to build a career could
+Dialogue: 0,0:11:19.31,0:11:20.66,Default,,0,0,0,,lose his job
+Dialogue: 0,0:11:20.66,0:11:24.44,Default,,0,0,0,,A university student could see classes interrupted
+Dialogue: 0,0:11:24.44,0:11:27.19,Default,,0,0,0,,A father could suddenly become responsible
+Dialogue: 0,0:11:27.19,0:11:30.13,Default,,0,0,0,,for protecting his family during an uncertain
+Dialogue: 0,0:11:30.13,0:11:31.01,Default,,0,0,0,,night
+Dialogue: 0,0:11:31.01,0:11:33.96,Default,,0,0,0,,But boys and young men also continued looking
+Dialogue: 0,0:11:33.96,0:11:35.26,Default,,0,0,0,,for normality
+Dialogue: 0,0:11:35.26,0:11:36.83,Default,,0,0,0,,They played sports
+Dialogue: 0,0:11:36.83,0:11:39.31,Default,,0,0,0,,They visited friends when possible
+Dialogue: 0,0:11:39.31,0:11:41.09,Default,,0,0,0,,They went to barbershops
+Dialogue: 0,0:11:41.09,0:11:42.38,Default,,0,0,0,,They drank tea
+Dialogue: 0,0:11:42.38,0:11:43.91,Default,,0,0,0,,They used their phones
+Dialogue: 0,0:11:43.91,0:11:45.44,Default,,0,0,0,,They joked with each other
+Dialogue: 0,0:11:45.44,0:11:47.85,Default,,0,0,0,,They tried to plan their futures even when
+Dialogue: 0,0:11:47.85,0:11:50.14,Default,,0,0,0,,the future looked uncertain
+Dialogue: 0,0:11:50.14,0:11:52.78,Default,,0,0,0,,This is an important part of understanding
+Dialogue: 0,0:11:52.78,0:11:54.76,Default,,0,0,0,,wartime societies
+Dialogue: 0,0:11:54.76,0:11:57.51,Default,,0,0,0,,People do not stop being human because a war
+Dialogue: 0,0:11:57.51,0:11:58.78,Default,,0,0,0,,begins
+Dialogue: 0,0:11:58.78,0:12:00.33,Default,,0,0,0,,They still want friendship
+Dialogue: 0,0:12:00.33,0:12:01.66,Default,,0,0,0,,They still want love
+Dialogue: 0,0:12:01.66,0:12:03.42,Default,,0,0,0,,They still want entertainment
+Dialogue: 0,0:12:03.42,0:12:04.76,Default,,0,0,0,,They still want food
+Dialogue: 0,0:12:04.76,0:12:06.17,Default,,0,0,0,,They still want to laugh
+Dialogue: 0,0:12:06.17,0:12:07.37,Default,,0,0,0,,THE FAMILY
+Dialogue: 0,0:12:07.37,0:12:11.14,Default,,0,0,0,,Family is at the center of Iranian social life
+Dialogue: 0,0:12:11.14,0:12:14.23,Default,,0,0,0,,A home can be a place where several generations
+Dialogue: 0,0:12:14.23,0:12:16.62,Default,,0,0,0,,remain closely connected
+Dialogue: 0,0:12:16.62,0:12:21.05,Default,,0,0,0,,Grandparents parents children brothers sisters
+Dialogue: 0,0:12:21.05,0:12:24.83,Default,,0,0,0,,and relatives may maintain strong relationships
+Dialogue: 0,0:12:24.83,0:12:28.27,Default,,0,0,0,,even when they do not live under the same roof
+Dialogue: 0,0:12:28.27,0:12:30.56,Default,,0,0,0,,Tea can become a daily ritual
+Dialogue: 0,0:12:30.56,0:12:33.56,Default,,0,0,0,,Guests can be offered food even when the family
+Dialogue: 0,0:12:33.56,0:12:36.28,Default,,0,0,0,,itself has limited resources
+Dialogue: 0,0:12:36.28,0:12:39.38,Default,,0,0,0,,A conversation can continue for hours
+Dialogue: 0,0:12:39.38,0:12:43.19,Default,,0,0,0,,And during difficult times these relationships
+Dialogue: 0,0:12:43.19,0:12:45.45,Default,,0,0,0,,become even more important
+Dialogue: 0,0:12:45.45,0:12:49.03,Default,,0,0,0,,When the outside world becomes unpredictable
+Dialogue: 0,0:12:49.03,0:12:52.21,Default,,0,0,0,,family becomes a kind of emotional shelter
+Dialogue: 0,0:12:52.21,0:12:54.92,Default,,0,0,0,,This does not mean every Iranian family lives
+Dialogue: 0,0:12:54.92,0:12:56.33,Default,,0,0,0,,the same way
+Dialogue: 0,0:12:56.33,0:12:59.78,Default,,0,0,0,,Iran is enormous and socially diverse
+Dialogue: 0,0:12:59.78,0:13:03.88,Default,,0,0,0,,Life in Tehran is not the same as life in Shiraz
+Dialogue: 0,0:13:03.88,0:13:06.46,Default,,0,0,0,,Life in a wealthy northern neighborhood is
+Dialogue: 0,0:13:06.46,0:13:09.85,Default,,0,0,0,,not the same as life in a small rural town
+Dialogue: 0,0:13:09.85,0:13:13.33,Default,,0,0,0,,Life beside the Caspian Sea is different from
+Dialogue: 0,0:13:13.33,0:13:15.51,Default,,0,0,0,,life in the dry interior
+Dialogue: 0,0:13:15.51,0:13:18.41,Default,,0,0,0,,But across these differences family remains
+Dialogue: 0,0:13:18.41,0:13:21.39,Default,,0,0,0,,an important part of everyday life
+Dialogue: 0,0:13:21.39,0:13:23.20,Default,,0,0,0,,WHEN THE MARKETS CHANGED
+Dialogue: 0,0:13:23.20,0:13:26.64,Default,,0,0,0,,The war did not only affect people's emotions
+Dialogue: 0,0:13:26.64,0:13:28.38,Default,,0,0,0,,It changed what they could afford
+Dialogue: 0,0:13:28.38,0:13:31.96,Default,,0,0,0,,Iran was already suffering from years of sanctions
+Dialogue: 0,0:13:31.96,0:13:34.78,Default,,0,0,0,,inflation and economic pressure before the
+Dialogue: 0,0:13:34.78,0:13:35.71,Default,,0,0,0,,war
+Dialogue: 0,0:13:35.71,0:13:38.19,Default,,0,0,0,,The conflict added another layer
+Dialogue: 0,0:13:38.19,0:13:40.05,Default,,0,0,0,,Food became more expensive
+Dialogue: 0,0:13:40.05,0:13:42.33,Default,,0,0,0,,Rent became harder to pay
+Dialogue: 0,0:13:42.33,0:13:44.58,Default,,0,0,0,,Businesses lost customers
+Dialogue: 0,0:13:44.58,0:13:46.17,Default,,0,0,0,,Jobs disappeared
+Dialogue: 0,0:13:46.17,0:13:49.64,Default,,0,0,0,,Families began cutting unnecessary spending
+Dialogue: 0,0:13:49.64,0:13:52.64,Default,,0,0,0,,A family that once bought several items might
+Dialogue: 0,0:13:52.64,0:13:54.03,Default,,0,0,0,,buy only one
+Dialogue: 0,0:13:54.03,0:13:57.38,Default,,0,0,0,,A restaurant owner might keep prices low because
+Dialogue: 0,0:13:57.38,0:14:01.02,Default,,0,0,0,,customers could no longer afford higher prices
+Dialogue: 0,0:14:01.02,0:14:02.88,Default,,0,0,0,,even while the restaurant's own costs were
+Dialogue: 0,0:14:02.88,0:14:03.85,Default,,0,0,0,,rising
+Dialogue: 0,0:14:03.85,0:14:07.08,Default,,0,0,0,,A worker might lose a job and start looking
+Dialogue: 0,0:14:07.08,0:14:08.78,Default,,0,0,0,,for another source of income
+Dialogue: 0,0:14:08.78,0:14:12.05,Default,,0,0,0,,Recent reporting from Iran has described exactly
+Dialogue: 0,0:14:12.05,0:14:13.19,Default,,0,0,0,,this pattern
+Dialogue: 0,0:14:13.19,0:14:16.33,Default,,0,0,0,,with families prioritizing essentials and cutting
+Dialogue: 0,0:14:16.33,0:14:19.12,Default,,0,0,0,,back on things they once considered normal
+Dialogue: 0,0:14:19.12,0:14:21.91,Default,,0,0,0,,This is where the idea of survival becomes
+Dialogue: 0,0:14:21.91,0:14:25.21,Default,,0,0,0,,different from what we see in disaster movies
+Dialogue: 0,0:14:25.21,0:14:28.74,Default,,0,0,0,,Survival is not always running from a building
+Dialogue: 0,0:14:28.74,0:14:31.66,Default,,0,0,0,,Sometimes survival means finding a cheaper
+Dialogue: 0,0:14:31.66,0:14:32.67,Default,,0,0,0,,apartment
+Dialogue: 0,0:14:32.67,0:14:35.06,Default,,0,0,0,,Sometimes it means buying less meat
+Dialogue: 0,0:14:35.06,0:14:37.98,Default,,0,0,0,,Sometimes it means repairing an old phone instead
+Dialogue: 0,0:14:37.98,0:14:39.54,Default,,0,0,0,,of buying a new one
+Dialogue: 0,0:14:39.54,0:14:42.29,Default,,0,0,0,,Sometimes it means a parent giving up something
+Dialogue: 0,0:14:42.29,0:14:44.93,Default,,0,0,0,,so a child can keep studying
+Dialogue: 0,0:14:44.93,0:14:47.75,Default,,0,0,0,,THE CAFE There is something almost symbolic
+Dialogue: 0,0:14:47.75,0:14:50.03,Default,,0,0,0,,about the Iranian cafe
+Dialogue: 0,0:14:50.03,0:14:53.53,Default,,0,0,0,,During difficult times a cafe can represent
+Dialogue: 0,0:14:53.53,0:14:54.86,Default,,0,0,0,,normal life
+Dialogue: 0,0:14:54.86,0:14:57.64,Default,,0,0,0,,Two friends sitting across from each other
+Dialogue: 0,0:14:57.64,0:14:58.74,Default,,0,0,0,,A cup of tea
+Dialogue: 0,0:14:58.74,0:14:59.77,Default,,0,0,0,,A coffee
+Dialogue: 0,0:14:59.77,0:15:01.07,Default,,0,0,0,,A small dessert
+Dialogue: 0,0:15:01.07,0:15:02.71,Default,,0,0,0,,Music in the background
+Dialogue: 0,0:15:02.71,0:15:04.68,Default,,0,0,0,,A conversation about work
+Dialogue: 0,0:15:04.68,0:15:05.60,Default,,0,0,0,,A joke
+Dialogue: 0,0:15:05.60,0:15:07.27,Default,,0,0,0,,A phone on the table
+Dialogue: 0,0:15:07.27,0:15:10.46,Default,,0,0,0,,For a few minutes the war outside can feel
+Dialogue: 0,0:15:10.46,0:15:11.49,Default,,0,0,0,,distant
+Dialogue: 0,0:15:11.49,0:15:14.18,Default,,0,0,0,,But even this small pleasure has become harder
+Dialogue: 0,0:15:14.18,0:15:15.29,Default,,0,0,0,,to afford
+Dialogue: 0,0:15:15.29,0:15:18.96,Default,,0,0,0,,Iran's cafe culture has faced rising costs
+Dialogue: 0,0:15:18.96,0:15:22.93,Default,,0,0,0,,declining customer spending and political pressure
+Dialogue: 0,0:15:22.93,0:15:26.31,Default,,0,0,0,,Yet young people continue to see cafes as places
+Dialogue: 0,0:15:26.31,0:15:29.40,Default,,0,0,0,,where they can meet socialize and experience
+Dialogue: 0,0:15:29.40,0:15:31.47,Default,,0,0,0,,a small amount of normality
+Dialogue: 0,0:15:31.47,0:15:33.35,Default,,0,0,0,,This tells us something important
+Dialogue: 0,0:15:33.35,0:15:36.49,Default,,0,0,0,,People do not need perfect conditions to search
+Dialogue: 0,0:15:36.49,0:15:37.89,Default,,0,0,0,,for happiness
+Dialogue: 0,0:15:37.89,0:15:41.20,Default,,0,0,0,,Sometimes they create a small space where happiness
+Dialogue: 0,0:15:41.20,0:15:42.77,Default,,0,0,0,,is still possible
+Dialogue: 0,0:15:42.77,0:15:45.28,Default,,0,0,0,,THE BAZAAR Then there is the bazaar
+Dialogue: 0,0:15:45.28,0:15:48.95,Default,,0,0,0,,Iranian bazaars are not simply shopping centers
+Dialogue: 0,0:15:48.95,0:15:50.82,Default,,0,0,0,,They are social spaces
+Dialogue: 0,0:15:50.82,0:15:54.52,Default,,0,0,0,,They are places where business tradition food
+Dialogue: 0,0:15:54.52,0:15:56.60,Default,,0,0,0,,and everyday life meet
+Dialogue: 0,0:15:56.60,0:15:59.81,Default,,0,0,0,,Before the war Tehran's Grand Bazaar and other
+Dialogue: 0,0:15:59.81,0:16:01.82,Default,,0,0,0,,markets could be crowded with shoppers and
+Dialogue: 0,0:16:01.82,0:16:02.92,Default,,0,0,0,,merchants
+Dialogue: 0,0:16:02.92,0:16:06.18,Default,,0,0,0,,During the fighting many businesses closed
+Dialogue: 0,0:16:06.18,0:16:08.75,Default,,0,0,0,,and customers became cautious
+Dialogue: 0,0:16:08.75,0:16:10.67,Default,,0,0,0,,Some buildings were damaged
+Dialogue: 0,0:16:10.67,0:16:11.92,Default,,0,0,0,,Sales fell
+Dialogue: 0,0:16:11.92,0:16:14.29,Default,,0,0,0,,And families became more careful about what
+Dialogue: 0,0:16:14.29,0:16:15.35,Default,,0,0,0,,they bought
+Dialogue: 0,0:16:15.35,0:16:19.24,Default,,0,0,0,,But when the fighting eased people slowly returned
+Dialogue: 0,0:16:19.24,0:16:20.54,Default,,0,0,0,,Shops reopened
+Dialogue: 0,0:16:20.54,0:16:22.40,Default,,0,0,0,,Markets became busier
+Dialogue: 0,0:16:22.40,0:16:25.21,Default,,0,0,0,,Restaurants started serving customers again
+Dialogue: 0,0:16:25.21,0:16:26.68,Default,,0,0,0,,Traffic returned
+Dialogue: 0,0:16:26.68,0:16:28.22,Default,,0,0,0,,People went outside
+Dialogue: 0,0:16:28.22,0:16:30.49,Default,,0,0,0,,The city began breathing again
+Dialogue: 0,0:16:30.49,0:16:32.95,Default,,0,0,0,,This is one of the strongest images for the
+Dialogue: 0,0:16:32.95,0:16:34.75,Default,,0,0,0,,entire documentary
+Dialogue: 0,0:16:34.75,0:16:38.47,Default,,0,0,0,,A city does not need to be completely healed
+Dialogue: 0,0:16:38.47,0:16:40.82,Default,,0,0,0,,before people start living again
+Dialogue: 0,0:16:40.82,0:16:43.42,Default,,0,0,0,,THE STREET AFTER THE WAR BEGINS
+Dialogue: 0,0:16:43.42,0:16:46.10,Default,,0,0,0,,When you look at photographs from Tehran during
+Dialogue: 0,0:16:46.10,0:16:48.08,Default,,0,0,0,,periods of reduced fighting
+Dialogue: 0,0:16:48.08,0:16:49.86,Default,,0,0,0,,something can be surprising
+Dialogue: 0,0:16:49.86,0:16:52.27,Default,,0,0,0,,The streets do not always look like the end
+Dialogue: 0,0:16:52.27,0:16:53.31,Default,,0,0,0,,of the world
+Dialogue: 0,0:16:53.31,0:16:54.90,Default,,0,0,0,,There can be cafes
+Dialogue: 0,0:16:54.90,0:16:55.93,Default,,0,0,0,,Cars
+Dialogue: 0,0:16:55.93,0:16:57.08,Default,,0,0,0,,Markets
+Dialogue: 0,0:16:57.08,0:16:58.22,Default,,0,0,0,,Families
+Dialogue: 0,0:16:58.22,0:16:59.53,Default,,0,0,0,,Barbershops
+Dialogue: 0,0:16:59.53,0:17:01.42,Default,,0,0,0,,People walking their dogs
+Dialogue: 0,0:17:01.42,0:17:03.00,Default,,0,0,0,,Friends playing backgammon
+Dialogue: 0,0:17:03.00,0:17:04.40,Default,,0,0,0,,Young people talking
+Dialogue: 0,0:17:04.40,0:17:07.20,Default,,0,0,0,,And shopkeepers serving customers
+Dialogue: 0,0:17:07.20,0:17:10.72,Default,,0,0,0,,Associated Press photography from Tehran documented
+Dialogue: 0,0:17:10.72,0:17:13.60,Default,,0,0,0,,exactly this contrast
+Dialogue: 0,0:17:13.60,0:17:17.54,Default,,0,0,0,,ordinary routines continuing while war remained
+Dialogue: 0,0:17:17.54,0:17:18.83,Default,,0,0,0,,in the background
+Dialogue: 0,0:17:18.83,0:17:21.65,Default,,0,0,0,,But we should not mistake this for a life without
+Dialogue: 0,0:17:21.65,0:17:22.78,Default,,0,0,0,,suffering
+Dialogue: 0,0:17:22.78,0:17:26.21,Default,,0,0,0,,A busy street does not mean everyone is fine
+Dialogue: 0,0:17:26.21,0:17:29.15,Default,,0,0,0,,A full supermarket does not mean families can
+Dialogue: 0,0:17:29.15,0:17:30.50,Default,,0,0,0,,afford everything
+Dialogue: 0,0:17:30.50,0:17:33.75,Default,,0,0,0,,A crowded cafe does not mean people have forgotten
+Dialogue: 0,0:17:33.75,0:17:34.77,Default,,0,0,0,,the war
+Dialogue: 0,0:17:34.77,0:17:37.74,Default,,0,0,0,,A smiling person does not mean they are not
+Dialogue: 0,0:17:37.74,0:17:38.70,Default,,0,0,0,,afraid
+Dialogue: 0,0:17:38.70,0:17:41.63,Default,,0,0,0,,This is the complicated reality of civilian
+Dialogue: 0,0:17:41.63,0:17:42.67,Default,,0,0,0,,life
+Dialogue: 0,0:17:42.67,0:17:44.81,Default,,0,0,0,,People can be frightened and hopeful at the
+Dialogue: 0,0:17:44.81,0:17:46.04,Default,,0,0,0,,same time
+Dialogue: 0,0:17:46.04,0:17:49.33,Default,,0,0,0,,THE CULTURE THAT REFUSES TO DISAPPEAR Iran
+Dialogue: 0,0:17:49.33,0:17:52.56,Default,,0,0,0,,has one of the world's oldest continuous cultural
+Dialogue: 0,0:17:52.56,0:17:53.79,Default,,0,0,0,,traditions
+Dialogue: 0,0:17:53.79,0:17:56.24,Default,,0,0,0,,Its language poetry
+Dialogue: 0,0:17:56.24,0:17:59.93,Default,,0,0,0,,music architecture food and celebrations have
+Dialogue: 0,0:17:59.93,0:18:03.10,Default,,0,0,0,,survived enormous historical changes
+Dialogue: 0,0:18:03.10,0:18:06.39,Default,,0,0,0,,One of the strongest examples is Nowruz the
+Dialogue: 0,0:18:06.39,0:18:07.99,Default,,0,0,0,,Persian New Year
+Dialogue: 0,0:18:07.99,0:18:09.88,Default,,0,0,0,,Families clean their homes
+Dialogue: 0,0:18:09.88,0:18:11.85,Default,,0,0,0,,They prepare special food
+Dialogue: 0,0:18:11.85,0:18:14.45,Default,,0,0,0,,They gather around the Haft-Sin table
+Dialogue: 0,0:18:14.45,0:18:16.39,Default,,0,0,0,,Children receive gifts
+Dialogue: 0,0:18:16.39,0:18:18.52,Default,,0,0,0,,Relatives visit one another
+Dialogue: 0,0:18:18.52,0:18:21.38,Default,,0,0,0,,The new year becomes an opportunity to begin
+Dialogue: 0,0:18:21.38,0:18:22.20,Default,,0,0,0,,again
+Dialogue: 0,0:18:22.20,0:18:25.17,Default,,0,0,0,,Nowruz has survived for centuries because it
+Dialogue: 0,0:18:25.17,0:18:28.43,Default,,0,0,0,,became deeply connected to Iranian cultural
+Dialogue: 0,0:18:28.43,0:18:30.40,Default,,0,0,0,,memory and identity
+Dialogue: 0,0:18:30.40,0:18:31.07,Default,,0,0,0,,And
+Dialogue: 0,0:18:31.07,0:18:33.70,Default,,0,0,0,,this is exactly why culture matters during
+Dialogue: 0,0:18:33.70,0:18:35.29,Default,,0,0,0,,difficult times
+Dialogue: 0,0:18:35.29,0:18:37.20,Default,,0,0,0,,War can damage buildings
+Dialogue: 0,0:18:37.20,0:18:38.86,Default,,0,0,0,,It can close schools
+Dialogue: 0,0:18:38.86,0:18:40.75,Default,,0,0,0,,It can disrupt businesses
+Dialogue: 0,0:18:40.75,0:18:43.31,Default,,0,0,0,,But culture lives inside people
+Dialogue: 0,0:18:43.31,0:18:45.20,Default,,0,0,0,,It lives in recipes
+Dialogue: 0,0:18:45.20,0:18:46.99,Default,,0,0,0,,It lives in songs
+Dialogue: 0,0:18:46.99,0:18:48.72,Default,,0,0,0,,It lives in language
+Dialogue: 0,0:18:48.72,0:18:51.49,Default,,0,0,0,,It lives in family traditions
+Dialogue: 0,0:18:51.49,0:18:53.85,Default,,0,0,0,,It lives in the way a grandmother teaches a
+Dialogue: 0,0:18:53.85,0:18:56.08,Default,,0,0,0,,child how to prepare a meal
+Dialogue: 0,0:18:56.08,0:18:58.03,Default,,0,0,0,,THE HUMAN SIDE OF IRAN
+Dialogue: 0,0:18:58.03,0:19:00.63,Default,,0,0,0,,There is a danger when countries are only shown
+Dialogue: 0,0:19:00.63,0:19:02.20,Default,,0,0,0,,through politics
+Dialogue: 0,0:19:02.20,0:19:06.25,Default,,0,0,0,,Iran is often reduced to nuclear programs governments
+Dialogue: 0,0:19:06.25,0:19:10.22,Default,,0,0,0,,protests sanctions and military conflict
+Dialogue: 0,0:19:10.22,0:19:14.11,Default,,0,0,0,,But behind every headline are ordinary people
+Dialogue: 0,0:19:14.11,0:19:15.71,Default,,0,0,0,,A father going to work
+Dialogue: 0,0:19:15.71,0:19:17.78,Default,,0,0,0,,A mother preparing breakfast
+Dialogue: 0,0:19:17.78,0:19:19.95,Default,,0,0,0,,A student worrying about an exam
+Dialogue: 0,0:19:19.95,0:19:22.17,Default,,0,0,0,,A teenager messaging a friend
+Dialogue: 0,0:19:22.17,0:19:24.77,Default,,0,0,0,,A shopkeeper counting the day's sales
+Dialogue: 0,0:19:24.77,0:19:26.92,Default,,0,0,0,,A grandmother making tea
+Dialogue: 0,0:19:26.92,0:19:30.11,Default,,0,0,0,,A child asking when school will be normal again
+Dialogue: 0,0:19:30.11,0:19:32.40,Default,,0,0,0,,A young couple wondering whether they can afford
+Dialogue: 0,0:19:32.40,0:19:33.28,Default,,0,0,0,,a home
+Dialogue: 0,0:19:33.28,0:19:35.96,Default,,0,0,0,,These people did not create the geopolitical
+Dialogue: 0,0:19:35.96,0:19:37.19,Default,,0,0,0,,conflict
+Dialogue: 0,0:19:37.19,0:19:39.72,Default,,0,0,0,,Yet they live with its consequences
+Dialogue: 0,0:19:39.72,0:19:42.55,Default,,0,0,0,,THE COST OF NORMAL LIFE Six months into the
+Dialogue: 0,0:19:42.55,0:19:45.72,Default,,0,0,0,,conflict reporting from Iran showed that many
+Dialogue: 0,0:19:45.72,0:19:48.48,Default,,0,0,0,,people were still going to work and using shops
+Dialogue: 0,0:19:48.48,0:19:51.34,Default,,0,0,0,,and restaurants but the meaning of normal life
+Dialogue: 0,0:19:51.34,0:19:52.73,Default,,0,0,0,,had changed
+Dialogue: 0,0:19:52.73,0:19:53.80,Default,,0,0,0,,For many
+Dialogue: 0,0:19:53.80,0:19:57.01,Default,,0,0,0,,the war had become an economic crisis as much
+Dialogue: 0,0:19:57.01,0:19:58.48,Default,,0,0,0,,as a military one
+Dialogue: 0,0:19:58.48,0:20:01.32,Default,,0,0,0,,Prices rose faster than incomes
+Dialogue: 0,0:20:01.32,0:20:03.75,Default,,0,0,0,,Jobs became harder to find
+Dialogue: 0,0:20:03.75,0:20:05.83,Default,,0,0,0,,Families reduced spending
+Dialogue: 0,0:20:05.83,0:20:09.04,Default,,0,0,0,,And fear of renewed fighting remained
+Dialogue: 0,0:20:09.04,0:20:12.54,Default,,0,0,0,,By September and October the economic pressure
+Dialogue: 0,0:20:12.54,0:20:15.01,Default,,0,0,0,,had become even more severe
+Dialogue: 0,0:20:15.01,0:20:15.98,Default,,0,0,0,,Food
+Dialogue: 0,0:20:15.98,0:20:18.86,Default,,0,0,0,,rent and medicine were increasingly difficult
+Dialogue: 0,0:20:18.86,0:20:21.14,Default,,0,0,0,,for many families to afford
+Dialogue: 0,0:20:21.14,0:20:24.00,Default,,0,0,0,,Some people moved to cheaper areas
+Dialogue: 0,0:20:24.00,0:20:27.05,Default,,0,0,0,,Some businesses struggled to survive
+Dialogue: 0,0:20:27.05,0:20:29.43,Default,,0,0,0,,Some workers lost their jobs
+Dialogue: 0,0:20:29.43,0:20:32.44,Default,,0,0,0,,And many ordinary people became focused less
+Dialogue: 0,0:20:32.44,0:20:35.72,Default,,0,0,0,,on politics and more on simply getting through
+Dialogue: 0,0:20:35.72,0:20:36.79,Default,,0,0,0,,the month
+Dialogue: 0,0:20:36.79,0:20:38.23,Default,,0,0,0,,THE SOUTH OF IRAN
+Dialogue: 0,0:20:38.23,0:20:40.52,Default,,0,0,0,,And Iran is not only Tehran
+Dialogue: 0,0:20:40.52,0:20:42.93,Default,,0,0,0,,In the south life around the Persian Gulf has
+Dialogue: 0,0:20:42.93,0:20:45.77,Default,,0,0,0,,also been transformed by the conflict
+Dialogue: 0,0:20:45.77,0:20:48.44,Default,,0,0,0,,Places such as Bandar Abbas depend heavily
+Dialogue: 0,0:20:48.44,0:20:51.16,Default,,0,0,0,,on shipping fishing and trade
+Dialogue: 0,0:20:51.16,0:20:53.41,Default,,0,0,0,,The Strait of Hormuz is one of the world's
+Dialogue: 0,0:20:53.41,0:20:56.73,Default,,0,0,0,,most strategically important waterways
+Dialogue: 0,0:20:56.73,0:21:00.36,Default,,0,0,0,,When conflict affects this region the consequences
+Dialogue: 0,0:21:00.36,0:21:04.29,Default,,0,0,0,,are not limited to governments and oil companies
+Dialogue: 0,0:21:04.29,0:21:05.80,Default,,0,0,0,,They reach fishermen
+Dialogue: 0,0:21:05.80,0:21:07.41,Default,,0,0,0,,Boat operators
+Dialogue: 0,0:21:07.41,0:21:08.75,Default,,0,0,0,,Shopkeepers
+Dialogue: 0,0:21:08.75,0:21:10.47,Default,,0,0,0,,Restaurant owners
+Dialogue: 0,0:21:10.47,0:21:11.59,Default,,0,0,0,,Families
+Dialogue: 0,0:21:11.59,0:21:14.73,Default,,0,0,0,,And communities whose livelihoods depend on
+Dialogue: 0,0:21:14.73,0:21:16.97,Default,,0,0,0,,movement across the water
+Dialogue: 0,0:21:16.97,0:21:19.80,Default,,0,0,0,,Recent reporting from the Strait describes
+Dialogue: 0,0:21:19.80,0:21:23.73,Default,,0,0,0,,disrupted fishing reduced tourism and residents
+Dialogue: 0,0:21:23.73,0:21:26.18,Default,,0,0,0,,trying to maintain their communities despite
+Dialogue: 0,0:21:26.18,0:21:27.45,Default,,0,0,0,,the dangers
+Dialogue: 0,0:21:27.45,0:21:29.45,Default,,0,0,0,,THE QUESTION OF HAPPINESS
+Dialogue: 0,0:21:29.45,0:21:32.29,Default,,0,0,0,,So how can people still smile during a war
+Dialogue: 0,0:21:32.29,0:21:34.39,Default,,0,0,0,,The answer is not that they are happy about
+Dialogue: 0,0:21:34.39,0:21:35.36,Default,,0,0,0,,the war
+Dialogue: 0,0:21:35.36,0:21:36.43,Default,,0,0,0,,They are not
+Dialogue: 0,0:21:36.43,0:21:39.50,Default,,0,0,0,,The answer is that human beings are capable
+Dialogue: 0,0:21:39.50,0:21:42.61,Default,,0,0,0,,of finding small moments of happiness even
+Dialogue: 0,0:21:42.61,0:21:45.33,Default,,0,0,0,,inside difficult circumstances
+Dialogue: 0,0:21:45.33,0:21:46.80,Default,,0,0,0,,A meal with family
+Dialogue: 0,0:21:46.80,0:21:47.94,Default,,0,0,0,,A cup of tea
+Dialogue: 0,0:21:47.94,0:21:49.39,Default,,0,0,0,,A football match
+Dialogue: 0,0:21:49.39,0:21:50.84,Default,,0,0,0,,A walk through a market
+Dialogue: 0,0:21:50.84,0:21:52.87,Default,,0,0,0,,A conversation with a friend
+Dialogue: 0,0:21:52.87,0:21:54.34,Default,,0,0,0,,A child's joke
+Dialogue: 0,0:21:54.34,0:21:55.40,Default,,0,0,0,,A birthday
+Dialogue: 0,0:21:55.40,0:21:56.29,Default,,0,0,0,,A wedding
+Dialogue: 0,0:21:56.29,0:21:57.69,Default,,0,0,0,,A familiar song
+Dialogue: 0,0:21:57.69,0:22:00.04,Default,,0,0,0,,A sunset over the mountains
+Dialogue: 0,0:22:00.04,0:22:02.98,Default,,0,0,0,,These moments do not erase suffering
+Dialogue: 0,0:22:02.98,0:22:06.01,Default,,0,0,0,,They simply prove that suffering is not the
+Dialogue: 0,0:22:06.01,0:22:07.69,Default,,0,0,0,,only thing happening
+Dialogue: 0,0:22:07.69,0:22:09.68,Default,,0,0,0,,And this may be the most important thing to
+Dialogue: 0,0:22:09.68,0:22:11.37,Default,,0,0,0,,understand about Iran
+Dialogue: 0,0:22:11.37,0:22:13.90,Default,,0,0,0,,THE IRAN YOU DON'T SEE ON THE NEWS
+Dialogue: 0,0:22:13.90,0:22:17.23,Default,,0,0,0,,If you only watch footage of missiles smoke
+Dialogue: 0,0:22:17.23,0:22:20.05,Default,,0,0,0,,and political speeches Iran can look like a
+Dialogue: 0,0:22:20.05,0:22:22.33,Default,,0,0,0,,country defined by war
+Dialogue: 0,0:22:22.33,0:22:24.70,Default,,0,0,0,,But Iran is also a country of food
+Dialogue: 0,0:22:24.70,0:22:25.58,Default,,0,0,0,,Music
+Dialogue: 0,0:22:25.58,0:22:26.69,Default,,0,0,0,,Poetry
+Dialogue: 0,0:22:26.69,0:22:27.62,Default,,0,0,0,,Family
+Dialogue: 0,0:22:27.62,0:22:28.70,Default,,0,0,0,,Markets
+Dialogue: 0,0:22:28.70,0:22:29.86,Default,,0,0,0,,Mountains
+Dialogue: 0,0:22:29.86,0:22:30.95,Default,,0,0,0,,Deserts
+Dialogue: 0,0:22:30.95,0:22:32.01,Default,,0,0,0,,Gardens
+Dialogue: 0,0:22:32.01,0:22:33.43,Default,,0,0,0,,Universities
+Dialogue: 0,0:22:33.43,0:22:34.64,Default,,0,0,0,,Cafes
+Dialogue: 0,0:22:34.64,0:22:35.59,Default,,0,0,0,,Children
+Dialogue: 0,0:22:35.59,0:22:36.70,Default,,0,0,0,,Young people
+Dialogue: 0,0:22:36.70,0:22:38.15,Default,,0,0,0,,Old traditions
+Dialogue: 0,0:22:38.15,0:22:41.33,Default,,0,0,0,,And millions of ordinary decisions made every
+Dialogue: 0,0:22:41.33,0:22:42.20,Default,,0,0,0,,day
+Dialogue: 0,0:22:42.20,0:22:43.62,Default,,0,0,0,,Should we cook tonight
+Dialogue: 0,0:22:43.62,0:22:45.19,Default,,0,0,0,,Can we afford this
+Dialogue: 0,0:22:45.19,0:22:46.82,Default,,0,0,0,,Should the children go to school
+Dialogue: 0,0:22:46.82,0:22:48.22,Default,,0,0,0,,Can we open the shop
+Dialogue: 0,0:22:48.22,0:22:50.29,Default,,0,0,0,,Should we visit our relatives
+Dialogue: 0,0:22:50.29,0:22:52.04,Default,,0,0,0,,Can we still plan for next year
+Dialogue: 0,0:22:52.04,0:22:54.82,Default,,0,0,0,,These questions may sound ordinary
+Dialogue: 0,0:22:54.82,0:22:56.39,Default,,0,0,0,,But during a war
+Dialogue: 0,0:22:56.39,0:22:59.18,Default,,0,0,0,,ordinary becomes extraordinary
+Dialogue: 0,0:22:59.18,0:23:00.30,Default,,0,0,0,,THE FUTURE
+Dialogue: 0,0:23:00.30,0:23:04.23,Default,,0,0,0,,And now Iran stands at an uncertain crossroads
+Dialogue: 0,0:23:04.23,0:23:06.54,Default,,0,0,0,,The fighting has changed the country
+Dialogue: 0,0:23:06.54,0:23:08.68,Default,,0,0,0,,The economy has been damaged
+Dialogue: 0,0:23:08.68,0:23:10.94,Default,,0,0,0,,Families have experienced loss
+Dialogue: 0,0:23:10.94,0:23:13.89,Default,,0,0,0,,Children have missed parts of their education
+Dialogue: 0,0:23:13.89,0:23:15.52,Default,,0,0,0,,Businesses have struggled
+Dialogue: 0,0:23:15.52,0:23:18.39,Default,,0,0,0,,And many people remain afraid that another
+Dialogue: 0,0:23:18.39,0:23:20.15,Default,,0,0,0,,escalation could come
+Dialogue: 0,0:23:20.15,0:23:23.80,Default,,0,0,0,,At the same time Iranian society continues
+Dialogue: 0,0:23:23.80,0:23:25.01,Default,,0,0,0,,to adapt
+Dialogue: 0,0:23:25.01,0:23:26.65,Default,,0,0,0,,People continue working
+Dialogue: 0,0:23:26.65,0:23:28.84,Default,,0,0,0,,Students continue studying
+Dialogue: 0,0:23:28.84,0:23:31.11,Default,,0,0,0,,Families continue eating together
+Dialogue: 0,0:23:31.11,0:23:33.08,Default,,0,0,0,,Markets continue operating
+Dialogue: 0,0:23:33.08,0:23:36.66,Default,,0,0,0,,And young people continue imagining a future
+Dialogue: 0,0:23:36.66,0:23:38.66,Default,,0,0,0,,beyond today's crisis
+Dialogue: 0,0:23:38.66,0:23:42.51,Default,,0,0,0,,As of October 2026 the conflict has not reached
+Dialogue: 0,0:23:42.51,0:23:45.08,Default,,0,0,0,,a clean and permanent ending
+Dialogue: 0,0:23:45.08,0:23:48.02,Default,,0,0,0,,Diplomatic efforts remain stalled and tensions
+Dialogue: 0,0:23:48.02,0:23:50.02,Default,,0,0,0,,continue around Iran
+Dialogue: 0,0:23:50.02,0:23:52.94,Default,,0,0,0,,the United States Israel and the Strait of
+Dialogue: 0,0:23:52.94,0:23:54.09,Default,,0,0,0,,Hormuz
+Dialogue: 0,0:23:54.09,0:23:57.37,Default,,0,0,0,,So the story of Iran after the war is not really
+Dialogue: 0,0:23:57.37,0:24:00.68,Default,,0,0,0,,a story of a country that has returned to normal
+Dialogue: 0,0:24:00.68,0:24:03.59,Default,,0,0,0,,It is the story of a country learning to live
+Dialogue: 0,0:24:03.59,0:24:05.20,Default,,0,0,0,,with uncertainty
+Dialogue: 0,0:24:05.20,0:24:08.08,Default,,0,0,0,,A country where normal life and crisis can
+Dialogue: 0,0:24:08.08,0:24:10.01,Default,,0,0,0,,exist on the same street
+Dialogue: 0,0:24:10.01,0:24:12.90,Default,,0,0,0,,A cafe can be full while a family struggles
+Dialogue: 0,0:24:12.90,0:24:14.45,Default,,0,0,0,,to pay its bills
+Dialogue: 0,0:24:14.45,0:24:17.36,Default,,0,0,0,,A market can be open while prices are rising
+Dialogue: 0,0:24:17.36,0:24:19.98,Default,,0,0,0,,Children can return to school while teachers
+Dialogue: 0,0:24:19.98,0:24:22.08,Default,,0,0,0,,worry about another closure
+Dialogue: 0,0:24:22.08,0:24:24.54,Default,,0,0,0,,People can laugh while remembering those they
+Dialogue: 0,0:24:24.54,0:24:25.66,Default,,0,0,0,,lost
+Dialogue: 0,0:24:25.66,0:24:28.02,Default,,0,0,0,,And a family can sit down for dinner while
+Dialogue: 0,0:24:28.02,0:24:30.19,Default,,0,0,0,,wondering what tomorrow will bring
+Dialogue: 0,0:24:30.19,0:24:31.51,Default,,0,0,0,,THE REAL IRAN
+Dialogue: 0,0:24:31.51,0:24:35.04,Default,,0,0,0,,Perhaps the most powerful image is not a missile
+Dialogue: 0,0:24:35.04,0:24:36.34,Default,,0,0,0,,It is a table
+Dialogue: 0,0:24:36.34,0:24:39.07,Default,,0,0,0,,A Persian family sitting together
+Dialogue: 0,0:24:39.07,0:24:40.50,Default,,0,0,0,,Rice in the center
+Dialogue: 0,0:24:40.50,0:24:41.71,Default,,0,0,0,,Bread on the side
+Dialogue: 0,0:24:41.71,0:24:43.00,Default,,0,0,0,,Tea being poured
+Dialogue: 0,0:24:43.00,0:24:44.32,Default,,0,0,0,,Children talking
+Dialogue: 0,0:24:44.32,0:24:45.77,Default,,0,0,0,,Parents listening
+Dialogue: 0,0:24:45.77,0:24:47.06,Default,,0,0,0,,Someone laughing
+Dialogue: 0,0:24:47.06,0:24:51.27,Default,,0,0,0,,For a few minutes the outside world disappears
+Dialogue: 0,0:24:51.27,0:24:54.10,Default,,0,0,0,,This is not a country without problems
+Dialogue: 0,0:24:54.10,0:24:56.59,Default,,0,0,0,,It is not a country without fear
+Dialogue: 0,0:24:56.59,0:24:59.68,Default,,0,0,0,,It is not a country untouched by war
+Dialogue: 0,0:24:59.68,0:25:01.74,Default,,0,0,0,,It is a country where people are trying to
+Dialogue: 0,0:25:01.74,0:25:04.23,Default,,0,0,0,,preserve something very simple
+Dialogue: 0,0:25:04.23,0:25:05.21,Default,,0,0,0,,Life
+Dialogue: 0,0:25:05.21,0:25:07.60,Default,,0,0,0,,Because when everything around you becomes
+Dialogue: 0,0:25:07.60,0:25:11.63,Default,,0,0,0,,uncertain continuing to live becomes an act
+Dialogue: 0,0:25:11.63,0:25:13.07,Default,,0,0,0,,of resilience
+Dialogue: 0,0:25:13.07,0:25:16.17,Default,,0,0,0,,Iran's story is therefore not simply about
+Dialogue: 0,0:25:16.17,0:25:17.06,Default,,0,0,0,,war
+Dialogue: 0,0:25:17.06,0:25:18.59,Default,,0,0,0,,It is about people
+Dialogue: 0,0:25:18.59,0:25:19.81,Default,,0,0,0,,People who wake up
+Dialogue: 0,0:25:19.81,0:25:21.06,Default,,0,0,0,,People who work
+Dialogue: 0,0:25:21.06,0:25:22.43,Default,,0,0,0,,People who cook
+Dialogue: 0,0:25:22.43,0:25:23.88,Default,,0,0,0,,People who study
+Dialogue: 0,0:25:23.88,0:25:25.57,Default,,0,0,0,,People who fall in love
+Dialogue: 0,0:25:25.57,0:25:27.60,Default,,0,0,0,,People who raise children
+Dialogue: 0,0:25:27.60,0:25:29.48,Default,,0,0,0,,People who remember the past
+Dialogue: 0,0:25:29.48,0:25:32.80,Default,,0,0,0,,And people who continue to hope for a future
+Dialogue: 0,0:25:32.80,0:25:36.75,Default,,0,0,0,,The war may change borders economies and political
+Dialogue: 0,0:25:36.75,0:25:38.21,Default,,0,0,0,,calculations
+Dialogue: 0,0:25:38.21,0:25:41.48,Default,,0,0,0,,But ordinary people measure history differently
+Dialogue: 0,0:25:41.48,0:25:43.82,Default,,0,0,0,,They remember the day their children returned
+Dialogue: 0,0:25:43.82,0:25:44.81,Default,,0,0,0,,to school
+Dialogue: 0,0:25:44.81,0:25:47.02,Default,,0,0,0,,The first meal they shared after a difficult
+Dialogue: 0,0:25:47.02,0:25:47.87,Default,,0,0,0,,night
+Dialogue: 0,0:25:47.87,0:25:49.67,Default,,0,0,0,,The day their shop reopened
+Dialogue: 0,0:25:49.67,0:25:51.98,Default,,0,0,0,,The first time they heard laughter again
+Dialogue: 0,0:25:51.98,0:25:54.37,Default,,0,0,0,,The first evening they felt safe enough to
+Dialogue: 0,0:25:54.37,0:25:55.78,Default,,0,0,0,,sit outside
+Dialogue: 0,0:25:55.78,0:25:58.43,Default,,0,0,0,,These are the moments that define life
+Dialogue: 0,0:25:58.43,0:25:59.68,Default,,0,0,0,,This is Iran
+Dialogue: 0,0:25:59.68,0:26:02.53,Default,,0,0,0,,A country caught between ancient traditions
+Dialogue: 0,0:26:02.53,0:26:04.71,Default,,0,0,0,,and a turbulent modern world
+Dialogue: 0,0:26:04.71,0:26:08.64,Default,,0,0,0,,A country where war has changed everyday life
+Dialogue: 0,0:26:08.64,0:26:11.62,Default,,0,0,0,,but has not completely taken everyday life
+Dialogue: 0,0:26:11.62,0:26:12.53,Default,,0,0,0,,away
+Dialogue: 0,0:26:12.53,0:26:14.70,Default,,0,0,0,,A country where people continue to search for
+Dialogue: 0,0:26:14.70,0:26:15.80,Default,,0,0,0,,food
+Dialogue: 0,0:26:15.80,0:26:19.96,Default,,0,0,0,,work family friendship and happiness even when
+Dialogue: 0,0:26:19.96,0:26:21.74,Default,,0,0,0,,the future is uncertain
+Dialogue: 0,0:26:21.74,0:26:25.24,Default,,0,0,0,,And perhaps that is the real story of survival
+Dialogue: 0,0:26:25.24,0:26:27.21,Default,,0,0,0,,Not simply staying alive
+Dialogue: 0,0:26:27.21,0:26:29.39,Default,,0,0,0,,But finding a reason to keep living
+Dialogue: 0,0:26:29.39,0:26:31.91,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:26:31.91,0:26:33.30,Default,,0,0,0,,Life Beyond the Limits
