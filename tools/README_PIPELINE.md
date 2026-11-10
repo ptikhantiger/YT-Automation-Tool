@@ -282,6 +282,8 @@ Flags you'll actually reach for:
 | `--seed 42` | 1 | Reproducible scene breakdown across re-runs. |
 | `--no-chain` | 1 | Don't auto-launch step 2 when step 1 finishes. |
 | `--port 8001` | 2 | Port 8000 already in use. |
+| `--ai-style cinematic-doc` | 2 | Look for generated images: `storybook` (default), `cinematic-doc`, `retro-print`, `blueprint`. Saved per project. |
+| `--ai-provider cloudflare` | 2 | Faster image backend than the default Pollinations free tier. Needs a free key (see the AI illustration section). |
 | `--crf 18` | 3 | Higher quality, bigger file. `--crf 23` for smaller. |
 | `--preset slow` | 3 | Better compression, slower render. |
 | `--non-interactive` | 3 | Never open the step 2 picker for missing/unplayable clips; exit with the scene list instead. For CI/headless servers — the GitHub Actions render workflow uses it (see the root README). |
@@ -611,14 +613,41 @@ Opens a local page at `http://localhost:8000/` that walks scene by scene:
   tags against the new provider.
 - **AI illustration tab** — instead of searching stock, generate a still
   image for the scene with Pollinations.AI (the free FLUX model). The prompt
-  box is prefilled from the scene's semantic brief; a locked warm
-  hand-illustrated "storybook" style is appended automatically (tick "use my
-  text exactly" to skip it). "Generate illustrations" produces a few
-  variations (paced to the free tier's rate limit); click one to use it.
-  Picked images are cached under `.ai_cache/`, copied into `clips/`, and
-  rendered by step 3 as a slow Ken Burns zoom like any still photo. No key
-  needed; a `tools/pollinations_token.txt` speeds it up and removes the
-  free-tier watermark.
+  box is prefilled from the scene's semantic brief; a locked "storybook"
+  style is appended automatically (tick "use my text exactly" to skip it).
+  "Generate illustrations" produces a few variations (paced to the free
+  tier's rate limit); click one to use it. Picked images are cached under
+  `.ai_cache/`, copied into `clips/`, and rendered by step 3 as a slow Ken
+  Burns zoom like any still photo. No key needed.
+
+  **What the free tier actually gives you (measured 2026-10-22):** one image
+  every **45 seconds per IP**, served at **1024x576** however large an image
+  you ask for, with a small corner watermark. Step 3 upscales it to 1080p,
+  so the result is softer than a stock clip but fine for a still. A token
+  from <https://auth.pollinations.ai> in `tools/pollinations_token.txt` lifts
+  the limit and removes the watermark. A 70-shot video is ~53 minutes of
+  unattended generation on the free tier — start it and walk away.
+
+  **Look presets** (`--ai-style`): `storybook` (default, the original house
+  style — existing projects keep exactly the look and cache they had),
+  `cinematic-doc` (photoreal 35 mm documentary — the right choice for
+  business/industry subjects), `retro-print`, `blueprint`. The choice is
+  saved per project in `ai_style.json`, so resuming later keeps it. Prompts
+  are still built from the scene's own planned visual, shot by shot.
+
+  **Other providers** (`--ai-provider`): `cloudflare` (Workers AI
+  FLUX.1-schnell, free daily allowance, needs a free account — account id on
+  line 1 and API token on line 2 of `tools/cloudflare_key.txt`) and
+  `huggingface` (small monthly free credit, `tools/huggingface_key.txt` or
+  `HF_TOKEN`). Both answer in seconds instead of 45, which is what makes a
+  whole-video AI pass practical. Default is still `pollinations`, so nothing
+  changes until you pass the flag.
+
+  Generated images are **best for what stock can't show** — a historical
+  moment, an abstract idea, "how debt works" — and worst as a wholesale
+  replacement for real footage: free models still mangle hands, invent
+  signage, and won't match a real place. Use the AI fallback checkbox for
+  the gaps, not for the whole video.
 - 12 clips (or photos) appear as cards. **Hover a card to play it**, or click
   the video to pause/resume. Only 12 load at a time so previews stay
   responsive.

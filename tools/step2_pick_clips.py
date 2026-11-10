@@ -69,6 +69,7 @@ from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 
+import image_gen
 from common import USER_AGENT, caption_style, load_json, save_json
 from keywords import build_query, extract_keywords
 
@@ -88,33 +89,30 @@ PER_PAGE = 12
 REQUEST_TIMEOUT = 30
 
 # --------------------------------------------------------------------------
-# AI illustration provider -- Pollinations.AI (FLUX). Free and key-less: the
-# anonymous tier generates unlimited FLUX images at roughly one request every
-# 15 seconds. Dropping a free token from https://auth.pollinations.ai into
-# tools/pollinations_token.txt lifts that to ~1 per 5s AND removes the small
-# corner watermark the anonymous tier adds. Everything the picker generates
-# is a still image, rendered by step 3 as a slow Ken Burns zoom exactly like
-# a Pexels/Pixabay photo pick -- no render-side changes needed.
+# AI illustration provider. The network side (providers, pacing, retry,
+# validation) lives in image_gen.py; this file only decides *what* to draw
+# and records the pick. Everything the picker generates is a still image,
+# rendered by step 3 as a slow Ken Burns zoom exactly like a Pexels/Pixabay
+# photo pick -- no render-side changes needed.
+#
+# Free tier reality (measured 2026-10-22): Pollinations now allows one image
+# every 45 seconds per IP, answers 402 FREE_LIMIT past that, and serves at
+# most 1024x576 without a token. image_gen handles the pacing and the retries
+# the old 15-second loop assumed away.
 # --------------------------------------------------------------------------
-POLLINATIONS_IMAGE_URL = "https://image.pollinations.ai/prompt/"
-POLLINATIONS_REFERRER = "youtube-automation-tool"
-AI_MODEL = "flux"
-AI_REQUEST_TIMEOUT = 180
+POLLINATIONS_IMAGE_URL = image_gen.POLLINATIONS_IMAGE_URL
+POLLINATIONS_REFERRER = image_gen.POLLINATIONS_REFERRER
+AI_MODEL = image_gen.POLLINATIONS_MODEL
+AI_REQUEST_TIMEOUT = image_gen.DEFAULT_TIMEOUT
 AI_CREDIT_AUTHOR = "Pollinations.AI (FLUX)"
 AI_CREDIT_URL = "https://pollinations.ai"
-# Appended to every scene's own subject text so the whole video keeps one
-# consistent look -- the warm, hand-illustrated storybook style (people shown
-# from behind / faceless, which also keeps real individuals unidentifiable).
-AI_STYLE_SUFFIX = (
-    "2D digital illustration in a warm hand-drawn storybook style, flat cel "
-    "shading with gouache-like soft gradients, limited golden-hour palette of "
-    "amber, ochre and muted teal, thick clean ink outlines on the foreground, "
-    "layered hills and trees fading into atmospheric haze, gentle paper grain "
-    "texture, painterly but clearly illustrated and NOT photorealistic, no lens "
-    "blur, any people shown from behind or in silhouette with no recognisable "
-    "face, no on-image text, no watermark, no logo, wide cinematic 16:9 "
-    "composition"
-)
+
+# Look presets live in image_gen.STYLES. "storybook" is the original locked
+# house style (byte for byte), so existing projects keep their look and their
+# .ai_cache keys; pick another with --ai-style or the picker's style menu.
+AI_STYLES = image_gen.STYLES
+AI_DEFAULT_STYLE = image_gen.DEFAULT_STYLE
+AI_STYLE_SUFFIX = image_gen.STYLES[image_gen.DEFAULT_STYLE]
 
 # Minimum-quality filter tiers: (long-edge px, short-edge px), checked
 # portrait-aware (same long/short-edge logic as the existing HD picker below)
@@ -751,28 +749,17 @@ def _ai_shot_subject(shot, scene):
 
 
 def _compose_ai_prompt(subject, raw=False):
-    """Final Pollinations prompt: the scene subject followed by the locked
-    house-style suffix (unless `raw`, when the caller's text is used verbatim
-    so an experiment with a different look is possible)."""
-    subject = (subject or "").strip()
-    if raw:
-        return subject or AI_STYLE_SUFFIX
-    subject = subject.rstrip(". ")
-    return f"{subject}. {AI_STYLE_SUFFIX}" if subject else AI_STYLE_SUFFIX
+    """Final prompt: the scene subject followed by the selected look (unless
+    `raw`, when the caller's text is used verbatim so an experiment with a
+    different look is possible)."""
+    return image_gen.compose_prompt(subject, style=STATE.get("ai_style") or AI_DEFAULT_STYLE,
+                                    raw=raw)
 
 
 def _pollinations_url(prompt, seed, width, height, nologo=False):
-    params = {
-        "width": width,
-        "height": height,
-        "seed": int(seed),
-        "model": AI_MODEL,
-        "referrer": POLLINATIONS_REFERRER,
-    }
-    if nologo:
-        params["nologo"] = "true"
-    return (POLLINATIONS_IMAGE_URL + urllib.parse.quote(prompt, safe="")
-            + "?" + urllib.parse.urlencode(params))
+    return image_gen.pollinations_url(
+        prompt, seed, width, height,
+        token=STATE.get("pollinations_token") if nologo else None)
 
 
 def _ai_cache_name(prompt, seed, width, height):
@@ -783,33 +770,28 @@ def _ai_cache_name(prompt, seed, width, height):
 
 
 def _ai_pace():
-    """Space successive Pollinations calls out to the free tier's rate limit
-    (~1 per 15s anonymous, ~1 per 5s with a token) so a burst of generations
-    doesn't just 429."""
-    interval = 5.0 if STATE.get("pollinations_token") else 15.0
-    last = STATE.get("ai_last_call") or 0.0
-    wait = interval - (time.time() - last)
-    if wait > 0:
-        time.sleep(min(wait, interval))
-    STATE["ai_last_call"] = time.time()
+    """Space successive generation calls out to the provider's live rate
+    limit (image_gen owns the numbers: 45 s/image on Pollinations' anonymous
+    tier, 6 s with a token)."""
+    image_gen.pace(STATE.get("ai_provider") or image_gen.DEFAULT_PROVIDER,
+                   token=STATE.get("pollinations_token"))
 
 
 def _generate_ai_image(prompt, seed, dest, width, height):
-    """Fetch one FLUX image from Pollinations to `dest` (atomic .part write).
-    Uses the configured token (faster tier + no watermark) when present.
-    Returns the plain, token-free URL for the same image so it can be stored
-    as a step-3 re-download fallback."""
-    token = STATE.get("pollinations_token")
-    fetch_url = _pollinations_url(prompt, seed, width, height, nologo=bool(token))
-    headers = {"User-Agent": USER_AGENT}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    req = urllib.request.Request(fetch_url, headers=headers)
-    tmp = dest.with_suffix(".part")
-    with urllib.request.urlopen(req, timeout=AI_REQUEST_TIMEOUT) as resp, open(tmp, "wb") as f:
-        shutil.copyfileobj(resp, f)
-    tmp.replace(dest)
-    return _pollinations_url(prompt, seed, width, height, nologo=False)
+    """Fetch one image to `dest` (atomic .part write) and return the plain,
+    token-free re-download URL for it, when the provider has one.
+
+    Pacing, 402/429/503 retries and image validation all happen inside
+    image_gen.generate(); a failure raises image_gen.GenerationError with a
+    message that says what to fix."""
+    provider = STATE.get("ai_provider") or image_gen.DEFAULT_PROVIDER
+    fetch_url = image_gen.generate(
+        prompt, dest, seed=seed, width=width, height=height,
+        provider=provider, token=STATE.get("pollinations_token"),
+        timeout=AI_REQUEST_TIMEOUT)
+    if provider != "pollinations":
+        return ""
+    return fetch_url or _pollinations_url(prompt, seed, width, height)
 
 
 def _ai_asset(prompt, seed, width, height, fetch_url=None):
@@ -831,7 +813,12 @@ def _ai_asset(prompt, seed, width, height, fetch_url=None):
         "height": height,
         "thumb": f"/aicache/{name}",
         "preview_url": f"/aicache/{name}",
-        "download_url": fetch_url or _pollinations_url(prompt, seed, width, height),
+        # Only Pollinations exposes a stable URL for the same image. Other
+        # providers return "" (no re-download fallback) rather than a
+        # Pollinations URL that would regenerate a *different* picture.
+        "download_url": (fetch_url if fetch_url is not None else
+                         ("" if (STATE.get("ai_provider") or image_gen.DEFAULT_PROVIDER)
+                          != "pollinations" else _pollinations_url(prompt, seed, width, height))),
         "page_url": AI_CREDIT_URL,
         # No named human contributor -- the provider-level credit line in
         # step3's credits.txt (PROVIDER_CREDITS["ai"]) covers Pollinations/FLUX.
@@ -3040,16 +3027,13 @@ class Handler(BaseHTTPRequestHandler):
                 seed = random.randint(1, 9_999_999)
             try:
                 asset = ai_generate_for_scene(subject, seed, raw=raw)
-            except urllib.error.HTTPError as e:
-                msg = (
-                    "Pollinations rate limit hit (the free anonymous tier is about one image "
-                    "every 15s). Wait a few seconds and click Generate again, or add a free "
-                    "token to tools/pollinations_token.txt for the faster tier."
-                    if e.code == 429 else f"Pollinations returned HTTP {e.code}."
-                )
+            except image_gen.GenerationError as e:
+                msg = str(e)
+                if e.retry_after:
+                    msg += (f"\n\nThe provider asked for a {int(round(e.retry_after))} s wait. "
+                            "Try again in a moment, add a Pollinations token, or switch to the "
+                            "cloudflare/huggingface provider for a faster tier.")
                 return self._send_json({"error": msg}, status=502)
-            except urllib.error.URLError as e:
-                return self._send_json({"error": f"Could not reach Pollinations: {e.reason}"}, status=502)
             except Exception as e:
                 return self._send_json({"error": f"AI image generation failed: {e}"}, status=502)
             return self._send_json({"ok": True, "image": asset})
@@ -5347,7 +5331,7 @@ boot();
 
 def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         pollinations_token=None, port=8000, no_browser=False, highlight=None,
-        auto_render=None):
+        auto_render=None, ai_style=None, ai_provider=None):
     """Serve the clip picker for `project` until every scene has a clip and
     the browser confirms it's time to render, or the server is interrupted.
 
@@ -5397,6 +5381,23 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
 
     clips_dir = project_dir / "clips"
     clips_dir.mkdir(exist_ok=True)
+
+    # The chosen look travels with the project, so a later "resume picking"
+    # run without --ai-style keeps drawing the same style instead of quietly
+    # falling back to storybook mid-video.
+    style_path = project_dir / "ai_style.json"
+    if ai_style:
+        save_json({"style": ai_style, "provider": ai_provider or image_gen.DEFAULT_PROVIDER},
+                  style_path)
+    elif style_path.exists():
+        try:
+            saved_style = (load_json(style_path) or {}).get("style")
+        except Exception:
+            saved_style = None
+        if saved_style in AI_STYLES:
+            ai_style = saved_style
+    ai_style = ai_style or AI_DEFAULT_STYLE
+
     cache_dir = project_dir / ".pexels_cache"
     cache_dir.mkdir(exist_ok=True)
     # Generated AI illustrations live here until picked, then get copied into
@@ -5431,6 +5432,8 @@ def run(project, api_key=None, pixabay_api_key=None, coverr_api_key=None,
         "ai_cache_dir": ai_cache_dir,
         "ai_fallback": False,
         "ai_last_call": 0.0,
+        "ai_style": ai_style or AI_DEFAULT_STYLE,
+        "ai_provider": ai_provider or image_gen.DEFAULT_PROVIDER,
         # Latches within one "auto-match all" run when Gemini's judge hits its
         # quota, so the remaining scenes fall back to keyword-overlap picks
         # instead of the run stopping dead. Reset at the start of each run.
@@ -5514,6 +5517,14 @@ def main():
     parser.add_argument("--pixabay-api-key", default=None, help="Pixabay API key (else PIXABAY_API_KEY or tools/pixabay_key.txt) -- optional")
     parser.add_argument("--coverr-api-key", default=None, help="Coverr API key (else COVERR_API_KEY or tools/coverr_key.txt) -- optional")
     parser.add_argument("--pollinations-token", default=None, help="Pollinations token for the AI illustration tab (else POLLINATIONS_TOKEN or tools/pollinations_token.txt) -- optional; the tab works without it")
+    parser.add_argument("--ai-provider", default=None, choices=image_gen.available_providers(),
+                        help="Image generator behind the AI illustration tab: pollinations (default, free, "
+                             "no key, 1 image per 45 s, 1024x576), cloudflare or huggingface (both need a free "
+                             "key and are much faster). Existing behaviour is unchanged unless you pass it.")
+    parser.add_argument("--ai-style", default=None, choices=sorted(AI_STYLES),
+                        help="Look for generated images: storybook (default, the existing house style), "
+                             "cinematic-doc (photoreal documentary), retro-print, blueprint. Stored per "
+                             "project in ai_style.json so the picker keeps it across restarts.")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--no-browser", action="store_true", help="Don't auto-open the browser")
     ar = parser.add_mutually_exclusive_group()
@@ -5531,6 +5542,7 @@ def main():
         pixabay_api_key=args.pixabay_api_key, coverr_api_key=args.coverr_api_key,
         pollinations_token=args.pollinations_token,
         port=args.port, no_browser=args.no_browser, auto_render=args.auto_render,
+        ai_style=args.ai_style, ai_provider=args.ai_provider,
     )
     if render_now:
         import step3_render_video
