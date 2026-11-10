@@ -67,10 +67,14 @@ monetized channel.
 """
 import argparse
 import shutil
+import subprocess
 import sys
 from pathlib import Path
 
 from common import (
+    image_look,
+    look_grade,
+    median_look,
     FFmpegTimeout,
     build_duck_envelope,
     concat_audio_files,
@@ -208,7 +212,7 @@ def _segment_timeout(n_frames, fps):
 
 
 def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H,
-                   trim_start=0.0):
+                   trim_start=0.0, grade=""):
     """Render clip_path as exactly `n_frames` frames of CFR `fps` video at
     width x height.
 
@@ -235,7 +239,8 @@ def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OU
     vf = (
         f"scale={width}:{height}:force_original_aspect_ratio=increase,"
         f"crop={width}:{height},"
-        f"fps={fps},setsar=1,format=yuv420p"
+        + (f"{grade}," if grade else "")
+        + f"fps={fps},setsar=1,format=yuv420p"
     )
     if trim_start > 0.01:
         args = ["-ss", f"{trim_start:.3f}"]
@@ -272,7 +277,8 @@ def render_segment(clip_path, n_frames, fps, out_path, width=OUTPUT_W, height=OU
     run_ffmpeg(fb, description=f"rendering segment for {clip_path.name} (fallback)", timeout=timeout)
 
 
-def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H):
+def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, height=OUTPUT_H,
+                         grade=""):
     """Turn a still image (picked in step2 as an "image" selection, from a
     Pexels/Pixabay photo or a local upload) into an exactly `n_frames`-frame
     clip of CFR `fps` video at width x height.
@@ -291,7 +297,8 @@ def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, he
         f"scale={width * 2}:{height * 2}:force_original_aspect_ratio=increase,"
         f"crop={width * 2}:{height * 2},"
         f"zoompan=z='min(zoom+0.0008,1.15)':d={zoom_frames}:s={width}x{height}:fps={fps},"
-        f"setsar=1,format=yuv420p"
+        + (f"{grade}," if grade else "")
+        + "setsar=1,format=yuv420p"
     )
     args = [
         "-loop", "1",
@@ -307,6 +314,56 @@ def render_image_segment(image_path, n_frames, fps, out_path, width=OUTPUT_W, he
     ]
     run_ffmpeg(args, description=f"rendering image segment for {image_path.name}",
                timeout=_segment_timeout(zoom_frames, fps))
+
+
+def clip_look(path, is_image=False):
+    """image_look() of a clip: the image itself for a still, else the average
+    of two frames (35% and 65% in, where fit_strategy's trimmed window
+    usually sits). None if nothing could be read."""
+    import io
+    from PIL import Image
+
+    try:
+        if is_image:
+            with Image.open(path) as im:
+                return image_look(im)
+        dur = probe_duration(path) or 0
+        looks = []
+        for frac in (0.35, 0.65):
+            r = subprocess.run(
+                ["ffmpeg", "-v", "error", "-ss", f"{dur * frac:.2f}", "-i", str(path),
+                 "-frames:v", "1", "-vf", "scale=96:-2", "-f", "image2pipe", "-vcodec", "png", "-"],
+                capture_output=True, timeout=60,
+            )
+            if r.returncode == 0 and r.stdout:
+                with Image.open(io.BytesIO(r.stdout)) as im:
+                    looks.append(image_look(im))
+        if not looks:
+            return None
+        avg = {k: sum(l[k] for l in looks) / len(looks) for k in ("lum", "contrast", "sat", "warmth")}
+        avg["mono"] = all(l["mono"] for l in looks)
+        return avg
+    except Exception:
+        return None
+
+
+def plan_look_grades(selections, clips_dir, strength=0.6):
+    """Measure every picked clip once and give each a gentle grade toward the
+    video's median look, so footage from different shoots and providers
+    cuts together as one film. Returns ({file: grade}, {file: look}, target)."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    jobs = {}
+    for sel in selections.values():
+        for item in selection_items(sel) or []:
+            if item and item.get("file"):
+                jobs[item["file"]] = item.get("type") == "image"
+    files = sorted(jobs)
+    with ThreadPoolExecutor(max_workers=4) as ex:
+        looks = dict(zip(files, ex.map(lambda f: clip_look(clips_dir / f, jobs[f]), files)))
+    target = median_look(list(looks.values()))
+    grades = {f: look_grade(l, target, strength) for f, l in looks.items()}
+    return grades, looks, target
 
 
 def selection_authors(sel):
@@ -490,7 +547,7 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
         music_volume=None, duck_db=None, duck_gap_min=1.2,
         duck_attack_ms=150.0, duck_release_ms=400.0, duck_lead_ms=80.0,
         music_target_db=-20.0, music_below_voice_db=12.0, no_4k=False,
-        non_interactive=False):
+        non_interactive=False, match_look=True):
     """Render projects/<project>/output.mp4 from picked clips + captions.
     Returns the output path. Exits the process on any missing prerequisite,
     same as running this script directly.
@@ -570,7 +627,7 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
             music_volume=music_volume, duck_db=duck_db, duck_gap_min=duck_gap_min,
             duck_attack_ms=duck_attack_ms, duck_release_ms=duck_release_ms, duck_lead_ms=duck_lead_ms,
             music_target_db=music_target_db, music_below_voice_db=music_below_voice_db,
-            no_4k=no_4k, non_interactive=non_interactive,
+            no_4k=no_4k, non_interactive=non_interactive, match_look=match_look,
         )
 
     unpicked = [s["index"] for s in scenes if str(s["index"]) not in selections]
@@ -687,6 +744,15 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
         except Exception:
             return None
 
+    grades, looks = {}, {}
+    if match_look:
+        print("Matching the look of all clips (brightness, contrast, colour, tint)...")
+        grades, looks, target = plan_look_grades(selections, clips_dir)
+        graded = sum(1 for g in grades.values() if g)
+        if target:
+            print(f"  video's median look: brightness {target['lum']:.2f}, saturation {target['sat']:.2f}, "
+                  f"tint {target['warmth']:+.2f} -- {graded} of {len(grades)} clips nudged toward it")
+
     segment_paths = []
     report_scenes = []
     for i, scene in enumerate(scenes):
@@ -725,14 +791,17 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
                 if item.get("shot_index"):
                     shot_note = {"shot": item["shot_index"],
                                  "shot_seconds": round((item.get("shot_end", 0) or 0) - (item.get("shot_start", 0) or 0), 2)}
+                grade = grades.get(item["file"], "")
+                if grade:
+                    shot_note["grade"] = grade
                 if item.get("type") == "image":
-                    render_image_segment(clip_path, nf, fps, seg_path, width, height)
+                    render_image_segment(clip_path, nf, fps, seg_path, width, height, grade=grade)
                     entry["clips"].append({"file": item["file"], "seconds": round(secs, 2),
                                            "frames": nf, "strategy": "image ken-burns", **shot_note})
                 else:
                     src = clip_source_duration(clip_path)
                     trim, label = fit_strategy(src, secs)
-                    render_segment(clip_path, nf, fps, seg_path, width, height, trim_start=trim)
+                    render_segment(clip_path, nf, fps, seg_path, width, height, trim_start=trim, grade=grade)
                     entry["clips"].append({"file": item["file"], "seconds": round(secs, 2),
                                            "frames": nf, "source_seconds": src, "strategy": label, **shot_note})
                     if label.startswith("loop"):
@@ -743,17 +812,20 @@ def run(project, fps=30, crf=20, preset="medium", keep_tmp=False, music=None,
         else:
             clip_path = clips_dir / sel["file"]
             seg_path = tmp_dir / f"seg_{i + 1:03d}.mp4"
+            grade = grades.get(sel["file"], "")
             if sel.get("type") == "image":
-                render_image_segment(clip_path, total_frames, fps, seg_path, width, height)
+                render_image_segment(clip_path, total_frames, fps, seg_path, width, height, grade=grade)
                 entry["clips"].append({"file": sel["file"], "seconds": round(total_duration, 2),
-                                       "frames": total_frames, "strategy": "image ken-burns"})
+                                       "frames": total_frames, "strategy": "image ken-burns",
+                                       **({"grade": grade} if grade else {})})
                 print(f"  [{i + 1}/{len(scenes)}] {clip_path.name} -> {total_duration:.1f}s")
             else:
                 src = clip_source_duration(clip_path)
                 trim, label = fit_strategy(src, total_duration)
-                render_segment(clip_path, total_frames, fps, seg_path, width, height, trim_start=trim)
+                render_segment(clip_path, total_frames, fps, seg_path, width, height, trim_start=trim, grade=grade)
                 entry["clips"].append({"file": sel["file"], "seconds": round(total_duration, 2),
-                                       "frames": total_frames, "source_seconds": src, "strategy": label})
+                                       "frames": total_frames, "source_seconds": src, "strategy": label,
+                                       **({"grade": grade} if grade else {})})
                 if label.startswith("loop"):
                     entry["warnings"].append(f"{sel['file']} loops ({label}) -- pick a longer clip or use multi-clip for this scene.")
                 print(f"  [{i + 1}/{len(scenes)}] {clip_path.name} -> {total_duration:.1f}s [{label}]"
@@ -969,6 +1041,13 @@ def main():
         help="Never open the step 2 picker to fix missing/unplayable clips -- exit with an "
         "error listing them instead. For CI / headless servers (GitHub Actions uses this).",
     )
+    parser.add_argument(
+        "--no-match-look", dest="match_look", action="store_false",
+        help="Don't harmonise the clips' look. By default every clip's brightness, contrast, "
+        "saturation and warm/cool tint is measured and gently pulled toward the video's own "
+        "median look (capped, so a deliberately dark or warm shot keeps its mood), so footage "
+        "from different shoots and providers cuts together as one film.",
+    )
     args = parser.parse_args()
 
     run(
@@ -978,7 +1057,7 @@ def main():
         duck_release_ms=args.duck_release_ms, duck_lead_ms=args.duck_lead_ms,
         music_target_db=args.music_target_db,
         music_below_voice_db=args.music_below_voice_db,
-        no_4k=args.no_4k, non_interactive=args.non_interactive,
+        no_4k=args.no_4k, non_interactive=args.non_interactive, match_look=args.match_look,
     )
 
 

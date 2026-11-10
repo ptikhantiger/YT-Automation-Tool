@@ -255,6 +255,23 @@ choose `crf` (18 high quality, 20 default, 23 smaller), `preset`, `allow_4k`.
 
 ---
 
+## 3b. Clips don't look like they belong together
+
+Two things handle this automatically:
+
+- **While picking** (picker + Auto-match): above the results, a strip shows the
+  clips of the shots around the one you're picking; every result says **look
+  matches / look is close / look clashes**. Prefer "matches" among clips that
+  fit the sentence. Auto-match does the same on its own.
+- **While rendering**: every clip's brightness, contrast, colour and tint is
+  gently evened out toward the video's own average, so different stock
+  sources cut together as one film. Render log line:
+  `video's median look: ... -- N of M clips nudged toward it`.
+
+What it can't fix: a clip showing the wrong *place or time* (an alpine lake in
+a sea story, noon in a "before sunrise" line). Replace those in the picker —
+the badges and the planned-visual line under each shot help you spot them.
+
 ## 4. The render run failed (red ✗ on the Actions page)
 
 Click the run. At the top there is an **annotation** with the last lines of the

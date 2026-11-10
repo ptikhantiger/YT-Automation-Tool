@@ -1183,15 +1183,134 @@ def repeated_scene_indices(selections):
     return sorted(targets)
 
 
+# Visual continuity between neighbouring shots. Each candidate's thumbnail
+# is measured (brightness, contrast, saturation, warm/cool tint -- see
+# common.image_look) and compared with the clips of the shots around it.
+# After judging, a clash costs up to LOOK_PENALTY_CONTINUE points when the
+# narration continues the same subject (the cut must feel like one shoot)
+# and up to LOOK_PENALTY_NEW when it moves on (a new subject may look
+# different, but shouldn't jump from golden hour to grey dusk for no
+# reason). A clip by the same photographer as the previous shot is likely
+# the same shoot -- same camera, place and grade -- and gets a bonus on a
+# "continue" shot.
+LOOK_PENALTY_CONTINUE = 14
+LOOK_PENALTY_NEW = 6
+SAME_AUTHOR_BONUS = 6
+THUMB_TIMEOUT = 10
+
+
+def thumb_look(url):
+    """image_look() of a thumbnail URL (or a local image path), cached in
+    memory and in the project's .pexels_cache/looks.json. None on failure."""
+    if not url:
+        return None
+    cache = STATE.setdefault("look_cache", None)
+    if cache is None:
+        path = STATE["cache_dir"] / "looks.json" if STATE.get("cache_dir") else None
+        try:
+            cache = load_json(path) if path and path.exists() else {}
+        except Exception:
+            cache = {}
+        STATE["look_cache"] = cache
+    if url in cache:
+        return cache[url]
+    look = None
+    try:
+        import io
+        from PIL import Image
+
+        from common import image_look
+        if url.startswith(("http://", "https://")):
+            req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+            with urllib.request.urlopen(req, timeout=THUMB_TIMEOUT) as r:
+                raw = r.read(4 * 1024 * 1024)
+            with Image.open(io.BytesIO(raw)) as im:
+                look = image_look(im)
+        elif Path(url).exists():
+            with Image.open(url) as im:
+                look = image_look(im)
+    except Exception:
+        look = None
+    cache[url] = look
+    if len(cache) % 25 == 0 and STATE.get("cache_dir"):
+        try:
+            save_json(cache, STATE["cache_dir"] / "looks.json")
+        except Exception:
+            pass
+    return look
+
+
+def _item_ref(item, label, weight):
+    """A neighbour reference from a selection item or a candidate asset."""
+    if not item:
+        return None
+    thumb = item.get("thumb")
+    if not thumb and item.get("file") and STATE.get("clips_dir"):
+        f = STATE["clips_dir"] / item["file"]
+        if f.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp") and f.exists():
+            thumb = str(f)
+    if not thumb:
+        return None
+    return {"thumb": thumb, "author": (item.get("author") or "").strip().lower(),
+            "label": label, "weight": weight}
+
+
+def neighbour_refs(scene_index, selections, prev_asset=None):
+    """The clips around the slot being matched: the previous shot (the
+    previous shot of this scene if given, else the previous scene's last
+    clip) and the next scene's first clip when it is already picked."""
+    refs = []
+    if prev_asset is not None:
+        refs.append(_item_ref(prev_asset, "previous shot", 1.0))
+    else:
+        prev = selections.get(str(scene_index - 1))
+        if prev:
+            items = prev.get("items") if prev.get("type") == "multi" else [prev]
+            refs.append(_item_ref((items or [None])[-1], f"scene {scene_index - 1}", 1.0))
+    nxt = selections.get(str(scene_index + 1))
+    if nxt:
+        items = nxt.get("items") if nxt.get("type") == "multi" else [nxt]
+        refs.append(_item_ref((items or [None])[0], f"scene {scene_index + 1}", 0.5))
+    return [r for r in refs if r]
+
+
 class Diversity:
     """What one scene's auto-match knows about the rest of the video:
-    `used` from used_assets_map() (this scene excluded), and `in_scene`, the
-    assets already chosen for earlier shots of this same scene."""
+    `used` from used_assets_map() (this scene excluded), `in_scene`, the
+    assets already chosen for earlier shots of this same scene, and the
+    neighbouring clips + continuity flag used for look matching."""
 
-    def __init__(self, used, scene_index, in_scene=None):
+    def __init__(self, used, scene_index, in_scene=None, neighbours=None, continuity="new"):
         self.used = used or {}
         self.scene_index = scene_index
         self.in_scene = in_scene if in_scene is not None else set()
+        self.neighbours = neighbours or []
+        self.continuity = continuity or "new"
+
+    def look_adjust(self, batch):
+        """Tag each candidate with look_dist / look_penalty / same_author
+        against the neighbouring clips. Thumbnails are fetched in parallel
+        and cached, so a judged batch costs one small download each."""
+        if not self.neighbours or not batch:
+            return
+        n_looks = [(r, thumb_look(r["thumb"])) for r in self.neighbours]
+        n_looks = [(r, l) for r, l in n_looks if l]
+        cont = self.continuity == "continue"
+        weight = LOOK_PENALTY_CONTINUE if cont else LOOK_PENALTY_NEW
+        prev_author = next((r["author"] for r in self.neighbours if r["weight"] >= 1.0 and r["author"]), "")
+        with ThreadPoolExecutor(max_workers=6) as ex:
+            c_looks = list(ex.map(lambda c: thumb_look(c.get("thumb")), batch))
+        from common import look_distance
+        for c, cl in zip(batch, c_looks):
+            dists = [(look_distance(cl, nl), r["weight"]) for r, nl in n_looks]
+            dists = [(d, w) for d, w in dists if d is not None]
+            if dists:
+                d = sum(d * w for d, w in dists) / sum(w for _d, w in dists)
+                c["look_dist"] = round(d, 2)
+                c["look_penalty"] = int(round(weight * d))
+            same = bool(prev_author) and (c.get("author") or "").strip().lower() == prev_author
+            c["same_author"] = same
+            c["look_bonus"] = SAME_AUTHOR_BONUS if (same and cont) else 0
 
     def penalty(self, cand):
         """Points to subtract from a judged score; None = forbidden."""
@@ -1730,13 +1849,15 @@ _VERDICT_CLAMP = {
 }
 
 
-def _judge_batch(brief, batch, entry_candidates):
+def _judge_batch(brief, batch, entry_candidates, diversity=None):
     """One Gemini scoring call over `batch` (already the size we want judged).
     Appends every scored candidate to entry_candidates and returns
     (best_asset, best_score, best_reason) for this batch."""
     from llm_client import LLMError, complete, strip_reasoning
     from semantic_timeline import _extract_json
 
+    if diversity is not None:
+        diversity.look_adjust(batch)
     listing = []
     for i, c in enumerate(batch, start=1):
         desc = ((c.get("desc") or "").strip() or "(no description)")[:140]
@@ -1748,7 +1869,8 @@ def _judge_batch(brief, batch, entry_candidates):
         used = c.get("used_in") or []
         used_txt = (f' [ALREADY USED in scene{"s" if len(used) > 1 else ""} '
                     f'{", ".join(str(u) for u in used[:4])}{"..." if len(used) > 4 else ""}]') if used else ""
-        listing.append(f'C{i}: "{desc}" ({kind}, {dims}, {c.get("source")}{via_txt}){used_txt}')
+        same_txt = " [same photographer as the previous shot]" if c.get("same_author") else ""
+        listing.append(f'C{i}: "{desc}" ({kind}, {dims}, {c.get("source")}{via_txt}){used_txt}{same_txt}')
     user = (brief + "\n\nCANDIDATE CLIPS:\n" + "\n".join(listing)
             + "\n\nScore AND give a verdict for every candidate. STRICT JSON only.")
     data, last_err = None, None
@@ -1791,12 +1913,24 @@ def _judge_batch(brief, batch, entry_candidates):
             score = max(0, score - penalty)
             used = c.get("used_in") or []
             note += f" -{penalty} already used in scene{'s' if len(used) > 1 else ''} {', '.join(str(u) for u in used[:4])}"
+        lp, lb = c.get("look_penalty", 0), c.get("look_bonus", 0)
+        if lp or lb:
+            # only adjust a clip that's actually right for the words: the
+            # look decides between good candidates, never rescues a wrong one
+            if verdict not in ("wrong", "weak"):
+                score = max(0, min(100, score - lp + lb))
+            if lp:
+                note += f" -{lp} look differs from neighbours (dist {c.get('look_dist')})"
+            if lb:
+                note += f" +{lb} same photographer as previous shot"
         reason = f'judged {judged}/100{note} vs "{(c.get("desc") or "")[:80]}"'
         entry_candidates.append({
             "id": c.get("id"), "source": c.get("source"), "desc": c.get("desc"),
             "duration": c.get("duration"), "query": c.get("matched_query"),
             "score": score, "verdict": verdict, "raw_score": raw, "reason": reason,
             "used_in": c.get("used_in") or [], "reuse_penalty": penalty,
+            "look_dist": c.get("look_dist"), "look_penalty": c.get("look_penalty", 0),
+            "same_author": bool(c.get("same_author")),
             "hits": c.get("hits") or 1, "queries": c.get("matched_queries") or ([via] if (via := c.get("matched_query")) else []),
         })
         if score > best_score:
@@ -1820,7 +1954,7 @@ def _pick_best(brief, pool, entry_candidates, signals=None, accept=0, diversity=
         batch = ranked[b * AUTOMATCH_JUDGE:(b + 1) * AUTOMATCH_JUDGE]
         if not batch:
             break
-        bbest, bscore, breason = _judge_batch(brief, batch, entry_candidates)
+        bbest, bscore, breason = _judge_batch(brief, batch, entry_candidates, diversity)
         if bscore > best_score:
             best, best_score, best_reason = bbest, bscore, breason
         if best_score >= accept:
@@ -2125,7 +2259,8 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
     entry["shots"] = []
     any_soft = False
     ai_used = False
-    used_elsewhere = used_assets_map(load_selections(), exclude_scene=scene["index"])
+    current_selections = load_selections()
+    used_elsewhere = used_assets_map(current_selections, exclude_scene=scene["index"])
     chosen_here = set()  # assets taken by earlier shots of THIS scene: never repeat within a scene
     # One (shot, asset_or_None, score_or_None, is_ai) per shot, in shot order --
     # kept aligned with `shots` so step3's shot-exact cut boundaries still line
@@ -2154,10 +2289,15 @@ def _automatch_shots(scene, entry, min_quality, threshold, soft_floor=None):
         signals = _prerank_signals(scene, shot=shot)
         shot_entry["queries_tried"] = queries
         min_duration = max(1, int(shot.get("duration", 0) + 0.999))
+        prev_asset = next((a for (_s, a, _sc, _ai) in reversed(outcomes) if a), None)
         best, score, reason, _relaxed, heuristic = _match_with_repair(
             _shot_brief(scene, shot), queries, min_duration, min_quality,
             entry["candidates"], entry["failure_reasons"], accept, signals=signals,
-            diversity=Diversity(used_elsewhere, scene["index"], chosen_here),
+            diversity=Diversity(
+                used_elsewhere, scene["index"], chosen_here,
+                neighbours=neighbour_refs(scene["index"], current_selections, prev_asset),
+                continuity=shot.get("continuity") or "new",
+            ),
         )
         shot_entry["score"] = score if score >= 0 else None
         if heuristic:
@@ -2303,7 +2443,11 @@ def automatch_scene(scene, min_quality=None, threshold=AUTOMATCH_THRESHOLD, soft
     best, best_score, best_reason, duration_relaxed, heuristic = _match_with_repair(
         _scene_brief(scene), queries, min_duration, min_quality,
         entry["candidates"], entry["failure_reasons"], accept, signals=signals,
-        diversity=Diversity(used_assets_map(load_selections(), exclude_scene=scene["index"]), scene["index"]),
+        diversity=Diversity(
+            used_assets_map(sels := load_selections(), exclude_scene=scene["index"]), scene["index"],
+            neighbours=neighbour_refs(scene["index"], sels),
+            continuity=(scene.get("shot_context") or {}).get("continuity") or "new",
+        ),
     )
     entry["candidates"].sort(key=lambda c: -c["score"])
     entry["score"] = best_score if best_score >= 0 else None
@@ -3109,6 +3253,36 @@ class Handler(BaseHTTPRequestHandler):
                 reviewed = sum(1 for v in selections.values() if v.get("reviewed"))
             return self._send_json({"ok": True, "reviewed": reviewed, "total": len(STATE["scenes"])})
 
+        if route == "/api/look-match":
+            # How well each candidate's look (brightness, contrast, colour,
+            # tint) matches the clips around this slot. `prev` overrides the
+            # previous neighbour (the last clip already in a multi-pick tray).
+            try:
+                index = int(body.get("index"))
+            except (TypeError, ValueError):
+                return self._send_json({"error": "bad index"}, status=400)
+            items = [x for x in (body.get("items") or []) if isinstance(x, dict)][:60]
+            prev = body.get("prev") if isinstance(body.get("prev"), dict) else None
+            refs = neighbour_refs(index, load_selections(), prev)
+            from common import look_distance
+            with ThreadPoolExecutor(max_workers=6) as ex:
+                n_looks = list(ex.map(lambda r: thumb_look(r["thumb"]), refs))
+                c_looks = list(ex.map(lambda it: thumb_look(it.get("thumb")), items))
+            pairs = [(r, l) for r, l in zip(refs, n_looks) if l]
+            prev_author = next((r["author"] for r in refs if r["weight"] >= 1.0 and r["author"]), "")
+            scores = []
+            for it, cl in zip(items, c_looks):
+                ds = [(look_distance(cl, nl), r["weight"]) for r, nl in pairs]
+                ds = [(d, w) for d, w in ds if d is not None]
+                dist = round(sum(d * w for d, w in ds) / sum(w for _d, w in ds), 2) if ds else None
+                same = bool(prev_author) and (it.get("author") or "").strip().lower() == prev_author
+                scores.append({"dist": dist, "same_author": same})
+            return self._send_json({
+                "neighbours": [{"label": r["label"], "thumb": r["thumb"] if r["thumb"].startswith("http") else None}
+                               for r, _l in pairs],
+                "scores": scores,
+            })
+
         if route == "/api/git-sync":
             try:
                 result = git_sync()
@@ -3338,6 +3512,14 @@ PAGE_HTML = r"""<!doctype html>
 
   #grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
   .card .usedtag { color:var(--accent); font-weight:600; }
+  .card .lookbadge { display:block; font-size:10.5px; margin-top:2px; font-weight:600; }
+  .card .lookbadge.good { color:#3ecf8e; }
+  .card .lookbadge.ok { color:var(--dim); }
+  .card .lookbadge.bad { color:#ff9c6b; }
+  #lookstrip { display:none; align-items:center; gap:10px; flex-wrap:wrap; margin:6px 0 10px;
+               font-size:12px; color:var(--dim); }
+  #lookstrip img { width:96px; height:54px; object-fit:cover; border-radius:6px; border:1px solid var(--line); }
+  #lookstrip .nb { display:flex; align-items:center; gap:6px; }
   .card .via { display:block; color:var(--dim); font-size:10.5px; margin-top:2px; }
   .card .via b { color:var(--text); font-weight:600; }
   .card.reused { opacity:.8; }
@@ -3591,6 +3773,7 @@ PAGE_HTML = r"""<!doctype html>
       <span id="rate"></span>
     </div>
     <div id="status"></div>
+    <div id="lookstrip"></div>
     <div id="grid"></div>
     <div id="pager">
       <span id="pageinfo" class="meta"></span>
@@ -4591,6 +4774,49 @@ function renderGrid() {
       else if (bulkMode) chooseRange(v);
       else choose(v);
     };
+  });
+  lookMatch();
+}
+
+// Visual continuity hint: how well each result's look (brightness, contrast,
+// colour, warm/cool tint) matches the clips around this slot -- the previous
+// shot (or the last clip already in the multi-pick tray) and the next scene.
+// Measured server-side from the thumbnails; stale answers are dropped.
+let lookToken = 0;
+async function lookMatch() {
+  const strip = $('lookstrip');
+  const s = scenes[cur];
+  if (!s || !results.length || source === 'local') { strip.style.display = 'none'; return; }
+  const token = ++lookToken;
+  const body = {
+    index: s.index,
+    items: results.map(v => ({ thumb: v.thumb || v.preview_url || '', author: v.author || '' })),
+  };
+  if (multiMode && multiPicks.length) {
+    const last = multiPicks[multiPicks.length - 1];
+    body.prev = { thumb: last.thumb || last.preview_url || '', author: last.author || '' };
+  }
+  let d;
+  try {
+    d = await (await fetch('/api/look-match', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+                                              body: JSON.stringify(body) })).json();
+  } catch (e) { return; }
+  if (token !== lookToken || !d || d.error) return;
+  const nbs = (d.neighbours || []).filter(n => n.thumb);
+  if (!nbs.length) { strip.style.display = 'none'; return; }
+  strip.innerHTML = '<span>Match the look of the clips around this one:</span>' +
+    nbs.map(n => `<span class="nb"><img src="${esc(n.thumb)}" loading="lazy"><span>${esc(n.label)}</span></span>`).join('');
+  strip.style.display = 'flex';
+  $('grid').querySelectorAll('.card').forEach(card => {
+    const sc = (d.scores || [])[+card.dataset.i];
+    if (!sc || sc.dist == null) return;
+    const info = card.querySelector('.info');
+    if (!info || info.querySelector('.lookbadge')) return;
+    const cls = sc.dist < 0.35 ? 'good' : (sc.dist < 0.7 ? 'ok' : 'bad');
+    const txt = cls === 'good' ? '&#9679; look matches' : (cls === 'ok' ? '&#9679; look is close' : '&#9679; look clashes');
+    info.insertAdjacentHTML('beforeend',
+      `<span class="lookbadge ${cls}" title="Difference in brightness/contrast/colour/tint from the neighbouring clips: ${sc.dist} (0 = same look, 1 = clash). Step 3 also evens out the look when rendering.">${txt}` +
+      (sc.same_author ? ' &middot; same photographer' : '') + `</span>`);
   });
 }
 

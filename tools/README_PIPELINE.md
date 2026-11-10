@@ -188,6 +188,25 @@ each scene/shot it:
    single broad query returned. Shown to the judge as `via "…" +4 more
    phrasings` and kept in `sync_report.json` per candidate.
 
+10. **Shots that look like one film.** Each candidate's thumbnail is
+    measured (brightness, contrast, saturation, warm/cool tint, black-and-
+    white) and compared with the clips of the neighbouring shots. After
+    judging, a clashing look costs up to 14 points when the narration
+    continues the same subject and up to 6 when it moves on, and a clip by
+    the same photographer as the previous shot gets +6 on a "continue" shot
+    (same shoot, same camera and grade). It only decides between clips that
+    fit the words -- a "weak"/"wrong" clip is never rescued by its colours.
+    In the picker, a strip above the results shows the clips around the
+    current slot, and every result is badged **look matches / look is
+    close / look clashes** (and "same photographer").
+
+Step 3 then **harmonises the look** of the finished video: every clip is
+measured once and gently pulled toward the video's own median look (eq +
+colorbalance; capped, so a dark or warm shot keeps its mood; black-and-white
+is never recoloured). Measured on a 7-shot test: the average look difference
+at a cut went from 0.67 to 0.42, the worst from 0.99 to 0.59. Each clip's
+grade is listed in `render_report.json`; `--no-match-look` turns it off.
+
 Auto-selects above the threshold (60 by default); multi-shot scenes are
 matched shot-by-shot into a multi-clip pick with shot-exact timing.
 Anything below threshold is left for you with reasons — unless you tick

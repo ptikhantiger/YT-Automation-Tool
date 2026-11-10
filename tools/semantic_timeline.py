@@ -803,6 +803,7 @@ def _finalize_shots(scenes):
             "scene_location": (scene.get("semantic") or {}).get("location") or "",
             "previous_visual": (prev_sh.get("visual") or prev_sh.get("text") or "")[:200] if prev_sh else "",
             "next_visual": (next_sh.get("visual") or next_sh.get("text") or "")[:200] if next_sh else "",
+            "continuity": sh.get("continuity") or "new",
         }
     for scene in scenes:
         shots = scene.get("shots") or []

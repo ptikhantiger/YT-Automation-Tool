@@ -1592,3 +1592,93 @@ def scene_time_stub(seconds):
 
 def scene_image_filename(index, start_seconds, ext="png"):
     return f"{index:03d}_{scene_time_stub(start_seconds)}.{ext}"
+
+
+# ---------------------------------------------------------------------------
+# Clip "look": the handful of numbers that decide whether two stock clips
+# read as the same film when cut together -- brightness, contrast, colour
+# saturation, warm/cool tint, and whether it's black-and-white at all.
+# Measured on a small downscaled frame (a thumbnail in step 2, an extracted
+# frame in step 3), so it costs milliseconds.
+
+def image_look(img):
+    """{lum, contrast, sat, warmth, mono} for a PIL image. lum/contrast/sat
+    are 0..1, warmth is mean(R-B) in -1..1 (positive = warm/orange, negative
+    = cool/blue); mono marks an effectively black-and-white image."""
+    from PIL import ImageStat
+
+    im = img.convert("RGB")
+    im.thumbnail((96, 96))
+    r, g, b = im.split()
+    lum_img = im.convert("L")
+    st = ImageStat.Stat(lum_img)
+    lum = st.mean[0] / 255.0
+    contrast = st.stddev[0] / 255.0
+    sat = ImageStat.Stat(im.convert("HSV").split()[1]).mean[0] / 255.0
+    warmth = (ImageStat.Stat(r).mean[0] - ImageStat.Stat(b).mean[0]) / 255.0
+    return {
+        "lum": round(lum, 4),
+        "contrast": round(contrast, 4),
+        "sat": round(sat, 4),
+        "warmth": round(warmth, 4),
+        "mono": sat < 0.04,
+    }
+
+
+def look_distance(a, b):
+    """0 (same look) .. 1 (clash) between two image_look() dicts.
+
+    Scales are calibrated on real stock thumbnails (75 Pexels/Pixabay
+    results, 2026-11): the 10th-90th percentile spread is ~0.30 in
+    brightness, ~0.15 in contrast, ~0.40 in saturation and ~0.30 in tint, so
+    two random clips land around 0.5, clips from the same shoot well under
+    0.3, and a real clash (dawn blue next to noon orange) near 1. Colour next
+    to true black-and-white adds a fixed 0.3."""
+    if not a or not b:
+        return None
+    d = (
+        ((a["lum"] - b["lum"]) / 0.30) ** 2
+        + ((a["contrast"] - b["contrast"]) / 0.15) ** 2
+        + ((a["sat"] - b["sat"]) / 0.35) ** 2
+        + ((a["warmth"] - b["warmth"]) / 0.25) ** 2
+    ) ** 0.5 / 2.0
+    if bool(a.get("mono")) != bool(b.get("mono")):
+        d += 0.3
+    return round(min(1.0, d), 3)
+
+
+def look_grade(look, target, strength=0.6):
+    """ffmpeg filter (or "") that pulls a clip's look part-way toward the
+    video's target look -- a gentle harmonising grade, not a restyle: every
+    correction is capped so a deliberately dark or warm shot keeps its mood.
+    Black-and-white sources are never recoloured."""
+    if not look or not target:
+        return ""
+    bright = max(-0.10, min(0.10, strength * (target["lum"] - look["lum"])))
+    contrast = max(0.90, min(1.15, (max(target["contrast"], 0.02) / max(look["contrast"], 0.02)) ** (0.5 * strength)))
+    sat = 1.0
+    tint = 0.0
+    if not look.get("mono") and not target.get("mono"):
+        sat = max(0.80, min(1.25, ((target["sat"] + 0.02) / (look["sat"] + 0.02)) ** strength))
+        tint = max(-0.08, min(0.08, strength * (target["warmth"] - look["warmth"])))
+    parts = []
+    if abs(bright) > 0.01 or abs(contrast - 1) > 0.02 or abs(sat - 1) > 0.03:
+        parts.append(f"eq=brightness={bright:.3f}:contrast={contrast:.3f}:saturation={sat:.3f}")
+    if abs(tint) > 0.01:
+        # midtone red/blue balance: +tint warms, -tint cools
+        parts.append(f"colorbalance=rm={tint:.3f}:bm={-tint:.3f}")
+    return ",".join(parts)
+
+
+def median_look(looks):
+    """Per-feature median of a list of looks -- the video's own centre of
+    gravity, so harmonising never imposes an outside style."""
+    looks = [l for l in looks if l]
+    if not looks:
+        return None
+    out = {}
+    for k in ("lum", "contrast", "sat", "warmth"):
+        vals = sorted(l[k] for l in looks)
+        out[k] = vals[len(vals) // 2]
+    out["mono"] = sum(1 for l in looks if l.get("mono")) > len(looks) / 2
+    return out
