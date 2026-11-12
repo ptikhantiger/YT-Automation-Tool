@@ -5,6 +5,8 @@ This is the day-to-day operator guide for the cloud setup:
 - **GitHub Codespaces** runs the app (dashboard, script writing, voice, clip picking).
 - **GitHub Actions** renders the video (`.github/workflows/render.yml`).
 - Your laptop (or phone) is only a browser.
+- **Fully automatic** (script in, scheduled YouTube video out): see
+  [section 11](#11-fully-automatic-video--youtube-upload-auto).
 
 Repo: <https://github.com/ptikhantiger/YT-Automation-Tool>
 Codespaces: <https://github.com/codespaces>
@@ -494,3 +496,77 @@ the **Review picked clips** page.
 | Run Step 1 by hand | `cd tools && python step1_audio_and_captions.py en/X --no-chain` |
 | Run Step 2 by hand | `cd tools && python step2_pick_clips.py en/X --no-browser` |
 | Check ffmpeg | `ffmpeg -version \| head -1` |
+
+---
+
+## 11. Fully automatic video + YouTube upload (`auto:`)
+
+`.github/workflows/auto.yml` does everything in the cloud: script → voice +
+captions → auto-matched clips → render → **private** upload to the channel
+(EXTREME EARTH LIFE), scheduled to go public at your time. Nothing needs to be
+open. Works from a phone.
+
+### Make a video
+
+1. github.com → repo → **Add file → Create new file**
+2. Name: `projects/en/<name>/script.txt` (no spaces in `<name>`), paste the narration.
+   *Or* `projects/en/<name>/source.txt` with a YouTube link on line 1
+   (add a 2nd line `documentary` for that tone; needs the `YT_COOKIES` secret).
+3. Commit message, exactly:
+
+   | Commit message | Result |
+   |---|---|
+   | `auto: en/<name> 2026-11-15 18:00` | private, goes public at that time (Karachi time) |
+   | `auto: en/<name>` | private, no schedule |
+
+   Or **Actions → Auto video → Run workflow** (same, plus strictness and "upload" switch).
+4. Wait. Rough times on this private repo: 1-min video ≈ 15 min, 27-min video ≈ 4–5 h.
+5. YouTube Studio → the video is there, private + scheduled. Add the thumbnail,
+   check the title/description, **watch it once** (no human checked the clips).
+
+The run's **Summary** page shows the YouTube link, the Studio link, the Release
+with the .mp4, and `auto_pick_report.json`.
+
+### What it writes back to the repo
+
+| File | What |
+|---|---|
+| `selections.json`, `sync_report.json` | the clips it picked and why (commit `auto-picked: …`) |
+| `auto_pick_report.json` | weak / empty / AI-filled counts, `needs_review` |
+| `youtube.json` | title, description, tags (Gemini wrote them; edit and re-upload if you like) |
+| `youtube_upload.json` | video id + links (commit `uploaded: …`) — stops a second upload of the same project |
+
+To fix a bad clip: open the project in the codespace picker, change it, then
+`render: en/<name>` renders again (Release only — it does not re-upload).
+To upload again after fixing: delete the old video in Studio, delete
+`youtube_upload.json`, then on your laptop
+`python tools/youtube_upload.py projects/en/<name> --publish-at "2026-11-15 18:00"`.
+
+### "Not scheduled — please review"
+
+If more than 25% of the scenes are weak matches, some scene has no clip, or
+Gemini's quota ran out, the video is uploaded **private without the schedule**
+and the run shows a yellow warning with the reason. Look at it in Studio and
+set the schedule there (Visibility → Schedule).
+
+### Problems
+
+| Symptom | Fix |
+|---|---|
+| `GEMINI_API_KEY is not set` / `PEXELS_API_KEY is not set` | Repo → Settings → Secrets and variables → **Actions** (not Codespaces) → add it |
+| `invalid_grant` at upload | The YouTube link expired: app still in **Testing** (expires after 7 days), or access removed. On the laptop: `python tools/youtube_auth.py`, then update `YT_REFRESH_TOKEN` |
+| `quotaExceeded` | ~6 uploads per day max; wait until after midnight Pacific (≈ 1 pm Karachi) |
+| Video stays private after the schedule time | API project not audited yet — <https://support.google.com/youtube/contact/yt_api_form> (project 769632554506). Until then publish by hand in Studio |
+| Upload skipped, "not set" warning | `YT_CLIENT_ID` / `YT_CLIENT_SECRET` / `YT_REFRESH_TOKEN` missing in Actions secrets; the video is in Releases |
+| `publish time must look like…` | Use `YYYY-MM-DD HH:MM`, e.g. `2026-11-15 18:00` |
+| Auto-match ran out of time (6 h) | Very long script; re-run **Auto video** for the same project — finished scenes are kept |
+
+### One-time setup (already done, for reference)
+
+Google Cloud project **YT Automation** (`yt-automation-514509`) → YouTube Data
+API v3 enabled → Google Auth Platform: External, scopes `youtube.upload` +
+`youtube.readonly`, Desktop OAuth client → `python tools/youtube_auth.py` on the
+laptop (writes git-ignored `tools/youtube_token.json`, prints the 3 `YT_*`
+values) → added to Actions secrets. To unlink: <https://myaccount.google.com/permissions>.
+To change the timezone: repo Settings → Secrets and variables → Actions →
+**Variables** → `YT_TIMEZONE` (e.g. `Asia/Dubai`).
