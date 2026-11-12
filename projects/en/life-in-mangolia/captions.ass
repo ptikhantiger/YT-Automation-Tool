@@ -1,0 +1,566 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:01.72,Default,,0,0,0,,LIFE IN MONGOLIA
+Dialogue: 0,0:00:01.72,0:00:04.28,Default,,0,0,0,,How People Live in the World's Most Extreme
+Dialogue: 0,0:00:04.28,0:00:07.71,Default,,0,0,0,,Land of Nomads Imagine living in a country
+Dialogue: 0,0:00:07.71,0:00:10.21,Default,,0,0,0,,where there are more horses than people
+Dialogue: 0,0:00:10.21,0:00:12.68,Default,,0,0,0,,Where winter temperatures can fall far below
+Dialogue: 0,0:00:12.68,0:00:13.68,Default,,0,0,0,,freezing
+Dialogue: 0,0:00:13.68,0:00:16.49,Default,,0,0,0,,Where a family can live inside a round felt
+Dialogue: 0,0:00:16.49,0:00:19.56,Default,,0,0,0,,tent called a ger surrounded by nothing but
+Dialogue: 0,0:00:19.56,0:00:22.43,Default,,0,0,0,,grassland stretching toward the horizon
+Dialogue: 0,0:00:22.43,0:00:25.14,Default,,0,0,0,,Where the nearest neighbor might be many kilometers
+Dialogue: 0,0:00:25.14,0:00:26.00,Default,,0,0,0,,away
+Dialogue: 0,0:00:26.00,0:00:28.43,Default,,0,0,0,,And where surviving the winter is not just
+Dialogue: 0,0:00:28.43,0:00:29.46,Default,,0,0,0,,difficult
+Dialogue: 0,0:00:29.46,0:00:31.83,Default,,0,0,0,,It can determine whether an entire family has
+Dialogue: 0,0:00:31.83,0:00:32.96,Default,,0,0,0,,a future
+Dialogue: 0,0:00:32.96,0:00:34.33,Default,,0,0,0,,This is Mongolia
+Dialogue: 0,0:00:34.33,0:00:37.69,Default,,0,0,0,,A vast land between Russia and China famous
+Dialogue: 0,0:00:37.69,0:00:41.10,Default,,0,0,0,,for endless grasslands powerful horses the
+Dialogue: 0,0:00:41.10,0:00:44.14,Default,,0,0,0,,Gobi Desert and one of the last great nomadic
+Dialogue: 0,0:00:44.14,0:00:45.74,Default,,0,0,0,,cultures on Earth
+Dialogue: 0,0:00:45.74,0:00:47.62,Default,,0,0,0,,But Mongolia is changing
+Dialogue: 0,0:00:47.62,0:00:51.42,Default,,0,0,0,,Today modern apartment towers rise above Ulaanbaatar
+Dialogue: 0,0:00:51.42,0:00:54.01,Default,,0,0,0,,while thousands of families still live with
+Dialogue: 0,0:00:54.01,0:00:56.14,Default,,0,0,0,,animals on open pasture
+Dialogue: 0,0:00:56.14,0:00:58.89,Default,,0,0,0,,Young people use smartphones and social media
+Dialogue: 0,0:00:58.89,0:01:01.32,Default,,0,0,0,,while their parents continue traditions that
+Dialogue: 0,0:01:01.32,0:01:03.81,Default,,0,0,0,,have survived for generations
+Dialogue: 0,0:01:03.81,0:01:06.81,Default,,0,0,0,,And every year Mongolian families face one
+Dialogue: 0,0:01:06.81,0:01:09.11,Default,,0,0,0,,of the harshest climates on Earth
+Dialogue: 0,0:01:09.11,0:01:12.26,Default,,0,0,0,,So what is everyday life really like in Mongolia
+Dialogue: 0,0:01:12.26,0:01:15.00,Default,,0,0,0,,How do people survive the freezing winters
+Dialogue: 0,0:01:15.00,0:01:16.12,Default,,0,0,0,,What do they eat
+Dialogue: 0,0:01:16.12,0:01:17.71,Default,,0,0,0,,How do children grow up
+Dialogue: 0,0:01:17.71,0:01:19.71,Default,,0,0,0,,Why are horses so important
+Dialogue: 0,0:01:19.71,0:01:22.33,Default,,0,0,0,,And why do some Mongolians still choose a nomadic
+Dialogue: 0,0:01:22.33,0:01:25.12,Default,,0,0,0,,life when modern cities are only a few hours
+Dialogue: 0,0:01:25.12,0:01:25.99,Default,,0,0,0,,away
+Dialogue: 0,0:01:25.99,0:01:28.79,Default,,0,0,0,,This is the story of life in Mongolia
+Dialogue: 0,0:01:28.79,0:01:30.76,Default,,0,0,0,,THE LAND OF THE BLUE SKY
+Dialogue: 0,0:01:30.76,0:01:32.86,Default,,0,0,0,,Mongolia is enormous
+Dialogue: 0,0:01:32.86,0:01:35.24,Default,,0,0,0,,It is one of the world's largest landlocked
+Dialogue: 0,0:01:35.24,0:01:38.38,Default,,0,0,0,,countries yet only a few million people live
+Dialogue: 0,0:01:38.38,0:01:40.71,Default,,0,0,0,,across this huge territory
+Dialogue: 0,0:01:40.71,0:01:43.57,Default,,0,0,0,,Much of the country is covered by open steppe
+Dialogue: 0,0:01:43.57,0:01:46.38,Default,,0,0,0,,mountains dry valleys and desert
+Dialogue: 0,0:01:46.38,0:01:48.31,Default,,0,0,0,,There are no large oceans here
+Dialogue: 0,0:01:48.31,0:01:50.06,Default,,0,0,0,,No tropical forests
+Dialogue: 0,0:01:50.06,0:01:52.08,Default,,0,0,0,,No dense network of cities
+Dialogue: 0,0:01:52.08,0:01:56.03,Default,,0,0,0,,Instead the landscape seems to continue forever
+Dialogue: 0,0:01:56.03,0:01:58.67,Default,,0,0,0,,You can drive for hours and see almost nothing
+Dialogue: 0,0:01:58.67,0:02:02.54,Default,,0,0,0,,except grass rocks mountains and the occasional
+Dialogue: 0,0:02:02.54,0:02:04.00,Default,,0,0,0,,herd of animals
+Dialogue: 0,0:02:04.00,0:02:07.46,Default,,0,0,0,,This enormous space has shaped Mongolian culture
+Dialogue: 0,0:02:07.46,0:02:10.10,Default,,0,0,0,,For centuries people learned how to move with
+Dialogue: 0,0:02:10.10,0:02:12.50,Default,,0,0,0,,the seasons instead of trying to completely
+Dialogue: 0,0:02:12.50,0:02:13.99,Default,,0,0,0,,control the land
+Dialogue: 0,0:02:13.99,0:02:16.81,Default,,0,0,0,,The result was one of the world's great pastoral
+Dialogue: 0,0:02:16.81,0:02:17.94,Default,,0,0,0,,cultures
+Dialogue: 0,0:02:17.94,0:02:19.46,Default,,0,0,0,,THE NOMADIC LIFE
+Dialogue: 0,0:02:19.46,0:02:22.32,Default,,0,0,0,,For a Mongolian herder home does not always
+Dialogue: 0,0:02:22.32,0:02:24.49,Default,,0,0,0,,mean one permanent address
+Dialogue: 0,0:02:24.49,0:02:27.47,Default,,0,0,0,,A family may move between seasonal camps depending
+Dialogue: 0,0:02:27.47,0:02:30.01,Default,,0,0,0,,on weather pasture and water
+Dialogue: 0,0:02:30.01,0:02:32.07,Default,,0,0,0,,Their home is often a ger
+Dialogue: 0,0:02:32.07,0:02:34.74,Default,,0,0,0,,From the outside a ger looks simple
+Dialogue: 0,0:02:34.74,0:02:37.76,Default,,0,0,0,,It is circular portable and covered with layers
+Dialogue: 0,0:02:37.76,0:02:38.78,Default,,0,0,0,,of felt
+Dialogue: 0,0:02:38.78,0:02:42.04,Default,,0,0,0,,But inside it can be surprisingly comfortable
+Dialogue: 0,0:02:42.04,0:02:44.46,Default,,0,0,0,,There may be beds around the walls a small
+Dialogue: 0,0:02:44.46,0:02:47.90,Default,,0,0,0,,stove in the center storage cabinets rugs and
+Dialogue: 0,0:02:47.90,0:02:49.54,Default,,0,0,0,,family belongings
+Dialogue: 0,0:02:49.54,0:02:51.96,Default,,0,0,0,,The circular design is practical
+Dialogue: 0,0:02:51.96,0:02:54.96,Default,,0,0,0,,The ger can be assembled and taken apart relatively
+Dialogue: 0,0:02:54.96,0:02:57.90,Default,,0,0,0,,quickly allowing families to move with their
+Dialogue: 0,0:02:57.90,0:02:59.06,Default,,0,0,0,,animals
+Dialogue: 0,0:02:59.06,0:03:01.57,Default,,0,0,0,,For a nomadic family the ger is more than a
+Dialogue: 0,0:03:01.57,0:03:02.64,Default,,0,0,0,,house
+Dialogue: 0,0:03:02.64,0:03:04.82,Default,,0,0,0,,It is the center of family life
+Dialogue: 0,0:03:04.82,0:03:06.51,Default,,0,0,0,,It is where children sleep
+Dialogue: 0,0:03:06.51,0:03:08.19,Default,,0,0,0,,Where food is prepared
+Dialogue: 0,0:03:08.19,0:03:09.74,Default,,0,0,0,,Where guests are welcomed
+Dialogue: 0,0:03:09.74,0:03:11.33,Default,,0,0,0,,Where stories are told
+Dialogue: 0,0:03:11.33,0:03:14.12,Default,,0,0,0,,And where families try to stay warm when temperatures
+Dialogue: 0,0:03:14.12,0:03:16.64,Default,,0,0,0,,outside become dangerously low
+Dialogue: 0,0:03:16.64,0:03:18.36,Default,,0,0,0,,THE ANIMALS ARE EVERYTHING
+Dialogue: 0,0:03:18.36,0:03:22.10,Default,,0,0,0,,Mongolian herders depend heavily on their animals
+Dialogue: 0,0:03:22.10,0:03:22.88,Default,,0,0,0,,Sheep
+Dialogue: 0,0:03:22.88,0:03:23.78,Default,,0,0,0,,Goats
+Dialogue: 0,0:03:23.78,0:03:24.62,Default,,0,0,0,,Cattle
+Dialogue: 0,0:03:24.62,0:03:25.60,Default,,0,0,0,,Horses
+Dialogue: 0,0:03:25.60,0:03:26.74,Default,,0,0,0,,And camels
+Dialogue: 0,0:03:26.74,0:03:30.81,Default,,0,0,0,,These animals provide food transportation materials
+Dialogue: 0,0:03:30.81,0:03:31.93,Default,,0,0,0,,and income
+Dialogue: 0,0:03:31.93,0:03:34.24,Default,,0,0,0,,A herd is not simply property
+Dialogue: 0,0:03:34.24,0:03:37.38,Default,,0,0,0,,It can represent a family's entire livelihood
+Dialogue: 0,0:03:37.38,0:03:39.44,Default,,0,0,0,,Sheep provide meat and wool
+Dialogue: 0,0:03:39.44,0:03:41.15,Default,,0,0,0,,Goats provide cashmere
+Dialogue: 0,0:03:41.15,0:03:43.40,Default,,0,0,0,,Cattle provide milk and meat
+Dialogue: 0,0:03:43.40,0:03:46.36,Default,,0,0,0,,Horses provide transportation and milk
+Dialogue: 0,0:03:46.36,0:03:48.99,Default,,0,0,0,,Camels are especially valuable in the Gobi
+Dialogue: 0,0:03:48.99,0:03:49.86,Default,,0,0,0,,region
+Dialogue: 0,0:03:49.86,0:03:52.39,Default,,0,0,0,,This is why a Mongolian herder watches the
+Dialogue: 0,0:03:52.39,0:03:54.03,Default,,0,0,0,,weather so carefully
+Dialogue: 0,0:03:54.03,0:03:57.11,Default,,0,0,0,,One bad winter can destroy years of work
+Dialogue: 0,0:03:57.11,0:03:59.65,Default,,0,0,0,,And this brings us to one of Mongolia's greatest
+Dialogue: 0,0:03:59.65,0:04:00.86,Default,,0,0,0,,challenges
+Dialogue: 0,0:04:00.86,0:04:02.56,Default,,0,0,0,,THE MONGOLIAN WINTER
+Dialogue: 0,0:04:02.56,0:04:04.85,Default,,0,0,0,,Mongolian winters can be brutal
+Dialogue: 0,0:04:04.85,0:04:08.12,Default,,0,0,0,,Temperatures can fall dramatically below freezing
+Dialogue: 0,0:04:08.12,0:04:10.40,Default,,0,0,0,,Snow and ice can cover the grass
+Dialogue: 0,0:04:10.40,0:04:11.82,Default,,0,0,0,,Water can freeze
+Dialogue: 0,0:04:11.82,0:04:14.18,Default,,0,0,0,,Animals can struggle to find food
+Dialogue: 0,0:04:14.18,0:04:16.88,Default,,0,0,0,,And strong winds can make an already dangerous
+Dialogue: 0,0:04:16.88,0:04:19.00,Default,,0,0,0,,environment even harder
+Dialogue: 0,0:04:19.00,0:04:21.38,Default,,0,0,0,,But the most feared winter phenomenon has a
+Dialogue: 0,0:04:21.38,0:04:22.67,Default,,0,0,0,,special name
+Dialogue: 0,0:04:22.67,0:04:23.49,Default,,0,0,0,,Dzud
+Dialogue: 0,0:04:23.49,0:04:26.21,Default,,0,0,0,,A dzud occurs when extreme winter conditions
+Dialogue: 0,0:04:26.21,0:04:29.24,Default,,0,0,0,,make it difficult or impossible for livestock
+Dialogue: 0,0:04:29.24,0:04:30.85,Default,,0,0,0,,to reach enough food
+Dialogue: 0,0:04:30.85,0:04:32.81,Default,,0,0,0,,Sometimes there is deep snow
+Dialogue: 0,0:04:32.81,0:04:35.24,Default,,0,0,0,,Sometimes ice covers the grass
+Dialogue: 0,0:04:35.24,0:04:38.31,Default,,0,0,0,,Sometimes an extremely dry summer leaves animals
+Dialogue: 0,0:04:38.31,0:04:42.07,Default,,0,0,0,,with insufficient reserves before winter arrives
+Dialogue: 0,0:04:42.07,0:04:44.45,Default,,0,0,0,,And sometimes several bad conditions happen
+Dialogue: 0,0:04:44.45,0:04:45.45,Default,,0,0,0,,together
+Dialogue: 0,0:04:45.45,0:04:48.35,Default,,0,0,0,,For herders this can become a disaster
+Dialogue: 0,0:04:48.35,0:04:51.79,Default,,0,0,0,,An animal that cannot reach grass becomes weak
+Dialogue: 0,0:04:51.79,0:04:54.85,Default,,0,0,0,,A weak animal is more vulnerable to cold
+Dialogue: 0,0:04:54.85,0:04:57.76,Default,,0,0,0,,And when thousands of animals die the family's
+Dialogue: 0,0:04:57.76,0:05:00.07,Default,,0,0,0,,livelihood can disappear with them
+Dialogue: 0,0:05:00.07,0:05:03.00,Default,,0,0,0,,This is why Mongolian life is closely connected
+Dialogue: 0,0:05:03.00,0:05:04.14,Default,,0,0,0,,to nature
+Dialogue: 0,0:05:04.14,0:05:06.15,Default,,0,0,0,,The weather is not simply something people
+Dialogue: 0,0:05:06.15,0:05:07.76,Default,,0,0,0,,check on their phones
+Dialogue: 0,0:05:07.76,0:05:09.40,Default,,0,0,0,,It can decide everything
+Dialogue: 0,0:05:09.40,0:05:10.97,Default,,0,0,0,,CHILDREN OF THE STEPPE
+Dialogue: 0,0:05:10.97,0:05:14.46,Default,,0,0,0,,For children growing up in rural Mongolia childhood
+Dialogue: 0,0:05:14.46,0:05:16.78,Default,,0,0,0,,can look very different from childhood in a
+Dialogue: 0,0:05:16.78,0:05:18.47,Default,,0,0,0,,large Western city
+Dialogue: 0,0:05:18.47,0:05:20.68,Default,,0,0,0,,There may be no crowded neighborhood
+Dialogue: 0,0:05:20.68,0:05:22.43,Default,,0,0,0,,No shopping mall nearby
+Dialogue: 0,0:05:22.43,0:05:24.50,Default,,0,0,0,,No traffic outside the house
+Dialogue: 0,0:05:24.50,0:05:28.07,Default,,0,0,0,,Instead children grow up surrounded by animals
+Dialogue: 0,0:05:28.07,0:05:29.49,Default,,0,0,0,,and open land
+Dialogue: 0,0:05:29.49,0:05:31.72,Default,,0,0,0,,They learn practical skills early
+Dialogue: 0,0:05:31.72,0:05:33.17,Default,,0,0,0,,How to ride a horse
+Dialogue: 0,0:05:33.17,0:05:34.89,Default,,0,0,0,,How to care for animals
+Dialogue: 0,0:05:34.89,0:05:36.50,Default,,0,0,0,,How to help around the ger
+Dialogue: 0,0:05:36.50,0:05:38.14,Default,,0,0,0,,How to understand weather
+Dialogue: 0,0:05:38.14,0:05:40.86,Default,,0,0,0,,And how to move safely across the landscape
+Dialogue: 0,0:05:40.86,0:05:43.82,Default,,0,0,0,,A young Mongolian child can become comfortable
+Dialogue: 0,0:05:43.82,0:05:46.81,Default,,0,0,0,,on horseback at an age when children elsewhere
+Dialogue: 0,0:05:46.81,0:05:49.21,Default,,0,0,0,,are still learning to ride a bicycle
+Dialogue: 0,0:05:49.21,0:05:51.63,Default,,0,0,0,,But education is also important
+Dialogue: 0,0:05:51.63,0:05:54.22,Default,,0,0,0,,Many rural children attend schools in district
+Dialogue: 0,0:05:54.22,0:05:56.20,Default,,0,0,0,,centers or towns
+Dialogue: 0,0:05:56.20,0:05:58.43,Default,,0,0,0,,Some children from remote herding families
+Dialogue: 0,0:05:58.43,0:06:01.25,Default,,0,0,0,,live in school dormitories during the academic
+Dialogue: 0,0:06:01.25,0:06:04.33,Default,,0,0,0,,year and return home during holidays
+Dialogue: 0,0:06:04.33,0:06:06.54,Default,,0,0,0,,This creates a unique childhood
+Dialogue: 0,0:06:06.54,0:06:09.36,Default,,0,0,0,,Part of the year may be spent in a classroom
+Dialogue: 0,0:06:09.36,0:06:11.72,Default,,0,0,0,,Another part may be spent helping the family
+Dialogue: 0,0:06:11.72,0:06:12.83,Default,,0,0,0,,on the steppe
+Dialogue: 0,0:06:12.83,0:06:13.89,Default,,0,0,0,,THE HORSE
+Dialogue: 0,0:06:13.89,0:06:16.89,Default,,0,0,0,,You cannot understand Mongolia without understanding
+Dialogue: 0,0:06:16.89,0:06:18.03,Default,,0,0,0,,the horse
+Dialogue: 0,0:06:18.03,0:06:21.36,Default,,0,0,0,,Horses are deeply connected to Mongolian history
+Dialogue: 0,0:06:21.36,0:06:22.57,Default,,0,0,0,,and identity
+Dialogue: 0,0:06:22.57,0:06:25.54,Default,,0,0,0,,The horse was essential to the Mongol Empire
+Dialogue: 0,0:06:25.54,0:06:27.60,Default,,0,0,0,,and to life across the steppe
+Dialogue: 0,0:06:27.60,0:06:30.70,Default,,0,0,0,,Even today horses remain important in rural
+Dialogue: 0,0:06:30.70,0:06:31.93,Default,,0,0,0,,communities
+Dialogue: 0,0:06:31.93,0:06:33.51,Default,,0,0,0,,They are transportation
+Dialogue: 0,0:06:33.51,0:06:35.45,Default,,0,0,0,,They are part of celebrations
+Dialogue: 0,0:06:35.45,0:06:38.20,Default,,0,0,0,,They are used in traditional competitions
+Dialogue: 0,0:06:38.20,0:06:41.03,Default,,0,0,0,,And they remain a powerful symbol of Mongolian
+Dialogue: 0,0:06:41.03,0:06:42.06,Default,,0,0,0,,culture
+Dialogue: 0,0:06:42.06,0:06:44.86,Default,,0,0,0,,Mongolian horses are generally smaller and
+Dialogue: 0,0:06:44.86,0:06:48.13,Default,,0,0,0,,stockier than many modern racing breeds but
+Dialogue: 0,0:06:48.13,0:06:51.50,Default,,0,0,0,,they are extremely adapted to the harsh environment
+Dialogue: 0,0:06:51.50,0:06:53.70,Default,,0,0,0,,They can survive in conditions where other
+Dialogue: 0,0:06:53.70,0:06:55.60,Default,,0,0,0,,animals might struggle
+Dialogue: 0,0:06:55.60,0:06:57.74,Default,,0,0,0,,They can find food beneath snow
+Dialogue: 0,0:06:57.74,0:06:59.97,Default,,0,0,0,,And they can travel long distances across the
+Dialogue: 0,0:06:59.97,0:07:00.92,Default,,0,0,0,,steppe
+Dialogue: 0,0:07:00.92,0:07:03.63,Default,,0,0,0,,For Mongolian children learning to ride can
+Dialogue: 0,0:07:03.63,0:07:05.25,Default,,0,0,0,,be part of growing up
+Dialogue: 0,0:07:05.25,0:07:08.04,Default,,0,0,0,,And during the famous Naadam festival horse
+Dialogue: 0,0:07:08.04,0:07:11.20,Default,,0,0,0,,racing becomes one of the country's most spectacular
+Dialogue: 0,0:07:11.20,0:07:12.45,Default,,0,0,0,,traditions
+Dialogue: 0,0:07:12.45,0:07:13.25,Default,,0,0,0,,NAADAM
+Dialogue: 0,0:07:13.25,0:07:16.28,Default,,0,0,0,,Every summer Mongolia celebrates Naadam
+Dialogue: 0,0:07:16.28,0:07:18.83,Default,,0,0,0,,It is one of the country's most important national
+Dialogue: 0,0:07:18.83,0:07:20.04,Default,,0,0,0,,festivals
+Dialogue: 0,0:07:20.04,0:07:22.36,Default,,0,0,0,,The traditional competitions center around
+Dialogue: 0,0:07:22.36,0:07:24.29,Default,,0,0,0,,three major sports
+Dialogue: 0,0:07:24.29,0:07:25.36,Default,,0,0,0,,Horse racing
+Dialogue: 0,0:07:25.36,0:07:26.29,Default,,0,0,0,,Wrestling
+Dialogue: 0,0:07:26.29,0:07:27.38,Default,,0,0,0,,And archery
+Dialogue: 0,0:07:27.38,0:07:29.47,Default,,0,0,0,,But Naadam is more than sport
+Dialogue: 0,0:07:29.47,0:07:32.60,Default,,0,0,0,,It is a celebration of Mongolian identity
+Dialogue: 0,0:07:32.60,0:07:33.83,Default,,0,0,0,,Families gather
+Dialogue: 0,0:07:33.83,0:07:35.83,Default,,0,0,0,,People wear traditional clothing
+Dialogue: 0,0:07:35.83,0:07:37.49,Default,,0,0,0,,Music fills the air
+Dialogue: 0,0:07:37.49,0:07:40.83,Default,,0,0,0,,Horses race across enormous open spaces
+Dialogue: 0,0:07:40.83,0:07:44.68,Default,,0,0,0,,Wrestlers compete in colorful traditional costumes
+Dialogue: 0,0:07:44.68,0:07:47.65,Default,,0,0,0,,And archers demonstrate extraordinary skill
+Dialogue: 0,0:07:47.65,0:07:50.50,Default,,0,0,0,,For visitors Naadam can look like a spectacular
+Dialogue: 0,0:07:50.50,0:07:51.61,Default,,0,0,0,,festival
+Dialogue: 0,0:07:51.61,0:07:55.18,Default,,0,0,0,,For Mongolians it is connected to history culture
+Dialogue: 0,0:07:55.18,0:07:56.89,Default,,0,0,0,,and national identity
+Dialogue: 0,0:07:56.89,0:07:58.53,Default,,0,0,0,,FOOD IN MONGOLIA
+Dialogue: 0,0:07:58.53,0:08:01.88,Default,,0,0,0,,Mongolian food has been shaped by the environment
+Dialogue: 0,0:08:01.88,0:08:04.03,Default,,0,0,0,,When you live in a cold climate and depend
+Dialogue: 0,0:08:04.03,0:08:06.95,Default,,0,0,0,,heavily on livestock your traditional diet
+Dialogue: 0,0:08:06.95,0:08:10.28,Default,,0,0,0,,naturally becomes rich in meat and dairy
+Dialogue: 0,0:08:10.28,0:08:12.50,Default,,0,0,0,,Mutton is extremely important
+Dialogue: 0,0:08:12.50,0:08:15.13,Default,,0,0,0,,Beef and goat meat are also common
+Dialogue: 0,0:08:15.13,0:08:18.61,Default,,0,0,0,,In some regions horse meat is eaten as well
+Dialogue: 0,0:08:18.61,0:08:22.39,Default,,0,0,0,,Milk is transformed into many different products
+Dialogue: 0,0:08:22.39,0:08:23.58,Default,,0,0,0,,There is yogurt
+Dialogue: 0,0:08:23.58,0:08:24.49,Default,,0,0,0,,Cheese
+Dialogue: 0,0:08:24.49,0:08:25.32,Default,,0,0,0,,Cream
+Dialogue: 0,0:08:25.32,0:08:26.10,Default,,0,0,0,,Butter
+Dialogue: 0,0:08:26.10,0:08:28.04,Default,,0,0,0,,And fermented milk drinks
+Dialogue: 0,0:08:28.04,0:08:31.14,Default,,0,0,0,,One famous traditional drink is airag made
+Dialogue: 0,0:08:31.14,0:08:33.21,Default,,0,0,0,,from fermented mare's milk
+Dialogue: 0,0:08:33.21,0:08:35.65,Default,,0,0,0,,For someone unfamiliar with it the taste can
+Dialogue: 0,0:08:35.65,0:08:36.92,Default,,0,0,0,,be surprising
+Dialogue: 0,0:08:36.92,0:08:39.50,Default,,0,0,0,,But for Mongolians it is an important part
+Dialogue: 0,0:08:39.50,0:08:41.20,Default,,0,0,0,,of traditional culture
+Dialogue: 0,0:08:41.20,0:08:43.61,Default,,0,0,0,,Another popular food is buuz
+Dialogue: 0,0:08:43.61,0:08:46.25,Default,,0,0,0,,These are steamed dumplings filled with meat
+Dialogue: 0,0:08:46.25,0:08:48.67,Default,,0,0,0,,Families often prepare large quantities of
+Dialogue: 0,0:08:48.67,0:08:52.36,Default,,0,0,0,,them especially during celebrations and holidays
+Dialogue: 0,0:08:52.36,0:08:55.61,Default,,0,0,0,,There is also khuushuur a fried meat pastry
+Dialogue: 0,0:08:55.61,0:08:58.25,Default,,0,0,0,,that is particularly popular during Naadam
+Dialogue: 0,0:08:58.25,0:09:01.58,Default,,0,0,0,,Mongolian food may not always look complicated
+Dialogue: 0,0:09:01.58,0:09:04.25,Default,,0,0,0,,But it is designed for a harsh environment
+Dialogue: 0,0:09:04.25,0:09:05.81,Default,,0,0,0,,It provides energy
+Dialogue: 0,0:09:05.81,0:09:07.02,Default,,0,0,0,,It is filling
+Dialogue: 0,0:09:07.02,0:09:09.44,Default,,0,0,0,,And it uses ingredients that are available
+Dialogue: 0,0:09:09.44,0:09:11.11,Default,,0,0,0,,in the local landscape
+Dialogue: 0,0:09:11.11,0:09:12.44,Default,,0,0,0,,THE GOBI DESERT
+Dialogue: 0,0:09:12.44,0:09:13.91,Default,,0,0,0,,Then there is the Gobi
+Dialogue: 0,0:09:13.91,0:09:16.52,Default,,0,0,0,,When people hear the word Mongolia they often
+Dialogue: 0,0:09:16.52,0:09:18.88,Default,,0,0,0,,imagine endless grassland
+Dialogue: 0,0:09:18.88,0:09:21.72,Default,,0,0,0,,But Mongolia is also home to one of the world's
+Dialogue: 0,0:09:21.72,0:09:23.33,Default,,0,0,0,,great deserts
+Dialogue: 0,0:09:23.33,0:09:26.06,Default,,0,0,0,,The Gobi stretches across southern Mongolia
+Dialogue: 0,0:09:26.06,0:09:27.48,Default,,0,0,0,,and northern China
+Dialogue: 0,0:09:27.48,0:09:29.87,Default,,0,0,0,,It is not simply a sea of sand
+Dialogue: 0,0:09:29.87,0:09:32.73,Default,,0,0,0,,Large parts of the Gobi are covered by rock
+Dialogue: 0,0:09:32.73,0:09:35.81,Default,,0,0,0,,gravel dry plains and mountains
+Dialogue: 0,0:09:35.81,0:09:38.51,Default,,0,0,0,,The environment is extremely harsh
+Dialogue: 0,0:09:38.51,0:09:40.40,Default,,0,0,0,,Summers can be very hot
+Dialogue: 0,0:09:40.40,0:09:42.48,Default,,0,0,0,,Winters can be bitterly cold
+Dialogue: 0,0:09:42.48,0:09:44.08,Default,,0,0,0,,Water can be scarce
+Dialogue: 0,0:09:44.08,0:09:46.76,Default,,0,0,0,,Yet people have lived here for generations
+Dialogue: 0,0:09:46.76,0:09:50.36,Default,,0,0,0,,The Gobi is also home to remarkable wildlife
+Dialogue: 0,0:09:50.36,0:09:53.83,Default,,0,0,0,,including wild camels and other animals adapted
+Dialogue: 0,0:09:53.83,0:09:55.75,Default,,0,0,0,,to extreme conditions
+Dialogue: 0,0:09:55.75,0:09:58.38,Default,,0,0,0,,For the people living here the desert is not
+Dialogue: 0,0:09:58.38,0:09:59.84,Default,,0,0,0,,an empty place
+Dialogue: 0,0:09:59.84,0:10:00.88,Default,,0,0,0,,It is home
+Dialogue: 0,0:10:00.88,0:10:02.63,Default,,0,0,0,,LIFE IN ULAANBAATAR
+Dialogue: 0,0:10:02.63,0:10:05.31,Default,,0,0,0,,But Mongolia is not only nomadic camps and
+Dialogue: 0,0:10:05.31,0:10:06.45,Default,,0,0,0,,deserts
+Dialogue: 0,0:10:06.45,0:10:09.06,Default,,0,0,0,,Almost half of the country's population lives
+Dialogue: 0,0:10:09.06,0:10:12.44,Default,,0,0,0,,in and around Ulaanbaatar the capital
+Dialogue: 0,0:10:12.44,0:10:14.72,Default,,0,0,0,,The city is completely different from the open
+Dialogue: 0,0:10:14.72,0:10:15.62,Default,,0,0,0,,steppe
+Dialogue: 0,0:10:15.62,0:10:17.38,Default,,0,0,0,,There are apartment towers
+Dialogue: 0,0:10:17.38,0:10:18.68,Default,,0,0,0,,Universities
+Dialogue: 0,0:10:18.68,0:10:20.09,Default,,0,0,0,,Shopping centers
+Dialogue: 0,0:10:20.09,0:10:21.26,Default,,0,0,0,,Restaurants
+Dialogue: 0,0:10:21.26,0:10:22.18,Default,,0,0,0,,Traffic
+Dialogue: 0,0:10:22.18,0:10:23.13,Default,,0,0,0,,Schools
+Dialogue: 0,0:10:23.13,0:10:24.22,Default,,0,0,0,,Businesses
+Dialogue: 0,0:10:24.22,0:10:25.93,Default,,0,0,0,,Technology companies
+Dialogue: 0,0:10:25.93,0:10:28.75,Default,,0,0,0,,And young people dressed in modern fashion
+Dialogue: 0,0:10:28.75,0:10:31.12,Default,,0,0,0,,Walk through central Ulaanbaatar and you might
+Dialogue: 0,0:10:31.12,0:10:34.95,Default,,0,0,0,,see smartphones coffee shops and modern buildings
+Dialogue: 0,0:10:34.95,0:10:37.58,Default,,0,0,0,,But just outside the center another Mongolia
+Dialogue: 0,0:10:37.58,0:10:38.75,Default,,0,0,0,,appears
+Dialogue: 0,0:10:38.75,0:10:41.15,Default,,0,0,0,,Huge ger districts spread across the hills
+Dialogue: 0,0:10:41.15,0:10:42.58,Default,,0,0,0,,surrounding the city
+Dialogue: 0,0:10:42.58,0:10:45.18,Default,,0,0,0,,Many families live in gers because of housing
+Dialogue: 0,0:10:45.18,0:10:48.52,Default,,0,0,0,,costs and migration from rural areas
+Dialogue: 0,0:10:48.52,0:10:51.27,Default,,0,0,0,,This creates an unusual contrast
+Dialogue: 0,0:10:51.27,0:10:53.86,Default,,0,0,0,,Modern apartment buildings in the center
+Dialogue: 0,0:10:53.86,0:10:56.31,Default,,0,0,0,,Traditional gers on the outskirts
+Dialogue: 0,0:10:56.31,0:10:59.62,Default,,0,0,0,,The old Mongolia and the new Mongolia existing
+Dialogue: 0,0:10:59.62,0:11:01.48,Default,,0,0,0,,almost side by side
+Dialogue: 0,0:11:01.48,0:11:02.79,Default,,0,0,0,,THE AIR PROBLEM
+Dialogue: 0,0:11:02.79,0:11:05.86,Default,,0,0,0,,Ulaanbaatar also faces one of its most serious
+Dialogue: 0,0:11:05.86,0:11:07.66,Default,,0,0,0,,problems during winter
+Dialogue: 0,0:11:07.66,0:11:08.87,Default,,0,0,0,,Air pollution
+Dialogue: 0,0:11:08.87,0:11:11.69,Default,,0,0,0,,The city is located in a valley and during
+Dialogue: 0,0:11:11.69,0:11:14.69,Default,,0,0,0,,the coldest months smoke can become trapped
+Dialogue: 0,0:11:14.69,0:11:15.80,Default,,0,0,0,,over the city
+Dialogue: 0,0:11:15.80,0:11:18.59,Default,,0,0,0,,Many households in ger districts rely on heating
+Dialogue: 0,0:11:18.59,0:11:21.75,Default,,0,0,0,,systems that can produce significant smoke
+Dialogue: 0,0:11:21.75,0:11:24.75,Default,,0,0,0,,Combined with traffic and other sources winter
+Dialogue: 0,0:11:24.75,0:11:27.13,Default,,0,0,0,,air pollution can become severe
+Dialogue: 0,0:11:27.13,0:11:29.37,Default,,0,0,0,,For families with young children this is a
+Dialogue: 0,0:11:29.37,0:11:30.83,Default,,0,0,0,,major concern
+Dialogue: 0,0:11:30.83,0:11:33.34,Default,,0,0,0,,So while Mongolia has some of the cleanest
+Dialogue: 0,0:11:33.34,0:11:36.30,Default,,0,0,0,,and emptiest landscapes on Earth outside its
+Dialogue: 0,0:11:36.30,0:11:40.11,Default,,0,0,0,,cities its capital faces the opposite problem
+Dialogue: 0,0:11:40.11,0:11:41.29,Default,,0,0,0,,Too many people
+Dialogue: 0,0:11:41.29,0:11:42.58,Default,,0,0,0,,Too much smoke
+Dialogue: 0,0:11:42.58,0:11:44.65,Default,,0,0,0,,And not enough clean winter air
+Dialogue: 0,0:11:44.65,0:11:46.65,Default,,0,0,0,,THE MODERN YOUNG GENERATION
+Dialogue: 0,0:11:46.65,0:11:49.45,Default,,0,0,0,,Mongolia's young generation lives between two
+Dialogue: 0,0:11:49.45,0:11:50.54,Default,,0,0,0,,worlds
+Dialogue: 0,0:11:50.54,0:11:53.18,Default,,0,0,0,,A teenager may spend part of the summer helping
+Dialogue: 0,0:11:53.18,0:11:55.68,Default,,0,0,0,,with animals on the family pasture
+Dialogue: 0,0:11:55.68,0:11:59.06,Default,,0,0,0,,Then return to Ulaanbaatar and attend university
+Dialogue: 0,0:11:59.06,0:12:01.33,Default,,0,0,0,,They may know how to ride a horse and also
+Dialogue: 0,0:12:01.33,0:12:03.22,Default,,0,0,0,,use advanced technology
+Dialogue: 0,0:12:03.22,0:12:05.30,Default,,0,0,0,,They might listen to traditional music one
+Dialogue: 0,0:12:05.30,0:12:08.43,Default,,0,0,0,,day and international pop music the next
+Dialogue: 0,0:12:08.43,0:12:11.19,Default,,0,0,0,,Social media has changed how young Mongolians
+Dialogue: 0,0:12:11.19,0:12:12.38,Default,,0,0,0,,communicate
+Dialogue: 0,0:12:12.38,0:12:15.08,Default,,0,0,0,,The internet connects remote communities to
+Dialogue: 0,0:12:15.08,0:12:16.69,Default,,0,0,0,,the rest of the world
+Dialogue: 0,0:12:16.69,0:12:19.55,Default,,0,0,0,,And many young people dream of careers outside
+Dialogue: 0,0:12:19.55,0:12:20.94,Default,,0,0,0,,traditional herding
+Dialogue: 0,0:12:20.94,0:12:24.79,Default,,0,0,0,,Technology education and urbanization are changing
+Dialogue: 0,0:12:24.79,0:12:25.86,Default,,0,0,0,,the country
+Dialogue: 0,0:12:25.86,0:12:28.47,Default,,0,0,0,,But this does not necessarily mean that traditional
+Dialogue: 0,0:12:28.47,0:12:30.23,Default,,0,0,0,,culture will disappear
+Dialogue: 0,0:12:30.23,0:12:32.93,Default,,0,0,0,,Instead many young Mongolians are trying to
+Dialogue: 0,0:12:32.93,0:12:34.86,Default,,0,0,0,,combine both worlds
+Dialogue: 0,0:12:34.86,0:12:36.61,Default,,0,0,0,,THE MONGOLIAN FAMILY
+Dialogue: 0,0:12:36.61,0:12:39.52,Default,,0,0,0,,Family remains extremely important in Mongolian
+Dialogue: 0,0:12:39.52,0:12:40.66,Default,,0,0,0,,society
+Dialogue: 0,0:12:40.66,0:12:44.65,Default,,0,0,0,,In rural areas family members often work together
+Dialogue: 0,0:12:44.65,0:12:47.65,Default,,0,0,0,,Herding animals is not a nine-to-five job
+Dialogue: 0,0:12:47.65,0:12:49.66,Default,,0,0,0,,Someone must check the animals
+Dialogue: 0,0:12:49.66,0:12:51.54,Default,,0,0,0,,Someone must prepare food
+Dialogue: 0,0:12:51.54,0:12:53.31,Default,,0,0,0,,Someone must collect fuel
+Dialogue: 0,0:12:53.31,0:12:55.26,Default,,0,0,0,,Someone must care for children
+Dialogue: 0,0:12:55.26,0:12:57.09,Default,,0,0,0,,Someone must watch the weather
+Dialogue: 0,0:12:57.09,0:12:59.72,Default,,0,0,0,,And during difficult seasons everyone has to
+Dialogue: 0,0:12:59.72,0:13:00.55,Default,,0,0,0,,help
+Dialogue: 0,0:13:00.55,0:13:02.66,Default,,0,0,0,,Life can be physically demanding
+Dialogue: 0,0:13:02.66,0:13:04.77,Default,,0,0,0,,But it can also create a powerful sense of
+Dialogue: 0,0:13:04.77,0:13:06.08,Default,,0,0,0,,cooperation
+Dialogue: 0,0:13:06.08,0:13:09.02,Default,,0,0,0,,When guests arrive at a ger hospitality is
+Dialogue: 0,0:13:09.02,0:13:10.06,Default,,0,0,0,,important
+Dialogue: 0,0:13:10.06,0:13:13.48,Default,,0,0,0,,A visitor may be offered tea or food even when
+Dialogue: 0,0:13:13.48,0:13:16.40,Default,,0,0,0,,the family lives far from the nearest town
+Dialogue: 0,0:13:16.40,0:13:19.22,Default,,0,0,0,,This tradition comes from a world where travelers
+Dialogue: 0,0:13:19.22,0:13:22.01,Default,,0,0,0,,depended on the kindness of strangers
+Dialogue: 0,0:13:22.01,0:13:23.95,Default,,0,0,0,,THE WOMEN OF MONGOLIA
+Dialogue: 0,0:13:23.95,0:13:26.36,Default,,0,0,0,,Mongolian women have played important roles
+Dialogue: 0,0:13:26.36,0:13:29.40,Default,,0,0,0,,in both traditional and modern society
+Dialogue: 0,0:13:29.40,0:13:32.55,Default,,0,0,0,,In rural communities women often contribute
+Dialogue: 0,0:13:32.55,0:13:36.20,Default,,0,0,0,,heavily to animal care food production household
+Dialogue: 0,0:13:36.20,0:13:38.94,Default,,0,0,0,,responsibilities and family income
+Dialogue: 0,0:13:38.94,0:13:42.70,Default,,0,0,0,,In cities women are highly visible in education
+Dialogue: 0,0:13:42.70,0:13:46.04,Default,,0,0,0,,business healthcare government and professional
+Dialogue: 0,0:13:46.04,0:13:47.30,Default,,0,0,0,,careers
+Dialogue: 0,0:13:47.30,0:13:50.14,Default,,0,0,0,,Mongolian women also face the challenges that
+Dialogue: 0,0:13:50.14,0:13:53.10,Default,,0,0,0,,come with a rapidly changing society
+Dialogue: 0,0:13:53.10,0:13:56.30,Default,,0,0,0,,Urbanization economic inequality and changing
+Dialogue: 0,0:13:56.30,0:13:59.84,Default,,0,0,0,,family expectations have created new pressures
+Dialogue: 0,0:13:59.84,0:14:02.80,Default,,0,0,0,,But the image of Mongolian women is not limited
+Dialogue: 0,0:14:02.80,0:14:03.92,Default,,0,0,0,,to tradition
+Dialogue: 0,0:14:03.92,0:14:07.31,Default,,0,0,0,,Many are highly educated ambitious and active
+Dialogue: 0,0:14:07.31,0:14:09.42,Default,,0,0,0,,in modern professional life
+Dialogue: 0,0:14:09.42,0:14:12.11,Default,,0,0,0,,THE LEGACY OF THE MONGOL EMPIRE
+Dialogue: 0,0:14:12.11,0:14:15.21,Default,,0,0,0,,More than eight centuries ago Mongolian armies
+Dialogue: 0,0:14:15.21,0:14:18.34,Default,,0,0,0,,created one of the largest contiguous empires
+Dialogue: 0,0:14:18.34,0:14:19.45,Default,,0,0,0,,in history
+Dialogue: 0,0:14:19.45,0:14:21.80,Default,,0,0,0,,The name most closely associated with that
+Dialogue: 0,0:14:21.80,0:14:23.98,Default,,0,0,0,,empire is Genghis Khan
+Dialogue: 0,0:14:23.98,0:14:27.13,Default,,0,0,0,,Today his legacy remains visible throughout
+Dialogue: 0,0:14:27.13,0:14:28.31,Default,,0,0,0,,Mongolia
+Dialogue: 0,0:14:28.31,0:14:31.75,Default,,0,0,0,,His name appears on buildings businesses products
+Dialogue: 0,0:14:31.75,0:14:33.09,Default,,0,0,0,,and monuments
+Dialogue: 0,0:14:33.09,0:14:36.66,Default,,0,0,0,,A huge statue complex outside Ulaanbaatar shows
+Dialogue: 0,0:14:36.66,0:14:38.70,Default,,0,0,0,,Genghis Khan on horseback
+Dialogue: 0,0:14:38.70,0:14:42.42,Default,,0,0,0,,For Mongolians the historical legacy is complicated
+Dialogue: 0,0:14:42.42,0:14:43.77,Default,,0,0,0,,but powerful
+Dialogue: 0,0:14:43.77,0:14:46.13,Default,,0,0,0,,The empire is part of the country's national
+Dialogue: 0,0:14:46.13,0:14:47.06,Default,,0,0,0,,story
+Dialogue: 0,0:14:47.06,0:14:50.31,Default,,0,0,0,,It represents military power mobility and the
+Dialogue: 0,0:14:50.31,0:14:53.16,Default,,0,0,0,,ability of people from the steppe to influence
+Dialogue: 0,0:14:53.16,0:14:55.23,Default,,0,0,0,,a huge part of the world
+Dialogue: 0,0:14:55.23,0:14:58.57,Default,,0,0,0,,But modern Mongolia is not the Mongol Empire
+Dialogue: 0,0:14:58.57,0:15:00.92,Default,,0,0,0,,It is a democratic country trying to build
+Dialogue: 0,0:15:00.92,0:15:03.96,Default,,0,0,0,,a modern economy while preserving its cultural
+Dialogue: 0,0:15:03.96,0:15:04.98,Default,,0,0,0,,identity
+Dialogue: 0,0:15:04.98,0:15:07.78,Default,,0,0,0,,FROM SOCIALISM TO MODERN MONGOLIA
+Dialogue: 0,0:15:07.78,0:15:10.36,Default,,0,0,0,,For most of the twentieth century Mongolia
+Dialogue: 0,0:15:10.36,0:15:13.35,Default,,0,0,0,,was closely aligned with the Soviet Union
+Dialogue: 0,0:15:13.35,0:15:15.84,Default,,0,0,0,,The country followed a socialist political
+Dialogue: 0,0:15:15.84,0:15:17.42,Default,,0,0,0,,and economic system
+Dialogue: 0,0:15:17.42,0:15:20.38,Default,,0,0,0,,That period deeply influenced architecture
+Dialogue: 0,0:15:20.38,0:15:23.78,Default,,0,0,0,,education politics and urban life
+Dialogue: 0,0:15:23.78,0:15:27.75,Default,,0,0,0,,Then in the early 1990s Mongolia underwent
+Dialogue: 0,0:15:27.75,0:15:30.18,Default,,0,0,0,,a peaceful democratic transition
+Dialogue: 0,0:15:30.18,0:15:32.89,Default,,0,0,0,,The country moved toward a market economy and
+Dialogue: 0,0:15:32.89,0:15:35.45,Default,,0,0,0,,democratic political institutions
+Dialogue: 0,0:15:35.45,0:15:37.63,Default,,0,0,0,,The transformation was difficult
+Dialogue: 0,0:15:37.63,0:15:40.39,Default,,0,0,0,,But it opened Mongolia to the wider world
+Dialogue: 0,0:15:40.39,0:15:43.30,Default,,0,0,0,,Today Mongolia balances relationships with
+Dialogue: 0,0:15:43.30,0:15:46.81,Default,,0,0,0,,its two enormous neighbors Russia and China
+Dialogue: 0,0:15:46.81,0:15:49.07,Default,,0,0,0,,while also maintaining strong connections with
+Dialogue: 0,0:15:49.07,0:15:50.89,Default,,0,0,0,,countries around the world
+Dialogue: 0,0:15:50.89,0:15:53.13,Default,,0,0,0,,MINING AND THE NEW ECONOMY
+Dialogue: 0,0:15:53.13,0:15:56.21,Default,,0,0,0,,Modern Mongolia's economy depends heavily on
+Dialogue: 0,0:15:56.21,0:15:57.91,Default,,0,0,0,,natural resources
+Dialogue: 0,0:15:57.91,0:16:01.39,Default,,0,0,0,,The country has major deposits of coal copper
+Dialogue: 0,0:16:01.39,0:16:02.88,Default,,0,0,0,,and other minerals
+Dialogue: 0,0:16:02.88,0:16:06.45,Default,,0,0,0,,Mining has brought enormous economic opportunities
+Dialogue: 0,0:16:06.45,0:16:09.23,Default,,0,0,0,,But it has also created difficult questions
+Dialogue: 0,0:16:09.23,0:16:11.78,Default,,0,0,0,,How much should Mongolia depend on mining
+Dialogue: 0,0:16:11.78,0:16:14.43,Default,,0,0,0,,How can the country protect its environment
+Dialogue: 0,0:16:14.43,0:16:16.84,Default,,0,0,0,,How should mining wealth be distributed
+Dialogue: 0,0:16:16.84,0:16:19.59,Default,,0,0,0,,And what happens to traditional herding communities
+Dialogue: 0,0:16:19.59,0:16:21.39,Default,,0,0,0,,when landscapes change
+Dialogue: 0,0:16:21.39,0:16:24.45,Default,,0,0,0,,These questions are becoming increasingly important
+Dialogue: 0,0:16:24.45,0:16:27.49,Default,,0,0,0,,as Mongolia tries to develop without losing
+Dialogue: 0,0:16:27.49,0:16:30.21,Default,,0,0,0,,the environment that has supported nomadic
+Dialogue: 0,0:16:30.21,0:16:31.95,Default,,0,0,0,,life for centuries
+Dialogue: 0,0:16:31.95,0:16:34.20,Default,,0,0,0,,A LIFE BETWEEN TWO WORLDS
+Dialogue: 0,0:16:34.20,0:16:36.92,Default,,0,0,0,,Perhaps the most fascinating thing about Mongolia
+Dialogue: 0,0:16:36.92,0:16:39.55,Default,,0,0,0,,is that two very different ways of life can
+Dialogue: 0,0:16:39.55,0:16:41.42,Default,,0,0,0,,exist at the same time
+Dialogue: 0,0:16:41.42,0:16:44.27,Default,,0,0,0,,In one part of the country a herder can wake
+Dialogue: 0,0:16:44.27,0:16:47.80,Default,,0,0,0,,before sunrise open the door of a ger and look
+Dialogue: 0,0:16:47.80,0:16:51.46,Default,,0,0,0,,across thousands of kilometers of empty landscape
+Dialogue: 0,0:16:51.46,0:16:54.48,Default,,0,0,0,,A few hours away a university student can sit
+Dialogue: 0,0:16:54.48,0:16:57.70,Default,,0,0,0,,inside a modern cafe in Ulaanbaatar using a
+Dialogue: 0,0:16:57.70,0:16:59.73,Default,,0,0,0,,laptop and smartphone
+Dialogue: 0,0:16:59.73,0:17:02.77,Default,,0,0,0,,One family may depend on horses and sheep
+Dialogue: 0,0:17:02.77,0:17:05.52,Default,,0,0,0,,Another may work in finance or technology
+Dialogue: 0,0:17:05.52,0:17:08.05,Default,,0,0,0,,One child may spend the summer riding across
+Dialogue: 0,0:17:08.05,0:17:09.05,Default,,0,0,0,,the steppe
+Dialogue: 0,0:17:09.05,0:17:11.52,Default,,0,0,0,,Another may grow up surrounded by apartment
+Dialogue: 0,0:17:11.52,0:17:12.60,Default,,0,0,0,,buildings
+Dialogue: 0,0:17:12.60,0:17:15.06,Default,,0,0,0,,Yet both are part of the same Mongolia
+Dialogue: 0,0:17:15.06,0:17:17.63,Default,,0,0,0,,THE PRICE OF LIVING IN THE EXTREME
+Dialogue: 0,0:17:17.63,0:17:20.25,Default,,0,0,0,,Mongolia's beauty comes with a price
+Dialogue: 0,0:17:20.25,0:17:23.34,Default,,0,0,0,,The country is far from major global markets
+Dialogue: 0,0:17:23.34,0:17:26.66,Default,,0,0,0,,Its population is small and widely spread
+Dialogue: 0,0:17:26.66,0:17:29.14,Default,,0,0,0,,Infrastructure is difficult to build across
+Dialogue: 0,0:17:29.14,0:17:30.95,Default,,0,0,0,,enormous distances
+Dialogue: 0,0:17:30.95,0:17:32.74,Default,,0,0,0,,Winter can be dangerous
+Dialogue: 0,0:17:32.74,0:17:34.35,Default,,0,0,0,,Water can be scarce
+Dialogue: 0,0:17:34.35,0:17:36.20,Default,,0,0,0,,Pastures can deteriorate
+Dialogue: 0,0:17:36.20,0:17:38.88,Default,,0,0,0,,Extreme weather can destroy livestock
+Dialogue: 0,0:17:38.88,0:17:41.55,Default,,0,0,0,,And the economy can be vulnerable to changes
+Dialogue: 0,0:17:41.55,0:17:43.38,Default,,0,0,0,,in commodity prices
+Dialogue: 0,0:17:43.38,0:17:46.50,Default,,0,0,0,,For rural families climate change adds another
+Dialogue: 0,0:17:46.50,0:17:48.25,Default,,0,0,0,,layer of uncertainty
+Dialogue: 0,0:17:48.25,0:17:51.81,Default,,0,0,0,,Warmer temperatures changing rainfall and increasingly
+Dialogue: 0,0:17:51.81,0:17:54.49,Default,,0,0,0,,difficult weather patterns can affect pasture
+Dialogue: 0,0:17:54.49,0:17:55.85,Default,,0,0,0,,and livestock
+Dialogue: 0,0:17:55.85,0:17:58.74,Default,,0,0,0,,For a culture built around animals and seasonal
+Dialogue: 0,0:17:58.74,0:18:02.45,Default,,0,0,0,,movement environmental change is not an abstract
+Dialogue: 0,0:18:02.45,0:18:03.36,Default,,0,0,0,,idea
+Dialogue: 0,0:18:03.36,0:18:05.74,Default,,0,0,0,,It can directly affect whether a family can
+Dialogue: 0,0:18:05.74,0:18:07.36,Default,,0,0,0,,remain on the land
+Dialogue: 0,0:18:07.36,0:18:08.71,Default,,0,0,0,,WHY PEOPLE STAY
+Dialogue: 0,0:18:08.71,0:18:09.84,Default,,0,0,0,,So why stay
+Dialogue: 0,0:18:09.84,0:18:11.95,Default,,0,0,0,,Why would anyone choose to live in a place
+Dialogue: 0,0:18:11.95,0:18:15.21,Default,,0,0,0,,where winters are so cold distances are so
+Dialogue: 0,0:18:15.21,0:18:18.99,Default,,0,0,0,,great and life can be so physically demanding
+Dialogue: 0,0:18:18.99,0:18:21.89,Default,,0,0,0,,For many Mongolians the answer is simple
+Dialogue: 0,0:18:21.89,0:18:23.03,Default,,0,0,0,,This is home
+Dialogue: 0,0:18:23.03,0:18:24.73,Default,,0,0,0,,The grassland is home
+Dialogue: 0,0:18:24.73,0:18:26.17,Default,,0,0,0,,The horses are home
+Dialogue: 0,0:18:26.17,0:18:27.63,Default,,0,0,0,,The mountains are home
+Dialogue: 0,0:18:27.63,0:18:29.02,Default,,0,0,0,,The ger is home
+Dialogue: 0,0:18:29.02,0:18:30.42,Default,,0,0,0,,The family is home
+Dialogue: 0,0:18:30.42,0:18:32.84,Default,,0,0,0,,There is a freedom in being able to look across
+Dialogue: 0,0:18:32.84,0:18:36.40,Default,,0,0,0,,the horizon and see almost nothing but nature
+Dialogue: 0,0:18:36.40,0:18:38.73,Default,,0,0,0,,There is a sense of identity connected to the
+Dialogue: 0,0:18:38.73,0:18:39.67,Default,,0,0,0,,land
+Dialogue: 0,0:18:39.67,0:18:42.08,Default,,0,0,0,,And there is pride in a culture that survived
+Dialogue: 0,0:18:42.08,0:18:43.91,Default,,0,0,0,,centuries of change
+Dialogue: 0,0:18:43.91,0:18:45.73,Default,,0,0,0,,THE FUTURE OF MONGOLIA
+Dialogue: 0,0:18:45.73,0:18:48.49,Default,,0,0,0,,Mongolia is changing faster than ever
+Dialogue: 0,0:18:48.49,0:18:50.02,Default,,0,0,0,,Cities are expanding
+Dialogue: 0,0:18:50.02,0:18:52.87,Default,,0,0,0,,Young people are moving toward urban areas
+Dialogue: 0,0:18:52.87,0:18:54.62,Default,,0,0,0,,Technology is spreading
+Dialogue: 0,0:18:54.62,0:18:57.24,Default,,0,0,0,,Mining is transforming the economy
+Dialogue: 0,0:18:57.24,0:18:58.73,Default,,0,0,0,,Tourism is growing
+Dialogue: 0,0:18:58.73,0:19:01.30,Default,,0,0,0,,And traditional herding is becoming harder
+Dialogue: 0,0:19:01.30,0:19:02.74,Default,,0,0,0,,in some regions
+Dialogue: 0,0:19:02.74,0:19:05.70,Default,,0,0,0,,But the country's identity has not disappeared
+Dialogue: 0,0:19:05.70,0:19:07.45,Default,,0,0,0,,A horse still means something
+Dialogue: 0,0:19:07.45,0:19:09.15,Default,,0,0,0,,A ger still means something
+Dialogue: 0,0:19:09.15,0:19:10.74,Default,,0,0,0,,Naadam still matters
+Dialogue: 0,0:19:10.74,0:19:12.33,Default,,0,0,0,,Family still matters
+Dialogue: 0,0:19:12.33,0:19:14.03,Default,,0,0,0,,The steppe still matters
+Dialogue: 0,0:19:14.03,0:19:16.37,Default,,0,0,0,,And the knowledge passed from one generation
+Dialogue: 0,0:19:16.37,0:19:18.66,Default,,0,0,0,,to the next remains valuable
+Dialogue: 0,0:19:18.66,0:19:21.34,Default,,0,0,0,,Maybe the future of Mongolia will not be about
+Dialogue: 0,0:19:21.34,0:19:24.27,Default,,0,0,0,,choosing between tradition and modernity
+Dialogue: 0,0:19:24.27,0:19:26.23,Default,,0,0,0,,Maybe it will be about finding a way to keep
+Dialogue: 0,0:19:26.23,0:19:27.20,Default,,0,0,0,,both
+Dialogue: 0,0:19:27.20,0:19:28.70,Default,,0,0,0,,THE REAL MONGOLIA
+Dialogue: 0,0:19:28.70,0:19:32.05,Default,,0,0,0,,Mongolia is often shown as an empty country
+Dialogue: 0,0:19:32.05,0:19:36.41,Default,,0,0,0,,A place of deserts horses and endless grasslands
+Dialogue: 0,0:19:36.41,0:19:38.41,Default,,0,0,0,,But Mongolia is not empty
+Dialogue: 0,0:19:38.41,0:19:40.02,Default,,0,0,0,,It is full of stories
+Dialogue: 0,0:19:40.02,0:19:42.78,Default,,0,0,0,,Inside every ger is a family
+Dialogue: 0,0:19:42.78,0:19:46.44,Default,,0,0,0,,Behind every herd is generations of knowledge
+Dialogue: 0,0:19:46.44,0:19:49.55,Default,,0,0,0,,Behind every horse is a culture that has depended
+Dialogue: 0,0:19:49.55,0:19:51.70,Default,,0,0,0,,on mobility for centuries
+Dialogue: 0,0:19:51.70,0:19:54.94,Default,,0,0,0,,Behind every city street is a young generation
+Dialogue: 0,0:19:54.94,0:19:57.70,Default,,0,0,0,,deciding what Mongolia should become
+Dialogue: 0,0:19:57.70,0:19:59.78,Default,,0,0,0,,This is a country where children can learn
+Dialogue: 0,0:19:59.78,0:20:02.62,Default,,0,0,0,,to ride before they fully understand how special
+Dialogue: 0,0:20:02.62,0:20:04.02,Default,,0,0,0,,that skill is
+Dialogue: 0,0:20:04.02,0:20:06.76,Default,,0,0,0,,Where a family can live thousands of kilometers
+Dialogue: 0,0:20:06.76,0:20:09.17,Default,,0,0,0,,from a major city and still connect to the
+Dialogue: 0,0:20:09.17,0:20:11.15,Default,,0,0,0,,world through a smartphone
+Dialogue: 0,0:20:11.15,0:20:13.45,Default,,0,0,0,,Where traditional food is still prepared in
+Dialogue: 0,0:20:13.45,0:20:14.97,Default,,0,0,0,,modern kitchens
+Dialogue: 0,0:20:14.97,0:20:17.85,Default,,0,0,0,,Where ancient history is celebrated alongside
+Dialogue: 0,0:20:17.85,0:20:19.47,Default,,0,0,0,,modern technology
+Dialogue: 0,0:20:19.47,0:20:21.73,Default,,0,0,0,,And where survival is not about conquering
+Dialogue: 0,0:20:21.73,0:20:22.67,Default,,0,0,0,,nature
+Dialogue: 0,0:20:22.67,0:20:25.01,Default,,0,0,0,,It is about learning how to live with it
+Dialogue: 0,0:20:25.01,0:20:28.22,Default,,0,0,0,,When the winter arrives Mongolians prepare
+Dialogue: 0,0:20:28.22,0:20:31.03,Default,,0,0,0,,When the grass grows animals move
+Dialogue: 0,0:20:31.03,0:20:34.24,Default,,0,0,0,,When the summer festival comes horses race
+Dialogue: 0,0:20:34.24,0:20:36.92,Default,,0,0,0,,When guests arrive tea is served
+Dialogue: 0,0:20:36.92,0:20:39.72,Default,,0,0,0,,And when the horizon stretches endlessly in
+Dialogue: 0,0:20:39.72,0:20:41.12,Default,,0,0,0,,every direction
+Dialogue: 0,0:20:41.12,0:20:42.84,Default,,0,0,0,,life continues
+Dialogue: 0,0:20:42.84,0:20:44.23,Default,,0,0,0,,This is Mongolia
+Dialogue: 0,0:20:44.23,0:20:46.24,Default,,0,0,0,,A country of extreme weather
+Dialogue: 0,0:20:46.24,0:20:47.76,Default,,0,0,0,,Endless landscapes
+Dialogue: 0,0:20:47.76,0:20:49.34,Default,,0,0,0,,Powerful traditions
+Dialogue: 0,0:20:49.34,0:20:50.67,Default,,0,0,0,,Modern cities
+Dialogue: 0,0:20:50.67,0:20:51.91,Default,,0,0,0,,Hard winters
+Dialogue: 0,0:20:51.91,0:20:53.15,Default,,0,0,0,,Fast change
+Dialogue: 0,0:20:53.15,0:20:55.03,Default,,0,0,0,,And people who have learned one of the most
+Dialogue: 0,0:20:55.03,0:20:57.05,Default,,0,0,0,,important lessons on Earth
+Dialogue: 0,0:20:57.05,0:20:59.62,Default,,0,0,0,,You do not always need to control nature
+Dialogue: 0,0:20:59.62,0:21:02.08,Default,,0,0,0,,Sometimes you simply need to understand it
+Dialogue: 0,0:21:02.08,0:21:04.03,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:21:04.03,0:21:05.41,Default,,0,0,0,,Life Beyond the Limits
