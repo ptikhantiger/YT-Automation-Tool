@@ -147,6 +147,7 @@ jobs:
           if [ -f "../projects/$PROJECT/scenes.json" ]; then echo "scenes.json present -- skipping"; exit 0; fi
           python step1_audio_and_captions.py "$PROJECT" --no-chain
       - name: "Step 2: auto-match clips"
+        id: pick
         working-directory: tools
         env:
           THRESHOLD: ${{ inputs.threshold || '60' }}
@@ -155,7 +156,9 @@ jobs:
           python auto_pick.py "$PROJECT" --threshold "$THRESHOLD" 2>&1 | tee ../auto_pick.log
       - name: Save picks to the repo
         id: push
-        if: always()
+        # also after a failed/timed-out auto-match, so finished scenes are
+        # kept for a re-run -- but not when an earlier step never got there
+        if: always() && steps.pick.outcome != 'skipped'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
