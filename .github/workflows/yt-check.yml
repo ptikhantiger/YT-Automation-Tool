@@ -1,0 +1,48 @@
+# Check the YouTube connection stored in Actions secrets, without uploading
+# anything: refreshes YT_REFRESH_TOKEN and reads the channel name.
+#
+# Run it: Actions -> "YouTube connection check" -> Run workflow,
+# or push a commit whose message starts with "yt-check".
+# Green = the next auto video can upload. Red = the message says what to fix.
+
+name: YouTube connection check
+run-name: YouTube connection check
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  check:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'yt-check')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sign in to YouTube and read the channel
+        working-directory: tools
+        run: |
+          python - <<'EOF'
+          import sys
+          import youtube_upload as y
+          import youtube_auth as a
+          try:
+              token = y.access_token()
+          except y.UploadError as e:
+              print(f"::error title=YouTube connection broken::{e}")
+              sys.exit(1)
+          name, cid = a.channel_name(token)
+          if not name:
+              print(f"::error title=Signed in, but no channel::{cid}")
+              sys.exit(1)
+          msg = f"YouTube connection OK: channel {name} ({cid})"
+          print(msg)
+          print(f"::notice title=YouTube connection OK::{msg}")
+          EOF
