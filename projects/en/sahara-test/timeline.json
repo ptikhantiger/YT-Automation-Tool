@@ -1,0 +1,558 @@
+{
+  "meta": {
+    "mode": "semantic",
+    "planner": "sentence-driven",
+    "plan_check": {
+      "ok": true,
+      "visual_units": 5,
+      "sentences": 5,
+      "sentences_without_own_shot": [],
+      "sentences_without_own_shot_count": 0,
+      "longest_seconds": 4.86,
+      "median_seconds": 3.15,
+      "over_cap": 0,
+      "problems": []
+    },
+    "sentences": 5,
+    "scenes": 1,
+    "shots": 5,
+    "max_shot_seconds": 6.0,
+    "longest_shot_seconds": 4.86,
+    "llm_scenes": 1,
+    "multi_shot_scenes": 1,
+    "llm_failures": []
+  },
+  "words": [
+    {
+      "i": 0,
+      "text": "The",
+      "start": 0.125,
+      "end": 0.181,
+      "scene": 1
+    },
+    {
+      "i": 1,
+      "text": "Sahara",
+      "start": 0.194,
+      "end": 0.764,
+      "scene": 1
+    },
+    {
+      "i": 2,
+      "text": "is",
+      "start": 0.778,
+      "end": 0.903,
+      "scene": 1
+    },
+    {
+      "i": 3,
+      "text": "the",
+      "start": 0.917,
+      "end": 1.028,
+      "scene": 1
+    },
+    {
+      "i": 4,
+      "text": "largest",
+      "start": 1.042,
+      "end": 1.625,
+      "scene": 1
+    },
+    {
+      "i": 5,
+      "text": "hot",
+      "start": 1.639,
+      "end": 2.056,
+      "scene": 1
+    },
+    {
+      "i": 6,
+      "text": "desert",
+      "start": 2.069,
+      "end": 2.389,
+      "scene": 1
+    },
+    {
+      "i": 7,
+      "text": "on",
+      "start": 2.403,
+      "end": 2.556,
+      "scene": 1
+    },
+    {
+      "i": 8,
+      "text": "Earth",
+      "start": 2.569,
+      "end": 2.944,
+      "scene": 1
+    },
+    {
+      "i": 9,
+      "text": "Its",
+      "start": 3.403,
+      "end": 3.556,
+      "scene": 1
+    },
+    {
+      "i": 10,
+      "text": "dunes",
+      "start": 3.569,
+      "end": 3.917,
+      "scene": 1
+    },
+    {
+      "i": 11,
+      "text": "can",
+      "start": 3.931,
+      "end": 4.111,
+      "scene": 1
+    },
+    {
+      "i": 12,
+      "text": "rise",
+      "start": 4.125,
+      "end": 4.444,
+      "scene": 1
+    },
+    {
+      "i": 13,
+      "text": "higher",
+      "start": 4.458,
+      "end": 4.861,
+      "scene": 1
+    },
+    {
+      "i": 14,
+      "text": "than",
+      "start": 4.875,
+      "end": 5.014,
+      "scene": 1
+    },
+    {
+      "i": 15,
+      "text": "a",
+      "start": 5.028,
+      "end": 5.069,
+      "scene": 1
+    },
+    {
+      "i": 16,
+      "text": "fifty",
+      "start": 5.083,
+      "end": 5.5,
+      "scene": 1
+    },
+    {
+      "i": 17,
+      "text": "story",
+      "start": 5.514,
+      "end": 5.861,
+      "scene": 1
+    },
+    {
+      "i": 18,
+      "text": "building",
+      "start": 5.875,
+      "end": 6.292,
+      "scene": 1
+    },
+    {
+      "i": 19,
+      "text": "Yet",
+      "start": 6.75,
+      "end": 6.861,
+      "scene": 1
+    },
+    {
+      "i": 20,
+      "text": "only",
+      "start": 6.875,
+      "end": 7.153,
+      "scene": 1
+    },
+    {
+      "i": 21,
+      "text": "a",
+      "start": 7.167,
+      "end": 7.222,
+      "scene": 1
+    },
+    {
+      "i": 22,
+      "text": "few",
+      "start": 7.236,
+      "end": 7.528,
+      "scene": 1
+    },
+    {
+      "i": 23,
+      "text": "thousand",
+      "start": 7.542,
+      "end": 8.0,
+      "scene": 1
+    },
+    {
+      "i": 24,
+      "text": "years",
+      "start": 8.014,
+      "end": 8.292,
+      "scene": 1
+    },
+    {
+      "i": 25,
+      "text": "ago",
+      "start": 8.306,
+      "end": 8.667,
+      "scene": 1
+    },
+    {
+      "i": 26,
+      "text": "this",
+      "start": 9.083,
+      "end": 9.306,
+      "scene": 1
+    },
+    {
+      "i": 27,
+      "text": "land",
+      "start": 9.319,
+      "end": 9.653,
+      "scene": 1
+    },
+    {
+      "i": 28,
+      "text": "was",
+      "start": 9.667,
+      "end": 9.847,
+      "scene": 1
+    },
+    {
+      "i": 29,
+      "text": "green",
+      "start": 9.861,
+      "end": 10.361,
+      "scene": 1
+    },
+    {
+      "i": 30,
+      "text": "and",
+      "start": 10.486,
+      "end": 10.583,
+      "scene": 1
+    },
+    {
+      "i": 31,
+      "text": "full",
+      "start": 10.597,
+      "end": 10.875,
+      "scene": 1
+    },
+    {
+      "i": 32,
+      "text": "of",
+      "start": 10.889,
+      "end": 11.0,
+      "scene": 1
+    },
+    {
+      "i": 33,
+      "text": "lakes",
+      "start": 11.014,
+      "end": 11.611,
+      "scene": 1
+    },
+    {
+      "i": 34,
+      "text": "Hippos",
+      "start": 12.083,
+      "end": 12.514,
+      "scene": 1
+    },
+    {
+      "i": 35,
+      "text": "and",
+      "start": 12.528,
+      "end": 12.625,
+      "scene": 1
+    },
+    {
+      "i": 36,
+      "text": "crocodiles",
+      "start": 12.639,
+      "end": 13.417,
+      "scene": 1
+    },
+    {
+      "i": 37,
+      "text": "lived",
+      "start": 13.431,
+      "end": 13.847,
+      "scene": 1
+    },
+    {
+      "i": 38,
+      "text": "where",
+      "start": 13.861,
+      "end": 14.028,
+      "scene": 1
+    },
+    {
+      "i": 39,
+      "text": "camels",
+      "start": 14.042,
+      "end": 14.542,
+      "scene": 1
+    },
+    {
+      "i": 40,
+      "text": "walk",
+      "start": 14.556,
+      "end": 14.833,
+      "scene": 1
+    },
+    {
+      "i": 41,
+      "text": "today",
+      "start": 14.847,
+      "end": 15.236,
+      "scene": 1
+    },
+    {
+      "i": 42,
+      "text": "Ancient",
+      "start": 15.694,
+      "end": 16.056,
+      "scene": 1
+    },
+    {
+      "i": 43,
+      "text": "rock",
+      "start": 16.069,
+      "end": 16.347,
+      "scene": 1
+    },
+    {
+      "i": 44,
+      "text": "paintings",
+      "start": 16.361,
+      "end": 16.917,
+      "scene": 1
+    },
+    {
+      "i": 45,
+      "text": "still",
+      "start": 16.944,
+      "end": 17.292,
+      "scene": 1
+    },
+    {
+      "i": 46,
+      "text": "show",
+      "start": 17.306,
+      "end": 17.611,
+      "scene": 1
+    },
+    {
+      "i": 47,
+      "text": "the",
+      "start": 17.625,
+      "end": 17.764,
+      "scene": 1
+    },
+    {
+      "i": 48,
+      "text": "animals",
+      "start": 17.778,
+      "end": 18.347,
+      "scene": 1
+    },
+    {
+      "i": 49,
+      "text": "that",
+      "start": 18.486,
+      "end": 18.694,
+      "scene": 1
+    },
+    {
+      "i": 50,
+      "text": "once",
+      "start": 18.708,
+      "end": 18.986,
+      "scene": 1
+    },
+    {
+      "i": 51,
+      "text": "roamed",
+      "start": 19.0,
+      "end": 19.319,
+      "scene": 1
+    },
+    {
+      "i": 52,
+      "text": "here",
+      "start": 19.333,
+      "end": 19.681,
+      "scene": 1
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "segment_id": "segment_001",
+      "index": 1,
+      "text": "The Sahara is the largest hot desert on Earth. Its dunes can rise higher than a fifty story building. Yet only a few thousand years ago, this land was green and full of lakes. Hippos and crocodiles lived where camels walk today. Ancient rock paintings still show the animals that once roamed here.",
+      "word_from": 0,
+      "word_to": 52,
+      "start": 0.125,
+      "end": 19.681,
+      "duration": 19.556,
+      "semantic": {
+        "meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+        "subject": "Sahara Desert",
+        "action": "shifting from ancient green oasis to modern extreme desert",
+        "object": "dunes, lakes, rock art",
+        "location": "Sahara Desert",
+        "time": "past to present",
+        "entities": [
+          "Sahara",
+          "hippos",
+          "crocodiles",
+          "camels"
+        ]
+      },
+      "visual_requirements": [
+        "vast sand dunes",
+        "ancient rock art",
+        "historic climate shift",
+        "desert wildlife"
+      ],
+      "visual_exclusions": [
+        "snow",
+        "modern skyscrapers",
+        "jungle"
+      ],
+      "queries": [
+        "crocodiles paintings building thousand largest"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_001_shot_1",
+          "text": "The Sahara is the largest hot desert on Earth",
+          "word_from": 0,
+          "word_to": 8,
+          "start": 0.125,
+          "end": 2.944,
+          "duration": 2.819,
+          "sentence_index": 1,
+          "visual": "Extreme wide shot of vast orange sand dunes stretching to the horizon under a blazing sun.",
+          "query": "Sahara desert landscape aerial",
+          "subject": "sand dunes",
+          "action": "stretching across horizon",
+          "location": "Sahara Desert",
+          "continuity": "new",
+          "context": {
+            "scene_meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+            "scene_location": "Sahara Desert",
+            "previous_visual": "",
+            "next_visual": "Low-angle medium shot looking up at a towering ridge of wind-swept sand against a clear blue sky.",
+            "continuity": "new"
+          }
+        },
+        {
+          "shot_id": "scene_001_shot_2",
+          "text": "Its dunes can rise higher than a fifty story building",
+          "word_from": 9,
+          "word_to": 18,
+          "start": 3.403,
+          "end": 6.292,
+          "duration": 2.889,
+          "sentence_index": 2,
+          "visual": "Low-angle medium shot looking up at a towering ridge of wind-swept sand against a clear blue sky.",
+          "query": "giant sand dune towering",
+          "subject": "dune ridge",
+          "action": "rising high",
+          "location": "Sahara Desert",
+          "continuity": "continue",
+          "context": {
+            "scene_meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+            "scene_location": "Sahara Desert",
+            "previous_visual": "Extreme wide shot of vast orange sand dunes stretching to the horizon under a blazing sun.",
+            "next_visual": "Cinematic wide shot of a lush prehistoric landscape with blue lakes and green vegetation in what is now arid desert.",
+            "continuity": "continue"
+          }
+        },
+        {
+          "shot_id": "scene_001_shot_3",
+          "text": "Yet only a few thousand years ago this land was green and full of lakes",
+          "word_from": 19,
+          "word_to": 33,
+          "start": 6.75,
+          "end": 11.611,
+          "duration": 4.861,
+          "sentence_index": 3,
+          "visual": "Cinematic wide shot of a lush prehistoric landscape with blue lakes and green vegetation in what is now arid desert.",
+          "query": "green Sahara prehistoric landscape lakes",
+          "subject": "ancient green valley",
+          "action": "showing lush vegetation and water",
+          "location": "ancient Sahara",
+          "continuity": "new",
+          "context": {
+            "scene_meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+            "scene_location": "Sahara Desert",
+            "previous_visual": "Low-angle medium shot looking up at a towering ridge of wind-swept sand against a clear blue sky.",
+            "next_visual": "Medium shot of hippos and crocodiles swimming in a shallow, sparkling prehistoric African lake.",
+            "continuity": "new"
+          }
+        },
+        {
+          "shot_id": "scene_001_shot_4",
+          "text": "Hippos and crocodiles lived where camels walk today",
+          "word_from": 34,
+          "word_to": 41,
+          "start": 12.083,
+          "end": 15.236,
+          "duration": 3.153,
+          "sentence_index": 4,
+          "visual": "Medium shot of hippos and crocodiles swimming in a shallow, sparkling prehistoric African lake.",
+          "query": "hippos and crocodiles in river Africa",
+          "subject": "hippos and crocodiles",
+          "action": "swimming in lake",
+          "location": "prehistoric Sahara",
+          "continuity": "continue",
+          "context": {
+            "scene_meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+            "scene_location": "Sahara Desert",
+            "previous_visual": "Cinematic wide shot of a lush prehistoric landscape with blue lakes and green vegetation in what is now arid desert.",
+            "next_visual": "Close-up tracking shot of ancient rock art carvings on a desert cliff face depicting wild animals.",
+            "continuity": "continue"
+          }
+        },
+        {
+          "shot_id": "scene_001_shot_5",
+          "text": "Ancient rock paintings still show the animals that once roamed here",
+          "word_from": 42,
+          "word_to": 52,
+          "start": 15.694,
+          "end": 19.681,
+          "duration": 3.986,
+          "sentence_index": 5,
+          "visual": "Close-up tracking shot of ancient rock art carvings on a desert cliff face depicting wild animals.",
+          "query": "ancient rock art paintings animals Sahara",
+          "subject": "rock paintings",
+          "action": "showing carved animals",
+          "location": "Sahara cliff",
+          "continuity": "new",
+          "context": {
+            "scene_meaning": "The transformation of the Sahara from a lush, animal-filled landscape to a massive, towering hot desert through time.",
+            "scene_location": "Sahara Desert",
+            "previous_visual": "Medium shot of hippos and crocodiles swimming in a shallow, sparkling prehistoric African lake.",
+            "next_visual": "",
+            "continuity": "new"
+          }
+        }
+      ],
+      "visual": null,
+      "shot_context": null
+    }
+  ]
+}
