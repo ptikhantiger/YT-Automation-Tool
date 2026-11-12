@@ -506,7 +506,16 @@ captions → auto-matched clips → render → **private** upload to the channel
 (EXTREME EARTH LIFE), scheduled to go public at your time. Nothing needs to be
 open. Works from a phone.
 
-### Make a video
+### Make a video -- the easy way: the dashboard page
+
+Open the dashboard (codespace port 8765, or on the laptop
+`python tools/webui/server.py`) and click **🚀 New auto video** in the top bar
+(or go straight to `/auto`). Type a name, paste the script (or a YouTube link),
+pick the date and time, click **Make the video**. The same page lists your auto
+videos with their progress, the Studio link once uploaded, and what went wrong
+if one failed. You can close it after clicking -- GitHub does the work.
+
+### Make a video -- by hand on github.com
 
 1. github.com → repo → **Add file → Create new file**
 2. Name: `projects/en/<name>/script.txt` (no spaces in `<name>`), paste the narration.
