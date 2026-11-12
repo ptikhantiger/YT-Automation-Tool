@@ -50,3 +50,7 @@ tools/webui/.voices_cache.json
 .ai_cache/
 .music_cache/
 .build_cache.json
+
+# ---- YouTube upload credentials (tools/youtube_auth.py) ----
+client_secret*.json
+tools/youtube_token.json
