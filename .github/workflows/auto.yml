@@ -123,6 +123,7 @@ jobs:
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-liberation
           pip install -q -r tools/requirements.txt
+          pip show edge-tts | grep -i '^version'
       - name: Check keys and input
         run: |
           [ -n "$GEMINI_API_KEY" ] || { echo "::error::GEMINI_API_KEY is not set in Settings -> Secrets and variables -> Actions"; exit 1; }

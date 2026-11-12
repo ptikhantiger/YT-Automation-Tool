@@ -101,6 +101,39 @@ async def synthesize(text, voice, rate, out_mp3):
     return words
 
 
+# Microsoft's free TTS endpoint sometimes closes the stream without sending
+# any audio (edge_tts NoAudioReceived) or drops the connection -- seen on
+# cloud runners (GitHub Actions) more than on a home connection. It is
+# transient: the same request succeeds a little later. A 403 is NOT retried
+# (that's an outdated edge-tts, handled by the caller).
+TTS_ATTEMPTS = 6
+TTS_WAITS = (10, 20, 40, 60, 90)
+
+
+def synthesize_with_retries(text, voice, rate, out_mp3, attempts=TTS_ATTEMPTS):
+    import time
+
+    for attempt in range(1, attempts + 1):
+        try:
+            words = asyncio.run(synthesize(text, voice, rate, out_mp3))
+            if words:
+                return words
+            err = "no word timings returned"
+        except Exception as e:
+            if "403" in str(e) or "WSServerHandshakeError" in type(e).__name__:
+                raise
+            err = f"{type(e).__name__}: {e}"
+        if attempt == attempts:
+            raise RuntimeError(
+                f"Edge text-to-speech failed {attempts} times in a row (last: {err}). "
+                "Microsoft's free voice service is refusing or dropping this machine's "
+                "requests; try again later."
+            )
+        wait = TTS_WAITS[min(attempt - 1, len(TTS_WAITS) - 1)]
+        print(f"  voice service hiccup ({err}); retry {attempt}/{attempts - 1} in {wait} s...", flush=True)
+        time.sleep(wait)
+
+
 def make_image_prompt(scene_text):
     snippet = " ".join(scene_text.split())
     if len(snippet) > 220:
@@ -366,7 +399,7 @@ def main():
     else:
         print(f"Synthesizing with voice '{voice}' (rate {args.rate})...")
         try:
-            words = asyncio.run(synthesize(text, voice, args.rate, audio_path))
+            words = synthesize_with_retries(text, voice, args.rate, audio_path)
         except Exception as e:
             # Microsoft's TTS endpoint answers 403 to older edge-tts releases,
             # which still send the retired v1 Sec-MS-GEC security token. It is
