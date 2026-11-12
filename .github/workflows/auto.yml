@@ -165,10 +165,14 @@ jobs:
           git add -A "projects/$PROJECT"
           if ! git diff --cached --quiet; then
             git commit -q -m "auto-picked: $PROJECT" -m "Run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            ok=""
             for i in 1 2 3 4 5; do
-              git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+              git fetch -q origin "${GITHUB_REF_NAME}" && git rebase -q "origin/${GITHUB_REF_NAME}" \
+                && git push -q origin "HEAD:${GITHUB_REF_NAME}" && { ok=1; break; }
+              git rebase --abort 2>/dev/null || true
               sleep $((i * 5))
             done
+            [ -n "$ok" ] || { echo "::error::couldn't push the picks back to the repo"; exit 1; }
           fi
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
       - name: Explain failure
@@ -241,9 +245,13 @@ jobs:
         if: env.DO_UPLOAD == 'true'
         working-directory: tools
         run: |
-          if [ -z "$YT_REFRESH_TOKEN" ] || [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ]; then
-            echo "::warning::YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN not set -- skipping the YouTube upload (the video is in Releases)."
-            exit 0
+          missing=""
+          [ -n "$YT_CLIENT_ID" ] || missing="$missing YT_CLIENT_ID"
+          [ -n "$YT_CLIENT_SECRET" ] || missing="$missing YT_CLIENT_SECRET"
+          [ -n "$YT_REFRESH_TOKEN" ] || missing="$missing YT_REFRESH_TOKEN"
+          if [ -n "$missing" ]; then
+            echo "::error title=Not uploaded to YouTube::Missing Actions secret(s):$missing -- add them under Settings -> Secrets and variables -> Actions -> Secrets tab -> New repository secret (Codespaces secrets and Variables don't count). The rendered video is safe in Releases."
+            exit 1
           fi
           at="$PUBLISH_AT"
           review=$(python3 -c "import json,sys; d=json.load(open('../projects/$PROJECT/auto_pick_report.json')); print('; '.join(d['reasons']) if d.get('needs_review') else '')" 2>/dev/null || true)
@@ -262,11 +270,14 @@ jobs:
           git add "projects/$PROJECT"
           if ! git diff --cached --quiet; then
             git commit -q -m "uploaded: $PROJECT"
-            git fetch -q origin "${GITHUB_REF_NAME}"
+            ok=""
             for i in 1 2 3 4 5; do
-              git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+              git fetch -q origin "${GITHUB_REF_NAME}" && git rebase -q "origin/${GITHUB_REF_NAME}" \
+                && git push -q origin "HEAD:${GITHUB_REF_NAME}" && { ok=1; break; }
+              git rebase --abort 2>/dev/null || true
               sleep $((i * 5))
             done
+            [ -n "$ok" ] || { echo "::error::Uploaded, but couldn't save youtube_upload.json to the repo"; exit 1; }
           fi
       - name: Summary
         if: always()

@@ -300,6 +300,26 @@ def upload_file(session, token_fn, path, size):
     raise UploadError("Upload ended without YouTube confirming the video.")
 
 
+def verify_private(token, video_id, tries=6):
+    """Read the video back from YouTube: it must exist and be private.
+    Returns its status dict. Raises UploadError if it isn't private."""
+    url = f"{API}/videos?" + urllib.parse.urlencode({"part": "status,processingDetails", "id": video_id})
+    for attempt in range(tries):
+        try:
+            with _request("GET", url, token, timeout=30) as r:
+                items = json.loads(r.read().decode()).get("items") or []
+        except urllib.error.HTTPError as e:
+            raise _api_error(e) from None
+        if items:
+            st = items[0].get("status", {})
+            if st.get("privacyStatus") != "private":
+                raise UploadError(f"Video {video_id} is {st.get('privacyStatus')!r}, not private -- "
+                                  f"set it to Private in Studio now: https://studio.youtube.com/video/{video_id}/edit")
+            return st
+        time.sleep(5)  # brand-new video not listed yet
+    raise UploadError(f"YouTube accepted the upload but video {video_id} can't be found yet -- check Studio.")
+
+
 def set_thumbnail(token, video_id, image):
     ctype = "image/png" if image.suffix.lower() == ".png" else "image/jpeg"
     url = UPLOAD_URL.replace("/videos", "/thumbnails/set") + "?" + urllib.parse.urlencode({"videoId": video_id})
@@ -354,6 +374,10 @@ def run(project_dir, publish_at=None, tz_name=DEFAULT_TZ, force=False, use_llm=T
     print("Uploading...")
     result = upload_file(session, access_token, video, size)
     vid = result["id"]
+    st = verify_private(access_token(), vid)
+    print(f"Verified on YouTube: private, upload {st.get('uploadStatus')}"
+          + (f", goes public {st['publishAt']}" if st.get("publishAt") else ", not scheduled"))
+    result.setdefault("status", {}).update(st)
     rec = {
         "video_id": vid, "url": f"https://youtu.be/{vid}",
         "studio": f"https://studio.youtube.com/video/{vid}/edit",
