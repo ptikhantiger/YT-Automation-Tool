@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "mode": "semantic",
+    "planner": "sentence-driven",
+    "plan_check": {
+      "ok": true,
+      "visual_units": 5,
+      "sentences": 4,
+      "sentences_without_own_shot": [],
+      "sentences_without_own_shot_count": 0,
+      "longest_seconds": 4.12,
+      "median_seconds": 3.85,
+      "over_cap": 0,
+      "problems": []
+    },
+    "sentences": 4,
+    "scenes": 4,
+    "shots": 5,
+    "max_shot_seconds": 6.0,
+    "longest_shot_seconds": 4.12,
+    "llm_scenes": 4,
+    "multi_shot_scenes": 1,
+    "llm_failures": []
+  },
+  "words": [
+    {
+      "i": 0,
+      "text": "Deep",
+      "start": 0.125,
+      "end": 0.333,
+      "scene": 1
+    },
+    {
+      "i": 1,
+      "text": "under",
+      "start": 0.347,
+      "end": 0.542,
+      "scene": 1
+    },
+    {
+      "i": 2,
+      "text": "the",
+      "start": 0.556,
+      "end": 0.653,
+      "scene": 1
+    },
+    {
+      "i": 3,
+      "text": "Sahara",
+      "start": 0.667,
+      "end": 1.236,
+      "scene": 1
+    },
+    {
+      "i": 4,
+      "text": "lies",
+      "start": 1.25,
+      "end": 1.625,
+      "scene": 1
+    },
+    {
+      "i": 5,
+      "text": "one",
+      "start": 1.639,
+      "end": 1.792,
+      "scene": 1
+    },
+    {
+      "i": 6,
+      "text": "of",
+      "start": 1.806,
+      "end": 1.861,
+      "scene": 1
+    },
+    {
+      "i": 7,
+      "text": "the",
+      "start": 1.875,
+      "end": 2.0,
+      "scene": 1
+    },
+    {
+      "i": 8,
+      "text": "largest",
+      "start": 2.014,
+      "end": 2.625,
+      "scene": 1
+    },
+    {
+      "i": 9,
+      "text": "stores",
+      "start": 2.639,
+      "end": 3.181,
+      "scene": 1
+    },
+    {
+      "i": 10,
+      "text": "of",
+      "start": 3.194,
+      "end": 3.292,
+      "scene": 1
+    },
+    {
+      "i": 11,
+      "text": "fresh",
+      "start": 3.306,
+      "end": 3.708,
+      "scene": 1
+    },
+    {
+      "i": 12,
+      "text": "water",
+      "start": 3.722,
+      "end": 4.069,
+      "scene": 1
+    },
+    {
+      "i": 13,
+      "text": "on",
+      "start": 4.083,
+      "end": 4.236,
+      "scene": 1
+    },
+    {
+      "i": 14,
+      "text": "Earth",
+      "start": 4.25,
+      "end": 4.653,
+      "scene": 1
+    },
+    {
+      "i": 15,
+      "text": "This",
+      "start": 5.111,
+      "end": 5.375,
+      "scene": 2
+    },
+    {
+      "i": 16,
+      "text": "ancient",
+      "start": 5.514,
+      "end": 5.875,
+      "scene": 2
+    },
+    {
+      "i": 17,
+      "text": "water",
+      "start": 5.889,
+      "end": 6.25,
+      "scene": 2
+    },
+    {
+      "i": 18,
+      "text": "fell",
+      "start": 6.264,
+      "end": 6.597,
+      "scene": 2
+    },
+    {
+      "i": 19,
+      "text": "as",
+      "start": 6.611,
+      "end": 6.75,
+      "scene": 2
+    },
+    {
+      "i": 20,
+      "text": "rain",
+      "start": 6.764,
+      "end": 7.181,
+      "scene": 2
+    },
+    {
+      "i": 21,
+      "text": "more",
+      "start": 7.194,
+      "end": 7.486,
+      "scene": 2
+    },
+    {
+      "i": 22,
+      "text": "than",
+      "start": 7.5,
+      "end": 7.694,
+      "scene": 2
+    },
+    {
+      "i": 23,
+      "text": "ten",
+      "start": 7.708,
+      "end": 8.069,
+      "scene": 2
+    },
+    {
+      "i": 24,
+      "text": "thousand",
+      "start": 8.083,
+      "end": 8.569,
+      "scene": 2
+    },
+    {
+      "i": 25,
+      "text": "years",
+      "start": 8.583,
+      "end": 8.861,
+      "scene": 2
+    },
+    {
+      "i": 26,
+      "text": "ago",
+      "start": 8.875,
+      "end": 9.236,
+      "scene": 2
+    },
+    {
+      "i": 27,
+      "text": "Today",
+      "start": 9.694,
+      "end": 10.042,
+      "scene": 3
+    },
+    {
+      "i": 28,
+      "text": "farmers",
+      "start": 10.361,
+      "end": 10.833,
+      "scene": 3
+    },
+    {
+      "i": 29,
+      "text": "pump",
+      "start": 10.847,
+      "end": 11.153,
+      "scene": 3
+    },
+    {
+      "i": 30,
+      "text": "it",
+      "start": 11.167,
+      "end": 11.25,
+      "scene": 3
+    },
+    {
+      "i": 31,
+      "text": "up",
+      "start": 11.264,
+      "end": 11.431,
+      "scene": 3
+    },
+    {
+      "i": 32,
+      "text": "to",
+      "start": 11.444,
+      "end": 11.556,
+      "scene": 3
+    },
+    {
+      "i": 33,
+      "text": "grow",
+      "start": 11.569,
+      "end": 11.889,
+      "scene": 3
+    },
+    {
+      "i": 34,
+      "text": "wheat",
+      "start": 11.903,
+      "end": 12.278,
+      "scene": 3
+    },
+    {
+      "i": 35,
+      "text": "in",
+      "start": 12.458,
+      "end": 12.583,
+      "scene": 3
+    },
+    {
+      "i": 36,
+      "text": "circles",
+      "start": 12.597,
+      "end": 13.125,
+      "scene": 3
+    },
+    {
+      "i": 37,
+      "text": "of",
+      "start": 13.139,
+      "end": 13.236,
+      "scene": 3
+    },
+    {
+      "i": 38,
+      "text": "green",
+      "start": 13.25,
+      "end": 13.639,
+      "scene": 3
+    },
+    {
+      "i": 39,
+      "text": "But",
+      "start": 14.097,
+      "end": 14.194,
+      "scene": 4
+    },
+    {
+      "i": 40,
+      "text": "once",
+      "start": 14.208,
+      "end": 14.458,
+      "scene": 4
+    },
+    {
+      "i": 41,
+      "text": "it",
+      "start": 14.472,
+      "end": 14.542,
+      "scene": 4
+    },
+    {
+      "i": 42,
+      "text": "is",
+      "start": 14.556,
+      "end": 14.694,
+      "scene": 4
+    },
+    {
+      "i": 43,
+      "text": "gone",
+      "start": 14.708,
+      "end": 15.153,
+      "scene": 4
+    },
+    {
+      "i": 44,
+      "text": "it",
+      "start": 15.597,
+      "end": 15.667,
+      "scene": 4
+    },
+    {
+      "i": 45,
+      "text": "will",
+      "start": 15.681,
+      "end": 15.806,
+      "scene": 4
+    },
+    {
+      "i": 46,
+      "text": "not",
+      "start": 15.819,
+      "end": 16.069,
+      "scene": 4
+    },
+    {
+      "i": 47,
+      "text": "come",
+      "start": 16.083,
+      "end": 16.306,
+      "scene": 4
+    },
+    {
+      "i": 48,
+      "text": "back",
+      "start": 16.319,
+      "end": 16.625,
+      "scene": 4
+    },
+    {
+      "i": 49,
+      "text": "for",
+      "start": 16.639,
+      "end": 16.764,
+      "scene": 4
+    },
+    {
+      "i": 50,
+      "text": "thousands",
+      "start": 16.778,
+      "end": 17.306,
+      "scene": 4
+    },
+    {
+      "i": 51,
+      "text": "of",
+      "start": 17.319,
+      "end": 17.389,
+      "scene": 4
+    },
+    {
+      "i": 52,
+      "text": "years",
+      "start": 17.403,
+      "end": 17.944,
+      "scene": 4
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "scene_001",
+      "segment_id": "segment_001",
+      "index": 1,
+      "text": "Deep under the Sahara lies one of the largest stores of fresh water on Earth.",
+      "word_from": 0,
+      "word_to": 14,
+      "start": 0.125,
+      "end": 4.653,
+      "duration": 4.528,
+      "semantic": {
+        "meaning": "The vast underground water reserves beneath the Sahara desert",
+        "subject": "underground water",
+        "action": "resting deep below the earth",
+        "object": "water reserve",
+        "location": "Sahara desert subsurface",
+        "time": "present day",
+        "entities": [
+          "Sahara"
+        ]
+      },
+      "visual_requirements": [
+        "underground aquifer visualization",
+        "arid desert surface above",
+        "cross-section of earth"
+      ],
+      "visual_exclusions": [
+        "lush green jungles",
+        "ocean waves"
+      ],
+      "queries": [
+        "underground water aquifer sahara",
+        "subterranean desert water"
+      ],
+      "shots": [
+        {
+          "shot_id": "scene_001_shot_1",
+          "text": "Deep under the Sahara lies one of",
+          "word_from": 0,
+          "word_to": 6,
+          "start": 0.125,
+          "end": 1.861,
+          "duration": 1.736,
+          "sentence_index": 1,
+          "visual": "Extreme wide shot of the vast golden dunes of the Sahara Desert stretching to the horizon",
+          "query": "sahara desert dunes aerial",
+          "subject": "desert dunes",
+          "action": "stretching across landscape",
+          "location": "Sahara desert",
+          "continuity": "new",
+          "context": {
+            "scene_meaning": "The vast underground water reserves beneath the Sahara desert",
+            "scene_location": "Sahara desert subsurface",
+            "previous_visual": "",
+            "next_visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+            "continuity": "new"
+          }
+        },
+        {
+          "shot_id": "scene_001_shot_2",
+          "text": "the largest stores of fresh water on Earth",
+          "word_from": 7,
+          "word_to": 14,
+          "start": 1.875,
+          "end": 4.653,
+          "duration": 2.778,
+          "sentence_index": 1,
+          "visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+          "query": "underground aquifer cross section animation",
+          "subject": "underground water reservoir",
+          "action": "resting beneath earth",
+          "location": "subsurface Sahara",
+          "continuity": "new",
+          "context": {
+            "scene_meaning": "The vast underground water reserves beneath the Sahara desert",
+            "scene_location": "Sahara desert subsurface",
+            "previous_visual": "Extreme wide shot of the vast golden dunes of the Sahara Desert stretching to the horizon",
+            "next_visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape",
+            "continuity": "new"
+          }
+        }
+      ],
+      "visual": null,
+      "shot_context": null
+    },
+    {
+      "scene_id": "scene_002",
+      "segment_id": "segment_002",
+      "index": 2,
+      "text": "This ancient water fell as rain more than ten thousand years ago.",
+      "word_from": 15,
+      "word_to": 26,
+      "start": 5.111,
+      "end": 9.236,
+      "duration": 4.125,
+      "semantic": {
+        "meaning": "The ancient origins of the fossil water from prehistoric rainfall",
+        "subject": "ancient rainfall",
+        "action": "falling from prehistoric skies",
+        "object": "rainwater",
+        "location": "Sahara region",
+        "time": "ten thousand years ago",
+        "entities": [
+          "prehistoric Sahara"
+        ],
+        "visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape"
+      },
+      "visual_requirements": [
+        "historic rain simulation",
+        "arid landscape in prehistoric times"
+      ],
+      "visual_exclusions": [
+        "modern cities",
+        "industrial machinery"
+      ],
+      "queries": [
+        "prehistoric green sahara rain landscape",
+        "ancient green sahara prehistoric rain",
+        "historic rainfall animation"
+      ],
+      "shots": [],
+      "visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape",
+      "shot_context": {
+        "scene_meaning": "The ancient origins of the fossil water from prehistoric rainfall",
+        "scene_location": "Sahara region",
+        "previous_visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+        "next_visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand",
+        "continuity": "new"
+      }
+    },
+    {
+      "scene_id": "scene_003",
+      "segment_id": "segment_003",
+      "index": 3,
+      "text": "Today, farmers pump it up to grow wheat in circles of green.",
+      "word_from": 27,
+      "word_to": 38,
+      "start": 9.694,
+      "end": 13.639,
+      "duration": 3.944,
+      "semantic": {
+        "meaning": "Modern agricultural use of the fossil water creating green crop circles",
+        "subject": "modern farmers",
+        "action": "pumping water to irrigate crops",
+        "object": "crop circles",
+        "location": "desert farmland",
+        "time": "present day",
+        "entities": [
+          "Sahara farmers"
+        ],
+        "visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand"
+      },
+      "visual_requirements": [
+        "center-pivot irrigation",
+        "vibrant green circles",
+        "desert surroundings"
+      ],
+      "visual_exclusions": [
+        "snow",
+        "mountains"
+      ],
+      "queries": [
+        "center pivot irrigation desert aerial",
+        "desert center pivot irrigation green circles",
+        "sahara farming satellite view"
+      ],
+      "shots": [],
+      "visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand",
+      "shot_context": {
+        "scene_meaning": "Modern agricultural use of the fossil water creating green crop circles",
+        "scene_location": "desert farmland",
+        "previous_visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape",
+        "next_visual": "Close-up detail shot of dry, cracked desert clay baking under a harsh sun, symbolizing resource depletion",
+        "continuity": "new"
+      }
+    },
+    {
+      "scene_id": "scene_004",
+      "segment_id": "segment_004",
+      "index": 4,
+      "text": "But once it is gone, it will not come back for thousands of years.",
+      "word_from": 39,
+      "word_to": 52,
+      "start": 14.097,
+      "end": 17.944,
+      "duration": 3.847,
+      "semantic": {
+        "meaning": "The finite nature of the non-renewable fossil water resource",
+        "subject": "depleting water resource",
+        "action": "vanishing permanently over millennia",
+        "object": "depleted aquifer",
+        "location": "underground Sahara",
+        "time": "future millennia",
+        "entities": [
+          "aquifer"
+        ],
+        "visual": "Close-up detail shot of dry, cracked desert clay baking under a harsh sun, symbolizing resource depletion"
+      },
+      "visual_requirements": [
+        "lowering water table",
+        "dry cracked earth"
+      ],
+      "visual_exclusions": [
+        "rising tides",
+        "heavy rain"
+      ],
+      "queries": [
+        "cracked desert earth dry ground",
+        "depleted groundwater cracked earth",
+        "empty underground water aquifer"
+      ],
+      "shots": [],
+      "visual": "Close-up detail shot of dry, cracked desert clay baking under a harsh sun, symbolizing resource depletion",
+      "shot_context": {
+        "scene_meaning": "The finite nature of the non-renewable fossil water resource",
+        "scene_location": "underground Sahara",
+        "previous_visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand",
+        "next_visual": "",
+        "continuity": "new"
+      }
+    }
+  ]
+}

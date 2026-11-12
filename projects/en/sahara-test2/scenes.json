@@ -1,0 +1,255 @@
+[
+  {
+    "text": "Deep under the Sahara lies one of the largest stores of fresh water on Earth.",
+    "word_from": 0,
+    "word_to": 14,
+    "query": "underground water aquifer sahara",
+    "queries": [
+      "underground water aquifer sahara",
+      "subterranean desert water"
+    ],
+    "keywords": [
+      "largest",
+      "sahara",
+      "stores",
+      "fresh",
+      "water"
+    ],
+    "semantic": {
+      "meaning": "The vast underground water reserves beneath the Sahara desert",
+      "subject": "underground water",
+      "action": "resting deep below the earth",
+      "object": "water reserve",
+      "location": "Sahara desert subsurface",
+      "time": "present day",
+      "entities": [
+        "Sahara"
+      ]
+    },
+    "visual_requirements": [
+      "underground aquifer visualization",
+      "arid desert surface above",
+      "cross-section of earth"
+    ],
+    "visual_exclusions": [
+      "lush green jungles",
+      "ocean waves"
+    ],
+    "shots": [
+      {
+        "word_from": 0,
+        "word_to": 6,
+        "text": "Deep under the Sahara lies one of",
+        "sentence_index": 1,
+        "visual": "Extreme wide shot of the vast golden dunes of the Sahara Desert stretching to the horizon",
+        "query": "sahara desert dunes aerial",
+        "subject": "desert dunes",
+        "action": "stretching across landscape",
+        "location": "Sahara desert",
+        "continuity": "new",
+        "start": 0.125,
+        "end": 1.861082,
+        "duration": 1.736082,
+        "context": {
+          "scene_meaning": "The vast underground water reserves beneath the Sahara desert",
+          "scene_location": "Sahara desert subsurface",
+          "previous_visual": "",
+          "next_visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+          "continuity": "new"
+        },
+        "shot_id": "scene_001_shot_1"
+      },
+      {
+        "word_from": 7,
+        "word_to": 14,
+        "text": "the largest stores of fresh water on Earth",
+        "sentence_index": 1,
+        "visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+        "query": "underground aquifer cross section animation",
+        "subject": "underground water reservoir",
+        "action": "resting beneath earth",
+        "location": "subsurface Sahara",
+        "continuity": "new",
+        "start": 1.875,
+        "end": 4.652791,
+        "duration": 2.7777909999999997,
+        "context": {
+          "scene_meaning": "The vast underground water reserves beneath the Sahara desert",
+          "scene_location": "Sahara desert subsurface",
+          "previous_visual": "Extreme wide shot of the vast golden dunes of the Sahara Desert stretching to the horizon",
+          "next_visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape",
+          "continuity": "new"
+        },
+        "shot_id": "scene_001_shot_2"
+      }
+    ],
+    "llm": true,
+    "sentence_from": 1,
+    "sentence_to": 1,
+    "start": 0.125,
+    "end": 4.652791,
+    "duration": 4.527791,
+    "index": 1,
+    "segment_id": "segment_001"
+  },
+  {
+    "text": "This ancient water fell as rain more than ten thousand years ago.",
+    "word_from": 15,
+    "word_to": 26,
+    "query": "prehistoric green sahara rain landscape",
+    "queries": [
+      "prehistoric green sahara rain landscape",
+      "ancient green sahara prehistoric rain",
+      "historic rainfall animation"
+    ],
+    "keywords": [
+      "thousand",
+      "ancient",
+      "water",
+      "years",
+      "fell"
+    ],
+    "semantic": {
+      "meaning": "The ancient origins of the fossil water from prehistoric rainfall",
+      "subject": "ancient rainfall",
+      "action": "falling from prehistoric skies",
+      "object": "rainwater",
+      "location": "Sahara region",
+      "time": "ten thousand years ago",
+      "entities": [
+        "prehistoric Sahara"
+      ],
+      "visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape"
+    },
+    "visual_requirements": [
+      "historic rain simulation",
+      "arid landscape in prehistoric times"
+    ],
+    "visual_exclusions": [
+      "modern cities",
+      "industrial machinery"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 2,
+    "sentence_to": 2,
+    "start": 5.111125,
+    "end": 9.236125,
+    "duration": 4.124999999999999,
+    "shot_context": {
+      "scene_meaning": "The ancient origins of the fossil water from prehistoric rainfall",
+      "scene_location": "Sahara region",
+      "previous_visual": "CGI cross-section animation revealing a vast glowing blue ocean of water deep beneath the desert sand",
+      "next_visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand",
+      "continuity": "new"
+    },
+    "index": 2,
+    "segment_id": "segment_002"
+  },
+  {
+    "text": "Today, farmers pump it up to grow wheat in circles of green.",
+    "word_from": 27,
+    "word_to": 38,
+    "query": "center pivot irrigation desert aerial",
+    "queries": [
+      "center pivot irrigation desert aerial",
+      "desert center pivot irrigation green circles",
+      "sahara farming satellite view"
+    ],
+    "keywords": [
+      "farmers",
+      "circles",
+      "today",
+      "wheat",
+      "green"
+    ],
+    "semantic": {
+      "meaning": "Modern agricultural use of the fossil water creating green crop circles",
+      "subject": "modern farmers",
+      "action": "pumping water to irrigate crops",
+      "object": "crop circles",
+      "location": "desert farmland",
+      "time": "present day",
+      "entities": [
+        "Sahara farmers"
+      ],
+      "visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand"
+    },
+    "visual_requirements": [
+      "center-pivot irrigation",
+      "vibrant green circles",
+      "desert surroundings"
+    ],
+    "visual_exclusions": [
+      "snow",
+      "mountains"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 3,
+    "sentence_to": 3,
+    "start": 9.694458,
+    "end": 13.638875,
+    "duration": 3.9444170000000014,
+    "shot_context": {
+      "scene_meaning": "Modern agricultural use of the fossil water creating green crop circles",
+      "scene_location": "desert farmland",
+      "previous_visual": "Cinematic historical recreation of heavy rain pouring over a lush, green prehistoric Sahara landscape",
+      "next_visual": "Close-up detail shot of dry, cracked desert clay baking under a harsh sun, symbolizing resource depletion",
+      "continuity": "new"
+    },
+    "index": 3,
+    "segment_id": "segment_003"
+  },
+  {
+    "text": "But once it is gone, it will not come back for thousands of years.",
+    "word_from": 39,
+    "word_to": 52,
+    "query": "cracked desert earth dry ground",
+    "queries": [
+      "cracked desert earth dry ground",
+      "depleted groundwater cracked earth",
+      "empty underground water aquifer"
+    ],
+    "keywords": [
+      "thousands",
+      "years"
+    ],
+    "semantic": {
+      "meaning": "The finite nature of the non-renewable fossil water resource",
+      "subject": "depleting water resource",
+      "action": "vanishing permanently over millennia",
+      "object": "depleted aquifer",
+      "location": "underground Sahara",
+      "time": "future millennia",
+      "entities": [
+        "aquifer"
+      ],
+      "visual": "Close-up detail shot of dry, cracked desert clay baking under a harsh sun, symbolizing resource depletion"
+    },
+    "visual_requirements": [
+      "lowering water table",
+      "dry cracked earth"
+    ],
+    "visual_exclusions": [
+      "rising tides",
+      "heavy rain"
+    ],
+    "shots": [],
+    "llm": true,
+    "sentence_from": 4,
+    "sentence_to": 4,
+    "start": 14.097208,
+    "end": 17.944457,
+    "duration": 3.8472489999999997,
+    "shot_context": {
+      "scene_meaning": "The finite nature of the non-renewable fossil water resource",
+      "scene_location": "underground Sahara",
+      "previous_visual": "Satellite or high aerial view of bright green center-pivot crop circles glowing against the surrounding desert sand",
+      "next_visual": "",
+      "continuity": "new"
+    },
+    "index": 4,
+    "segment_id": "segment_004"
+  }
+]

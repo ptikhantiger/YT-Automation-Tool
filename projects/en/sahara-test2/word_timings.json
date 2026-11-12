@@ -1,0 +1,267 @@
+[
+  {
+    "text": "Deep",
+    "start": 0.125,
+    "end": 0.333333
+  },
+  {
+    "text": "under",
+    "start": 0.347208,
+    "end": 0.541666
+  },
+  {
+    "text": "the",
+    "start": 0.555541,
+    "end": 0.652749
+  },
+  {
+    "text": "Sahara",
+    "start": 0.666666,
+    "end": 1.236124
+  },
+  {
+    "text": "lies",
+    "start": 1.25,
+    "end": 1.625
+  },
+  {
+    "text": "one",
+    "start": 1.638875,
+    "end": 1.791666
+  },
+  {
+    "text": "of",
+    "start": 1.805541,
+    "end": 1.861082
+  },
+  {
+    "text": "the",
+    "start": 1.875,
+    "end": 2.0
+  },
+  {
+    "text": "largest",
+    "start": 2.013875,
+    "end": 2.625
+  },
+  {
+    "text": "stores",
+    "start": 2.638875,
+    "end": 3.180541
+  },
+  {
+    "text": "of",
+    "start": 3.194458,
+    "end": 3.291666
+  },
+  {
+    "text": "fresh",
+    "start": 3.305541,
+    "end": 3.708332
+  },
+  {
+    "text": "water",
+    "start": 3.722208,
+    "end": 4.069416
+  },
+  {
+    "text": "on",
+    "start": 4.083333,
+    "end": 4.236124
+  },
+  {
+    "text": "Earth",
+    "start": 4.25,
+    "end": 4.652791
+  },
+  {
+    "text": "This",
+    "start": 5.111125,
+    "end": 5.375
+  },
+  {
+    "text": "ancient",
+    "start": 5.513875,
+    "end": 5.875
+  },
+  {
+    "text": "water",
+    "start": 5.888875,
+    "end": 6.25
+  },
+  {
+    "text": "fell",
+    "start": 6.263875,
+    "end": 6.597208
+  },
+  {
+    "text": "as",
+    "start": 6.611125,
+    "end": 6.75
+  },
+  {
+    "text": "rain",
+    "start": 6.763875,
+    "end": 7.180541
+  },
+  {
+    "text": "more",
+    "start": 7.194458,
+    "end": 7.486124
+  },
+  {
+    "text": "than",
+    "start": 7.5,
+    "end": 7.694458
+  },
+  {
+    "text": "ten",
+    "start": 7.708333,
+    "end": 8.069458
+  },
+  {
+    "text": "thousand",
+    "start": 8.083333,
+    "end": 8.569458
+  },
+  {
+    "text": "years",
+    "start": 8.583333,
+    "end": 8.861124
+  },
+  {
+    "text": "ago",
+    "start": 8.875,
+    "end": 9.236125
+  },
+  {
+    "text": "Today",
+    "start": 9.694458,
+    "end": 10.041666
+  },
+  {
+    "text": "farmers",
+    "start": 10.361125,
+    "end": 10.833333
+  },
+  {
+    "text": "pump",
+    "start": 10.847208,
+    "end": 11.152749
+  },
+  {
+    "text": "it",
+    "start": 11.166666,
+    "end": 11.249999
+  },
+  {
+    "text": "up",
+    "start": 11.263875,
+    "end": 11.430541
+  },
+  {
+    "text": "to",
+    "start": 11.444458,
+    "end": 11.555583
+  },
+  {
+    "text": "grow",
+    "start": 11.569458,
+    "end": 11.888916
+  },
+  {
+    "text": "wheat",
+    "start": 11.902791,
+    "end": 12.277791
+  },
+  {
+    "text": "in",
+    "start": 12.458333,
+    "end": 12.583333
+  },
+  {
+    "text": "circles",
+    "start": 12.597208,
+    "end": 13.124999
+  },
+  {
+    "text": "of",
+    "start": 13.138875,
+    "end": 13.236083
+  },
+  {
+    "text": "green",
+    "start": 13.25,
+    "end": 13.638875
+  },
+  {
+    "text": "But",
+    "start": 14.097208,
+    "end": 14.194416
+  },
+  {
+    "text": "once",
+    "start": 14.208333,
+    "end": 14.458333
+  },
+  {
+    "text": "it",
+    "start": 14.472208,
+    "end": 14.541666
+  },
+  {
+    "text": "is",
+    "start": 14.555541,
+    "end": 14.694416
+  },
+  {
+    "text": "gone",
+    "start": 14.708333,
+    "end": 15.152791
+  },
+  {
+    "text": "it",
+    "start": 15.597208,
+    "end": 15.666666
+  },
+  {
+    "text": "will",
+    "start": 15.680541,
+    "end": 15.805541
+  },
+  {
+    "text": "not",
+    "start": 15.819458,
+    "end": 16.069458
+  },
+  {
+    "text": "come",
+    "start": 16.083333,
+    "end": 16.305541
+  },
+  {
+    "text": "back",
+    "start": 16.319458,
+    "end": 16.624999
+  },
+  {
+    "text": "for",
+    "start": 16.638875,
+    "end": 16.763875
+  },
+  {
+    "text": "thousands",
+    "start": 16.777791,
+    "end": 17.305582
+  },
+  {
+    "text": "of",
+    "start": 17.319458,
+    "end": 17.388916
+  },
+  {
+    "text": "years",
+    "start": 17.402791,
+    "end": 17.944457
+  }
+]
