@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>New Auto Video</title>
+<style>
+  :root {
+    --bg: #0f1115; --panel: #161922; --panel-2: #1d212c; --border: #2a2f3d;
+    --text: #e4e6eb; --muted: #8b90a0; --accent: #5aa9ff; --accent-2: #58d68d;
+    --danger: #ff6b6b; --warn: #f5c05a; --input-bg: #0c0e13;
+    --ok-bg: #0f2618; --ok-border: #2c6e44; --ok-text: #a5eec4;
+    --warn-bg: #26200f; --warn-border: #6e5a2c; --warn-text: #eedca5;
+    --err-bg: #260f0f; --err-border: #6e2c2c; --err-text: #eea5a5;
+    --run-bg: #14213a; --run-border: #29416e; --run-text: #9cc8ff;
+    --btn-text: #06210f; --shadow: none;
+  }
+  html[data-theme="light"] {
+    --bg: #f3f5f8; --panel: #ffffff; --panel-2: #eef1f6; --border: #dfe4ec;
+    --text: #16202c; --muted: #5b6a7e; --accent: #2563eb; --accent-2: #16a34a;
+    --danger: #dc2626; --warn: #b45309; --input-bg: #ffffff;
+    --ok-bg: #ecfdf3; --ok-border: #a6e6c3; --ok-text: #11603a;
+    --warn-bg: #fffbeb; --warn-border: #eeddaa; --warn-text: #8a6116;
+    --err-bg: #fdf0f0; --err-border: #f2bcbc; --err-text: #991f1f;
+    --run-bg: #e8effe; --run-border: #bdd0f7; --run-text: #1d4ed8;
+    --btn-text: #ffffff; --shadow: 0 1px 3px rgba(16,24,40,.07), 0 1px 2px rgba(16,24,40,.04);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text);
+    font: 15px/1.5 -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 22px 16px 60px; }
+  header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
+  header h1 { font-size: 22px; margin: 0; }
+  header .grow { flex: 1; }
+  a { color: var(--accent); }
+  .linkbtn { background: var(--panel-2); border: 1px solid var(--border); color: var(--text);
+    padding: 6px 12px; border-radius: 999px; font-size: 13px; text-decoration: none; cursor: pointer; }
+  .linkbtn:hover { border-color: var(--accent); }
+  .card { background: var(--panel); border: 1px solid var(--border); border-radius: 14px;
+    padding: 20px; margin-bottom: 18px; box-shadow: var(--shadow); }
+  .card h2 { font-size: 17px; margin: 0 0 14px; }
+  label.f { display: block; font-weight: 600; font-size: 13.5px; margin: 16px 0 6px; }
+  label.f:first-of-type { margin-top: 0; }
+  .hint { color: var(--muted); font-size: 12.5px; margin-top: 5px; }
+  input[type=text], input[type=url], input[type=datetime-local], select, textarea {
+    width: 100%; background: var(--input-bg); color: var(--text); border: 1px solid var(--border);
+    border-radius: 9px; padding: 10px 12px; font: inherit; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+  textarea { min-height: 220px; resize: vertical; line-height: 1.55; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; }
+  .row > * { flex: 1 1 200px; }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+  .seg button { background: var(--panel-2); color: var(--text); border: 0; padding: 9px 16px;
+    font: inherit; font-size: 14px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button.on { background: var(--accent); color: #fff; font-weight: 600; }
+  .check { display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 14px; cursor: pointer; }
+  .check input { width: 17px; height: 17px; }
+  .go { margin-top: 20px; width: 100%; background: var(--accent-2); color: var(--btn-text); border: 0;
+    border-radius: 11px; padding: 14px; font-size: 17px; font-weight: 700; cursor: pointer; }
+  .go:disabled { opacity: .55; cursor: default; }
+  .msg { margin-top: 14px; padding: 12px 14px; border-radius: 10px; font-size: 14px; display: none; }
+  .msg.ok { display: block; background: var(--ok-bg); border: 1px solid var(--ok-border); color: var(--ok-text); }
+  .msg.warn { display: block; background: var(--warn-bg); border: 1px solid var(--warn-border); color: var(--warn-text); }
+  .msg.err { display: block; background: var(--err-bg); border: 1px solid var(--err-border); color: var(--err-text); }
+  .msg a { color: inherit; font-weight: 600; }
+  pre.log { white-space: pre-wrap; font-size: 12px; max-height: 160px; overflow: auto; margin: 8px 0 0; }
+  .videos { display: flex; flex-direction: column; gap: 10px; }
+  .v { border: 1px solid var(--border); border-radius: 11px; padding: 12px 14px; background: var(--panel-2); }
+  .v .top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .v .name { font-weight: 700; font-size: 15px; word-break: break-all; }
+  .v .grow { flex: 1; }
+  .chip { font-size: 12.5px; font-weight: 600; padding: 3px 10px; border-radius: 999px; border: 1px solid; white-space: nowrap; }
+  .chip.run { background: var(--run-bg); border-color: var(--run-border); color: var(--run-text); }
+  .chip.ok { background: var(--ok-bg); border-color: var(--ok-border); color: var(--ok-text); }
+  .chip.warn { background: var(--warn-bg); border-color: var(--warn-border); color: var(--warn-text); }
+  .chip.err { background: var(--err-bg); border-color: var(--err-border); color: var(--err-text); }
+  .v .meta { color: var(--muted); font-size: 13px; margin-top: 5px; }
+  .v .links { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 7px; font-size: 13.5px; }
+  .v .title { margin-top: 5px; font-size: 13.5px; }
+  .spin { display: inline-block; width: 10px; height: 10px; border-radius: 50%; border: 2px solid currentColor;
+    border-right-color: transparent; animation: sp 1s linear infinite; vertical-align: -1px; margin-right: 5px; }
+  @keyframes sp { to { transform: rotate(360deg); } }
+  .empty { color: var(--muted); font-size: 14px; }
+  .steps { margin: 0; padding-left: 20px; color: var(--muted); font-size: 13.5px; }
+  .steps li { margin: 3px 0; }
+  @media (max-width: 560px) { .wrap { padding: 16px 12px 50px; } .card { padding: 16px; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>&#128640; New auto video</h1>
+    <span class="grow"></span>
+    <a class="linkbtn" href="/">&larr; Dashboard</a>
+    <button class="linkbtn" id="theme"></button>
+  </header>
+
+  <div class="card">
+    <h2>1. What's the video?</h2>
+    <div class="row">
+      <div>
+        <label class="f" for="name">Video name</label>
+        <input type="text" id="name" placeholder="e.g. Life in Mongolia" autocomplete="off">
+        <div class="hint" id="namehint">Only for you. YouTube's title is written automatically.</div>
+      </div>
+      <div style="flex:0 1 180px">
+        <label class="f" for="lang">Language</label>
+        <select id="lang"></select>
+      </div>
+    </div>
+
+    <label class="f">Start from</label>
+    <div class="seg" id="mode">
+      <button data-m="script" class="on">&#128221; My script</button>
+      <button data-m="link">&#128279; A YouTube link</button>
+    </div>
+
+    <div id="scriptbox">
+      <label class="f" for="script">Script (the narration)</label>
+      <textarea id="script" placeholder="Paste the whole narration here..."></textarea>
+      <div class="hint" id="est">&nbsp;</div>
+    </div>
+    <div id="linkbox" style="display:none">
+      <label class="f" for="link">YouTube link</label>
+      <input type="url" id="link" placeholder="https://www.youtube.com/watch?v=...">
+      <label class="check"><input type="checkbox" id="documentary"> Rewrite in documentary style</label>
+      <div class="hint">Its transcript is fetched and rewritten into a new script. If YouTube blocks it
+        from GitHub's machines, paste a script instead.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>2. When should it go public?</h2>
+    <input type="datetime-local" id="when">
+    <div class="hint" id="tzhint"></div>
+    <label class="check"><input type="checkbox" id="nosched"> Don't schedule &mdash; keep it private, I'll publish it myself</label>
+    <div class="msg" id="whenwarn"></div>
+    <button class="go" id="go">&#128640; Make the video</button>
+    <div class="msg" id="result"></div>
+  </div>
+
+  <div class="card">
+    <h2 style="display:flex;align-items:center;gap:10px">Your auto videos
+      <span class="grow" style="flex:1"></span>
+      <button class="linkbtn" id="refresh">&#8635; Refresh</button></h2>
+    <div class="videos" id="videos"><div class="empty">Loading...</div></div>
+    <div class="hint" id="checked"></div>
+  </div>
+
+  <div class="card">
+    <h2>What happens after you click</h2>
+    <ol class="steps">
+      <li>Your script is saved to GitHub, and GitHub's machines start working. You can close this page and turn off your computer.</li>
+      <li>They make the voice and captions, pick a matching clip for every sentence, and render the video.</li>
+      <li>It's uploaded to your channel as <b>private</b>, scheduled for your time.</li>
+      <li>Then open YouTube Studio: add the thumbnail, check the title, <b>watch it once</b>.</li>
+      <li>If many clips were weak matches, it's uploaded <b>without</b> the schedule, so it can't go public unchecked. You'll see "Needs your review" below.</li>
+    </ol>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+let mode = "script", info = null, pollTimer = null;
+
+/* theme: shared with the dashboard */
+function theme() { return document.documentElement.dataset.theme || "dark"; }
+function setTheme(t) {
+  document.documentElement.dataset.theme = t;
+  try { localStorage.setItem("wizard-theme", t); } catch (e) {}
+  $("theme").textContent = t === "light" ? "\u{1F319} Dark" : "☀ Light";
+}
+try { setTheme(localStorage.getItem("wizard-theme") || "dark"); } catch (e) { setTheme("dark"); }
+$("theme").onclick = () => setTheme(theme() === "light" ? "dark" : "light");
+
+function slugify(s) { return (s || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").replace(/-{2,}/g, "-").slice(0, 60); }
+function pad(n) { return String(n).padStart(2, "0"); }
+function localInput(d) { return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`; }
+function fmtDur(min) { return min < 60 ? `${Math.max(1, Math.round(min))} min` : `${(min / 60).toFixed(min < 600 ? 1 : 0)} h`; }
+function fmtWhen(s) {
+  if (!s) return "";
+  const d = new Date(s.includes("T") || s.includes("Z") ? s : s.replace(" ", "T"));
+  if (isNaN(d)) return s;
+  return d.toLocaleString(undefined, { weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+}
+function ago(s) {
+  const m = (Date.now() - new Date(s)) / 60000;
+  if (m < 1) return "just now";
+  if (m < 60) return `${Math.round(m)} min ago`;
+  if (m < 48 * 60) return `${Math.round(m / 60)} h ago`;
+  return `${Math.round(m / 1440)} days ago`;
+}
+
+/* estimate: same formula as auto_api.estimate_minutes */
+function estimate() {
+  if (mode !== "script") return { narration: null, processing: 60 };
+  const words = $("script").value.trim().split(/\s+/).filter(Boolean).length;
+  const narration = words / 140;
+  return { words, narration, processing: 8 + narration * 10 };
+}
+function updateHints() {
+  const slug = slugify($("name").value);
+  const lang = $("lang").value || "en";
+  const taken = info && info.names.includes(`${lang}/${slug}`);
+  $("namehint").innerHTML = slug
+    ? (taken ? `<span style="color:var(--danger)">&#9888; <b>${esc(lang + "/" + slug)}</b> already exists &mdash; choose another name.</span>`
+             : `Saved as <b>projects/${esc(lang)}/${esc(slug)}</b>. Only for you; the YouTube title is written automatically.`)
+    : "Only for you. YouTube's title is written automatically.";
+  const e = estimate();
+  $("est").innerHTML = mode === "script" && e.words
+    ? `${e.words.toLocaleString()} words &rarr; about <b>${fmtDur(e.narration)}</b> of video, ready in about <b>${fmtDur(e.processing)}</b>.`
+    : "&nbsp;";
+  const w = $("whenwarn");
+  $("when").disabled = $("nosched").checked;
+  w.className = "msg";
+  if (!$("nosched").checked && $("when").value) {
+    const t = new Date($("when").value);
+    const ready = Date.now() + (e.processing + 60) * 60000;
+    if (t < Date.now()) { w.className = "msg err"; w.textContent = "That time is in the past."; }
+    else if (t < ready) {
+      w.className = "msg warn";
+      w.innerHTML = `That's too soon: the video needs about ${fmtDur(e.processing)} to make, plus time for you to check it. ` +
+        `Pick ${fmtWhen(new Date(ready).toISOString())} or later. If it isn't ready in time, it's uploaded without a schedule.`;
+    }
+  }
+}
+
+document.querySelectorAll("#mode button").forEach(b => b.onclick = () => {
+  mode = b.dataset.m;
+  document.querySelectorAll("#mode button").forEach(x => x.classList.toggle("on", x === b));
+  $("scriptbox").style.display = mode === "script" ? "" : "none";
+  $("linkbox").style.display = mode === "link" ? "" : "none";
+  updateHints();
+});
+["name", "lang", "script", "when", "nosched"].forEach(id => $(id).addEventListener("input", updateHints));
+$("nosched").addEventListener("change", updateHints);
+
+async function boot() {
+  try { info = await (await fetch("/api/auto/info")).json(); } catch (e) { info = { langs: { en: "English" }, names: [], timezone: "Asia/Karachi" }; }
+  $("lang").innerHTML = Object.entries(info.langs).map(([k, v]) => `<option value="${esc(k)}">${esc(v)}</option>`).join("");
+  const d = new Date(); d.setDate(d.getDate() + 1); d.setHours(18, 0, 0, 0);
+  $("when").value = localInput(d);
+  $("tzhint").textContent = `Your computer's time. The upload uses ${info.timezone} time, so keep your computer's clock on ${info.timezone}.`;
+  updateHints();
+  loadVideos();
+}
+
+$("go").onclick = async () => {
+  const r = $("result");
+  const body = {
+    name: $("name").value, lang: $("lang").value, mode,
+    text: mode === "script" ? $("script").value : $("link").value.trim(),
+    documentary: $("documentary").checked,
+    publish_at: $("nosched").checked ? "" : $("when").value.replace("T", " "),
+  };
+  if (!slugify(body.name)) { r.className = "msg err"; r.textContent = "Give the video a name first."; $("name").focus(); return; }
+  if (!$("nosched").checked && !$("when").value) { r.className = "msg err"; r.textContent = "Pick when it should go public, or tick \"Don't schedule\"."; return; }
+  $("go").disabled = true; $("go").textContent = "Sending to GitHub...";
+  r.className = "msg"; r.textContent = "";
+  try {
+    const d = await (await fetch("/api/auto/create", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) })).json();
+    if (d.ok) {
+      r.className = "msg ok";
+      r.innerHTML = `&#9989; <b>Started.</b> GitHub is making <b>${esc(d.project)}</b> now. Its progress shows in "Your auto videos" below. ` +
+        `You can close this page.` + (d.actions ? ` (<a href="${esc(d.actions)}" target="_blank" rel="noopener">details on GitHub</a>)` : "");
+      $("name").value = ""; $("script").value = ""; $("link").value = "";
+      info.names.push(d.project);
+      updateHints();
+      setTimeout(() => loadVideos(true), 8000);
+    } else {
+      r.className = "msg err";
+      r.innerHTML = esc(d.error || "Something went wrong.") + (d.log ? `<pre class="log">${esc(d.log)}</pre>` : "");
+    }
+  } catch (e) {
+    r.className = "msg err"; r.textContent = "Couldn't reach the dashboard server: " + e;
+  } finally {
+    $("go").disabled = false; $("go").innerHTML = "&#128640; Make the video";
+  }
+};
+
+function videoCard(v) {
+  let chip, extra = "";
+  const running = v.status !== "completed";
+  if (running) {
+    chip = `<span class="chip run"><span class="spin"></span>${v.status === "queued" ? "Waiting to start" : "Working"}</span>`;
+    extra = v.step ? `Now: ${esc(v.step)}` : "";
+  } else if (v.conclusion === "success" && v.youtube && v.review) {
+    chip = `<span class="chip warn">&#9888; Needs your review</span>`;
+  } else if (v.conclusion === "success" && v.youtube) {
+    chip = `<span class="chip ok">&#9989; On YouTube (${esc(v.youtube.privacy || "private")})</span>`;
+  } else if (v.conclusion === "success") {
+    chip = `<span class="chip warn">Made, not uploaded</span>`;
+  } else if (v.conclusion === "cancelled") {
+    chip = `<span class="chip err">Cancelled</span>`;
+  } else {
+    chip = `<span class="chip err">&#10060; Failed</span>`;
+  }
+  const sched = v.youtube
+    ? (v.youtube.publish_at ? `Goes public ${esc(fmtWhen(v.youtube.publish_at))}` : `Not scheduled &mdash; publish it in Studio`)
+    : (v.publish_at ? `Planned: ${esc(fmtWhen(v.publish_at))}` : "No schedule");
+  const links = [];
+  if (v.youtube && v.youtube.studio) links.push(`<a href="${esc(v.youtube.studio)}" target="_blank" rel="noopener">&#9998; Edit in Studio</a>`);
+  if (v.youtube && v.youtube.url) links.push(`<a href="${esc(v.youtube.url)}" target="_blank" rel="noopener">&#9654; Watch</a>`);
+  if (v.release && !running) links.push(`<a href="${esc(v.release)}" target="_blank" rel="noopener">&#11015; Video file</a>`);
+  if (v.run_url) links.push(`<a href="${esc(v.run_url)}" target="_blank" rel="noopener">${v.conclusion === "failure" ? "&#128269; See what went wrong" : "Details"}</a>`);
+  return `<div class="v">
+    <div class="top"><span class="name">${esc(v.project)}</span><span class="grow"></span>${chip}</div>
+    ${v.youtube && v.youtube.title ? `<div class="title">&ldquo;${esc(v.youtube.title)}&rdquo;</div>` : ""}
+    <div class="meta">${sched} &middot; started ${esc(ago(v.started))}${extra ? " &middot; " + extra : ""}</div>
+    ${v.review ? `<div class="meta" style="color:var(--warn)">Uploaded without the schedule: ${esc(v.review.join("; "))}. Watch it, then schedule it in Studio.</div>` : ""}
+    ${v.conclusion === "failure" ? `<div class="meta" style="color:var(--danger)">Open "See what went wrong" &mdash; the red box at the top of that page says why. Send a screenshot to Claude if unsure.</div>` : ""}
+    <div class="links">${links.join("")}</div>
+  </div>`;
+}
+
+async function loadVideos(force) {
+  clearTimeout(pollTimer);
+  let d;
+  try { d = await (await fetch("/api/auto/status" + (force ? "?force=1" : ""))).json(); }
+  catch (e) { d = { ok: false, error: "Couldn't reach the dashboard server." }; }
+  const box = $("videos");
+  if (!d.ok) {
+    box.innerHTML = `<div class="msg err" style="display:block">${esc(d.error)}</div>`;
+  } else if (!d.runs.length) {
+    box.innerHTML = `<div class="empty">No auto videos yet. Make one above.</div>`;
+  } else {
+    box.innerHTML = d.runs.map(videoCard).join("");
+  }
+  $("checked").textContent = d.checked ? `Checked ${new Date(d.checked).toLocaleTimeString()}` + (d.stale ? ` (${d.stale})` : "") : "";
+  const busy = d.ok && d.runs.some(v => v.status !== "completed");
+  pollTimer = setTimeout(loadVideos, busy ? 60000 : 300000);
+}
+$("refresh").onclick = () => loadVideos(true);
+boot();
+</script>
+</body>
+</html>

@@ -46,6 +46,10 @@ TOOLS_DIR = WEBUI_DIR.parent
 REPO_ROOT = TOOLS_DIR.parent
 PROJECTS_DIR = REPO_ROOT / "projects"
 INDEX_HTML = WEBUI_DIR / "index.html"
+AUTO_HTML = WEBUI_DIR / "auto.html"
+
+sys.path.insert(0, str(WEBUI_DIR))
+import auto_api  # noqa: E402  "New auto video" page backend
 
 # The only scripts this server will ever launch. Keys match what
 # index.html sends as "script"; edit both places together.
@@ -303,6 +307,12 @@ class Handler(BaseHTTPRequestHandler):
 
         if path == "/":
             self._serve_index()
+        elif path in ("/auto", "/auto/"):
+            self._serve_index(AUTO_HTML)
+        elif path == "/api/auto/info":
+            self._json(auto_api.defaults())
+        elif path == "/api/auto/status":
+            self._json(auto_api.status(force=qs.get("force", ["0"])[0] == "1"))
         elif path == "/api/projects":
             self._json({"projects": _list_projects()})
         elif path == "/api/picker-info":
@@ -362,6 +372,18 @@ class Handler(BaseHTTPRequestHandler):
             body = self._read_json()
             stopped = _stop_process(body.get("run_id", ""))
             self._json({"stopped": stopped})
+        elif self.path == "/api/auto/create":
+            # Save a script (or YouTube link) as a new project and push it
+            # with an "auto: <lang>/<name> [time]" commit -- GitHub Actions
+            # does the rest (.github/workflows/auto.yml).
+            try:
+                body = self._read_json()
+            except ValueError:
+                return self._json({"ok": False, "error": "bad request"}, 400)
+            try:
+                self._json(auto_api.create(body))
+            except Exception as e:
+                self._json({"ok": False, "error": f"Couldn't start it: {e}"}, 500)
         elif self.path == "/api/git-sync":
             # Pull the latest code from GitHub (same as the picker's Sync
             # button). Plain git; nothing is executed from the pulled files.
@@ -369,9 +391,9 @@ class Handler(BaseHTTPRequestHandler):
         else:
             self.send_error(404, "Not found")
 
-    def _serve_index(self):
+    def _serve_index(self, page=INDEX_HTML):
         try:
-            body = INDEX_HTML.read_bytes()
+            body = page.read_bytes()
         except OSError:
             self.send_error(500, "index.html missing")
             return

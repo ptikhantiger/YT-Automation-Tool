@@ -186,7 +186,10 @@
   #livebar.busy .dot { background: var(--accent-2); animation: pulse 1.2s infinite; }
   #livebar .grow { flex: 1; }
   #livebar button { padding: 5px 12px; font-size: 12px; }
-  #syncbtn { margin-left: auto; background: var(--panel-2); border: 1px solid var(--border);
+  #autobtn { margin-left: auto; background: var(--accent-2); color: var(--btn-run-text); font-weight: 700;
+             border-radius: 8px; padding: 5px 12px; font-size: 13px; text-decoration: none; white-space: nowrap; }
+  #autobtn:hover { filter: brightness(1.08); }
+  #syncbtn { margin-left: 8px; background: var(--panel-2); border: 1px solid var(--border);
              color: var(--text); border-radius: 8px; padding: 4px 10px; font-size: 12.5px; cursor: pointer; }
   #syncbtn:disabled { opacity: .6; cursor: default; }
   #themetoggle { margin-left: 8px; background: var(--panel-2); border: 1px solid var(--border);
@@ -240,6 +243,7 @@
     <div class="brand">
       <h1>🎬 Video Pipeline</h1>
       <span class="proj" id="projpill"></span>
+      <a id="autobtn" href="/auto" title="Paste a script, pick a date: GitHub makes the video and uploads it to YouTube as private + scheduled. Nothing else to do.">&#128640; New auto video</a>
       <button id="syncbtn" title="Pull the latest code from GitHub (git pull --rebase). If code changed, restart the dashboard to load it.">&#8635; Sync code</button>
       <button id="themetoggle" title="Switch between light and dark mode"></button>
     </div>
