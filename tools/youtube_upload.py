@@ -106,6 +106,7 @@ def _api_error(e):
 def parse_publish_at(text, tz_name):
     """'2026-11-15 18:00' in tz_name (or an ISO string with offset) -> aware UTC datetime."""
     text = text.strip().replace("T", " ")
+    text = re.sub(r" (\d):", lambda m: " 0" + m.group(1) + ":", text)  # 9:30 -> 09:30
     try:
         dt = datetime.fromisoformat(text)
     except ValueError:

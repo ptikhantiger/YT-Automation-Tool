@@ -1,0 +1,284 @@
+# Fully automatic video: script (or YouTube link) -> voice + captions ->
+# auto-matched clips -> render -> private upload to your YouTube channel,
+# scheduled to go public at the time you give. Nobody needs to be online.
+#
+# Start it from github.com (works on a phone):
+#   1. Add file -> Create new file -> projects/en/<name>/script.txt, paste
+#      the narration.   (Or projects/en/<name>/source.txt with a YouTube
+#      link on the first line -- add a 2nd line "documentary" for that tone.)
+#   2. Commit message, exactly:
+#        auto: en/<name> 2026-11-15 18:00     <- private, public at that time
+#        auto: en/<name>                      <- private, no schedule
+#      Time is in YT_TIMEZONE (repo variable, default Asia/Karachi).
+#   Or: Actions -> "Auto video" -> Run workflow.
+#
+# Two jobs so each stays under GitHub's 6-hour limit: `prepare` (voice +
+# auto-match, commits the picks back so you can fix a clip and re-render
+# with "render: en/<name>") and `render` (render, Release, YouTube upload).
+#
+# Safety: when too many shots are weak matches (auto_pick_report.json
+# "needs_review"), the video is still uploaded but WITHOUT the schedule --
+# it stays private until you look at it and schedule it in YouTube Studio.
+#
+# Secrets (Settings -> Secrets and variables -> Actions):
+#   GEMINI_API_KEY, PEXELS_API_KEY   required
+#   PIXABAY_API_KEY, COVERR_API_KEY  optional, more stock footage
+#   YT_COOKIES                       optional, for source.txt links
+#   YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN   for the upload
+#     (from python tools/youtube_auth.py); without them the video is only
+#     published as a Release.
+
+name: Auto video
+run-name: "${{ github.event_name == 'push' && github.event.head_commit.message || format('auto: {0} {1}', inputs.project, inputs.publish_at) }}"
+
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: "Project under projects/, e.g. en/sahara (needs script.txt or source.txt)"
+        required: true
+        type: string
+      publish_at:
+        description: "Go public at (YYYY-MM-DD HH:MM, your timezone). Empty = private, no schedule"
+        required: false
+        default: ""
+        type: string
+      threshold:
+        description: "Clip strictness 0-100 (60 balanced, 75 strict)"
+        required: false
+        default: "60"
+        type: string
+      upload:
+        description: "Upload to YouTube"
+        required: false
+        default: true
+        type: boolean
+
+jobs:
+  check:
+    if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'auto:')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      project: ${{ steps.r.outputs.project }}
+      slug: ${{ steps.r.outputs.slug }}
+      publish_at: ${{ steps.r.outputs.publish_at }}
+    steps:
+      - id: r
+        env:
+          HEAD_MESSAGE: ${{ github.event.head_commit.message }}
+          IN_PROJECT: ${{ inputs.project }}
+          IN_AT: ${{ inputs.publish_at }}
+        run: |
+          valid='^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$'
+          when_re='^[0-9]{4}-[0-9]{2}-[0-9]{2}[ T][0-9]{1,2}:[0-9]{2}$'
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            first=$(printf '%s' "$HEAD_MESSAGE" | head -n1 | sed -E 's/[[:space:]]+$//')
+            if ! [[ "$first" =~ ^auto:[[:space:]]*([^[:space:]]+)[[:space:]]*(.*)$ ]]; then
+              echo "Not an auto request: '$first'. Nothing to do."; exit 0
+            fi
+            PROJECT="${BASH_REMATCH[1]}"; AT="${BASH_REMATCH[2]}"
+          else
+            PROJECT="$IN_PROJECT"; AT="$IN_AT"
+          fi
+          AT=$(printf '%s' "$AT" | sed -E 's/^[[:space:]]+|[[:space:]]+$//g')
+          if ! [[ "$PROJECT" =~ $valid ]]; then
+            echo "::error::project must look like <lang>/<name> with no spaces, e.g. en/sahara (got '$PROJECT')"; exit 1
+          fi
+          if [ -n "$AT" ] && ! [[ "$AT" =~ $when_re ]]; then
+            echo "::error::publish time must look like 2026-11-15 18:00 (got '$AT')"; exit 1
+          fi
+          echo "project=$PROJECT" >> "$GITHUB_OUTPUT"
+          echo "slug=${PROJECT//\//-}" >> "$GITHUB_OUTPUT"
+          echo "publish_at=$AT" >> "$GITHUB_OUTPUT"
+          echo "Auto video: $PROJECT, publish at: ${AT:-not scheduled}"
+
+  prepare:
+    needs: check
+    if: needs.check.outputs.project != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    permissions:
+      contents: write
+    outputs:
+      sha: ${{ steps.push.outputs.sha }}
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONUTF8: "1"
+      PROJECT: ${{ needs.check.outputs.project }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      PIXABAY_API_KEY: ${{ secrets.PIXABAY_API_KEY }}
+      COVERR_API_KEY: ${{ secrets.COVERR_API_KEY }}
+      YT_COOKIES: ${{ secrets.YT_COOKIES }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-liberation
+          pip install -q -r tools/requirements.txt
+      - name: Check keys and input
+        run: |
+          [ -n "$GEMINI_API_KEY" ] || { echo "::error::GEMINI_API_KEY is not set in Settings -> Secrets and variables -> Actions"; exit 1; }
+          [ -n "$PEXELS_API_KEY" ] || { echo "::error::PEXELS_API_KEY is not set in Settings -> Secrets and variables -> Actions"; exit 1; }
+          d="projects/$PROJECT"
+          if [ ! -f "$d/script.txt" ] && [ ! -f "$d/source.txt" ]; then
+            echo "::error::$d needs script.txt (the narration) or source.txt (a YouTube link)"; exit 1
+          fi
+      - name: "Step 0: script from YouTube link"
+        working-directory: tools
+        run: |
+          d="../projects/$PROJECT"
+          if [ -f "$d/script.txt" ]; then echo "script.txt present -- skipping"; exit 0; fi
+          url=$(head -n1 "$d/source.txt" | tr -d '\r' | xargs)
+          flags=(--yt-link "$url")
+          grep -qi '^documentary' "$d/source.txt" && flags+=(--documentary)
+          python step0_build_script.py "$PROJECT" "${flags[@]}"
+      - name: "Step 1: voice, captions, visual plan"
+        working-directory: tools
+        run: |
+          if [ -f "../projects/$PROJECT/scenes.json" ]; then echo "scenes.json present -- skipping"; exit 0; fi
+          python step1_audio_and_captions.py "$PROJECT" --no-chain
+      - name: "Step 2: auto-match clips"
+        working-directory: tools
+        env:
+          THRESHOLD: ${{ inputs.threshold || '60' }}
+        run: |
+          set -o pipefail
+          python auto_pick.py "$PROJECT" --threshold "$THRESHOLD" 2>&1 | tee ../auto_pick.log
+      - name: Save picks to the repo
+        id: push
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add -A "projects/$PROJECT"
+          if ! git diff --cached --quiet; then
+            git commit -q -m "auto-picked: $PROJECT" -m "Run ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            for i in 1 2 3 4 5; do
+              git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+              sleep $((i * 5))
+            done
+          fi
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Explain failure
+        if: failure()
+        run: |
+          [ -f auto_pick.log ] && tail -c 3000 auto_pick.log | python3 -c 'import sys; t=sys.stdin.read(); print("::error title=Auto-match failed::" + t.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))' || true
+
+  render:
+    needs: [check, prepare]
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    permissions:
+      contents: write
+    env:
+      PYTHONUNBUFFERED: "1"
+      PYTHONUTF8: "1"
+      PROJECT: ${{ needs.check.outputs.project }}
+      SLUG: ${{ needs.check.outputs.slug }}
+      PUBLISH_AT: ${{ needs.check.outputs.publish_at }}
+      DO_UPLOAD: ${{ github.event_name == 'push' || inputs.upload }}
+      YT_TIMEZONE: ${{ vars.YT_TIMEZONE || 'Asia/Karachi' }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL \
+                      /usr/local/share/boost /usr/local/.ghcup 2>/dev/null || true
+          df -h / | tail -1 | awk '{print "free: " $4}'
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.prepare.outputs.sha }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-liberation
+          pip install -q -r tools/requirements.txt
+      - name: "Step 3: render"
+        working-directory: tools
+        run: |
+          set -o pipefail
+          python step3_render_video.py "$PROJECT" --non-interactive --no-4k 2>&1 | tee ../render.log
+      - name: Publish output.mp4 as a release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          dir="projects/$PROJECT"
+          tag="video-${SLUG}-${GITHUB_RUN_NUMBER}"
+          files=("$dir/output.mp4")
+          size=$(stat -c %s "$dir/output.mp4")
+          if [ "$size" -gt $((1900 * 1024 * 1024)) ]; then
+            (cd "$dir" && split -b 1900M -d -a 2 --additional-suffix=.part output.mp4 output.mp4.)
+            files=("$dir"/output.mp4.*.part)
+            win=$(cd "$dir" && ls output.mp4.*.part | paste -sd+)
+            printf '%s\n' "Join the parts:" "  Windows:  copy /b $win output.mp4" "  Mac/Linux: cat output.mp4.*.part > output.mp4" > "$dir/HOW_TO_JOIN.txt"
+            files+=("$dir/HOW_TO_JOIN.txt")
+          fi
+          for f in credits.txt render_report.json auto_pick_report.json; do [ -f "$dir/$f" ] && files+=("$dir/$f"); done
+          gh release create "$tag" "${files[@]}" --target "$(git rev-parse HEAD)" \
+            --title "$PROJECT (auto, run $GITHUB_RUN_NUMBER)" \
+            --notes "Made automatically by ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          rm -f "$dir"/output.mp4.*.part "$dir/HOW_TO_JOIN.txt"
+          echo "RELEASE_TAG=$tag" >> "$GITHUB_ENV"
+      - name: Upload to YouTube
+        id: yt
+        if: env.DO_UPLOAD == 'true'
+        working-directory: tools
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ] || [ -z "$YT_CLIENT_ID" ] || [ -z "$YT_CLIENT_SECRET" ]; then
+            echo "::warning::YT_CLIENT_ID / YT_CLIENT_SECRET / YT_REFRESH_TOKEN not set -- skipping the YouTube upload (the video is in Releases)."
+            exit 0
+          fi
+          at="$PUBLISH_AT"
+          review=$(python3 -c "import json,sys; d=json.load(open('../projects/$PROJECT/auto_pick_report.json')); print('; '.join(d['reasons']) if d.get('needs_review') else '')" 2>/dev/null || true)
+          if [ -n "$at" ] && [ -n "$review" ]; then
+            echo "::warning title=Not scheduled -- please review::$review. Uploaded as private WITHOUT the $at schedule; check it in YouTube Studio and schedule it there."
+            at=""
+          fi
+          flags=()
+          [ -n "$at" ] && flags+=(--publish-at "$at" --tz "$YT_TIMEZONE")
+          python youtube_upload.py "../projects/$PROJECT" "${flags[@]}"
+      - name: Save upload record
+        if: always() && steps.yt.outcome == 'success'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898729+github-actions[bot]@users.noreply.github.com"
+          git add "projects/$PROJECT"
+          if ! git diff --cached --quiet; then
+            git commit -q -m "uploaded: $PROJECT"
+            git fetch -q origin "${GITHUB_REF_NAME}"
+            for i in 1 2 3 4 5; do
+              git pull -q --rebase origin "${GITHUB_REF_NAME}" && git push -q origin "HEAD:${GITHUB_REF_NAME}" && break
+              sleep $((i * 5))
+            done
+          fi
+      - name: Summary
+        if: always()
+        run: |
+          d="projects/$PROJECT"
+          {
+            echo "## Auto video \`$PROJECT\`"
+            [ -n "$RELEASE_TAG" ] && echo "- Video file: <${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/releases/tag/$RELEASE_TAG>"
+            if [ -f "$d/youtube_upload.json" ]; then
+              python3 -c "import json; d=json.load(open('$d/youtube_upload.json')); print(f\"- YouTube: {d['url']} ({d.get('privacy')}, publishes {d.get('publish_at') or 'not scheduled'})\"); print(f\"- Edit in Studio: {d['studio']}\")"
+            fi
+            if [ -f "$d/auto_pick_report.json" ]; then
+              echo; echo '<details><summary>auto_pick_report.json</summary>'; echo; echo '```json'; cat "$d/auto_pick_report.json"; echo '```'; echo '</details>'
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Explain failure
+        if: failure()
+        run: |
+          [ -f render.log ] && tail -c 3000 render.log | python3 -c 'import sys; t=sys.stdin.read(); print("::error title=Render failed::" + t.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))' || true

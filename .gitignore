@@ -26,6 +26,15 @@ projects/**
 !projects/**/render.json
 !projects/**/bg.mp3
 !projects/**/bg-*.mp3
+# Auto video (.github/workflows/auto.yml): input link, match report,
+# YouTube metadata + upload record, optional thumbnail
+!projects/**/source.txt
+!projects/**/sync_report.json
+!projects/**/auto_pick_report.json
+!projects/**/youtube.json
+!projects/**/youtube_upload.json
+!projects/**/thumbnail.jpg
+!projects/**/thumbnail.png
 # Local uploads and AI illustrations live only on your disk -- they must
 # travel with the project. Stock picks (NNN_pexels*/pixabay*/coverr*) don't.
 !projects/**/clips/*_local*
