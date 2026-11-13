@@ -1,0 +1,441 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.81,Default,,0,0,0,,A DAY IN THE LIFE OF A FAMILY IN THE COLDEST
+Dialogue: 0,0:00:02.81,0:00:04.19,Default,,0,0,0,,PLACE ON EARTH
+Dialogue: 0,0:00:04.19,0:00:07.93,Default,,0,0,0,,−71°C in Yakutia
+Dialogue: 0,0:00:07.93,0:00:10.36,Default,,0,0,0,,Imagine waking up in a place where the temperature
+Dialogue: 0,0:00:10.36,0:00:14.35,Default,,0,0,0,,outside can fall to −71 degrees Celsius
+Dialogue: 0,0:00:14.35,0:00:17.49,Default,,0,0,0,,At these temperatures going outside is no longer
+Dialogue: 0,0:00:17.49,0:00:19.28,Default,,0,0,0,,a normal part of life
+Dialogue: 0,0:00:19.28,0:00:21.78,Default,,0,0,0,,It becomes a carefully planned task
+Dialogue: 0,0:00:21.78,0:00:24.99,Default,,0,0,0,,A simple walk to school can become dangerous
+Dialogue: 0,0:00:24.99,0:00:27.53,Default,,0,0,0,,Water cannot simply come from a tap
+Dialogue: 0,0:00:27.53,0:00:29.76,Default,,0,0,0,,And the warmth inside your home depends on
+Dialogue: 0,0:00:29.76,0:00:32.92,Default,,0,0,0,,a fire that must never be allowed to go out
+Dialogue: 0,0:00:32.92,0:00:36.22,Default,,0,0,0,,This is Yakutia one of the coldest inhabited
+Dialogue: 0,0:00:36.22,0:00:37.81,Default,,0,0,0,,regions on Earth
+Dialogue: 0,0:00:37.81,0:00:40.40,Default,,0,0,0,,Here winter can dominate the landscape for
+Dialogue: 0,0:00:40.40,0:00:41.44,Default,,0,0,0,,months
+Dialogue: 0,0:00:41.44,0:00:42.97,Default,,0,0,0,,The rivers freeze
+Dialogue: 0,0:00:42.97,0:00:45.33,Default,,0,0,0,,The ground becomes extremely hard
+Dialogue: 0,0:00:45.33,0:00:47.99,Default,,0,0,0,,The air hurts your face within seconds
+Dialogue: 0,0:00:47.99,0:00:50.42,Default,,0,0,0,,And families have to prepare for the cold long
+Dialogue: 0,0:00:50.42,0:00:52.01,Default,,0,0,0,,before it arrives
+Dialogue: 0,0:00:52.01,0:00:54.62,Default,,0,0,0,,But this is not simply a story about surviving
+Dialogue: 0,0:00:54.62,0:00:56.31,Default,,0,0,0,,freezing temperatures
+Dialogue: 0,0:00:56.31,0:00:58.25,Default,,0,0,0,,It is a story about family
+Dialogue: 0,0:00:58.25,0:01:00.17,Default,,0,0,0,,About children going to school
+Dialogue: 0,0:01:00.17,0:01:02.39,Default,,0,0,0,,About parents preparing food
+Dialogue: 0,0:01:02.39,0:01:05.21,Default,,0,0,0,,About fathers teaching traditional skills to
+Dialogue: 0,0:01:05.21,0:01:06.47,Default,,0,0,0,,their sons
+Dialogue: 0,0:01:06.47,0:01:08.58,Default,,0,0,0,,About fishing through thick ice
+Dialogue: 0,0:01:08.58,0:01:11.78,Default,,0,0,0,,And about finding warmth in the simplest things
+Dialogue: 0,0:01:11.78,0:01:14.53,Default,,0,0,0,,Today we are following one family through an
+Dialogue: 0,0:01:14.53,0:01:17.29,Default,,0,0,0,,ordinary winter day in Yakutia
+Dialogue: 0,0:01:17.29,0:01:19.86,Default,,0,0,0,,THE FIRE THAT KEEPS THE FAMILY ALIVE
+Dialogue: 0,0:01:19.86,0:01:21.29,Default,,0,0,0,,It is early morning
+Dialogue: 0,0:01:21.29,0:01:23.85,Default,,0,0,0,,While most of the world is still asleep the
+Dialogue: 0,0:01:23.85,0:01:27.11,Default,,0,0,0,,first job inside this home has already begun
+Dialogue: 0,0:01:27.11,0:01:29.58,Default,,0,0,0,,The wood-burning stove needs attention
+Dialogue: 0,0:01:29.58,0:01:32.39,Default,,0,0,0,,For almost nine months of the year the fire
+Dialogue: 0,0:01:32.39,0:01:34.31,Default,,0,0,0,,can burn day and night
+Dialogue: 0,0:01:34.31,0:01:36.53,Default,,0,0,0,,There is no room for carelessness
+Dialogue: 0,0:01:36.53,0:01:39.07,Default,,0,0,0,,If the fire goes out during an extreme winter
+Dialogue: 0,0:01:39.07,0:01:42.17,Default,,0,0,0,,night the house can lose its warmth surprisingly
+Dialogue: 0,0:01:42.17,0:01:43.11,Default,,0,0,0,,quickly
+Dialogue: 0,0:01:43.11,0:01:44.71,Default,,0,0,0,,Wood has to be prepared
+Dialogue: 0,0:01:44.71,0:01:46.71,Default,,0,0,0,,Logs have to be brought inside
+Dialogue: 0,0:01:46.71,0:01:49.12,Default,,0,0,0,,And someone must always be ready to add more
+Dialogue: 0,0:01:49.12,0:01:50.07,Default,,0,0,0,,fuel
+Dialogue: 0,0:01:50.07,0:01:52.47,Default,,0,0,0,,For this family the stove is more than a way
+Dialogue: 0,0:01:52.47,0:01:53.97,Default,,0,0,0,,to heat the house
+Dialogue: 0,0:01:53.97,0:01:56.14,Default,,0,0,0,,It is the center of winter life
+Dialogue: 0,0:01:56.14,0:01:57.83,Default,,0,0,0,,It keeps the rooms warm
+Dialogue: 0,0:01:57.83,0:01:59.53,Default,,0,0,0,,It makes cooking possible
+Dialogue: 0,0:01:59.53,0:02:02.46,Default,,0,0,0,,It protects the family from the cold outside
+Dialogue: 0,0:02:02.46,0:02:05.89,Default,,0,0,0,,And every morning the same routine begins again
+Dialogue: 0,0:02:05.89,0:02:08.40,Default,,0,0,0,,FIRE IS NOT THE ONLY ESSENTIAL
+Dialogue: 0,0:02:08.40,0:02:10.74,Default,,0,0,0,,There is another problem that most people never
+Dialogue: 0,0:02:10.74,0:02:11.85,Default,,0,0,0,,think about
+Dialogue: 0,0:02:11.85,0:02:12.71,Default,,0,0,0,,Water
+Dialogue: 0,0:02:12.71,0:02:15.57,Default,,0,0,0,,In a normal city you turn on a tap and water
+Dialogue: 0,0:02:15.57,0:02:16.71,Default,,0,0,0,,appears
+Dialogue: 0,0:02:16.71,0:02:19.03,Default,,0,0,0,,Here winter changes everything
+Dialogue: 0,0:02:19.03,0:02:21.56,Default,,0,0,0,,Underground pipes can freeze solid
+Dialogue: 0,0:02:21.56,0:02:24.54,Default,,0,0,0,,So families in remote communities have traditionally
+Dialogue: 0,0:02:24.54,0:02:27.89,Default,,0,0,0,,depended on frozen rivers and stored ice
+Dialogue: 0,0:02:27.89,0:02:31.14,Default,,0,0,0,,Before winter becomes too severe large blocks
+Dialogue: 0,0:02:31.14,0:02:33.74,Default,,0,0,0,,of ice can be cut from the river and brought
+Dialogue: 0,0:02:33.74,0:02:34.56,Default,,0,0,0,,home
+Dialogue: 0,0:02:34.56,0:02:36.86,Default,,0,0,0,,The frozen blocks are then used as a source
+Dialogue: 0,0:02:36.86,0:02:38.88,Default,,0,0,0,,of water throughout the winter
+Dialogue: 0,0:02:38.88,0:02:41.33,Default,,0,0,0,,Imagine needing to collect your drinking water
+Dialogue: 0,0:02:41.33,0:02:43.81,Default,,0,0,0,,before the winter becomes too cold
+Dialogue: 0,0:02:43.81,0:02:47.10,Default,,0,0,0,,For people living here this is not an adventure
+Dialogue: 0,0:02:47.10,0:02:48.88,Default,,0,0,0,,It is simply preparation
+Dialogue: 0,0:02:48.88,0:02:51.30,Default,,0,0,0,,BREAKFAST IN THE EXTREME COLD
+Dialogue: 0,0:02:51.30,0:02:54.23,Default,,0,0,0,,While the fire keeps burning breakfast is being
+Dialogue: 0,0:02:54.23,0:02:55.30,Default,,0,0,0,,prepared
+Dialogue: 0,0:02:55.30,0:02:57.92,Default,,0,0,0,,The food is simple but it is designed for a
+Dialogue: 0,0:02:57.92,0:02:59.21,Default,,0,0,0,,cold climate
+Dialogue: 0,0:02:59.21,0:03:01.28,Default,,0,0,0,,Dairy products have traditionally played an
+Dialogue: 0,0:03:01.28,0:03:03.85,Default,,0,0,0,,important role in the local diet
+Dialogue: 0,0:03:03.85,0:03:06.64,Default,,0,0,0,,A sweet breakfast made with cream and homemade
+Dialogue: 0,0:03:06.64,0:03:09.62,Default,,0,0,0,,jam gives the family energy before another
+Dialogue: 0,0:03:09.62,0:03:11.44,Default,,0,0,0,,freezing day begins
+Dialogue: 0,0:03:11.44,0:03:14.91,Default,,0,0,0,,Outside the temperature may be far below anything
+Dialogue: 0,0:03:14.91,0:03:17.58,Default,,0,0,0,,most people have ever experienced
+Dialogue: 0,0:03:17.58,0:03:20.34,Default,,0,0,0,,Inside the family eats together
+Dialogue: 0,0:03:20.34,0:03:22.87,Default,,0,0,0,,For a few minutes the cold outside does not
+Dialogue: 0,0:03:22.87,0:03:23.76,Default,,0,0,0,,matter
+Dialogue: 0,0:03:23.76,0:03:25.99,Default,,0,0,0,,But one member of the family still has somewhere
+Dialogue: 0,0:03:25.99,0:03:26.84,Default,,0,0,0,,to go
+Dialogue: 0,0:03:26.84,0:03:27.71,Default,,0,0,0,,School
+Dialogue: 0,0:03:27.71,0:03:29.49,Default,,0,0,0,,MEETING THE YOUNGEST SON
+Dialogue: 0,0:03:29.49,0:03:32.03,Default,,0,0,0,,The youngest son is nine years old
+Dialogue: 0,0:03:32.03,0:03:34.35,Default,,0,0,0,,Like children everywhere he would probably
+Dialogue: 0,0:03:34.35,0:03:37.19,Default,,0,0,0,,prefer to stay in bed a little longer
+Dialogue: 0,0:03:37.19,0:03:38.85,Default,,0,0,0,,But this is a school morning
+Dialogue: 0,0:03:38.85,0:03:41.42,Default,,0,0,0,,Winter does not automatically cancel education
+Dialogue: 0,0:03:41.42,0:03:42.21,Default,,0,0,0,,here
+Dialogue: 0,0:03:42.21,0:03:45.33,Default,,0,0,0,,Schools can continue operating even when temperatures
+Dialogue: 0,0:03:45.33,0:03:48.48,Default,,0,0,0,,reach around −40 degrees Celsius
+Dialogue: 0,0:03:48.48,0:03:51.53,Default,,0,0,0,,Only when conditions become dangerously extreme
+Dialogue: 0,0:03:51.53,0:03:53.09,Default,,0,0,0,,can schools close
+Dialogue: 0,0:03:53.09,0:03:55.89,Default,,0,0,0,,That means the morning routine begins early
+Dialogue: 0,0:03:55.89,0:03:56.84,Default,,0,0,0,,Wash
+Dialogue: 0,0:03:56.84,0:03:57.56,Default,,0,0,0,,Eat
+Dialogue: 0,0:03:57.56,0:03:58.71,Default,,0,0,0,,Get dressed
+Dialogue: 0,0:03:58.71,0:04:00.99,Default,,0,0,0,,And prepare for the journey outside
+Dialogue: 0,0:04:00.99,0:04:03.85,Default,,0,0,0,,But in Yakutia getting dressed is not about
+Dialogue: 0,0:04:03.85,0:04:04.95,Default,,0,0,0,,looking good
+Dialogue: 0,0:04:04.95,0:04:06.59,Default,,0,0,0,,IT IS ABOUT SURVIVAL
+Dialogue: 0,0:04:06.59,0:04:09.64,Default,,0,0,0,,DRESSING FOR −40°C
+Dialogue: 0,0:04:09.64,0:04:12.34,Default,,0,0,0,,The boy begins putting on his winter clothing
+Dialogue: 0,0:04:12.34,0:04:14.02,Default,,0,0,0,,Thermal layers first
+Dialogue: 0,0:04:14.02,0:04:15.98,Default,,0,0,0,,Then insulated trousers
+Dialogue: 0,0:04:15.98,0:04:17.26,Default,,0,0,0,,Heavy boots
+Dialogue: 0,0:04:17.26,0:04:18.62,Default,,0,0,0,,Thick outer clothing
+Dialogue: 0,0:04:18.62,0:04:19.62,Default,,0,0,0,,Gloves
+Dialogue: 0,0:04:19.62,0:04:22.60,Default,,0,0,0,,And finally enough protection to cover as much
+Dialogue: 0,0:04:22.60,0:04:24.76,Default,,0,0,0,,exposed skin as possible
+Dialogue: 0,0:04:24.76,0:04:27.02,Default,,0,0,0,,His mother carefully checks everything
+Dialogue: 0,0:04:27.02,0:04:28.78,Default,,0,0,0,,There cannot be a mistake
+Dialogue: 0,0:04:28.78,0:04:32.05,Default,,0,0,0,,At temperatures this low exposed skin can become
+Dialogue: 0,0:04:32.05,0:04:34.83,Default,,0,0,0,,vulnerable to frostbite very quickly
+Dialogue: 0,0:04:34.83,0:04:37.24,Default,,0,0,0,,The face needs particular protection
+Dialogue: 0,0:04:37.24,0:04:38.83,Default,,0,0,0,,Every gap matters
+Dialogue: 0,0:04:38.83,0:04:40.87,Default,,0,0,0,,Every layer has a purpose
+Dialogue: 0,0:04:40.87,0:04:42.81,Default,,0,0,0,,This is something children here learn from
+Dialogue: 0,0:04:42.81,0:04:44.27,Default,,0,0,0,,an early age
+Dialogue: 0,0:04:44.27,0:04:47.12,Default,,0,0,0,,When the weather becomes this extreme clothing
+Dialogue: 0,0:04:47.12,0:04:48.59,Default,,0,0,0,,is not fashion
+Dialogue: 0,0:04:48.59,0:04:49.89,Default,,0,0,0,,It is protection
+Dialogue: 0,0:04:49.89,0:04:51.48,Default,,0,0,0,,THE JOURNEY TO SCHOOL
+Dialogue: 0,0:04:51.48,0:04:52.80,Default,,0,0,0,,The door opens
+Dialogue: 0,0:04:52.80,0:04:54.88,Default,,0,0,0,,And the difference is immediate
+Dialogue: 0,0:04:54.88,0:04:57.91,Default,,0,0,0,,The warmth of the house disappears behind him
+Dialogue: 0,0:04:57.91,0:05:00.03,Default,,0,0,0,,The cold air hits his face
+Dialogue: 0,0:05:00.03,0:05:02.21,Default,,0,0,0,,His breath becomes visible
+Dialogue: 0,0:05:02.21,0:05:05.56,Default,,0,0,0,,Tiny crystals can begin forming around eyelashes
+Dialogue: 0,0:05:05.56,0:05:06.69,Default,,0,0,0,,and clothing
+Dialogue: 0,0:05:06.69,0:05:10.28,Default,,0,0,0,,At around −40 degrees even a short walk can
+Dialogue: 0,0:05:10.28,0:05:12.21,Default,,0,0,0,,feel incredibly long
+Dialogue: 0,0:05:12.21,0:05:14.85,Default,,0,0,0,,The school is only about ten minutes away
+Dialogue: 0,0:05:14.85,0:05:17.31,Default,,0,0,0,,But ten minutes in this environment is not
+Dialogue: 0,0:05:17.31,0:05:19.91,Default,,0,0,0,,the same as ten minutes somewhere else
+Dialogue: 0,0:05:19.91,0:05:21.45,Default,,0,0,0,,The boy keeps moving
+Dialogue: 0,0:05:21.45,0:05:22.98,Default,,0,0,0,,His face is covered
+Dialogue: 0,0:05:22.98,0:05:24.59,Default,,0,0,0,,His hands are protected
+Dialogue: 0,0:05:24.59,0:05:27.81,Default,,0,0,0,,His footsteps continue through the frozen landscape
+Dialogue: 0,0:05:27.81,0:05:30.30,Default,,0,0,0,,And finally the school appears
+Dialogue: 0,0:05:30.30,0:05:31.53,Default,,0,0,0,,For his family
+Dialogue: 0,0:05:31.53,0:05:33.74,Default,,0,0,0,,this short journey is something they have learned
+Dialogue: 0,0:05:33.74,0:05:35.01,Default,,0,0,0,,to respect
+Dialogue: 0,0:05:35.01,0:05:36.81,Default,,0,0,0,,THE SCHOOL IN YAKUTIA
+Dialogue: 0,0:05:36.81,0:05:39.82,Default,,0,0,0,,Inside the school everything feels different
+Dialogue: 0,0:05:39.82,0:05:40.70,Default,,0,0,0,,Warmth
+Dialogue: 0,0:05:40.70,0:05:41.49,Default,,0,0,0,,Light
+Dialogue: 0,0:05:41.49,0:05:42.65,Default,,0,0,0,,Classrooms
+Dialogue: 0,0:05:42.65,0:05:43.65,Default,,0,0,0,,Teachers
+Dialogue: 0,0:05:43.65,0:05:44.85,Default,,0,0,0,,Other children
+Dialogue: 0,0:05:44.85,0:05:47.78,Default,,0,0,0,,For a moment the brutal winter outside feels
+Dialogue: 0,0:05:47.78,0:05:48.81,Default,,0,0,0,,distant
+Dialogue: 0,0:05:48.81,0:05:50.95,Default,,0,0,0,,The class is relatively small
+Dialogue: 0,0:05:50.95,0:05:53.46,Default,,0,0,0,,Students spend hours studying subjects such
+Dialogue: 0,0:05:53.46,0:05:58.02,Default,,0,0,0,,as mathematics literature art geography history
+Dialogue: 0,0:05:58.02,0:05:59.31,Default,,0,0,0,,and languages
+Dialogue: 0,0:05:59.31,0:06:02.04,Default,,0,0,0,,Children in Yakutia can learn Russian
+Dialogue: 0,0:06:02.04,0:06:05.43,Default,,0,0,0,,English and Sakha the local language associated
+Dialogue: 0,0:06:05.43,0:06:07.93,Default,,0,0,0,,with the region's indigenous culture
+Dialogue: 0,0:06:07.93,0:06:10.06,Default,,0,0,0,,This is another side of life here
+Dialogue: 0,0:06:10.06,0:06:13.83,Default,,0,0,0,,Yakutia may look incredibly remote but education
+Dialogue: 0,0:06:13.83,0:06:17.08,Default,,0,0,0,,connects children to a much larger world
+Dialogue: 0,0:06:17.08,0:06:19.53,Default,,0,0,0,,Some children from families in remote areas
+Dialogue: 0,0:06:19.53,0:06:22.45,Default,,0,0,0,,may eventually leave their villages to study
+Dialogue: 0,0:06:22.45,0:06:25.07,Default,,0,0,0,,in larger towns or cities
+Dialogue: 0,0:06:25.07,0:06:27.72,Default,,0,0,0,,Education can give them choices that previous
+Dialogue: 0,0:06:27.72,0:06:29.82,Default,,0,0,0,,generations did not have
+Dialogue: 0,0:06:29.82,0:06:31.13,Default,,0,0,0,,A MORNING BREAK
+Dialogue: 0,0:06:31.13,0:06:34.35,Default,,0,0,0,,After the first lessons it is time to eat again
+Dialogue: 0,0:06:34.35,0:06:38.13,Default,,0,0,0,,In extreme cold food provides more than comfort
+Dialogue: 0,0:06:38.13,0:06:41.47,Default,,0,0,0,,The body needs energy to maintain its temperature
+Dialogue: 0,0:06:41.47,0:06:43.71,Default,,0,0,0,,A simple meal can help children get through
+Dialogue: 0,0:06:43.71,0:06:45.15,Default,,0,0,0,,the long winter day
+Dialogue: 0,0:06:45.15,0:06:47.70,Default,,0,0,0,,But outside playing is difficult
+Dialogue: 0,0:06:47.70,0:06:50.39,Default,,0,0,0,,Going outdoors means putting on all those layers
+Dialogue: 0,0:06:50.39,0:06:51.25,Default,,0,0,0,,again
+Dialogue: 0,0:06:51.25,0:06:54.06,Default,,0,0,0,,So during the coldest periods children spend
+Dialogue: 0,0:06:54.06,0:06:56.24,Default,,0,0,0,,much of their free time indoors
+Dialogue: 0,0:06:56.24,0:06:58.68,Default,,0,0,0,,Eventually the school day ends
+Dialogue: 0,0:06:58.68,0:07:00.31,Default,,0,0,0,,And it is time to go home
+Dialogue: 0,0:07:00.31,0:07:01.46,Default,,0,0,0,,THE WALK HOME
+Dialogue: 0,0:07:01.46,0:07:04.42,Default,,0,0,0,,On the way back the boy meets a friend
+Dialogue: 0,0:07:04.42,0:07:06.96,Default,,0,0,0,,And suddenly the freezing landscape becomes
+Dialogue: 0,0:07:06.96,0:07:08.85,Default,,0,0,0,,a little less serious
+Dialogue: 0,0:07:08.85,0:07:10.54,Default,,0,0,0,,They stop at a local shop
+Dialogue: 0,0:07:10.54,0:07:12.92,Default,,0,0,0,,And despite the temperature outside there is
+Dialogue: 0,0:07:12.92,0:07:15.33,Default,,0,0,0,,one thing children still love
+Dialogue: 0,0:07:15.33,0:07:16.38,Default,,0,0,0,,Ice cream
+Dialogue: 0,0:07:16.38,0:07:18.96,Default,,0,0,0,,It may seem strange to eat something frozen
+Dialogue: 0,0:07:18.96,0:07:21.65,Default,,0,0,0,,when the air itself is colder than most household
+Dialogue: 0,0:07:21.65,0:07:22.78,Default,,0,0,0,,freezers
+Dialogue: 0,0:07:22.78,0:07:24.65,Default,,0,0,0,,But children are still children
+Dialogue: 0,0:07:24.65,0:07:25.70,Default,,0,0,0,,They laugh
+Dialogue: 0,0:07:25.70,0:07:26.68,Default,,0,0,0,,They talk
+Dialogue: 0,0:07:26.68,0:07:27.58,Default,,0,0,0,,They play
+Dialogue: 0,0:07:27.58,0:07:29.49,Default,,0,0,0,,And then they continue toward home
+Dialogue: 0,0:07:29.49,0:07:32.58,Default,,0,0,0,,In a small community people know one another
+Dialogue: 0,0:07:32.58,0:07:36.04,Default,,0,0,0,,The village is home to only a small population
+Dialogue: 0,0:07:36.04,0:07:38.99,Default,,0,0,0,,creating a close-knit environment where families
+Dialogue: 0,0:07:38.99,0:07:41.60,Default,,0,0,0,,recognize each other and children can move
+Dialogue: 0,0:07:41.60,0:07:44.20,Default,,0,0,0,,around with a sense of familiarity
+Dialogue: 0,0:07:44.20,0:07:46.39,Default,,0,0,0,,HOME IN THE FROZEN LAND
+Dialogue: 0,0:07:46.39,0:07:48.08,Default,,0,0,0,,For many families here
+Dialogue: 0,0:07:48.08,0:07:50.67,Default,,0,0,0,,home is a wooden house built to withstand the
+Dialogue: 0,0:07:50.67,0:07:51.61,Default,,0,0,0,,winter
+Dialogue: 0,0:07:51.61,0:07:54.46,Default,,0,0,0,,There is no need for a complicated luxury
+Dialogue: 0,0:07:54.46,0:07:56.40,Default,,0,0,0,,What matters is insulation
+Dialogue: 0,0:07:56.40,0:07:57.36,Default,,0,0,0,,Strength
+Dialogue: 0,0:07:57.36,0:07:58.53,Default,,0,0,0,,And warmth
+Dialogue: 0,0:07:58.53,0:08:00.75,Default,,0,0,0,,Firewood becomes one of the most important
+Dialogue: 0,0:08:00.75,0:08:02.93,Default,,0,0,0,,resources in the household
+Dialogue: 0,0:08:02.93,0:08:05.28,Default,,0,0,0,,Families prepare it long before the coldest
+Dialogue: 0,0:08:05.28,0:08:06.53,Default,,0,0,0,,months arrive
+Dialogue: 0,0:08:06.53,0:08:08.92,Default,,0,0,0,,Every gap in the walls matters
+Dialogue: 0,0:08:08.92,0:08:11.21,Default,,0,0,0,,Every piece of wood has value
+Dialogue: 0,0:08:11.21,0:08:13.64,Default,,0,0,0,,And every evening someone must make sure the
+Dialogue: 0,0:08:13.64,0:08:15.64,Default,,0,0,0,,stove continues burning
+Dialogue: 0,0:08:15.64,0:08:18.58,Default,,0,0,0,,Outside another remarkable resident of this
+Dialogue: 0,0:08:18.58,0:08:20.83,Default,,0,0,0,,frozen land is waiting
+Dialogue: 0,0:08:20.83,0:08:23.37,Default,,0,0,0,,THE HORSES THAT CAN SURVIVE THE COLD
+Dialogue: 0,0:08:23.37,0:08:25.99,Default,,0,0,0,,Yakutian horses are famous for their ability
+Dialogue: 0,0:08:25.99,0:08:28.83,Default,,0,0,0,,to survive in extreme conditions
+Dialogue: 0,0:08:28.83,0:08:31.31,Default,,0,0,0,,They have thick winter coats and are adapted
+Dialogue: 0,0:08:31.31,0:08:33.03,Default,,0,0,0,,to the harsh environment
+Dialogue: 0,0:08:33.03,0:08:35.74,Default,,0,0,0,,During winter they can search beneath snow
+Dialogue: 0,0:08:35.74,0:08:37.14,Default,,0,0,0,,for vegetation
+Dialogue: 0,0:08:37.14,0:08:40.28,Default,,0,0,0,,For people who depend on animals this ability
+Dialogue: 0,0:08:40.28,0:08:42.14,Default,,0,0,0,,is incredibly important
+Dialogue: 0,0:08:42.14,0:08:45.23,Default,,0,0,0,,Animals are not simply part of the landscape
+Dialogue: 0,0:08:45.23,0:08:48.74,Default,,0,0,0,,They are connected to food work and survival
+Dialogue: 0,0:08:48.74,0:08:50.16,Default,,0,0,0,,THE OUTDOOR TOILET
+Dialogue: 0,0:08:50.16,0:08:52.92,Default,,0,0,0,,Then comes one of the most unusual parts of
+Dialogue: 0,0:08:52.92,0:08:55.91,Default,,0,0,0,,everyday life for someone from a warm climate
+Dialogue: 0,0:08:55.91,0:08:56.99,Default,,0,0,0,,The bathroom
+Dialogue: 0,0:08:56.99,0:08:59.83,Default,,0,0,0,,In many remote villages there is no central
+Dialogue: 0,0:08:59.83,0:09:01.21,Default,,0,0,0,,sewage system
+Dialogue: 0,0:09:01.21,0:09:04.06,Default,,0,0,0,,The permanently frozen ground makes underground
+Dialogue: 0,0:09:04.06,0:09:06.52,Default,,0,0,0,,construction extremely difficult
+Dialogue: 0,0:09:06.52,0:09:09.06,Default,,0,0,0,,So outdoor toilets remain common
+Dialogue: 0,0:09:09.06,0:09:12.58,Default,,0,0,0,,At temperatures approaching −50 degrees even
+Dialogue: 0,0:09:12.58,0:09:15.60,Default,,0,0,0,,something as simple as using the bathroom becomes
+Dialogue: 0,0:09:15.60,0:09:17.77,Default,,0,0,0,,a carefully planned activity
+Dialogue: 0,0:09:17.77,0:09:20.71,Default,,0,0,0,,You cannot simply open the door and walk outside
+Dialogue: 0,0:09:20.71,0:09:22.38,Default,,0,0,0,,wearing normal clothes
+Dialogue: 0,0:09:22.38,0:09:24.28,Default,,0,0,0,,You have to put on warm layers
+Dialogue: 0,0:09:24.28,0:09:25.46,Default,,0,0,0,,Move quickly
+Dialogue: 0,0:09:25.46,0:09:26.91,Default,,0,0,0,,And return inside
+Dialogue: 0,0:09:26.91,0:09:29.96,Default,,0,0,0,,Here even the most ordinary household tasks
+Dialogue: 0,0:09:29.96,0:09:31.85,Default,,0,0,0,,are controlled by the weather
+Dialogue: 0,0:09:31.85,0:09:33.39,Default,,0,0,0,,LEARNING FROM FATHER
+Dialogue: 0,0:09:33.39,0:09:36.88,Default,,0,0,0,,After returning home the boy joins his father
+Dialogue: 0,0:09:36.88,0:09:38.76,Default,,0,0,0,,His father is a craftsman
+Dialogue: 0,0:09:38.76,0:09:41.34,Default,,0,0,0,,For generations traditional skills have been
+Dialogue: 0,0:09:41.34,0:09:44.08,Default,,0,0,0,,passed from one person to the next
+Dialogue: 0,0:09:44.08,0:09:47.80,Default,,0,0,0,,In Yakutia some men work with livestock hunting
+Dialogue: 0,0:09:47.80,0:09:49.58,Default,,0,0,0,,and traditional crafts
+Dialogue: 0,0:09:49.58,0:09:52.02,Default,,0,0,0,,The father in this family is known for making
+Dialogue: 0,0:09:52.02,0:09:54.14,Default,,0,0,0,,traditional Yakut knives
+Dialogue: 0,0:09:54.14,0:09:56.21,Default,,0,0,0,,The work requires patience
+Dialogue: 0,0:09:56.21,0:09:57.80,Default,,0,0,0,,There are no shortcuts
+Dialogue: 0,0:09:57.80,0:09:59.84,Default,,0,0,0,,Metal must be shaped carefully
+Dialogue: 0,0:09:59.84,0:10:02.16,Default,,0,0,0,,The blade needs to be balanced
+Dialogue: 0,0:10:02.16,0:10:04.59,Default,,0,0,0,,The handle can be made from locally available
+Dialogue: 0,0:10:04.59,0:10:05.35,Default,,0,0,0,,wood
+Dialogue: 0,0:10:05.35,0:10:08.76,Default,,0,0,0,,And every movement comes from years of experience
+Dialogue: 0,0:10:08.76,0:10:11.49,Default,,0,0,0,,But the most important part is not the knife
+Dialogue: 0,0:10:11.49,0:10:12.89,Default,,0,0,0,,It is the knowledge
+Dialogue: 0,0:10:12.89,0:10:14.95,Default,,0,0,0,,The father is teaching his son something that
+Dialogue: 0,0:10:14.95,0:10:16.46,Default,,0,0,0,,was once taught to him
+Dialogue: 0,0:10:16.46,0:10:18.64,Default,,0,0,0,,This is how traditions survive
+Dialogue: 0,0:10:18.64,0:10:20.24,Default,,0,0,0,,Not through books alone
+Dialogue: 0,0:10:20.24,0:10:22.64,Default,,0,0,0,,But through a parent sitting beside a child
+Dialogue: 0,0:10:22.64,0:10:23.73,Default,,0,0,0,,and saying
+Dialogue: 0,0:10:23.73,0:10:24.98,Default,,0,0,0,,Watch carefully
+Dialogue: 0,0:10:24.98,0:10:26.41,Default,,0,0,0,,Now try it yourself
+Dialogue: 0,0:10:26.41,0:10:28.28,Default,,0,0,0,,THE FIRE NEVER STOPS
+Dialogue: 0,0:10:28.28,0:10:31.52,Default,,0,0,0,,As the afternoon disappears the family returns
+Dialogue: 0,0:10:31.52,0:10:34.69,Default,,0,0,0,,to one of its most important responsibilities
+Dialogue: 0,0:10:34.69,0:10:35.71,Default,,0,0,0,,The stove
+Dialogue: 0,0:10:35.71,0:10:36.69,Default,,0,0,0,,More wood
+Dialogue: 0,0:10:36.69,0:10:37.66,Default,,0,0,0,,More heat
+Dialogue: 0,0:10:37.66,0:10:39.37,Default,,0,0,0,,Another check of the fire
+Dialogue: 0,0:10:39.37,0:10:40.81,Default,,0,0,0,,In a normal home
+Dialogue: 0,0:10:40.81,0:10:43.66,Default,,0,0,0,,heating is something that happens in the background
+Dialogue: 0,0:10:43.66,0:10:46.39,Default,,0,0,0,,Here heating is part of daily life
+Dialogue: 0,0:10:46.39,0:10:48.98,Default,,0,0,0,,The fire cannot simply be forgotten
+Dialogue: 0,0:10:48.98,0:10:51.88,Default,,0,0,0,,Winter demands attention every single day
+Dialogue: 0,0:10:51.88,0:10:53.99,Default,,0,0,0,,But there is still one more tradition this
+Dialogue: 0,0:10:53.99,0:10:55.74,Default,,0,0,0,,family looks forward to
+Dialogue: 0,0:10:55.74,0:10:56.84,Default,,0,0,0,,ICE FISHING
+Dialogue: 0,0:10:56.84,0:10:59.33,Default,,0,0,0,,When the lakes are frozen thick enough they
+Dialogue: 0,0:10:59.33,0:11:02.39,Default,,0,0,0,,become places where families can find food
+Dialogue: 0,0:11:02.39,0:11:05.41,Default,,0,0,0,,For generations fishing has been part of life
+Dialogue: 0,0:11:05.41,0:11:07.01,Default,,0,0,0,,in this remote region
+Dialogue: 0,0:11:07.01,0:11:09.91,Default,,0,0,0,,Today father and son head toward the frozen
+Dialogue: 0,0:11:09.91,0:11:10.83,Default,,0,0,0,,lake
+Dialogue: 0,0:11:10.83,0:11:13.97,Default,,0,0,0,,The landscape is almost completely silent
+Dialogue: 0,0:11:13.97,0:11:15.40,Default,,0,0,0,,There are no waves
+Dialogue: 0,0:11:15.40,0:11:16.59,Default,,0,0,0,,No boats
+Dialogue: 0,0:11:16.59,0:11:18.18,Default,,0,0,0,,No summer insects
+Dialogue: 0,0:11:18.18,0:11:21.34,Default,,0,0,0,,Just snow ice and the sound of footsteps
+Dialogue: 0,0:11:21.34,0:11:24.54,Default,,0,0,0,,Beneath them is a thick layer of frozen water
+Dialogue: 0,0:11:24.54,0:11:27.32,Default,,0,0,0,,And beneath that ice fish are moving through
+Dialogue: 0,0:11:27.32,0:11:28.62,Default,,0,0,0,,the darkness
+Dialogue: 0,0:11:28.62,0:11:30.27,Default,,0,0,0,,FISHING THROUGH THE ICE
+Dialogue: 0,0:11:30.27,0:11:32.29,Default,,0,0,0,,The father knows where to fish
+Dialogue: 0,0:11:32.29,0:11:34.25,Default,,0,0,0,,He has been coming to these waters since he
+Dialogue: 0,0:11:34.25,0:11:35.23,Default,,0,0,0,,was young
+Dialogue: 0,0:11:35.23,0:11:37.08,Default,,0,0,0,,Now he is bringing his son
+Dialogue: 0,0:11:37.08,0:11:38.95,Default,,0,0,0,,The boy watches carefully
+Dialogue: 0,0:11:38.95,0:11:41.08,Default,,0,0,0,,He is learning another skill that connects
+Dialogue: 0,0:11:41.08,0:11:42.73,Default,,0,0,0,,him to his environment
+Dialogue: 0,0:11:42.73,0:11:44.93,Default,,0,0,0,,A hole is opened through the ice
+Dialogue: 0,0:11:44.93,0:11:46.44,Default,,0,0,0,,The fishing begins
+Dialogue: 0,0:11:46.44,0:11:48.73,Default,,0,0,0,,There is no guarantee of success
+Dialogue: 0,0:11:48.73,0:11:49.62,Default,,0,0,0,,You wait
+Dialogue: 0,0:11:49.62,0:11:50.65,Default,,0,0,0,,You watch
+Dialogue: 0,0:11:50.65,0:11:51.63,Default,,0,0,0,,You listen
+Dialogue: 0,0:11:51.63,0:11:52.68,Default,,0,0,0,,And you hope
+Dialogue: 0,0:11:52.68,0:11:55.65,Default,,0,0,0,,Then finally the boy catches a fish
+Dialogue: 0,0:11:55.65,0:11:56.52,Default,,0,0,0,,For him
+Dialogue: 0,0:11:56.52,0:11:58.01,Default,,0,0,0,,it is more than food
+Dialogue: 0,0:11:58.01,0:11:59.44,Default,,0,0,0,,It is an achievement
+Dialogue: 0,0:11:59.44,0:12:01.23,Default,,0,0,0,,A memory with his father
+Dialogue: 0,0:12:01.23,0:12:04.12,Default,,0,0,0,,And another lesson about life in Yakutia
+Dialogue: 0,0:12:04.12,0:12:07.26,Default,,0,0,0,,As the afternoon becomes colder they pack up
+Dialogue: 0,0:12:07.26,0:12:08.95,Default,,0,0,0,,and begin the journey home
+Dialogue: 0,0:12:08.95,0:12:10.82,Default,,0,0,0,,DINNER FROM THE FROZEN LAKE
+Dialogue: 0,0:12:10.82,0:12:13.33,Default,,0,0,0,,Back inside the house the fish becomes the
+Dialogue: 0,0:12:13.33,0:12:15.36,Default,,0,0,0,,center of the family's meal
+Dialogue: 0,0:12:15.36,0:12:17.37,Default,,0,0,0,,The mother begins preparing it
+Dialogue: 0,0:12:17.37,0:12:19.11,Default,,0,0,0,,The ingredients are simple
+Dialogue: 0,0:12:19.11,0:12:20.26,Default,,0,0,0,,Fresh fish
+Dialogue: 0,0:12:20.26,0:12:21.43,Default,,0,0,0,,Warm broth
+Dialogue: 0,0:12:21.43,0:12:22.94,Default,,0,0,0,,Basic seasonings
+Dialogue: 0,0:12:22.94,0:12:24.43,Default,,0,0,0,,Nothing complicated
+Dialogue: 0,0:12:24.43,0:12:26.83,Default,,0,0,0,,But after spending hours outside in extreme
+Dialogue: 0,0:12:26.83,0:12:30.69,Default,,0,0,0,,cold a warm meal can feel incredibly special
+Dialogue: 0,0:12:30.69,0:12:32.95,Default,,0,0,0,,The family gathers around the table
+Dialogue: 0,0:12:32.95,0:12:33.98,Default,,0,0,0,,The father
+Dialogue: 0,0:12:33.98,0:12:34.93,Default,,0,0,0,,The mother
+Dialogue: 0,0:12:34.93,0:12:35.98,Default,,0,0,0,,The children
+Dialogue: 0,0:12:35.98,0:12:38.34,Default,,0,0,0,,Everyone is finally together again
+Dialogue: 0,0:12:38.34,0:12:41.38,Default,,0,0,0,,Outside the temperature continues to fall
+Dialogue: 0,0:12:41.38,0:12:43.82,Default,,0,0,0,,Inside the stove is burning
+Dialogue: 0,0:12:43.82,0:12:45.25,Default,,0,0,0,,The food is warm
+Dialogue: 0,0:12:45.25,0:12:46.97,Default,,0,0,0,,And the family is safe
+Dialogue: 0,0:12:46.97,0:12:49.72,Default,,0,0,0,,THE WARMEST PLACE IS NOT THE HOUSE
+Dialogue: 0,0:12:49.72,0:12:52.75,Default,,0,0,0,,When people hear about Yakutia they often focus
+Dialogue: 0,0:12:52.75,0:12:54.02,Default,,0,0,0,,on the temperature
+Dialogue: 0,0:12:54.02,0:12:55.22,Default,,0,0,0,,Minus forty
+Dialogue: 0,0:12:55.22,0:12:56.41,Default,,0,0,0,,Minus fifty
+Dialogue: 0,0:12:56.41,0:12:58.93,Default,,0,0,0,,Temperatures approaching minus seventy
+Dialogue: 0,0:12:58.93,0:13:00.45,Default,,0,0,0,,The frozen rivers
+Dialogue: 0,0:13:00.45,0:13:01.44,Default,,0,0,0,,The snow
+Dialogue: 0,0:13:01.44,0:13:03.18,Default,,0,0,0,,The dangerous journeys
+Dialogue: 0,0:13:03.18,0:13:06.38,Default,,0,0,0,,But temperature is only one part of the story
+Dialogue: 0,0:13:06.38,0:13:08.76,Default,,0,0,0,,The real story is how people have built a life
+Dialogue: 0,0:13:08.76,0:13:09.58,Default,,0,0,0,,here
+Dialogue: 0,0:13:09.58,0:13:10.77,Default,,0,0,0,,How they prepare
+Dialogue: 0,0:13:10.77,0:13:12.04,Default,,0,0,0,,How they adapt
+Dialogue: 0,0:13:12.04,0:13:13.72,Default,,0,0,0,,How they teach their children
+Dialogue: 0,0:13:13.72,0:13:15.54,Default,,0,0,0,,How they protect their homes
+Dialogue: 0,0:13:15.54,0:13:17.61,Default,,0,0,0,,How they preserve their traditions
+Dialogue: 0,0:13:17.61,0:13:19.95,Default,,0,0,0,,And how they continue finding happiness in
+Dialogue: 0,0:13:19.95,0:13:21.57,Default,,0,0,0,,ordinary moments
+Dialogue: 0,0:13:21.57,0:13:23.02,Default,,0,0,0,,A warm breakfast
+Dialogue: 0,0:13:23.02,0:13:24.95,Default,,0,0,0,,A child returning from school
+Dialogue: 0,0:13:24.95,0:13:28.16,Default,,0,0,0,,A father teaching his son a traditional craft
+Dialogue: 0,0:13:28.16,0:13:30.25,Default,,0,0,0,,A walk across a frozen lake
+Dialogue: 0,0:13:30.25,0:13:32.86,Default,,0,0,0,,A fish caught after hours of waiting
+Dialogue: 0,0:13:32.86,0:13:34.83,Default,,0,0,0,,And a family sitting together at the end of
+Dialogue: 0,0:13:34.83,0:13:35.75,Default,,0,0,0,,the day
+Dialogue: 0,0:13:35.75,0:13:37.86,Default,,0,0,0,,THE REAL LIFE OF YAKUTIA
+Dialogue: 0,0:13:37.86,0:13:39.47,Default,,0,0,0,,Life here is not easy
+Dialogue: 0,0:13:39.47,0:13:41.23,Default,,0,0,0,,It demands preparation
+Dialogue: 0,0:13:41.23,0:13:42.23,Default,,0,0,0,,Patience
+Dialogue: 0,0:13:42.23,0:13:43.19,Default,,0,0,0,,Strength
+Dialogue: 0,0:13:43.19,0:13:44.83,Default,,0,0,0,,And respect for nature
+Dialogue: 0,0:13:44.83,0:13:47.47,Default,,0,0,0,,But it is also a life filled with community
+Dialogue: 0,0:13:47.47,0:13:48.57,Default,,0,0,0,,and tradition
+Dialogue: 0,0:13:48.57,0:13:51.32,Default,,0,0,0,,Children grow up understanding the cold
+Dialogue: 0,0:13:51.32,0:13:53.54,Default,,0,0,0,,Parents learn to read the weather
+Dialogue: 0,0:13:53.54,0:13:55.93,Default,,0,0,0,,Families prepare for winter months before the
+Dialogue: 0,0:13:55.93,0:13:58.29,Default,,0,0,0,,first deep freeze arrives
+Dialogue: 0,0:13:58.29,0:14:00.76,Default,,0,0,0,,And knowledge passes from one generation to
+Dialogue: 0,0:14:00.76,0:14:01.96,Default,,0,0,0,,the next
+Dialogue: 0,0:14:01.96,0:14:05.11,Default,,0,0,0,,The modern world is reaching Yakutia too
+Dialogue: 0,0:14:05.11,0:14:08.75,Default,,0,0,0,,Phones internet modern schools and new opportunities
+Dialogue: 0,0:14:08.75,0:14:11.89,Default,,0,0,0,,are changing the lives of younger generations
+Dialogue: 0,0:14:11.89,0:14:14.45,Default,,0,0,0,,Some young people leave remote villages to
+Dialogue: 0,0:14:14.45,0:14:16.53,Default,,0,0,0,,study in larger cities
+Dialogue: 0,0:14:16.53,0:14:17.79,Default,,0,0,0,,Others return
+Dialogue: 0,0:14:17.79,0:14:20.35,Default,,0,0,0,,And some choose to continue the lifestyle their
+Dialogue: 0,0:14:20.35,0:14:23.18,Default,,0,0,0,,families have followed for generations
+Dialogue: 0,0:14:23.18,0:14:25.56,Default,,0,0,0,,The future may change many things
+Dialogue: 0,0:14:25.56,0:14:28.82,Default,,0,0,0,,But the connection to the land remains powerful
+Dialogue: 0,0:14:28.82,0:14:30.06,Default,,0,0,0,,WHY DO THEY STAY
+Dialogue: 0,0:14:30.06,0:14:32.51,Default,,0,0,0,,So why would anyone choose to live in a place
+Dialogue: 0,0:14:32.51,0:14:36.20,Default,,0,0,0,,where temperatures can fall to −71 degrees
+Dialogue: 0,0:14:36.20,0:14:37.89,Default,,0,0,0,,Why raise children here
+Dialogue: 0,0:14:37.89,0:14:40.56,Default,,0,0,0,,Why continue living in a landscape where winter
+Dialogue: 0,0:14:40.56,0:14:42.26,Default,,0,0,0,,can last for months
+Dialogue: 0,0:14:42.26,0:14:45.10,Default,,0,0,0,,Because for the people who call Yakutia home
+Dialogue: 0,0:14:45.10,0:14:48.21,Default,,0,0,0,,this is not simply the coldest place on Earth
+Dialogue: 0,0:14:48.21,0:14:49.25,Default,,0,0,0,,It is home
+Dialogue: 0,0:14:49.25,0:14:51.04,Default,,0,0,0,,It is where their families live
+Dialogue: 0,0:14:51.04,0:14:53.18,Default,,0,0,0,,It is where their grandparents lived
+Dialogue: 0,0:14:53.18,0:14:55.33,Default,,0,0,0,,It is where their traditions were born
+Dialogue: 0,0:14:55.33,0:14:57.67,Default,,0,0,0,,And it is where their memories were created
+Dialogue: 0,0:14:57.67,0:14:59.57,Default,,0,0,0,,The cold may be extreme
+Dialogue: 0,0:14:59.57,0:15:02.97,Default,,0,0,0,,But familiarity can make even an extreme environment
+Dialogue: 0,0:15:02.97,0:15:04.24,Default,,0,0,0,,feel normal
+Dialogue: 0,0:15:04.24,0:15:05.95,Default,,0,0,0,,THE END OF ANOTHER DAY
+Dialogue: 0,0:15:05.95,0:15:07.29,Default,,0,0,0,,Night has arrived
+Dialogue: 0,0:15:07.29,0:15:09.89,Default,,0,0,0,,The temperature outside is dropping again
+Dialogue: 0,0:15:09.89,0:15:11.96,Default,,0,0,0,,The stove continues burning
+Dialogue: 0,0:15:11.96,0:15:12.58,Default,,0,0,0,,The family has
