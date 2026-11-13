@@ -384,6 +384,12 @@ class Handler(BaseHTTPRequestHandler):
                 self._json(auto_api.create(body))
             except Exception as e:
                 self._json({"ok": False, "error": f"Couldn't start it: {e}"}, 500)
+        elif self.path == "/api/auto/retry":
+            try:
+                body = self._read_json()
+                self._json(auto_api.retry(body))
+            except Exception as e:
+                self._json({"ok": False, "error": f"Couldn't restart it: {e}"}, 500)
         elif self.path == "/api/git-sync":
             # Pull the latest code from GitHub (same as the picker's Sync
             # button). Plain git; nothing is executed from the pulled files.

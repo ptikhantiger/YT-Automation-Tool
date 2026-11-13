@@ -150,6 +150,72 @@ def _raw_json(slug, sha, path):
         return None
 
 
+_failure_cache = {}  # run id -> reason (a finished run never changes)
+GENERIC = ("Process completed with exit code", "Node.js 20 is deprecated", "ubuntu-latest label")
+
+
+def _failure_reason(slug, run):
+    """Which step failed and the error it posted (public annotations), so the
+    page can say why without opening GitHub."""
+    rid = run.get("id")
+    if rid in _failure_cache:
+        return _failure_cache[rid]
+    reason = None
+    try:
+        for j in _get(run["jobs_url"]).get("jobs") or []:
+            if j.get("conclusion") != "failure":
+                continue
+            step = next((s["name"] for s in j.get("steps") or [] if s.get("conclusion") == "failure"), None)
+            notes = []
+            for a in _get(f"https://api.github.com/repos/{slug}/check-runs/{j['id']}/annotations"):
+                msg = (a.get("message") or "").strip()
+                if a.get("annotation_level") == "failure" and msg and not msg.startswith(GENERIC):
+                    notes.append(((a.get("title") or "") + "\n" + msg).strip())
+            text = notes[0] if notes else ""
+            # keep the end of a long log tail: that's where the error is
+            if len(text) > 900:
+                text = "..." + text[-900:]
+            reason = {"step": step or j.get("name"), "message": text}
+            break
+    except Exception:
+        return None  # try again on the next refresh
+    _failure_cache[rid] = reason
+    return reason
+
+
+def retry(body):
+    """Start the same project again: an empty 'auto: <project> [time]' commit.
+    Finished parts (script, voice, picks) are kept and skipped."""
+    project = (body.get("project") or "").strip()
+    if not re.match(r"^[A-Za-z0-9_-]+/[A-Za-z0-9_-]+$", project) or not (PROJECTS_DIR / project).is_dir():
+        pull = _git("pull", "--rebase", "--autostash", "origin", "main")
+        if not (PROJECTS_DIR / project).is_dir():
+            return {"ok": False, "error": f"Unknown project {project!r}."}
+    when = (body.get("publish_at") or "").strip().replace("T", " ")
+    if when and not re.match(r"^\d{4}-\d{2}-\d{2} \d{1,2}:\d{2}$", when):
+        return {"ok": False, "error": "Publish time must look like 2026-11-20 18:00."}
+    pull = _git("pull", "--rebase", "--autostash", "origin", "main")
+    if pull.returncode != 0:
+        _git("rebase", "--abort", timeout=30)
+        return {"ok": False, "error": "Couldn't get the latest version from GitHub (git pull failed).",
+                "log": (pull.stdout + pull.stderr)[-1500:]}
+    msg = f"auto: {project}" + (f" {when}" if when else "")
+    r = _git("commit", "--allow-empty", "-m", msg)
+    if r.returncode != 0:
+        return {"ok": False, "error": "git commit failed.", "log": (r.stdout + r.stderr)[-1500:]}
+    for attempt in range(4):
+        r = _git("push", "origin", "HEAD:main")
+        if r.returncode == 0:
+            break
+        _git("pull", "--rebase", "--autostash", "origin", "main")
+        time.sleep(2 + attempt * 3)
+    else:
+        return {"ok": False, "error": "Pushing to GitHub failed.", "log": (r.stdout + r.stderr)[-1500:]}
+    with _lock:
+        _cache["at"] = 0.0
+    return {"ok": True, "project": project, "commit": msg}
+
+
 def _fetch_status():
     slug = repo_slug()
     if not slug:
@@ -203,6 +269,10 @@ def _fetch_status():
             rep = _raw_json(slug, "main", f"projects/{it['project']}/auto_pick_report.json")
             if rep and rep.get("needs_review"):
                 it["review"] = rep.get("reasons") or ["needs a look"]
+        elif it["conclusion"] == "failure":
+            run = next((r for r in runs.get("workflow_runs") or [] if r.get("html_url") == it["run_url"]), None)
+            if run:
+                it["failure"] = _failure_reason(slug, run)
     return {"ok": True, "repo": slug, "runs": latest[:12],
             "actions": f"https://github.com/{slug}/actions/workflows/{WORKFLOW}",
             "checked": datetime.now(timezone.utc).isoformat(timespec="seconds")}

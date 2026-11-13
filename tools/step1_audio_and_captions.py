@@ -36,6 +36,7 @@ below. Run voice_preview.py first if you haven't picked a narrator voice yet.
 """
 import argparse
 import asyncio
+import os
 import json
 import sys
 from pathlib import Path
@@ -83,21 +84,91 @@ DEFAULT_VOICES = {
 }
 
 
-async def synthesize(text, voice, rate, out_mp3):
+async def _synthesize_piece(text, voice, rate):
+    """One edge-tts request -> (mp3 bytes, word timings relative to its start)."""
     communicate = edge_tts.Communicate(text, voice, rate=rate, boundary="WordBoundary")
-    words = []
+    audio, words = bytearray(), []
+    async for chunk in communicate.stream():
+        if chunk["type"] == "audio":
+            audio += chunk["data"]
+        elif chunk["type"] == "WordBoundary":
+            words.append(
+                {
+                    "text": chunk["text"],
+                    "start": chunk["offset"] / 1e7,
+                    "end": (chunk["offset"] + chunk["duration"]) / 1e7,
+                }
+            )
+    return bytes(audio), words
+
+
+# The script is voiced in pieces of about this many characters, split at
+# sentence ends, each retried on its own -- a dropped connection 12 minutes
+# into a long script then costs one piece, not the whole narration.
+# edge-tts's mp3 is constant 48 kbit/s (24 kHz mono), so a piece lasts exactly
+# len(bytes) * 8 / 48000 s and the word timings are stitched without drift
+# (checked against ffprobe on a 16-minute narration: identical to the ms).
+PIECE_CHARS = 2500
+PIECE_ATTEMPTS = 4
+PIECE_WAITS = (5, 15, 30)
+MP3_BYTES_PER_SECOND = 48000 / 8
+
+
+def split_for_tts(text, limit=PIECE_CHARS):
+    import re
+
+    sentences = re.split(r"(?<=[.!?…])\s+|\n+", text)
+    pieces, cur = [], ""
+    for sent in (x.strip() for x in sentences):
+        if not sent:
+            continue
+        while len(sent) > limit:  # one giant "sentence": cut at a space
+            cut = sent.rfind(" ", 0, limit)
+            cut = cut if cut > limit // 2 else limit
+            if cur:
+                pieces.append(cur)
+                cur = ""
+            pieces.append(sent[:cut].strip())
+            sent = sent[cut:].strip()
+        if cur and len(cur) + 1 + len(sent) > limit:
+            pieces.append(cur)
+            cur = sent
+        else:
+            cur = f"{cur}\n{sent}" if cur else sent
+    if cur:
+        pieces.append(cur)
+    return pieces
+
+
+async def synthesize(text, voice, rate, out_mp3):
+    import time
+
+    pieces = split_for_tts(text)
+    audio, words, offset = bytearray(), [], 0.0
+    for i, piece in enumerate(pieces, start=1):
+        for attempt in range(1, PIECE_ATTEMPTS + 1):
+            try:
+                data, w = await _synthesize_piece(piece, voice, rate)
+                if data and w:
+                    break
+                err = "no audio" if not data else "no word timings"
+            except Exception as e:
+                if "403" in str(e) or "WSServerHandshakeError" in type(e).__name__:
+                    raise
+                err = f"{type(e).__name__}: {e}"
+            if attempt == PIECE_ATTEMPTS:
+                raise RuntimeError(f"piece {i}/{len(pieces)} failed {PIECE_ATTEMPTS} times ({err})")
+            wait = PIECE_WAITS[min(attempt - 1, len(PIECE_WAITS) - 1)]
+            print(f"  piece {i}/{len(pieces)}: {err}; retrying in {wait} s...", flush=True)
+            await asyncio.sleep(wait)
+        for x in w:
+            words.append({"text": x["text"], "start": x["start"] + offset, "end": x["end"] + offset})
+        audio += data
+        offset += len(data) / MP3_BYTES_PER_SECOND
+        if len(pieces) > 1:
+            print(f"  voiced {i}/{len(pieces)} ({offset / 60:.1f} min so far)", flush=True)
     with open(out_mp3, "wb") as f:
-        async for chunk in communicate.stream():
-            if chunk["type"] == "audio":
-                f.write(chunk["data"])
-            elif chunk["type"] == "WordBoundary":
-                words.append(
-                    {
-                        "text": chunk["text"],
-                        "start": chunk["offset"] / 1e7,
-                        "end": (chunk["offset"] + chunk["duration"]) / 1e7,
-                    }
-                )
+        f.write(audio)
     return words
 
 
@@ -109,8 +180,77 @@ async def synthesize(text, voice, rate, out_mp3):
 TTS_ATTEMPTS = 6
 TTS_WAITS = (10, 20, 40, 60, 90)
 
+# When the chosen narrator stops answering altogether, the video is voiced by
+# the next of these instead (one voice for the whole video, never mixed).
+# Seen 2026-11-13: Microsoft's en-US-AndrewNeural returned no audio for every
+# request -- even a one-word "Hello" -- for hours, while every other voice
+# worked; the run spent 22 minutes retrying a voice that was simply down.
+# First fallback is the multilingual build of the same Andrew voice.
+VOICE_FALLBACKS = {
+    "en": ["en-US-AndrewMultilingualNeural", "en-US-BrianNeural", "en-US-ChristopherNeural",
+           "en-US-GuyNeural", "en-US-EricNeural"],
+    "es": ["es-MX-JorgeNeural", "es-US-AlonsoNeural", "es-ES-AlvaroNeural"],
+    "ur": ["ur-PK-AsadNeural", "ur-IN-SalmanNeural"],
+}
+PROBE_TEXT = "This is a short test of the narrator voice."
 
-def synthesize_with_retries(text, voice, rate, out_mp3, attempts=TTS_ATTEMPTS):
+
+async def _probe_voice(voice, rate):
+    n = 0
+    async for chunk in edge_tts.Communicate(PROBE_TEXT, voice, rate=rate).stream():
+        if chunk["type"] == "audio":
+            n += len(chunk["data"])
+    return n > 0
+
+
+def voice_answers(voice, rate, tries=3, waits=(5, 15)):
+    """A few seconds' check that this voice returns audio at all, before
+    spending minutes on a long script with it. 403 (outdated edge-tts) is
+    raised, not swallowed."""
+    import time
+
+    for i in range(tries):
+        try:
+            if asyncio.run(asyncio.wait_for(_probe_voice(voice, rate), timeout=30)):
+                return True
+        except Exception as e:
+            if "403" in str(e) or "WSServerHandshakeError" in type(e).__name__:
+                raise
+        if i < tries - 1:
+            time.sleep(waits[min(i, len(waits) - 1)])
+    return False
+
+
+def synthesize_any_voice(text, voice, rate, out_mp3, lang):
+    """Voice the script with `voice`, or -- if that voice is down -- with the
+    first fallback for this language that works. Returns (words, voice_used)."""
+    candidates = [voice] + [v for v in VOICE_FALLBACKS.get(lang, []) if v != voice]
+    problems = []
+    for i, v in enumerate(candidates):
+        if not voice_answers(v, rate):
+            problems.append(f"{v}: returns no audio")
+            nxt = candidates[i + 1] if i + 1 < len(candidates) else None
+            print(f"  voice {v} isn't answering (Microsoft's side)"
+                  + (f" -- trying {nxt}" if nxt else ""), flush=True)
+            continue
+        try:
+            words = synthesize_with_retries(text, v, rate, out_mp3, attempts=3, waits=(10, 30))
+        except RuntimeError as e:
+            problems.append(f"{v}: {e}")
+            print(f"  voice {v} failed on the full script -- trying the next voice", flush=True)
+            continue
+        if v != voice:
+            msg = (f"Narrated with {v} because {voice} wasn't working on Microsoft's side "
+                   f"(it returned no audio). Re-run step 1 later with --force to get {voice} back.")
+            print(f"  NOTE: {msg}", flush=True)
+            if os.environ.get("GITHUB_ACTIONS"):
+                print(f"::warning title=Different narrator voice::{msg}", flush=True)
+        return words, v
+    raise RuntimeError("No narrator voice worked: " + "; ".join(problems)
+                       + ". Microsoft's free voice service may be down -- try again in an hour.")
+
+
+def synthesize_with_retries(text, voice, rate, out_mp3, attempts=TTS_ATTEMPTS, waits=TTS_WAITS):
     import time
 
     for attempt in range(1, attempts + 1):
@@ -129,7 +269,7 @@ def synthesize_with_retries(text, voice, rate, out_mp3, attempts=TTS_ATTEMPTS):
                 "Microsoft's free voice service is refusing or dropping this machine's "
                 "requests; try again later."
             )
-        wait = TTS_WAITS[min(attempt - 1, len(TTS_WAITS) - 1)]
+        wait = waits[min(attempt - 1, len(waits) - 1)]
         print(f"  voice service hiccup ({err}); retry {attempt}/{attempts - 1} in {wait} s...", flush=True)
         time.sleep(wait)
 
@@ -399,7 +539,8 @@ def main():
     else:
         print(f"Synthesizing with voice '{voice}' (rate {args.rate})...")
         try:
-            words = synthesize_with_retries(text, voice, args.rate, audio_path)
+            words, voice_used = synthesize_any_voice(text, voice, args.rate, audio_path, lang)
+            voice = voice_used
         except Exception as e:
             # Microsoft's TTS endpoint answers 403 to older edge-tts releases,
             # which still send the retired v1 Sec-MS-GEC security token. It is

@@ -134,18 +134,27 @@ jobs:
           fi
       - name: "Step 0: script from YouTube link"
         working-directory: tools
+        timeout-minutes: 60
         run: |
           d="../projects/$PROJECT"
           if [ -f "$d/script.txt" ]; then echo "script.txt present -- skipping"; exit 0; fi
           url=$(head -n1 "$d/source.txt" | tr -d '\r' | xargs)
           flags=(--yt-link "$url")
           grep -qi '^documentary' "$d/source.txt" && flags+=(--documentary)
-          python step0_build_script.py "$PROJECT" "${flags[@]}"
+          set -o pipefail
+          if ! python step0_build_script.py "$PROJECT" "${flags[@]}" 2>&1 | tee -a ../prepare.log; then
+            if [ -z "$YT_COOKIES" ]; then
+              echo "HINT: YouTube usually blocks transcript downloads from GitHub's machines. Add your YouTube cookies as the Actions secret YT_COOKIES (Settings -> Secrets and variables -> Actions), or start the video from a script instead of a link." | tee -a ../prepare.log
+            fi
+            exit 1
+          fi
       - name: "Step 1: voice, captions, visual plan"
         working-directory: tools
+        timeout-minutes: 90
         run: |
           if [ -f "../projects/$PROJECT/scenes.json" ]; then echo "scenes.json present -- skipping"; exit 0; fi
-          python step1_audio_and_captions.py "$PROJECT" --no-chain
+          set -o pipefail
+          python step1_audio_and_captions.py "$PROJECT" --no-chain 2>&1 | tee -a ../prepare.log
       - name: "Step 2: auto-match clips"
         id: pick
         working-directory: tools
@@ -153,7 +162,7 @@ jobs:
           THRESHOLD: ${{ inputs.threshold || '60' }}
         run: |
           set -o pipefail
-          python auto_pick.py "$PROJECT" --threshold "$THRESHOLD" 2>&1 | tee ../auto_pick.log
+          python auto_pick.py "$PROJECT" --threshold "$THRESHOLD" 2>&1 | tee ../auto_pick.log | tee -a ../prepare.log
       - name: Save picks to the repo
         id: push
         # also after a failed/timed-out auto-match, so finished scenes are
@@ -178,7 +187,7 @@ jobs:
       - name: Explain failure
         if: failure()
         run: |
-          [ -f auto_pick.log ] && tail -c 3000 auto_pick.log | python3 -c 'import sys; t=sys.stdin.read(); print("::error title=Auto-match failed::" + t.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))' || true
+          [ -f prepare.log ] && tail -c 3500 prepare.log | python3 -c 'import sys; t=sys.stdin.read(); print("::error title=Preparing the video failed -- last lines of the log::" + t.replace("%","%25").replace("\r","%0D").replace("\n","%0A"))' || true
 
   render:
     needs: [check, prepare]

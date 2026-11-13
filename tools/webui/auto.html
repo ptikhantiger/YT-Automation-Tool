@@ -280,6 +280,40 @@ $("go").onclick = async () => {
   }
 };
 
+function failureBox(v) {
+  const f = v.failure || {};
+  const why = f.message
+    ? `<pre class="log" style="color:var(--text)">${esc(f.message)}</pre>`
+    : `<div>Open "See what went wrong" &mdash; the red box at the top of that page says why.</div>`;
+  return `<div class="msg err" style="display:block;margin-top:8px">
+      <b>Stopped at: ${esc(f.step || "a step")}</b>${why}
+      <div style="margin-top:8px">Fixed the cause, or it was a temporary hiccup?
+        <button class="linkbtn" data-retry="${esc(v.project)}" data-when="${esc(v.publish_at || "")}">&#8635; Try again</button>
+        <span class="hint">Finished parts are kept; it continues where it stopped.</span></div>
+    </div>`;
+}
+
+document.addEventListener("click", async (ev) => {
+  const b = ev.target.closest("[data-retry]");
+  if (!b) return;
+  let when = b.dataset.when;
+  if (when) {
+    const t = new Date(when.replace(" ", "T"));
+    if (isNaN(t) || t < Date.now() + 2 * 3600 * 1000) {
+      const nw = prompt("The planned publish time is too close or past. New time (YYYY-MM-DD HH:MM), or leave empty for no schedule:", "");
+      if (nw === null) return;
+      when = nw.trim();
+    }
+  }
+  b.disabled = true; b.textContent = "Starting...";
+  try {
+    const d = await (await fetch("/api/auto/retry", { method: "POST", headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ project: b.dataset.retry, publish_at: when }) })).json();
+    b.textContent = d.ok ? "Started again" : ("Failed: " + (d.error || "?"));
+    if (d.ok) setTimeout(() => loadVideos(true), 8000);
+  } catch (e) { b.textContent = "Failed: " + e; }
+});
+
 function videoCard(v) {
   let chip, extra = "";
   const running = v.status !== "completed";
@@ -310,7 +344,7 @@ function videoCard(v) {
     ${v.youtube && v.youtube.title ? `<div class="title">&ldquo;${esc(v.youtube.title)}&rdquo;</div>` : ""}
     <div class="meta">${sched} &middot; started ${esc(ago(v.started))}${extra ? " &middot; " + extra : ""}</div>
     ${v.review ? `<div class="meta" style="color:var(--warn)">Uploaded without the schedule: ${esc(v.review.join("; "))}. Watch it, then schedule it in Studio.</div>` : ""}
-    ${v.conclusion === "failure" ? `<div class="meta" style="color:var(--danger)">Open "See what went wrong" &mdash; the red box at the top of that page says why. Send a screenshot to Claude if unsure.</div>` : ""}
+    ${v.conclusion === "failure" ? failureBox(v) : ""}
     <div class="links">${links.join("")}</div>
   </div>`;
 }
