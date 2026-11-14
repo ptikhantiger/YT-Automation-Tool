@@ -1,0 +1,584 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:01.71,Default,,0,0,0,,LIFE IN ARMENIA
+Dialogue: 0,0:00:01.71,0:00:04.88,Default,,0,0,0,,Inside the Daily Life Culture and Traditions
+Dialogue: 0,0:00:04.88,0:00:08.36,Default,,0,0,0,,of a Country Shaped by Mountains and History
+Dialogue: 0,0:00:08.36,0:00:10.97,Default,,0,0,0,,Imagine waking up in a country where ancient
+Dialogue: 0,0:00:10.97,0:00:14.56,Default,,0,0,0,,monasteries stand beside modern apartment buildings
+Dialogue: 0,0:00:14.56,0:00:17.33,Default,,0,0,0,,where a five-thousand-year-old history meets
+Dialogue: 0,0:00:17.33,0:00:20.19,Default,,0,0,0,,smartphones and technology and where family
+Dialogue: 0,0:00:20.19,0:00:23.25,Default,,0,0,0,,traditions can be just as important as a person's
+Dialogue: 0,0:00:23.25,0:00:24.21,Default,,0,0,0,,career
+Dialogue: 0,0:00:24.21,0:00:27.18,Default,,0,0,0,,A country surrounded by mountains shaped by
+Dialogue: 0,0:00:27.18,0:00:30.08,Default,,0,0,0,,difficult history and connected to millions
+Dialogue: 0,0:00:30.08,0:00:33.24,Default,,0,0,0,,of people living far beyond its borders
+Dialogue: 0,0:00:33.24,0:00:34.60,Default,,0,0,0,,This is Armenia
+Dialogue: 0,0:00:34.60,0:00:37.86,Default,,0,0,0,,A small landlocked country in the South Caucasus
+Dialogue: 0,0:00:37.86,0:00:41.07,Default,,0,0,0,,between the Black Sea and the Caspian region
+Dialogue: 0,0:00:41.07,0:00:43.79,Default,,0,0,0,,From volcanic highlands and fertile valleys
+Dialogue: 0,0:00:43.79,0:00:47.65,Default,,0,0,0,,to deep gorges and enormous mountains Armenia
+Dialogue: 0,0:00:47.65,0:00:50.79,Default,,0,0,0,,is a country where the landscape is never far
+Dialogue: 0,0:00:50.79,0:00:51.67,Default,,0,0,0,,away
+Dialogue: 0,0:00:51.67,0:00:54.53,Default,,0,0,0,,But Armenia is more than ancient churches and
+Dialogue: 0,0:00:54.53,0:00:56.04,Default,,0,0,0,,dramatic scenery
+Dialogue: 0,0:00:56.04,0:00:59.15,Default,,0,0,0,,Behind the monuments is everyday life
+Dialogue: 0,0:00:59.15,0:01:00.53,Default,,0,0,0,,People going to work
+Dialogue: 0,0:01:00.53,0:01:02.08,Default,,0,0,0,,Children going to school
+Dialogue: 0,0:01:02.08,0:01:04.51,Default,,0,0,0,,Families shopping in local markets
+Dialogue: 0,0:01:04.51,0:01:07.12,Default,,0,0,0,,Young people meeting friends in cafes
+Dialogue: 0,0:01:07.12,0:01:09.08,Default,,0,0,0,,Farmers working in fields
+Dialogue: 0,0:01:09.08,0:01:11.75,Default,,0,0,0,,Grandparents helping raise grandchildren
+Dialogue: 0,0:01:11.75,0:01:14.36,Default,,0,0,0,,And families gathering around a table filled
+Dialogue: 0,0:01:14.36,0:01:15.50,Default,,0,0,0,,with food
+Dialogue: 0,0:01:15.50,0:01:17.94,Default,,0,0,0,,So what is life really like in Armenia
+Dialogue: 0,0:01:17.94,0:01:20.74,Default,,0,0,0,,How do people live in the cities and villages
+Dialogue: 0,0:01:20.74,0:01:22.58,Default,,0,0,0,,What role does family play
+Dialogue: 0,0:01:22.58,0:01:25.00,Default,,0,0,0,,Why is food such an important part of Armenian
+Dialogue: 0,0:01:25.00,0:01:26.04,Default,,0,0,0,,culture
+Dialogue: 0,0:01:26.04,0:01:28.76,Default,,0,0,0,,And how does a young generation balance ancient
+Dialogue: 0,0:01:28.76,0:01:31.03,Default,,0,0,0,,traditions with a modern future
+Dialogue: 0,0:01:31.03,0:01:34.64,Default,,0,0,0,,This is the story of everyday life in Armenia
+Dialogue: 0,0:01:34.64,0:01:36.72,Default,,0,0,0,,THE MORNING IN YEREVAN
+Dialogue: 0,0:01:36.72,0:01:40.32,Default,,0,0,0,,As the sun rises over Yerevan Armenia's capital
+Dialogue: 0,0:01:40.32,0:01:41.97,Default,,0,0,0,,begins to wake up
+Dialogue: 0,0:01:41.97,0:01:44.38,Default,,0,0,0,,Apartment buildings fill with the sounds of
+Dialogue: 0,0:01:44.38,0:01:46.93,Default,,0,0,0,,families preparing for another day
+Dialogue: 0,0:01:46.93,0:01:48.86,Default,,0,0,0,,Children get ready for school
+Dialogue: 0,0:01:48.86,0:01:50.64,Default,,0,0,0,,Parents prepare for work
+Dialogue: 0,0:01:50.64,0:01:53.39,Default,,0,0,0,,Neighbors greet one another in courtyards
+Dialogue: 0,0:01:53.39,0:01:55.75,Default,,0,0,0,,And from small bakeries comes the smell of
+Dialogue: 0,0:01:55.75,0:01:57.49,Default,,0,0,0,,freshly baked bread
+Dialogue: 0,0:01:57.49,0:02:00.25,Default,,0,0,0,,Yerevan is a city of contrasts
+Dialogue: 0,0:02:00.25,0:02:03.58,Default,,0,0,0,,Soviet-era apartment blocks stand beside modern
+Dialogue: 0,0:02:03.58,0:02:04.68,Default,,0,0,0,,buildings
+Dialogue: 0,0:02:04.68,0:02:08.38,Default,,0,0,0,,Traditional markets exist alongside supermarkets
+Dialogue: 0,0:02:08.38,0:02:11.10,Default,,0,0,0,,Small family businesses operate near technology
+Dialogue: 0,0:02:11.10,0:02:12.22,Default,,0,0,0,,companies
+Dialogue: 0,0:02:12.22,0:02:14.53,Default,,0,0,0,,And ancient architecture can appear only a
+Dialogue: 0,0:02:14.53,0:02:17.28,Default,,0,0,0,,short distance from modern cafes
+Dialogue: 0,0:02:17.28,0:02:20.79,Default,,0,0,0,,For many residents the day begins with a commute
+Dialogue: 0,0:02:20.79,0:02:23.54,Default,,0,0,0,,The metro carries passengers through the city
+Dialogue: 0,0:02:23.54,0:02:27.36,Default,,0,0,0,,while buses and shared vans move between neighborhoods
+Dialogue: 0,0:02:27.36,0:02:30.28,Default,,0,0,0,,Traffic becomes heavier as students and workers
+Dialogue: 0,0:02:30.28,0:02:32.35,Default,,0,0,0,,make their way toward the center
+Dialogue: 0,0:02:32.35,0:02:35.22,Default,,0,0,0,,But the morning is not only about getting somewhere
+Dialogue: 0,0:02:35.22,0:02:38.38,Default,,0,0,0,,For many Armenians coffee and conversation
+Dialogue: 0,0:02:38.38,0:02:40.26,Default,,0,0,0,,are part of the daily rhythm
+Dialogue: 0,0:02:40.26,0:02:43.21,Default,,0,0,0,,A small cafe can become a place to meet a friend
+Dialogue: 0,0:02:43.21,0:02:46.12,Default,,0,0,0,,discuss work or simply slow down before the
+Dialogue: 0,0:02:46.12,0:02:47.43,Default,,0,0,0,,day begins
+Dialogue: 0,0:02:47.43,0:02:49.30,Default,,0,0,0,,THE MARKETS OF ARMENIA
+Dialogue: 0,0:02:49.30,0:02:51.81,Default,,0,0,0,,Although supermarkets are becoming increasingly
+Dialogue: 0,0:02:51.81,0:02:55.05,Default,,0,0,0,,common traditional markets and small family-run
+Dialogue: 0,0:02:55.05,0:02:56.90,Default,,0,0,0,,shops remain important
+Dialogue: 0,0:02:56.90,0:02:59.40,Default,,0,0,0,,Here shopping can feel personal
+Dialogue: 0,0:02:59.40,0:03:01.45,Default,,0,0,0,,The seller may know the customer
+Dialogue: 0,0:03:01.45,0:03:04.41,Default,,0,0,0,,A conversation can begin while choosing fruit
+Dialogue: 0,0:03:04.41,0:03:08.13,Default,,0,0,0,,vegetables cheese or other local products
+Dialogue: 0,0:03:08.13,0:03:10.77,Default,,0,0,0,,Food is not simply something people buy
+Dialogue: 0,0:03:10.77,0:03:13.11,Default,,0,0,0,,It is connected to relationships
+Dialogue: 0,0:03:13.11,0:03:13.94,Default,,0,0,0,,Family
+Dialogue: 0,0:03:13.94,0:03:15.16,Default,,0,0,0,,Hospitality
+Dialogue: 0,0:03:15.16,0:03:16.29,Default,,0,0,0,,And tradition
+Dialogue: 0,0:03:16.29,0:03:18.22,Default,,0,0,0,,This is one of the first things you notice
+Dialogue: 0,0:03:18.22,0:03:20.22,Default,,0,0,0,,when you spend time in Armenia
+Dialogue: 0,0:03:20.22,0:03:22.55,Default,,0,0,0,,People often make time for one another
+Dialogue: 0,0:03:22.55,0:03:24.68,Default,,0,0,0,,And that begins inside the home
+Dialogue: 0,0:03:24.68,0:03:26.34,Default,,0,0,0,,THE ARMENIAN FAMILY
+Dialogue: 0,0:03:26.34,0:03:28.73,Default,,0,0,0,,To understand Armenian society
+Dialogue: 0,0:03:28.73,0:03:30.77,Default,,0,0,0,,you have to understand family
+Dialogue: 0,0:03:30.77,0:03:33.87,Default,,0,0,0,,Family is not limited to parents and children
+Dialogue: 0,0:03:33.87,0:03:37.72,Default,,0,0,0,,Grandparents aunts uncles and cousins can remain
+Dialogue: 0,0:03:37.72,0:03:40.09,Default,,0,0,0,,deeply connected throughout life
+Dialogue: 0,0:03:40.09,0:03:43.06,Default,,0,0,0,,In some households several generations live
+Dialogue: 0,0:03:43.06,0:03:46.06,Default,,0,0,0,,close to one another or play an active role
+Dialogue: 0,0:03:46.06,0:03:47.54,Default,,0,0,0,,in raising children
+Dialogue: 0,0:03:47.54,0:03:49.87,Default,,0,0,0,,Grandparents can become an important source
+Dialogue: 0,0:03:49.87,0:03:51.83,Default,,0,0,0,,of wisdom and support
+Dialogue: 0,0:03:51.83,0:03:53.25,Default,,0,0,0,,They tell stories
+Dialogue: 0,0:03:53.25,0:03:55.04,Default,,0,0,0,,They preserve traditions
+Dialogue: 0,0:03:55.04,0:03:57.62,Default,,0,0,0,,They teach children about family history
+Dialogue: 0,0:03:57.62,0:04:00.20,Default,,0,0,0,,And they help keep connections between generations
+Dialogue: 0,0:04:00.20,0:04:01.20,Default,,0,0,0,,alive
+Dialogue: 0,0:04:01.20,0:04:04.44,Default,,0,0,0,,Hospitality is also extremely important
+Dialogue: 0,0:04:04.44,0:04:07.51,Default,,0,0,0,,When a guest enters an Armenian home food can
+Dialogue: 0,0:04:07.51,0:04:09.43,Default,,0,0,0,,quickly appear on the table
+Dialogue: 0,0:04:09.43,0:04:10.19,Default,,0,0,0,,Bread
+Dialogue: 0,0:04:10.19,0:04:11.12,Default,,0,0,0,,Cheese
+Dialogue: 0,0:04:11.12,0:04:11.90,Default,,0,0,0,,Fruit
+Dialogue: 0,0:04:11.90,0:04:12.69,Default,,0,0,0,,Meat
+Dialogue: 0,0:04:12.69,0:04:13.70,Default,,0,0,0,,Salads
+Dialogue: 0,0:04:13.70,0:04:15.01,Default,,0,0,0,,Homemade dishes
+Dialogue: 0,0:04:15.01,0:04:16.45,Default,,0,0,0,,And something to drink
+Dialogue: 0,0:04:16.45,0:04:18.72,Default,,0,0,0,,The meal is not simply about eating
+Dialogue: 0,0:04:18.72,0:04:20.84,Default,,0,0,0,,It is about spending time together
+Dialogue: 0,0:04:20.84,0:04:21.68,Default,,0,0,0,,Talking
+Dialogue: 0,0:04:21.68,0:04:22.58,Default,,0,0,0,,Laughing
+Dialogue: 0,0:04:22.58,0:04:23.56,Default,,0,0,0,,Remembering
+Dialogue: 0,0:04:23.56,0:04:25.77,Default,,0,0,0,,And making a visitor feel welcome
+Dialogue: 0,0:04:25.77,0:04:28.41,Default,,0,0,0,,For many families the table is one of the most
+Dialogue: 0,0:04:28.41,0:04:30.41,Default,,0,0,0,,important places in the home
+Dialogue: 0,0:04:30.41,0:04:32.22,Default,,0,0,0,,THE ARMENIAN LANGUAGE
+Dialogue: 0,0:04:32.22,0:04:35.52,Default,,0,0,0,,One of the strongest symbols of Armenian identity
+Dialogue: 0,0:04:35.52,0:04:37.55,Default,,0,0,0,,is the Armenian language
+Dialogue: 0,0:04:37.55,0:04:40.16,Default,,0,0,0,,Its unique alphabet was created in the fifth
+Dialogue: 0,0:04:40.16,0:04:43.12,Default,,0,0,0,,century by Mesrop Mashtots
+Dialogue: 0,0:04:43.12,0:04:46.09,Default,,0,0,0,,For Armenian children learning the alphabet
+Dialogue: 0,0:04:46.09,0:04:48.94,Default,,0,0,0,,is more than learning how to read and write
+Dialogue: 0,0:04:48.94,0:04:51.65,Default,,0,0,0,,It connects them with centuries of literature
+Dialogue: 0,0:04:51.65,0:04:53.59,Default,,0,0,0,,history and culture
+Dialogue: 0,0:04:53.59,0:04:56.29,Default,,0,0,0,,The alphabet is visible everywhere
+Dialogue: 0,0:04:56.29,0:04:57.51,Default,,0,0,0,,On signs
+Dialogue: 0,0:04:57.51,0:04:58.62,Default,,0,0,0,,In books
+Dialogue: 0,0:04:58.62,0:04:59.76,Default,,0,0,0,,In schools
+Dialogue: 0,0:04:59.76,0:05:01.15,Default,,0,0,0,,On monuments
+Dialogue: 0,0:05:01.15,0:05:03.31,Default,,0,0,0,,And in everyday communication
+Dialogue: 0,0:05:03.31,0:05:05.98,Default,,0,0,0,,For a nation that has experienced centuries
+Dialogue: 0,0:05:05.98,0:05:09.81,Default,,0,0,0,,of political change and outside influence language
+Dialogue: 0,0:05:09.81,0:05:12.54,Default,,0,0,0,,became one of the strongest ways to preserve
+Dialogue: 0,0:05:12.54,0:05:13.56,Default,,0,0,0,,identity
+Dialogue: 0,0:05:13.56,0:05:16.11,Default,,0,0,0,,CHRISTIANITY AND DAILY LIFE
+Dialogue: 0,0:05:16.11,0:05:18.75,Default,,0,0,0,,Religion is another important part of Armenian
+Dialogue: 0,0:05:18.75,0:05:19.72,Default,,0,0,0,,history
+Dialogue: 0,0:05:19.72,0:05:22.26,Default,,0,0,0,,Armenia is traditionally associated with the
+Dialogue: 0,0:05:22.26,0:05:25.45,Default,,0,0,0,,Armenian Apostolic Church and Christianity
+Dialogue: 0,0:05:25.45,0:05:28.73,Default,,0,0,0,,became deeply connected with national identity
+Dialogue: 0,0:05:28.73,0:05:31.22,Default,,0,0,0,,Churches and monasteries can be found across
+Dialogue: 0,0:05:31.22,0:05:32.25,Default,,0,0,0,,the country
+Dialogue: 0,0:05:32.25,0:05:34.30,Default,,0,0,0,,Some sit on mountain slopes
+Dialogue: 0,0:05:34.30,0:05:37.50,Default,,0,0,0,,Others stand in valleys or near villages
+Dialogue: 0,0:05:37.50,0:05:40.39,Default,,0,0,0,,For many families religious traditions remain
+Dialogue: 0,0:05:40.39,0:05:42.91,Default,,0,0,0,,part of important moments in life
+Dialogue: 0,0:05:42.91,0:05:44.05,Default,,0,0,0,,Baptisms
+Dialogue: 0,0:05:44.05,0:05:45.02,Default,,0,0,0,,Weddings
+Dialogue: 0,0:05:45.02,0:05:45.96,Default,,0,0,0,,Easter
+Dialogue: 0,0:05:45.96,0:05:47.41,Default,,0,0,0,,Family gatherings
+Dialogue: 0,0:05:47.41,0:05:49.57,Default,,0,0,0,,And quiet visits to churches
+Dialogue: 0,0:05:49.57,0:05:52.62,Default,,0,0,0,,At the same time modern Armenian society is
+Dialogue: 0,0:05:52.62,0:05:53.64,Default,,0,0,0,,changing
+Dialogue: 0,0:05:53.64,0:05:56.50,Default,,0,0,0,,Especially among younger people in Yerevan
+Dialogue: 0,0:05:56.50,0:05:59.68,Default,,0,0,0,,daily life can be increasingly secular
+Dialogue: 0,0:05:59.68,0:06:02.57,Default,,0,0,0,,Yet even when religious practice changes the
+Dialogue: 0,0:06:02.57,0:06:05.43,Default,,0,0,0,,church remains an important symbol of Armenian
+Dialogue: 0,0:06:05.43,0:06:06.59,Default,,0,0,0,,heritage
+Dialogue: 0,0:06:06.59,0:06:08.93,Default,,0,0,0,,A COUNTRY CONNECTED TO THE WORLD
+Dialogue: 0,0:06:08.93,0:06:11.96,Default,,0,0,0,,There is another unique part of Armenian life
+Dialogue: 0,0:06:11.96,0:06:13.23,Default,,0,0,0,,The diaspora
+Dialogue: 0,0:06:13.23,0:06:16.46,Default,,0,0,0,,Millions of Armenians live outside the country
+Dialogue: 0,0:06:16.46,0:06:19.62,Default,,0,0,0,,creating connections between Armenia and communities
+Dialogue: 0,0:06:19.62,0:06:21.04,Default,,0,0,0,,around the world
+Dialogue: 0,0:06:21.04,0:06:24.12,Default,,0,0,0,,For many Armenian families relatives may live
+Dialogue: 0,0:06:24.12,0:06:26.55,Default,,0,0,0,,in the United States Russia
+Dialogue: 0,0:06:26.55,0:06:28.27,Default,,0,0,0,,Europe or elsewhere
+Dialogue: 0,0:06:28.27,0:06:31.59,Default,,0,0,0,,A grandmother in a village might speak to grandchildren
+Dialogue: 0,0:06:31.59,0:06:34.02,Default,,0,0,0,,living thousands of kilometers away through
+Dialogue: 0,0:06:34.02,0:06:35.34,Default,,0,0,0,,a video call
+Dialogue: 0,0:06:35.34,0:06:38.23,Default,,0,0,0,,A relative abroad may send financial support
+Dialogue: 0,0:06:38.23,0:06:39.69,Default,,0,0,0,,to family at home
+Dialogue: 0,0:06:39.69,0:06:42.62,Default,,0,0,0,,And young Armenians can grow up with one foot
+Dialogue: 0,0:06:42.62,0:06:45.30,Default,,0,0,0,,in Armenian culture and another in the wider
+Dialogue: 0,0:06:45.30,0:06:46.16,Default,,0,0,0,,world
+Dialogue: 0,0:06:46.16,0:06:48.62,Default,,0,0,0,,This global connection has shaped Armenia's
+Dialogue: 0,0:06:48.62,0:06:51.68,Default,,0,0,0,,economy families and identity
+Dialogue: 0,0:06:51.68,0:06:54.29,Default,,0,0,0,,The internet has made those relationships even
+Dialogue: 0,0:06:54.29,0:06:55.37,Default,,0,0,0,,stronger
+Dialogue: 0,0:06:55.37,0:06:58.22,Default,,0,0,0,,A country that may appear geographically small
+Dialogue: 0,0:06:58.22,0:07:00.93,Default,,0,0,0,,can have a global community stretching across
+Dialogue: 0,0:07:00.93,0:07:02.15,Default,,0,0,0,,continents
+Dialogue: 0,0:07:02.15,0:07:03.97,Default,,0,0,0,,WORK AND THE ECONOMY
+Dialogue: 0,0:07:03.97,0:07:06.71,Default,,0,0,0,,Life in Armenia also depends heavily on the
+Dialogue: 0,0:07:06.71,0:07:07.83,Default,,0,0,0,,economy
+Dialogue: 0,0:07:07.83,0:07:10.79,Default,,0,0,0,,In Yerevan one of the fastest-changing sectors
+Dialogue: 0,0:07:10.79,0:07:12.16,Default,,0,0,0,,is technology
+Dialogue: 0,0:07:12.16,0:07:15.15,Default,,0,0,0,,Young programmers engineers and entrepreneurs
+Dialogue: 0,0:07:15.15,0:07:18.25,Default,,0,0,0,,are building businesses and working with international
+Dialogue: 0,0:07:18.25,0:07:19.40,Default,,0,0,0,,companies
+Dialogue: 0,0:07:19.40,0:07:22.29,Default,,0,0,0,,For educated young people with strong technical
+Dialogue: 0,0:07:22.29,0:07:25.48,Default,,0,0,0,,skills and English the technology sector can
+Dialogue: 0,0:07:25.48,0:07:28.68,Default,,0,0,0,,provide opportunities without leaving the country
+Dialogue: 0,0:07:28.68,0:07:31.64,Default,,0,0,0,,But this is only one part of Armenian life
+Dialogue: 0,0:07:31.64,0:07:34.98,Default,,0,0,0,,Many people still work in traditional occupations
+Dialogue: 0,0:07:34.98,0:07:35.98,Default,,0,0,0,,Teachers
+Dialogue: 0,0:07:35.98,0:07:37.61,Default,,0,0,0,,Doctors and nurses
+Dialogue: 0,0:07:37.61,0:07:39.04,Default,,0,0,0,,Taxi drivers
+Dialogue: 0,0:07:39.04,0:07:40.75,Default,,0,0,0,,Construction workers
+Dialogue: 0,0:07:40.75,0:07:41.97,Default,,0,0,0,,Shopkeepers
+Dialogue: 0,0:07:41.97,0:07:43.32,Default,,0,0,0,,Market sellers
+Dialogue: 0,0:07:43.32,0:07:44.27,Default,,0,0,0,,Farmers
+Dialogue: 0,0:07:44.27,0:07:46.07,Default,,0,0,0,,And small business owners
+Dialogue: 0,0:07:46.07,0:07:49.83,Default,,0,0,0,,Outside the capital agriculture remains important
+Dialogue: 0,0:07:49.83,0:07:52.39,Default,,0,0,0,,Families grow fruit and vegetables
+Dialogue: 0,0:07:52.39,0:07:53.90,Default,,0,0,0,,They raise animals
+Dialogue: 0,0:07:53.90,0:07:56.84,Default,,0,0,0,,They produce cheese and other food products
+Dialogue: 0,0:07:56.84,0:08:00.29,Default,,0,0,0,,Tourism and services also provide employment
+Dialogue: 0,0:08:00.29,0:08:03.23,Default,,0,0,0,,But wages can be modest and the cost of housing
+Dialogue: 0,0:08:03.23,0:08:05.34,Default,,0,0,0,,can create serious pressure
+Dialogue: 0,0:08:05.34,0:08:08.11,Default,,0,0,0,,For young couples buying an apartment can be
+Dialogue: 0,0:08:08.11,0:08:09.83,Default,,0,0,0,,a major life goal
+Dialogue: 0,0:08:09.83,0:08:12.25,Default,,0,0,0,,Sometimes families need help from relatives
+Dialogue: 0,0:08:12.25,0:08:13.51,Default,,0,0,0,,living abroad
+Dialogue: 0,0:08:13.51,0:08:16.27,Default,,0,0,0,,Economic pressure can influence decisions about
+Dialogue: 0,0:08:16.27,0:08:19.64,Default,,0,0,0,,marriage children education and whether to
+Dialogue: 0,0:08:19.64,0:08:22.47,Default,,0,0,0,,remain in Armenia or search for opportunities
+Dialogue: 0,0:08:22.47,0:08:23.48,Default,,0,0,0,,elsewhere
+Dialogue: 0,0:08:23.48,0:08:25.43,Default,,0,0,0,,LIFE OUTSIDE YEREVAN
+Dialogue: 0,0:08:25.43,0:08:28.15,Default,,0,0,0,,To understand Armenia you cannot look only
+Dialogue: 0,0:08:28.15,0:08:29.42,Default,,0,0,0,,at the capital
+Dialogue: 0,0:08:29.42,0:08:32.12,Default,,0,0,0,,Travel outside Yerevan and the rhythm of life
+Dialogue: 0,0:08:32.12,0:08:33.26,Default,,0,0,0,,changes
+Dialogue: 0,0:08:33.26,0:08:36.00,Default,,0,0,0,,Cities such as Gyumri have their own identity
+Dialogue: 0,0:08:36.00,0:08:39.10,Default,,0,0,0,,Gyumri is known for its distinctive architecture
+Dialogue: 0,0:08:39.10,0:08:42.53,Default,,0,0,0,,artistic culture and strong local character
+Dialogue: 0,0:08:42.53,0:08:45.62,Default,,0,0,0,,The city also carries the memory of the devastating
+Dialogue: 0,0:08:45.62,0:08:47.75,Default,,0,0,0,,1988 earthquake
+Dialogue: 0,0:08:47.75,0:08:51.53,Default,,0,0,0,,But its identity is not defined only by tragedy
+Dialogue: 0,0:08:51.53,0:08:54.10,Default,,0,0,0,,Today people continue rebuilding
+Dialogue: 0,0:08:54.10,0:08:57.37,Default,,0,0,0,,Old spaces have become cafes galleries and
+Dialogue: 0,0:08:57.37,0:08:59.03,Default,,0,0,0,,creative businesses
+Dialogue: 0,0:08:59.03,0:09:01.21,Default,,0,0,0,,Life is quieter than in Yerevan
+Dialogue: 0,0:09:01.21,0:09:04.11,Default,,0,0,0,,Communities can feel more closely connected
+Dialogue: 0,0:09:04.11,0:09:06.43,Default,,0,0,0,,And local pride remains strong
+Dialogue: 0,0:09:06.43,0:09:08.80,Default,,0,0,0,,Beyond the cities are villages surrounded by
+Dialogue: 0,0:09:08.80,0:09:11.79,Default,,0,0,0,,mountains orchards and farmland
+Dialogue: 0,0:09:11.79,0:09:14.30,Default,,0,0,0,,Here life follows the seasons
+Dialogue: 0,0:09:14.30,0:09:15.18,Default,,0,0,0,,Planting
+Dialogue: 0,0:09:15.18,0:09:16.05,Default,,0,0,0,,Growing
+Dialogue: 0,0:09:16.05,0:09:17.05,Default,,0,0,0,,Harvesting
+Dialogue: 0,0:09:17.05,0:09:18.05,Default,,0,0,0,,Preserving
+Dialogue: 0,0:09:18.05,0:09:19.75,Default,,0,0,0,,And preparing for winter
+Dialogue: 0,0:09:19.75,0:09:22.14,Default,,0,0,0,,THE VILLAGES AND THE HARVEST
+Dialogue: 0,0:09:22.14,0:09:24.90,Default,,0,0,0,,During summer Armenian fields and orchards
+Dialogue: 0,0:09:24.90,0:09:27.26,Default,,0,0,0,,can become incredibly productive
+Dialogue: 0,0:09:27.26,0:09:28.53,Default,,0,0,0,,Apricots
+Dialogue: 0,0:09:28.53,0:09:29.48,Default,,0,0,0,,Peaches
+Dialogue: 0,0:09:29.48,0:09:30.47,Default,,0,0,0,,Grapes
+Dialogue: 0,0:09:30.47,0:09:31.55,Default,,0,0,0,,Vegetables
+Dialogue: 0,0:09:31.55,0:09:33.64,Default,,0,0,0,,And other fruits grow across the country's
+Dialogue: 0,0:09:33.64,0:09:34.73,Default,,0,0,0,,valleys
+Dialogue: 0,0:09:34.73,0:09:37.92,Default,,0,0,0,,When harvest season arrives the entire family
+Dialogue: 0,0:09:37.92,0:09:39.53,Default,,0,0,0,,may become involved
+Dialogue: 0,0:09:39.53,0:09:40.94,Default,,0,0,0,,Fruit is collected
+Dialogue: 0,0:09:40.94,0:09:42.42,Default,,0,0,0,,Food is preserved
+Dialogue: 0,0:09:42.42,0:09:45.86,Default,,0,0,0,,Jars are filled with jams and pickled vegetables
+Dialogue: 0,0:09:45.86,0:09:47.96,Default,,0,0,0,,Pantries are prepared for winter
+Dialogue: 0,0:09:47.96,0:09:50.19,Default,,0,0,0,,This is not simply agriculture
+Dialogue: 0,0:09:50.19,0:09:53.23,Default,,0,0,0,,It is a tradition passed between generations
+Dialogue: 0,0:09:53.23,0:09:55.46,Default,,0,0,0,,Children learn by watching their parents and
+Dialogue: 0,0:09:55.46,0:09:56.86,Default,,0,0,0,,grandparents
+Dialogue: 0,0:09:56.86,0:09:58.94,Default,,0,0,0,,They learn which fruit is ready
+Dialogue: 0,0:09:58.94,0:10:00.73,Default,,0,0,0,,How food should be stored
+Dialogue: 0,0:10:00.73,0:10:03.18,Default,,0,0,0,,And how to prepare for the colder months
+Dialogue: 0,0:10:03.18,0:10:05.48,Default,,0,0,0,,But rural life has its challenges
+Dialogue: 0,0:10:05.48,0:10:07.04,Default,,0,0,0,,Jobs can be limited
+Dialogue: 0,0:10:07.04,0:10:10.32,Default,,0,0,0,,Young people may move toward Yerevan for education
+Dialogue: 0,0:10:10.32,0:10:11.51,Default,,0,0,0,,and employment
+Dialogue: 0,0:10:11.51,0:10:14.62,Default,,0,0,0,,Some eventually leave Armenia altogether
+Dialogue: 0,0:10:14.62,0:10:16.90,Default,,0,0,0,,This creates a difficult question for many
+Dialogue: 0,0:10:16.90,0:10:18.08,Default,,0,0,0,,families
+Dialogue: 0,0:10:18.08,0:10:20.80,Default,,0,0,0,,Should you stay close to your land and family
+Dialogue: 0,0:10:20.80,0:10:23.73,Default,,0,0,0,,Or leave for a better economic opportunity
+Dialogue: 0,0:10:23.73,0:10:25.37,Default,,0,0,0,,THE FOOD OF ARMENIA
+Dialogue: 0,0:10:25.37,0:10:27.90,Default,,0,0,0,,If you want to understand Armenia sit at an
+Dialogue: 0,0:10:27.90,0:10:29.42,Default,,0,0,0,,Armenian table
+Dialogue: 0,0:10:29.42,0:10:31.89,Default,,0,0,0,,Food is one of the strongest expressions of
+Dialogue: 0,0:10:31.89,0:10:32.89,Default,,0,0,0,,culture
+Dialogue: 0,0:10:32.89,0:10:36.61,Default,,0,0,0,,Armenian cuisine is built around fresh ingredients
+Dialogue: 0,0:10:36.61,0:10:41.71,Default,,0,0,0,,meat vegetables herbs grains and dairy products
+Dialogue: 0,0:10:41.71,0:10:45.32,Default,,0,0,0,,One of the most recognizable foods is lavash
+Dialogue: 0,0:10:45.32,0:10:47.94,Default,,0,0,0,,This thin flatbread has been part of Armenian
+Dialogue: 0,0:10:47.94,0:10:50.36,Default,,0,0,0,,food culture for generations
+Dialogue: 0,0:10:50.36,0:10:53.54,Default,,0,0,0,,It can be used to wrap food accompany a meal
+Dialogue: 0,0:10:53.54,0:10:55.73,Default,,0,0,0,,or simply be shared at the table
+Dialogue: 0,0:10:55.73,0:10:58.85,Default,,0,0,0,,Then there is khorovats Armenian barbecue
+Dialogue: 0,0:10:58.85,0:11:02.26,Default,,0,0,0,,For many families preparing khorovats is almost
+Dialogue: 0,0:11:02.26,0:11:03.75,Default,,0,0,0,,a social event
+Dialogue: 0,0:11:03.75,0:11:06.40,Default,,0,0,0,,Meat is grilled over hot coals while family
+Dialogue: 0,0:11:06.40,0:11:08.35,Default,,0,0,0,,and friends gather around
+Dialogue: 0,0:11:08.35,0:11:11.69,Default,,0,0,0,,Pork lamb or chicken can be combined with vegetables
+Dialogue: 0,0:11:11.69,0:11:12.89,Default,,0,0,0,,and herbs
+Dialogue: 0,0:11:12.89,0:11:16.18,Default,,0,0,0,,The cooking itself becomes part of the experience
+Dialogue: 0,0:11:16.18,0:11:19.11,Default,,0,0,0,,There is also dolma made with grape leaves
+Dialogue: 0,0:11:19.11,0:11:21.96,Default,,0,0,0,,or vegetables filled with a mixture of meat
+Dialogue: 0,0:11:21.96,0:11:23.49,Default,,0,0,0,,rice and herbs
+Dialogue: 0,0:11:23.49,0:11:26.25,Default,,0,0,0,,And harissa a slow-cooked traditional dish
+Dialogue: 0,0:11:26.25,0:11:28.24,Default,,0,0,0,,made from wheat and meat
+Dialogue: 0,0:11:28.24,0:11:30.96,Default,,0,0,0,,Armenian food changes with the seasons
+Dialogue: 0,0:11:30.96,0:11:34.38,Default,,0,0,0,,Summer brings fresh tomatoes cucumbers herbs
+Dialogue: 0,0:11:34.38,0:11:35.39,Default,,0,0,0,,and fruit
+Dialogue: 0,0:11:35.39,0:11:38.38,Default,,0,0,0,,Autumn brings harvests and preserved foods
+Dialogue: 0,0:11:38.38,0:11:41.74,Default,,0,0,0,,Winter brings heavier and more comforting dishes
+Dialogue: 0,0:11:41.74,0:11:44.47,Default,,0,0,0,,And throughout the year food remains connected
+Dialogue: 0,0:11:44.47,0:11:45.57,Default,,0,0,0,,to family
+Dialogue: 0,0:11:45.57,0:11:47.15,Default,,0,0,0,,ARMENIAN COFFEE
+Dialogue: 0,0:11:47.15,0:11:49.08,Default,,0,0,0,,Then there is Armenian coffee
+Dialogue: 0,0:11:49.08,0:11:52.03,Default,,0,0,0,,It is strong small and meant to be enjoyed
+Dialogue: 0,0:11:52.03,0:11:53.06,Default,,0,0,0,,slowly
+Dialogue: 0,0:11:53.06,0:11:56.01,Default,,0,0,0,,Coffee can be an excuse to sit down and talk
+Dialogue: 0,0:11:56.01,0:11:57.36,Default,,0,0,0,,A friend arrives
+Dialogue: 0,0:11:57.36,0:11:59.26,Default,,0,0,0,,Someone prepares the coffee
+Dialogue: 0,0:11:59.26,0:12:01.18,Default,,0,0,0,,The conversation begins
+Dialogue: 0,0:12:01.18,0:12:04.22,Default,,0,0,0,,And suddenly a short visit can become an hour
+Dialogue: 0,0:12:04.22,0:12:06.63,Default,,0,0,0,,This is an important part of Armenian social
+Dialogue: 0,0:12:06.63,0:12:07.51,Default,,0,0,0,,life
+Dialogue: 0,0:12:07.51,0:12:10.03,Default,,0,0,0,,People do not always measure hospitality by
+Dialogue: 0,0:12:10.03,0:12:12.14,Default,,0,0,0,,how quickly something happens
+Dialogue: 0,0:12:12.14,0:12:14.61,Default,,0,0,0,,Sometimes hospitality means giving someone
+Dialogue: 0,0:12:14.61,0:12:15.61,Default,,0,0,0,,your time
+Dialogue: 0,0:12:15.61,0:12:16.81,Default,,0,0,0,,THE MOUNTAINS
+Dialogue: 0,0:12:16.81,0:12:19.22,Default,,0,0,0,,Armenia is a mountainous country
+Dialogue: 0,0:12:19.22,0:12:21.81,Default,,0,0,0,,The landscape has shaped where people live
+Dialogue: 0,0:12:21.81,0:12:24.64,Default,,0,0,0,,where roads are built and what can be grown
+Dialogue: 0,0:12:24.64,0:12:27.13,Default,,0,0,0,,Mountain passes connect communities but can
+Dialogue: 0,0:12:27.13,0:12:28.72,Default,,0,0,0,,also isolate them
+Dialogue: 0,0:12:28.72,0:12:32.14,Default,,0,0,0,,For centuries these mountains provided protection
+Dialogue: 0,0:12:32.14,0:12:34.43,Default,,0,0,0,,But they also created difficult conditions
+Dialogue: 0,0:12:34.43,0:12:36.79,Default,,0,0,0,,for transportation and trade
+Dialogue: 0,0:12:36.79,0:12:40.47,Default,,0,0,0,,Today roads cross dramatic mountain landscapes
+Dialogue: 0,0:12:40.47,0:12:43.03,Default,,0,0,0,,Traveling from one region to another can mean
+Dialogue: 0,0:12:43.03,0:12:46.36,Default,,0,0,0,,winding through high passes valleys and deep
+Dialogue: 0,0:12:46.36,0:12:47.43,Default,,0,0,0,,gorges
+Dialogue: 0,0:12:47.43,0:12:49.14,Default,,0,0,0,,And then there is Lake Sevan
+Dialogue: 0,0:12:49.14,0:12:52.24,Default,,0,0,0,,A vast blue lake surrounded by mountains it
+Dialogue: 0,0:12:52.24,0:12:54.74,Default,,0,0,0,,is one of the country's most important natural
+Dialogue: 0,0:12:54.74,0:12:56.01,Default,,0,0,0,,landmarks
+Dialogue: 0,0:12:56.01,0:12:58.88,Default,,0,0,0,,During summer families travel to its shores
+Dialogue: 0,0:12:58.88,0:13:00.51,Default,,0,0,0,,to escape the heat
+Dialogue: 0,0:13:00.51,0:13:01.47,Default,,0,0,0,,They swim
+Dialogue: 0,0:13:01.47,0:13:02.81,Default,,0,0,0,,They have picnics
+Dialogue: 0,0:13:02.81,0:13:04.36,Default,,0,0,0,,They eat local fish
+Dialogue: 0,0:13:04.36,0:13:07.04,Default,,0,0,0,,And they spend time together beside the water
+Dialogue: 0,0:13:07.04,0:13:09.74,Default,,0,0,0,,The lake is also an important natural resource
+Dialogue: 0,0:13:09.74,0:13:10.90,Default,,0,0,0,,for the country
+Dialogue: 0,0:13:10.90,0:13:12.31,Default,,0,0,0,,MOUNT ARARAT
+Dialogue: 0,0:13:12.31,0:13:15.22,Default,,0,0,0,,And on the horizon stands one of the most powerful
+Dialogue: 0,0:13:15.22,0:13:17.56,Default,,0,0,0,,symbols connected with Armenia
+Dialogue: 0,0:13:17.56,0:13:18.79,Default,,0,0,0,,Mount Ararat
+Dialogue: 0,0:13:18.79,0:13:21.17,Default,,0,0,0,,The mountain lies across the modern border
+Dialogue: 0,0:13:21.17,0:13:24.57,Default,,0,0,0,,in Turkey but its image remains deeply connected
+Dialogue: 0,0:13:24.57,0:13:26.53,Default,,0,0,0,,to Armenian identity
+Dialogue: 0,0:13:26.53,0:13:30.13,Default,,0,0,0,,For Armenians Ararat is more than a mountain
+Dialogue: 0,0:13:30.13,0:13:33.79,Default,,0,0,0,,It is a symbol of homeland history and memory
+Dialogue: 0,0:13:33.79,0:13:37.14,Default,,0,0,0,,On a clear day its snow-covered peaks can dominate
+Dialogue: 0,0:13:37.14,0:13:38.29,Default,,0,0,0,,the horizon
+Dialogue: 0,0:13:38.29,0:13:41.31,Default,,0,0,0,,For many people seeing Ararat is an emotional
+Dialogue: 0,0:13:41.31,0:13:42.63,Default,,0,0,0,,experience
+Dialogue: 0,0:13:42.63,0:13:45.75,Default,,0,0,0,,It represents both pride and painful memories
+Dialogue: 0,0:13:45.75,0:13:47.79,Default,,0,0,0,,of a complicated past
+Dialogue: 0,0:13:47.79,0:13:48.79,Default,,0,0,0,,THE WINTER
+Dialogue: 0,0:13:48.79,0:13:52.40,Default,,0,0,0,,Armenia experiences dramatic seasonal changes
+Dialogue: 0,0:13:52.40,0:13:54.96,Default,,0,0,0,,Summers in lower valleys can become hot and
+Dialogue: 0,0:13:54.96,0:13:55.89,Default,,0,0,0,,dry
+Dialogue: 0,0:13:55.89,0:13:58.92,Default,,0,0,0,,Winter can bring snow freezing temperatures
+Dialogue: 0,0:13:58.92,0:14:01.70,Default,,0,0,0,,and difficult roads especially in mountain
+Dialogue: 0,0:14:01.70,0:14:02.97,Default,,0,0,0,,communities
+Dialogue: 0,0:14:02.97,0:14:06.58,Default,,0,0,0,,For rural families winter requires preparation
+Dialogue: 0,0:14:06.58,0:14:08.17,Default,,0,0,0,,Food must be stored
+Dialogue: 0,0:14:08.17,0:14:10.32,Default,,0,0,0,,Heating costs must be planned
+Dialogue: 0,0:14:10.32,0:14:12.00,Default,,0,0,0,,Animals need protection
+Dialogue: 0,0:14:12.00,0:14:14.91,Default,,0,0,0,,And roads may become difficult to travel
+Dialogue: 0,0:14:14.91,0:14:17.69,Default,,0,0,0,,Preserved food from the autumn harvest becomes
+Dialogue: 0,0:14:17.69,0:14:19.56,Default,,0,0,0,,especially valuable
+Dialogue: 0,0:14:19.56,0:14:22.71,Default,,0,0,0,,This seasonal rhythm has shaped Armenian life
+Dialogue: 0,0:14:22.71,0:14:24.27,Default,,0,0,0,,for generations
+Dialogue: 0,0:14:24.27,0:14:25.92,Default,,0,0,0,,THE YOUNG GENERATION
+Dialogue: 0,0:14:25.92,0:14:28.60,Default,,0,0,0,,But today's Armenian children are growing up
+Dialogue: 0,0:14:28.60,0:14:30.52,Default,,0,0,0,,in a very different world
+Dialogue: 0,0:14:30.52,0:14:32.74,Default,,0,0,0,,They learn traditional history and language
+Dialogue: 0,0:14:32.74,0:14:33.77,Default,,0,0,0,,at school
+Dialogue: 0,0:14:33.77,0:14:35.34,Default,,0,0,0,,They use smartphones
+Dialogue: 0,0:14:35.34,0:14:37.34,Default,,0,0,0,,They follow global trends
+Dialogue: 0,0:14:37.34,0:14:39.81,Default,,0,0,0,,They watch international entertainment
+Dialogue: 0,0:14:39.81,0:14:41.91,Default,,0,0,0,,And they communicate with friends through social
+Dialogue: 0,0:14:41.91,0:14:42.83,Default,,0,0,0,,media
+Dialogue: 0,0:14:42.83,0:14:45.21,Default,,0,0,0,,Education is highly valued
+Dialogue: 0,0:14:45.21,0:14:48.45,Default,,0,0,0,,Yerevan attracts students from across the country
+Dialogue: 0,0:14:48.45,0:14:51.87,Default,,0,0,0,,Universities bring young people together creating
+Dialogue: 0,0:14:51.87,0:14:55.46,Default,,0,0,0,,a new generation of educated Armenians
+Dialogue: 0,0:14:55.46,0:14:57.85,Default,,0,0,0,,For students studying computer science and
+Dialogue: 0,0:14:57.85,0:15:01.35,Default,,0,0,0,,technology Armenia's growing technology sector
+Dialogue: 0,0:15:01.35,0:15:04.45,Default,,0,0,0,,can provide an opportunity to build a career
+Dialogue: 0,0:15:04.45,0:15:05.40,Default,,0,0,0,,at home
+Dialogue: 0,0:15:05.40,0:15:08.44,Default,,0,0,0,,But not everyone finds the same opportunities
+Dialogue: 0,0:15:08.44,0:15:11.66,Default,,0,0,0,,For many young people salaries outside technology
+Dialogue: 0,0:15:11.66,0:15:12.84,Default,,0,0,0,,can be lower
+Dialogue: 0,0:15:12.84,0:15:14.40,Default,,0,0,0,,Jobs can be limited
+Dialogue: 0,0:15:14.40,0:15:17.06,Default,,0,0,0,,And this creates another difficult choice
+Dialogue: 0,0:15:17.06,0:15:20.15,Default,,0,0,0,,Stay in Armenia and build a future at home
+Dialogue: 0,0:15:20.15,0:15:23.58,Default,,0,0,0,,Or leave for Europe Russia the United States
+Dialogue: 0,0:15:23.58,0:15:25.01,Default,,0,0,0,,or another country
+Dialogue: 0,0:15:25.01,0:15:27.30,Default,,0,0,0,,THE DIFFICULT DECISION TO LEAVE
+Dialogue: 0,0:15:27.30,0:15:30.37,Default,,0,0,0,,Migration has become part of Armenian life
+Dialogue: 0,0:15:30.37,0:15:33.06,Default,,0,0,0,,For some people leaving is temporary
+Dialogue: 0,0:15:33.06,0:15:35.58,Default,,0,0,0,,They work abroad and send money home
+Dialogue: 0,0:15:35.58,0:15:37.92,Default,,0,0,0,,For others it becomes permanent
+Dialogue: 0,0:15:37.92,0:15:39.99,Default,,0,0,0,,The decision can be painful
+Dialogue: 0,0:15:39.99,0:15:42.67,Default,,0,0,0,,Leaving means better opportunities may be waiting
+Dialogue: 0,0:15:42.67,0:15:44.02,Default,,0,0,0,,somewhere else
+Dialogue: 0,0:15:44.02,0:15:47.74,Default,,0,0,0,,But it also means leaving parents friends relatives
+Dialogue: 0,0:15:47.74,0:15:49.92,Default,,0,0,0,,and familiar places behind
+Dialogue: 0,0:15:49.92,0:15:52.83,Default,,0,0,0,,This is why the Armenian diaspora remains so
+Dialogue: 0,0:15:52.83,0:15:53.83,Default,,0,0,0,,important
+Dialogue: 0,0:15:53.83,0:15:56.91,Default,,0,0,0,,Even when people leave the connection to Armenia
+Dialogue: 0,0:15:56.91,0:15:58.77,Default,,0,0,0,,often remains strong
+Dialogue: 0,0:15:58.77,0:16:00.49,Default,,0,0,0,,Some eventually return
+Dialogue: 0,0:16:00.49,0:16:02.62,Default,,0,0,0,,Others invest in businesses
+Dialogue: 0,0:16:02.62,0:16:05.60,Default,,0,0,0,,Some bring new skills and ideas back home
+Dialogue: 0,0:16:05.60,0:16:07.12,Default,,0,0,0,,THE WEIGHT OF HISTORY
+Dialogue: 0,0:16:07.12,0:16:09.98,Default,,0,0,0,,Armenia is a country where history is never
+Dialogue: 0,0:16:09.98,0:16:11.12,Default,,0,0,0,,far away
+Dialogue: 0,0:16:11.12,0:16:14.56,Default,,0,0,0,,Ancient monasteries stand beside modern roads
+Dialogue: 0,0:16:14.56,0:16:17.92,Default,,0,0,0,,Ruins of old trade routes sit near agricultural
+Dialogue: 0,0:16:17.92,0:16:19.02,Default,,0,0,0,,fields
+Dialogue: 0,0:16:19.02,0:16:21.88,Default,,0,0,0,,And monuments preserve memories of events that
+Dialogue: 0,0:16:21.88,0:16:23.73,Default,,0,0,0,,shaped generations
+Dialogue: 0,0:16:23.73,0:16:26.76,Default,,0,0,0,,Among the most painful memories is the Armenian
+Dialogue: 0,0:16:26.76,0:16:29.65,Default,,0,0,0,,Genocide of the early twentieth century
+Dialogue: 0,0:16:29.65,0:16:32.37,Default,,0,0,0,,For Armenians this is not simply a chapter
+Dialogue: 0,0:16:32.37,0:16:33.83,Default,,0,0,0,,in a history book
+Dialogue: 0,0:16:33.83,0:16:36.87,Default,,0,0,0,,It remains deeply connected to family memory
+Dialogue: 0,0:16:36.87,0:16:38.58,Default,,0,0,0,,and national identity
+Dialogue: 0,0:16:38.58,0:16:41.42,Default,,0,0,0,,The memorial in Yerevan is a place of remembrance
+Dialogue: 0,0:16:41.42,0:16:44.49,Default,,0,0,0,,where people gather to honor those who died
+Dialogue: 0,0:16:44.49,0:16:47.56,Default,,0,0,0,,History continues to influence how Armenians
+Dialogue: 0,0:16:47.56,0:16:50.35,Default,,0,0,0,,understand themselves and their relationship
+Dialogue: 0,0:16:50.35,0:16:52.02,Default,,0,0,0,,with the outside world
+Dialogue: 0,0:16:52.02,0:16:54.13,Default,,0,0,0,,CONFLICT AND UNCERTAINTY
+Dialogue: 0,0:16:54.13,0:16:57.02,Default,,0,0,0,,Modern Armenia has also experienced difficult
+Dialogue: 0,0:16:57.02,0:16:59.17,Default,,0,0,0,,geopolitical realities
+Dialogue: 0,0:16:59.17,0:17:02.59,Default,,0,0,0,,The collapse of the Soviet Union brought independence
+Dialogue: 0,0:17:02.59,0:17:05.06,Default,,0,0,0,,but it also brought renewed conflicts in the
+Dialogue: 0,0:17:05.06,0:17:06.05,Default,,0,0,0,,region
+Dialogue: 0,0:17:06.05,0:17:08.68,Default,,0,0,0,,The long dispute surrounding Nagorno-Karabakh
+Dialogue: 0,0:17:08.68,0:17:11.94,Default,,0,0,0,,created decades of tension and suffering
+Dialogue: 0,0:17:11.94,0:17:13.61,Default,,0,0,0,,Families were displaced
+Dialogue: 0,0:17:13.61,0:17:16.25,Default,,0,0,0,,Young men faced military service
+Dialogue: 0,0:17:16.25,0:17:19.37,Default,,0,0,0,,And uncertainty became part of everyday life
+Dialogue: 0,0:17:19.37,0:17:20.87,Default,,0,0,0,,for many people
+Dialogue: 0,0:17:20.87,0:17:24.75,Default,,0,0,0,,For ordinary Armenians geopolitics is not simply
+Dialogue: 0,0:17:24.75,0:17:27.19,Default,,0,0,0,,something discussed by politicians
+Dialogue: 0,0:17:27.19,0:17:28.73,Default,,0,0,0,,It can affect travel
+Dialogue: 0,0:17:28.73,0:17:29.58,Default,,0,0,0,,Trade
+Dialogue: 0,0:17:29.58,0:17:30.66,Default,,0,0,0,,Security
+Dialogue: 0,0:17:30.66,0:17:31.69,Default,,0,0,0,,Employment
+Dialogue: 0,0:17:31.69,0:17:33.64,Default,,0,0,0,,And the decisions families make about their
+Dialogue: 0,0:17:33.64,0:17:34.68,Default,,0,0,0,,future
+Dialogue: 0,0:17:34.68,0:17:37.34,Default,,0,0,0,,Armenia has had to navigate relationships with
+Dialogue: 0,0:17:37.34,0:17:40.55,Default,,0,0,0,,powerful regional countries while also developing
+Dialogue: 0,0:17:40.55,0:17:42.82,Default,,0,0,0,,new international partnerships
+Dialogue: 0,0:17:42.82,0:17:44.18,Default,,0,0,0,,THE NEW ARMENIA
+Dialogue: 0,0:17:44.18,0:17:47.34,Default,,0,0,0,,Despite these challenges another Armenia is
+Dialogue: 0,0:17:47.34,0:17:48.37,Default,,0,0,0,,emerging
+Dialogue: 0,0:17:48.37,0:17:51.41,Default,,0,0,0,,In Yerevan technology companies are growing
+Dialogue: 0,0:17:51.41,0:17:54.12,Default,,0,0,0,,Young entrepreneurs are creating businesses
+Dialogue: 0,0:17:54.12,0:17:56.16,Default,,0,0,0,,Artists are opening studios
+Dialogue: 0,0:17:56.16,0:17:59.84,Default,,0,0,0,,Restaurants and cafes are transforming neighborhoods
+Dialogue: 0,0:17:59.84,0:18:02.71,Default,,0,0,0,,And a new generation is asking what it means
+Dialogue: 0,0:18:02.71,0:18:05.46,Default,,0,0,0,,to be Armenian in the modern world
+Dialogue: 0,0:18:05.46,0:18:07.78,Default,,0,0,0,,They are connected to global culture
+Dialogue: 0,0:18:07.78,0:18:10.87,Default,,0,0,0,,But they are also proud of their language food
+Dialogue: 0,0:18:10.87,0:18:12.37,Default,,0,0,0,,family and history
+Dialogue: 0,0:18:12.37,0:18:15.69,Default,,0,0,0,,This generation does not necessarily see tradition
+Dialogue: 0,0:18:15.69,0:18:17.91,Default,,0,0,0,,and modernity as opposites
+Dialogue: 0,0:18:17.91,0:18:20.80,Default,,0,0,0,,They can use a smartphone while speaking Armenian
+Dialogue: 0,0:18:20.80,0:18:22.40,Default,,0,0,0,,with their grandparents
+Dialogue: 0,0:18:22.40,0:18:24.66,Default,,0,0,0,,They can work for an international company
+Dialogue: 0,0:18:24.66,0:18:27.51,Default,,0,0,0,,while celebrating traditional holidays
+Dialogue: 0,0:18:27.51,0:18:30.15,Default,,0,0,0,,They can live in a modern apartment while cooking
+Dialogue: 0,0:18:30.15,0:18:33.64,Default,,0,0,0,,recipes that have been passed down for generations
+Dialogue: 0,0:18:33.64,0:18:34.98,Default,,0,0,0,,WHY PEOPLE STAY
+Dialogue: 0,0:18:34.98,0:18:37.14,Default,,0,0,0,,So why do people stay in Armenia
+Dialogue: 0,0:18:37.14,0:18:39.23,Default,,0,0,0,,The answer is different for everyone
+Dialogue: 0,0:18:39.23,0:18:40.89,Default,,0,0,0,,For some it is family
+Dialogue: 0,0:18:40.89,0:18:43.21,Default,,0,0,0,,For others it is the landscape
+Dialogue: 0,0:18:43.21,0:18:45.61,Default,,0,0,0,,For some it is the language
+Dialogue: 0,0:18:45.61,0:18:49.40,Default,,0,0,0,,For others it is the food history or culture
+Dialogue: 0,0:18:49.40,0:18:51.93,Default,,0,0,0,,And for many it is simply home
+Dialogue: 0,0:18:51.93,0:18:55.44,Default,,0,0,0,,Even Armenians who leave often maintain a powerful
+Dialogue: 0,0:18:55.44,0:18:57.15,Default,,0,0,0,,connection to the country
+Dialogue: 0,0:18:57.15,0:18:58.58,Default,,0,0,0,,Some return later
+Dialogue: 0,0:18:58.58,0:19:00.21,Default,,0,0,0,,Some start businesses
+Dialogue: 0,0:19:00.21,0:19:02.76,Default,,0,0,0,,Some bring their children back to experience
+Dialogue: 0,0:19:02.76,0:19:04.68,Default,,0,0,0,,the culture they grew up with
+Dialogue: 0,0:19:04.68,0:19:08.05,Default,,0,0,0,,The connection can survive thousands of kilometers
+Dialogue: 0,0:19:08.05,0:19:09.89,Default,,0,0,0,,EVENING IN ARMENIA
+Dialogue: 0,0:19:09.89,0:19:13.07,Default,,0,0,0,,As evening arrives in Yerevan the city begins
+Dialogue: 0,0:19:13.07,0:19:14.28,Default,,0,0,0,,to change
+Dialogue: 0,0:19:14.28,0:19:16.43,Default,,0,0,0,,Traffic slowly decreases
+Dialogue: 0,0:19:16.43,0:19:18.16,Default,,0,0,0,,Cafes become busy
+Dialogue: 0,0:19:18.16,0:19:19.66,Default,,0,0,0,,Families return home
+Dialogue: 0,0:19:19.66,0:19:22.34,Default,,0,0,0,,Children play in courtyards and parks
+Dialogue: 0,0:19:22.34,0:19:23.79,Default,,0,0,0,,Friends meet for dinner
+Dialogue: 0,0:19:23.79,0:19:26.19,Default,,0,0,0,,And the smell of food begins drifting through
+Dialogue: 0,0:19:26.19,0:19:27.46,Default,,0,0,0,,neighborhoods
+Dialogue: 0,0:19:27.46,0:19:30.86,Default,,0,0,0,,In villages farmers return from the fields
+Dialogue: 0,0:19:30.86,0:19:32.55,Default,,0,0,0,,Animals are brought back
+Dialogue: 0,0:19:32.55,0:19:34.50,Default,,0,0,0,,The day's work comes to an end
+Dialogue: 0,0:19:34.50,0:19:36.79,Default,,0,0,0,,Lights begin appearing in houses across the
+Dialogue: 0,0:19:36.79,0:19:37.87,Default,,0,0,0,,valleys
+Dialogue: 0,0:19:37.87,0:19:40.33,Default,,0,0,0,,And the mountains slowly disappear into the
+Dialogue: 0,0:19:40.33,0:19:41.48,Default,,0,0,0,,darkness
+Dialogue: 0,0:19:41.48,0:19:44.59,Default,,0,0,0,,At Lake Sevan the water becomes still
+Dialogue: 0,0:19:44.59,0:19:48.72,Default,,0,0,0,,Above Yerevan the city becomes a sea of lights
+Dialogue: 0,0:19:48.72,0:19:50.83,Default,,0,0,0,,And somewhere beyond the glow
+Dialogue: 0,0:19:50.83,0:19:53.76,Default,,0,0,0,,Mount Ararat remains on the horizon
+Dialogue: 0,0:19:53.76,0:19:55.29,Default,,0,0,0,,THE REAL ARMENIA
+Dialogue: 0,0:19:55.29,0:19:58.33,Default,,0,0,0,,Armenia is often presented through its ancient
+Dialogue: 0,0:19:58.33,0:20:01.79,Default,,0,0,0,,monasteries dramatic mountains and complicated
+Dialogue: 0,0:20:01.79,0:20:02.79,Default,,0,0,0,,history
+Dialogue: 0,0:20:02.79,0:20:05.51,Default,,0,0,0,,But those things tell only part of the story
+Dialogue: 0,0:20:05.51,0:20:08.88,Default,,0,0,0,,The real Armenia is found in ordinary homes
+Dialogue: 0,0:20:08.88,0:20:11.61,Default,,0,0,0,,It is in a grandmother teaching a child a family
+Dialogue: 0,0:20:11.61,0:20:12.63,Default,,0,0,0,,recipe
+Dialogue: 0,0:20:12.63,0:20:15.25,Default,,0,0,0,,It is in a father preparing khorovats
+Dialogue: 0,0:20:15.25,0:20:18.52,Default,,0,0,0,,It is in children learning the Armenian alphabet
+Dialogue: 0,0:20:18.52,0:20:20.61,Default,,0,0,0,,It is in young people sitting together in a
+Dialogue: 0,0:20:20.61,0:20:22.22,Default,,0,0,0,,Yerevan cafe
+Dialogue: 0,0:20:22.22,0:20:24.94,Default,,0,0,0,,It is in farmers working through the harvest
+Dialogue: 0,0:20:24.94,0:20:27.86,Default,,0,0,0,,It is in families staying connected with relatives
+Dialogue: 0,0:20:27.86,0:20:30.11,Default,,0,0,0,,thousands of kilometers away
+Dialogue: 0,0:20:30.11,0:20:32.54,Default,,0,0,0,,And it is in people who continue building their
+Dialogue: 0,0:20:32.54,0:20:35.72,Default,,0,0,0,,future despite economic pressure and regional
+Dialogue: 0,0:20:35.72,0:20:36.90,Default,,0,0,0,,uncertainty
+Dialogue: 0,0:20:36.90,0:20:40.16,Default,,0,0,0,,Armenia is not a country frozen in the past
+Dialogue: 0,0:20:40.16,0:20:42.51,Default,,0,0,0,,It is a country carrying the past into the
+Dialogue: 0,0:20:42.51,0:20:43.52,Default,,0,0,0,,future
+Dialogue: 0,0:20:43.52,0:20:47.33,Default,,0,0,0,,Ancient traditions exist beside modern technology
+Dialogue: 0,0:20:47.33,0:20:50.86,Default,,0,0,0,,Mountain villages exist beside growing cities
+Dialogue: 0,0:20:50.86,0:20:53.88,Default,,0,0,0,,Old churches stand beside new businesses
+Dialogue: 0,0:20:53.88,0:20:56.23,Default,,0,0,0,,And young people are deciding what parts of
+Dialogue: 0,0:20:56.23,0:20:58.65,Default,,0,0,0,,their heritage they will carry forward
+Dialogue: 0,0:20:58.65,0:21:01.51,Default,,0,0,0,,Perhaps that is the real strength of Armenia
+Dialogue: 0,0:21:01.51,0:21:03.30,Default,,0,0,0,,Not simply its mountains
+Dialogue: 0,0:21:03.30,0:21:05.25,Default,,0,0,0,,Not simply its ancient history
+Dialogue: 0,0:21:05.25,0:21:06.38,Default,,0,0,0,,But its people
+Dialogue: 0,0:21:06.38,0:21:08.26,Default,,0,0,0,,Their ability to remember
+Dialogue: 0,0:21:08.26,0:21:09.41,Default,,0,0,0,,To adapt
+Dialogue: 0,0:21:09.41,0:21:10.54,Default,,0,0,0,,To preserve
+Dialogue: 0,0:21:10.54,0:21:11.76,Default,,0,0,0,,And to continue
+Dialogue: 0,0:21:11.76,0:21:14.93,Default,,0,0,0,,When night finally covers the mountains families
+Dialogue: 0,0:21:14.93,0:21:17.80,Default,,0,0,0,,close their doors and return to the quiet rhythm
+Dialogue: 0,0:21:17.80,0:21:18.75,Default,,0,0,0,,of home
+Dialogue: 0,0:21:18.75,0:21:20.33,Default,,0,0,0,,Another day has ended
+Dialogue: 0,0:21:20.33,0:21:22.61,Default,,0,0,0,,Another generation has carried the culture
+Dialogue: 0,0:21:22.61,0:21:23.55,Default,,0,0,0,,forward
+Dialogue: 0,0:21:23.55,0:21:26.16,Default,,0,0,0,,And tomorrow life begins again
+Dialogue: 0,0:21:26.16,0:21:27.54,Default,,0,0,0,,This is Armenia
+Dialogue: 0,0:21:27.54,0:21:30.33,Default,,0,0,0,,A small country with a very large history
+Dialogue: 0,0:21:30.33,0:21:34.83,Default,,0,0,0,,A land of mountains family food faith struggle
+Dialogue: 0,0:21:34.83,0:21:35.80,Default,,0,0,0,,and hope
+Dialogue: 0,0:21:35.80,0:21:38.84,Default,,0,0,0,,A country where the past is always present
+Dialogue: 0,0:21:38.84,0:21:41.27,Default,,0,0,0,,but the future is still being written
+Dialogue: 0,0:21:41.27,0:21:43.23,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:21:43.23,0:21:44.61,Default,,0,0,0,,Life Beyond the Limits

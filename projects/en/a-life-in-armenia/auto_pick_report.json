@@ -1,0 +1,16 @@
+{
+  "scenes": 94,
+  "picked": 94,
+  "empty": [],
+  "soft_scenes": 0,
+  "keyword_only_scenes": 52,
+  "ai_scenes": 36,
+  "weak_scene_share": 0.553,
+  "llm_down": true,
+  "minutes": 106.1,
+  "needs_review": true,
+  "reasons": [
+    "Gemini quota ran out; some scenes matched by keywords only",
+    "55% of scenes are weak matches (over 25%)"
+  ]
+}
