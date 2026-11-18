@@ -1,0 +1,542 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:01.60,Default,,0,0,0,,LIFE IN BHUTAN
+Dialogue: 0,0:00:01.60,0:00:04.61,Default,,0,0,0,,THE MYSTERIOUS HIMALAYAN KINGDOM WHERE HAPPINESS
+Dialogue: 0,0:00:04.61,0:00:05.97,Default,,0,0,0,,COMES FIRST
+Dialogue: 0,0:00:05.97,0:00:08.69,Default,,0,0,0,,Imagine living in a country hidden high in
+Dialogue: 0,0:00:08.69,0:00:11.92,Default,,0,0,0,,the Himalayas where enormous mountains surround
+Dialogue: 0,0:00:11.92,0:00:13.51,Default,,0,0,0,,small villages
+Dialogue: 0,0:00:13.51,0:00:16.76,Default,,0,0,0,,ancient monasteries sit above deep valleys
+Dialogue: 0,0:00:16.76,0:00:19.50,Default,,0,0,0,,and forests cover much of the landscape
+Dialogue: 0,0:00:19.50,0:00:22.25,Default,,0,0,0,,Imagine a place where television and the internet
+Dialogue: 0,0:00:22.25,0:00:25.74,Default,,0,0,0,,arrived only recently where traditional clothing
+Dialogue: 0,0:00:25.74,0:00:28.74,Default,,0,0,0,,is still part of everyday life and where a
+Dialogue: 0,0:00:28.74,0:00:32.00,Default,,0,0,0,,national policy once made the world ask a strange
+Dialogue: 0,0:00:32.00,0:00:33.00,Default,,0,0,0,,question
+Dialogue: 0,0:00:33.00,0:00:35.58,Default,,0,0,0,,Can a country measure its success by happiness
+Dialogue: 0,0:00:35.58,0:00:36.88,Default,,0,0,0,,instead of money
+Dialogue: 0,0:00:36.88,0:00:38.22,Default,,0,0,0,,This is Bhutan
+Dialogue: 0,0:00:38.22,0:00:41.57,Default,,0,0,0,,A small Himalayan kingdom located between India
+Dialogue: 0,0:00:41.57,0:00:42.65,Default,,0,0,0,,and China
+Dialogue: 0,0:00:42.65,0:00:45.68,Default,,0,0,0,,From the outside Bhutan can look almost like
+Dialogue: 0,0:00:45.68,0:00:47.15,Default,,0,0,0,,a forgotten world
+Dialogue: 0,0:00:47.15,0:00:49.68,Default,,0,0,0,,There are no huge modern cities dominating
+Dialogue: 0,0:00:49.68,0:00:50.92,Default,,0,0,0,,the landscape
+Dialogue: 0,0:00:50.92,0:00:53.14,Default,,0,0,0,,There are no skyscrapers stretching into the
+Dialogue: 0,0:00:53.14,0:00:54.10,Default,,0,0,0,,sky
+Dialogue: 0,0:00:54.10,0:00:57.78,Default,,0,0,0,,Instead there are mountain valleys prayer flags
+Dialogue: 0,0:00:57.78,0:01:02.11,Default,,0,0,0,,Buddhist temples terraced fields forests rivers
+Dialogue: 0,0:01:02.11,0:01:05.28,Default,,0,0,0,,and villages scattered across difficult terrain
+Dialogue: 0,0:01:05.28,0:01:07.89,Default,,0,0,0,,But behind this peaceful image is a country
+Dialogue: 0,0:01:07.89,0:01:10.65,Default,,0,0,0,,facing a very modern challenge
+Dialogue: 0,0:01:10.65,0:01:13.04,Default,,0,0,0,,How do you protect an ancient culture while
+Dialogue: 0,0:01:13.04,0:01:15.89,Default,,0,0,0,,young people grow up with smartphones social
+Dialogue: 0,0:01:15.89,0:01:18.97,Default,,0,0,0,,media modern education and dreams of living
+Dialogue: 0,0:01:18.97,0:01:19.90,Default,,0,0,0,,abroad
+Dialogue: 0,0:01:19.90,0:01:22.83,Default,,0,0,0,,How do you develop a small mountain economy
+Dialogue: 0,0:01:22.83,0:01:25.40,Default,,0,0,0,,without destroying the environment that makes
+Dialogue: 0,0:01:25.40,0:01:26.96,Default,,0,0,0,,the country unique
+Dialogue: 0,0:01:26.96,0:01:29.25,Default,,0,0,0,,And why did Bhutan become famous around the
+Dialogue: 0,0:01:29.25,0:01:31.62,Default,,0,0,0,,world for measuring something called Gross
+Dialogue: 0,0:01:31.62,0:01:33.24,Default,,0,0,0,,National Happiness
+Dialogue: 0,0:01:33.24,0:01:34.75,Default,,0,0,0,,Welcome to Bhutan
+Dialogue: 0,0:01:34.75,0:01:36.71,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:36.71,0:01:38.56,Default,,0,0,0,,Life Beyond the Limits
+Dialogue: 0,0:01:38.56,0:01:40.81,Default,,0,0,0,,THE KINGDOM IN THE HIMALAYAS
+Dialogue: 0,0:01:40.81,0:01:43.85,Default,,0,0,0,,Bhutan is small compared with many countries
+Dialogue: 0,0:01:43.85,0:01:46.46,Default,,0,0,0,,but its landscape is enormous
+Dialogue: 0,0:01:46.46,0:01:49.78,Default,,0,0,0,,The country rises dramatically from lower valleys
+Dialogue: 0,0:01:49.78,0:01:52.67,Default,,0,0,0,,into some of the world's highest mountains
+Dialogue: 0,0:01:52.67,0:01:54.42,Default,,0,0,0,,The terrain is difficult
+Dialogue: 0,0:01:54.42,0:01:56.69,Default,,0,0,0,,Deep valleys separate communities
+Dialogue: 0,0:01:56.69,0:01:59.22,Default,,0,0,0,,Mountain roads twist around cliffs
+Dialogue: 0,0:01:59.22,0:02:01.79,Default,,0,0,0,,Rivers cut through steep landscapes
+Dialogue: 0,0:02:01.79,0:02:04.65,Default,,0,0,0,,And in many places simply traveling from one
+Dialogue: 0,0:02:04.65,0:02:07.15,Default,,0,0,0,,valley to another can take hours
+Dialogue: 0,0:02:07.15,0:02:10.61,Default,,0,0,0,,This geography has shaped Bhutan for centuries
+Dialogue: 0,0:02:10.61,0:02:12.72,Default,,0,0,0,,It helped protect the country from outside
+Dialogue: 0,0:02:12.72,0:02:14.00,Default,,0,0,0,,influences
+Dialogue: 0,0:02:14.00,0:02:16.68,Default,,0,0,0,,It also created isolated communities where
+Dialogue: 0,0:02:16.68,0:02:19.93,Default,,0,0,0,,traditions could survive for generations
+Dialogue: 0,0:02:19.93,0:02:23.15,Default,,0,0,0,,Even today Bhutan can feel like several different
+Dialogue: 0,0:02:23.15,0:02:26.21,Default,,0,0,0,,worlds connected by narrow mountain roads
+Dialogue: 0,0:02:26.21,0:02:29.83,Default,,0,0,0,,In one valley farmers may be working in fields
+Dialogue: 0,0:02:29.83,0:02:33.92,Default,,0,0,0,,In another monks may be studying inside a monastery
+Dialogue: 0,0:02:33.92,0:02:37.54,Default,,0,0,0,,And farther away a modern town may have restaurants
+Dialogue: 0,0:02:37.54,0:02:41.61,Default,,0,0,0,,hotels schools internet cafes and smartphones
+Dialogue: 0,0:02:41.61,0:02:42.69,Default,,0,0,0,,everywhere
+Dialogue: 0,0:02:42.69,0:02:45.78,Default,,0,0,0,,This mixture of ancient and modern Bhutan is
+Dialogue: 0,0:02:45.78,0:02:48.78,Default,,0,0,0,,what makes the country so fascinating
+Dialogue: 0,0:02:48.78,0:02:51.57,Default,,0,0,0,,THE MOUNTAINS THAT CONTROL DAILY LIFE
+Dialogue: 0,0:02:51.57,0:02:54.90,Default,,0,0,0,,In Bhutan the mountains are not just scenery
+Dialogue: 0,0:02:54.90,0:02:57.22,Default,,0,0,0,,They control everyday life
+Dialogue: 0,0:02:57.22,0:02:59.75,Default,,0,0,0,,They influence where people build homes
+Dialogue: 0,0:02:59.75,0:03:02.64,Default,,0,0,0,,They determine where roads can be constructed
+Dialogue: 0,0:03:02.64,0:03:04.44,Default,,0,0,0,,They affect agriculture
+Dialogue: 0,0:03:04.44,0:03:05.93,Default,,0,0,0,,They influence weather
+Dialogue: 0,0:03:05.93,0:03:07.91,Default,,0,0,0,,And they can make travel difficult
+Dialogue: 0,0:03:07.91,0:03:10.05,Default,,0,0,0,,A journey that would take an hour on a flat
+Dialogue: 0,0:03:10.05,0:03:13.26,Default,,0,0,0,,road can take much longer through the Himalayas
+Dialogue: 0,0:03:13.26,0:03:15.86,Default,,0,0,0,,Roads wind through forests and along steep
+Dialogue: 0,0:03:15.86,0:03:17.29,Default,,0,0,0,,mountain slopes
+Dialogue: 0,0:03:17.29,0:03:19.97,Default,,0,0,0,,Landslides can disrupt transportation
+Dialogue: 0,0:03:19.97,0:03:22.68,Default,,0,0,0,,Heavy rain can make roads dangerous
+Dialogue: 0,0:03:22.68,0:03:25.66,Default,,0,0,0,,And during colder months high mountain passes
+Dialogue: 0,0:03:25.66,0:03:27.98,Default,,0,0,0,,can become difficult to cross
+Dialogue: 0,0:03:27.98,0:03:30.78,Default,,0,0,0,,For people living in remote villages distance
+Dialogue: 0,0:03:30.78,0:03:33.80,Default,,0,0,0,,can still be a major part of daily life
+Dialogue: 0,0:03:33.80,0:03:37.75,Default,,0,0,0,,A hospital school or market may not be close
+Dialogue: 0,0:03:37.75,0:03:40.75,Default,,0,0,0,,Yet communities have adapted to the landscape
+Dialogue: 0,0:03:40.75,0:03:42.83,Default,,0,0,0,,They have built homes on slopes
+Dialogue: 0,0:03:42.83,0:03:45.19,Default,,0,0,0,,They farm wherever the land allows
+Dialogue: 0,0:03:45.19,0:03:47.84,Default,,0,0,0,,And they have developed an intimate understanding
+Dialogue: 0,0:03:47.84,0:03:49.53,Default,,0,0,0,,of the mountains around them
+Dialogue: 0,0:03:49.53,0:03:51.33,Default,,0,0,0,,THE VILLAGES OF BHUTAN
+Dialogue: 0,0:03:51.33,0:03:54.30,Default,,0,0,0,,Leave the larger towns behind and another Bhutan
+Dialogue: 0,0:03:54.30,0:03:55.41,Default,,0,0,0,,appears
+Dialogue: 0,0:03:55.41,0:03:58.62,Default,,0,0,0,,Small villages sit among green hills and mountain
+Dialogue: 0,0:03:58.62,0:03:59.72,Default,,0,0,0,,valleys
+Dialogue: 0,0:03:59.72,0:04:02.30,Default,,0,0,0,,Traditional homes often have distinctive wooden
+Dialogue: 0,0:04:02.30,0:04:05.83,Default,,0,0,0,,details and carefully decorated windows
+Dialogue: 0,0:04:05.83,0:04:08.21,Default,,0,0,0,,Fields surround many communities
+Dialogue: 0,0:04:08.21,0:04:11.28,Default,,0,0,0,,Farmers grow crops suited to the altitude and
+Dialogue: 0,0:04:11.28,0:04:12.55,Default,,0,0,0,,local climate
+Dialogue: 0,0:04:12.55,0:04:14.98,Default,,0,0,0,,Rice is important in lower areas
+Dialogue: 0,0:04:14.98,0:04:17.91,Default,,0,0,0,,In higher regions people depend more heavily
+Dialogue: 0,0:04:17.91,0:04:21.75,Default,,0,0,0,,on crops such as barley wheat potatoes and
+Dialogue: 0,0:04:21.75,0:04:23.87,Default,,0,0,0,,other mountain-adapted foods
+Dialogue: 0,0:04:23.87,0:04:27.16,Default,,0,0,0,,Life in these villages can be physically demanding
+Dialogue: 0,0:04:27.16,0:04:30.34,Default,,0,0,0,,There are no giant machines doing every task
+Dialogue: 0,0:04:30.34,0:04:32.09,Default,,0,0,0,,Families work with the land
+Dialogue: 0,0:04:32.09,0:04:33.12,Default,,0,0,0,,They plant
+Dialogue: 0,0:04:33.12,0:04:34.11,Default,,0,0,0,,Harvest
+Dialogue: 0,0:04:34.11,0:04:34.90,Default,,0,0,0,,Carry
+Dialogue: 0,0:04:34.90,0:04:35.65,Default,,0,0,0,,Cook
+Dialogue: 0,0:04:35.65,0:04:36.58,Default,,0,0,0,,Repair
+Dialogue: 0,0:04:36.58,0:04:38.53,Default,,0,0,0,,And prepare for the next season
+Dialogue: 0,0:04:38.53,0:04:41.37,Default,,0,0,0,,For generations this rhythm connected people
+Dialogue: 0,0:04:41.37,0:04:43.59,Default,,0,0,0,,directly to the environment
+Dialogue: 0,0:04:43.59,0:04:45.07,Default,,0,0,0,,THE BHUTANESE HOME
+Dialogue: 0,0:04:45.07,0:04:47.57,Default,,0,0,0,,A traditional Bhutanese home is more than a
+Dialogue: 0,0:04:47.57,0:04:48.98,Default,,0,0,0,,place to sleep
+Dialogue: 0,0:04:48.98,0:04:51.47,Default,,0,0,0,,It is also part of cultural identity
+Dialogue: 0,0:04:51.47,0:04:54.79,Default,,0,0,0,,Buildings often feature painted wooden designs
+Dialogue: 0,0:04:54.79,0:04:58.14,Default,,0,0,0,,colorful details and architectural styles that
+Dialogue: 0,0:04:58.14,0:05:00.93,Default,,0,0,0,,have been preserved through generations
+Dialogue: 0,0:05:00.93,0:05:03.64,Default,,0,0,0,,In many places traditional architecture is
+Dialogue: 0,0:05:03.64,0:05:05.30,Default,,0,0,0,,strongly protected
+Dialogue: 0,0:05:05.30,0:05:08.54,Default,,0,0,0,,The result is a landscape where modern construction
+Dialogue: 0,0:05:08.54,0:05:11.61,Default,,0,0,0,,does not completely erase the visual identity
+Dialogue: 0,0:05:11.61,0:05:12.76,Default,,0,0,0,,of the country
+Dialogue: 0,0:05:12.76,0:05:16.04,Default,,0,0,0,,Inside a home family life can be simple but
+Dialogue: 0,0:05:16.04,0:05:17.43,Default,,0,0,0,,deeply connected
+Dialogue: 0,0:05:17.43,0:05:18.73,Default,,0,0,0,,Meals are shared
+Dialogue: 0,0:05:18.73,0:05:21.54,Default,,0,0,0,,Older family members pass down stories
+Dialogue: 0,0:05:21.54,0:05:23.86,Default,,0,0,0,,Children learn traditions from parents and
+Dialogue: 0,0:05:23.86,0:05:25.26,Default,,0,0,0,,grandparents
+Dialogue: 0,0:05:25.26,0:05:28.51,Default,,0,0,0,,And religion remains part of everyday life
+Dialogue: 0,0:05:28.51,0:05:31.62,Default,,0,0,0,,For many Bhutanese families Buddhism is not
+Dialogue: 0,0:05:31.62,0:05:34.57,Default,,0,0,0,,simply something practiced inside a temple
+Dialogue: 0,0:05:34.57,0:05:38.61,Default,,0,0,0,,It influences festivals customs architecture
+Dialogue: 0,0:05:38.61,0:05:41.54,Default,,0,0,0,,art and the way people understand life
+Dialogue: 0,0:05:41.54,0:05:43.22,Default,,0,0,0,,THE LAND OF BUDDHISM
+Dialogue: 0,0:05:43.22,0:05:45.99,Default,,0,0,0,,Travel through Bhutan and you will constantly
+Dialogue: 0,0:05:45.99,0:05:48.09,Default,,0,0,0,,encounter signs of Buddhism
+Dialogue: 0,0:05:48.09,0:05:50.78,Default,,0,0,0,,Prayer flags move in the mountain wind
+Dialogue: 0,0:05:50.78,0:05:53.27,Default,,0,0,0,,Prayer wheels turn beside roads
+Dialogue: 0,0:05:53.27,0:05:55.88,Default,,0,0,0,,Small shrines appear along trails
+Dialogue: 0,0:05:55.88,0:05:58.33,Default,,0,0,0,,And monasteries and temples can be found in
+Dialogue: 0,0:05:58.33,0:06:01.81,Default,,0,0,0,,places that seem almost impossible to reach
+Dialogue: 0,0:06:01.81,0:06:03.95,Default,,0,0,0,,One of the country's most famous religious
+Dialogue: 0,0:06:03.95,0:06:06.94,Default,,0,0,0,,sites is the Tiger's Nest monastery
+Dialogue: 0,0:06:06.94,0:06:09.48,Default,,0,0,0,,It is built high on a cliff above the Paro
+Dialogue: 0,0:06:09.48,0:06:10.41,Default,,0,0,0,,Valley
+Dialogue: 0,0:06:10.41,0:06:12.76,Default,,0,0,0,,Reaching it requires a steep hike through the
+Dialogue: 0,0:06:12.76,0:06:13.88,Default,,0,0,0,,mountains
+Dialogue: 0,0:06:13.88,0:06:16.84,Default,,0,0,0,,For visitors the journey can be exhausting
+Dialogue: 0,0:06:16.84,0:06:20.30,Default,,0,0,0,,For believers it can be a spiritual experience
+Dialogue: 0,0:06:20.30,0:06:22.78,Default,,0,0,0,,The monastery represents something larger than
+Dialogue: 0,0:06:22.78,0:06:24.06,Default,,0,0,0,,architecture
+Dialogue: 0,0:06:24.06,0:06:26.81,Default,,0,0,0,,It represents the relationship between Bhutanese
+Dialogue: 0,0:06:26.81,0:06:30.55,Default,,0,0,0,,culture religion and the mountains themselves
+Dialogue: 0,0:06:30.55,0:06:34.08,Default,,0,0,0,,In Bhutan sacred places are often not separated
+Dialogue: 0,0:06:34.08,0:06:35.26,Default,,0,0,0,,from nature
+Dialogue: 0,0:06:35.26,0:06:37.87,Default,,0,0,0,,The mountain is part of the experience
+Dialogue: 0,0:06:37.87,0:06:40.45,Default,,0,0,0,,The forest is part of the experience
+Dialogue: 0,0:06:40.45,0:06:43.05,Default,,0,0,0,,The journey is part of the experience
+Dialogue: 0,0:06:43.05,0:06:44.87,Default,,0,0,0,,THE CHILDREN OF BHUTAN
+Dialogue: 0,0:06:44.87,0:06:48.45,Default,,0,0,0,,For Bhutanese children life is changing rapidly
+Dialogue: 0,0:06:48.45,0:06:51.27,Default,,0,0,0,,A child today may grow up learning traditional
+Dialogue: 0,0:06:51.27,0:06:54.85,Default,,0,0,0,,customs at home while using technology at school
+Dialogue: 0,0:06:54.85,0:06:57.19,Default,,0,0,0,,They may learn about Buddhist traditions and
+Dialogue: 0,0:06:57.19,0:06:59.67,Default,,0,0,0,,modern science in the same week
+Dialogue: 0,0:06:59.67,0:07:02.24,Default,,0,0,0,,They may wear traditional clothing for school
+Dialogue: 0,0:07:02.24,0:07:05.34,Default,,0,0,0,,and then spend their free time using smartphones
+Dialogue: 0,0:07:05.34,0:07:08.05,Default,,0,0,0,,Education has become an important path toward
+Dialogue: 0,0:07:08.05,0:07:09.48,Default,,0,0,0,,a different future
+Dialogue: 0,0:07:09.48,0:07:12.90,Default,,0,0,0,,Children in remote areas may face greater challenges
+Dialogue: 0,0:07:12.90,0:07:15.73,Default,,0,0,0,,because of distance and transportation
+Dialogue: 0,0:07:15.73,0:07:18.49,Default,,0,0,0,,But schools have expanded across the country
+Dialogue: 0,0:07:18.49,0:07:22.30,Default,,0,0,0,,For many families education represents opportunity
+Dialogue: 0,0:07:22.30,0:07:25.44,Default,,0,0,0,,It can lead to careers in medicine engineering
+Dialogue: 0,0:07:25.44,0:07:29.31,Default,,0,0,0,,education tourism government technology and
+Dialogue: 0,0:07:29.31,0:07:30.42,Default,,0,0,0,,business
+Dialogue: 0,0:07:30.42,0:07:32.99,Default,,0,0,0,,But it can also create a difficult decision
+Dialogue: 0,0:07:32.99,0:07:35.62,Default,,0,0,0,,When young people become educated they may
+Dialogue: 0,0:07:35.62,0:07:38.47,Default,,0,0,0,,discover opportunities far beyond their home
+Dialogue: 0,0:07:38.47,0:07:39.59,Default,,0,0,0,,valleys
+Dialogue: 0,0:07:39.59,0:07:41.84,Default,,0,0,0,,And some eventually leave Bhutan
+Dialogue: 0,0:07:41.84,0:07:44.19,Default,,0,0,0,,THE COUNTRY THAT MEASURES HAPPINESS
+Dialogue: 0,0:07:44.19,0:07:46.73,Default,,0,0,0,,Bhutan became internationally famous for an
+Dialogue: 0,0:07:46.73,0:07:48.34,Default,,0,0,0,,unusual idea
+Dialogue: 0,0:07:48.34,0:07:51.26,Default,,0,0,0,,Instead of looking only at economic growth
+Dialogue: 0,0:07:51.26,0:07:54.23,Default,,0,0,0,,Bhutan promoted the concept of Gross National
+Dialogue: 0,0:07:54.23,0:07:55.44,Default,,0,0,0,,Happiness
+Dialogue: 0,0:07:55.44,0:07:57.94,Default,,0,0,0,,The idea is that development should consider
+Dialogue: 0,0:07:57.94,0:07:59.17,Default,,0,0,0,,more than income
+Dialogue: 0,0:07:59.17,0:08:02.01,Default,,0,0,0,,It should also consider areas such as psychological
+Dialogue: 0,0:08:02.01,0:08:06.45,Default,,0,0,0,,well-being health education community culture
+Dialogue: 0,0:08:06.45,0:08:09.59,Default,,0,0,0,,environmental conditions and good governance
+Dialogue: 0,0:08:09.59,0:08:11.95,Default,,0,0,0,,The concept does not mean that everyone in
+Dialogue: 0,0:08:11.95,0:08:14.34,Default,,0,0,0,,Bhutan is constantly happy
+Dialogue: 0,0:08:14.34,0:08:16.27,Default,,0,0,0,,Real life does not work that way
+Dialogue: 0,0:08:16.27,0:08:18.47,Default,,0,0,0,,People still experience poverty
+Dialogue: 0,0:08:18.47,0:08:19.69,Default,,0,0,0,,Unemployment
+Dialogue: 0,0:08:19.69,0:08:21.06,Default,,0,0,0,,Family problems
+Dialogue: 0,0:08:21.06,0:08:22.05,Default,,0,0,0,,Stress
+Dialogue: 0,0:08:22.05,0:08:23.17,Default,,0,0,0,,Migration
+Dialogue: 0,0:08:23.17,0:08:24.61,Default,,0,0,0,,And uncertainty
+Dialogue: 0,0:08:24.61,0:08:27.66,Default,,0,0,0,,But the idea behind Gross National Happiness
+Dialogue: 0,0:08:27.66,0:08:30.54,Default,,0,0,0,,is that economic development should not destroy
+Dialogue: 0,0:08:30.54,0:08:32.92,Default,,0,0,0,,the things that make life meaningful
+Dialogue: 0,0:08:32.92,0:08:35.51,Default,,0,0,0,,This philosophy helped give Bhutan a unique
+Dialogue: 0,0:08:35.51,0:08:37.90,Default,,0,0,0,,identity in the modern world
+Dialogue: 0,0:08:37.90,0:08:40.31,Default,,0,0,0,,While other countries often ask how quickly
+Dialogue: 0,0:08:40.31,0:08:41.97,Default,,0,0,0,,an economy can grow
+Dialogue: 0,0:08:41.97,0:08:44.72,Default,,0,0,0,,Bhutan has also asked another question
+Dialogue: 0,0:08:44.72,0:08:47.24,Default,,0,0,0,,What kind of life does that growth create
+Dialogue: 0,0:08:47.24,0:08:49.15,Default,,0,0,0,,THE PRICE OF MODERN LIFE
+Dialogue: 0,0:08:49.15,0:08:52.69,Default,,0,0,0,,But Bhutan's philosophy faces a serious test
+Dialogue: 0,0:08:52.69,0:08:55.31,Default,,0,0,0,,The modern world is arriving quickly
+Dialogue: 0,0:08:55.31,0:08:57.79,Default,,0,0,0,,Smartphones have changed communication
+Dialogue: 0,0:08:57.79,0:09:00.40,Default,,0,0,0,,Social media connects young Bhutanese with
+Dialogue: 0,0:09:00.40,0:09:02.05,Default,,0,0,0,,the rest of the planet
+Dialogue: 0,0:09:02.05,0:09:05.67,Default,,0,0,0,,International education creates new opportunities
+Dialogue: 0,0:09:05.67,0:09:07.26,Default,,0,0,0,,Tourism brings money
+Dialogue: 0,0:09:07.26,0:09:09.90,Default,,0,0,0,,Technology creates new careers
+Dialogue: 0,0:09:09.90,0:09:11.62,Default,,0,0,0,,And cities are expanding
+Dialogue: 0,0:09:11.62,0:09:14.49,Default,,0,0,0,,These changes can improve people's lives
+Dialogue: 0,0:09:14.49,0:09:16.67,Default,,0,0,0,,But they can also create pressure on traditional
+Dialogue: 0,0:09:16.67,0:09:17.87,Default,,0,0,0,,communities
+Dialogue: 0,0:09:17.87,0:09:20.15,Default,,0,0,0,,A young person may compare their life with
+Dialogue: 0,0:09:20.15,0:09:22.62,Default,,0,0,0,,people living in enormous cities around the
+Dialogue: 0,0:09:22.62,0:09:23.54,Default,,0,0,0,,world
+Dialogue: 0,0:09:23.54,0:09:25.44,Default,,0,0,0,,They may want better salaries
+Dialogue: 0,0:09:25.44,0:09:26.81,Default,,0,0,0,,More entertainment
+Dialogue: 0,0:09:26.81,0:09:28.41,Default,,0,0,0,,More career choices
+Dialogue: 0,0:09:28.41,0:09:30.09,Default,,0,0,0,,More freedom to travel
+Dialogue: 0,0:09:30.09,0:09:31.79,Default,,0,0,0,,And more opportunities
+Dialogue: 0,0:09:31.79,0:09:34.56,Default,,0,0,0,,For a small country with limited industries
+Dialogue: 0,0:09:34.56,0:09:37.66,Default,,0,0,0,,keeping young people at home can be difficult
+Dialogue: 0,0:09:37.66,0:09:38.49,Default,,0,0,0,,THIMPHU
+Dialogue: 0,0:09:38.49,0:09:41.65,Default,,0,0,0,,Then there is Thimphu the capital of Bhutan
+Dialogue: 0,0:09:41.65,0:09:44.44,Default,,0,0,0,,It is one of the world's most unusual capital
+Dialogue: 0,0:09:44.44,0:09:45.48,Default,,0,0,0,,cities
+Dialogue: 0,0:09:45.48,0:09:48.51,Default,,0,0,0,,Instead of a giant skyline you find a mountain
+Dialogue: 0,0:09:48.51,0:09:52.48,Default,,0,0,0,,city shaped by valleys and traditional architecture
+Dialogue: 0,0:09:52.48,0:09:54.61,Default,,0,0,0,,Cars move through the streets
+Dialogue: 0,0:09:54.61,0:09:56.06,Default,,0,0,0,,Shops line roads
+Dialogue: 0,0:09:56.06,0:09:59.26,Default,,0,0,0,,Restaurants serve local and international food
+Dialogue: 0,0:09:59.26,0:10:01.27,Default,,0,0,0,,Young people gather with friends
+Dialogue: 0,0:10:01.27,0:10:03.17,Default,,0,0,0,,Government offices operate
+Dialogue: 0,0:10:03.17,0:10:05.12,Default,,0,0,0,,Construction continues
+Dialogue: 0,0:10:05.12,0:10:07.02,Default,,0,0,0,,And smartphones are everywhere
+Dialogue: 0,0:10:07.02,0:10:09.44,Default,,0,0,0,,Yet Thimphu still feels different from many
+Dialogue: 0,0:10:09.44,0:10:10.87,Default,,0,0,0,,Asian capitals
+Dialogue: 0,0:10:10.87,0:10:13.01,Default,,0,0,0,,The surrounding mountains are impossible to
+Dialogue: 0,0:10:13.01,0:10:13.97,Default,,0,0,0,,ignore
+Dialogue: 0,0:10:13.97,0:10:17.09,Default,,0,0,0,,Look in almost any direction and the landscape
+Dialogue: 0,0:10:17.09,0:10:19.79,Default,,0,0,0,,reminds you that this is still a Himalayan
+Dialogue: 0,0:10:19.79,0:10:20.76,Default,,0,0,0,,country
+Dialogue: 0,0:10:20.76,0:10:22.72,Default,,0,0,0,,Modern life exists here
+Dialogue: 0,0:10:22.72,0:10:24.99,Default,,0,0,0,,But the mountains set the boundaries
+Dialogue: 0,0:10:24.99,0:10:26.41,Default,,0,0,0,,FOOD OF BHUTAN
+Dialogue: 0,0:10:26.41,0:10:29.22,Default,,0,0,0,,Food is another place where Bhutanese identity
+Dialogue: 0,0:10:29.22,0:10:30.69,Default,,0,0,0,,becomes visible
+Dialogue: 0,0:10:30.69,0:10:33.65,Default,,0,0,0,,One of the country's most famous foods is ema
+Dialogue: 0,0:10:33.65,0:10:34.79,Default,,0,0,0,,datshi
+Dialogue: 0,0:10:34.79,0:10:37.48,Default,,0,0,0,,It combines chili peppers and cheese
+Dialogue: 0,0:10:37.48,0:10:40.47,Default,,0,0,0,,And for Bhutanese people chili is not simply
+Dialogue: 0,0:10:40.47,0:10:42.47,Default,,0,0,0,,a spice used occasionally
+Dialogue: 0,0:10:42.47,0:10:44.56,Default,,0,0,0,,It can be a major part of the meal
+Dialogue: 0,0:10:44.56,0:10:46.91,Default,,0,0,0,,Rice is also extremely important
+Dialogue: 0,0:10:46.91,0:10:50.51,Default,,0,0,0,,Meals can include vegetables meat cheese and
+Dialogue: 0,0:10:50.51,0:10:53.09,Default,,0,0,0,,other locally available ingredients
+Dialogue: 0,0:10:53.09,0:10:56.61,Default,,0,0,0,,Food is often connected to family and hospitality
+Dialogue: 0,0:10:56.61,0:10:59.20,Default,,0,0,0,,Visitors may be offered food and tea
+Dialogue: 0,0:10:59.20,0:11:01.41,Default,,0,0,0,,Meals can become social events
+Dialogue: 0,0:11:01.41,0:11:04.52,Default,,0,0,0,,And recipes are passed between generations
+Dialogue: 0,0:11:04.52,0:11:07.52,Default,,0,0,0,,In a mountain country where farming has historically
+Dialogue: 0,0:11:07.52,0:11:10.55,Default,,0,0,0,,been difficult food has always depended on
+Dialogue: 0,0:11:10.55,0:11:12.53,Default,,0,0,0,,what the land can provide
+Dialogue: 0,0:11:12.53,0:11:14.45,Default,,0,0,0,,THE FARMERS OF THE MOUNTAINS
+Dialogue: 0,0:11:14.45,0:11:17.49,Default,,0,0,0,,Agriculture remains important in Bhutan
+Dialogue: 0,0:11:17.49,0:11:20.46,Default,,0,0,0,,But farming in the Himalayas is not easy
+Dialogue: 0,0:11:20.46,0:11:21.84,Default,,0,0,0,,Land is limited
+Dialogue: 0,0:11:21.84,0:11:23.34,Default,,0,0,0,,Slopes can be steep
+Dialogue: 0,0:11:23.34,0:11:24.92,Default,,0,0,0,,Weather can change quickly
+Dialogue: 0,0:11:24.92,0:11:27.31,Default,,0,0,0,,And transportation can make it difficult to
+Dialogue: 0,0:11:27.31,0:11:30.92,Default,,0,0,0,,bring agricultural products to larger markets
+Dialogue: 0,0:11:30.92,0:11:33.14,Default,,0,0,0,,Farmers have developed ways of working with
+Dialogue: 0,0:11:33.14,0:11:34.19,Default,,0,0,0,,the terrain
+Dialogue: 0,0:11:34.19,0:11:37.85,Default,,0,0,0,,Terraced fields create usable farmland on slopes
+Dialogue: 0,0:11:37.85,0:11:41.23,Default,,0,0,0,,Water from mountain streams supports agriculture
+Dialogue: 0,0:11:41.23,0:11:43.81,Default,,0,0,0,,And families often combine farming with other
+Dialogue: 0,0:11:43.81,0:11:45.17,Default,,0,0,0,,forms of work
+Dialogue: 0,0:11:45.17,0:11:47.96,Default,,0,0,0,,The relationship between people and land is
+Dialogue: 0,0:11:47.96,0:11:51.19,Default,,0,0,0,,especially important in Bhutan because environmental
+Dialogue: 0,0:11:51.19,0:11:54.10,Default,,0,0,0,,protection is part of the country's national
+Dialogue: 0,0:11:54.10,0:11:55.12,Default,,0,0,0,,identity
+Dialogue: 0,0:11:55.12,0:11:56.60,Default,,0,0,0,,THE FOREST COUNTRY
+Dialogue: 0,0:11:56.60,0:11:59.05,Default,,0,0,0,,Bhutan is famous for its forests
+Dialogue: 0,0:11:59.05,0:12:01.70,Default,,0,0,0,,Large areas of the country remain covered by
+Dialogue: 0,0:12:01.70,0:12:02.85,Default,,0,0,0,,trees
+Dialogue: 0,0:12:02.85,0:12:04.99,Default,,0,0,0,,Forests protect watersheds
+Dialogue: 0,0:12:04.99,0:12:07.48,Default,,0,0,0,,They provide habitat for wildlife
+Dialogue: 0,0:12:07.48,0:12:09.62,Default,,0,0,0,,They stabilize mountain slopes
+Dialogue: 0,0:12:09.62,0:12:11.95,Default,,0,0,0,,And they absorb carbon dioxide
+Dialogue: 0,0:12:11.95,0:12:14.45,Default,,0,0,0,,Bhutan has made environmental conservation
+Dialogue: 0,0:12:14.45,0:12:16.73,Default,,0,0,0,,a major national priority
+Dialogue: 0,0:12:16.73,0:12:19.84,Default,,0,0,0,,This is particularly important in the Himalayas
+Dialogue: 0,0:12:19.84,0:12:22.67,Default,,0,0,0,,A damaged mountain ecosystem can affect much
+Dialogue: 0,0:12:22.67,0:12:24.46,Default,,0,0,0,,more than one village
+Dialogue: 0,0:12:24.46,0:12:26.16,Default,,0,0,0,,It can influence rivers
+Dialogue: 0,0:12:26.16,0:12:27.39,Default,,0,0,0,,Agriculture
+Dialogue: 0,0:12:27.39,0:12:28.46,Default,,0,0,0,,Wildlife
+Dialogue: 0,0:12:28.46,0:12:30.63,Default,,0,0,0,,And communities far downstream
+Dialogue: 0,0:12:30.63,0:12:33.59,Default,,0,0,0,,The forest is therefore not just beautiful
+Dialogue: 0,0:12:33.59,0:12:35.06,Default,,0,0,0,,It is infrastructure
+Dialogue: 0,0:12:35.06,0:12:36.37,Default,,0,0,0,,It is protection
+Dialogue: 0,0:12:36.37,0:12:38.63,Default,,0,0,0,,And it is part of the country's future
+Dialogue: 0,0:12:38.63,0:12:40.51,Default,,0,0,0,,WILDLIFE IN BHUTAN
+Dialogue: 0,0:12:40.51,0:12:43.92,Default,,0,0,0,,Bhutan's forests contain remarkable wildlife
+Dialogue: 0,0:12:43.92,0:12:46.98,Default,,0,0,0,,The country is home to species adapted to very
+Dialogue: 0,0:12:46.98,0:12:48.69,Default,,0,0,0,,different environments
+Dialogue: 0,0:12:48.69,0:12:51.55,Default,,0,0,0,,In the mountains animals such as snow leopards
+Dialogue: 0,0:12:51.55,0:12:54.57,Default,,0,0,0,,live in remote high-altitude regions
+Dialogue: 0,0:12:54.57,0:12:57.84,Default,,0,0,0,,In lower forests other species thrive in warmer
+Dialogue: 0,0:12:57.84,0:12:59.06,Default,,0,0,0,,conditions
+Dialogue: 0,0:12:59.06,0:13:02.55,Default,,0,0,0,,There are also Himalayan black bears red pandas
+Dialogue: 0,0:13:02.55,0:13:05.80,Default,,0,0,0,,takins and many species of birds
+Dialogue: 0,0:13:05.80,0:13:08.67,Default,,0,0,0,,One of Bhutan's most unusual animals is the
+Dialogue: 0,0:13:08.67,0:13:09.78,Default,,0,0,0,,takin
+Dialogue: 0,0:13:09.78,0:13:13.17,Default,,0,0,0,,It has a strange appearance almost like a combination
+Dialogue: 0,0:13:13.17,0:13:15.19,Default,,0,0,0,,of several different animals
+Dialogue: 0,0:13:15.19,0:13:17.64,Default,,0,0,0,,But it is perfectly adapted to the Himalayan
+Dialogue: 0,0:13:17.64,0:13:18.87,Default,,0,0,0,,environment
+Dialogue: 0,0:13:18.87,0:13:22.21,Default,,0,0,0,,For Bhutan protecting wildlife is not simply
+Dialogue: 0,0:13:22.21,0:13:23.51,Default,,0,0,0,,about tourism
+Dialogue: 0,0:13:23.51,0:13:25.88,Default,,0,0,0,,It is part of protecting the ecosystems that
+Dialogue: 0,0:13:25.88,0:13:28.07,Default,,0,0,0,,support human life as well
+Dialogue: 0,0:13:28.07,0:13:29.62,Default,,0,0,0,,THE NATIONAL SPORT
+Dialogue: 0,0:13:29.62,0:13:32.23,Default,,0,0,0,,Walk through Bhutan and you may see a very
+Dialogue: 0,0:13:32.23,0:13:34.10,Default,,0,0,0,,different kind of competition
+Dialogue: 0,0:13:34.10,0:13:35.03,Default,,0,0,0,,Archery
+Dialogue: 0,0:13:35.03,0:13:38.45,Default,,0,0,0,,Archery is deeply connected to Bhutanese culture
+Dialogue: 0,0:13:38.45,0:13:41.41,Default,,0,0,0,,and is widely regarded as the country's national
+Dialogue: 0,0:13:41.41,0:13:42.38,Default,,0,0,0,,sport
+Dialogue: 0,0:13:42.38,0:13:45.10,Default,,0,0,0,,But traditional archery is not simply about
+Dialogue: 0,0:13:45.10,0:13:46.44,Default,,0,0,0,,hitting a target
+Dialogue: 0,0:13:46.44,0:13:49.35,Default,,0,0,0,,Competitions can become social gatherings
+Dialogue: 0,0:13:49.35,0:13:50.49,Default,,0,0,0,,People cheer
+Dialogue: 0,0:13:50.49,0:13:51.85,Default,,0,0,0,,Music plays
+Dialogue: 0,0:13:51.85,0:13:53.70,Default,,0,0,0,,Friends and families gather
+Dialogue: 0,0:13:53.70,0:13:54.95,Default,,0,0,0,,Food is shared
+Dialogue: 0,0:13:54.95,0:13:57.93,Default,,0,0,0,,And the event becomes part of community life
+Dialogue: 0,0:13:57.93,0:14:00.70,Default,,0,0,0,,Traditional games like archery show how culture
+Dialogue: 0,0:14:00.70,0:14:04.15,Default,,0,0,0,,can survive not only inside museums but in
+Dialogue: 0,0:14:04.15,0:14:06.40,Default,,0,0,0,,everyday social activities
+Dialogue: 0,0:14:06.40,0:14:08.58,Default,,0,0,0,,A COUNTRY THAT CHANGED SLOWLY
+Dialogue: 0,0:14:08.58,0:14:11.22,Default,,0,0,0,,One of the most fascinating things about Bhutan
+Dialogue: 0,0:14:11.22,0:14:14.33,Default,,0,0,0,,is how recently some aspects of modern technology
+Dialogue: 0,0:14:14.33,0:14:15.37,Default,,0,0,0,,arrived
+Dialogue: 0,0:14:15.37,0:14:17.77,Default,,0,0,0,,Television and the internet were introduced
+Dialogue: 0,0:14:17.77,0:14:20.83,Default,,0,0,0,,relatively late compared with much of the world
+Dialogue: 0,0:14:20.83,0:14:23.57,Default,,0,0,0,,For generations communities were much more
+Dialogue: 0,0:14:23.57,0:14:25.79,Default,,0,0,0,,isolated from global media
+Dialogue: 0,0:14:25.79,0:14:28.83,Default,,0,0,0,,Today that isolation is largely gone
+Dialogue: 0,0:14:28.83,0:14:31.54,Default,,0,0,0,,A teenager in Bhutan can watch the same videos
+Dialogue: 0,0:14:31.54,0:14:35.82,Default,,0,0,0,,as someone in New York London Dubai or Tokyo
+Dialogue: 0,0:14:35.82,0:14:37.75,Default,,0,0,0,,They can communicate instantly
+Dialogue: 0,0:14:37.75,0:14:39.16,Default,,0,0,0,,They can learn online
+Dialogue: 0,0:14:39.16,0:14:41.87,Default,,0,0,0,,They can see lifestyles from around the world
+Dialogue: 0,0:14:41.87,0:14:43.79,Default,,0,0,0,,This creates opportunities
+Dialogue: 0,0:14:43.79,0:14:45.87,Default,,0,0,0,,But it also creates comparison
+Dialogue: 0,0:14:45.87,0:14:48.30,Default,,0,0,0,,And comparison can change what people expect
+Dialogue: 0,0:14:48.30,0:14:49.41,Default,,0,0,0,,from life
+Dialogue: 0,0:14:49.41,0:14:51.12,Default,,0,0,0,,THE WOMEN OF BHUTAN
+Dialogue: 0,0:14:51.12,0:14:53.64,Default,,0,0,0,,Women play important roles across Bhutanese
+Dialogue: 0,0:14:53.64,0:14:54.75,Default,,0,0,0,,society
+Dialogue: 0,0:14:54.75,0:14:57.59,Default,,0,0,0,,In many rural communities women are deeply
+Dialogue: 0,0:14:57.59,0:15:01.45,Default,,0,0,0,,involved in farming household management childcare
+Dialogue: 0,0:15:01.45,0:15:04.72,Default,,0,0,0,,food production and local economic activity
+Dialogue: 0,0:15:04.72,0:15:08.83,Default,,0,0,0,,Women also work in education government healthcare
+Dialogue: 0,0:15:08.83,0:15:12.25,Default,,0,0,0,,tourism business and other professions
+Dialogue: 0,0:15:12.25,0:15:15.05,Default,,0,0,0,,Bhutanese society has its own traditions and
+Dialogue: 0,0:15:15.05,0:15:18.45,Default,,0,0,0,,challenges but modern education and employment
+Dialogue: 0,0:15:18.45,0:15:20.94,Default,,0,0,0,,are creating new opportunities
+Dialogue: 0,0:15:20.94,0:15:24.00,Default,,0,0,0,,For young women the future can look very different
+Dialogue: 0,0:15:24.00,0:15:26.72,Default,,0,0,0,,from the lives of previous generations
+Dialogue: 0,0:15:26.72,0:15:27.80,Default,,0,0,0,,They can study
+Dialogue: 0,0:15:27.80,0:15:29.05,Default,,0,0,0,,Build careers
+Dialogue: 0,0:15:29.05,0:15:29.93,Default,,0,0,0,,Travel
+Dialogue: 0,0:15:29.93,0:15:31.37,Default,,0,0,0,,Use technology
+Dialogue: 0,0:15:31.37,0:15:34.64,Default,,0,0,0,,And participate in a rapidly changing economy
+Dialogue: 0,0:15:34.64,0:15:38.01,Default,,0,0,0,,Yet family expectations and traditional culture
+Dialogue: 0,0:15:38.01,0:15:39.70,Default,,0,0,0,,remain influential
+Dialogue: 0,0:15:39.70,0:15:43.37,Default,,0,0,0,,Once again Bhutan is balancing two worlds
+Dialogue: 0,0:15:43.37,0:15:45.44,Default,,0,0,0,,THE ROAD THROUGH THE MOUNTAINS
+Dialogue: 0,0:15:45.44,0:15:48.19,Default,,0,0,0,,Perhaps the best way to understand Bhutan is
+Dialogue: 0,0:15:48.19,0:15:49.69,Default,,0,0,0,,to travel through it
+Dialogue: 0,0:15:49.69,0:15:50.91,Default,,0,0,0,,Leave Thimphu
+Dialogue: 0,0:15:50.91,0:15:52.72,Default,,0,0,0,,The buildings become fewer
+Dialogue: 0,0:15:52.72,0:15:54.57,Default,,0,0,0,,The roads become narrower
+Dialogue: 0,0:15:54.57,0:15:56.05,Default,,0,0,0,,Mountains surround you
+Dialogue: 0,0:15:56.05,0:15:58.39,Default,,0,0,0,,Waterfalls appear beside the road
+Dialogue: 0,0:15:58.39,0:16:00.64,Default,,0,0,0,,Prayer flags move in the wind
+Dialogue: 0,0:16:00.64,0:16:03.47,Default,,0,0,0,,Small villages appear between forests
+Dialogue: 0,0:16:03.47,0:16:05.11,Default,,0,0,0,,Then disappear again
+Dialogue: 0,0:16:05.11,0:16:07.79,Default,,0,0,0,,For hours there may be nothing but mountains
+Dialogue: 0,0:16:07.79,0:16:08.93,Default,,0,0,0,,and trees
+Dialogue: 0,0:16:08.93,0:16:12.12,Default,,0,0,0,,This is one of the great contrasts of Bhutan
+Dialogue: 0,0:16:12.12,0:16:14.73,Default,,0,0,0,,The country is geographically close to some
+Dialogue: 0,0:16:14.73,0:16:17.57,Default,,0,0,0,,of the world's most populated regions
+Dialogue: 0,0:16:17.57,0:16:20.39,Default,,0,0,0,,Yet parts of Bhutan can still feel incredibly
+Dialogue: 0,0:16:20.39,0:16:21.39,Default,,0,0,0,,remote
+Dialogue: 0,0:16:21.39,0:16:23.40,Default,,0,0,0,,The mountains create distance
+Dialogue: 0,0:16:23.40,0:16:25.82,Default,,0,0,0,,And distance creates independence
+Dialogue: 0,0:16:25.82,0:16:27.58,Default,,0,0,0,,THE FUTURE OF BHUTAN
+Dialogue: 0,0:16:27.58,0:16:29.61,Default,,0,0,0,,But the future will not be simple
+Dialogue: 0,0:16:29.61,0:16:32.16,Default,,0,0,0,,Bhutan wants economic development
+Dialogue: 0,0:16:32.16,0:16:33.59,Default,,0,0,0,,It needs jobs
+Dialogue: 0,0:16:33.59,0:16:35.61,Default,,0,0,0,,It needs better infrastructure
+Dialogue: 0,0:16:35.61,0:16:38.01,Default,,0,0,0,,It needs opportunities for young people
+Dialogue: 0,0:16:38.01,0:16:41.05,Default,,0,0,0,,It wants to improve healthcare and education
+Dialogue: 0,0:16:41.05,0:16:44.20,Default,,0,0,0,,It wants tourism to contribute to the economy
+Dialogue: 0,0:16:44.20,0:16:47.18,Default,,0,0,0,,And it wants to benefit from modern technology
+Dialogue: 0,0:16:47.18,0:16:49.90,Default,,0,0,0,,At the same time Bhutan wants to protect its
+Dialogue: 0,0:16:49.90,0:16:51.04,Default,,0,0,0,,forests
+Dialogue: 0,0:16:51.04,0:16:52.34,Default,,0,0,0,,Its architecture
+Dialogue: 0,0:16:52.34,0:16:53.66,Default,,0,0,0,,Its traditions
+Dialogue: 0,0:16:53.66,0:16:54.76,Default,,0,0,0,,Its culture
+Dialogue: 0,0:16:54.76,0:16:56.47,Default,,0,0,0,,Its religious heritage
+Dialogue: 0,0:16:56.47,0:16:59.33,Default,,0,0,0,,And the quality of life that inspired the idea
+Dialogue: 0,0:16:59.33,0:17:01.65,Default,,0,0,0,,of Gross National Happiness
+Dialogue: 0,0:17:01.65,0:17:03.87,Default,,0,0,0,,These goals can sometimes conflict
+Dialogue: 0,0:17:03.87,0:17:06.69,Default,,0,0,0,,More development can mean more construction
+Dialogue: 0,0:17:06.69,0:17:09.72,Default,,0,0,0,,More tourism can create environmental pressure
+Dialogue: 0,0:17:09.72,0:17:12.44,Default,,0,0,0,,More jobs in cities can pull young people away
+Dialogue: 0,0:17:12.44,0:17:14.27,Default,,0,0,0,,from rural communities
+Dialogue: 0,0:17:14.27,0:17:17.11,Default,,0,0,0,,And more global influence can weaken traditional
+Dialogue: 0,0:17:17.11,0:17:18.13,Default,,0,0,0,,culture
+Dialogue: 0,0:17:18.13,0:17:20.69,Default,,0,0,0,,The challenge is not stopping change
+Dialogue: 0,0:17:20.69,0:17:22.79,Default,,0,0,0,,The challenge is controlling it
+Dialogue: 0,0:17:22.79,0:17:24.12,Default,,0,0,0,,WHY PEOPLE STAY
+Dialogue: 0,0:17:24.12,0:17:26.29,Default,,0,0,0,,So why do people stay in Bhutan
+Dialogue: 0,0:17:26.29,0:17:28.62,Default,,0,0,0,,For many the answer is simple
+Dialogue: 0,0:17:28.62,0:17:29.47,Default,,0,0,0,,Family
+Dialogue: 0,0:17:29.47,0:17:30.26,Default,,0,0,0,,Home
+Dialogue: 0,0:17:30.26,0:17:31.16,Default,,0,0,0,,Culture
+Dialogue: 0,0:17:31.16,0:17:32.11,Default,,0,0,0,,Religion
+Dialogue: 0,0:17:32.11,0:17:32.97,Default,,0,0,0,,Land
+Dialogue: 0,0:17:32.97,0:17:34.65,Default,,0,0,0,,And a sense of belonging
+Dialogue: 0,0:17:34.65,0:17:37.13,Default,,0,0,0,,A person who grows up surrounded by Himalayan
+Dialogue: 0,0:17:37.13,0:17:40.93,Default,,0,0,0,,mountains may not see them as an exotic landscape
+Dialogue: 0,0:17:40.93,0:17:42.29,Default,,0,0,0,,They see them as home
+Dialogue: 0,0:17:42.29,0:17:45.37,Default,,0,0,0,,A monastery may not be a tourist attraction
+Dialogue: 0,0:17:45.37,0:17:47.65,Default,,0,0,0,,It may be a place their family has visited
+Dialogue: 0,0:17:47.65,0:17:49.15,Default,,0,0,0,,for generations
+Dialogue: 0,0:17:49.15,0:17:51.86,Default,,0,0,0,,A mountain road may not be an adventure
+Dialogue: 0,0:17:51.86,0:17:54.70,Default,,0,0,0,,It may simply be the road they take to work
+Dialogue: 0,0:17:54.70,0:17:56.95,Default,,0,0,0,,This is something we often forget when looking
+Dialogue: 0,0:17:56.95,0:17:58.55,Default,,0,0,0,,at extreme places
+Dialogue: 0,0:17:58.55,0:18:01.36,Default,,0,0,0,,The most extraordinary environment can become
+Dialogue: 0,0:18:01.36,0:18:03.86,Default,,0,0,0,,completely ordinary to the people who live
+Dialogue: 0,0:18:03.86,0:18:04.66,Default,,0,0,0,,there
+Dialogue: 0,0:18:04.66,0:18:06.11,Default,,0,0,0,,THE REAL BHUTAN
+Dialogue: 0,0:18:06.11,0:18:09.19,Default,,0,0,0,,Bhutan is not a perfect kingdom where everyone
+Dialogue: 0,0:18:09.19,0:18:10.99,Default,,0,0,0,,is happy all the time
+Dialogue: 0,0:18:10.99,0:18:12.37,Default,,0,0,0,,It has problems
+Dialogue: 0,0:18:12.37,0:18:14.40,Default,,0,0,0,,It has economic challenges
+Dialogue: 0,0:18:14.40,0:18:15.88,Default,,0,0,0,,It has unemployment
+Dialogue: 0,0:18:15.88,0:18:17.30,Default,,0,0,0,,It has migration
+Dialogue: 0,0:18:17.30,0:18:19.76,Default,,0,0,0,,It has debates about modernization
+Dialogue: 0,0:18:19.76,0:18:22.77,Default,,0,0,0,,It has young people searching for opportunities
+Dialogue: 0,0:18:22.77,0:18:25.62,Default,,0,0,0,,It has communities trying to survive in difficult
+Dialogue: 0,0:18:25.62,0:18:26.56,Default,,0,0,0,,terrain
+Dialogue: 0,0:18:26.56,0:18:29.29,Default,,0,0,0,,But Bhutan is interesting precisely because
+Dialogue: 0,0:18:29.29,0:18:31.77,Default,,0,0,0,,it is trying to answer a question that many
+Dialogue: 0,0:18:31.77,0:18:33.48,Default,,0,0,0,,countries struggle with
+Dialogue: 0,0:18:33.48,0:18:36.70,Default,,0,0,0,,How do you become modern without losing yourself
+Dialogue: 0,0:18:36.70,0:18:38.84,Default,,0,0,0,,How do you create wealth without destroying
+Dialogue: 0,0:18:38.84,0:18:39.80,Default,,0,0,0,,nature
+Dialogue: 0,0:18:39.80,0:18:42.09,Default,,0,0,0,,How do you give young people opportunities
+Dialogue: 0,0:18:42.09,0:18:45.05,Default,,0,0,0,,while keeping them connected to their communities
+Dialogue: 0,0:18:45.05,0:18:46.90,Default,,0,0,0,,And how do you measure progress
+Dialogue: 0,0:18:46.90,0:18:49.93,Default,,0,0,0,,Perhaps Bhutan's greatest experiment is not
+Dialogue: 0,0:18:49.93,0:18:52.59,Default,,0,0,0,,proving that happiness is more important than
+Dialogue: 0,0:18:52.59,0:18:53.37,Default,,0,0,0,,money
+Dialogue: 0,0:18:53.37,0:18:55.37,Default,,0,0,0,,It is asking whether a country should think
+Dialogue: 0,0:18:55.37,0:18:56.68,Default,,0,0,0,,about both
+Dialogue: 0,0:18:56.68,0:18:58.04,Default,,0,0,0,,FINAL REFLECTION
+Dialogue: 0,0:18:58.04,0:19:00.99,Default,,0,0,0,,As evening falls over the Himalayan valleys
+Dialogue: 0,0:19:00.99,0:19:03.49,Default,,0,0,0,,the mountains begin turning dark
+Dialogue: 0,0:19:03.49,0:19:05.74,Default,,0,0,0,,Prayer flags move in the wind
+Dialogue: 0,0:19:05.74,0:19:07.80,Default,,0,0,0,,Smoke rises from homes
+Dialogue: 0,0:19:07.80,0:19:09.56,Default,,0,0,0,,Families return from work
+Dialogue: 0,0:19:09.56,0:19:11.63,Default,,0,0,0,,Children finish their homework
+Dialogue: 0,0:19:11.63,0:19:12.98,Default,,0,0,0,,Food is prepared
+Dialogue: 0,0:19:12.98,0:19:16.06,Default,,0,0,0,,And somewhere high above the valley a monastery
+Dialogue: 0,0:19:16.06,0:19:18.70,Default,,0,0,0,,remains surrounded by silence
+Dialogue: 0,0:19:18.70,0:19:21.18,Default,,0,0,0,,The modern world is moving quickly
+Dialogue: 0,0:19:21.18,0:19:23.70,Default,,0,0,0,,But Bhutan is trying to move carefully
+Dialogue: 0,0:19:23.70,0:19:26.12,Default,,0,0,0,,It is a country where ancient traditions still
+Dialogue: 0,0:19:26.12,0:19:28.45,Default,,0,0,0,,exist beside smartphones
+Dialogue: 0,0:19:28.45,0:19:31.59,Default,,0,0,0,,Where farmers work beneath Himalayan peaks
+Dialogue: 0,0:19:31.59,0:19:34.64,Default,,0,0,0,,Where monks study centuries-old teachings while
+Dialogue: 0,0:19:34.64,0:19:37.77,Default,,0,0,0,,the younger generation plans careers in a global
+Dialogue: 0,0:19:37.77,0:19:38.81,Default,,0,0,0,,economy
+Dialogue: 0,0:19:38.81,0:19:41.30,Default,,0,0,0,,Where forests are treated as part of national
+Dialogue: 0,0:19:41.30,0:19:42.17,Default,,0,0,0,,wealth
+Dialogue: 0,0:19:42.17,0:19:44.80,Default,,0,0,0,,And where the idea of happiness became part
+Dialogue: 0,0:19:44.80,0:19:46.48,Default,,0,0,0,,of a country's identity
+Dialogue: 0,0:19:46.48,0:19:49.62,Default,,0,0,0,,Bhutan reminds us that development is not only
+Dialogue: 0,0:19:49.62,0:19:52.01,Default,,0,0,0,,about how much a country produces
+Dialogue: 0,0:19:52.01,0:19:54.87,Default,,0,0,0,,It is also about what kind of life people build
+Dialogue: 0,0:19:54.87,0:19:56.80,Default,,0,0,0,,The future will test that idea
+Dialogue: 0,0:19:56.80,0:19:59.33,Default,,0,0,0,,But for now Bhutan remains one of the most
+Dialogue: 0,0:19:59.33,0:20:01.63,Default,,0,0,0,,fascinating places on Earth
+Dialogue: 0,0:20:01.63,0:20:04.46,Default,,0,0,0,,A small kingdom hidden in the Himalayas
+Dialogue: 0,0:20:04.46,0:20:08.08,Default,,0,0,0,,A country of mountains monasteries forests
+Dialogue: 0,0:20:08.08,0:20:12.10,Default,,0,0,0,,farmers children traditions and change
+Dialogue: 0,0:20:12.10,0:20:14.35,Default,,0,0,0,,And perhaps the most interesting question is
+Dialogue: 0,0:20:14.35,0:20:17.76,Default,,0,0,0,,not whether Bhutan is truly the happiest country
+Dialogue: 0,0:20:17.76,0:20:18.84,Default,,0,0,0,,in the world
+Dialogue: 0,0:20:18.84,0:20:21.21,Default,,0,0,0,,The real question is much bigger
+Dialogue: 0,0:20:21.21,0:20:23.23,Default,,0,0,0,,What does a country actually need to make its
+Dialogue: 0,0:20:23.23,0:20:25.95,Default,,0,0,0,,people feel that their lives are worth living
+Dialogue: 0,0:20:25.95,0:20:27.33,Default,,0,0,0,,This is Bhutan
+Dialogue: 0,0:20:27.33,0:20:29.28,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:20:29.28,0:20:30.66,Default,,0,0,0,,Life Beyond the Limits
