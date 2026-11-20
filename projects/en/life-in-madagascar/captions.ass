@@ -1,0 +1,567 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.11,0:00:02.03,Default,,0,0,0,,LIFE IN MADAGASCAR
+Dialogue: 0,0:00:02.03,0:00:05.75,Default,,0,0,0,,THE STRANGE ISLAND WHERE NATURE EVOLVED DIFFERENTLY
+Dialogue: 0,0:00:05.75,0:00:07.99,Default,,0,0,0,,What if there was an island where animals looked
+Dialogue: 0,0:00:07.99,0:00:10.06,Default,,0,0,0,,like they came from another planet
+Dialogue: 0,0:00:10.06,0:00:13.11,Default,,0,0,0,,Where trees grow with enormous trunks and strange
+Dialogue: 0,0:00:13.11,0:00:14.22,Default,,0,0,0,,shapes
+Dialogue: 0,0:00:14.22,0:00:17.47,Default,,0,0,0,,Where tiny villages disappear into forests
+Dialogue: 0,0:00:17.47,0:00:20.46,Default,,0,0,0,,Where people travel by wooden boats walk for
+Dialogue: 0,0:00:20.46,0:00:23.24,Default,,0,0,0,,hours to reach markets and build their lives
+Dialogue: 0,0:00:23.24,0:00:27.24,Default,,0,0,0,,around rice fishing cattle and family
+Dialogue: 0,0:00:27.24,0:00:29.62,Default,,0,0,0,,And where more than eighty percent of the species
+Dialogue: 0,0:00:29.62,0:00:33.21,Default,,0,0,0,,found on the island exist nowhere else on Earth
+Dialogue: 0,0:00:33.21,0:00:34.83,Default,,0,0,0,,This is Madagascar
+Dialogue: 0,0:00:34.83,0:00:37.82,Default,,0,0,0,,An enormous island sitting off the southeastern
+Dialogue: 0,0:00:37.82,0:00:39.35,Default,,0,0,0,,coast of Africa
+Dialogue: 0,0:00:39.35,0:00:41.90,Default,,0,0,0,,From a distance it looks like another tropical
+Dialogue: 0,0:00:41.90,0:00:42.85,Default,,0,0,0,,country
+Dialogue: 0,0:00:42.85,0:00:46.58,Default,,0,0,0,,But once you enter its forests villages mountains
+Dialogue: 0,0:00:46.58,0:00:50.25,Default,,0,0,0,,and coastline Madagascar begins to feel completely
+Dialogue: 0,0:00:50.25,0:00:51.22,Default,,0,0,0,,different
+Dialogue: 0,0:00:51.22,0:00:53.25,Default,,0,0,0,,Lemurs leap between trees
+Dialogue: 0,0:00:53.25,0:00:55.01,Default,,0,0,0,,Chameleons change color
+Dialogue: 0,0:00:55.01,0:00:58.24,Default,,0,0,0,,Baobabs rise above the landscape like giant
+Dialogue: 0,0:00:58.24,0:00:59.44,Default,,0,0,0,,sculptures
+Dialogue: 0,0:00:59.44,0:01:02.24,Default,,0,0,0,,And communities have developed ways of life
+Dialogue: 0,0:01:02.24,0:01:05.57,Default,,0,0,0,,shaped by the island's unusual geography
+Dialogue: 0,0:01:05.57,0:01:07.64,Default,,0,0,0,,But life here is not a fantasy
+Dialogue: 0,0:01:07.64,0:01:09.65,Default,,0,0,0,,Many families face poverty
+Dialogue: 0,0:01:09.65,0:01:11.21,Default,,0,0,0,,Roads can be difficult
+Dialogue: 0,0:01:11.21,0:01:14.26,Default,,0,0,0,,Access to healthcare and education can be limited
+Dialogue: 0,0:01:14.26,0:01:15.89,Default,,0,0,0,,in remote areas
+Dialogue: 0,0:01:15.89,0:01:18.51,Default,,0,0,0,,And the environment itself is under enormous
+Dialogue: 0,0:01:18.51,0:01:19.54,Default,,0,0,0,,pressure
+Dialogue: 0,0:01:19.54,0:01:22.39,Default,,0,0,0,,So how do people actually live in Madagascar
+Dialogue: 0,0:01:22.39,0:01:25.47,Default,,0,0,0,,How do families survive in remote villages
+Dialogue: 0,0:01:25.47,0:01:27.26,Default,,0,0,0,,Why is rice so important
+Dialogue: 0,0:01:27.26,0:01:29.56,Default,,0,0,0,,And how did this island become one of the most
+Dialogue: 0,0:01:29.56,0:01:32.89,Default,,0,0,0,,biologically unusual places on Earth
+Dialogue: 0,0:01:32.89,0:01:34.71,Default,,0,0,0,,Welcome to Madagascar
+Dialogue: 0,0:01:34.71,0:01:36.67,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:36.67,0:01:38.50,Default,,0,0,0,,Life Beyond the Limits
+Dialogue: 0,0:01:38.50,0:01:41.10,Default,,0,0,0,,AN ISLAND THAT BECAME ITS OWN WORLD
+Dialogue: 0,0:01:41.10,0:01:43.74,Default,,0,0,0,,Madagascar is one of the largest islands on
+Dialogue: 0,0:01:43.74,0:01:44.61,Default,,0,0,0,,Earth
+Dialogue: 0,0:01:44.61,0:01:47.42,Default,,0,0,0,,But its real importance is not its size
+Dialogue: 0,0:01:47.42,0:01:49.06,Default,,0,0,0,,It is its isolation
+Dialogue: 0,0:01:49.06,0:01:51.82,Default,,0,0,0,,For millions of years Madagascar developed
+Dialogue: 0,0:01:51.82,0:01:54.71,Default,,0,0,0,,separately from many other parts of the world
+Dialogue: 0,0:01:54.71,0:01:57.75,Default,,0,0,0,,Plants and animals evolved in their own direction
+Dialogue: 0,0:01:57.75,0:02:00.65,Default,,0,0,0,,Species adapted to environments that existed
+Dialogue: 0,0:02:00.65,0:02:02.12,Default,,0,0,0,,nowhere else
+Dialogue: 0,0:02:02.12,0:02:04.90,Default,,0,0,0,,That is why Madagascar is sometimes described
+Dialogue: 0,0:02:04.90,0:02:07.69,Default,,0,0,0,,as a natural laboratory of evolution
+Dialogue: 0,0:02:07.69,0:02:10.57,Default,,0,0,0,,A forest in Madagascar can contain creatures
+Dialogue: 0,0:02:10.57,0:02:13.62,Default,,0,0,0,,that you will never encounter anywhere else
+Dialogue: 0,0:02:13.62,0:02:16.61,Default,,0,0,0,,A single tree can provide shelter for insects
+Dialogue: 0,0:02:16.61,0:02:19.65,Default,,0,0,0,,reptiles birds and lemurs
+Dialogue: 0,0:02:19.65,0:02:22.51,Default,,0,0,0,,And just a few kilometers away the landscape
+Dialogue: 0,0:02:22.51,0:02:24.19,Default,,0,0,0,,can change completely
+Dialogue: 0,0:02:24.19,0:02:25.69,Default,,0,0,0,,There are rainforests
+Dialogue: 0,0:02:25.69,0:02:27.03,Default,,0,0,0,,Dry forests
+Dialogue: 0,0:02:27.03,0:02:28.03,Default,,0,0,0,,Mountains
+Dialogue: 0,0:02:28.03,0:02:29.21,Default,,0,0,0,,Grasslands
+Dialogue: 0,0:02:29.21,0:02:30.29,Default,,0,0,0,,Wetlands
+Dialogue: 0,0:02:30.29,0:02:31.31,Default,,0,0,0,,Deserts
+Dialogue: 0,0:02:31.31,0:02:33.60,Default,,0,0,0,,And long tropical coastlines
+Dialogue: 0,0:02:33.60,0:02:36.01,Default,,0,0,0,,The island is not one environment
+Dialogue: 0,0:02:36.01,0:02:38.60,Default,,0,0,0,,It is many worlds connected together
+Dialogue: 0,0:02:38.60,0:02:40.03,Default,,0,0,0,,THE LEMUR'S ISLAND
+Dialogue: 0,0:02:40.03,0:02:42.81,Default,,0,0,0,,Perhaps nothing represents Madagascar better
+Dialogue: 0,0:02:42.81,0:02:43.99,Default,,0,0,0,,than the lemur
+Dialogue: 0,0:02:43.99,0:02:46.51,Default,,0,0,0,,Lemurs are primates but they are unlike the
+Dialogue: 0,0:02:46.51,0:02:49.32,Default,,0,0,0,,monkeys and apes most people know
+Dialogue: 0,0:02:49.32,0:02:52.25,Default,,0,0,0,,They have evolved into many different forms
+Dialogue: 0,0:02:52.25,0:02:53.49,Default,,0,0,0,,Some are tiny
+Dialogue: 0,0:02:53.49,0:02:54.75,Default,,0,0,0,,Some are large
+Dialogue: 0,0:02:54.75,0:02:56.64,Default,,0,0,0,,Some are active during the day
+Dialogue: 0,0:02:56.64,0:02:59.43,Default,,0,0,0,,Others move through the darkness at night
+Dialogue: 0,0:02:59.43,0:03:02.79,Default,,0,0,0,,Their enormous eyes help them see through forests
+Dialogue: 0,0:03:02.79,0:03:05.21,Default,,0,0,0,,Their calls can echo through the trees
+Dialogue: 0,0:03:05.21,0:03:08.15,Default,,0,0,0,,And their movements can be incredibly fast
+Dialogue: 0,0:03:08.15,0:03:10.70,Default,,0,0,0,,For people living near these forests lemurs
+Dialogue: 0,0:03:10.70,0:03:14.24,Default,,0,0,0,,are not simply wildlife documentary stars
+Dialogue: 0,0:03:14.24,0:03:16.46,Default,,0,0,0,,They are part of the environment surrounding
+Dialogue: 0,0:03:16.46,0:03:17.86,Default,,0,0,0,,their communities
+Dialogue: 0,0:03:17.86,0:03:20.82,Default,,0,0,0,,But the relationship between people and wildlife
+Dialogue: 0,0:03:20.82,0:03:22.21,Default,,0,0,0,,is complicated
+Dialogue: 0,0:03:22.21,0:03:23.68,Default,,0,0,0,,Families need land
+Dialogue: 0,0:03:23.68,0:03:25.32,Default,,0,0,0,,Farmers need fields
+Dialogue: 0,0:03:25.32,0:03:26.82,Default,,0,0,0,,People need firewood
+Dialogue: 0,0:03:26.82,0:03:28.56,Default,,0,0,0,,Communities need income
+Dialogue: 0,0:03:28.56,0:03:31.67,Default,,0,0,0,,And when forests disappear wildlife loses its
+Dialogue: 0,0:03:31.67,0:03:32.50,Default,,0,0,0,,home
+Dialogue: 0,0:03:32.50,0:03:35.72,Default,,0,0,0,,At the same time the loss of forests can eventually
+Dialogue: 0,0:03:35.72,0:03:39.04,Default,,0,0,0,,hurt the people who depend on those ecosystems
+Dialogue: 0,0:03:39.04,0:03:40.25,Default,,0,0,0,,THE FORESTS
+Dialogue: 0,0:03:40.25,0:03:43.08,Default,,0,0,0,,Madagascar's forests are some of the most important
+Dialogue: 0,0:03:43.08,0:03:44.95,Default,,0,0,0,,ecosystems on Earth
+Dialogue: 0,0:03:44.95,0:03:47.67,Default,,0,0,0,,They contain thousands of plant species
+Dialogue: 0,0:03:47.67,0:03:49.71,Default,,0,0,0,,Many exist nowhere else
+Dialogue: 0,0:03:49.71,0:03:52.96,Default,,0,0,0,,Walk beneath the trees and you may see vines
+Dialogue: 0,0:03:52.96,0:03:57.83,Default,,0,0,0,,orchids palms insects reptiles birds
+Dialogue: 0,0:03:57.83,0:03:59.08,Default,,0,0,0,,and lemurs
+Dialogue: 0,0:03:59.08,0:04:01.15,Default,,0,0,0,,But forest life is not easy
+Dialogue: 0,0:04:01.15,0:04:03.45,Default,,0,0,0,,The humidity can be intense
+Dialogue: 0,0:04:03.45,0:04:05.22,Default,,0,0,0,,Rain can arrive suddenly
+Dialogue: 0,0:04:05.22,0:04:07.13,Default,,0,0,0,,The ground can become muddy
+Dialogue: 0,0:04:07.13,0:04:09.76,Default,,0,0,0,,And in remote areas there may be no roads at
+Dialogue: 0,0:04:09.76,0:04:10.56,Default,,0,0,0,,all
+Dialogue: 0,0:04:10.56,0:04:12.99,Default,,0,0,0,,People living near forests have developed their
+Dialogue: 0,0:04:12.99,0:04:15.03,Default,,0,0,0,,own knowledge of the landscape
+Dialogue: 0,0:04:15.03,0:04:17.11,Default,,0,0,0,,They know which plants can be used
+Dialogue: 0,0:04:17.11,0:04:18.92,Default,,0,0,0,,Where water can be found
+Dialogue: 0,0:04:18.92,0:04:21.10,Default,,0,0,0,,Which paths lead to villages
+Dialogue: 0,0:04:21.10,0:04:23.35,Default,,0,0,0,,And which areas are safe to travel
+Dialogue: 0,0:04:23.35,0:04:25.83,Default,,0,0,0,,This knowledge is passed from one generation
+Dialogue: 0,0:04:25.83,0:04:26.96,Default,,0,0,0,,to another
+Dialogue: 0,0:04:26.96,0:04:28.70,Default,,0,0,0,,THE BAOBAB TREES
+Dialogue: 0,0:04:28.70,0:04:30.51,Default,,0,0,0,,Then there are the baobabs
+Dialogue: 0,0:04:30.51,0:04:33.61,Default,,0,0,0,,These enormous trees look almost impossible
+Dialogue: 0,0:04:33.61,0:04:36.35,Default,,0,0,0,,Their trunks can become incredibly wide
+Dialogue: 0,0:04:36.35,0:04:39.03,Default,,0,0,0,,Their branches stretch into the sky like roots
+Dialogue: 0,0:04:39.03,0:04:40.40,Default,,0,0,0,,growing upward
+Dialogue: 0,0:04:40.40,0:04:42.76,Default,,0,0,0,,Some can survive in environments where water
+Dialogue: 0,0:04:42.76,0:04:44.01,Default,,0,0,0,,is scarce
+Dialogue: 0,0:04:44.01,0:04:47.10,Default,,0,0,0,,And in western Madagascar entire landscapes
+Dialogue: 0,0:04:47.10,0:04:50.74,Default,,0,0,0,,can appear to be dominated by these giant trees
+Dialogue: 0,0:04:50.74,0:04:53.29,Default,,0,0,0,,One of the most famous places is the Avenue
+Dialogue: 0,0:04:53.29,0:04:54.83,Default,,0,0,0,,of the Baobabs
+Dialogue: 0,0:04:54.83,0:04:57.97,Default,,0,0,0,,As the sun falls the enormous trunks become
+Dialogue: 0,0:04:57.97,0:05:00.31,Default,,0,0,0,,silhouettes against the sky
+Dialogue: 0,0:05:00.31,0:05:02.03,Default,,0,0,0,,It looks almost unreal
+Dialogue: 0,0:05:02.03,0:05:04.70,Default,,0,0,0,,But these trees are not simply beautiful
+Dialogue: 0,0:05:04.70,0:05:07.00,Default,,0,0,0,,They are part of the ecological history of
+Dialogue: 0,0:05:07.00,0:05:08.36,Default,,0,0,0,,Madagascar
+Dialogue: 0,0:05:08.36,0:05:11.07,Default,,0,0,0,,They provide food and shelter for wildlife
+Dialogue: 0,0:05:11.07,0:05:14.10,Default,,0,0,0,,and have long been important to local communities
+Dialogue: 0,0:05:14.10,0:05:16.97,Default,,0,0,0,,For visitors the baobabs can look like something
+Dialogue: 0,0:05:16.97,0:05:18.65,Default,,0,0,0,,from a fantasy movie
+Dialogue: 0,0:05:18.65,0:05:21.74,Default,,0,0,0,,For people living nearby they are part of home
+Dialogue: 0,0:05:21.74,0:05:24.35,Default,,0,0,0,,LIFE IN A MADAGASCAR VILLAGE
+Dialogue: 0,0:05:24.35,0:05:27.99,Default,,0,0,0,,Away from the famous landscapes everyday Madagascar
+Dialogue: 0,0:05:27.99,0:05:29.13,Default,,0,0,0,,begins
+Dialogue: 0,0:05:29.13,0:05:32.64,Default,,0,0,0,,A village may contain simple homes small shops
+Dialogue: 0,0:05:32.64,0:05:35.92,Default,,0,0,0,,animals farmland and dirt paths
+Dialogue: 0,0:05:35.92,0:05:37.58,Default,,0,0,0,,Children play outside
+Dialogue: 0,0:05:37.58,0:05:38.78,Default,,0,0,0,,Adults work
+Dialogue: 0,0:05:38.78,0:05:40.38,Default,,0,0,0,,Women prepare food
+Dialogue: 0,0:05:40.38,0:05:42.21,Default,,0,0,0,,Farmers work in fields
+Dialogue: 0,0:05:42.21,0:05:43.96,Default,,0,0,0,,And neighbors know each other
+Dialogue: 0,0:05:43.96,0:05:47.03,Default,,0,0,0,,Life can be strongly connected to the seasons
+Dialogue: 0,0:05:47.03,0:05:50.70,Default,,0,0,0,,When rain arrives agriculture becomes possible
+Dialogue: 0,0:05:50.70,0:05:53.43,Default,,0,0,0,,When the dry season comes water becomes more
+Dialogue: 0,0:05:53.43,0:05:54.46,Default,,0,0,0,,important
+Dialogue: 0,0:05:54.46,0:05:57.00,Default,,0,0,0,,The rhythm of life is not determined only by
+Dialogue: 0,0:05:57.00,0:05:58.14,Default,,0,0,0,,clocks
+Dialogue: 0,0:05:58.14,0:06:01.79,Default,,0,0,0,,It is determined by weather crops animals and
+Dialogue: 0,0:06:01.79,0:06:03.83,Default,,0,0,0,,family responsibilities
+Dialogue: 0,0:06:03.83,0:06:06.60,Default,,0,0,0,,For people living in remote areas the concept
+Dialogue: 0,0:06:06.60,0:06:09.25,Default,,0,0,0,,of convenience can be very different from what
+Dialogue: 0,0:06:09.25,0:06:11.83,Default,,0,0,0,,people experience in major cities
+Dialogue: 0,0:06:11.83,0:06:14.49,Default,,0,0,0,,A trip to a market may take hours
+Dialogue: 0,0:06:14.49,0:06:16.64,Default,,0,0,0,,A hospital may be far away
+Dialogue: 0,0:06:16.64,0:06:19.74,Default,,0,0,0,,And a broken vehicle can become a serious problem
+Dialogue: 0,0:06:19.74,0:06:21.04,Default,,0,0,0,,RICE IS LIFE
+Dialogue: 0,0:06:21.04,0:06:23.50,Default,,0,0,0,,If you want to understand Madagascar you need
+Dialogue: 0,0:06:23.50,0:06:25.14,Default,,0,0,0,,to understand rice
+Dialogue: 0,0:06:25.14,0:06:28.06,Default,,0,0,0,,Rice is a central part of Malagasy food and
+Dialogue: 0,0:06:28.06,0:06:29.33,Default,,0,0,0,,agriculture
+Dialogue: 0,0:06:29.33,0:06:32.32,Default,,0,0,0,,In many regions rice fields cover valleys and
+Dialogue: 0,0:06:32.32,0:06:33.70,Default,,0,0,0,,hillsides
+Dialogue: 0,0:06:33.70,0:06:36.95,Default,,0,0,0,,Families work the land through planting growing
+Dialogue: 0,0:06:36.95,0:06:39.11,Default,,0,0,0,,harvesting and processing
+Dialogue: 0,0:06:39.11,0:06:42.18,Default,,0,0,0,,For many people rice is not simply one food
+Dialogue: 0,0:06:42.18,0:06:43.22,Default,,0,0,0,,among many
+Dialogue: 0,0:06:43.22,0:06:45.32,Default,,0,0,0,,It is the foundation of the meal
+Dialogue: 0,0:06:45.32,0:06:49.33,Default,,0,0,0,,Rice farming requires water labor land and
+Dialogue: 0,0:06:49.33,0:06:50.63,Default,,0,0,0,,careful timing
+Dialogue: 0,0:06:50.63,0:06:53.90,Default,,0,0,0,,In some parts of Madagascar farmers have developed
+Dialogue: 0,0:06:53.90,0:06:56.28,Default,,0,0,0,,impressive terraced landscapes
+Dialogue: 0,0:06:56.28,0:06:58.53,Default,,0,0,0,,Green rice fields climb through valleys and
+Dialogue: 0,0:06:58.53,0:06:59.58,Default,,0,0,0,,hills
+Dialogue: 0,0:06:59.58,0:07:02.57,Default,,0,0,0,,From above they can look like enormous patterns
+Dialogue: 0,0:07:02.57,0:07:04.54,Default,,0,0,0,,carved into the landscape
+Dialogue: 0,0:07:04.54,0:07:06.96,Default,,0,0,0,,But behind the beauty is hard work
+Dialogue: 0,0:07:06.96,0:07:09.20,Default,,0,0,0,,A farmer's harvest can determine whether a
+Dialogue: 0,0:07:09.20,0:07:12.08,Default,,0,0,0,,family has enough food and income
+Dialogue: 0,0:07:12.08,0:07:14.06,Default,,0,0,0,,THE FOOD OF MADAGASCAR
+Dialogue: 0,0:07:14.06,0:07:17.39,Default,,0,0,0,,Malagasy food reflects the island's history
+Dialogue: 0,0:07:17.39,0:07:18.68,Default,,0,0,0,,and environment
+Dialogue: 0,0:07:18.68,0:07:22.67,Default,,0,0,0,,Rice is often accompanied by meat fish vegetables
+Dialogue: 0,0:07:22.67,0:07:25.14,Default,,0,0,0,,beans or leafy greens
+Dialogue: 0,0:07:25.14,0:07:28.65,Default,,0,0,0,,On the coast seafood becomes especially important
+Dialogue: 0,0:07:28.65,0:07:32.14,Default,,0,0,0,,In rural areas families may depend more heavily
+Dialogue: 0,0:07:32.14,0:07:34.54,Default,,0,0,0,,on locally produced ingredients
+Dialogue: 0,0:07:34.54,0:07:36.00,Default,,0,0,0,,Meals can be simple
+Dialogue: 0,0:07:36.00,0:07:38.72,Default,,0,0,0,,But food is closely connected to family
+Dialogue: 0,0:07:38.72,0:07:41.45,Default,,0,0,0,,Eating together is part of social life
+Dialogue: 0,0:07:41.45,0:07:44.36,Default,,0,0,0,,And when guests arrive sharing food is a way
+Dialogue: 0,0:07:44.36,0:07:46.20,Default,,0,0,0,,of showing hospitality
+Dialogue: 0,0:07:46.20,0:07:49.68,Default,,0,0,0,,Madagascar also has an unusual culinary history
+Dialogue: 0,0:07:49.68,0:07:52.26,Default,,0,0,0,,because its culture was shaped by influences
+Dialogue: 0,0:07:52.26,0:07:55.40,Default,,0,0,0,,from Africa Asia Arabia
+Dialogue: 0,0:07:55.40,0:07:57.76,Default,,0,0,0,,Europe and neighboring islands
+Dialogue: 0,0:07:57.76,0:08:00.63,Default,,0,0,0,,The result is a food culture that cannot easily
+Dialogue: 0,0:08:00.63,0:08:03.24,Default,,0,0,0,,be placed into a single category
+Dialogue: 0,0:08:03.24,0:08:04.43,Default,,0,0,0,,It is African
+Dialogue: 0,0:08:04.43,0:08:05.93,Default,,0,0,0,,It is Indian Ocean
+Dialogue: 0,0:08:05.93,0:08:08.20,Default,,0,0,0,,It carries Asian influences
+Dialogue: 0,0:08:08.20,0:08:10.33,Default,,0,0,0,,And it is distinctly Malagasy
+Dialogue: 0,0:08:10.33,0:08:12.29,Default,,0,0,0,,THE PEOPLE OF MADAGASCAR
+Dialogue: 0,0:08:12.29,0:08:15.90,Default,,0,0,0,,Madagascar's population is culturally diverse
+Dialogue: 0,0:08:15.90,0:08:18.29,Default,,0,0,0,,Different regions have different traditions
+Dialogue: 0,0:08:18.29,0:08:22.36,Default,,0,0,0,,languages clothing foods and customs
+Dialogue: 0,0:08:22.36,0:08:24.81,Default,,0,0,0,,The Malagasy language connects communities
+Dialogue: 0,0:08:24.81,0:08:27.93,Default,,0,0,0,,across the island but local identities remain
+Dialogue: 0,0:08:27.93,0:08:29.00,Default,,0,0,0,,strong
+Dialogue: 0,0:08:29.00,0:08:31.22,Default,,0,0,0,,Family is extremely important
+Dialogue: 0,0:08:31.22,0:08:34.20,Default,,0,0,0,,In many communities several generations may
+Dialogue: 0,0:08:34.20,0:08:36.20,Default,,0,0,0,,remain closely connected
+Dialogue: 0,0:08:36.20,0:08:38.85,Default,,0,0,0,,Grandparents can play important roles in raising
+Dialogue: 0,0:08:38.85,0:08:39.88,Default,,0,0,0,,children
+Dialogue: 0,0:08:39.88,0:08:41.93,Default,,0,0,0,,Relatives support one another
+Dialogue: 0,0:08:41.93,0:08:45.38,Default,,0,0,0,,And major events can involve entire communities
+Dialogue: 0,0:08:45.38,0:08:48.52,Default,,0,0,0,,This sense of family becomes particularly important
+Dialogue: 0,0:08:48.52,0:08:51.41,Default,,0,0,0,,in rural areas where formal services may be
+Dialogue: 0,0:08:51.41,0:08:52.38,Default,,0,0,0,,limited
+Dialogue: 0,0:08:52.38,0:08:55.23,Default,,0,0,0,,If a family has a problem relatives and neighbors
+Dialogue: 0,0:08:55.23,0:08:57.59,Default,,0,0,0,,can become the first source of help
+Dialogue: 0,0:08:57.59,0:08:58.70,Default,,0,0,0,,THE CHILDREN
+Dialogue: 0,0:08:58.70,0:09:01.31,Default,,0,0,0,,For children growing up in Madagascar
+Dialogue: 0,0:09:01.31,0:09:04.17,Default,,0,0,0,,life depends heavily on where they are born
+Dialogue: 0,0:09:04.17,0:09:07.52,Default,,0,0,0,,A child in Antananarivo can experience a very
+Dialogue: 0,0:09:07.52,0:09:10.18,Default,,0,0,0,,different childhood from a child in a remote
+Dialogue: 0,0:09:10.18,0:09:11.63,Default,,0,0,0,,coastal village
+Dialogue: 0,0:09:11.63,0:09:14.73,Default,,0,0,0,,In the capital children may have easier access
+Dialogue: 0,0:09:14.73,0:09:18.48,Default,,0,0,0,,to schools technology transportation and modern
+Dialogue: 0,0:09:18.48,0:09:19.64,Default,,0,0,0,,services
+Dialogue: 0,0:09:19.64,0:09:23.16,Default,,0,0,0,,In rural areas education can be much more difficult
+Dialogue: 0,0:09:23.16,0:09:24.23,Default,,0,0,0,,to reach
+Dialogue: 0,0:09:24.23,0:09:27.09,Default,,0,0,0,,Some children walk long distances to school
+Dialogue: 0,0:09:27.09,0:09:29.59,Default,,0,0,0,,Others live in communities where educational
+Dialogue: 0,0:09:29.59,0:09:31.45,Default,,0,0,0,,resources are limited
+Dialogue: 0,0:09:31.45,0:09:33.85,Default,,0,0,0,,Yet education remains one of the strongest
+Dialogue: 0,0:09:33.85,0:09:35.62,Default,,0,0,0,,hopes for families
+Dialogue: 0,0:09:35.62,0:09:38.57,Default,,0,0,0,,Parents often want their children to have opportunities
+Dialogue: 0,0:09:38.57,0:09:40.20,Default,,0,0,0,,that they did not have
+Dialogue: 0,0:09:40.20,0:09:43.05,Default,,0,0,0,,A better education can mean a better job
+Dialogue: 0,0:09:43.05,0:09:45.77,Default,,0,0,0,,A better job can mean more stable income
+Dialogue: 0,0:09:45.77,0:09:48.34,Default,,0,0,0,,And more income can change an entire family's
+Dialogue: 0,0:09:48.34,0:09:49.35,Default,,0,0,0,,future
+Dialogue: 0,0:09:49.35,0:09:50.41,Default,,0,0,0,,THE CAPITAL
+Dialogue: 0,0:09:50.41,0:09:52.45,Default,,0,0,0,,Then there is Antananarivo
+Dialogue: 0,0:09:52.45,0:09:54.77,Default,,0,0,0,,The capital sits among hills in the central
+Dialogue: 0,0:09:54.77,0:09:55.91,Default,,0,0,0,,highlands
+Dialogue: 0,0:09:55.91,0:09:59.13,Default,,0,0,0,,It is crowded energetic and completely different
+Dialogue: 0,0:09:59.13,0:10:00.93,Default,,0,0,0,,from the remote villages
+Dialogue: 0,0:10:00.93,0:10:03.39,Default,,0,0,0,,Cars move through narrow streets
+Dialogue: 0,0:10:03.39,0:10:04.68,Default,,0,0,0,,Markets are busy
+Dialogue: 0,0:10:04.68,0:10:06.34,Default,,0,0,0,,People travel to work
+Dialogue: 0,0:10:06.34,0:10:08.10,Default,,0,0,0,,Students attend schools
+Dialogue: 0,0:10:08.10,0:10:09.64,Default,,0,0,0,,Businesses operate
+Dialogue: 0,0:10:09.64,0:10:12.48,Default,,0,0,0,,Phones connect people to the rest of the world
+Dialogue: 0,0:10:12.48,0:10:16.25,Default,,0,0,0,,And modern buildings exist alongside old neighborhoods
+Dialogue: 0,0:10:16.25,0:10:19.35,Default,,0,0,0,,But the capital also shows Madagascar's economic
+Dialogue: 0,0:10:19.35,0:10:20.52,Default,,0,0,0,,challenges
+Dialogue: 0,0:10:20.52,0:10:22.42,Default,,0,0,0,,Traffic can be intense
+Dialogue: 0,0:10:22.42,0:10:24.66,Default,,0,0,0,,Infrastructure can struggle to keep up with
+Dialogue: 0,0:10:24.66,0:10:26.28,Default,,0,0,0,,population growth
+Dialogue: 0,0:10:26.28,0:10:28.75,Default,,0,0,0,,And poverty remains visible
+Dialogue: 0,0:10:28.75,0:10:31.60,Default,,0,0,0,,The contrast between modern life and traditional
+Dialogue: 0,0:10:31.60,0:10:33.91,Default,,0,0,0,,rural life is enormous
+Dialogue: 0,0:10:33.91,0:10:36.21,Default,,0,0,0,,Yet both are part of the same country
+Dialogue: 0,0:10:36.21,0:10:37.35,Default,,0,0,0,,THE ROADS
+Dialogue: 0,0:10:37.35,0:10:40.37,Default,,0,0,0,,One of the biggest challenges of life in Madagascar
+Dialogue: 0,0:10:40.37,0:10:41.82,Default,,0,0,0,,is transportation
+Dialogue: 0,0:10:41.82,0:10:44.93,Default,,0,0,0,,The island has some major roads but many routes
+Dialogue: 0,0:10:44.93,0:10:47.59,Default,,0,0,0,,outside urban areas can be difficult
+Dialogue: 0,0:10:47.59,0:10:51.13,Default,,0,0,0,,During heavy rain dirt roads can become mud
+Dialogue: 0,0:10:51.13,0:10:52.81,Default,,0,0,0,,Bridges can be damaged
+Dialogue: 0,0:10:52.81,0:10:54.66,Default,,0,0,0,,Vehicles can become stuck
+Dialogue: 0,0:10:54.66,0:10:57.28,Default,,0,0,0,,And remote communities can temporarily become
+Dialogue: 0,0:10:57.28,0:10:58.46,Default,,0,0,0,,isolated
+Dialogue: 0,0:10:58.46,0:11:01.16,Default,,0,0,0,,For tourists this can be an adventure
+Dialogue: 0,0:11:01.16,0:11:03.62,Default,,0,0,0,,For local families it can determine whether
+Dialogue: 0,0:11:03.62,0:11:06.16,Default,,0,0,0,,food reaches a market or whether someone can
+Dialogue: 0,0:11:06.16,0:11:07.49,Default,,0,0,0,,reach a hospital
+Dialogue: 0,0:11:07.49,0:11:11.20,Default,,0,0,0,,Transportation is therefore more than convenience
+Dialogue: 0,0:11:11.20,0:11:13.16,Default,,0,0,0,,It can determine opportunity
+Dialogue: 0,0:11:13.16,0:11:15.81,Default,,0,0,0,,A road can connect a village to a school
+Dialogue: 0,0:11:15.81,0:11:18.60,Default,,0,0,0,,A road can connect farmers to customers
+Dialogue: 0,0:11:18.60,0:11:21.52,Default,,0,0,0,,A road can connect a patient to medical care
+Dialogue: 0,0:11:21.52,0:11:24.24,Default,,0,0,0,,And when that road disappears under mud the
+Dialogue: 0,0:11:24.24,0:11:26.63,Default,,0,0,0,,consequences can be serious
+Dialogue: 0,0:11:26.63,0:11:28.10,Default,,0,0,0,,THE COASTAL LIFE
+Dialogue: 0,0:11:28.10,0:11:31.18,Default,,0,0,0,,Travel toward Madagascar's coastline and another
+Dialogue: 0,0:11:31.18,0:11:32.60,Default,,0,0,0,,world appears
+Dialogue: 0,0:11:32.60,0:11:33.71,Default,,0,0,0,,Palm trees
+Dialogue: 0,0:11:33.71,0:11:34.87,Default,,0,0,0,,Warm water
+Dialogue: 0,0:11:34.87,0:11:36.14,Default,,0,0,0,,Fishing boats
+Dialogue: 0,0:11:36.14,0:11:37.35,Default,,0,0,0,,Coral reefs
+Dialogue: 0,0:11:37.35,0:11:38.32,Default,,0,0,0,,Beaches
+Dialogue: 0,0:11:38.32,0:11:40.64,Default,,0,0,0,,And villages built around the sea
+Dialogue: 0,0:11:40.64,0:11:43.46,Default,,0,0,0,,For coastal communities fishing can be central
+Dialogue: 0,0:11:43.46,0:11:44.72,Default,,0,0,0,,to survival
+Dialogue: 0,0:11:44.72,0:11:47.69,Default,,0,0,0,,Small wooden boats move into the water
+Dialogue: 0,0:11:47.69,0:11:50.12,Default,,0,0,0,,Fishermen search for fish and other marine
+Dialogue: 0,0:11:50.12,0:11:51.43,Default,,0,0,0,,resources
+Dialogue: 0,0:11:51.43,0:11:53.41,Default,,0,0,0,,Families process the catch
+Dialogue: 0,0:11:53.41,0:11:56.61,Default,,0,0,0,,And seafood becomes both food and income
+Dialogue: 0,0:11:56.61,0:11:58.82,Default,,0,0,0,,But the ocean is not unlimited
+Dialogue: 0,0:11:58.82,0:12:02.41,Default,,0,0,0,,Overfishing climate change coastal development
+Dialogue: 0,0:12:02.41,0:12:04.97,Default,,0,0,0,,and environmental degradation can affect marine
+Dialogue: 0,0:12:04.97,0:12:06.41,Default,,0,0,0,,ecosystems
+Dialogue: 0,0:12:06.41,0:12:09.47,Default,,0,0,0,,When fish populations change families who depend
+Dialogue: 0,0:12:09.47,0:12:12.53,Default,,0,0,0,,on fishing feel the consequences directly
+Dialogue: 0,0:12:12.53,0:12:13.78,Default,,0,0,0,,THE WOODEN BOAT
+Dialogue: 0,0:12:13.78,0:12:16.53,Default,,0,0,0,,In some coastal communities traditional boats
+Dialogue: 0,0:12:16.53,0:12:18.90,Default,,0,0,0,,remain an important part of life
+Dialogue: 0,0:12:18.90,0:12:21.30,Default,,0,0,0,,They may look simple compared with modern fishing
+Dialogue: 0,0:12:21.30,0:12:22.39,Default,,0,0,0,,vessels
+Dialogue: 0,0:12:22.39,0:12:24.94,Default,,0,0,0,,But they are designed for the local environment
+Dialogue: 0,0:12:24.94,0:12:27.79,Default,,0,0,0,,A fisherman does not need a giant ship to understand
+Dialogue: 0,0:12:27.79,0:12:28.72,Default,,0,0,0,,the sea
+Dialogue: 0,0:12:28.72,0:12:30.37,Default,,0,0,0,,He needs experience
+Dialogue: 0,0:12:30.37,0:12:32.10,Default,,0,0,0,,He needs knowledge of weather
+Dialogue: 0,0:12:32.10,0:12:34.29,Default,,0,0,0,,He needs to know where fish are found
+Dialogue: 0,0:12:34.29,0:12:36.66,Default,,0,0,0,,And he needs to understand the risks
+Dialogue: 0,0:12:36.66,0:12:39.50,Default,,0,0,0,,At sea there is no hospital nearby
+Dialogue: 0,0:12:39.50,0:12:40.71,Default,,0,0,0,,No road home
+Dialogue: 0,0:12:40.71,0:12:42.64,Default,,0,0,0,,The ocean can change quickly
+Dialogue: 0,0:12:42.64,0:12:45.40,Default,,0,0,0,,That is why generations of knowledge matter
+Dialogue: 0,0:12:45.40,0:12:46.79,Default,,0,0,0,,LIFE WITH CATTLE
+Dialogue: 0,0:12:46.79,0:12:50.08,Default,,0,0,0,,In parts of Madagascar cattle are deeply connected
+Dialogue: 0,0:12:50.08,0:12:52.36,Default,,0,0,0,,to culture and social life
+Dialogue: 0,0:12:52.36,0:12:55.40,Default,,0,0,0,,Zebu cattle recognizable by their distinctive
+Dialogue: 0,0:12:55.40,0:12:59.10,Default,,0,0,0,,horns and shoulder hump are important animals
+Dialogue: 0,0:12:59.10,0:13:00.79,Default,,0,0,0,,They can represent wealth
+Dialogue: 0,0:13:00.79,0:13:02.97,Default,,0,0,0,,They can be used in ceremonies
+Dialogue: 0,0:13:02.97,0:13:05.54,Default,,0,0,0,,And they have cultural significance far beyond
+Dialogue: 0,0:13:05.54,0:13:07.30,Default,,0,0,0,,their economic value
+Dialogue: 0,0:13:07.30,0:13:10.19,Default,,0,0,0,,For some families owning cattle is a symbol
+Dialogue: 0,0:13:10.19,0:13:12.30,Default,,0,0,0,,of status and security
+Dialogue: 0,0:13:12.30,0:13:15.21,Default,,0,0,0,,But cattle also require land and water
+Dialogue: 0,0:13:15.21,0:13:18.01,Default,,0,0,0,,Managing livestock in a changing environment
+Dialogue: 0,0:13:18.01,0:13:19.39,Default,,0,0,0,,can be difficult
+Dialogue: 0,0:13:19.39,0:13:22.19,Default,,0,0,0,,Once again the relationship between people
+Dialogue: 0,0:13:22.19,0:13:24.30,Default,,0,0,0,,and nature becomes central
+Dialogue: 0,0:13:24.30,0:13:26.10,Default,,0,0,0,,FAMILY AND TRADITION
+Dialogue: 0,0:13:26.10,0:13:28.75,Default,,0,0,0,,Madagascar has many traditions surrounding
+Dialogue: 0,0:13:28.75,0:13:32.96,Default,,0,0,0,,family ancestors ceremonies and death
+Dialogue: 0,0:13:32.96,0:13:36.11,Default,,0,0,0,,In some communities ancestors remain deeply
+Dialogue: 0,0:13:36.11,0:13:38.32,Default,,0,0,0,,connected to the living world
+Dialogue: 0,0:13:38.32,0:13:40.94,Default,,0,0,0,,Family history is not simply something written
+Dialogue: 0,0:13:40.94,0:13:42.03,Default,,0,0,0,,in a book
+Dialogue: 0,0:13:42.03,0:13:44.61,Default,,0,0,0,,It can be part of everyday identity
+Dialogue: 0,0:13:44.61,0:13:47.22,Default,,0,0,0,,Ceremonies can bring large groups of relatives
+Dialogue: 0,0:13:47.22,0:13:48.23,Default,,0,0,0,,together
+Dialogue: 0,0:13:48.23,0:13:52.19,Default,,0,0,0,,Music dancing food and community participation
+Dialogue: 0,0:13:52.19,0:13:54.93,Default,,0,0,0,,can become part of major life events
+Dialogue: 0,0:13:54.93,0:13:57.69,Default,,0,0,0,,These traditions help create continuity
+Dialogue: 0,0:13:57.69,0:14:00.14,Default,,0,0,0,,A child can learn about grandparents they never
+Dialogue: 0,0:14:00.14,0:14:00.94,Default,,0,0,0,,met
+Dialogue: 0,0:14:00.94,0:14:03.97,Default,,0,0,0,,A family can remember generations before them
+Dialogue: 0,0:14:03.97,0:14:07.03,Default,,0,0,0,,And a community can maintain its identity despite
+Dialogue: 0,0:14:07.03,0:14:09.03,Default,,0,0,0,,enormous social change
+Dialogue: 0,0:14:09.03,0:14:11.00,Default,,0,0,0,,THE SOUND OF MADAGASCAR
+Dialogue: 0,0:14:11.00,0:14:13.76,Default,,0,0,0,,Music is another important part of Malagasy
+Dialogue: 0,0:14:13.76,0:14:14.78,Default,,0,0,0,,culture
+Dialogue: 0,0:14:14.78,0:14:17.07,Default,,0,0,0,,Different regions have their own styles and
+Dialogue: 0,0:14:17.07,0:14:18.42,Default,,0,0,0,,instruments
+Dialogue: 0,0:14:18.42,0:14:20.87,Default,,0,0,0,,Songs can accompany celebrations
+Dialogue: 0,0:14:20.87,0:14:23.95,Default,,0,0,0,,Dancing can become part of community gatherings
+Dialogue: 0,0:14:23.95,0:14:26.94,Default,,0,0,0,,And music can carry stories from one generation
+Dialogue: 0,0:14:26.94,0:14:28.10,Default,,0,0,0,,to another
+Dialogue: 0,0:14:28.10,0:14:30.38,Default,,0,0,0,,For a country separated from the rest of the
+Dialogue: 0,0:14:30.38,0:14:33.87,Default,,0,0,0,,world by ocean culture became a powerful way
+Dialogue: 0,0:14:33.87,0:14:35.55,Default,,0,0,0,,to preserve identity
+Dialogue: 0,0:14:35.55,0:14:39.01,Default,,0,0,0,,Even as phones and social media connect Madagascar
+Dialogue: 0,0:14:39.01,0:14:41.71,Default,,0,0,0,,with the rest of the world traditional music
+Dialogue: 0,0:14:41.71,0:14:44.23,Default,,0,0,0,,remains part of the country's character
+Dialogue: 0,0:14:44.23,0:14:46.35,Default,,0,0,0,,THE ISLAND'S HIDDEN WILDLIFE
+Dialogue: 0,0:14:46.35,0:14:49.26,Default,,0,0,0,,Madagascar's wildlife is one of its greatest
+Dialogue: 0,0:14:49.26,0:14:50.41,Default,,0,0,0,,treasures
+Dialogue: 0,0:14:50.41,0:14:53.23,Default,,0,0,0,,But not everything is large or dramatic
+Dialogue: 0,0:14:53.23,0:14:56.03,Default,,0,0,0,,Some of the island's most fascinating animals
+Dialogue: 0,0:14:56.03,0:14:57.15,Default,,0,0,0,,are tiny
+Dialogue: 0,0:14:57.15,0:15:00.17,Default,,0,0,0,,Chameleons can disappear into branches
+Dialogue: 0,0:15:00.17,0:15:02.34,Default,,0,0,0,,Geckos can blend with leaves
+Dialogue: 0,0:15:02.34,0:15:04.99,Default,,0,0,0,,Insects can look almost identical to pieces
+Dialogue: 0,0:15:04.99,0:15:06.03,Default,,0,0,0,,of bark
+Dialogue: 0,0:15:06.03,0:15:08.74,Default,,0,0,0,,And frogs can survive in highly specialized
+Dialogue: 0,0:15:08.74,0:15:10.05,Default,,0,0,0,,environments
+Dialogue: 0,0:15:10.05,0:15:12.99,Default,,0,0,0,,This is what makes Madagascar so unusual
+Dialogue: 0,0:15:12.99,0:15:15.85,Default,,0,0,0,,Evolution had millions of years to experiment
+Dialogue: 0,0:15:15.85,0:15:16.65,Default,,0,0,0,,here
+Dialogue: 0,0:15:16.65,0:15:19.81,Default,,0,0,0,,The result is an ecosystem filled with strange
+Dialogue: 0,0:15:19.81,0:15:22.60,Default,,0,0,0,,solutions to the problem of survival
+Dialogue: 0,0:15:22.60,0:15:25.65,Default,,0,0,0,,One animal develops an unusual body
+Dialogue: 0,0:15:25.65,0:15:27.67,Default,,0,0,0,,Another changes its behavior
+Dialogue: 0,0:15:27.67,0:15:30.30,Default,,0,0,0,,Another becomes active only at night
+Dialogue: 0,0:15:30.30,0:15:32.65,Default,,0,0,0,,Another learns to live in a single type of
+Dialogue: 0,0:15:32.65,0:15:33.71,Default,,0,0,0,,forest
+Dialogue: 0,0:15:33.71,0:15:36.70,Default,,0,0,0,,The island became a world of specialists
+Dialogue: 0,0:15:36.70,0:15:39.09,Default,,0,0,0,,THE PROBLEM OF DEFORESTATION
+Dialogue: 0,0:15:39.09,0:15:43.05,Default,,0,0,0,,But Madagascar's uniqueness is also its vulnerability
+Dialogue: 0,0:15:43.05,0:15:45.58,Default,,0,0,0,,When a species disappears from a forest in
+Dialogue: 0,0:15:45.58,0:15:46.95,Default,,0,0,0,,Madagascar
+Dialogue: 0,0:15:46.95,0:15:49.70,Default,,0,0,0,,it may disappear from the entire planet
+Dialogue: 0,0:15:49.70,0:15:52.94,Default,,0,0,0,,Deforestation is therefore a global concern
+Dialogue: 0,0:15:52.94,0:15:54.69,Default,,0,0,0,,not only a local one
+Dialogue: 0,0:15:54.69,0:15:57.24,Default,,0,0,0,,People clear land for agriculture
+Dialogue: 0,0:15:57.24,0:15:59.02,Default,,0,0,0,,Trees are cut for fuel
+Dialogue: 0,0:15:59.02,0:16:01.33,Default,,0,0,0,,Forests are damaged by fires
+Dialogue: 0,0:16:01.33,0:16:03.67,Default,,0,0,0,,And growing populations create pressure for
+Dialogue: 0,0:16:03.67,0:16:04.81,Default,,0,0,0,,more land
+Dialogue: 0,0:16:04.81,0:16:07.99,Default,,0,0,0,,But conservation cannot simply tell poor families
+Dialogue: 0,0:16:07.99,0:16:09.91,Default,,0,0,0,,to stop using forests
+Dialogue: 0,0:16:09.91,0:16:11.21,Default,,0,0,0,,People need food
+Dialogue: 0,0:16:11.21,0:16:12.66,Default,,0,0,0,,They need energy
+Dialogue: 0,0:16:12.66,0:16:13.87,Default,,0,0,0,,They need income
+Dialogue: 0,0:16:13.87,0:16:16.19,Default,,0,0,0,,This creates one of the hardest environmental
+Dialogue: 0,0:16:16.19,0:16:18.34,Default,,0,0,0,,questions in Madagascar
+Dialogue: 0,0:16:18.34,0:16:20.80,Default,,0,0,0,,How do you protect nature while allowing people
+Dialogue: 0,0:16:20.80,0:16:21.96,Default,,0,0,0,,to survive
+Dialogue: 0,0:16:21.96,0:16:25.03,Default,,0,0,0,,The answer requires more than fences and protected
+Dialogue: 0,0:16:25.03,0:16:26.05,Default,,0,0,0,,areas
+Dialogue: 0,0:16:26.05,0:16:29.13,Default,,0,0,0,,It requires giving communities alternatives
+Dialogue: 0,0:16:29.13,0:16:31.76,Default,,0,0,0,,BETWEEN POVERTY AND POSSIBILITY
+Dialogue: 0,0:16:31.76,0:16:35.26,Default,,0,0,0,,Madagascar is one of the world's poorer countries
+Dialogue: 0,0:16:35.26,0:16:38.35,Default,,0,0,0,,For many families daily life is a constant
+Dialogue: 0,0:16:38.35,0:16:40.66,Default,,0,0,0,,struggle against limited income
+Dialogue: 0,0:16:40.66,0:16:43.67,Default,,0,0,0,,But the island also has enormous potential
+Dialogue: 0,0:16:43.67,0:16:44.59,Default,,0,0,0,,Tourism
+Dialogue: 0,0:16:44.59,0:16:45.88,Default,,0,0,0,,Agriculture
+Dialogue: 0,0:16:45.88,0:16:46.71,Default,,0,0,0,,Fishing
+Dialogue: 0,0:16:46.71,0:16:48.16,Default,,0,0,0,,Renewable energy
+Dialogue: 0,0:16:48.16,0:16:49.85,Default,,0,0,0,,Specialized products
+Dialogue: 0,0:16:49.85,0:16:52.26,Default,,0,0,0,,And its unique biodiversity
+Dialogue: 0,0:16:52.26,0:16:55.03,Default,,0,0,0,,The challenge is turning those resources into
+Dialogue: 0,0:16:55.03,0:16:57.53,Default,,0,0,0,,opportunities without destroying them
+Dialogue: 0,0:16:57.53,0:17:00.37,Default,,0,0,0,,Tourism can bring money to communities
+Dialogue: 0,0:17:00.37,0:17:03.92,Default,,0,0,0,,But uncontrolled tourism can damage ecosystems
+Dialogue: 0,0:17:03.92,0:17:06.02,Default,,0,0,0,,Agriculture provides food
+Dialogue: 0,0:17:06.02,0:17:08.85,Default,,0,0,0,,But expanding farms can destroy forests
+Dialogue: 0,0:17:08.85,0:17:10.66,Default,,0,0,0,,Mining can create jobs
+Dialogue: 0,0:17:10.66,0:17:13.72,Default,,0,0,0,,But it can also affect water and landscapes
+Dialogue: 0,0:17:13.72,0:17:16.26,Default,,0,0,0,,Every opportunity comes with a cost
+Dialogue: 0,0:17:16.26,0:17:17.90,Default,,0,0,0,,THE YOUNG GENERATION
+Dialogue: 0,0:17:17.90,0:17:20.59,Default,,0,0,0,,Madagascar's young people are growing up in
+Dialogue: 0,0:17:20.59,0:17:22.09,Default,,0,0,0,,a changing world
+Dialogue: 0,0:17:22.09,0:17:24.89,Default,,0,0,0,,A teenager in a remote village can now watch
+Dialogue: 0,0:17:24.89,0:17:27.64,Default,,0,0,0,,videos from countries thousands of kilometers
+Dialogue: 0,0:17:27.64,0:17:28.48,Default,,0,0,0,,away
+Dialogue: 0,0:17:28.48,0:17:31.00,Default,,0,0,0,,They can see cities they have never visited
+Dialogue: 0,0:17:31.00,0:17:32.80,Default,,0,0,0,,They can learn skills online
+Dialogue: 0,0:17:32.80,0:17:34.82,Default,,0,0,0,,They can communicate with relatives living
+Dialogue: 0,0:17:34.82,0:17:35.76,Default,,0,0,0,,abroad
+Dialogue: 0,0:17:35.76,0:17:38.33,Default,,0,0,0,,And they can imagine careers that were impossible
+Dialogue: 0,0:17:38.33,0:17:40.41,Default,,0,0,0,,for previous generations
+Dialogue: 0,0:17:40.41,0:17:42.82,Default,,0,0,0,,But technology does not automatically solve
+Dialogue: 0,0:17:42.82,0:17:43.87,Default,,0,0,0,,poverty
+Dialogue: 0,0:17:43.87,0:17:46.19,Default,,0,0,0,,A smartphone cannot build a road
+Dialogue: 0,0:17:46.19,0:17:49.16,Default,,0,0,0,,Internet access cannot replace a hospital
+Dialogue: 0,0:17:49.16,0:17:52.57,Default,,0,0,0,,And education cannot create jobs by itself
+Dialogue: 0,0:17:52.57,0:17:54.83,Default,,0,0,0,,The next generation will have to decide how
+Dialogue: 0,0:17:54.83,0:17:57.79,Default,,0,0,0,,to combine Madagascar's traditions with modern
+Dialogue: 0,0:17:57.79,0:17:59.18,Default,,0,0,0,,opportunities
+Dialogue: 0,0:17:59.18,0:18:00.51,Default,,0,0,0,,WHY PEOPLE STAY
+Dialogue: 0,0:18:00.51,0:18:02.84,Default,,0,0,0,,Why do people stay in Madagascar
+Dialogue: 0,0:18:02.84,0:18:05.19,Default,,0,0,0,,For many the answer is family
+Dialogue: 0,0:18:05.19,0:18:07.29,Default,,0,0,0,,For others it is the land
+Dialogue: 0,0:18:07.29,0:18:08.22,Default,,0,0,0,,The sea
+Dialogue: 0,0:18:08.22,0:18:09.33,Default,,0,0,0,,The village
+Dialogue: 0,0:18:09.33,0:18:10.41,Default,,0,0,0,,The culture
+Dialogue: 0,0:18:10.41,0:18:11.57,Default,,0,0,0,,The memories
+Dialogue: 0,0:18:11.57,0:18:13.39,Default,,0,0,0,,The feeling that this is home
+Dialogue: 0,0:18:13.39,0:18:15.75,Default,,0,0,0,,Someone living in a remote village may have
+Dialogue: 0,0:18:15.75,0:18:18.40,Default,,0,0,0,,very little money but still possess something
+Dialogue: 0,0:18:18.40,0:18:20.12,Default,,0,0,0,,extremely valuable
+Dialogue: 0,0:18:20.12,0:18:22.09,Default,,0,0,0,,A deep connection to place
+Dialogue: 0,0:18:22.09,0:18:23.50,Default,,0,0,0,,They know the forest
+Dialogue: 0,0:18:23.50,0:18:24.96,Default,,0,0,0,,They know the fields
+Dialogue: 0,0:18:24.96,0:18:26.18,Default,,0,0,0,,They know the sea
+Dialogue: 0,0:18:26.18,0:18:27.87,Default,,0,0,0,,They know the people around them
+Dialogue: 0,0:18:27.87,0:18:29.46,Default,,0,0,0,,They know the traditions
+Dialogue: 0,0:18:29.46,0:18:33.05,Default,,0,0,0,,To an outsider the lifestyle may look difficult
+Dialogue: 0,0:18:33.05,0:18:36.14,Default,,0,0,0,,To the person living it it is simply life
+Dialogue: 0,0:18:36.14,0:18:37.96,Default,,0,0,0,,THE REAL MADAGASCAR
+Dialogue: 0,0:18:37.96,0:18:40.76,Default,,0,0,0,,Madagascar is not just the island of lemurs
+Dialogue: 0,0:18:40.76,0:18:42.26,Default,,0,0,0,,and baobabs
+Dialogue: 0,0:18:42.26,0:18:43.98,Default,,0,0,0,,It is not just beaches
+Dialogue: 0,0:18:43.98,0:18:46.64,Default,,0,0,0,,It is not just a wildlife documentary
+Dialogue: 0,0:18:46.64,0:18:50.07,Default,,0,0,0,,Behind every spectacular landscape are ordinary
+Dialogue: 0,0:18:50.07,0:18:53.34,Default,,0,0,0,,people trying to build ordinary lives
+Dialogue: 0,0:18:53.34,0:18:55.68,Default,,0,0,0,,Farmers waking before sunrise
+Dialogue: 0,0:18:55.68,0:18:57.79,Default,,0,0,0,,Fishermen heading toward the ocean
+Dialogue: 0,0:18:57.79,0:18:59.50,Default,,0,0,0,,Children walking to school
+Dialogue: 0,0:18:59.50,0:19:01.27,Default,,0,0,0,,Women preparing meals
+Dialogue: 0,0:19:01.27,0:19:04.08,Default,,0,0,0,,Workers traveling through crowded streets
+Dialogue: 0,0:19:04.08,0:19:05.86,Default,,0,0,0,,Families gathering together
+Dialogue: 0,0:19:05.86,0:19:08.76,Default,,0,0,0,,And communities trying to protect their future
+Dialogue: 0,0:19:08.76,0:19:11.62,Default,,0,0,0,,This is what makes Madagascar so interesting
+Dialogue: 0,0:19:11.62,0:19:14.58,Default,,0,0,0,,Its greatest story is not simply about strange
+Dialogue: 0,0:19:14.58,0:19:15.69,Default,,0,0,0,,animals
+Dialogue: 0,0:19:15.69,0:19:17.91,Default,,0,0,0,,It is about people living inside one of the
+Dialogue: 0,0:19:17.91,0:19:21.07,Default,,0,0,0,,most unusual ecosystems on Earth
+Dialogue: 0,0:19:21.07,0:19:22.43,Default,,0,0,0,,FINAL REFLECTION
+Dialogue: 0,0:19:22.43,0:19:25.76,Default,,0,0,0,,As the sun begins to disappear over Madagascar
+Dialogue: 0,0:19:25.76,0:19:27.69,Default,,0,0,0,,the island changes again
+Dialogue: 0,0:19:27.69,0:19:29.65,Default,,0,0,0,,The forests become darker
+Dialogue: 0,0:19:29.65,0:19:32.18,Default,,0,0,0,,The sounds of animals become louder
+Dialogue: 0,0:19:32.18,0:19:34.73,Default,,0,0,0,,Fishing boats return toward the coast
+Dialogue: 0,0:19:34.73,0:19:37.23,Default,,0,0,0,,Smoke rises from village homes
+Dialogue: 0,0:19:37.23,0:19:38.77,Default,,0,0,0,,Families prepare dinner
+Dialogue: 0,0:19:38.77,0:19:41.23,Default,,0,0,0,,Children gather around their parents
+Dialogue: 0,0:19:41.23,0:19:44.08,Default,,0,0,0,,And somewhere deep inside the forest a lemur
+Dialogue: 0,0:19:44.08,0:19:46.51,Default,,0,0,0,,begins moving through the trees
+Dialogue: 0,0:19:46.51,0:19:49.15,Default,,0,0,0,,The island remains what it has been for millions
+Dialogue: 0,0:19:49.15,0:19:50.26,Default,,0,0,0,,of years
+Dialogue: 0,0:19:50.26,0:19:51.15,Default,,0,0,0,,Different
+Dialogue: 0,0:19:51.15,0:19:52.22,Default,,0,0,0,,Isolated
+Dialogue: 0,0:19:52.22,0:19:53.51,Default,,0,0,0,,Unpredictable
+Dialogue: 0,0:19:53.51,0:19:54.83,Default,,0,0,0,,And full of life
+Dialogue: 0,0:19:54.83,0:19:57.68,Default,,0,0,0,,But the future of Madagascar depends on a difficult
+Dialogue: 0,0:19:57.68,0:19:58.77,Default,,0,0,0,,balance
+Dialogue: 0,0:19:58.77,0:20:00.11,Default,,0,0,0,,People need land
+Dialogue: 0,0:20:00.11,0:20:02.15,Default,,0,0,0,,Wildlife needs forests
+Dialogue: 0,0:20:02.15,0:20:03.68,Default,,0,0,0,,Families need income
+Dialogue: 0,0:20:03.68,0:20:05.54,Default,,0,0,0,,The ocean needs protection
+Dialogue: 0,0:20:05.54,0:20:07.33,Default,,0,0,0,,Children need education
+Dialogue: 0,0:20:07.33,0:20:10.12,Default,,0,0,0,,And traditions need space to survive
+Dialogue: 0,0:20:10.12,0:20:13.02,Default,,0,0,0,,Madagascar teaches us something powerful
+Dialogue: 0,0:20:13.02,0:20:16.11,Default,,0,0,0,,Isolation can create extraordinary life
+Dialogue: 0,0:20:16.11,0:20:18.87,Default,,0,0,0,,But isolation does not protect a country from
+Dialogue: 0,0:20:18.87,0:20:20.83,Default,,0,0,0,,the modern world forever
+Dialogue: 0,0:20:20.83,0:20:21.98,Default,,0,0,0,,Change is coming
+Dialogue: 0,0:20:21.98,0:20:24.27,Default,,0,0,0,,And the question is whether Madagascar can
+Dialogue: 0,0:20:24.27,0:20:27.55,Default,,0,0,0,,change without losing what makes it unique
+Dialogue: 0,0:20:27.55,0:20:30.52,Default,,0,0,0,,An island where evolution created animals found
+Dialogue: 0,0:20:30.52,0:20:31.98,Default,,0,0,0,,nowhere else
+Dialogue: 0,0:20:31.98,0:20:34.18,Default,,0,0,0,,A country where rice fields cover mountain
+Dialogue: 0,0:20:34.18,0:20:35.27,Default,,0,0,0,,valleys
+Dialogue: 0,0:20:35.27,0:20:37.91,Default,,0,0,0,,Where fishermen still depend on the ocean
+Dialogue: 0,0:20:37.91,0:20:41.80,Default,,0,0,0,,Where giant baobabs rise above dry landscapes
+Dialogue: 0,0:20:41.80,0:20:44.97,Default,,0,0,0,,Where children grow up between ancient traditions
+Dialogue: 0,0:20:44.97,0:20:46.75,Default,,0,0,0,,and modern technology
+Dialogue: 0,0:20:46.75,0:20:49.51,Default,,0,0,0,,And where ordinary families continue building
+Dialogue: 0,0:20:49.51,0:20:52.44,Default,,0,0,0,,lives in one of the most extraordinary places
+Dialogue: 0,0:20:52.44,0:20:53.51,Default,,0,0,0,,on Earth
+Dialogue: 0,0:20:53.51,0:20:55.16,Default,,0,0,0,,This is Madagascar
+Dialogue: 0,0:20:55.16,0:20:57.12,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:20:57.12,0:20:58.50,Default,,0,0,0,,Life Beyond the Limits
