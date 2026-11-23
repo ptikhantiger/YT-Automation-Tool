@@ -1,0 +1,640 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:03.08,Default,,0,0,0,,LIFE IN JAPAN WHAT EVERYDAY LIFE IS REALLY
+Dialogue: 0,0:00:03.08,0:00:06.04,Default,,0,0,0,,LIKE IN ONE OF THE WORLD'S MOST UNIQUE COUNTRIES
+Dialogue: 0,0:00:06.04,0:00:08.47,Default,,0,0,0,,Imagine a country where ancient temples stand
+Dialogue: 0,0:00:08.47,0:00:10.69,Default,,0,0,0,,beside giant skyscrapers
+Dialogue: 0,0:00:10.69,0:00:13.29,Default,,0,0,0,,Where trains can move with incredible precision
+Dialogue: 0,0:00:13.29,0:00:16.63,Default,,0,0,0,,while tiny restaurants hide inside narrow streets
+Dialogue: 0,0:00:16.63,0:00:19.15,Default,,0,0,0,,Where millions of people cross one intersection
+Dialogue: 0,0:00:19.15,0:00:20.09,Default,,0,0,0,,every day
+Dialogue: 0,0:00:20.09,0:00:22.77,Default,,0,0,0,,Where vending machines are almost everywhere
+Dialogue: 0,0:00:22.77,0:00:24.93,Default,,0,0,0,,Where children learn discipline from an early
+Dialogue: 0,0:00:24.93,0:00:25.73,Default,,0,0,0,,age
+Dialogue: 0,0:00:25.73,0:00:28.41,Default,,0,0,0,,Where technology is deeply connected to everyday
+Dialogue: 0,0:00:28.41,0:00:29.26,Default,,0,0,0,,life
+Dialogue: 0,0:00:29.26,0:00:31.65,Default,,0,0,0,,And where just a few hours from one of the
+Dialogue: 0,0:00:31.65,0:00:34.38,Default,,0,0,0,,busiest cities on Earth you can find quiet
+Dialogue: 0,0:00:34.38,0:00:37.90,Default,,0,0,0,,villages ancient forests snow-covered mountains
+Dialogue: 0,0:00:37.90,0:00:39.88,Default,,0,0,0,,and centuries-old traditions
+Dialogue: 0,0:00:39.88,0:00:41.26,Default,,0,0,0,,This is Japan
+Dialogue: 0,0:00:41.26,0:00:43.66,Default,,0,0,0,,A country that has fascinated the world for
+Dialogue: 0,0:00:43.66,0:00:44.94,Default,,0,0,0,,generations
+Dialogue: 0,0:00:44.94,0:00:48.23,Default,,0,0,0,,For tourists Japan can look almost perfect
+Dialogue: 0,0:00:48.23,0:00:50.08,Default,,0,0,0,,Tokyo glows at night
+Dialogue: 0,0:00:50.08,0:00:52.36,Default,,0,0,0,,Kyoto looks like a living postcard
+Dialogue: 0,0:00:52.36,0:00:54.99,Default,,0,0,0,,Mount Fuji rises above the landscape
+Dialogue: 0,0:00:54.99,0:00:57.52,Default,,0,0,0,,Bullet trains cross the country at incredible
+Dialogue: 0,0:00:57.52,0:00:58.38,Default,,0,0,0,,speed
+Dialogue: 0,0:00:58.38,0:01:03.24,Default,,0,0,0,,Sushi ramen temples cherry blossoms anime
+Dialogue: 0,0:01:03.24,0:01:06.47,Default,,0,0,0,,technology and Japanese culture attract millions
+Dialogue: 0,0:01:06.47,0:01:08.12,Default,,0,0,0,,of visitors every year
+Dialogue: 0,0:01:08.12,0:01:11.31,Default,,0,0,0,,But tourism shows only one side of Japan
+Dialogue: 0,0:01:11.31,0:01:13.56,Default,,0,0,0,,What is everyday life actually like for the
+Dialogue: 0,0:01:13.56,0:01:15.02,Default,,0,0,0,,people who live here
+Dialogue: 0,0:01:15.02,0:01:17.45,Default,,0,0,0,,What happens inside Japanese homes
+Dialogue: 0,0:01:17.45,0:01:19.27,Default,,0,0,0,,How do children go to school
+Dialogue: 0,0:01:19.27,0:01:21.70,Default,,0,0,0,,Why are Japanese trains so important
+Dialogue: 0,0:01:21.70,0:01:23.42,Default,,0,0,0,,What do people eat every day
+Dialogue: 0,0:01:23.42,0:01:26.17,Default,,0,0,0,,Why do millions of people live in Tokyo
+Dialogue: 0,0:01:26.17,0:01:28.44,Default,,0,0,0,,And what happens when one of the world's oldest
+Dialogue: 0,0:01:28.44,0:01:30.84,Default,,0,0,0,,cultures meets one of the world's most modern
+Dialogue: 0,0:01:30.84,0:01:32.12,Default,,0,0,0,,societies
+Dialogue: 0,0:01:32.12,0:01:33.58,Default,,0,0,0,,Welcome to Japan
+Dialogue: 0,0:01:33.58,0:01:35.52,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:35.52,0:01:37.33,Default,,0,0,0,,Life Beyond the Limits
+Dialogue: 0,0:01:37.33,0:01:40.66,Default,,0,0,0,,TOKYO NEVER REALLY STOPS Our journey begins
+Dialogue: 0,0:01:40.66,0:01:41.80,Default,,0,0,0,,in Tokyo
+Dialogue: 0,0:01:41.80,0:01:44.23,Default,,0,0,0,,The first thing you notice is movement
+Dialogue: 0,0:01:44.23,0:01:45.51,Default,,0,0,0,,People walking
+Dialogue: 0,0:01:45.51,0:01:46.84,Default,,0,0,0,,Trains arriving
+Dialogue: 0,0:01:46.84,0:01:48.17,Default,,0,0,0,,Traffic flowing
+Dialogue: 0,0:01:48.17,0:01:49.40,Default,,0,0,0,,Lights changing
+Dialogue: 0,0:01:49.40,0:01:51.81,Default,,0,0,0,,Buildings rising above the streets
+Dialogue: 0,0:01:51.81,0:01:54.19,Default,,0,0,0,,And crowds moving in every direction
+Dialogue: 0,0:01:54.19,0:01:57.58,Default,,0,0,0,,Tokyo is one of the world's great megacities
+Dialogue: 0,0:01:57.58,0:02:01.55,Default,,0,0,0,,Millions of people live work study and travel
+Dialogue: 0,0:02:01.55,0:02:03.56,Default,,0,0,0,,through its enormous urban area
+Dialogue: 0,0:02:03.56,0:02:06.33,Default,,0,0,0,,But Tokyo does not feel like one giant city
+Dialogue: 0,0:02:06.33,0:02:08.12,Default,,0,0,0,,in the same way everywhere
+Dialogue: 0,0:02:08.12,0:02:10.98,Default,,0,0,0,,Instead it feels like dozens of different worlds
+Dialogue: 0,0:02:10.98,0:02:12.44,Default,,0,0,0,,connected together
+Dialogue: 0,0:02:12.44,0:02:15.30,Default,,0,0,0,,Shibuya is famous for its giant crossing and
+Dialogue: 0,0:02:15.30,0:02:16.65,Default,,0,0,0,,neon streets
+Dialogue: 0,0:02:16.65,0:02:20.24,Default,,0,0,0,,Shinjuku is filled with skyscrapers restaurants
+Dialogue: 0,0:02:20.24,0:02:22.27,Default,,0,0,0,,offices and nightlife
+Dialogue: 0,0:02:22.27,0:02:25.11,Default,,0,0,0,,Asakusa offers a very different atmosphere
+Dialogue: 0,0:02:25.11,0:02:27.80,Default,,0,0,0,,with traditional temples and older streets
+Dialogue: 0,0:02:27.80,0:02:31.59,Default,,0,0,0,,Akihabara became famous for electronics gaming
+Dialogue: 0,0:02:31.59,0:02:33.73,Default,,0,0,0,,anime and pop culture
+Dialogue: 0,0:02:33.73,0:02:36.98,Default,,0,0,0,,And Ginza is known for shopping luxury and
+Dialogue: 0,0:02:36.98,0:02:38.59,Default,,0,0,0,,modern architecture
+Dialogue: 0,0:02:38.59,0:02:41.12,Default,,0,0,0,,You can travel a short distance and suddenly
+Dialogue: 0,0:02:41.12,0:02:43.47,Default,,0,0,0,,feel as if you have entered another city
+Dialogue: 0,0:02:43.47,0:02:45.29,Default,,0,0,0,,THE SHIBUYA CROSSING
+Dialogue: 0,0:02:45.29,0:02:47.86,Default,,0,0,0,,Then comes one of Japan's most recognizable
+Dialogue: 0,0:02:47.86,0:02:48.83,Default,,0,0,0,,scenes
+Dialogue: 0,0:02:48.83,0:02:50.34,Default,,0,0,0,,Shibuya Crossing
+Dialogue: 0,0:02:50.34,0:02:53.13,Default,,0,0,0,,When the lights change the traffic stops
+Dialogue: 0,0:02:53.13,0:02:55.44,Default,,0,0,0,,And suddenly hundreds of people begin moving
+Dialogue: 0,0:02:55.44,0:02:57.10,Default,,0,0,0,,across the intersection
+Dialogue: 0,0:02:57.10,0:02:59.99,Default,,0,0,0,,From above the crowd looks like a giant flowing
+Dialogue: 0,0:02:59.99,0:03:00.76,Default,,0,0,0,,river
+Dialogue: 0,0:03:00.76,0:03:02.81,Default,,0,0,0,,People walk in every direction
+Dialogue: 0,0:03:02.81,0:03:04.30,Default,,0,0,0,,Some are going to work
+Dialogue: 0,0:03:04.30,0:03:06.05,Default,,0,0,0,,Some are meeting friends
+Dialogue: 0,0:03:06.05,0:03:07.33,Default,,0,0,0,,Some are shopping
+Dialogue: 0,0:03:07.33,0:03:09.94,Default,,0,0,0,,Some are tourists seeing it for the first time
+Dialogue: 0,0:03:09.94,0:03:13.05,Default,,0,0,0,,And then after only a few moments the crossing
+Dialogue: 0,0:03:13.05,0:03:14.02,Default,,0,0,0,,clears
+Dialogue: 0,0:03:14.02,0:03:15.34,Default,,0,0,0,,Cars move again
+Dialogue: 0,0:03:15.34,0:03:17.05,Default,,0,0,0,,The city continues
+Dialogue: 0,0:03:17.05,0:03:19.78,Default,,0,0,0,,It is a perfect image of modern Japan
+Dialogue: 0,0:03:19.78,0:03:22.27,Default,,0,0,0,,Order inside enormous complexity
+Dialogue: 0,0:03:22.27,0:03:24.66,Default,,0,0,0,,Millions of people sharing the same limited
+Dialogue: 0,0:03:24.66,0:03:25.64,Default,,0,0,0,,space
+Dialogue: 0,0:03:25.64,0:03:28.99,Default,,0,0,0,,THE JAPANESE TRAIN If Tokyo has one system
+Dialogue: 0,0:03:28.99,0:03:31.46,Default,,0,0,0,,that keeps everything moving it is the railway
+Dialogue: 0,0:03:31.46,0:03:32.48,Default,,0,0,0,,network
+Dialogue: 0,0:03:32.48,0:03:36.08,Default,,0,0,0,,For many people trains are not a tourist attraction
+Dialogue: 0,0:03:36.08,0:03:38.49,Default,,0,0,0,,They are simply part of everyday life
+Dialogue: 0,0:03:38.49,0:03:39.74,Default,,0,0,0,,People wake up
+Dialogue: 0,0:03:39.74,0:03:40.78,Default,,0,0,0,,Get ready
+Dialogue: 0,0:03:40.78,0:03:42.23,Default,,0,0,0,,Walk to the station
+Dialogue: 0,0:03:42.23,0:03:43.44,Default,,0,0,0,,Take a train
+Dialogue: 0,0:03:43.44,0:03:44.89,Default,,0,0,0,,Change lines
+Dialogue: 0,0:03:44.89,0:03:46.03,Default,,0,0,0,,Walk again
+Dialogue: 0,0:03:46.03,0:03:48.13,Default,,0,0,0,,And arrive at work or school
+Dialogue: 0,0:03:48.13,0:03:51.27,Default,,0,0,0,,Japan is famous for its rail system including
+Dialogue: 0,0:03:51.27,0:03:53.45,Default,,0,0,0,,the Shinkansen bullet trains
+Dialogue: 0,0:03:53.45,0:03:56.51,Default,,0,0,0,,These trains connect major cities at high speed
+Dialogue: 0,0:03:56.51,0:03:59.30,Default,,0,0,0,,For tourists riding a bullet train can feel
+Dialogue: 0,0:03:59.30,0:04:00.53,Default,,0,0,0,,futuristic
+Dialogue: 0,0:04:00.53,0:04:03.60,Default,,0,0,0,,For Japanese passengers it can simply be another
+Dialogue: 0,0:04:03.60,0:04:04.46,Default,,0,0,0,,journey
+Dialogue: 0,0:04:04.46,0:04:07.34,Default,,0,0,0,,The train becomes part of the rhythm of life
+Dialogue: 0,0:04:07.34,0:04:10.73,Default,,0,0,0,,And in crowded cities reliable public transportation
+Dialogue: 0,0:04:10.73,0:04:11.91,Default,,0,0,0,,is essential
+Dialogue: 0,0:04:11.91,0:04:15.52,Default,,0,0,0,,THE MORNING ROUTINE For many Japanese families
+Dialogue: 0,0:04:15.52,0:04:17.12,Default,,0,0,0,,the day begins early
+Dialogue: 0,0:04:17.12,0:04:18.89,Default,,0,0,0,,Breakfast might be simple
+Dialogue: 0,0:04:18.89,0:04:19.98,Default,,0,0,0,,Rice
+Dialogue: 0,0:04:19.98,0:04:20.89,Default,,0,0,0,,Soup
+Dialogue: 0,0:04:20.89,0:04:21.89,Default,,0,0,0,,Fish
+Dialogue: 0,0:04:21.89,0:04:22.88,Default,,0,0,0,,Eggs
+Dialogue: 0,0:04:22.88,0:04:25.35,Default,,0,0,0,,Or other foods depending on the household
+Dialogue: 0,0:04:25.35,0:04:27.34,Default,,0,0,0,,Children prepare for school
+Dialogue: 0,0:04:27.34,0:04:29.33,Default,,0,0,0,,Adults prepare for work
+Dialogue: 0,0:04:29.33,0:04:31.19,Default,,0,0,0,,Everyone has somewhere to be
+Dialogue: 0,0:04:31.19,0:04:34.81,Default,,0,0,0,,But Japanese daily life often emphasizes routine
+Dialogue: 0,0:04:34.81,0:04:37.74,Default,,0,0,0,,Shoes may be removed before entering the home
+Dialogue: 0,0:04:37.74,0:04:39.76,Default,,0,0,0,,School uniforms are common
+Dialogue: 0,0:04:39.76,0:04:42.06,Default,,0,0,0,,Workplaces have their own rules
+Dialogue: 0,0:04:42.06,0:04:44.99,Default,,0,0,0,,Public spaces are generally expected to remain
+Dialogue: 0,0:04:44.99,0:04:46.59,Default,,0,0,0,,clean and orderly
+Dialogue: 0,0:04:46.59,0:04:48.74,Default,,0,0,0,,These routines can seem small
+Dialogue: 0,0:04:48.74,0:04:51.42,Default,,0,0,0,,But together they create a culture where people
+Dialogue: 0,0:04:51.42,0:04:53.56,Default,,0,0,0,,understand what is expected of them
+Dialogue: 0,0:04:53.56,0:04:57.06,Default,,0,0,0,,THE CHILDREN OF JAPAN Japanese children experience
+Dialogue: 0,0:04:57.06,0:04:58.83,Default,,0,0,0,,a structured school life
+Dialogue: 0,0:04:58.83,0:05:01.09,Default,,0,0,0,,Education is highly valued
+Dialogue: 0,0:05:01.09,0:05:03.56,Default,,0,0,0,,Students spend years studying subjects such
+Dialogue: 0,0:05:03.56,0:05:07.87,Default,,0,0,0,,as mathematics science Japanese history and
+Dialogue: 0,0:05:07.87,0:05:09.31,Default,,0,0,0,,foreign languages
+Dialogue: 0,0:05:09.31,0:05:12.51,Default,,0,0,0,,But school is not only about academic lessons
+Dialogue: 0,0:05:12.51,0:05:15.09,Default,,0,0,0,,Students can also learn responsibility through
+Dialogue: 0,0:05:15.09,0:05:16.53,Default,,0,0,0,,everyday tasks
+Dialogue: 0,0:05:16.53,0:05:19.58,Default,,0,0,0,,In many schools students participate in cleaning
+Dialogue: 0,0:05:19.58,0:05:21.84,Default,,0,0,0,,classrooms and shared spaces
+Dialogue: 0,0:05:21.84,0:05:23.55,Default,,0,0,0,,The idea is simple
+Dialogue: 0,0:05:23.55,0:05:25.59,Default,,0,0,0,,The school belongs to everyone
+Dialogue: 0,0:05:25.59,0:05:28.73,Default,,0,0,0,,If you use a place you also have a responsibility
+Dialogue: 0,0:05:28.73,0:05:30.02,Default,,0,0,0,,to take care of it
+Dialogue: 0,0:05:30.02,0:05:32.59,Default,,0,0,0,,For a child cleaning the classroom may seem
+Dialogue: 0,0:05:32.59,0:05:34.35,Default,,0,0,0,,like a normal routine
+Dialogue: 0,0:05:34.35,0:05:37.31,Default,,0,0,0,,But it also teaches a larger lesson about community
+Dialogue: 0,0:05:37.31,0:05:38.80,Default,,0,0,0,,and responsibility
+Dialogue: 0,0:05:38.80,0:05:42.33,Default,,0,0,0,,After school many students participate in clubs
+Dialogue: 0,0:05:42.33,0:05:43.46,Default,,0,0,0,,Sports
+Dialogue: 0,0:05:43.46,0:05:44.45,Default,,0,0,0,,Music
+Dialogue: 0,0:05:44.45,0:05:45.24,Default,,0,0,0,,Art
+Dialogue: 0,0:05:45.24,0:05:46.23,Default,,0,0,0,,Culture
+Dialogue: 0,0:05:46.23,0:05:48.66,Default,,0,0,0,,And other activities can become an important
+Dialogue: 0,0:05:48.66,0:05:50.33,Default,,0,0,0,,part of teenage life
+Dialogue: 0,0:05:50.33,0:05:53.08,Default,,0,0,0,,JAPANESE FOOD Then there is food
+Dialogue: 0,0:05:53.08,0:05:55.84,Default,,0,0,0,,Japan's food culture has become famous around
+Dialogue: 0,0:05:55.84,0:05:56.78,Default,,0,0,0,,the world
+Dialogue: 0,0:05:56.78,0:05:57.92,Default,,0,0,0,,Sushi
+Dialogue: 0,0:05:57.92,0:05:58.85,Default,,0,0,0,,Ramen
+Dialogue: 0,0:05:58.85,0:05:59.87,Default,,0,0,0,,Tempura
+Dialogue: 0,0:05:59.87,0:06:00.90,Default,,0,0,0,,Udon
+Dialogue: 0,0:06:00.90,0:06:01.94,Default,,0,0,0,,Soba
+Dialogue: 0,0:06:01.94,0:06:03.15,Default,,0,0,0,,Yakitori
+Dialogue: 0,0:06:03.15,0:06:05.28,Default,,0,0,0,,And countless regional dishes
+Dialogue: 0,0:06:05.28,0:06:07.81,Default,,0,0,0,,But Japanese food is much more diverse than
+Dialogue: 0,0:06:07.81,0:06:10.13,Default,,0,0,0,,the dishes tourists usually see
+Dialogue: 0,0:06:10.13,0:06:12.71,Default,,0,0,0,,Every region has its own specialties
+Dialogue: 0,0:06:12.71,0:06:15.70,Default,,0,0,0,,In Tokyo you can find almost anything
+Dialogue: 0,0:06:15.70,0:06:18.71,Default,,0,0,0,,In Osaka street food is an important part of
+Dialogue: 0,0:06:18.71,0:06:20.17,Default,,0,0,0,,the city's identity
+Dialogue: 0,0:06:20.17,0:06:23.17,Default,,0,0,0,,In Kyoto traditional cuisine has deep cultural
+Dialogue: 0,0:06:23.17,0:06:24.06,Default,,0,0,0,,roots
+Dialogue: 0,0:06:24.06,0:06:26.38,Default,,0,0,0,,And in northern regions the colder climate
+Dialogue: 0,0:06:26.38,0:06:28.56,Default,,0,0,0,,has influenced local food
+Dialogue: 0,0:06:28.56,0:06:30.52,Default,,0,0,0,,One thing remains important
+Dialogue: 0,0:06:30.52,0:06:31.83,Default,,0,0,0,,Presentation
+Dialogue: 0,0:06:31.83,0:06:33.19,Default,,0,0,0,,Seasonality
+Dialogue: 0,0:06:33.19,0:06:34.28,Default,,0,0,0,,Balance
+Dialogue: 0,0:06:34.28,0:06:35.99,Default,,0,0,0,,And attention to detail
+Dialogue: 0,0:06:35.99,0:06:39.02,Default,,0,0,0,,Even a simple meal can be prepared carefully
+Dialogue: 0,0:06:39.02,0:06:41.96,Default,,0,0,0,,THE RAMEN SHOP Walk through a Japanese city
+Dialogue: 0,0:06:41.96,0:06:44.90,Default,,0,0,0,,late at night and you may see something familiar
+Dialogue: 0,0:06:44.90,0:06:47.83,Default,,0,0,0,,A small ramen shop glowing beneath a sign
+Dialogue: 0,0:06:47.83,0:06:50.52,Default,,0,0,0,,Inside people sit close together
+Dialogue: 0,0:06:50.52,0:06:52.60,Default,,0,0,0,,Steam rises from bowls
+Dialogue: 0,0:06:52.60,0:06:54.71,Default,,0,0,0,,The smell of broth fills the room
+Dialogue: 0,0:06:54.71,0:06:56.56,Default,,0,0,0,,Someone orders noodles
+Dialogue: 0,0:06:56.56,0:06:59.16,Default,,0,0,0,,Someone else finishes a meal after a long day
+Dialogue: 0,0:06:59.16,0:07:00.05,Default,,0,0,0,,at work
+Dialogue: 0,0:07:00.05,0:07:03.02,Default,,0,0,0,,These small restaurants are part of urban life
+Dialogue: 0,0:07:03.02,0:07:05.16,Default,,0,0,0,,They do not need to be enormous
+Dialogue: 0,0:07:05.16,0:07:07.45,Default,,0,0,0,,They simply need to serve good food
+Dialogue: 0,0:07:07.45,0:07:09.98,Default,,0,0,0,,And some of the most memorable experiences
+Dialogue: 0,0:07:09.98,0:07:12.58,Default,,0,0,0,,in Japan happen in places that look almost
+Dialogue: 0,0:07:12.58,0:07:14.59,Default,,0,0,0,,invisible from the outside
+Dialogue: 0,0:07:14.59,0:07:17.59,Default,,0,0,0,,KYOTO Now leave Tokyo behind
+Dialogue: 0,0:07:17.59,0:07:18.88,Default,,0,0,0,,Travel west
+Dialogue: 0,0:07:18.88,0:07:21.59,Default,,0,0,0,,The skyscrapers begin to disappear
+Dialogue: 0,0:07:21.59,0:07:23.38,Default,,0,0,0,,The landscape changes
+Dialogue: 0,0:07:23.38,0:07:24.87,Default,,0,0,0,,And you reach Kyoto
+Dialogue: 0,0:07:24.87,0:07:27.62,Default,,0,0,0,,For centuries Kyoto was one of Japan's most
+Dialogue: 0,0:07:27.62,0:07:29.55,Default,,0,0,0,,important cultural centers
+Dialogue: 0,0:07:29.55,0:07:32.91,Default,,0,0,0,,Today it remains famous for temples gardens
+Dialogue: 0,0:07:32.91,0:07:36.02,Default,,0,0,0,,traditional streets wooden houses and historic
+Dialogue: 0,0:07:36.02,0:07:37.10,Default,,0,0,0,,neighborhoods
+Dialogue: 0,0:07:37.10,0:07:39.44,Default,,0,0,0,,Walk through Kyoto in the early morning and
+Dialogue: 0,0:07:39.44,0:07:41.85,Default,,0,0,0,,the atmosphere can feel completely different
+Dialogue: 0,0:07:41.85,0:07:43.06,Default,,0,0,0,,from Tokyo
+Dialogue: 0,0:07:43.06,0:07:45.16,Default,,0,0,0,,There are fewer skyscrapers
+Dialogue: 0,0:07:45.16,0:07:46.42,Default,,0,0,0,,Less noise
+Dialogue: 0,0:07:46.42,0:07:48.51,Default,,0,0,0,,More traditional architecture
+Dialogue: 0,0:07:48.51,0:07:51.31,Default,,0,0,0,,And countless reminders of Japan's past
+Dialogue: 0,0:07:51.31,0:07:53.99,Default,,0,0,0,,Temples and shrines appear throughout the city
+Dialogue: 0,0:07:53.99,0:07:56.16,Default,,0,0,0,,Gardens are carefully designed
+Dialogue: 0,0:07:56.16,0:07:58.84,Default,,0,0,0,,Small streets lead into older neighborhoods
+Dialogue: 0,0:07:58.84,0:08:01.73,Default,,0,0,0,,And during certain seasons the landscape becomes
+Dialogue: 0,0:08:01.73,0:08:03.09,Default,,0,0,0,,filled with color
+Dialogue: 0,0:08:03.09,0:08:06.67,Default,,0,0,0,,CHERRY BLOSSOM SEASON Few images are more strongly
+Dialogue: 0,0:08:06.67,0:08:09.87,Default,,0,0,0,,associated with Japan than cherry blossoms
+Dialogue: 0,0:08:09.87,0:08:12.58,Default,,0,0,0,,For a short period each spring trees across
+Dialogue: 0,0:08:12.58,0:08:14.26,Default,,0,0,0,,the country begin to bloom
+Dialogue: 0,0:08:14.26,0:08:16.13,Default,,0,0,0,,People gather in parks
+Dialogue: 0,0:08:16.13,0:08:17.42,Default,,0,0,0,,Families meet
+Dialogue: 0,0:08:17.42,0:08:19.53,Default,,0,0,0,,Friends sit beneath the trees
+Dialogue: 0,0:08:19.53,0:08:20.87,Default,,0,0,0,,Cameras come out
+Dialogue: 0,0:08:20.87,0:08:23.31,Default,,0,0,0,,And people celebrate the temporary beauty of
+Dialogue: 0,0:08:23.31,0:08:24.42,Default,,0,0,0,,the flowers
+Dialogue: 0,0:08:24.42,0:08:27.15,Default,,0,0,0,,The blossoms do not last forever
+Dialogue: 0,0:08:27.15,0:08:28.79,Default,,0,0,0,,That is part of their meaning
+Dialogue: 0,0:08:28.79,0:08:29.86,Default,,0,0,0,,They appear
+Dialogue: 0,0:08:29.86,0:08:31.39,Default,,0,0,0,,They reach their peak
+Dialogue: 0,0:08:31.39,0:08:33.00,Default,,0,0,0,,And then they disappear
+Dialogue: 0,0:08:33.00,0:08:34.81,Default,,0,0,0,,The moment is temporary
+Dialogue: 0,0:08:34.81,0:08:37.08,Default,,0,0,0,,And perhaps that is why people appreciate it
+Dialogue: 0,0:08:37.08,0:08:38.25,Default,,0,0,0,,so much
+Dialogue: 0,0:08:38.25,0:08:41.14,Default,,0,0,0,,MOUNT FUJI Beyond the cities stands another
+Dialogue: 0,0:08:41.14,0:08:42.60,Default,,0,0,0,,symbol of Japan
+Dialogue: 0,0:08:42.60,0:08:43.76,Default,,0,0,0,,Mount Fuji
+Dialogue: 0,0:08:43.76,0:08:46.24,Default,,0,0,0,,The perfectly shaped volcanic mountain has
+Dialogue: 0,0:08:46.24,0:08:48.82,Default,,0,0,0,,become one of the country's most recognizable
+Dialogue: 0,0:08:48.82,0:08:49.96,Default,,0,0,0,,landmarks
+Dialogue: 0,0:08:49.96,0:08:53.00,Default,,0,0,0,,For generations it has appeared in paintings
+Dialogue: 0,0:08:53.00,0:08:55.95,Default,,0,0,0,,photographs literature and art
+Dialogue: 0,0:08:55.95,0:08:58.89,Default,,0,0,0,,On a clear day it can dominate the landscape
+Dialogue: 0,0:08:58.89,0:09:01.35,Default,,0,0,0,,But Mount Fuji is not simply a mountain for
+Dialogue: 0,0:09:01.35,0:09:02.32,Default,,0,0,0,,tourists
+Dialogue: 0,0:09:02.32,0:09:05.20,Default,,0,0,0,,It is part of Japanese cultural identity
+Dialogue: 0,0:09:05.20,0:09:06.88,Default,,0,0,0,,People travel to see it
+Dialogue: 0,0:09:06.88,0:09:09.85,Default,,0,0,0,,Photographers wait for the perfect conditions
+Dialogue: 0,0:09:09.85,0:09:11.17,Default,,0,0,0,,Hikers climb it
+Dialogue: 0,0:09:11.17,0:09:13.72,Default,,0,0,0,,And millions of people recognize its silhouette
+Dialogue: 0,0:09:13.72,0:09:14.64,Default,,0,0,0,,instantly
+Dialogue: 0,0:09:14.64,0:09:17.31,Default,,0,0,0,,But Japan is much more than Mount Fuji
+Dialogue: 0,0:09:17.31,0:09:19.74,Default,,0,0,0,,The mountain is only one piece of a country
+Dialogue: 0,0:09:19.74,0:09:22.26,Default,,0,0,0,,that stretches across thousands of kilometers
+Dialogue: 0,0:09:22.26,0:09:23.33,Default,,0,0,0,,of islands
+Dialogue: 0,0:09:23.33,0:09:27.60,Default,,0,0,0,,OSAKA Travel farther west and you reach Osaka
+Dialogue: 0,0:09:27.60,0:09:30.89,Default,,0,0,0,,The city has a different personality from Tokyo
+Dialogue: 0,0:09:30.89,0:09:34.58,Default,,0,0,0,,It is famous for food entertainment commerce
+Dialogue: 0,0:09:34.58,0:09:36.57,Default,,0,0,0,,and a lively street culture
+Dialogue: 0,0:09:36.57,0:09:39.38,Default,,0,0,0,,The streets of Dotonbori glow at night
+Dialogue: 0,0:09:39.38,0:09:41.56,Default,,0,0,0,,Restaurants compete for attention
+Dialogue: 0,0:09:41.56,0:09:43.33,Default,,0,0,0,,Signs cover buildings
+Dialogue: 0,0:09:43.33,0:09:45.67,Default,,0,0,0,,People gather around food stalls
+Dialogue: 0,0:09:45.67,0:09:47.71,Default,,0,0,0,,And the city feels energetic
+Dialogue: 0,0:09:47.71,0:09:50.50,Default,,0,0,0,,Osaka is often associated with dishes such
+Dialogue: 0,0:09:50.50,0:09:53.25,Default,,0,0,0,,as takoyaki and okonomiyaki
+Dialogue: 0,0:09:53.25,0:09:55.75,Default,,0,0,0,,Food is not simply something you eat here
+Dialogue: 0,0:09:55.75,0:09:58.26,Default,,0,0,0,,It is part of the city's personality
+Dialogue: 0,0:09:58.26,0:10:01.17,Default,,0,0,0,,The atmosphere can feel more casual and playful
+Dialogue: 0,0:10:01.17,0:10:04.13,Default,,0,0,0,,than the image many outsiders have of Japan
+Dialogue: 0,0:10:04.13,0:10:06.50,Default,,0,0,0,,NARA Then there is Nara
+Dialogue: 0,0:10:06.50,0:10:08.89,Default,,0,0,0,,The city is famous for its temples and its
+Dialogue: 0,0:10:08.89,0:10:09.67,Default,,0,0,0,,deer
+Dialogue: 0,0:10:09.67,0:10:12.35,Default,,0,0,0,,Walk through certain parks and deer move freely
+Dialogue: 0,0:10:12.35,0:10:13.67,Default,,0,0,0,,around visitors
+Dialogue: 0,0:10:13.67,0:10:16.45,Default,,0,0,0,,They have become one of the city's most recognizable
+Dialogue: 0,0:10:16.45,0:10:17.45,Default,,0,0,0,,sights
+Dialogue: 0,0:10:17.45,0:10:19.65,Default,,0,0,0,,But Nara is more than animals
+Dialogue: 0,0:10:19.65,0:10:22.03,Default,,0,0,0,,It contains some of Japan's most important
+Dialogue: 0,0:10:22.03,0:10:24.38,Default,,0,0,0,,historical and religious sites
+Dialogue: 0,0:10:24.38,0:10:26.36,Default,,0,0,0,,Massive wooden structures
+Dialogue: 0,0:10:26.36,0:10:27.79,Default,,0,0,0,,Ancient temples
+Dialogue: 0,0:10:27.79,0:10:29.46,Default,,0,0,0,,Traditional gardens
+Dialogue: 0,0:10:29.46,0:10:31.83,Default,,0,0,0,,And paths surrounded by trees
+Dialogue: 0,0:10:31.83,0:10:34.43,Default,,0,0,0,,Nara offers another glimpse into the Japan
+Dialogue: 0,0:10:34.43,0:10:37.43,Default,,0,0,0,,that existed long before the skyscrapers
+Dialogue: 0,0:10:37.43,0:10:40.86,Default,,0,0,0,,THE JAPANESE HOME To understand Japan you also
+Dialogue: 0,0:10:40.86,0:10:42.72,Default,,0,0,0,,have to look inside the home
+Dialogue: 0,0:10:42.72,0:10:45.68,Default,,0,0,0,,Japanese houses and apartments can be surprisingly
+Dialogue: 0,0:10:45.68,0:10:48.89,Default,,0,0,0,,compact especially in major cities where space
+Dialogue: 0,0:10:48.89,0:10:50.13,Default,,0,0,0,,is expensive
+Dialogue: 0,0:10:50.13,0:10:52.43,Default,,0,0,0,,Organization becomes important
+Dialogue: 0,0:10:52.43,0:10:54.88,Default,,0,0,0,,Furniture may be designed to serve multiple
+Dialogue: 0,0:10:54.88,0:10:56.00,Default,,0,0,0,,purposes
+Dialogue: 0,0:10:56.00,0:10:58.24,Default,,0,0,0,,Storage is carefully planned
+Dialogue: 0,0:10:58.24,0:11:01.01,Default,,0,0,0,,And cleanliness is strongly emphasized
+Dialogue: 0,0:11:01.01,0:11:04.45,Default,,0,0,0,,In many homes shoes are removed at the entrance
+Dialogue: 0,0:11:04.45,0:11:07.00,Default,,0,0,0,,The boundary between outside and inside is
+Dialogue: 0,0:11:07.00,0:11:07.96,Default,,0,0,0,,important
+Dialogue: 0,0:11:07.96,0:11:10.21,Default,,0,0,0,,The home becomes a place where people leave
+Dialogue: 0,0:11:10.21,0:11:12.41,Default,,0,0,0,,the outside world behind
+Dialogue: 0,0:11:12.41,0:11:15.25,Default,,0,0,0,,In traditional Japanese houses you may find
+Dialogue: 0,0:11:15.25,0:11:19.04,Default,,0,0,0,,tatami floors sliding doors and spaces designed
+Dialogue: 0,0:11:19.04,0:11:20.42,Default,,0,0,0,,around simplicity
+Dialogue: 0,0:11:20.42,0:11:23.14,Default,,0,0,0,,Modern homes may look completely different
+Dialogue: 0,0:11:23.14,0:11:25.53,Default,,0,0,0,,But many still preserve certain traditional
+Dialogue: 0,0:11:25.53,0:11:26.53,Default,,0,0,0,,habits
+Dialogue: 0,0:11:26.53,0:11:30.72,Default,,0,0,0,,TECHNOLOGY EVERYWHERE Japan is famous for technology
+Dialogue: 0,0:11:30.72,0:11:33.18,Default,,0,0,0,,But the reality is more complicated than the
+Dialogue: 0,0:11:33.18,0:11:36.15,Default,,0,0,0,,futuristic image often shown in movies
+Dialogue: 0,0:11:36.15,0:11:39.70,Default,,0,0,0,,Yes Japan has advanced robotics high-speed
+Dialogue: 0,0:11:39.70,0:11:43.07,Default,,0,0,0,,trains sophisticated electronics and automated
+Dialogue: 0,0:11:43.07,0:11:44.11,Default,,0,0,0,,systems
+Dialogue: 0,0:11:44.11,0:11:46.54,Default,,0,0,0,,But you can also walk down a street and find
+Dialogue: 0,0:11:46.54,0:11:48.90,Default,,0,0,0,,an old family restaurant that has existed for
+Dialogue: 0,0:11:48.90,0:11:49.95,Default,,0,0,0,,decades
+Dialogue: 0,0:11:49.95,0:11:52.67,Default,,0,0,0,,You can see traditional crafts beside modern
+Dialogue: 0,0:11:52.67,0:11:54.21,Default,,0,0,0,,convenience stores
+Dialogue: 0,0:11:54.21,0:11:56.61,Default,,0,0,0,,You can find centuries-old temples surrounded
+Dialogue: 0,0:11:56.61,0:11:58.25,Default,,0,0,0,,by digital screens
+Dialogue: 0,0:11:58.25,0:12:01.07,Default,,0,0,0,,This is one of Japan's greatest contrasts
+Dialogue: 0,0:12:01.07,0:12:04.28,Default,,0,0,0,,Technology does not always replace tradition
+Dialogue: 0,0:12:04.28,0:12:07.13,Default,,0,0,0,,Sometimes both exist in the same place
+Dialogue: 0,0:12:07.13,0:12:09.88,Default,,0,0,0,,THE VENDING MACHINE COUNTRY One of the most
+Dialogue: 0,0:12:09.88,0:12:12.82,Default,,0,0,0,,recognizable features of Japanese daily life
+Dialogue: 0,0:12:12.82,0:12:14.17,Default,,0,0,0,,is the vending machine
+Dialogue: 0,0:12:14.17,0:12:17.75,Default,,0,0,0,,They can be found in cities neighborhoods stations
+Dialogue: 0,0:12:17.75,0:12:19.39,Default,,0,0,0,,and other locations
+Dialogue: 0,0:12:19.39,0:12:20.95,Default,,0,0,0,,Some sell drinks
+Dialogue: 0,0:12:20.95,0:12:24.25,Default,,0,0,0,,Others offer food or specialized products
+Dialogue: 0,0:12:24.25,0:12:26.90,Default,,0,0,0,,For visitors they can seem unusual
+Dialogue: 0,0:12:26.90,0:12:29.82,Default,,0,0,0,,For residents they are simply convenient
+Dialogue: 0,0:12:29.82,0:12:32.72,Default,,0,0,0,,Convenience is a major part of Japanese urban
+Dialogue: 0,0:12:32.72,0:12:33.54,Default,,0,0,0,,life
+Dialogue: 0,0:12:33.54,0:12:35.82,Default,,0,0,0,,Convenience stores are everywhere
+Dialogue: 0,0:12:35.82,0:12:37.46,Default,,0,0,0,,People can buy food
+Dialogue: 0,0:12:37.46,0:12:38.53,Default,,0,0,0,,Drinks
+Dialogue: 0,0:12:38.53,0:12:40.01,Default,,0,0,0,,Household items
+Dialogue: 0,0:12:40.01,0:12:41.04,Default,,0,0,0,,Tickets
+Dialogue: 0,0:12:41.04,0:12:43.56,Default,,0,0,0,,And many other everyday necessities
+Dialogue: 0,0:12:43.56,0:12:46.22,Default,,0,0,0,,A person can stop at a convenience store late
+Dialogue: 0,0:12:46.22,0:12:49.51,Default,,0,0,0,,at night and find a surprisingly large selection
+Dialogue: 0,0:12:49.51,0:12:52.26,Default,,0,0,0,,This infrastructure helps keep modern Japanese
+Dialogue: 0,0:12:52.26,0:12:53.45,Default,,0,0,0,,cities moving
+Dialogue: 0,0:12:53.45,0:12:56.72,Default,,0,0,0,,THE WORKING LIFE But behind Japan's efficiency
+Dialogue: 0,0:12:56.72,0:12:58.28,Default,,0,0,0,,is another reality
+Dialogue: 0,0:12:58.28,0:12:59.92,Default,,0,0,0,,Work can be demanding
+Dialogue: 0,0:12:59.92,0:13:02.99,Default,,0,0,0,,Japan has a strong culture of professionalism
+Dialogue: 0,0:13:02.99,0:13:04.53,Default,,0,0,0,,and responsibility
+Dialogue: 0,0:13:04.53,0:13:07.79,Default,,0,0,0,,For some workers the working day can be long
+Dialogue: 0,0:13:07.79,0:13:10.51,Default,,0,0,0,,The pressure to perform can be significant
+Dialogue: 0,0:13:10.51,0:13:13.17,Default,,0,0,0,,And in some industries work culture has become
+Dialogue: 0,0:13:13.17,0:13:15.14,Default,,0,0,0,,an important social issue
+Dialogue: 0,0:13:15.14,0:13:17.95,Default,,0,0,0,,At the same time Japan is changing
+Dialogue: 0,0:13:17.95,0:13:20.06,Default,,0,0,0,,Companies are experimenting with different
+Dialogue: 0,0:13:20.06,0:13:21.42,Default,,0,0,0,,working styles
+Dialogue: 0,0:13:21.42,0:13:23.58,Default,,0,0,0,,Remote work became more common
+Dialogue: 0,0:13:23.58,0:13:26.11,Default,,0,0,0,,Technology is changing offices
+Dialogue: 0,0:13:26.11,0:13:28.39,Default,,0,0,0,,And younger generations may have different
+Dialogue: 0,0:13:28.39,0:13:31.13,Default,,0,0,0,,expectations about work-life balance
+Dialogue: 0,0:13:31.13,0:13:34.08,Default,,0,0,0,,Japan is not frozen in one work culture
+Dialogue: 0,0:13:34.08,0:13:36.89,Default,,0,0,0,,It is negotiating between old expectations
+Dialogue: 0,0:13:36.89,0:13:38.51,Default,,0,0,0,,and new realities
+Dialogue: 0,0:13:38.51,0:13:42.04,Default,,0,0,0,,THE AGING COUNTRY Japan also faces a major
+Dialogue: 0,0:13:42.04,0:13:43.75,Default,,0,0,0,,demographic challenge
+Dialogue: 0,0:13:43.75,0:13:45.76,Default,,0,0,0,,The population is aging
+Dialogue: 0,0:13:45.76,0:13:48.36,Default,,0,0,0,,There are many older people while the number
+Dialogue: 0,0:13:48.36,0:13:50.18,Default,,0,0,0,,of children has declined
+Dialogue: 0,0:13:50.18,0:13:51.82,Default,,0,0,0,,This affects everything
+Dialogue: 0,0:13:51.82,0:13:52.93,Default,,0,0,0,,Schools
+Dialogue: 0,0:13:52.93,0:13:54.04,Default,,0,0,0,,Healthcare
+Dialogue: 0,0:13:54.04,0:13:55.11,Default,,0,0,0,,Pensions
+Dialogue: 0,0:13:55.11,0:13:56.49,Default,,0,0,0,,The workforce
+Dialogue: 0,0:13:56.49,0:13:58.08,Default,,0,0,0,,Rural communities
+Dialogue: 0,0:13:58.08,0:14:00.29,Default,,0,0,0,,And the future of smaller towns
+Dialogue: 0,0:14:00.29,0:14:02.98,Default,,0,0,0,,Some villages are losing population
+Dialogue: 0,0:14:02.98,0:14:05.51,Default,,0,0,0,,Young people often move toward larger cities
+Dialogue: 0,0:14:05.51,0:14:07.50,Default,,0,0,0,,for education and work
+Dialogue: 0,0:14:07.50,0:14:10.24,Default,,0,0,0,,As a result some rural communities have become
+Dialogue: 0,0:14:10.24,0:14:11.24,Default,,0,0,0,,quieter
+Dialogue: 0,0:14:11.24,0:14:12.86,Default,,0,0,0,,Homes remain empty
+Dialogue: 0,0:14:12.86,0:14:14.28,Default,,0,0,0,,Shops close
+Dialogue: 0,0:14:14.28,0:14:16.10,Default,,0,0,0,,Schools become smaller
+Dialogue: 0,0:14:16.10,0:14:19.40,Default,,0,0,0,,This is the other side of Japan's modern success
+Dialogue: 0,0:14:19.40,0:14:23.44,Default,,0,0,0,,THE JAPANESE COUNTRYSIDE Leave Tokyo Osaka
+Dialogue: 0,0:14:23.44,0:14:26.36,Default,,0,0,0,,and Kyoto behind and Japan changes again
+Dialogue: 0,0:14:26.36,0:14:28.92,Default,,0,0,0,,Mountains cover large parts of the country
+Dialogue: 0,0:14:28.92,0:14:31.68,Default,,0,0,0,,Small villages sit between forests
+Dialogue: 0,0:14:31.68,0:14:34.14,Default,,0,0,0,,Rice fields stretch across valleys
+Dialogue: 0,0:14:34.14,0:14:36.10,Default,,0,0,0,,Rivers pass through towns
+Dialogue: 0,0:14:36.10,0:14:39.35,Default,,0,0,0,,And traditional houses remain in rural areas
+Dialogue: 0,0:14:39.35,0:14:41.11,Default,,0,0,0,,Life here can be slower
+Dialogue: 0,0:14:41.11,0:14:42.97,Default,,0,0,0,,People may know their neighbors
+Dialogue: 0,0:14:42.97,0:14:45.53,Default,,0,0,0,,Farmers work according to the seasons
+Dialogue: 0,0:14:45.53,0:14:48.01,Default,,0,0,0,,And the relationship with nature becomes much
+Dialogue: 0,0:14:48.01,0:14:49.15,Default,,0,0,0,,more visible
+Dialogue: 0,0:14:49.15,0:14:52.21,Default,,0,0,0,,But rural Japan also faces challenges
+Dialogue: 0,0:14:52.21,0:14:54.17,Default,,0,0,0,,Young people often leave
+Dialogue: 0,0:14:54.17,0:14:55.78,Default,,0,0,0,,Jobs can be limited
+Dialogue: 0,0:14:55.78,0:14:58.54,Default,,0,0,0,,Public transportation may be less frequent
+Dialogue: 0,0:14:58.54,0:15:01.01,Default,,0,0,0,,And some communities are struggling to maintain
+Dialogue: 0,0:15:01.01,0:15:02.33,Default,,0,0,0,,their population
+Dialogue: 0,0:15:02.33,0:15:05.40,Default,,0,0,0,,Still many people remain deeply connected to
+Dialogue: 0,0:15:05.40,0:15:06.64,Default,,0,0,0,,these places
+Dialogue: 0,0:15:06.64,0:15:09.65,Default,,0,0,0,,THE JAPANESE BATH Another important part of
+Dialogue: 0,0:15:09.65,0:15:11.78,Default,,0,0,0,,Japanese culture is bathing
+Dialogue: 0,0:15:11.78,0:15:15.10,Default,,0,0,0,,Public baths and hot springs have a long history
+Dialogue: 0,0:15:15.10,0:15:18.19,Default,,0,0,0,,Japan is a volcanic country so natural hot
+Dialogue: 0,0:15:18.19,0:15:20.68,Default,,0,0,0,,springs are found in many regions
+Dialogue: 0,0:15:20.68,0:15:22.82,Default,,0,0,0,,People visit them to relax
+Dialogue: 0,0:15:22.82,0:15:25.71,Default,,0,0,0,,Some towns are built around hot spring tourism
+Dialogue: 0,0:15:25.71,0:15:27.99,Default,,0,0,0,,And the experience is about more than getting
+Dialogue: 0,0:15:27.99,0:15:28.79,Default,,0,0,0,,clean
+Dialogue: 0,0:15:28.79,0:15:30.72,Default,,0,0,0,,It can be a way to slow down
+Dialogue: 0,0:15:30.72,0:15:32.19,Default,,0,0,0,,To escape work
+Dialogue: 0,0:15:32.19,0:15:34.04,Default,,0,0,0,,To spend time with family
+Dialogue: 0,0:15:34.04,0:15:36.51,Default,,0,0,0,,Or simply to enjoy the warmth of the water
+Dialogue: 0,0:15:36.51,0:15:38.35,Default,,0,0,0,,while surrounded by nature
+Dialogue: 0,0:15:38.35,0:15:41.15,Default,,0,0,0,,In winter sitting in a hot spring while snow
+Dialogue: 0,0:15:41.15,0:15:43.83,Default,,0,0,0,,falls around you can feel almost unreal
+Dialogue: 0,0:15:43.83,0:15:47.36,Default,,0,0,0,,JAPAN'S FOUR SEASONS Japan's landscapes change
+Dialogue: 0,0:15:47.36,0:15:49.11,Default,,0,0,0,,dramatically through the year
+Dialogue: 0,0:15:49.11,0:15:51.47,Default,,0,0,0,,Spring brings cherry blossoms
+Dialogue: 0,0:15:51.47,0:15:55.37,Default,,0,0,0,,Summer brings heat humidity festivals and green
+Dialogue: 0,0:15:55.37,0:15:56.53,Default,,0,0,0,,landscapes
+Dialogue: 0,0:15:56.53,0:15:59.90,Default,,0,0,0,,Autumn transforms forests into red orange and
+Dialogue: 0,0:15:59.90,0:16:00.76,Default,,0,0,0,,yellow
+Dialogue: 0,0:16:00.76,0:16:02.97,Default,,0,0,0,,Winter covers northern regions and mountain
+Dialogue: 0,0:16:02.97,0:16:04.35,Default,,0,0,0,,areas in snow
+Dialogue: 0,0:16:04.35,0:16:06.42,Default,,0,0,0,,Each season has its own food
+Dialogue: 0,0:16:06.42,0:16:08.03,Default,,0,0,0,,Its own festivals
+Dialogue: 0,0:16:08.03,0:16:09.62,Default,,0,0,0,,Its own atmosphere
+Dialogue: 0,0:16:09.62,0:16:12.19,Default,,0,0,0,,This relationship with seasonal change appears
+Dialogue: 0,0:16:12.19,0:16:14.08,Default,,0,0,0,,throughout Japanese culture
+Dialogue: 0,0:16:14.08,0:16:16.40,Default,,0,0,0,,People notice the first flowers
+Dialogue: 0,0:16:16.40,0:16:17.97,Default,,0,0,0,,The changing leaves
+Dialogue: 0,0:16:17.97,0:16:19.58,Default,,0,0,0,,The first snowfall
+Dialogue: 0,0:16:19.58,0:16:21.90,Default,,0,0,0,,The arrival of seasonal foods
+Dialogue: 0,0:16:21.90,0:16:24.81,Default,,0,0,0,,Nature is not simply background scenery
+Dialogue: 0,0:16:24.81,0:16:26.60,Default,,0,0,0,,It is part of the calendar
+Dialogue: 0,0:16:26.60,0:16:29.87,Default,,0,0,0,,THE NIGHTLIFE When the sun disappears Japan
+Dialogue: 0,0:16:29.87,0:16:31.46,Default,,0,0,0,,does not go to sleep
+Dialogue: 0,0:16:31.46,0:16:33.68,Default,,0,0,0,,Tokyo becomes a different city
+Dialogue: 0,0:16:33.68,0:16:35.79,Default,,0,0,0,,Neon lights fill the streets
+Dialogue: 0,0:16:35.79,0:16:37.75,Default,,0,0,0,,Restaurants become busy
+Dialogue: 0,0:16:37.75,0:16:38.82,Default,,0,0,0,,Bars open
+Dialogue: 0,0:16:38.82,0:16:41.10,Default,,0,0,0,,Train stations remain crowded
+Dialogue: 0,0:16:41.10,0:16:43.57,Default,,0,0,0,,And entertainment districts come alive
+Dialogue: 0,0:16:43.57,0:16:44.68,Default,,0,0,0,,Shibuya
+Dialogue: 0,0:16:44.68,0:16:45.87,Default,,0,0,0,,Shinjuku
+Dialogue: 0,0:16:45.87,0:16:47.10,Default,,0,0,0,,Dotonbori
+Dialogue: 0,0:16:47.10,0:16:49.64,Default,,0,0,0,,These places can remain active late into the
+Dialogue: 0,0:16:49.64,0:16:50.39,Default,,0,0,0,,night
+Dialogue: 0,0:16:50.39,0:16:52.92,Default,,0,0,0,,But walk a few streets away and the noise can
+Dialogue: 0,0:16:52.92,0:16:54.68,Default,,0,0,0,,suddenly disappear
+Dialogue: 0,0:16:54.68,0:16:57.92,Default,,0,0,0,,A small residential street can be almost silent
+Dialogue: 0,0:16:57.92,0:17:00.76,Default,,0,0,0,,This contrast is another feature of Japanese
+Dialogue: 0,0:17:00.76,0:17:01.74,Default,,0,0,0,,cities
+Dialogue: 0,0:17:01.74,0:17:05.01,Default,,0,0,0,,Extremely crowded and extremely quiet can exist
+Dialogue: 0,0:17:05.01,0:17:06.49,Default,,0,0,0,,only minutes apart
+Dialogue: 0,0:17:06.49,0:17:09.86,Default,,0,0,0,,TRADITION AND POP CULTURE Japan has given the
+Dialogue: 0,0:17:09.86,0:17:13.06,Default,,0,0,0,,world an enormous amount of popular culture
+Dialogue: 0,0:17:13.06,0:17:14.03,Default,,0,0,0,,Anime
+Dialogue: 0,0:17:14.03,0:17:15.03,Default,,0,0,0,,Manga
+Dialogue: 0,0:17:15.03,0:17:16.46,Default,,0,0,0,,Video games
+Dialogue: 0,0:17:16.46,0:17:17.47,Default,,0,0,0,,Fashion
+Dialogue: 0,0:17:17.47,0:17:18.46,Default,,0,0,0,,Music
+Dialogue: 0,0:17:18.46,0:17:19.33,Default,,0,0,0,,Film
+Dialogue: 0,0:17:19.33,0:17:22.40,Default,,0,0,0,,And characters recognized almost everywhere
+Dialogue: 0,0:17:22.40,0:17:25.24,Default,,0,0,0,,For young people these forms of culture can
+Dialogue: 0,0:17:25.24,0:17:27.32,Default,,0,0,0,,be a major part of identity
+Dialogue: 0,0:17:27.32,0:17:29.96,Default,,0,0,0,,But traditional culture remains visible
+Dialogue: 0,0:17:29.96,0:17:31.43,Default,,0,0,0,,Tea ceremonies
+Dialogue: 0,0:17:31.43,0:17:32.58,Default,,0,0,0,,Calligraphy
+Dialogue: 0,0:17:32.58,0:17:34.03,Default,,0,0,0,,Martial arts
+Dialogue: 0,0:17:34.03,0:17:35.65,Default,,0,0,0,,Traditional theater
+Dialogue: 0,0:17:35.65,0:17:36.93,Default,,0,0,0,,Festivals
+Dialogue: 0,0:17:36.93,0:17:38.29,Default,,0,0,0,,Craftsmanship
+Dialogue: 0,0:17:38.29,0:17:40.24,Default,,0,0,0,,And religious practices
+Dialogue: 0,0:17:40.24,0:17:43.20,Default,,0,0,0,,Japan did not choose between old and new
+Dialogue: 0,0:17:43.20,0:17:44.76,Default,,0,0,0,,It developed both
+Dialogue: 0,0:17:44.76,0:17:48.47,Default,,0,0,0,,THE TEMPLES AND SHRINES Throughout Japan temples
+Dialogue: 0,0:17:48.47,0:17:51.08,Default,,0,0,0,,and shrines remain part of everyday life
+Dialogue: 0,0:17:51.08,0:17:52.79,Default,,0,0,0,,People visit to pray
+Dialogue: 0,0:17:52.79,0:17:54.72,Default,,0,0,0,,To celebrate festivals
+Dialogue: 0,0:17:54.72,0:17:56.67,Default,,0,0,0,,To mark important moments
+Dialogue: 0,0:17:56.67,0:17:59.42,Default,,0,0,0,,Or simply to walk through peaceful spaces
+Dialogue: 0,0:17:59.42,0:18:01.56,Default,,0,0,0,,Some are enormous and famous
+Dialogue: 0,0:18:01.56,0:18:04.00,Default,,0,0,0,,Others are tiny neighborhood shrines that most
+Dialogue: 0,0:18:04.00,0:18:05.58,Default,,0,0,0,,tourists never see
+Dialogue: 0,0:18:05.58,0:18:07.33,Default,,0,0,0,,A red torii gate
+Dialogue: 0,0:18:07.33,0:18:08.72,Default,,0,0,0,,A stone path
+Dialogue: 0,0:18:08.72,0:18:10.63,Default,,0,0,0,,A small wooden structure
+Dialogue: 0,0:18:10.63,0:18:11.71,Default,,0,0,0,,Lanterns
+Dialogue: 0,0:18:11.71,0:18:12.76,Default,,0,0,0,,Trees
+Dialogue: 0,0:18:12.76,0:18:15.83,Default,,0,0,0,,These details can exist quietly inside a modern
+Dialogue: 0,0:18:15.83,0:18:16.64,Default,,0,0,0,,city
+Dialogue: 0,0:18:16.64,0:18:19.04,Default,,0,0,0,,The sacred and the ordinary can occupy the
+Dialogue: 0,0:18:19.04,0:18:20.31,Default,,0,0,0,,same neighborhood
+Dialogue: 0,0:18:20.31,0:18:23.56,Default,,0,0,0,,THE PEOPLE OF JAPAN For all the technology
+Dialogue: 0,0:18:23.56,0:18:27.74,Default,,0,0,0,,trains skyscrapers and famous tourist attractions
+Dialogue: 0,0:18:27.74,0:18:30.10,Default,,0,0,0,,Japan is ultimately about people
+Dialogue: 0,0:18:30.10,0:18:32.32,Default,,0,0,0,,Workers rushing through stations
+Dialogue: 0,0:18:32.32,0:18:34.20,Default,,0,0,0,,Children walking to school
+Dialogue: 0,0:18:34.20,0:18:35.90,Default,,0,0,0,,Families eating dinner
+Dialogue: 0,0:18:35.90,0:18:38.36,Default,,0,0,0,,Shop owners opening their businesses
+Dialogue: 0,0:18:38.36,0:18:40.68,Default,,0,0,0,,Farmers working in rice fields
+Dialogue: 0,0:18:40.68,0:18:43.81,Default,,0,0,0,,Elderly people walking through quiet neighborhoods
+Dialogue: 0,0:18:43.81,0:18:45.90,Default,,0,0,0,,Young people meeting friends
+Dialogue: 0,0:18:45.90,0:18:48.03,Default,,0,0,0,,Tourists taking photographs
+Dialogue: 0,0:18:48.03,0:18:50.25,Default,,0,0,0,,Millions of individual lives moving through
+Dialogue: 0,0:18:50.25,0:18:51.60,Default,,0,0,0,,the same country
+Dialogue: 0,0:18:51.60,0:18:54.70,Default,,0,0,0,,Every person experiences a different Japan
+Dialogue: 0,0:18:54.70,0:18:57.38,Default,,0,0,0,,There is no single Japanese lifestyle
+Dialogue: 0,0:18:57.38,0:18:58.81,Default,,0,0,0,,There is Tokyo
+Dialogue: 0,0:18:58.81,0:19:00.03,Default,,0,0,0,,There is Kyoto
+Dialogue: 0,0:19:00.03,0:19:01.47,Default,,0,0,0,,There is Osaka
+Dialogue: 0,0:19:01.47,0:19:03.32,Default,,0,0,0,,There are mountain villages
+Dialogue: 0,0:19:03.32,0:19:05.06,Default,,0,0,0,,There are northern towns
+Dialogue: 0,0:19:05.06,0:19:07.64,Default,,0,0,0,,There are tropical islands in Okinawa
+Dialogue: 0,0:19:07.64,0:19:10.28,Default,,0,0,0,,And there are countless communities in between
+Dialogue: 0,0:19:10.28,0:19:13.36,Default,,0,0,0,,THE JAPAN TOURISTS DON'T SEE Most visitors
+Dialogue: 0,0:19:13.36,0:19:15.07,Default,,0,0,0,,see the famous Japan
+Dialogue: 0,0:19:15.07,0:19:16.18,Default,,0,0,0,,Shibuya
+Dialogue: 0,0:19:16.18,0:19:17.35,Default,,0,0,0,,Mount Fuji
+Dialogue: 0,0:19:17.35,0:19:18.76,Default,,0,0,0,,Kyoto temples
+Dialogue: 0,0:19:18.76,0:19:20.32,Default,,0,0,0,,Cherry blossoms
+Dialogue: 0,0:19:20.32,0:19:21.72,Default,,0,0,0,,Bullet trains
+Dialogue: 0,0:19:21.72,0:19:22.86,Default,,0,0,0,,Sushi
+Dialogue: 0,0:19:22.86,0:19:25.20,Default,,0,0,0,,But everyday Japan is quieter
+Dialogue: 0,0:19:25.20,0:19:28.07,Default,,0,0,0,,It is buying breakfast at a convenience store
+Dialogue: 0,0:19:28.07,0:19:29.58,Default,,0,0,0,,Waiting for a train
+Dialogue: 0,0:19:29.58,0:19:30.81,Default,,0,0,0,,Going to work
+Dialogue: 0,0:19:30.81,0:19:32.61,Default,,0,0,0,,Taking children to school
+Dialogue: 0,0:19:32.61,0:19:34.07,Default,,0,0,0,,Cleaning the house
+Dialogue: 0,0:19:34.07,0:19:35.90,Default,,0,0,0,,Shopping for groceries
+Dialogue: 0,0:19:35.90,0:19:37.63,Default,,0,0,0,,Visiting grandparents
+Dialogue: 0,0:19:37.63,0:19:39.56,Default,,0,0,0,,Going to a local restaurant
+Dialogue: 0,0:19:39.56,0:19:41.90,Default,,0,0,0,,And returning home at the end of the day
+Dialogue: 0,0:19:41.90,0:19:44.33,Default,,0,0,0,,The extraordinary becomes ordinary when you
+Dialogue: 0,0:19:44.33,0:19:45.32,Default,,0,0,0,,live there
+Dialogue: 0,0:19:45.32,0:19:47.78,Default,,0,0,0,,The famous Shibuya crossing becomes a place
+Dialogue: 0,0:19:47.78,0:19:49.45,Default,,0,0,0,,you simply pass through
+Dialogue: 0,0:19:49.45,0:19:51.54,Default,,0,0,0,,Mount Fuji becomes a mountain you see from
+Dialogue: 0,0:19:51.54,0:19:52.64,Default,,0,0,0,,a train
+Dialogue: 0,0:19:52.64,0:19:54.89,Default,,0,0,0,,A centuries-old temple becomes part of your
+Dialogue: 0,0:19:54.89,0:19:55.86,Default,,0,0,0,,neighborhood
+Dialogue: 0,0:19:55.86,0:19:58.42,Default,,0,0,0,,This is the difference between visiting Japan
+Dialogue: 0,0:19:58.42,0:20:00.02,Default,,0,0,0,,and living in Japan
+Dialogue: 0,0:20:00.02,0:20:03.18,Default,,0,0,0,,THE FUTURE OF JAPAN Japan is entering a new
+Dialogue: 0,0:20:03.18,0:20:04.16,Default,,0,0,0,,chapter
+Dialogue: 0,0:20:04.16,0:20:07.03,Default,,0,0,0,,Technology will continue changing the country
+Dialogue: 0,0:20:07.03,0:20:10.10,Default,,0,0,0,,Artificial intelligence and robotics may become
+Dialogue: 0,0:20:10.10,0:20:13.38,Default,,0,0,0,,increasingly important as the population ages
+Dialogue: 0,0:20:13.38,0:20:15.60,Default,,0,0,0,,Cities will continue developing
+Dialogue: 0,0:20:15.60,0:20:17.71,Default,,0,0,0,,Tourism will remain important
+Dialogue: 0,0:20:17.71,0:20:20.54,Default,,0,0,0,,And young people will continue redefining Japanese
+Dialogue: 0,0:20:20.54,0:20:21.49,Default,,0,0,0,,culture
+Dialogue: 0,0:20:21.49,0:20:23.89,Default,,0,0,0,,But the country must also answer difficult
+Dialogue: 0,0:20:23.89,0:20:24.96,Default,,0,0,0,,questions
+Dialogue: 0,0:20:24.96,0:20:27.54,Default,,0,0,0,,How can it support an aging population
+Dialogue: 0,0:20:27.54,0:20:29.84,Default,,0,0,0,,How can rural communities survive
+Dialogue: 0,0:20:29.84,0:20:32.77,Default,,0,0,0,,How can young families afford to raise children
+Dialogue: 0,0:20:32.77,0:20:35.16,Default,,0,0,0,,How can Japan maintain its traditions while
+Dialogue: 0,0:20:35.16,0:20:37.99,Default,,0,0,0,,becoming more connected to the global economy
+Dialogue: 0,0:20:37.99,0:20:39.95,Default,,0,0,0,,And how can it preserve the things that make
+Dialogue: 0,0:20:39.95,0:20:41.35,Default,,0,0,0,,the country unique
+Dialogue: 0,0:20:41.35,0:20:43.34,Default,,0,0,0,,There are no easy answers
+Dialogue: 0,0:20:43.34,0:20:46.43,Default,,0,0,0,,But Japan has already demonstrated an extraordinary
+Dialogue: 0,0:20:46.43,0:20:48.02,Default,,0,0,0,,ability to adapt
+Dialogue: 0,0:20:48.02,0:20:51.66,Default,,0,0,0,,FINAL REFLECTION At night Tokyo glows beneath
+Dialogue: 0,0:20:51.66,0:20:53.14,Default,,0,0,0,,thousands of lights
+Dialogue: 0,0:20:53.14,0:20:55.29,Default,,0,0,0,,A train arrives at a station
+Dialogue: 0,0:20:55.29,0:20:56.42,Default,,0,0,0,,Doors open
+Dialogue: 0,0:20:56.42,0:20:57.88,Default,,0,0,0,,People step out
+Dialogue: 0,0:20:57.88,0:20:59.04,Default,,0,0,0,,Others enter
+Dialogue: 0,0:20:59.04,0:21:00.77,Default,,0,0,0,,The train leaves again
+Dialogue: 0,0:21:00.77,0:21:04.28,Default,,0,0,0,,Far away in Kyoto a temple stands quietly beneath
+Dialogue: 0,0:21:04.28,0:21:05.45,Default,,0,0,0,,the night sky
+Dialogue: 0,0:21:05.45,0:21:08.56,Default,,0,0,0,,In a mountain village a family prepares dinner
+Dialogue: 0,0:21:08.56,0:21:11.43,Default,,0,0,0,,In Osaka restaurants remain busy
+Dialogue: 0,0:21:11.43,0:21:14.20,Default,,0,0,0,,Near Mount Fuji the landscape becomes dark
+Dialogue: 0,0:21:14.20,0:21:15.29,Default,,0,0,0,,and silent
+Dialogue: 0,0:21:15.29,0:21:17.77,Default,,0,0,0,,And somewhere in the countryside an elderly
+Dialogue: 0,0:21:17.77,0:21:20.20,Default,,0,0,0,,farmer prepares for another morning
+Dialogue: 0,0:21:20.20,0:21:21.57,Default,,0,0,0,,This is Japan
+Dialogue: 0,0:21:21.57,0:21:24.31,Default,,0,0,0,,A country where the future and the past exist
+Dialogue: 0,0:21:24.31,0:21:25.79,Default,,0,0,0,,side by side
+Dialogue: 0,0:21:25.79,0:21:28.27,Default,,0,0,0,,A country where ancient temples stand beside
+Dialogue: 0,0:21:28.27,0:21:29.60,Default,,0,0,0,,modern towers
+Dialogue: 0,0:21:29.60,0:21:31.96,Default,,0,0,0,,Where bullet trains cross landscapes that have
+Dialogue: 0,0:21:31.96,0:21:34.36,Default,,0,0,0,,been shaped by centuries of history
+Dialogue: 0,0:21:34.36,0:21:36.53,Default,,0,0,0,,Where children grow up with smartphones but
+Dialogue: 0,0:21:36.53,0:21:39.13,Default,,0,0,0,,still participate in traditions their grandparents
+Dialogue: 0,0:21:39.13,0:21:39.85,Default,,0,0,0,,knew
+Dialogue: 0,0:21:39.85,0:21:42.82,Default,,0,0,0,,Where the world's busiest cities exist alongside
+Dialogue: 0,0:21:42.82,0:21:44.32,Default,,0,0,0,,quiet villages
+Dialogue: 0,0:21:44.32,0:21:46.25,Default,,0,0,0,,Japan is not perfect
+Dialogue: 0,0:21:46.25,0:21:48.60,Default,,0,0,0,,It faces an aging population
+Dialogue: 0,0:21:48.60,0:21:50.28,Default,,0,0,0,,Changing work culture
+Dialogue: 0,0:21:50.28,0:21:51.67,Default,,0,0,0,,Rural decline
+Dialogue: 0,0:21:51.67,0:21:53.38,Default,,0,0,0,,Economic pressures
+Dialogue: 0,0:21:53.38,0:21:55.60,Default,,0,0,0,,And the difficult question of how to preserve
+Dialogue: 0,0:21:55.60,0:21:58.22,Default,,0,0,0,,tradition in a rapidly changing world
+Dialogue: 0,0:21:58.22,0:22:00.79,Default,,0,0,0,,But perhaps that is exactly what makes Japan
+Dialogue: 0,0:22:00.79,0:22:02.25,Default,,0,0,0,,so fascinating
+Dialogue: 0,0:22:02.25,0:22:04.81,Default,,0,0,0,,It is constantly changing without completely
+Dialogue: 0,0:22:04.81,0:22:06.57,Default,,0,0,0,,forgetting where it came from
+Dialogue: 0,0:22:06.57,0:22:09.49,Default,,0,0,0,,The real Japan is not just neon lights
+Dialogue: 0,0:22:09.49,0:22:11.25,Default,,0,0,0,,It is not just sushi
+Dialogue: 0,0:22:11.25,0:22:12.93,Default,,0,0,0,,It is not just anime
+Dialogue: 0,0:22:12.93,0:22:14.88,Default,,0,0,0,,It is not just Mount Fuji
+Dialogue: 0,0:22:14.88,0:22:17.81,Default,,0,0,0,,It is millions of ordinary people living ordinary
+Dialogue: 0,0:22:17.81,0:22:20.81,Default,,0,0,0,,lives inside one of the world's most extraordinary
+Dialogue: 0,0:22:20.81,0:22:21.88,Default,,0,0,0,,countries
+Dialogue: 0,0:22:21.88,0:22:23.25,Default,,0,0,0,,This is Japan
+Dialogue: 0,0:22:23.25,0:22:25.20,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:22:25.20,0:22:26.60,Default,,0,0,0,,Life Beyond the Limits
