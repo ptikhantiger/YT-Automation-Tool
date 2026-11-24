@@ -1,0 +1,679 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:03.13,Default,,0,0,0,,LIFE IN DUBAI THE HIDDEN SIDE OF A CITY BUILT
+Dialogue: 0,0:00:03.13,0:00:06.13,Default,,0,0,0,,IN THE DESERT At 2 in the afternoon the pavement
+Dialogue: 0,0:00:06.13,0:00:09.27,Default,,0,0,0,,in Dubai can become so hot that standing outside
+Dialogue: 0,0:00:09.27,0:00:11.36,Default,,0,0,0,,feels like stepping into an oven
+Dialogue: 0,0:00:11.36,0:00:14.08,Default,,0,0,0,,And yet just a few minutes away people are
+Dialogue: 0,0:00:14.08,0:00:15.72,Default,,0,0,0,,skiing on real snow
+Dialogue: 0,0:00:15.72,0:00:17.98,Default,,0,0,0,,Outside there is a desert
+Dialogue: 0,0:00:17.98,0:00:20.52,Default,,0,0,0,,Inside there are shopping malls larger than
+Dialogue: 0,0:00:20.52,0:00:22.15,Default,,0,0,0,,entire neighborhoods
+Dialogue: 0,0:00:22.15,0:00:25.84,Default,,0,0,0,,Above you skyscrapers disappear into the clouds
+Dialogue: 0,0:00:25.84,0:00:28.38,Default,,0,0,0,,Below you trains move silently through one
+Dialogue: 0,0:00:28.38,0:00:30.69,Default,,0,0,0,,of the busiest cities in the Middle East
+Dialogue: 0,0:00:30.69,0:00:34.41,Default,,0,0,0,,And somewhere between the luxury hotels supercars
+Dialogue: 0,0:00:34.41,0:00:38.17,Default,,0,0,0,,artificial islands construction sites old markets
+Dialogue: 0,0:00:38.17,0:00:40.48,Default,,0,0,0,,and desert villages is a completely different
+Dialogue: 0,0:00:40.48,0:00:41.31,Default,,0,0,0,,Dubai
+Dialogue: 0,0:00:41.31,0:00:43.79,Default,,0,0,0,,A Dubai most tourists never see
+Dialogue: 0,0:00:43.79,0:00:46.70,Default,,0,0,0,,Because this city is built on a contradiction
+Dialogue: 0,0:00:46.70,0:00:48.74,Default,,0,0,0,,It looks incredibly rich
+Dialogue: 0,0:00:48.74,0:00:51.27,Default,,0,0,0,,But millions of people come here to work
+Dialogue: 0,0:00:51.27,0:00:52.91,Default,,0,0,0,,It looks futuristic
+Dialogue: 0,0:00:52.91,0:00:55.54,Default,,0,0,0,,But parts of the city are built around traditions
+Dialogue: 0,0:00:55.54,0:00:57.09,Default,,0,0,0,,that are centuries old
+Dialogue: 0,0:00:57.09,0:00:59.79,Default,,0,0,0,,It looks like a city that appeared overnight
+Dialogue: 0,0:00:59.79,0:01:02.36,Default,,0,0,0,,But behind those skyscrapers are decades of
+Dialogue: 0,0:01:02.36,0:01:06.11,Default,,0,0,0,,risk construction migration and ambition
+Dialogue: 0,0:01:06.11,0:01:08.54,Default,,0,0,0,,So what is it actually like to live here
+Dialogue: 0,0:01:08.54,0:01:10.05,Default,,0,0,0,,Who builds this city
+Dialogue: 0,0:01:10.05,0:01:12.98,Default,,0,0,0,,What happens when the temperature becomes unbearable
+Dialogue: 0,0:01:12.98,0:01:15.06,Default,,0,0,0,,How can people live comfortably in the middle
+Dialogue: 0,0:01:15.06,0:01:16.11,Default,,0,0,0,,of a desert
+Dialogue: 0,0:01:16.11,0:01:18.02,Default,,0,0,0,,And what does Dubai look like when you leave
+Dialogue: 0,0:01:18.02,0:01:20.09,Default,,0,0,0,,the tourist areas behind
+Dialogue: 0,0:01:20.09,0:01:21.48,Default,,0,0,0,,Welcome to Dubai
+Dialogue: 0,0:01:21.48,0:01:23.42,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:23.42,0:01:25.23,Default,,0,0,0,,Life Beyond the Limits
+Dialogue: 0,0:01:25.23,0:01:27.94,Default,,0,0,0,,BEFORE THE CITY WAKES UP Before the lights
+Dialogue: 0,0:01:27.94,0:01:30.97,Default,,0,0,0,,of Dubai become visible another city is already
+Dialogue: 0,0:01:30.97,0:01:31.87,Default,,0,0,0,,awake
+Dialogue: 0,0:01:31.87,0:01:34.29,Default,,0,0,0,,A worker leaves his accommodation
+Dialogue: 0,0:01:34.29,0:01:37.12,Default,,0,0,0,,A taxi moves through nearly empty streets
+Dialogue: 0,0:01:37.12,0:01:39.51,Default,,0,0,0,,A baker begins preparing food
+Dialogue: 0,0:01:39.51,0:01:42.08,Default,,0,0,0,,A cleaner starts work inside a building that
+Dialogue: 0,0:01:42.08,0:01:44.08,Default,,0,0,0,,tourists will enter hours later
+Dialogue: 0,0:01:44.08,0:01:46.56,Default,,0,0,0,,A delivery driver begins another day
+Dialogue: 0,0:01:46.56,0:01:48.99,Default,,0,0,0,,And somewhere high above the city the first
+Dialogue: 0,0:01:48.99,0:01:51.19,Default,,0,0,0,,sunlight hits the glass towers
+Dialogue: 0,0:01:51.19,0:01:54.47,Default,,0,0,0,,Dubai is often presented as a city of luxury
+Dialogue: 0,0:01:54.47,0:01:56.95,Default,,0,0,0,,But luxury is only one layer
+Dialogue: 0,0:01:56.95,0:01:59.70,Default,,0,0,0,,Behind every hotel room that looks perfect
+Dialogue: 0,0:01:59.70,0:02:00.99,Default,,0,0,0,,someone cleaned it
+Dialogue: 0,0:02:00.99,0:02:03.74,Default,,0,0,0,,Behind every restaurant meal someone prepared
+Dialogue: 0,0:02:03.74,0:02:04.30,Default,,0,0,0,,it
+Dialogue: 0,0:02:04.30,0:02:07.51,Default,,0,0,0,,Behind every glass skyscraper thousands of
+Dialogue: 0,0:02:07.51,0:02:10.06,Default,,0,0,0,,people worked to build and maintain it
+Dialogue: 0,0:02:10.06,0:02:12.83,Default,,0,0,0,,And this is where the story becomes interesting
+Dialogue: 0,0:02:12.83,0:02:15.52,Default,,0,0,0,,Because Dubai is not just a city where people
+Dialogue: 0,0:02:15.52,0:02:16.93,Default,,0,0,0,,come to spend money
+Dialogue: 0,0:02:16.93,0:02:19.88,Default,,0,0,0,,It is a city where people come to build lives
+Dialogue: 0,0:02:19.88,0:02:23.59,Default,,0,0,0,,THE CITY BUILT ON SAND Look at Dubai from above
+Dialogue: 0,0:02:23.59,0:02:26.70,Default,,0,0,0,,and the transformation is difficult to understand
+Dialogue: 0,0:02:26.70,0:02:29.31,Default,,0,0,0,,The desert stretches toward the horizon
+Dialogue: 0,0:02:29.31,0:02:32.33,Default,,0,0,0,,Then suddenly towers rise from the sand
+Dialogue: 0,0:02:32.33,0:02:34.33,Default,,0,0,0,,Roads cut through the landscape
+Dialogue: 0,0:02:34.33,0:02:37.02,Default,,0,0,0,,Artificial islands extend into the sea
+Dialogue: 0,0:02:37.02,0:02:38.73,Default,,0,0,0,,Hotels line the coast
+Dialogue: 0,0:02:38.73,0:02:41.43,Default,,0,0,0,,Massive shopping centers glow at night
+Dialogue: 0,0:02:41.43,0:02:43.87,Default,,0,0,0,,It almost looks like someone took a futuristic
+Dialogue: 0,0:02:43.87,0:02:46.27,Default,,0,0,0,,city and dropped it into a desert
+Dialogue: 0,0:02:46.27,0:02:48.43,Default,,0,0,0,,But the desert never disappeared
+Dialogue: 0,0:02:48.43,0:02:49.77,Default,,0,0,0,,It is still there
+Dialogue: 0,0:02:49.77,0:02:51.68,Default,,0,0,0,,Just outside the towers
+Dialogue: 0,0:02:51.68,0:02:53.34,Default,,0,0,0,,Beyond the highways
+Dialogue: 0,0:02:53.34,0:02:54.95,Default,,0,0,0,,Behind the resorts
+Dialogue: 0,0:02:54.95,0:02:56.11,Default,,0,0,0,,Under the heat
+Dialogue: 0,0:02:56.11,0:02:59.56,Default,,0,0,0,,And that creates one of Dubai's greatest contradictions
+Dialogue: 0,0:02:59.56,0:03:02.38,Default,,0,0,0,,The city has spent enormous effort controlling
+Dialogue: 0,0:03:02.38,0:03:04.64,Default,,0,0,0,,an environment that was never designed for
+Dialogue: 0,0:03:04.64,0:03:06.91,Default,,0,0,0,,a giant modern metropolis
+Dialogue: 0,0:03:06.91,0:03:10.52,Default,,0,0,0,,THE HEAT During the hottest months Dubai changes
+Dialogue: 0,0:03:10.52,0:03:11.70,Default,,0,0,0,,its behavior
+Dialogue: 0,0:03:11.70,0:03:14.27,Default,,0,0,0,,People plan their day around the temperature
+Dialogue: 0,0:03:14.27,0:03:16.78,Default,,0,0,0,,Outdoor work becomes more difficult
+Dialogue: 0,0:03:16.78,0:03:19.09,Default,,0,0,0,,Air conditioning becomes essential
+Dialogue: 0,0:03:19.09,0:03:22.02,Default,,0,0,0,,Cars become temporary shelters from the heat
+Dialogue: 0,0:03:22.02,0:03:24.46,Default,,0,0,0,,Shopping malls become places to escape the
+Dialogue: 0,0:03:24.46,0:03:25.28,Default,,0,0,0,,weather
+Dialogue: 0,0:03:25.28,0:03:27.85,Default,,0,0,0,,And even simple activities such as walking
+Dialogue: 0,0:03:27.85,0:03:29.81,Default,,0,0,0,,can feel completely different
+Dialogue: 0,0:03:29.81,0:03:32.42,Default,,0,0,0,,Dubai's summer climate can reach the mid-40s
+Dialogue: 0,0:03:32.42,0:03:33.54,Default,,0,0,0,,Celsius
+Dialogue: 0,0:03:33.54,0:03:36.32,Default,,0,0,0,,That is not the kind of heat you simply ignore
+Dialogue: 0,0:03:36.32,0:03:38.73,Default,,0,0,0,,It changes how the city functions
+Dialogue: 0,0:03:38.73,0:03:41.60,Default,,0,0,0,,People move between air-conditioned spaces
+Dialogue: 0,0:03:41.60,0:03:43.85,Default,,0,0,0,,Buildings are designed around cooling
+Dialogue: 0,0:03:43.85,0:03:46.28,Default,,0,0,0,,Cars are cooled before people enter them
+Dialogue: 0,0:03:46.28,0:03:49.00,Default,,0,0,0,,And indoor spaces become extensions of everyday
+Dialogue: 0,0:03:49.00,0:03:49.86,Default,,0,0,0,,life
+Dialogue: 0,0:03:49.86,0:03:52.82,Default,,0,0,0,,This is the first secret of surviving Dubai
+Dialogue: 0,0:03:52.82,0:03:54.74,Default,,0,0,0,,You do not defeat the heat
+Dialogue: 0,0:03:54.74,0:03:57.28,Default,,0,0,0,,You build your entire routine around it
+Dialogue: 0,0:03:57.28,0:04:00.38,Default,,0,0,0,,THE STRANGEST PLACE TO ESCAPE THE DESERT Now
+Dialogue: 0,0:04:00.38,0:04:02.48,Default,,0,0,0,,imagine walking through the desert
+Dialogue: 0,0:04:02.48,0:04:03.85,Default,,0,0,0,,The air is hot
+Dialogue: 0,0:04:03.85,0:04:06.24,Default,,0,0,0,,The sand stretches for kilometers
+Dialogue: 0,0:04:06.24,0:04:08.10,Default,,0,0,0,,There is almost no shade
+Dialogue: 0,0:04:08.10,0:04:09.60,Default,,0,0,0,,Then you enter a building
+Dialogue: 0,0:04:09.60,0:04:12.07,Default,,0,0,0,,Suddenly everything changes
+Dialogue: 0,0:04:12.07,0:04:13.18,Default,,0,0,0,,Cold air
+Dialogue: 0,0:04:13.18,0:04:14.25,Default,,0,0,0,,Shops
+Dialogue: 0,0:04:14.25,0:04:15.53,Default,,0,0,0,,Restaurants
+Dialogue: 0,0:04:15.53,0:04:16.88,Default,,0,0,0,,Escalators
+Dialogue: 0,0:04:16.88,0:04:18.09,Default,,0,0,0,,Cafes
+Dialogue: 0,0:04:18.09,0:04:19.91,Default,,0,0,0,,Artificial waterfalls
+Dialogue: 0,0:04:19.91,0:04:21.17,Default,,0,0,0,,Aquariums
+Dialogue: 0,0:04:21.17,0:04:22.38,Default,,0,0,0,,Entertainment
+Dialogue: 0,0:04:22.38,0:04:25.24,Default,,0,0,0,,And in some places even indoor snow
+Dialogue: 0,0:04:25.24,0:04:28.02,Default,,0,0,0,,Dubai has turned climate control into an everyday
+Dialogue: 0,0:04:28.02,0:04:29.28,Default,,0,0,0,,experience
+Dialogue: 0,0:04:29.28,0:04:31.61,Default,,0,0,0,,The city doesn't simply protect people from
+Dialogue: 0,0:04:31.61,0:04:32.61,Default,,0,0,0,,the desert
+Dialogue: 0,0:04:32.61,0:04:35.20,Default,,0,0,0,,It creates an alternative environment inside
+Dialogue: 0,0:04:35.20,0:04:36.21,Default,,0,0,0,,buildings
+Dialogue: 0,0:04:36.21,0:04:39.10,Default,,0,0,0,,That is why Dubai can feel almost surreal
+Dialogue: 0,0:04:39.10,0:04:40.91,Default,,0,0,0,,Outside is one world
+Dialogue: 0,0:04:40.91,0:04:42.52,Default,,0,0,0,,Inside is another
+Dialogue: 0,0:04:42.52,0:04:44.92,Default,,0,0,0,,And sometimes the difference is only a glass
+Dialogue: 0,0:04:44.92,0:04:45.73,Default,,0,0,0,,door
+Dialogue: 0,0:04:45.73,0:04:48.34,Default,,0,0,0,,THE BURJ KHALIFA Then there is the building
+Dialogue: 0,0:04:48.34,0:04:51.57,Default,,0,0,0,,that became the symbol of the entire experiment
+Dialogue: 0,0:04:51.57,0:04:53.06,Default,,0,0,0,,The Burj Khalifa
+Dialogue: 0,0:04:53.06,0:04:55.67,Default,,0,0,0,,From the ground it seems almost too tall to
+Dialogue: 0,0:04:55.67,0:04:56.67,Default,,0,0,0,,be real
+Dialogue: 0,0:04:56.67,0:04:59.52,Default,,0,0,0,,The building rises above the surrounding skyline
+Dialogue: 0,0:04:59.52,0:05:02.53,Default,,0,0,0,,and becomes visible from enormous distances
+Dialogue: 0,0:05:02.53,0:05:04.52,Default,,0,0,0,,Tourists come to photograph it
+Dialogue: 0,0:05:04.52,0:05:07.14,Default,,0,0,0,,Visitors travel upward to see the city
+Dialogue: 0,0:05:07.14,0:05:09.64,Default,,0,0,0,,At night its lights become part of Dubai's
+Dialogue: 0,0:05:09.64,0:05:11.61,Default,,0,0,0,,enormous visual spectacle
+Dialogue: 0,0:05:11.61,0:05:13.49,Default,,0,0,0,,But look down instead of up
+Dialogue: 0,0:05:13.49,0:05:16.39,Default,,0,0,0,,From the top you can see something strange
+Dialogue: 0,0:05:16.39,0:05:18.57,Default,,0,0,0,,The city suddenly looks smaller
+Dialogue: 0,0:05:18.57,0:05:20.45,Default,,0,0,0,,The roads look like lines
+Dialogue: 0,0:05:20.45,0:05:22.07,Default,,0,0,0,,Cars become dots
+Dialogue: 0,0:05:22.07,0:05:25.17,Default,,0,0,0,,And beyond the towers the desert begins
+Dialogue: 0,0:05:25.17,0:05:27.82,Default,,0,0,0,,That view tells the entire Dubai story in one
+Dialogue: 0,0:05:27.82,0:05:28.78,Default,,0,0,0,,frame
+Dialogue: 0,0:05:28.78,0:05:31.98,Default,,0,0,0,,A modern city surrounded by an ancient landscape
+Dialogue: 0,0:05:31.98,0:05:34.88,Default,,0,0,0,,THE CITY THAT NEVER STOPS BUILDING Dubai is
+Dialogue: 0,0:05:34.88,0:05:36.42,Default,,0,0,0,,constantly changing
+Dialogue: 0,0:05:36.42,0:05:38.37,Default,,0,0,0,,A road becomes wider
+Dialogue: 0,0:05:38.37,0:05:39.97,Default,,0,0,0,,A tower appears
+Dialogue: 0,0:05:39.97,0:05:41.76,Default,,0,0,0,,A new hotel opens
+Dialogue: 0,0:05:41.76,0:05:43.76,Default,,0,0,0,,Another neighborhood expands
+Dialogue: 0,0:05:43.76,0:05:46.94,Default,,0,0,0,,Construction cranes become part of the skyline
+Dialogue: 0,0:05:46.94,0:05:49.48,Default,,0,0,0,,And that speed is one reason the city feels
+Dialogue: 0,0:05:49.48,0:05:51.41,Default,,0,0,0,,different from older cities
+Dialogue: 0,0:05:51.41,0:05:53.98,Default,,0,0,0,,In many places around the world you can look
+Dialogue: 0,0:05:53.98,0:05:55.95,Default,,0,0,0,,at a building and imagine that it has been
+Dialogue: 0,0:05:55.95,0:05:57.51,Default,,0,0,0,,there for generations
+Dialogue: 0,0:05:57.51,0:06:00.22,Default,,0,0,0,,In Dubai the skyline can change within a few
+Dialogue: 0,0:06:00.22,0:06:01.08,Default,,0,0,0,,years
+Dialogue: 0,0:06:01.08,0:06:04.05,Default,,0,0,0,,The city has built its identity around speed
+Dialogue: 0,0:06:04.05,0:06:05.40,Default,,0,0,0,,Build faster
+Dialogue: 0,0:06:05.40,0:06:06.80,Default,,0,0,0,,Connect faster
+Dialogue: 0,0:06:06.80,0:06:08.42,Default,,0,0,0,,Attract more people
+Dialogue: 0,0:06:08.42,0:06:10.23,Default,,0,0,0,,Create new districts
+Dialogue: 0,0:06:10.23,0:06:12.30,Default,,0,0,0,,Create new experiences
+Dialogue: 0,0:06:12.30,0:06:13.65,Default,,0,0,0,,And keep moving
+Dialogue: 0,0:06:13.65,0:06:15.94,Default,,0,0,0,,But there is a question hiding underneath all
+Dialogue: 0,0:06:15.94,0:06:16.86,Default,,0,0,0,,of this
+Dialogue: 0,0:06:16.86,0:06:19.72,Default,,0,0,0,,How long can a city keep reinventing itself
+Dialogue: 0,0:06:19.72,0:06:22.36,Default,,0,0,0,,THE PEOPLE BEHIND THE SKYLINE Walk through
+Dialogue: 0,0:06:22.36,0:06:24.70,Default,,0,0,0,,the tourist districts and you may think Dubai
+Dialogue: 0,0:06:24.70,0:06:26.34,Default,,0,0,0,,is filled with luxury
+Dialogue: 0,0:06:26.34,0:06:28.49,Default,,0,0,0,,Walk somewhere else and the picture becomes
+Dialogue: 0,0:06:28.49,0:06:30.26,Default,,0,0,0,,much more complicated
+Dialogue: 0,0:06:30.26,0:06:32.98,Default,,0,0,0,,People from all over the world live and work
+Dialogue: 0,0:06:32.98,0:06:33.67,Default,,0,0,0,,here
+Dialogue: 0,0:06:33.67,0:06:34.84,Default,,0,0,0,,Drivers
+Dialogue: 0,0:06:34.84,0:06:36.04,Default,,0,0,0,,Engineers
+Dialogue: 0,0:06:36.04,0:06:37.15,Default,,0,0,0,,Chefs
+Dialogue: 0,0:06:37.15,0:06:38.87,Default,,0,0,0,,Construction workers
+Dialogue: 0,0:06:38.87,0:06:40.01,Default,,0,0,0,,Doctors
+Dialogue: 0,0:06:40.01,0:06:41.12,Default,,0,0,0,,Teachers
+Dialogue: 0,0:06:41.12,0:06:42.34,Default,,0,0,0,,Designers
+Dialogue: 0,0:06:42.34,0:06:43.94,Default,,0,0,0,,Security guards
+Dialogue: 0,0:06:43.94,0:06:45.34,Default,,0,0,0,,Business owners
+Dialogue: 0,0:06:45.34,0:06:46.94,Default,,0,0,0,,Delivery riders
+Dialogue: 0,0:06:46.94,0:06:48.41,Default,,0,0,0,,Office workers
+Dialogue: 0,0:06:48.41,0:06:50.01,Default,,0,0,0,,Hotel employees
+Dialogue: 0,0:06:50.01,0:06:52.55,Default,,0,0,0,,The city depends on an enormous international
+Dialogue: 0,0:06:52.55,0:06:53.69,Default,,0,0,0,,workforce
+Dialogue: 0,0:06:53.69,0:06:57.20,Default,,0,0,0,,That is one of Dubai's most important characteristics
+Dialogue: 0,0:06:57.20,0:06:59.79,Default,,0,0,0,,You can walk down one street and hear several
+Dialogue: 0,0:06:59.79,0:07:01.51,Default,,0,0,0,,languages within minutes
+Dialogue: 0,0:07:01.51,0:07:03.95,Default,,0,0,0,,Different cultures share the same city
+Dialogue: 0,0:07:03.95,0:07:06.34,Default,,0,0,0,,Different foods appear on the same menu
+Dialogue: 0,0:07:06.34,0:07:09.19,Default,,0,0,0,,Different religions exist alongside each other
+Dialogue: 0,0:07:09.19,0:07:11.40,Default,,0,0,0,,Different dreams bring people here
+Dialogue: 0,0:07:11.40,0:07:13.15,Default,,0,0,0,,Some arrive for business
+Dialogue: 0,0:07:13.15,0:07:14.59,Default,,0,0,0,,Some for a job
+Dialogue: 0,0:07:14.59,0:07:16.24,Default,,0,0,0,,Some for education
+Dialogue: 0,0:07:16.24,0:07:17.98,Default,,0,0,0,,Some for a better future
+Dialogue: 0,0:07:17.98,0:07:19.98,Default,,0,0,0,,And some arrive with the dream of becoming
+Dialogue: 0,0:07:19.98,0:07:20.87,Default,,0,0,0,,wealthy
+Dialogue: 0,0:07:20.87,0:07:23.76,Default,,0,0,0,,But everyone experiences Dubai differently
+Dialogue: 0,0:07:23.76,0:07:28.11,Default,,0,0,0,,THE DREAM For one person Dubai means opportunity
+Dialogue: 0,0:07:28.11,0:07:29.62,Default,,0,0,0,,A better salary
+Dialogue: 0,0:07:29.62,0:07:31.22,Default,,0,0,0,,A modern apartment
+Dialogue: 0,0:07:31.22,0:07:33.30,Default,,0,0,0,,A chance to start a business
+Dialogue: 0,0:07:33.30,0:07:34.90,Default,,0,0,0,,A global network
+Dialogue: 0,0:07:34.90,0:07:37.16,Default,,0,0,0,,A safer future for their family
+Dialogue: 0,0:07:37.16,0:07:40.02,Default,,0,0,0,,For another person the reality may be very
+Dialogue: 0,0:07:40.02,0:07:40.94,Default,,0,0,0,,different
+Dialogue: 0,0:07:40.94,0:07:42.58,Default,,0,0,0,,Long working hours
+Dialogue: 0,0:07:42.58,0:07:44.16,Default,,0,0,0,,Expensive housing
+Dialogue: 0,0:07:44.16,0:07:45.74,Default,,0,0,0,,Distance from family
+Dialogue: 0,0:07:45.74,0:07:47.26,Default,,0,0,0,,A demanding job
+Dialogue: 0,0:07:47.26,0:07:49.48,Default,,0,0,0,,And the constant pressure to keep earning
+Dialogue: 0,0:07:49.48,0:07:51.45,Default,,0,0,0,,This is why one of the biggest mistakes is
+Dialogue: 0,0:07:51.45,0:07:54.17,Default,,0,0,0,,to talk about life in Dubai as if everyone
+Dialogue: 0,0:07:54.17,0:07:56.27,Default,,0,0,0,,experiences the same city
+Dialogue: 0,0:07:56.27,0:07:58.20,Default,,0,0,0,,There are many Dubais
+Dialogue: 0,0:07:58.20,0:08:00.49,Default,,0,0,0,,The Dubai of luxury hotels
+Dialogue: 0,0:08:00.49,0:08:02.66,Default,,0,0,0,,The Dubai of office towers
+Dialogue: 0,0:08:02.66,0:08:05.04,Default,,0,0,0,,The Dubai of construction workers
+Dialogue: 0,0:08:05.04,0:08:06.86,Default,,0,0,0,,The Dubai of families
+Dialogue: 0,0:08:06.86,0:08:08.65,Default,,0,0,0,,The Dubai of tourists
+Dialogue: 0,0:08:08.65,0:08:10.69,Default,,0,0,0,,The Dubai of entrepreneurs
+Dialogue: 0,0:08:10.69,0:08:12.76,Default,,0,0,0,,The Dubai of old neighborhoods
+Dialogue: 0,0:08:12.76,0:08:16.08,Default,,0,0,0,,And the Dubai that most visitors never photograph
+Dialogue: 0,0:08:16.08,0:08:19.45,Default,,0,0,0,,OLD DUBAI To understand that hidden Dubai go
+Dialogue: 0,0:08:19.45,0:08:21.53,Default,,0,0,0,,to the older parts of the city
+Dialogue: 0,0:08:21.53,0:08:24.51,Default,,0,0,0,,Before the skyscrapers there was the creek
+Dialogue: 0,0:08:24.51,0:08:26.48,Default,,0,0,0,,Boats moved across the water
+Dialogue: 0,0:08:26.48,0:08:28.37,Default,,0,0,0,,Merchants traded goods
+Dialogue: 0,0:08:28.37,0:08:30.57,Default,,0,0,0,,Markets filled the narrow streets
+Dialogue: 0,0:08:30.57,0:08:32.93,Default,,0,0,0,,People lived much closer to the sea and the
+Dialogue: 0,0:08:32.93,0:08:33.77,Default,,0,0,0,,desert
+Dialogue: 0,0:08:33.77,0:08:36.69,Default,,0,0,0,,Today areas around Dubai Creek still offer
+Dialogue: 0,0:08:36.69,0:08:38.83,Default,,0,0,0,,glimpses of that earlier world
+Dialogue: 0,0:08:38.83,0:08:40.13,Default,,0,0,0,,Wooden boats
+Dialogue: 0,0:08:40.13,0:08:41.82,Default,,0,0,0,,Traditional markets
+Dialogue: 0,0:08:41.82,0:08:43.13,Default,,0,0,0,,Spices
+Dialogue: 0,0:08:43.13,0:08:44.40,Default,,0,0,0,,Textiles
+Dialogue: 0,0:08:44.40,0:08:45.29,Default,,0,0,0,,Gold
+Dialogue: 0,0:08:45.29,0:08:46.90,Default,,0,0,0,,Small restaurants
+Dialogue: 0,0:08:46.90,0:08:49.33,Default,,0,0,0,,And people moving through narrow streets
+Dialogue: 0,0:08:49.33,0:08:51.73,Default,,0,0,0,,The atmosphere can feel completely different
+Dialogue: 0,0:08:51.73,0:08:53.43,Default,,0,0,0,,from the modern skyline
+Dialogue: 0,0:08:53.43,0:08:55.69,Default,,0,0,0,,And suddenly the story changes
+Dialogue: 0,0:08:55.69,0:08:58.98,Default,,0,0,0,,Dubai was not always a city of giant towers
+Dialogue: 0,0:08:58.98,0:09:00.87,Default,,0,0,0,,It was a trading community
+Dialogue: 0,0:09:00.87,0:09:02.90,Default,,0,0,0,,A place connected to the sea
+Dialogue: 0,0:09:02.90,0:09:06.07,Default,,0,0,0,,A place where people depended on commerce fishing
+Dialogue: 0,0:09:06.07,0:09:07.07,Default,,0,0,0,,and movement
+Dialogue: 0,0:09:07.07,0:09:10.22,Default,,0,0,0,,THE GOLD MARKET Walk into a traditional market
+Dialogue: 0,0:09:10.22,0:09:12.79,Default,,0,0,0,,and you see another side of Dubai's relationship
+Dialogue: 0,0:09:12.79,0:09:13.72,Default,,0,0,0,,with wealth
+Dialogue: 0,0:09:13.72,0:09:16.48,Default,,0,0,0,,Gold displays shine from shop windows
+Dialogue: 0,0:09:16.48,0:09:18.62,Default,,0,0,0,,Customers compare designs
+Dialogue: 0,0:09:18.62,0:09:20.29,Default,,0,0,0,,Merchants negotiate
+Dialogue: 0,0:09:20.29,0:09:22.26,Default,,0,0,0,,Tourists take photographs
+Dialogue: 0,0:09:22.26,0:09:24.88,Default,,0,0,0,,And the market feels almost theatrical
+Dialogue: 0,0:09:24.88,0:09:27.44,Default,,0,0,0,,But behind the gold is an older story
+Dialogue: 0,0:09:27.44,0:09:30.40,Default,,0,0,0,,Trade has always been important to this region
+Dialogue: 0,0:09:30.40,0:09:33.00,Default,,0,0,0,,Dubai's modern economy did not appear from
+Dialogue: 0,0:09:33.00,0:09:33.95,Default,,0,0,0,,nowhere
+Dialogue: 0,0:09:33.95,0:09:36.98,Default,,0,0,0,,The city built on earlier traditions of commerce
+Dialogue: 0,0:09:36.98,0:09:38.23,Default,,0,0,0,,and exchange
+Dialogue: 0,0:09:38.23,0:09:40.15,Default,,0,0,0,,The skyscrapers are new
+Dialogue: 0,0:09:40.15,0:09:42.63,Default,,0,0,0,,The instinct to trade is much older
+Dialogue: 0,0:09:42.63,0:09:45.43,Default,,0,0,0,,THE DESERT RETURNS Now drive away from the
+Dialogue: 0,0:09:45.43,0:09:46.25,Default,,0,0,0,,city
+Dialogue: 0,0:09:46.25,0:09:48.02,Default,,0,0,0,,The towers disappear
+Dialogue: 0,0:09:48.02,0:09:49.97,Default,,0,0,0,,The roads become quieter
+Dialogue: 0,0:09:49.97,0:09:51.76,Default,,0,0,0,,And the desert takes over
+Dialogue: 0,0:09:51.76,0:09:54.48,Default,,0,0,0,,This is where Dubai's landscape becomes almost
+Dialogue: 0,0:09:54.48,0:09:57.04,Default,,0,0,0,,impossible to reconcile with the skyline you
+Dialogue: 0,0:09:57.04,0:09:58.16,Default,,0,0,0,,just left
+Dialogue: 0,0:09:58.16,0:09:59.44,Default,,0,0,0,,There are dunes
+Dialogue: 0,0:09:59.44,0:10:00.33,Default,,0,0,0,,Wind
+Dialogue: 0,0:10:00.33,0:10:01.73,Default,,0,0,0,,Open space
+Dialogue: 0,0:10:01.73,0:10:03.07,Default,,0,0,0,,And silence
+Dialogue: 0,0:10:03.07,0:10:05.43,Default,,0,0,0,,The same city that contains one of the world's
+Dialogue: 0,0:10:05.43,0:10:08.51,Default,,0,0,0,,most famous skylines also has a landscape where
+Dialogue: 0,0:10:08.51,0:10:10.88,Default,,0,0,0,,you can stand and see almost nothing built
+Dialogue: 0,0:10:10.88,0:10:11.82,Default,,0,0,0,,around you
+Dialogue: 0,0:10:11.82,0:10:14.20,Default,,0,0,0,,People come here for desert safaris
+Dialogue: 0,0:10:14.20,0:10:15.38,Default,,0,0,0,,Dune driving
+Dialogue: 0,0:10:15.38,0:10:16.58,Default,,0,0,0,,Sandboarding
+Dialogue: 0,0:10:16.58,0:10:17.84,Default,,0,0,0,,Camel rides
+Dialogue: 0,0:10:17.84,0:10:19.23,Default,,0,0,0,,And sunsets
+Dialogue: 0,0:10:19.23,0:10:21.75,Default,,0,0,0,,But the desert is more than entertainment
+Dialogue: 0,0:10:21.75,0:10:24.65,Default,,0,0,0,,It explains why Dubai's transformation is so
+Dialogue: 0,0:10:24.65,0:10:25.75,Default,,0,0,0,,remarkable
+Dialogue: 0,0:10:25.75,0:10:28.65,Default,,0,0,0,,The city exists in an environment that naturally
+Dialogue: 0,0:10:28.65,0:10:31.29,Default,,0,0,0,,resists large-scale urban life
+Dialogue: 0,0:10:31.29,0:10:34.27,Default,,0,0,0,,THE PALM Then there is Palm Jumeirah
+Dialogue: 0,0:10:34.27,0:10:36.48,Default,,0,0,0,,From the ground it looks like a collection
+Dialogue: 0,0:10:36.48,0:10:41.01,Default,,0,0,0,,of luxury hotels apartments beaches and roads
+Dialogue: 0,0:10:41.01,0:10:43.80,Default,,0,0,0,,From the air the shape becomes visible
+Dialogue: 0,0:10:43.80,0:10:46.20,Default,,0,0,0,,A giant palm built into the sea
+Dialogue: 0,0:10:46.20,0:10:49.19,Default,,0,0,0,,It is one of Dubai's most recognizable engineering
+Dialogue: 0,0:10:49.19,0:10:50.43,Default,,0,0,0,,projects
+Dialogue: 0,0:10:50.43,0:10:53.58,Default,,0,0,0,,And it represents the city's philosophy perfectly
+Dialogue: 0,0:10:53.58,0:10:56.52,Default,,0,0,0,,If the coastline is not enough reshape it
+Dialogue: 0,0:10:56.52,0:10:59.23,Default,,0,0,0,,If the desert is empty build on it
+Dialogue: 0,0:10:59.23,0:11:01.93,Default,,0,0,0,,If the city needs more space create it
+Dialogue: 0,0:11:01.93,0:11:05.32,Default,,0,0,0,,This mindset has produced spectacular results
+Dialogue: 0,0:11:05.32,0:11:07.86,Default,,0,0,0,,But it also raises bigger questions
+Dialogue: 0,0:11:07.86,0:11:10.32,Default,,0,0,0,,How much can humans reshape nature before the
+Dialogue: 0,0:11:10.32,0:11:12.05,Default,,0,0,0,,environment pushes back
+Dialogue: 0,0:11:12.05,0:11:13.20,Default,,0,0,0,,THE SEA
+Dialogue: 0,0:11:13.20,0:11:15.38,Default,,0,0,0,,Dubai is not only desert
+Dialogue: 0,0:11:15.38,0:11:17.57,Default,,0,0,0,,It is also a coastal city
+Dialogue: 0,0:11:17.57,0:11:21.42,Default,,0,0,0,,The sea provides beaches tourism transportation
+Dialogue: 0,0:11:21.42,0:11:23.97,Default,,0,0,0,,recreation and a different way of escaping
+Dialogue: 0,0:11:23.97,0:11:24.85,Default,,0,0,0,,the heat
+Dialogue: 0,0:11:24.85,0:11:27.56,Default,,0,0,0,,During cooler months the coastline becomes
+Dialogue: 0,0:11:27.56,0:11:29.75,Default,,0,0,0,,one of the busiest parts of the city
+Dialogue: 0,0:11:29.75,0:11:31.64,Default,,0,0,0,,People walk along the water
+Dialogue: 0,0:11:31.64,0:11:33.58,Default,,0,0,0,,Families visit beaches
+Dialogue: 0,0:11:33.58,0:11:35.13,Default,,0,0,0,,Restaurants fill up
+Dialogue: 0,0:11:35.13,0:11:36.72,Default,,0,0,0,,Boats move offshore
+Dialogue: 0,0:11:36.72,0:11:39.39,Default,,0,0,0,,And the skyline reflects across the sea
+Dialogue: 0,0:11:39.39,0:11:42.06,Default,,0,0,0,,The relationship between desert and ocean is
+Dialogue: 0,0:11:42.06,0:11:44.79,Default,,0,0,0,,one of the reasons Dubai can offer such a strange
+Dialogue: 0,0:11:44.79,0:11:45.99,Default,,0,0,0,,combination
+Dialogue: 0,0:11:45.99,0:11:48.21,Default,,0,0,0,,You can spend the morning in the desert
+Dialogue: 0,0:11:48.21,0:11:50.36,Default,,0,0,0,,The afternoon beside the sea
+Dialogue: 0,0:11:50.36,0:11:52.79,Default,,0,0,0,,And the evening inside a skyscraper
+Dialogue: 0,0:11:52.79,0:11:54.58,Default,,0,0,0,,All within the same city
+Dialogue: 0,0:11:54.58,0:11:57.58,Default,,0,0,0,,THE METRO But how do millions of people move
+Dialogue: 0,0:11:57.58,0:11:58.92,Default,,0,0,0,,through all of this
+Dialogue: 0,0:11:58.92,0:12:01.21,Default,,0,0,0,,One answer is the Dubai Metro
+Dialogue: 0,0:12:01.21,0:12:03.60,Default,,0,0,0,,The train moves through the city while roads
+Dialogue: 0,0:12:03.60,0:12:05.31,Default,,0,0,0,,below remain crowded
+Dialogue: 0,0:12:05.31,0:12:08.78,Default,,0,0,0,,For residents it is not a futuristic attraction
+Dialogue: 0,0:12:08.78,0:12:10.47,Default,,0,0,0,,It is transportation
+Dialogue: 0,0:12:10.47,0:12:11.99,Default,,0,0,0,,A way to get to work
+Dialogue: 0,0:12:11.99,0:12:13.83,Default,,0,0,0,,A way to avoid traffic
+Dialogue: 0,0:12:13.83,0:12:16.28,Default,,0,0,0,,A way to move through a city that can be enormous
+Dialogue: 0,0:12:16.28,0:12:18.28,Default,,0,0,0,,from one neighborhood to another
+Dialogue: 0,0:12:18.28,0:12:21.27,Default,,0,0,0,,Inside the train another Dubai appears
+Dialogue: 0,0:12:21.27,0:12:22.39,Default,,0,0,0,,Workers
+Dialogue: 0,0:12:22.39,0:12:23.58,Default,,0,0,0,,Students
+Dialogue: 0,0:12:23.58,0:12:24.67,Default,,0,0,0,,Tourists
+Dialogue: 0,0:12:24.67,0:12:25.88,Default,,0,0,0,,Families
+Dialogue: 0,0:12:25.88,0:12:28.18,Default,,0,0,0,,People carrying shopping bags
+Dialogue: 0,0:12:28.18,0:12:29.97,Default,,0,0,0,,People looking at phones
+Dialogue: 0,0:12:29.97,0:12:31.67,Default,,0,0,0,,People going somewhere
+Dialogue: 0,0:12:31.67,0:12:34.75,Default,,0,0,0,,The skyline outside may look extraordinary
+Dialogue: 0,0:12:34.75,0:12:37.90,Default,,0,0,0,,But inside the train daily life is surprisingly
+Dialogue: 0,0:12:37.90,0:12:38.85,Default,,0,0,0,,ordinary
+Dialogue: 0,0:12:38.85,0:12:41.47,Default,,0,0,0,,FOOD FROM EVERYWHERE If you want to understand
+Dialogue: 0,0:12:41.47,0:12:44.75,Default,,0,0,0,,Dubai's population don't look at the skyline
+Dialogue: 0,0:12:44.75,0:12:46.06,Default,,0,0,0,,Look at the food
+Dialogue: 0,0:12:46.06,0:12:48.60,Default,,0,0,0,,Walk through the city and you can find Emirati
+Dialogue: 0,0:12:48.60,0:12:52.35,Default,,0,0,0,,dishes Indian food Pakistani food Lebanese
+Dialogue: 0,0:12:52.35,0:12:53.15,Default,,0,0,0,,food
+Dialogue: 0,0:12:53.15,0:12:57.32,Default,,0,0,0,,Filipino food Chinese food Turkish food African
+Dialogue: 0,0:12:57.32,0:13:01.31,Default,,0,0,0,,cuisines European restaurants fast food street
+Dialogue: 0,0:13:01.31,0:13:04.93,Default,,0,0,0,,food luxury dining and almost everything between
+Dialogue: 0,0:13:04.93,0:13:05.53,Default,,0,0,0,,them
+Dialogue: 0,0:13:05.53,0:13:07.78,Default,,0,0,0,,Dubai has become a giant meeting point for
+Dialogue: 0,0:13:07.78,0:13:09.11,Default,,0,0,0,,food cultures
+Dialogue: 0,0:13:09.11,0:13:11.54,Default,,0,0,0,,A person can eat breakfast from one part of
+Dialogue: 0,0:13:11.54,0:13:14.29,Default,,0,0,0,,the world lunch from another and dinner from
+Dialogue: 0,0:13:14.29,0:13:16.21,Default,,0,0,0,,somewhere completely different
+Dialogue: 0,0:13:16.21,0:13:18.88,Default,,0,0,0,,But traditional Emirati food remains part of
+Dialogue: 0,0:13:18.88,0:13:20.29,Default,,0,0,0,,the city's identity
+Dialogue: 0,0:13:20.29,0:13:21.38,Default,,0,0,0,,Rice
+Dialogue: 0,0:13:21.38,0:13:22.22,Default,,0,0,0,,Meat
+Dialogue: 0,0:13:22.22,0:13:23.22,Default,,0,0,0,,Fish
+Dialogue: 0,0:13:23.22,0:13:24.17,Default,,0,0,0,,Dates
+Dialogue: 0,0:13:24.17,0:13:25.49,Default,,0,0,0,,Spices
+Dialogue: 0,0:13:25.49,0:13:26.53,Default,,0,0,0,,Coffee
+Dialogue: 0,0:13:26.53,0:13:29.54,Default,,0,0,0,,And dishes shaped by the Arabian Peninsula
+Dialogue: 0,0:13:29.54,0:13:31.90,Default,,0,0,0,,Food tells the story of migration
+Dialogue: 0,0:13:31.90,0:13:33.93,Default,,0,0,0,,People bring their memories with them
+Dialogue: 0,0:13:33.93,0:13:36.93,Default,,0,0,0,,Sometimes those memories become restaurants
+Dialogue: 0,0:13:36.93,0:13:40.95,Default,,0,0,0,,THE NIGHT CITY After sunset Dubai changes
+Dialogue: 0,0:13:40.95,0:13:43.58,Default,,0,0,0,,The heat becomes easier to tolerate
+Dialogue: 0,0:13:43.58,0:13:45.52,Default,,0,0,0,,People return outside
+Dialogue: 0,0:13:45.52,0:13:47.53,Default,,0,0,0,,Restaurants become busier
+Dialogue: 0,0:13:47.53,0:13:49.45,Default,,0,0,0,,The roads fill with cars
+Dialogue: 0,0:13:49.45,0:13:51.18,Default,,0,0,0,,The skyline lights up
+Dialogue: 0,0:13:51.18,0:13:53.82,Default,,0,0,0,,And the city becomes almost cinematic
+Dialogue: 0,0:13:53.82,0:13:56.03,Default,,0,0,0,,This is when tourists see the Dubai they came
+Dialogue: 0,0:13:56.03,0:13:56.90,Default,,0,0,0,,for
+Dialogue: 0,0:13:56.90,0:13:58.31,Default,,0,0,0,,Luxury cars
+Dialogue: 0,0:13:58.31,0:14:00.14,Default,,0,0,0,,Rooftop restaurants
+Dialogue: 0,0:14:00.14,0:14:01.28,Default,,0,0,0,,Hotels
+Dialogue: 0,0:14:01.28,0:14:02.45,Default,,0,0,0,,Marinas
+Dialogue: 0,0:14:02.45,0:14:03.81,Default,,0,0,0,,Neon lights
+Dialogue: 0,0:14:03.81,0:14:04.79,Default,,0,0,0,,Music
+Dialogue: 0,0:14:04.79,0:14:07.02,Default,,0,0,0,,And enormous buildings glowing against the
+Dialogue: 0,0:14:07.02,0:14:08.24,Default,,0,0,0,,darkness
+Dialogue: 0,0:14:08.24,0:14:11.63,Default,,0,0,0,,But even here another Dubai exists underneath
+Dialogue: 0,0:14:11.63,0:14:13.35,Default,,0,0,0,,People finishing work
+Dialogue: 0,0:14:13.35,0:14:15.84,Default,,0,0,0,,Workers returning to accommodation
+Dialogue: 0,0:14:15.84,0:14:17.92,Default,,0,0,0,,Families buying groceries
+Dialogue: 0,0:14:17.92,0:14:20.20,Default,,0,0,0,,Drivers waiting for passengers
+Dialogue: 0,0:14:20.20,0:14:22.55,Default,,0,0,0,,Employees cleaning the places everyone else
+Dialogue: 0,0:14:22.55,0:14:23.59,Default,,0,0,0,,enjoys
+Dialogue: 0,0:14:23.59,0:14:26.05,Default,,0,0,0,,The city looks glamorous because thousands
+Dialogue: 0,0:14:26.05,0:14:28.92,Default,,0,0,0,,of ordinary people make the glamour possible
+Dialogue: 0,0:14:28.92,0:14:32.69,Default,,0,0,0,,THE COST OF THE DREAM Dubai can create opportunity
+Dialogue: 0,0:14:32.69,0:14:35.60,Default,,0,0,0,,But opportunity does not mean life is automatically
+Dialogue: 0,0:14:35.60,0:14:36.46,Default,,0,0,0,,easy
+Dialogue: 0,0:14:36.46,0:14:38.01,Default,,0,0,0,,Housing costs money
+Dialogue: 0,0:14:38.01,0:14:40.24,Default,,0,0,0,,Transportation costs money
+Dialogue: 0,0:14:40.24,0:14:41.81,Default,,0,0,0,,Food costs money
+Dialogue: 0,0:14:41.81,0:14:44.66,Default,,0,0,0,,Visas and employment arrangements matter
+Dialogue: 0,0:14:44.66,0:14:47.63,Default,,0,0,0,,Families may live far from their home countries
+Dialogue: 0,0:14:47.63,0:14:50.21,Default,,0,0,0,,Some workers spend years away from parents
+Dialogue: 0,0:14:50.21,0:14:52.13,Default,,0,0,0,,spouses or children
+Dialogue: 0,0:14:52.13,0:14:54.39,Default,,0,0,0,,This is one of the hidden emotional costs of
+Dialogue: 0,0:14:54.39,0:14:55.76,Default,,0,0,0,,a global city
+Dialogue: 0,0:14:55.76,0:14:58.12,Default,,0,0,0,,You can build a successful career while still
+Dialogue: 0,0:14:58.12,0:14:59.19,Default,,0,0,0,,missing home
+Dialogue: 0,0:14:59.19,0:15:01.16,Default,,0,0,0,,You can earn more money while spending less
+Dialogue: 0,0:15:01.16,0:15:02.66,Default,,0,0,0,,time with your family
+Dialogue: 0,0:15:02.66,0:15:05.02,Default,,0,0,0,,You can live in one of the world's most exciting
+Dialogue: 0,0:15:05.02,0:15:07.17,Default,,0,0,0,,cities and still feel lonely
+Dialogue: 0,0:15:07.17,0:15:09.71,Default,,0,0,0,,That contradiction rarely appears in tourist
+Dialogue: 0,0:15:09.71,0:15:11.06,Default,,0,0,0,,advertisements
+Dialogue: 0,0:15:11.06,0:15:13.92,Default,,0,0,0,,THE PEOPLE WHO LEFT HOME Think about the decision
+Dialogue: 0,0:15:13.92,0:15:15.05,Default,,0,0,0,,to move here
+Dialogue: 0,0:15:15.05,0:15:17.74,Default,,0,0,0,,Someone closes the door of their family home
+Dialogue: 0,0:15:17.74,0:15:19.91,Default,,0,0,0,,They say goodbye to their parents
+Dialogue: 0,0:15:19.91,0:15:21.19,Default,,0,0,0,,They board a plane
+Dialogue: 0,0:15:21.19,0:15:24.14,Default,,0,0,0,,And thousands of kilometers later they arrive
+Dialogue: 0,0:15:24.14,0:15:27.32,Default,,0,0,0,,in a city where almost everything is unfamiliar
+Dialogue: 0,0:15:27.32,0:15:28.53,Default,,0,0,0,,New language
+Dialogue: 0,0:15:28.53,0:15:29.78,Default,,0,0,0,,New streets
+Dialogue: 0,0:15:29.78,0:15:30.92,Default,,0,0,0,,New job
+Dialogue: 0,0:15:30.92,0:15:32.13,Default,,0,0,0,,New rules
+Dialogue: 0,0:15:32.13,0:15:33.27,Default,,0,0,0,,New people
+Dialogue: 0,0:15:33.27,0:15:36.24,Default,,0,0,0,,At first everything feels exciting
+Dialogue: 0,0:15:36.24,0:15:38.09,Default,,0,0,0,,Then reality begins
+Dialogue: 0,0:15:38.09,0:15:39.01,Default,,0,0,0,,Work
+Dialogue: 0,0:15:39.01,0:15:39.84,Default,,0,0,0,,Rent
+Dialogue: 0,0:15:39.84,0:15:40.82,Default,,0,0,0,,Bills
+Dialogue: 0,0:15:40.82,0:15:42.13,Default,,0,0,0,,Homesickness
+Dialogue: 0,0:15:42.13,0:15:43.23,Default,,0,0,0,,Routine
+Dialogue: 0,0:15:43.23,0:15:45.67,Default,,0,0,0,,But perhaps the biggest reason people stay
+Dialogue: 0,0:15:45.67,0:15:46.69,Default,,0,0,0,,is simple
+Dialogue: 0,0:15:46.69,0:15:49.84,Default,,0,0,0,,The opportunity feels worth the sacrifice
+Dialogue: 0,0:15:49.84,0:15:52.37,Default,,0,0,0,,For some Dubai is temporary
+Dialogue: 0,0:15:52.37,0:15:54.66,Default,,0,0,0,,For others it becomes home
+Dialogue: 0,0:15:54.66,0:15:57.88,Default,,0,0,0,,THE EMIRATI SIDE OF DUBAI There is also a side
+Dialogue: 0,0:15:57.88,0:16:00.62,Default,,0,0,0,,of Dubai that tourists can easily overlook
+Dialogue: 0,0:16:00.62,0:16:02.67,Default,,0,0,0,,The local Emirati culture
+Dialogue: 0,0:16:02.67,0:16:04.19,Default,,0,0,0,,Traditional clothing
+Dialogue: 0,0:16:04.19,0:16:05.81,Default,,0,0,0,,Family gatherings
+Dialogue: 0,0:16:05.81,0:16:07.24,Default,,0,0,0,,Arabic coffee
+Dialogue: 0,0:16:07.24,0:16:08.19,Default,,0,0,0,,Dates
+Dialogue: 0,0:16:08.19,0:16:09.71,Default,,0,0,0,,Majlis culture
+Dialogue: 0,0:16:09.71,0:16:11.44,Default,,0,0,0,,Religious traditions
+Dialogue: 0,0:16:11.44,0:16:13.84,Default,,0,0,0,,And a strong connection to heritage
+Dialogue: 0,0:16:13.84,0:16:16.52,Default,,0,0,0,,The modern skyline does not erase the older
+Dialogue: 0,0:16:16.52,0:16:18.24,Default,,0,0,0,,identity of the region
+Dialogue: 0,0:16:18.24,0:16:20.85,Default,,0,0,0,,You can see traditional dress inside the same
+Dialogue: 0,0:16:20.85,0:16:23.52,Default,,0,0,0,,city where people wear business suits and tourist
+Dialogue: 0,0:16:23.52,0:16:24.39,Default,,0,0,0,,clothing
+Dialogue: 0,0:16:24.39,0:16:27.31,Default,,0,0,0,,You can find mosques between skyscrapers
+Dialogue: 0,0:16:27.31,0:16:29.92,Default,,0,0,0,,You can drink Arabic coffee in a city famous
+Dialogue: 0,0:16:29.92,0:16:31.77,Default,,0,0,0,,for international luxury
+Dialogue: 0,0:16:31.77,0:16:34.23,Default,,0,0,0,,This is another Dubai contradiction
+Dialogue: 0,0:16:34.23,0:16:37.74,Default,,0,0,0,,Modernization did not completely replace tradition
+Dialogue: 0,0:16:37.74,0:16:39.64,Default,,0,0,0,,It exists alongside it
+Dialogue: 0,0:16:39.64,0:16:42.56,Default,,0,0,0,,THE HEAT AND THE FUTURE But Dubai's greatest
+Dialogue: 0,0:16:42.56,0:16:44.95,Default,,0,0,0,,challenge may also be its environment
+Dialogue: 0,0:16:44.95,0:16:47.56,Default,,0,0,0,,The city has built an enormous urban system
+Dialogue: 0,0:16:47.56,0:16:50.01,Default,,0,0,0,,in one of the world's hottest regions
+Dialogue: 0,0:16:50.01,0:16:51.70,Default,,0,0,0,,That requires energy
+Dialogue: 0,0:16:51.70,0:16:52.59,Default,,0,0,0,,Cooling
+Dialogue: 0,0:16:52.59,0:16:53.53,Default,,0,0,0,,Water
+Dialogue: 0,0:16:53.53,0:16:54.91,Default,,0,0,0,,Infrastructure
+Dialogue: 0,0:16:54.91,0:16:56.32,Default,,0,0,0,,Transportation
+Dialogue: 0,0:16:56.32,0:16:58.20,Default,,0,0,0,,And constant maintenance
+Dialogue: 0,0:16:58.20,0:17:00.66,Default,,0,0,0,,The hotter the environment becomes the more
+Dialogue: 0,0:17:00.66,0:17:02.70,Default,,0,0,0,,important these systems become
+Dialogue: 0,0:17:02.70,0:17:05.33,Default,,0,0,0,,Dubai's future will therefore depend not only
+Dialogue: 0,0:17:05.33,0:17:06.71,Default,,0,0,0,,on building taller
+Dialogue: 0,0:17:06.71,0:17:08.88,Default,,0,0,0,,It will depend on building smarter
+Dialogue: 0,0:17:08.88,0:17:10.60,Default,,0,0,0,,More efficient buildings
+Dialogue: 0,0:17:10.60,0:17:12.28,Default,,0,0,0,,Better transportation
+Dialogue: 0,0:17:12.28,0:17:13.58,Default,,0,0,0,,Cleaner energy
+Dialogue: 0,0:17:13.58,0:17:14.95,Default,,0,0,0,,Water management
+Dialogue: 0,0:17:14.95,0:17:18.11,Default,,0,0,0,,And technologies capable of making life comfortable
+Dialogue: 0,0:17:18.11,0:17:21.42,Default,,0,0,0,,without placing unlimited pressure on the environment
+Dialogue: 0,0:17:21.42,0:17:23.20,Default,,0,0,0,,The desert is still there
+Dialogue: 0,0:17:23.20,0:17:24.89,Default,,0,0,0,,It has never surrendered
+Dialogue: 0,0:17:24.89,0:17:28.31,Default,,0,0,0,,THE CITY AFTER MIDNIGHT At midnight Dubai is
+Dialogue: 0,0:17:28.31,0:17:29.45,Default,,0,0,0,,still moving
+Dialogue: 0,0:17:29.45,0:17:31.52,Default,,0,0,0,,Some restaurants remain open
+Dialogue: 0,0:17:31.52,0:17:33.86,Default,,0,0,0,,Roads continue carrying traffic
+Dialogue: 0,0:17:33.86,0:17:35.96,Default,,0,0,0,,Hotel lobbies remain bright
+Dialogue: 0,0:17:35.96,0:17:38.71,Default,,0,0,0,,Airport terminals continue operating
+Dialogue: 0,0:17:38.71,0:17:40.83,Default,,0,0,0,,Workers finish late shifts
+Dialogue: 0,0:17:40.83,0:17:42.89,Default,,0,0,0,,Others are just beginning theirs
+Dialogue: 0,0:17:42.89,0:17:45.46,Default,,0,0,0,,And somewhere above them the skyline remains
+Dialogue: 0,0:17:45.46,0:17:46.56,Default,,0,0,0,,illuminated
+Dialogue: 0,0:17:46.56,0:17:49.21,Default,,0,0,0,,It is easy to look at Dubai at night and think
+Dialogue: 0,0:17:49.21,0:17:51.33,Default,,0,0,0,,the city has defeated the desert
+Dialogue: 0,0:17:51.33,0:17:53.38,Default,,0,0,0,,But the truth is more interesting
+Dialogue: 0,0:17:53.38,0:17:55.86,Default,,0,0,0,,Dubai has not defeated the desert
+Dialogue: 0,0:17:55.86,0:17:58.10,Default,,0,0,0,,It has learned how to live beside it
+Dialogue: 0,0:17:58.10,0:18:00.31,Default,,0,0,0,,The desert sets the conditions
+Dialogue: 0,0:18:00.31,0:18:02.04,Default,,0,0,0,,The city responds
+Dialogue: 0,0:18:02.04,0:18:05.08,Default,,0,0,0,,THE CHILDREN GROWING UP HERE Now imagine being
+Dialogue: 0,0:18:05.08,0:18:06.53,Default,,0,0,0,,a child in Dubai
+Dialogue: 0,0:18:06.53,0:18:08.86,Default,,0,0,0,,Your playground may be a shopping mall
+Dialogue: 0,0:18:08.86,0:18:11.92,Default,,0,0,0,,Your school may be surrounded by skyscrapers
+Dialogue: 0,0:18:11.92,0:18:15.03,Default,,0,0,0,,Your classmates may come from dozens of countries
+Dialogue: 0,0:18:15.03,0:18:17.78,Default,,0,0,0,,You may grow up speaking more than one language
+Dialogue: 0,0:18:17.78,0:18:20.10,Default,,0,0,0,,You may spend weekends at the beach
+Dialogue: 0,0:18:20.10,0:18:21.97,Default,,0,0,0,,Another weekend in the desert
+Dialogue: 0,0:18:21.97,0:18:24.83,Default,,0,0,0,,Another inside a giant entertainment center
+Dialogue: 0,0:18:24.83,0:18:26.89,Default,,0,0,0,,You may know the Burj Khalifa as something
+Dialogue: 0,0:18:26.89,0:18:28.50,Default,,0,0,0,,completely ordinary
+Dialogue: 0,0:18:28.50,0:18:31.95,Default,,0,0,0,,For tourists it is a once-in-a-lifetime photograph
+Dialogue: 0,0:18:31.95,0:18:34.60,Default,,0,0,0,,For a child growing up here it can simply be
+Dialogue: 0,0:18:34.60,0:18:36.72,Default,,0,0,0,,the building they see on the way home
+Dialogue: 0,0:18:36.72,0:18:39.18,Default,,0,0,0,,That is what happens when extraordinary places
+Dialogue: 0,0:18:39.18,0:18:40.60,Default,,0,0,0,,become ordinary
+Dialogue: 0,0:18:40.60,0:18:43.65,Default,,0,0,0,,THE QUESTION OF HOME And eventually every person
+Dialogue: 0,0:18:43.65,0:18:46.21,Default,,0,0,0,,who lives here has to answer one question
+Dialogue: 0,0:18:46.21,0:18:47.50,Default,,0,0,0,,Is Dubai home
+Dialogue: 0,0:18:47.50,0:18:49.52,Default,,0,0,0,,For some absolutely
+Dialogue: 0,0:18:49.52,0:18:52.24,Default,,0,0,0,,For others it is a temporary chapter
+Dialogue: 0,0:18:52.24,0:18:54.56,Default,,0,0,0,,Some people spend years building businesses
+Dialogue: 0,0:18:54.56,0:18:55.25,Default,,0,0,0,,here
+Dialogue: 0,0:18:55.25,0:18:57.02,Default,,0,0,0,,Some raise children here
+Dialogue: 0,0:18:57.02,0:18:59.54,Default,,0,0,0,,Some earn money and eventually return to their
+Dialogue: 0,0:18:59.54,0:19:01.10,Default,,0,0,0,,original countries
+Dialogue: 0,0:19:01.10,0:19:03.90,Default,,0,0,0,,Others become deeply connected to the city
+Dialogue: 0,0:19:03.90,0:19:06.07,Default,,0,0,0,,That is what makes Dubai different from many
+Dialogue: 0,0:19:06.07,0:19:07.14,Default,,0,0,0,,places
+Dialogue: 0,0:19:07.14,0:19:09.50,Default,,0,0,0,,It is a city built by people who came from
+Dialogue: 0,0:19:09.50,0:19:10.74,Default,,0,0,0,,somewhere else
+Dialogue: 0,0:19:10.74,0:19:13.32,Default,,0,0,0,,The question is not only where you were born
+Dialogue: 0,0:19:13.32,0:19:15.64,Default,,0,0,0,,It is where you choose to build your life
+Dialogue: 0,0:19:15.64,0:19:19.17,Default,,0,0,0,,THE DUBAI NOBODY FILMS The Dubai nobody films
+Dialogue: 0,0:19:19.17,0:19:21.78,Default,,0,0,0,,is not hidden behind a secret door
+Dialogue: 0,0:19:21.78,0:19:24.18,Default,,0,0,0,,It is right beside the famous Dubai
+Dialogue: 0,0:19:24.18,0:19:26.57,Default,,0,0,0,,It is the worker waiting for a bus
+Dialogue: 0,0:19:26.57,0:19:29.14,Default,,0,0,0,,The family eating an inexpensive meal
+Dialogue: 0,0:19:29.14,0:19:31.68,Default,,0,0,0,,The delivery rider crossing the city
+Dialogue: 0,0:19:31.68,0:19:34.40,Default,,0,0,0,,The shopkeeper opening a small business
+Dialogue: 0,0:19:34.40,0:19:36.75,Default,,0,0,0,,The cleaner preparing a hotel room
+Dialogue: 0,0:19:36.75,0:19:38.86,Default,,0,0,0,,The student taking the metro
+Dialogue: 0,0:19:38.86,0:19:40.93,Default,,0,0,0,,The fisherman beside the creek
+Dialogue: 0,0:19:40.93,0:19:42.98,Default,,0,0,0,,The farmer growing food on the edge of the
+Dialogue: 0,0:19:42.98,0:19:43.85,Default,,0,0,0,,desert
+Dialogue: 0,0:19:43.85,0:19:46.41,Default,,0,0,0,,The family sitting together after work
+Dialogue: 0,0:19:46.41,0:19:49.70,Default,,0,0,0,,These people do not appear in most advertisements
+Dialogue: 0,0:19:49.70,0:19:51.52,Default,,0,0,0,,But they are part of the city
+Dialogue: 0,0:19:51.52,0:19:54.70,Default,,0,0,0,,Without them the famous Dubai would not function
+Dialogue: 0,0:19:54.70,0:19:57.49,Default,,0,0,0,,THE BIGGEST CONTRADICTION Dubai's greatest
+Dialogue: 0,0:19:57.49,0:20:00.25,Default,,0,0,0,,story is therefore not the Burj Khalifa
+Dialogue: 0,0:20:00.25,0:20:01.73,Default,,0,0,0,,It is not the Palm
+Dialogue: 0,0:20:01.73,0:20:03.95,Default,,0,0,0,,It is not the luxury hotels
+Dialogue: 0,0:20:03.95,0:20:05.84,Default,,0,0,0,,It is not the supercars
+Dialogue: 0,0:20:05.84,0:20:08.31,Default,,0,0,0,,It is the fact that an enormous global city
+Dialogue: 0,0:20:08.31,0:20:10.80,Default,,0,0,0,,exists in a landscape where nature seems to
+Dialogue: 0,0:20:10.80,0:20:12.17,Default,,0,0,0,,say it should not
+Dialogue: 0,0:20:12.17,0:20:13.56,Default,,0,0,0,,People came here
+Dialogue: 0,0:20:13.56,0:20:14.98,Default,,0,0,0,,They built roads
+Dialogue: 0,0:20:14.98,0:20:16.45,Default,,0,0,0,,They built towers
+Dialogue: 0,0:20:16.45,0:20:18.05,Default,,0,0,0,,They built neighborhoods
+Dialogue: 0,0:20:18.05,0:20:19.75,Default,,0,0,0,,They brought businesses
+Dialogue: 0,0:20:19.75,0:20:21.59,Default,,0,0,0,,They created communities
+Dialogue: 0,0:20:21.59,0:20:23.89,Default,,0,0,0,,They turned a difficult environment into one
+Dialogue: 0,0:20:23.89,0:20:26.84,Default,,0,0,0,,of the world's most recognizable cities
+Dialogue: 0,0:20:26.84,0:20:29.34,Default,,0,0,0,,But the more Dubai grows the more important
+Dialogue: 0,0:20:29.34,0:20:31.50,Default,,0,0,0,,the original question becomes
+Dialogue: 0,0:20:31.50,0:20:33.73,Default,,0,0,0,,How do you build a future without forgetting
+Dialogue: 0,0:20:33.73,0:20:35.68,Default,,0,0,0,,the environment that surrounds you
+Dialogue: 0,0:20:35.68,0:20:38.91,Default,,0,0,0,,THE FUTURE OF DUBAI Dubai is already preparing
+Dialogue: 0,0:20:38.91,0:20:41.02,Default,,0,0,0,,for the next version of itself
+Dialogue: 0,0:20:41.02,0:20:43.70,Default,,0,0,0,,Technology is becoming more important
+Dialogue: 0,0:20:43.70,0:20:45.62,Default,,0,0,0,,Artificial intelligence
+Dialogue: 0,0:20:45.62,0:20:46.77,Default,,0,0,0,,Automation
+Dialogue: 0,0:20:46.77,0:20:48.64,Default,,0,0,0,,Electric transportation
+Dialogue: 0,0:20:48.64,0:20:50.09,Default,,0,0,0,,Smart buildings
+Dialogue: 0,0:20:50.09,0:20:51.53,Default,,0,0,0,,Renewable energy
+Dialogue: 0,0:20:51.53,0:20:53.25,Default,,0,0,0,,New forms of tourism
+Dialogue: 0,0:20:53.25,0:20:55.02,Default,,0,0,0,,New business models
+Dialogue: 0,0:20:55.02,0:20:57.52,Default,,0,0,0,,The city is constantly searching for what comes
+Dialogue: 0,0:20:57.52,0:20:58.42,Default,,0,0,0,,next
+Dialogue: 0,0:20:58.42,0:21:01.67,Default,,0,0,0,,But the future will not only be about technology
+Dialogue: 0,0:21:01.67,0:21:03.64,Default,,0,0,0,,It will also be about people
+Dialogue: 0,0:21:03.64,0:21:05.93,Default,,0,0,0,,Can the city remain attractive to workers and
+Dialogue: 0,0:21:05.93,0:21:06.99,Default,,0,0,0,,families
+Dialogue: 0,0:21:06.99,0:21:09.14,Default,,0,0,0,,Can it remain affordable enough for ordinary
+Dialogue: 0,0:21:09.14,0:21:10.21,Default,,0,0,0,,residents
+Dialogue: 0,0:21:10.21,0:21:12.10,Default,,0,0,0,,Can it protect its environment
+Dialogue: 0,0:21:12.10,0:21:14.60,Default,,0,0,0,,Can it maintain its cultural identity
+Dialogue: 0,0:21:14.60,0:21:16.96,Default,,0,0,0,,And can a city built around constant growth
+Dialogue: 0,0:21:16.96,0:21:19.34,Default,,0,0,0,,eventually learn how to grow differently
+Dialogue: 0,0:21:19.34,0:21:22.46,Default,,0,0,0,,THE LAST LOOK Now imagine standing in Dubai
+Dialogue: 0,0:21:22.46,0:21:24.27,Default,,0,0,0,,just before sunrise
+Dialogue: 0,0:21:24.27,0:21:26.50,Default,,0,0,0,,The city is quiet for a moment
+Dialogue: 0,0:21:26.50,0:21:29.28,Default,,0,0,0,,The skyscrapers are dark silhouettes
+Dialogue: 0,0:21:29.28,0:21:31.31,Default,,0,0,0,,The roads are almost empty
+Dialogue: 0,0:21:31.31,0:21:33.88,Default,,0,0,0,,The desert lies beyond the buildings
+Dialogue: 0,0:21:33.88,0:21:35.28,Default,,0,0,0,,The sea is still
+Dialogue: 0,0:21:35.28,0:21:37.99,Default,,0,0,0,,And for a few seconds the city looks almost
+Dialogue: 0,0:21:37.99,0:21:38.98,Default,,0,0,0,,peaceful
+Dialogue: 0,0:21:38.98,0:21:41.09,Default,,0,0,0,,Then the lights begin turning on
+Dialogue: 0,0:21:41.09,0:21:42.53,Default,,0,0,0,,Cars start moving
+Dialogue: 0,0:21:42.53,0:21:44.63,Default,,0,0,0,,Workers begin their shifts
+Dialogue: 0,0:21:44.63,0:21:46.71,Default,,0,0,0,,Restaurants prepare for the day
+Dialogue: 0,0:21:46.71,0:21:48.28,Default,,0,0,0,,Trains start running
+Dialogue: 0,0:21:48.28,0:21:50.49,Default,,0,0,0,,Construction sites come alive
+Dialogue: 0,0:21:50.49,0:21:52.50,Default,,0,0,0,,Hotels prepare for guests
+Dialogue: 0,0:21:52.50,0:21:54.38,Default,,0,0,0,,And Dubai begins again
+Dialogue: 0,0:21:54.38,0:21:56.73,Default,,0,0,0,,This is the real story of the city
+Dialogue: 0,0:21:56.73,0:21:58.25,Default,,0,0,0,,Not just luxury
+Dialogue: 0,0:21:58.25,0:22:00.16,Default,,0,0,0,,Not just skyscrapers
+Dialogue: 0,0:22:00.16,0:22:01.55,Default,,0,0,0,,Not just desert
+Dialogue: 0,0:22:01.55,0:22:02.81,Default,,0,0,0,,Not just wealth
+Dialogue: 0,0:22:02.81,0:22:04.85,Default,,0,0,0,,It is a story about people
+Dialogue: 0,0:22:04.85,0:22:07.34,Default,,0,0,0,,People who arrived with almost nothing
+Dialogue: 0,0:22:07.34,0:22:09.70,Default,,0,0,0,,People who came looking for opportunity
+Dialogue: 0,0:22:09.70,0:22:11.68,Default,,0,0,0,,People who built businesses
+Dialogue: 0,0:22:11.68,0:22:14.12,Default,,0,0,0,,People who left their families behind
+Dialogue: 0,0:22:14.12,0:22:15.91,Default,,0,0,0,,People who found a new home
+Dialogue: 0,0:22:15.91,0:22:18.70,Default,,0,0,0,,People who still dream of going somewhere else
+Dialogue: 0,0:22:18.70,0:22:21.37,Default,,0,0,0,,And people who now cannot imagine living anywhere
+Dialogue: 0,0:22:21.37,0:22:22.30,Default,,0,0,0,,else
+Dialogue: 0,0:22:22.30,0:22:24.97,Default,,0,0,0,,Dubai is a city of contradictions
+Dialogue: 0,0:22:24.97,0:22:27.12,Default,,0,0,0,,A desert city with beaches
+Dialogue: 0,0:22:27.12,0:22:29.88,Default,,0,0,0,,A modern city with ancient traditions
+Dialogue: 0,0:22:29.88,0:22:32.28,Default,,0,0,0,,A global city filled with people from around
+Dialogue: 0,0:22:32.28,0:22:33.18,Default,,0,0,0,,the world
+Dialogue: 0,0:22:33.18,0:22:35.88,Default,,0,0,0,,A luxury destination built on ordinary human
+Dialogue: 0,0:22:35.88,0:22:36.65,Default,,0,0,0,,work
+Dialogue: 0,0:22:36.65,0:22:39.10,Default,,0,0,0,,A place where you can stand outside in extreme
+Dialogue: 0,0:22:39.10,0:22:42.18,Default,,0,0,0,,heat and minutes later step into artificial
+Dialogue: 0,0:22:42.18,0:22:42.97,Default,,0,0,0,,winter
+Dialogue: 0,0:22:42.97,0:22:45.31,Default,,0,0,0,,But perhaps the strangest thing about Dubai
+Dialogue: 0,0:22:45.31,0:22:46.94,Default,,0,0,0,,is not what it has built
+Dialogue: 0,0:22:46.94,0:22:49.79,Default,,0,0,0,,It is what it has convinced people is possible
+Dialogue: 0,0:22:49.79,0:22:52.21,Default,,0,0,0,,That a city can rise from the desert
+Dialogue: 0,0:22:52.21,0:22:54.47,Default,,0,0,0,,That a coastline can be reshaped
+Dialogue: 0,0:22:54.47,0:22:56.86,Default,,0,0,0,,That people from almost every corner of the
+Dialogue: 0,0:22:56.86,0:22:59.25,Default,,0,0,0,,planet can live side by side
+Dialogue: 0,0:22:59.25,0:23:01.31,Default,,0,0,0,,And that an environment once considered too
+Dialogue: 0,0:23:01.31,0:23:03.82,Default,,0,0,0,,harsh for a giant modern city could become
+Dialogue: 0,0:23:03.82,0:23:05.51,Default,,0,0,0,,the foundation of one
+Dialogue: 0,0:23:05.51,0:23:07.29,Default,,0,0,0,,The desert is still there
+Dialogue: 0,0:23:07.29,0:23:08.92,Default,,0,0,0,,The heat is still there
+Dialogue: 0,0:23:08.92,0:23:10.74,Default,,0,0,0,,The ocean is still there
+Dialogue: 0,0:23:10.74,0:23:13.04,Default,,0,0,0,,And the city keeps growing around them
+Dialogue: 0,0:23:13.04,0:23:14.35,Default,,0,0,0,,This is Dubai
+Dialogue: 0,0:23:14.35,0:23:16.49,Default,,0,0,0,,Not the Dubai from the postcard
+Dialogue: 0,0:23:16.49,0:23:18.71,Default,,0,0,0,,The Dubai behind the postcard
+Dialogue: 0,0:23:18.71,0:23:20.65,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:23:20.65,0:23:22.06,Default,,0,0,0,,Life Beyond the Limits
