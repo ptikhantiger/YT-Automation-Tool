@@ -1,22 +1,16 @@
 {
   "scenes": 148,
-  "picked": 144,
-  "empty": [
-    20,
-    29,
-    56,
-    80
-  ],
+  "picked": 148,
+  "empty": [],
   "soft_scenes": 0,
-  "keyword_only_scenes": 105,
-  "ai_scenes": 53,
-  "weak_scene_share": 0.736,
+  "keyword_only_scenes": 68,
+  "ai_scenes": 46,
+  "weak_scene_share": 0.459,
   "llm_down": true,
-  "minutes": 223.2,
+  "minutes": 53.9,
   "needs_review": true,
   "reasons": [
-    "4 scene(s) have no clip",
     "Gemini quota ran out; some scenes matched by keywords only",
-    "74% of scenes are weak matches (over 25%)"
+    "46% of scenes are weak matches (over 25%)"
   ]
 }
