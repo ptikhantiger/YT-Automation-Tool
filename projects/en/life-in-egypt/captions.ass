@@ -1,0 +1,759 @@
+﻿[Script Info]
+Title: Captions
+ScriptType: v4.00+
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+PlayResX: 1920
+PlayResY: 1080
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,64,&H00FFFFFF,&H000000FF,&H00000000,&H64000000,-1,0,0,0,100,100,0,0,1,3,1,2,80,80,90,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.10,0:00:03.56,Default,,0,0,0,,LIFE IN EGYPT HOW MORE THAN 100 MILLION PEOPLE
+Dialogue: 0,0:00:03.56,0:00:06.56,Default,,0,0,0,,LIVE BETWEEN THE NILE AND DESERT Almost all
+Dialogue: 0,0:00:06.56,0:00:08.12,Default,,0,0,0,,of Egypt is desert
+Dialogue: 0,0:00:08.12,0:00:11.11,Default,,0,0,0,,Yet more than 100 million people live here
+Dialogue: 0,0:00:11.11,0:00:13.34,Default,,0,0,0,,And there is something strange about that
+Dialogue: 0,0:00:13.34,0:00:16.41,Default,,0,0,0,,Remove one river from the map and modern Egypt
+Dialogue: 0,0:00:16.41,0:00:17.99,Default,,0,0,0,,almost disappears
+Dialogue: 0,0:00:17.99,0:00:20.16,Default,,0,0,0,,The Nile is not just a river
+Dialogue: 0,0:00:20.16,0:00:22.52,Default,,0,0,0,,It is the reason cities exist here
+Dialogue: 0,0:00:22.52,0:00:24.90,Default,,0,0,0,,It is the reason farms exist here
+Dialogue: 0,0:00:24.90,0:00:27.73,Default,,0,0,0,,It is the reason millions of families can survive
+Dialogue: 0,0:00:27.73,0:00:30.51,Default,,0,0,0,,beside one of the world's largest deserts
+Dialogue: 0,0:00:30.51,0:00:33.05,Default,,0,0,0,,And for thousands of years people have built
+Dialogue: 0,0:00:33.05,0:00:34.52,Default,,0,0,0,,their lives around it
+Dialogue: 0,0:00:34.52,0:00:37.30,Default,,0,0,0,,But modern Egypt is much more complicated than
+Dialogue: 0,0:00:37.30,0:00:39.44,Default,,0,0,0,,pyramids and ancient temples
+Dialogue: 0,0:00:39.44,0:00:41.81,Default,,0,0,0,,Behind the famous monuments is a country of
+Dialogue: 0,0:00:41.81,0:00:46.13,Default,,0,0,0,,crowded streets enormous cities villages farmers
+Dialogue: 0,0:00:46.13,0:00:50.41,Default,,0,0,0,,fishermen students families workers street
+Dialogue: 0,0:00:50.41,0:00:55.30,Default,,0,0,0,,food traffic beaches mosques markets and millions
+Dialogue: 0,0:00:55.30,0:00:57.99,Default,,0,0,0,,of people simply trying to build a better life
+Dialogue: 0,0:00:57.99,0:01:00.38,Default,,0,0,0,,So what does everyday life actually look like
+Dialogue: 0,0:01:00.38,0:01:01.34,Default,,0,0,0,,in Egypt
+Dialogue: 0,0:01:01.34,0:01:03.30,Default,,0,0,0,,How can people live in a country where the
+Dialogue: 0,0:01:03.30,0:01:05.38,Default,,0,0,0,,desert dominates the landscape
+Dialogue: 0,0:01:05.38,0:01:07.59,Default,,0,0,0,,Why does everyone seem to depend on the same
+Dialogue: 0,0:01:07.59,0:01:08.98,Default,,0,0,0,,narrow river valley
+Dialogue: 0,0:01:08.98,0:01:11.22,Default,,0,0,0,,And what happens when one of the world's oldest
+Dialogue: 0,0:01:11.22,0:01:14.15,Default,,0,0,0,,civilizations collides with one of the fastest-changing
+Dialogue: 0,0:01:14.15,0:01:16.84,Default,,0,0,0,,societies in Africa and the Middle East
+Dialogue: 0,0:01:16.84,0:01:20.11,Default,,0,0,0,,Today we are leaving the tourist postcard behind
+Dialogue: 0,0:01:20.11,0:01:22.62,Default,,0,0,0,,We are going inside everyday Egypt
+Dialogue: 0,0:01:22.62,0:01:24.08,Default,,0,0,0,,Welcome to Egypt
+Dialogue: 0,0:01:24.08,0:01:26.02,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:01:26.02,0:01:27.83,Default,,0,0,0,,Life Beyond the Limits
+Dialogue: 0,0:01:27.83,0:01:30.49,Default,,0,0,0,,THE RIVER THAT DECIDES EVERYTHING Start with
+Dialogue: 0,0:01:30.49,0:01:33.20,Default,,0,0,0,,a satellite view of Egypt and the first thing
+Dialogue: 0,0:01:33.20,0:01:34.88,Default,,0,0,0,,you notice is the color
+Dialogue: 0,0:01:34.88,0:01:35.76,Default,,0,0,0,,Brown
+Dialogue: 0,0:01:35.76,0:01:36.72,Default,,0,0,0,,Yellow
+Dialogue: 0,0:01:36.72,0:01:37.70,Default,,0,0,0,,Orange
+Dialogue: 0,0:01:37.70,0:01:38.65,Default,,0,0,0,,Desert
+Dialogue: 0,0:01:38.65,0:01:42.31,Default,,0,0,0,,And then suddenly a thin green line appears
+Dialogue: 0,0:01:42.31,0:01:43.31,Default,,0,0,0,,The Nile
+Dialogue: 0,0:01:43.31,0:01:45.58,Default,,0,0,0,,Almost everything begins here
+Dialogue: 0,0:01:45.58,0:01:46.69,Default,,0,0,0,,Cities
+Dialogue: 0,0:01:46.69,0:01:47.79,Default,,0,0,0,,Fields
+Dialogue: 0,0:01:47.79,0:01:48.80,Default,,0,0,0,,Roads
+Dialogue: 0,0:01:48.80,0:01:49.99,Default,,0,0,0,,Villages
+Dialogue: 0,0:01:49.99,0:01:51.09,Default,,0,0,0,,Industry
+Dialogue: 0,0:01:51.09,0:01:52.19,Default,,0,0,0,,Markets
+Dialogue: 0,0:01:52.19,0:01:53.40,Default,,0,0,0,,Families
+Dialogue: 0,0:01:53.40,0:01:56.05,Default,,0,0,0,,For thousands of years people have depended
+Dialogue: 0,0:01:56.05,0:01:58.63,Default,,0,0,0,,on the river and the fertile land around it
+Dialogue: 0,0:01:58.63,0:02:01.76,Default,,0,0,0,,Even today the contrast is extraordinary
+Dialogue: 0,0:02:01.76,0:02:04.70,Default,,0,0,0,,On one side almost endless desert
+Dialogue: 0,0:02:04.70,0:02:08.02,Default,,0,0,0,,On the other fields filled with crops and settlements
+Dialogue: 0,0:02:08.02,0:02:09.41,Default,,0,0,0,,packed with people
+Dialogue: 0,0:02:09.41,0:02:12.54,Default,,0,0,0,,The Nile creates a narrow corridor of life
+Dialogue: 0,0:02:12.54,0:02:15.19,Default,,0,0,0,,And millions of people are concentrated inside
+Dialogue: 0,0:02:15.19,0:02:15.73,Default,,0,0,0,,it
+Dialogue: 0,0:02:15.73,0:02:18.20,Default,,0,0,0,,That means Egypt has a problem that becomes
+Dialogue: 0,0:02:18.20,0:02:20.27,Default,,0,0,0,,more obvious every year
+Dialogue: 0,0:02:20.27,0:02:22.51,Default,,0,0,0,,There is a huge amount of land
+Dialogue: 0,0:02:22.51,0:02:25.31,Default,,0,0,0,,But very little of it is easy to live on
+Dialogue: 0,0:02:25.31,0:02:27.65,Default,,0,0,0,,And that is why Egypt's cities can feel so
+Dialogue: 0,0:02:27.65,0:02:28.56,Default,,0,0,0,,crowded
+Dialogue: 0,0:02:28.56,0:02:31.37,Default,,0,0,0,,CAIRO Then you arrive in Cairo
+Dialogue: 0,0:02:31.37,0:02:34.19,Default,,0,0,0,,And the quiet desert suddenly disappears
+Dialogue: 0,0:02:34.19,0:02:35.15,Default,,0,0,0,,Cars
+Dialogue: 0,0:02:35.15,0:02:36.20,Default,,0,0,0,,Buses
+Dialogue: 0,0:02:36.20,0:02:37.68,Default,,0,0,0,,Motorcycles
+Dialogue: 0,0:02:37.68,0:02:38.59,Default,,0,0,0,,People
+Dialogue: 0,0:02:38.59,0:02:39.66,Default,,0,0,0,,Buildings
+Dialogue: 0,0:02:39.66,0:02:40.76,Default,,0,0,0,,Markets
+Dialogue: 0,0:02:40.76,0:02:42.19,Default,,0,0,0,,Street vendors
+Dialogue: 0,0:02:42.19,0:02:43.26,Default,,0,0,0,,Traffic
+Dialogue: 0,0:02:43.26,0:02:44.31,Default,,0,0,0,,Noise
+Dialogue: 0,0:02:44.31,0:02:46.45,Default,,0,0,0,,And movement in every direction
+Dialogue: 0,0:02:46.45,0:02:48.22,Default,,0,0,0,,Cairo is enormous
+Dialogue: 0,0:02:48.22,0:02:50.86,Default,,0,0,0,,For someone arriving from a quiet village the
+Dialogue: 0,0:02:50.86,0:02:52.95,Default,,0,0,0,,city can feel overwhelming
+Dialogue: 0,0:02:52.95,0:02:55.91,Default,,0,0,0,,For someone born here it is simply home
+Dialogue: 0,0:02:55.91,0:02:58.37,Default,,0,0,0,,The city stretches across both sides of the
+Dialogue: 0,0:02:58.37,0:03:00.88,Default,,0,0,0,,Nile and continues expanding into surrounding
+Dialogue: 0,0:03:00.88,0:03:01.81,Default,,0,0,0,,areas
+Dialogue: 0,0:03:01.81,0:03:04.66,Default,,0,0,0,,Apartment buildings rise one after another
+Dialogue: 0,0:03:04.66,0:03:08.48,Default,,0,0,0,,Businesses occupy almost every available space
+Dialogue: 0,0:03:08.48,0:03:11.06,Default,,0,0,0,,And the streets can remain active long after
+Dialogue: 0,0:03:11.06,0:03:12.06,Default,,0,0,0,,sunset
+Dialogue: 0,0:03:12.06,0:03:14.43,Default,,0,0,0,,But there is another Cairo hiding behind the
+Dialogue: 0,0:03:14.43,0:03:15.45,Default,,0,0,0,,traffic
+Dialogue: 0,0:03:15.45,0:03:18.36,Default,,0,0,0,,A family eating dinner in a small apartment
+Dialogue: 0,0:03:18.36,0:03:20.27,Default,,0,0,0,,A child doing homework
+Dialogue: 0,0:03:20.27,0:03:22.58,Default,,0,0,0,,A shopkeeper closing his store
+Dialogue: 0,0:03:22.58,0:03:25.56,Default,,0,0,0,,A baker preparing bread before sunrise
+Dialogue: 0,0:03:25.56,0:03:28.23,Default,,0,0,0,,A taxi driver beginning another shift
+Dialogue: 0,0:03:28.23,0:03:31.20,Default,,0,0,0,,This is the Cairo tourists often don't see
+Dialogue: 0,0:03:31.20,0:03:34.18,Default,,0,0,0,,THE MORNING IN CAIRO Before the pyramids become
+Dialogue: 0,0:03:34.18,0:03:37.47,Default,,0,0,0,,crowded with tourists Cairo is already awake
+Dialogue: 0,0:03:37.47,0:03:39.33,Default,,0,0,0,,Workers leave their homes
+Dialogue: 0,0:03:39.33,0:03:41.31,Default,,0,0,0,,Children prepare for school
+Dialogue: 0,0:03:41.31,0:03:42.61,Default,,0,0,0,,Bakeries open
+Dialogue: 0,0:03:42.61,0:03:44.98,Default,,0,0,0,,Street vendors begin setting up
+Dialogue: 0,0:03:44.98,0:03:47.16,Default,,0,0,0,,Public transportation fills
+Dialogue: 0,0:03:47.16,0:03:49.58,Default,,0,0,0,,And the first traffic jams begin
+Dialogue: 0,0:03:49.58,0:03:52.29,Default,,0,0,0,,For millions of people the day is not about
+Dialogue: 0,0:03:52.29,0:03:53.61,Default,,0,0,0,,ancient history
+Dialogue: 0,0:03:53.61,0:03:55.83,Default,,0,0,0,,It is about getting to work on time
+Dialogue: 0,0:03:55.83,0:03:57.68,Default,,0,0,0,,Finding affordable food
+Dialogue: 0,0:03:57.68,0:03:58.87,Default,,0,0,0,,Paying rent
+Dialogue: 0,0:03:58.87,0:04:00.68,Default,,0,0,0,,Taking children to school
+Dialogue: 0,0:04:00.68,0:04:02.38,Default,,0,0,0,,And making enough money to get through the
+Dialogue: 0,0:04:02.38,0:04:03.20,Default,,0,0,0,,month
+Dialogue: 0,0:04:03.20,0:04:05.40,Default,,0,0,0,,That is one of the biggest differences between
+Dialogue: 0,0:04:05.40,0:04:07.73,Default,,0,0,0,,visiting Egypt and living here
+Dialogue: 0,0:04:07.73,0:04:09.83,Default,,0,0,0,,A tourist sees the pyramids
+Dialogue: 0,0:04:09.83,0:04:12.79,Default,,0,0,0,,A resident sees the traffic on the way to work
+Dialogue: 0,0:04:12.79,0:04:15.00,Default,,0,0,0,,A tourist photographs the Nile
+Dialogue: 0,0:04:15.00,0:04:17.37,Default,,0,0,0,,A resident crosses it every morning
+Dialogue: 0,0:04:17.37,0:04:20.44,Default,,0,0,0,,A tourist visits a market for the experience
+Dialogue: 0,0:04:20.44,0:04:23.41,Default,,0,0,0,,A shopkeeper depends on that market for income
+Dialogue: 0,0:04:23.41,0:04:26.02,Default,,0,0,0,,The same country can feel completely different
+Dialogue: 0,0:04:26.02,0:04:28.04,Default,,0,0,0,,depending on which side of the camera you are
+Dialogue: 0,0:04:28.04,0:04:29.19,Default,,0,0,0,,standing on
+Dialogue: 0,0:04:29.19,0:04:32.29,Default,,0,0,0,,THE PYRAMIDS And then there are the pyramids
+Dialogue: 0,0:04:32.29,0:04:35.12,Default,,0,0,0,,Few places on Earth have a more recognizable
+Dialogue: 0,0:04:35.12,0:04:35.95,Default,,0,0,0,,image
+Dialogue: 0,0:04:35.95,0:04:38.90,Default,,0,0,0,,The Great Pyramid rises above the desert
+Dialogue: 0,0:04:38.90,0:04:41.77,Default,,0,0,0,,Tourists stand nearby taking photographs
+Dialogue: 0,0:04:41.77,0:04:44.04,Default,,0,0,0,,Guides explain ancient history
+Dialogue: 0,0:04:44.04,0:04:46.18,Default,,0,0,0,,Camels move across the sand
+Dialogue: 0,0:04:46.18,0:04:49.05,Default,,0,0,0,,And the skyline seems almost impossible
+Dialogue: 0,0:04:49.05,0:04:51.08,Default,,0,0,0,,But there is something even stranger about
+Dialogue: 0,0:04:51.08,0:04:52.27,Default,,0,0,0,,the pyramids
+Dialogue: 0,0:04:52.27,0:04:54.83,Default,,0,0,0,,They are not sitting in an empty wilderness
+Dialogue: 0,0:04:54.83,0:04:56.97,Default,,0,0,0,,Modern Cairo is right there
+Dialogue: 0,0:04:56.97,0:04:58.04,Default,,0,0,0,,Buildings
+Dialogue: 0,0:04:58.04,0:04:59.05,Default,,0,0,0,,Roads
+Dialogue: 0,0:04:59.05,0:05:00.01,Default,,0,0,0,,Cars
+Dialogue: 0,0:05:00.01,0:05:01.22,Default,,0,0,0,,Businesses
+Dialogue: 0,0:05:01.22,0:05:02.76,Default,,0,0,0,,Millions of people
+Dialogue: 0,0:05:02.76,0:05:05.47,Default,,0,0,0,,One of humanity's oldest surviving monuments
+Dialogue: 0,0:05:05.47,0:05:08.20,Default,,0,0,0,,stands beside one of Africa's largest urban
+Dialogue: 0,0:05:08.20,0:05:09.33,Default,,0,0,0,,environments
+Dialogue: 0,0:05:09.33,0:05:12.25,Default,,0,0,0,,Ancient Egypt and modern Egypt exist almost
+Dialogue: 0,0:05:12.25,0:05:13.80,Default,,0,0,0,,on top of each other
+Dialogue: 0,0:05:13.80,0:05:16.34,Default,,0,0,0,,And that contrast defines the country
+Dialogue: 0,0:05:16.34,0:05:19.27,Default,,0,0,0,,THE PEOPLE WHO LIVE BESIDE HISTORY Imagine
+Dialogue: 0,0:05:19.27,0:05:21.52,Default,,0,0,0,,growing up with one of the world's most famous
+Dialogue: 0,0:05:21.52,0:05:23.06,Default,,0,0,0,,monuments nearby
+Dialogue: 0,0:05:23.06,0:05:25.76,Default,,0,0,0,,At first it might seem extraordinary
+Dialogue: 0,0:05:25.76,0:05:28.05,Default,,0,0,0,,But eventually it becomes normal
+Dialogue: 0,0:05:28.05,0:05:30.75,Default,,0,0,0,,The pyramids become part of the landscape
+Dialogue: 0,0:05:30.75,0:05:33.06,Default,,0,0,0,,The Nile becomes part of your commute
+Dialogue: 0,0:05:33.06,0:05:35.55,Default,,0,0,0,,Ancient temples become places you may visit
+Dialogue: 0,0:05:35.55,0:05:36.62,Default,,0,0,0,,with family
+Dialogue: 0,0:05:36.62,0:05:38.43,Default,,0,0,0,,This happens everywhere
+Dialogue: 0,0:05:38.43,0:05:40.83,Default,,0,0,0,,People living near famous landmarks do not
+Dialogue: 0,0:05:40.83,0:05:43.29,Default,,0,0,0,,necessarily experience them the way tourists
+Dialogue: 0,0:05:43.29,0:05:43.98,Default,,0,0,0,,do
+Dialogue: 0,0:05:43.98,0:05:46.54,Default,,0,0,0,,The extraordinary becomes ordinary
+Dialogue: 0,0:05:46.54,0:05:48.89,Default,,0,0,0,,And perhaps that is one of the most fascinating
+Dialogue: 0,0:05:48.89,0:05:50.36,Default,,0,0,0,,things about Egypt
+Dialogue: 0,0:05:50.36,0:05:53.59,Default,,0,0,0,,A civilization that attracts millions of visitors
+Dialogue: 0,0:05:53.59,0:05:56.20,Default,,0,0,0,,is still simply home to millions of ordinary
+Dialogue: 0,0:05:56.20,0:05:57.09,Default,,0,0,0,,people
+Dialogue: 0,0:05:57.09,0:06:00.03,Default,,0,0,0,,THE NILE LIFE Move away from Cairo and the
+Dialogue: 0,0:06:00.03,0:06:02.63,Default,,0,0,0,,Nile begins to reveal another Egypt
+Dialogue: 0,0:06:02.63,0:06:04.09,Default,,0,0,0,,Green fields
+Dialogue: 0,0:06:04.09,0:06:05.35,Default,,0,0,0,,Palm trees
+Dialogue: 0,0:06:05.35,0:06:06.89,Default,,0,0,0,,Small villages
+Dialogue: 0,0:06:06.89,0:06:08.31,Default,,0,0,0,,Fishing boats
+Dialogue: 0,0:06:08.31,0:06:09.71,Default,,0,0,0,,Farm animals
+Dialogue: 0,0:06:09.71,0:06:11.81,Default,,0,0,0,,Farmers working under the sun.
+Dialogue: 0,0:06:11.81,0:06:13.73,Default,,0,0,0,,The pace becomes slower
+Dialogue: 0,0:06:13.73,0:06:15.85,Default,,0,0,0,,But the river remains at the center
+Dialogue: 0,0:06:15.85,0:06:18.10,Default,,0,0,0,,Agriculture depends on water
+Dialogue: 0,0:06:18.10,0:06:20.48,Default,,0,0,0,,Families depend on agriculture
+Dialogue: 0,0:06:20.48,0:06:22.59,Default,,0,0,0,,Markets depend on farmers
+Dialogue: 0,0:06:22.59,0:06:25.16,Default,,0,0,0,,And cities depend on food arriving from rural
+Dialogue: 0,0:06:25.16,0:06:26.16,Default,,0,0,0,,areas
+Dialogue: 0,0:06:26.16,0:06:28.34,Default,,0,0,0,,The relationship between the river and the
+Dialogue: 0,0:06:28.34,0:06:30.79,Default,,0,0,0,,people is therefore not something from ancient
+Dialogue: 0,0:06:30.79,0:06:31.78,Default,,0,0,0,,history
+Dialogue: 0,0:06:31.78,0:06:33.50,Default,,0,0,0,,It is happening right now
+Dialogue: 0,0:06:33.50,0:06:35.78,Default,,0,0,0,,A farmer does not look at the Nile and see
+Dialogue: 0,0:06:35.78,0:06:37.50,Default,,0,0,0,,a historical monument
+Dialogue: 0,0:06:37.50,0:06:38.91,Default,,0,0,0,,He sees water
+Dialogue: 0,0:06:38.91,0:06:40.43,Default,,0,0,0,,He sees crops
+Dialogue: 0,0:06:40.43,0:06:41.79,Default,,0,0,0,,He sees income
+Dialogue: 0,0:06:41.79,0:06:43.31,Default,,0,0,0,,He sees survival
+Dialogue: 0,0:06:43.31,0:06:46.56,Default,,0,0,0,,THE FARMER'S DAY A farmer's day can begin before
+Dialogue: 0,0:06:46.56,0:06:48.57,Default,,0,0,0,,the heat becomes unbearable
+Dialogue: 0,0:06:48.57,0:06:50.24,Default,,0,0,0,,Fields need attention
+Dialogue: 0,0:06:50.24,0:06:51.93,Default,,0,0,0,,Animals need care
+Dialogue: 0,0:06:51.93,0:06:53.45,Default,,0,0,0,,Crops need water
+Dialogue: 0,0:06:53.45,0:06:55.42,Default,,0,0,0,,Harvests need to be collected
+Dialogue: 0,0:06:55.42,0:06:57.68,Default,,0,0,0,,And the work does not stop simply because the
+Dialogue: 0,0:06:57.68,0:06:59.20,Default,,0,0,0,,temperature rises
+Dialogue: 0,0:06:59.20,0:07:01.84,Default,,0,0,0,,Agriculture can be physically demanding
+Dialogue: 0,0:07:01.84,0:07:04.35,Default,,0,0,0,,But it provides something the desert cannot
+Dialogue: 0,0:07:04.35,0:07:05.24,Default,,0,0,0,,Food
+Dialogue: 0,0:07:05.24,0:07:07.86,Default,,0,0,0,,The green fields around the Nile may look peaceful
+Dialogue: 0,0:07:07.86,0:07:08.93,Default,,0,0,0,,on camera
+Dialogue: 0,0:07:08.93,0:07:11.59,Default,,0,0,0,,But they represent enormous economic and social
+Dialogue: 0,0:07:11.59,0:07:12.68,Default,,0,0,0,,importance
+Dialogue: 0,0:07:12.68,0:07:15.00,Default,,0,0,0,,Every field supports families
+Dialogue: 0,0:07:15.00,0:07:17.35,Default,,0,0,0,,Every harvest moves through markets
+Dialogue: 0,0:07:17.35,0:07:19.70,Default,,0,0,0,,And every change in water availability can
+Dialogue: 0,0:07:19.70,0:07:22.24,Default,,0,0,0,,affect people far beyond the village
+Dialogue: 0,0:07:22.24,0:07:25.25,Default,,0,0,0,,THE DESERT Now drive away from the river
+Dialogue: 0,0:07:25.25,0:07:27.00,Default,,0,0,0,,The green disappears
+Dialogue: 0,0:07:27.00,0:07:28.81,Default,,0,0,0,,The land becomes dry
+Dialogue: 0,0:07:28.81,0:07:30.92,Default,,0,0,0,,Then almost completely empty
+Dialogue: 0,0:07:30.92,0:07:33.57,Default,,0,0,0,,This is the Egypt most people imagine
+Dialogue: 0,0:07:33.57,0:07:34.54,Default,,0,0,0,,Sand
+Dialogue: 0,0:07:34.54,0:07:35.45,Default,,0,0,0,,Rock
+Dialogue: 0,0:07:35.45,0:07:36.34,Default,,0,0,0,,Sun
+Dialogue: 0,0:07:36.34,0:07:38.24,Default,,0,0,0,,And enormous distances
+Dialogue: 0,0:07:38.24,0:07:40.66,Default,,0,0,0,,The desert covers most of the country
+Dialogue: 0,0:07:40.66,0:07:42.92,Default,,0,0,0,,Yet people have always crossed it
+Dialogue: 0,0:07:42.92,0:07:44.29,Default,,0,0,0,,Trade routes
+Dialogue: 0,0:07:44.29,0:07:45.31,Default,,0,0,0,,Roads
+Dialogue: 0,0:07:45.31,0:07:46.53,Default,,0,0,0,,Caravans
+Dialogue: 0,0:07:46.53,0:07:48.11,Default,,0,0,0,,Modern highways
+Dialogue: 0,0:07:48.11,0:07:49.34,Default,,0,0,0,,Pipelines
+Dialogue: 0,0:07:49.34,0:07:52.27,Default,,0,0,0,,And now massive infrastructure projects
+Dialogue: 0,0:07:52.27,0:07:53.93,Default,,0,0,0,,The desert looks empty
+Dialogue: 0,0:07:53.93,0:07:55.73,Default,,0,0,0,,But it is not useless
+Dialogue: 0,0:07:55.73,0:07:57.49,Default,,0,0,0,,It contains minerals
+Dialogue: 0,0:07:57.49,0:07:59.20,Default,,0,0,0,,Energy resources
+Dialogue: 0,0:07:59.20,0:08:00.77,Default,,0,0,0,,Transport routes
+Dialogue: 0,0:08:00.77,0:08:02.59,Default,,0,0,0,,Tourism opportunities
+Dialogue: 0,0:08:02.59,0:08:05.50,Default,,0,0,0,,And enormous spaces for future development
+Dialogue: 0,0:08:05.50,0:08:07.86,Default,,0,0,0,,The question is whether people can turn those
+Dialogue: 0,0:08:07.86,0:08:10.21,Default,,0,0,0,,spaces into productive communities without
+Dialogue: 0,0:08:10.21,0:08:12.81,Default,,0,0,0,,creating new environmental problems
+Dialogue: 0,0:08:12.81,0:08:15.74,Default,,0,0,0,,LIFE IN THE HEAT The Egyptian summer changes
+Dialogue: 0,0:08:15.74,0:08:16.96,Default,,0,0,0,,daily life
+Dialogue: 0,0:08:16.96,0:08:18.82,Default,,0,0,0,,The sun can be intense
+Dialogue: 0,0:08:18.82,0:08:20.63,Default,,0,0,0,,Concrete absorbs heat
+Dialogue: 0,0:08:20.63,0:08:22.74,Default,,0,0,0,,Cars become extremely hot
+Dialogue: 0,0:08:22.74,0:08:25.28,Default,,0,0,0,,And outdoor activity becomes harder during
+Dialogue: 0,0:08:25.28,0:08:27.10,Default,,0,0,0,,the hottest parts of the day
+Dialogue: 0,0:08:27.10,0:08:28.43,Default,,0,0,0,,People adapt
+Dialogue: 0,0:08:28.43,0:08:30.77,Default,,0,0,0,,Shaded streets become valuable
+Dialogue: 0,0:08:30.77,0:08:33.15,Default,,0,0,0,,Air conditioning becomes important
+Dialogue: 0,0:08:33.15,0:08:35.58,Default,,0,0,0,,Cold drinks become more than a luxury
+Dialogue: 0,0:08:35.58,0:08:38.36,Default,,0,0,0,,And daily routines shift around the weather
+Dialogue: 0,0:08:38.36,0:08:41.20,Default,,0,0,0,,But the heat is only one part of the story
+Dialogue: 0,0:08:41.20,0:08:43.93,Default,,0,0,0,,The bigger challenge is that Egypt has to support
+Dialogue: 0,0:08:43.93,0:08:47.03,Default,,0,0,0,,a huge population in an environment where water
+Dialogue: 0,0:08:47.03,0:08:48.24,Default,,0,0,0,,is precious
+Dialogue: 0,0:08:48.24,0:08:50.32,Default,,0,0,0,,And that brings us back to the Nile
+Dialogue: 0,0:08:50.32,0:08:53.43,Default,,0,0,0,,THE WATER QUESTION For thousands of years the
+Dialogue: 0,0:08:53.43,0:08:56.38,Default,,0,0,0,,Nile made Egyptian civilization possible
+Dialogue: 0,0:08:56.38,0:08:58.85,Default,,0,0,0,,But today water is one of the country's most
+Dialogue: 0,0:08:58.85,0:09:00.50,Default,,0,0,0,,important challenges
+Dialogue: 0,0:09:00.50,0:09:03.06,Default,,0,0,0,,Millions of people depend on the river
+Dialogue: 0,0:09:03.06,0:09:04.40,Default,,0,0,0,,Farmers need it
+Dialogue: 0,0:09:04.40,0:09:05.68,Default,,0,0,0,,Cities need it
+Dialogue: 0,0:09:05.68,0:09:07.14,Default,,0,0,0,,Industry needs it
+Dialogue: 0,0:09:07.14,0:09:08.54,Default,,0,0,0,,Families need it
+Dialogue: 0,0:09:08.54,0:09:10.43,Default,,0,0,0,,And the country shares the river with other
+Dialogue: 0,0:09:10.43,0:09:11.81,Default,,0,0,0,,nations upstream
+Dialogue: 0,0:09:11.81,0:09:14.01,Default,,0,0,0,,That makes the Nile more than a river
+Dialogue: 0,0:09:14.01,0:09:17.38,Default,,0,0,0,,It becomes a geopolitical and economic lifeline
+Dialogue: 0,0:09:17.38,0:09:20.50,Default,,0,0,0,,For an ordinary family this may seem distant
+Dialogue: 0,0:09:20.50,0:09:22.53,Default,,0,0,0,,They simply turn on a tap
+Dialogue: 0,0:09:22.53,0:09:23.64,Default,,0,0,0,,They wash
+Dialogue: 0,0:09:23.64,0:09:24.64,Default,,0,0,0,,They cook
+Dialogue: 0,0:09:24.64,0:09:25.75,Default,,0,0,0,,They drink
+Dialogue: 0,0:09:25.75,0:09:28.33,Default,,0,0,0,,But behind that simple action is an enormous
+Dialogue: 0,0:09:28.33,0:09:30.14,Default,,0,0,0,,system of water management
+Dialogue: 0,0:09:30.14,0:09:33.11,Default,,0,0,0,,And as population grows that system becomes
+Dialogue: 0,0:09:33.11,0:09:34.33,Default,,0,0,0,,more important
+Dialogue: 0,0:09:34.33,0:09:37.01,Default,,0,0,0,,THE FOOD OF EGYPT If you want to understand
+Dialogue: 0,0:09:37.01,0:09:39.51,Default,,0,0,0,,everyday Egypt follow the smell
+Dialogue: 0,0:09:39.51,0:09:40.36,Default,,0,0,0,,Bread
+Dialogue: 0,0:09:40.36,0:09:41.50,Default,,0,0,0,,Grilled meat
+Dialogue: 0,0:09:41.50,0:09:42.82,Default,,0,0,0,,Spices
+Dialogue: 0,0:09:42.82,0:09:43.85,Default,,0,0,0,,Beans
+Dialogue: 0,0:09:43.85,0:09:44.93,Default,,0,0,0,,Rice
+Dialogue: 0,0:09:44.93,0:09:46.53,Default,,0,0,0,,Fresh vegetables
+Dialogue: 0,0:09:46.53,0:09:47.36,Default,,0,0,0,,Tea
+Dialogue: 0,0:09:47.36,0:09:48.40,Default,,0,0,0,,Coffee
+Dialogue: 0,0:09:48.40,0:09:49.75,Default,,0,0,0,,And street food
+Dialogue: 0,0:09:49.75,0:09:51.26,Default,,0,0,0,,Food is everywhere
+Dialogue: 0,0:09:51.26,0:09:54.18,Default,,0,0,0,,One of the most common everyday foods is ful
+Dialogue: 0,0:09:54.18,0:09:56.32,Default,,0,0,0,,a dish made from fava beans
+Dialogue: 0,0:09:56.32,0:09:57.46,Default,,0,0,0,,It is simple
+Dialogue: 0,0:09:57.46,0:09:58.57,Default,,0,0,0,,Affordable
+Dialogue: 0,0:09:58.57,0:09:59.50,Default,,0,0,0,,Filling
+Dialogue: 0,0:09:59.50,0:10:02.50,Default,,0,0,0,,And deeply connected to everyday Egyptian life
+Dialogue: 0,0:10:02.50,0:10:05.81,Default,,0,0,0,,Falafel known locally as ta'ameya is another
+Dialogue: 0,0:10:05.81,0:10:06.99,Default,,0,0,0,,familiar food
+Dialogue: 0,0:10:06.99,0:10:10.76,Default,,0,0,0,,Then there are koshari grilled meats rice dishes
+Dialogue: 0,0:10:10.76,0:10:14.92,Default,,0,0,0,,seafood vegetables and countless regional specialties
+Dialogue: 0,0:10:14.92,0:10:17.97,Default,,0,0,0,,Food does not need to be expensive to be important
+Dialogue: 0,0:10:17.97,0:10:20.89,Default,,0,0,0,,In many Egyptian families meals are about much
+Dialogue: 0,0:10:20.89,0:10:22.32,Default,,0,0,0,,more than nutrition
+Dialogue: 0,0:10:22.32,0:10:23.86,Default,,0,0,0,,They are about family
+Dialogue: 0,0:10:23.86,0:10:25.17,Default,,0,0,0,,Hospitality
+Dialogue: 0,0:10:25.17,0:10:26.31,Default,,0,0,0,,And tradition
+Dialogue: 0,0:10:26.31,0:10:29.56,Default,,0,0,0,,THE STREET FOOD TEST Walk through a busy Egyptian
+Dialogue: 0,0:10:29.56,0:10:31.75,Default,,0,0,0,,neighborhood and you may see people eating
+Dialogue: 0,0:10:31.75,0:10:34.14,Default,,0,0,0,,while standing outside a small shop
+Dialogue: 0,0:10:34.14,0:10:36.18,Default,,0,0,0,,A worker grabs a quick meal
+Dialogue: 0,0:10:36.18,0:10:38.51,Default,,0,0,0,,Students buy something after school
+Dialogue: 0,0:10:38.51,0:10:40.79,Default,,0,0,0,,Families order food to take home
+Dialogue: 0,0:10:40.79,0:10:42.76,Default,,0,0,0,,The restaurant may be tiny
+Dialogue: 0,0:10:42.76,0:10:44.56,Default,,0,0,0,,The chairs may be simple
+Dialogue: 0,0:10:44.56,0:10:46.28,Default,,0,0,0,,But the place is busy
+Dialogue: 0,0:10:46.28,0:10:48.88,Default,,0,0,0,,This is where you discover something important
+Dialogue: 0,0:10:48.88,0:10:51.75,Default,,0,0,0,,Egyptian food culture is not built only around
+Dialogue: 0,0:10:51.75,0:10:53.46,Default,,0,0,0,,expensive restaurants
+Dialogue: 0,0:10:53.46,0:10:55.82,Default,,0,0,0,,It exists in ordinary streets
+Dialogue: 0,0:10:55.82,0:10:57.10,Default,,0,0,0,,In kitchens
+Dialogue: 0,0:10:57.10,0:10:58.64,Default,,0,0,0,,In family homes
+Dialogue: 0,0:10:58.64,0:10:59.89,Default,,0,0,0,,In markets
+Dialogue: 0,0:10:59.89,0:11:01.92,Default,,0,0,0,,And in places where people have been eating
+Dialogue: 0,0:11:01.92,0:11:04.72,Default,,0,0,0,,the same kinds of food for generations
+Dialogue: 0,0:11:04.72,0:11:07.92,Default,,0,0,0,,THE FAMILY Family is one of the strongest parts
+Dialogue: 0,0:11:07.92,0:11:09.58,Default,,0,0,0,,of Egyptian society
+Dialogue: 0,0:11:09.58,0:11:12.50,Default,,0,0,0,,In many households relatives remain closely
+Dialogue: 0,0:11:12.50,0:11:13.51,Default,,0,0,0,,connected
+Dialogue: 0,0:11:13.51,0:11:15.11,Default,,0,0,0,,Parents help children
+Dialogue: 0,0:11:15.11,0:11:17.86,Default,,0,0,0,,Children remain connected to parents even after
+Dialogue: 0,0:11:17.86,0:11:19.32,Default,,0,0,0,,becoming adults
+Dialogue: 0,0:11:19.32,0:11:22.04,Default,,0,0,0,,Grandparents can play important roles
+Dialogue: 0,0:11:22.04,0:11:24.56,Default,,0,0,0,,And major family events can bring large groups
+Dialogue: 0,0:11:24.56,0:11:25.49,Default,,0,0,0,,together
+Dialogue: 0,0:11:25.49,0:11:28.03,Default,,0,0,0,,This creates a strong support system
+Dialogue: 0,0:11:28.03,0:11:30.17,Default,,0,0,0,,But it can also create pressure
+Dialogue: 0,0:11:30.17,0:11:33.82,Default,,0,0,0,,Young people may face expectations about education
+Dialogue: 0,0:11:33.82,0:11:34.89,Default,,0,0,0,,Marriage
+Dialogue: 0,0:11:34.89,0:11:35.85,Default,,0,0,0,,Career
+Dialogue: 0,0:11:35.85,0:11:37.99,Default,,0,0,0,,Family responsibilities
+Dialogue: 0,0:11:37.99,0:11:39.58,Default,,0,0,0,,And where they should live
+Dialogue: 0,0:11:39.58,0:11:42.68,Default,,0,0,0,,The modern Egyptian family is therefore changing
+Dialogue: 0,0:11:42.68,0:11:45.58,Default,,0,0,0,,Young people have more access to global culture
+Dialogue: 0,0:11:45.58,0:11:47.54,Default,,0,0,0,,than previous generations
+Dialogue: 0,0:11:47.54,0:11:49.32,Default,,0,0,0,,They use social media
+Dialogue: 0,0:11:49.32,0:11:50.42,Default,,0,0,0,,They travel
+Dialogue: 0,0:11:50.42,0:11:51.50,Default,,0,0,0,,They study
+Dialogue: 0,0:11:51.50,0:11:53.78,Default,,0,0,0,,They watch international entertainment
+Dialogue: 0,0:11:53.78,0:11:56.82,Default,,0,0,0,,But family expectations remain powerful
+Dialogue: 0,0:11:56.82,0:12:00.08,Default,,0,0,0,,THE CHILDREN OF EGYPT Now imagine being a child
+Dialogue: 0,0:12:00.08,0:12:01.65,Default,,0,0,0,,growing up in Egypt
+Dialogue: 0,0:12:01.65,0:12:04.00,Default,,0,0,0,,Your childhood could look completely different
+Dialogue: 0,0:12:04.00,0:12:05.60,Default,,0,0,0,,depending on where you live
+Dialogue: 0,0:12:05.60,0:12:08.14,Default,,0,0,0,,A child in Cairo may grow up surrounded by
+Dialogue: 0,0:12:08.14,0:12:12.03,Default,,0,0,0,,traffic apartment buildings schools shopping
+Dialogue: 0,0:12:12.03,0:12:14.08,Default,,0,0,0,,centers and technology
+Dialogue: 0,0:12:14.08,0:12:16.57,Default,,0,0,0,,A child in a Nile village may spend more time
+Dialogue: 0,0:12:16.57,0:12:19.89,Default,,0,0,0,,around farms animals and open land
+Dialogue: 0,0:12:19.89,0:12:22.49,Default,,0,0,0,,A child near the Red Sea may grow up beside
+Dialogue: 0,0:12:22.49,0:12:23.94,Default,,0,0,0,,beaches and tourism
+Dialogue: 0,0:12:23.94,0:12:26.90,Default,,0,0,0,,A child in Upper Egypt may experience a very
+Dialogue: 0,0:12:26.90,0:12:28.83,Default,,0,0,0,,different rhythm of life again
+Dialogue: 0,0:12:28.83,0:12:31.33,Default,,0,0,0,,There is no single Egyptian childhood
+Dialogue: 0,0:12:31.33,0:12:34.43,Default,,0,0,0,,But education is important across the country
+Dialogue: 0,0:12:34.43,0:12:37.50,Default,,0,0,0,,Parents often see education as one of the strongest
+Dialogue: 0,0:12:37.50,0:12:40.29,Default,,0,0,0,,ways their children can improve their future
+Dialogue: 0,0:12:40.29,0:12:43.76,Default,,0,0,0,,And for many families that means sacrifice
+Dialogue: 0,0:12:43.76,0:12:46.69,Default,,0,0,0,,THE SCHOOL DAY A school morning can begin with
+Dialogue: 0,0:12:46.69,0:12:48.11,Default,,0,0,0,,crowded streets
+Dialogue: 0,0:12:48.11,0:12:49.86,Default,,0,0,0,,Children in uniforms
+Dialogue: 0,0:12:49.86,0:12:51.96,Default,,0,0,0,,Parents getting ready for work
+Dialogue: 0,0:12:51.96,0:12:53.92,Default,,0,0,0,,Buses moving through traffic
+Dialogue: 0,0:12:53.92,0:12:55.74,Default,,0,0,0,,And classrooms filling up
+Dialogue: 0,0:12:55.74,0:12:57.99,Default,,0,0,0,,Education can open doors
+Dialogue: 0,0:12:57.99,0:13:00.62,Default,,0,0,0,,But competition can also be intense
+Dialogue: 0,0:13:00.62,0:13:03.32,Default,,0,0,0,,Students may spend years preparing for exams
+Dialogue: 0,0:13:03.32,0:13:05.67,Default,,0,0,0,,that influence what they can study and which
+Dialogue: 0,0:13:05.67,0:13:07.42,Default,,0,0,0,,careers become available
+Dialogue: 0,0:13:07.42,0:13:10.50,Default,,0,0,0,,For some families education is one of the biggest
+Dialogue: 0,0:13:10.50,0:13:12.82,Default,,0,0,0,,investments they can make in their children
+Dialogue: 0,0:13:12.82,0:13:14.19,Default,,0,0,0,,The hope is simple
+Dialogue: 0,0:13:14.19,0:13:15.87,Default,,0,0,0,,A better education
+Dialogue: 0,0:13:15.87,0:13:17.15,Default,,0,0,0,,A better job
+Dialogue: 0,0:13:17.15,0:13:18.82,Default,,0,0,0,,A more stable future
+Dialogue: 0,0:13:18.82,0:13:21.92,Default,,0,0,0,,THE WOMEN OF EGYPT Egyptian women live very
+Dialogue: 0,0:13:21.92,0:13:25.47,Default,,0,0,0,,different lives depending on their family location
+Dialogue: 0,0:13:25.47,0:13:28.25,Default,,0,0,0,,education and economic situation
+Dialogue: 0,0:13:28.25,0:13:30.07,Default,,0,0,0,,Women work in schools
+Dialogue: 0,0:13:30.07,0:13:31.33,Default,,0,0,0,,Hospitals
+Dialogue: 0,0:13:31.33,0:13:32.54,Default,,0,0,0,,Businesses
+Dialogue: 0,0:13:32.54,0:13:33.51,Default,,0,0,0,,Government
+Dialogue: 0,0:13:33.51,0:13:34.54,Default,,0,0,0,,Media
+Dialogue: 0,0:13:34.54,0:13:35.87,Default,,0,0,0,,Agriculture
+Dialogue: 0,0:13:35.87,0:13:36.87,Default,,0,0,0,,Tourism
+Dialogue: 0,0:13:36.87,0:13:38.97,Default,,0,0,0,,And countless other professions
+Dialogue: 0,0:13:38.97,0:13:42.01,Default,,0,0,0,,Many also carry major responsibilities inside
+Dialogue: 0,0:13:42.01,0:13:42.83,Default,,0,0,0,,the home
+Dialogue: 0,0:13:42.83,0:13:45.69,Default,,0,0,0,,In cities younger generations are increasingly
+Dialogue: 0,0:13:45.69,0:13:48.93,Default,,0,0,0,,connected to global conversations about careers
+Dialogue: 0,0:13:48.93,0:13:52.42,Default,,0,0,0,,independence education and family life
+Dialogue: 0,0:13:52.42,0:13:56.03,Default,,0,0,0,,In rural areas traditions can remain stronger
+Dialogue: 0,0:13:56.03,0:13:58.61,Default,,0,0,0,,This creates a country where different generations
+Dialogue: 0,0:13:58.61,0:14:01.28,Default,,0,0,0,,can have very different expectations
+Dialogue: 0,0:14:01.28,0:14:02.79,Default,,0,0,0,,Egypt is changing
+Dialogue: 0,0:14:02.79,0:14:05.14,Default,,0,0,0,,But change does not happen at the same speed
+Dialogue: 0,0:14:05.14,0:14:06.12,Default,,0,0,0,,everywhere
+Dialogue: 0,0:14:06.12,0:14:09.56,Default,,0,0,0,,THE OLD MARKET Now enter an Egyptian market
+Dialogue: 0,0:14:09.56,0:14:12.04,Default,,0,0,0,,The environment changes immediately
+Dialogue: 0,0:14:12.04,0:14:13.49,Default,,0,0,0,,Spices
+Dialogue: 0,0:14:13.49,0:14:14.44,Default,,0,0,0,,Clothing
+Dialogue: 0,0:14:14.44,0:14:15.46,Default,,0,0,0,,Jewelry
+Dialogue: 0,0:14:15.46,0:14:16.30,Default,,0,0,0,,Bread
+Dialogue: 0,0:14:16.30,0:14:17.21,Default,,0,0,0,,Fruit
+Dialogue: 0,0:14:17.21,0:14:18.04,Default,,0,0,0,,Tea
+Dialogue: 0,0:14:18.04,0:14:19.21,Default,,0,0,0,,Voices
+Dialogue: 0,0:14:19.21,0:14:20.68,Default,,0,0,0,,Motorcycles
+Dialogue: 0,0:14:20.68,0:14:21.76,Default,,0,0,0,,Tourists
+Dialogue: 0,0:14:21.76,0:14:23.28,Default,,0,0,0,,Local shoppers
+Dialogue: 0,0:14:23.28,0:14:26.37,Default,,0,0,0,,The market is not simply a place to buy things
+Dialogue: 0,0:14:26.37,0:14:28.33,Default,,0,0,0,,It is a social environment
+Dialogue: 0,0:14:28.33,0:14:29.90,Default,,0,0,0,,People negotiate
+Dialogue: 0,0:14:29.90,0:14:30.94,Default,,0,0,0,,They talk
+Dialogue: 0,0:14:30.94,0:14:32.05,Default,,0,0,0,,They joke
+Dialogue: 0,0:14:32.05,0:14:33.04,Default,,0,0,0,,They meet
+Dialogue: 0,0:14:33.04,0:14:35.91,Default,,0,0,0,,And they build relationships with shopkeepers
+Dialogue: 0,0:14:35.91,0:14:38.91,Default,,0,0,0,,For visitors the market can feel chaotic
+Dialogue: 0,0:14:38.91,0:14:42.39,Default,,0,0,0,,For residents the chaos can be completely normal
+Dialogue: 0,0:14:42.39,0:14:45.90,Default,,0,0,0,,THE MOSQUE AND THE CITY Across Egyptian cities
+Dialogue: 0,0:14:45.90,0:14:48.05,Default,,0,0,0,,mosques are part of the landscape
+Dialogue: 0,0:14:48.05,0:14:50.43,Default,,0,0,0,,They appear between apartment buildings
+Dialogue: 0,0:14:50.43,0:14:51.96,Default,,0,0,0,,Beside markets
+Dialogue: 0,0:14:51.96,0:14:53.12,Default,,0,0,0,,Near roads
+Dialogue: 0,0:14:53.12,0:14:54.68,Default,,0,0,0,,In old neighborhoods
+Dialogue: 0,0:14:54.68,0:14:56.37,Default,,0,0,0,,And in new developments
+Dialogue: 0,0:14:56.37,0:14:58.98,Default,,0,0,0,,Religion remains an important part of everyday
+Dialogue: 0,0:14:58.98,0:15:01.05,Default,,0,0,0,,life for many Egyptians
+Dialogue: 0,0:15:01.05,0:15:03.84,Default,,0,0,0,,But the city around it is changing rapidly
+Dialogue: 0,0:15:03.84,0:15:05.47,Default,,0,0,0,,Modern cafes
+Dialogue: 0,0:15:05.47,0:15:06.94,Default,,0,0,0,,Shopping centers
+Dialogue: 0,0:15:06.94,0:15:08.21,Default,,0,0,0,,Technology
+Dialogue: 0,0:15:08.21,0:15:10.00,Default,,0,0,0,,International brands
+Dialogue: 0,0:15:10.00,0:15:11.41,Default,,0,0,0,,Social media
+Dialogue: 0,0:15:11.41,0:15:14.18,Default,,0,0,0,,And global entertainment all exist alongside
+Dialogue: 0,0:15:14.18,0:15:16.89,Default,,0,0,0,,traditional religious and family life
+Dialogue: 0,0:15:16.89,0:15:20.69,Default,,0,0,0,,Again Egypt refuses to fit into a single image
+Dialogue: 0,0:15:20.69,0:15:24.05,Default,,0,0,0,,THE RED SEA Now leave the Nile behind and travel
+Dialogue: 0,0:15:24.05,0:15:25.53,Default,,0,0,0,,toward the Red Sea
+Dialogue: 0,0:15:25.53,0:15:27.80,Default,,0,0,0,,The landscape changes completely
+Dialogue: 0,0:15:27.80,0:15:29.69,Default,,0,0,0,,The desert meets the water
+Dialogue: 0,0:15:29.69,0:15:31.83,Default,,0,0,0,,Resorts appear along the coast
+Dialogue: 0,0:15:31.83,0:15:34.57,Default,,0,0,0,,And beneath the surface is another world
+Dialogue: 0,0:15:34.57,0:15:35.89,Default,,0,0,0,,Coral reefs
+Dialogue: 0,0:15:35.89,0:15:37.30,Default,,0,0,0,,Colorful fish
+Dialogue: 0,0:15:37.30,0:15:38.47,Default,,0,0,0,,Clear water
+Dialogue: 0,0:15:38.47,0:15:39.55,Default,,0,0,0,,Divers
+Dialogue: 0,0:15:39.55,0:15:40.50,Default,,0,0,0,,Boats
+Dialogue: 0,0:15:40.50,0:15:42.59,Default,,0,0,0,,And tourists from around the world
+Dialogue: 0,0:15:42.59,0:15:45.25,Default,,0,0,0,,Places such as Hurghada and Sharm El Sheikh
+Dialogue: 0,0:15:45.25,0:15:47.90,Default,,0,0,0,,have become major tourism destinations
+Dialogue: 0,0:15:47.90,0:15:50.55,Default,,0,0,0,,Here Egypt looks nothing like Cairo
+Dialogue: 0,0:15:50.55,0:15:52.87,Default,,0,0,0,,There are beaches instead of traffic
+Dialogue: 0,0:15:52.87,0:15:55.51,Default,,0,0,0,,Resorts instead of crowded markets
+Dialogue: 0,0:15:55.51,0:15:58.03,Default,,0,0,0,,And the sea becomes the center of life
+Dialogue: 0,0:15:58.03,0:16:00.94,Default,,0,0,0,,But even this tourism economy depends on thousands
+Dialogue: 0,0:16:00.94,0:16:02.00,Default,,0,0,0,,of workers
+Dialogue: 0,0:16:02.00,0:16:03.59,Default,,0,0,0,,Hotel employees
+Dialogue: 0,0:16:03.59,0:16:04.71,Default,,0,0,0,,Chefs
+Dialogue: 0,0:16:04.71,0:16:05.87,Default,,0,0,0,,Drivers
+Dialogue: 0,0:16:05.87,0:16:06.86,Default,,0,0,0,,Guides
+Dialogue: 0,0:16:06.86,0:16:07.94,Default,,0,0,0,,Cleaners
+Dialogue: 0,0:16:07.94,0:16:09.15,Default,,0,0,0,,Boat crews
+Dialogue: 0,0:16:09.15,0:16:10.71,Default,,0,0,0,,Security staff
+Dialogue: 0,0:16:10.71,0:16:12.46,Default,,0,0,0,,And local businesses
+Dialogue: 0,0:16:12.46,0:16:14.84,Default,,0,0,0,,The postcard exists because people make it
+Dialogue: 0,0:16:14.84,0:16:15.66,Default,,0,0,0,,happen
+Dialogue: 0,0:16:15.66,0:16:18.53,Default,,0,0,0,,ALEXANDRIA Then travel north
+Dialogue: 0,0:16:18.53,0:16:21.62,Default,,0,0,0,,The desert gives way to the Mediterranean coast
+Dialogue: 0,0:16:21.62,0:16:23.01,Default,,0,0,0,,Alexandria
+Dialogue: 0,0:16:23.01,0:16:26.83,Default,,0,0,0,,A city connected to the sea history trade and
+Dialogue: 0,0:16:26.83,0:16:28.48,Default,,0,0,0,,modern Egyptian life
+Dialogue: 0,0:16:28.48,0:16:31.32,Default,,0,0,0,,The Mediterranean changes the atmosphere
+Dialogue: 0,0:16:31.32,0:16:33.21,Default,,0,0,0,,People walk near the water
+Dialogue: 0,0:16:33.21,0:16:35.14,Default,,0,0,0,,Restaurants face the coast
+Dialogue: 0,0:16:35.14,0:16:37.12,Default,,0,0,0,,Fishermen work from the harbor
+Dialogue: 0,0:16:37.12,0:16:39.62,Default,,0,0,0,,And the city feels different from Cairo
+Dialogue: 0,0:16:39.62,0:16:42.78,Default,,0,0,0,,Alexandria reminds us that Egypt is not only
+Dialogue: 0,0:16:42.78,0:16:44.11,Default,,0,0,0,,a desert country
+Dialogue: 0,0:16:44.11,0:16:46.72,Default,,0,0,0,,It is also a Mediterranean country
+Dialogue: 0,0:16:46.72,0:16:48.29,Default,,0,0,0,,A Red Sea country
+Dialogue: 0,0:16:48.29,0:16:49.65,Default,,0,0,0,,A Nile country
+Dialogue: 0,0:16:49.65,0:16:52.89,Default,,0,0,0,,And a country of enormous geographic contrasts
+Dialogue: 0,0:16:52.89,0:16:56.26,Default,,0,0,0,,LUXOR Travel south and history becomes even
+Dialogue: 0,0:16:56.26,0:16:57.37,Default,,0,0,0,,more visible
+Dialogue: 0,0:16:57.37,0:17:00.15,Default,,0,0,0,,Luxor is surrounded by ancient temples and
+Dialogue: 0,0:17:00.15,0:17:02.12,Default,,0,0,0,,archaeological sites
+Dialogue: 0,0:17:02.12,0:17:03.98,Default,,0,0,0,,The Nile runs through the city
+Dialogue: 0,0:17:03.98,0:17:06.21,Default,,0,0,0,,Tourist boats move along the river
+Dialogue: 0,0:17:06.21,0:17:09.14,Default,,0,0,0,,And ancient structures rise from the landscape
+Dialogue: 0,0:17:09.14,0:17:11.71,Default,,0,0,0,,But again look beyond the monuments
+Dialogue: 0,0:17:11.71,0:17:13.07,Default,,0,0,0,,People live here
+Dialogue: 0,0:17:13.07,0:17:14.11,Default,,0,0,0,,They work
+Dialogue: 0,0:17:14.11,0:17:15.18,Default,,0,0,0,,They shop
+Dialogue: 0,0:17:15.18,0:17:16.78,Default,,0,0,0,,They raise children
+Dialogue: 0,0:17:16.78,0:17:18.74,Default,,0,0,0,,They ride motorcycles
+Dialogue: 0,0:17:18.74,0:17:20.09,Default,,0,0,0,,They drink tea
+Dialogue: 0,0:17:20.09,0:17:21.41,Default,,0,0,0,,They go to school
+Dialogue: 0,0:17:21.41,0:17:24.01,Default,,0,0,0,,Ancient Egypt is part of the environment
+Dialogue: 0,0:17:24.01,0:17:26.51,Default,,0,0,0,,But modern Egypt is the life happening around
+Dialogue: 0,0:17:26.51,0:17:27.06,Default,,0,0,0,,it
+Dialogue: 0,0:17:27.06,0:17:30.09,Default,,0,0,0,,ASWAN Farther south is Aswan
+Dialogue: 0,0:17:30.09,0:17:32.51,Default,,0,0,0,,The Nile becomes part of a landscape filled
+Dialogue: 0,0:17:32.51,0:17:35.66,Default,,0,0,0,,with islands desert and warm sunlight
+Dialogue: 0,0:17:35.66,0:17:38.29,Default,,0,0,0,,Traditional boats move across the water
+Dialogue: 0,0:17:38.29,0:17:40.11,Default,,0,0,0,,Palm trees line the river
+Dialogue: 0,0:17:40.11,0:17:42.58,Default,,0,0,0,,Markets fill with local products
+Dialogue: 0,0:17:42.58,0:17:44.62,Default,,0,0,0,,And the pace can feel slower
+Dialogue: 0,0:17:44.62,0:17:46.72,Default,,0,0,0,,Aswan offers another lesson
+Dialogue: 0,0:17:46.72,0:17:48.58,Default,,0,0,0,,Egypt is not one city
+Dialogue: 0,0:17:48.58,0:17:51.19,Default,,0,0,0,,It is a collection of very different environments
+Dialogue: 0,0:17:51.19,0:17:53.11,Default,,0,0,0,,connected by the same river
+Dialogue: 0,0:17:53.11,0:17:55.92,Default,,0,0,0,,THE PEOPLE WHO NEVER VISIT THE PYRAMIDS Here
+Dialogue: 0,0:17:55.92,0:17:57.99,Default,,0,0,0,,is something tourists often forget
+Dialogue: 0,0:17:57.99,0:18:00.65,Default,,0,0,0,,Millions of Egyptians live their entire lives
+Dialogue: 0,0:18:00.65,0:18:02.63,Default,,0,0,0,,without spending their days thinking about
+Dialogue: 0,0:18:02.63,0:18:03.79,Default,,0,0,0,,the pyramids
+Dialogue: 0,0:18:03.79,0:18:05.80,Default,,0,0,0,,They may never work in tourism
+Dialogue: 0,0:18:05.80,0:18:08.22,Default,,0,0,0,,They may never guide a foreign visitor
+Dialogue: 0,0:18:08.22,0:18:10.80,Default,,0,0,0,,They may never visit every famous temple
+Dialogue: 0,0:18:10.80,0:18:13.45,Default,,0,0,0,,Their concerns are much more ordinary
+Dialogue: 0,0:18:13.45,0:18:14.37,Default,,0,0,0,,Work
+Dialogue: 0,0:18:14.37,0:18:15.20,Default,,0,0,0,,Rent
+Dialogue: 0,0:18:15.20,0:18:16.09,Default,,0,0,0,,Food
+Dialogue: 0,0:18:16.09,0:18:17.08,Default,,0,0,0,,School
+Dialogue: 0,0:18:17.08,0:18:18.11,Default,,0,0,0,,Family
+Dialogue: 0,0:18:18.11,0:18:19.09,Default,,0,0,0,,Bills
+Dialogue: 0,0:18:19.09,0:18:20.51,Default,,0,0,0,,Transportation
+Dialogue: 0,0:18:20.51,0:18:21.33,Default,,0,0,0,,Health
+Dialogue: 0,0:18:21.33,0:18:23.91,Default,,0,0,0,,The ancient monuments are part of the national
+Dialogue: 0,0:18:23.91,0:18:24.90,Default,,0,0,0,,identity
+Dialogue: 0,0:18:24.90,0:18:27.31,Default,,0,0,0,,But they do not pay everyone's bills
+Dialogue: 0,0:18:27.31,0:18:30.23,Default,,0,0,0,,This is the Egypt behind the history books
+Dialogue: 0,0:18:30.23,0:18:33.80,Default,,0,0,0,,THE ECONOMIC STRUGGLE Egypt has enormous economic
+Dialogue: 0,0:18:33.80,0:18:34.83,Default,,0,0,0,,potential
+Dialogue: 0,0:18:34.83,0:18:35.83,Default,,0,0,0,,Tourism
+Dialogue: 0,0:18:35.83,0:18:37.40,Default,,0,0,0,,The Suez Canal
+Dialogue: 0,0:18:37.40,0:18:38.73,Default,,0,0,0,,Agriculture
+Dialogue: 0,0:18:38.73,0:18:39.73,Default,,0,0,0,,Energy
+Dialogue: 0,0:18:39.73,0:18:41.15,Default,,0,0,0,,Manufacturing
+Dialogue: 0,0:18:41.15,0:18:42.12,Default,,0,0,0,,Trade
+Dialogue: 0,0:18:42.12,0:18:45.55,Default,,0,0,0,,And its location connecting Africa Asia and
+Dialogue: 0,0:18:45.55,0:18:46.44,Default,,0,0,0,,Europe
+Dialogue: 0,0:18:46.44,0:18:48.81,Default,,0,0,0,,But potential does not automatically create
+Dialogue: 0,0:18:48.81,0:18:50.13,Default,,0,0,0,,an easy life
+Dialogue: 0,0:18:50.13,0:18:53.17,Default,,0,0,0,,Inflation and rising living costs can put pressure
+Dialogue: 0,0:18:53.17,0:18:54.44,Default,,0,0,0,,on families
+Dialogue: 0,0:18:54.44,0:18:56.42,Default,,0,0,0,,Young people want jobs
+Dialogue: 0,0:18:56.42,0:18:58.31,Default,,0,0,0,,Businesses need investment
+Dialogue: 0,0:18:58.31,0:19:00.92,Default,,0,0,0,,And the government faces the challenge of providing
+Dialogue: 0,0:19:00.92,0:19:04.30,Default,,0,0,0,,services for a huge and growing population
+Dialogue: 0,0:19:04.30,0:19:07.12,Default,,0,0,0,,For an ordinary family economic statistics
+Dialogue: 0,0:19:07.12,0:19:08.81,Default,,0,0,0,,become very simple
+Dialogue: 0,0:19:08.81,0:19:10.44,Default,,0,0,0,,Can we afford the food
+Dialogue: 0,0:19:10.44,0:19:11.84,Default,,0,0,0,,Can we pay the rent
+Dialogue: 0,0:19:11.84,0:19:13.44,Default,,0,0,0,,Can we afford school
+Dialogue: 0,0:19:13.44,0:19:14.99,Default,,0,0,0,,Can we save anything
+Dialogue: 0,0:19:14.99,0:19:17.87,Default,,0,0,0,,That is how people experience an economy
+Dialogue: 0,0:19:17.87,0:19:19.38,Default,,0,0,0,,Not through charts
+Dialogue: 0,0:19:19.38,0:19:21.24,Default,,0,0,0,,Through their shopping bags
+Dialogue: 0,0:19:21.24,0:19:24.20,Default,,0,0,0,,THE NEW EGYPT But Egypt is also building a
+Dialogue: 0,0:19:24.20,0:19:25.49,Default,,0,0,0,,different future
+Dialogue: 0,0:19:25.49,0:19:26.70,Default,,0,0,0,,New roads
+Dialogue: 0,0:19:26.70,0:19:27.84,Default,,0,0,0,,New housing
+Dialogue: 0,0:19:27.84,0:19:29.13,Default,,0,0,0,,New cities
+Dialogue: 0,0:19:29.13,0:19:30.66,Default,,0,0,0,,New infrastructure
+Dialogue: 0,0:19:30.66,0:19:32.54,Default,,0,0,0,,Modern shopping centers
+Dialogue: 0,0:19:32.54,0:19:33.80,Default,,0,0,0,,Technology
+Dialogue: 0,0:19:33.80,0:19:35.52,Default,,0,0,0,,Tourism projects
+Dialogue: 0,0:19:35.52,0:19:37.94,Default,,0,0,0,,And large developments outside traditional
+Dialogue: 0,0:19:37.94,0:19:39.26,Default,,0,0,0,,urban centers
+Dialogue: 0,0:19:39.26,0:19:42.29,Default,,0,0,0,,The idea is to reduce pressure on crowded cities
+Dialogue: 0,0:19:42.29,0:19:45.11,Default,,0,0,0,,and create new economic opportunities
+Dialogue: 0,0:19:45.11,0:19:47.19,Default,,0,0,0,,But there is a difficult question
+Dialogue: 0,0:19:47.19,0:19:49.44,Default,,0,0,0,,Can people be convinced to move away from the
+Dialogue: 0,0:19:49.44,0:19:51.44,Default,,0,0,0,,places where their families have lived for
+Dialogue: 0,0:19:51.44,0:19:52.66,Default,,0,0,0,,generations
+Dialogue: 0,0:19:52.66,0:19:55.49,Default,,0,0,0,,A new city can have roads and buildings
+Dialogue: 0,0:19:55.49,0:19:57.65,Default,,0,0,0,,But a real community takes time
+Dialogue: 0,0:19:57.65,0:19:59.30,Default,,0,0,0,,People need schools
+Dialogue: 0,0:19:59.30,0:20:00.40,Default,,0,0,0,,Jobs
+Dialogue: 0,0:20:00.40,0:20:01.49,Default,,0,0,0,,Markets
+Dialogue: 0,0:20:01.49,0:20:02.55,Default,,0,0,0,,Friends
+Dialogue: 0,0:20:02.55,0:20:03.70,Default,,0,0,0,,Memories
+Dialogue: 0,0:20:03.70,0:20:05.33,Default,,0,0,0,,And reasons to stay
+Dialogue: 0,0:20:05.33,0:20:08.48,Default,,0,0,0,,THE DESERT EXPERIMENT This is perhaps Egypt's
+Dialogue: 0,0:20:08.48,0:20:09.98,Default,,0,0,0,,greatest challenge
+Dialogue: 0,0:20:09.98,0:20:12.92,Default,,0,0,0,,The country has enormous empty spaces
+Dialogue: 0,0:20:12.92,0:20:15.53,Default,,0,0,0,,But empty land is not automatically livable
+Dialogue: 0,0:20:15.53,0:20:16.38,Default,,0,0,0,,land
+Dialogue: 0,0:20:16.38,0:20:18.94,Default,,0,0,0,,To create a new city in the desert you need
+Dialogue: 0,0:20:18.94,0:20:19.80,Default,,0,0,0,,water
+Dialogue: 0,0:20:19.80,0:20:21.06,Default,,0,0,0,,Electricity
+Dialogue: 0,0:20:21.06,0:20:22.48,Default,,0,0,0,,Transportation
+Dialogue: 0,0:20:22.48,0:20:23.57,Default,,0,0,0,,Jobs
+Dialogue: 0,0:20:23.57,0:20:24.84,Default,,0,0,0,,Hospitals
+Dialogue: 0,0:20:24.84,0:20:25.95,Default,,0,0,0,,Schools
+Dialogue: 0,0:20:25.95,0:20:26.84,Default,,0,0,0,,Food
+Dialogue: 0,0:20:26.84,0:20:28.28,Default,,0,0,0,,And businesses
+Dialogue: 0,0:20:28.28,0:20:31.16,Default,,0,0,0,,You have to create an ecosystem of human life
+Dialogue: 0,0:20:31.16,0:20:34.23,Default,,0,0,0,,That is much harder than building skyscrapers
+Dialogue: 0,0:20:34.23,0:20:37.10,Default,,0,0,0,,The future of Egypt may depend partly on whether
+Dialogue: 0,0:20:37.10,0:20:40.10,Default,,0,0,0,,it can successfully create new places for people
+Dialogue: 0,0:20:40.10,0:20:42.63,Default,,0,0,0,,to live without placing even more pressure
+Dialogue: 0,0:20:42.63,0:20:43.70,Default,,0,0,0,,on the Nile
+Dialogue: 0,0:20:43.70,0:20:46.99,Default,,0,0,0,,THE NILE AT NIGHT Return to the river at night
+Dialogue: 0,0:20:46.99,0:20:49.62,Default,,0,0,0,,Cairo lights reflect across the water
+Dialogue: 0,0:20:49.62,0:20:51.14,Default,,0,0,0,,Boats move slowly
+Dialogue: 0,0:20:51.14,0:20:52.48,Default,,0,0,0,,Buildings glow
+Dialogue: 0,0:20:52.48,0:20:54.10,Default,,0,0,0,,Traffic continues
+Dialogue: 0,0:20:54.10,0:20:56.35,Default,,0,0,0,,Families sit beside the river
+Dialogue: 0,0:20:56.35,0:20:58.20,Default,,0,0,0,,Restaurants remain open
+Dialogue: 0,0:20:58.20,0:21:01.00,Default,,0,0,0,,And somewhere far away the desert is completely
+Dialogue: 0,0:21:01.00,0:21:01.84,Default,,0,0,0,,dark
+Dialogue: 0,0:21:01.84,0:21:04.34,Default,,0,0,0,,It is difficult to imagine that the same country
+Dialogue: 0,0:21:04.34,0:21:06.16,Default,,0,0,0,,contains both scenes
+Dialogue: 0,0:21:06.16,0:21:08.88,Default,,0,0,0,,One side filled with millions of lights
+Dialogue: 0,0:21:08.88,0:21:11.30,Default,,0,0,0,,The other almost completely empty
+Dialogue: 0,0:21:11.30,0:21:13.28,Default,,0,0,0,,And between them is the Nile
+Dialogue: 0,0:21:13.28,0:21:14.49,Default,,0,0,0,,Still moving
+Dialogue: 0,0:21:14.49,0:21:16.19,Default,,0,0,0,,Still carrying water
+Dialogue: 0,0:21:16.19,0:21:19.16,Default,,0,0,0,,Still connecting one part of Egypt to another
+Dialogue: 0,0:21:19.16,0:21:21.98,Default,,0,0,0,,THE BIGGEST CONTRADICTION Egypt's greatest
+Dialogue: 0,0:21:21.98,0:21:24.17,Default,,0,0,0,,story is not the pyramids
+Dialogue: 0,0:21:24.17,0:21:26.00,Default,,0,0,0,,It is not Cleopatra
+Dialogue: 0,0:21:26.00,0:21:27.71,Default,,0,0,0,,It is not the Pharaohs
+Dialogue: 0,0:21:27.71,0:21:29.50,Default,,0,0,0,,It is not even Cairo
+Dialogue: 0,0:21:29.50,0:21:31.89,Default,,0,0,0,,It is the simple fact that people built one
+Dialogue: 0,0:21:31.89,0:21:34.24,Default,,0,0,0,,of the world's great civilizations around a
+Dialogue: 0,0:21:34.24,0:21:37.19,Default,,0,0,0,,narrow strip of life surrounded by desert
+Dialogue: 0,0:21:37.19,0:21:39.57,Default,,0,0,0,,And thousands of years later they are still
+Dialogue: 0,0:21:39.57,0:21:40.48,Default,,0,0,0,,doing it
+Dialogue: 0,0:21:40.48,0:21:42.60,Default,,0,0,0,,The technology has changed
+Dialogue: 0,0:21:42.60,0:21:44.44,Default,,0,0,0,,The buildings have changed
+Dialogue: 0,0:21:44.44,0:21:46.56,Default,,0,0,0,,The population has exploded
+Dialogue: 0,0:21:46.56,0:21:48.25,Default,,0,0,0,,The cars have changed
+Dialogue: 0,0:21:48.25,0:21:50.17,Default,,0,0,0,,The economy has changed
+Dialogue: 0,0:21:50.17,0:21:52.78,Default,,0,0,0,,But the basic relationship remains
+Dialogue: 0,0:21:52.78,0:21:54.46,Default,,0,0,0,,Water creates life
+Dialogue: 0,0:21:54.46,0:21:56.34,Default,,0,0,0,,Life creates communities
+Dialogue: 0,0:21:56.34,0:21:58.38,Default,,0,0,0,,Communities create cities
+Dialogue: 0,0:21:58.38,0:22:00.74,Default,,0,0,0,,And cities create a civilization
+Dialogue: 0,0:22:00.74,0:22:04.42,Default,,0,0,0,,THE FUTURE But the future will test that relationship
+Dialogue: 0,0:22:04.42,0:22:06.20,Default,,0,0,0,,Egypt needs more water
+Dialogue: 0,0:22:06.20,0:22:07.50,Default,,0,0,0,,More jobs
+Dialogue: 0,0:22:07.50,0:22:08.59,Default,,0,0,0,,More housing
+Dialogue: 0,0:22:08.59,0:22:09.69,Default,,0,0,0,,More food
+Dialogue: 0,0:22:09.69,0:22:11.25,Default,,0,0,0,,More infrastructure
+Dialogue: 0,0:22:11.25,0:22:13.71,Default,,0,0,0,,And more opportunities for young people
+Dialogue: 0,0:22:13.71,0:22:16.55,Default,,0,0,0,,At the same time it has to protect the environment
+Dialogue: 0,0:22:16.55,0:22:18.34,Default,,0,0,0,,that supports all of this
+Dialogue: 0,0:22:18.34,0:22:21.30,Default,,0,0,0,,The Nile cannot simply be treated as an unlimited
+Dialogue: 0,0:22:21.30,0:22:22.41,Default,,0,0,0,,resource
+Dialogue: 0,0:22:22.41,0:22:24.96,Default,,0,0,0,,The desert cannot simply be ignored
+Dialogue: 0,0:22:24.96,0:22:28.16,Default,,0,0,0,,And cities cannot expand forever without planning
+Dialogue: 0,0:22:28.16,0:22:30.77,Default,,0,0,0,,The future of Egypt will therefore be a story
+Dialogue: 0,0:22:30.77,0:22:31.85,Default,,0,0,0,,of balance
+Dialogue: 0,0:22:31.85,0:22:34.63,Default,,0,0,0,,Between population and resources
+Dialogue: 0,0:22:34.63,0:22:37.00,Default,,0,0,0,,Between old cities and new ones
+Dialogue: 0,0:22:37.00,0:22:39.45,Default,,0,0,0,,Between tradition and modern life
+Dialogue: 0,0:22:39.45,0:22:41.64,Default,,0,0,0,,Between the river and the desert
+Dialogue: 0,0:22:41.64,0:22:44.92,Default,,0,0,0,,FINAL MORNING Now imagine the next morning
+Dialogue: 0,0:22:44.92,0:22:47.13,Default,,0,0,0,,The sun rises over the Nile
+Dialogue: 0,0:22:47.13,0:22:49.03,Default,,0,0,0,,A farmer enters his field
+Dialogue: 0,0:22:49.03,0:22:51.24,Default,,0,0,0,,A fisherman prepares his boat
+Dialogue: 0,0:22:51.24,0:22:53.23,Default,,0,0,0,,A baker opens his shop
+Dialogue: 0,0:22:53.23,0:22:55.55,Default,,0,0,0,,A child puts on a school uniform
+Dialogue: 0,0:22:55.55,0:22:57.85,Default,,0,0,0,,A taxi driver starts his engine
+Dialogue: 0,0:22:57.85,0:22:59.89,Default,,0,0,0,,A worker enters the metro
+Dialogue: 0,0:22:59.89,0:23:02.19,Default,,0,0,0,,A family prepares breakfast
+Dialogue: 0,0:23:02.19,0:23:05.27,Default,,0,0,0,,And thousands of tourists wake up inside hotels
+Dialogue: 0,0:23:05.27,0:23:07.31,Default,,0,0,0,,preparing to see the monuments that brought
+Dialogue: 0,0:23:07.31,0:23:08.19,Default,,0,0,0,,them here
+Dialogue: 0,0:23:08.19,0:23:09.50,Default,,0,0,0,,Different lives
+Dialogue: 0,0:23:09.50,0:23:10.89,Default,,0,0,0,,Different reasons
+Dialogue: 0,0:23:10.89,0:23:12.14,Default,,0,0,0,,One country
+Dialogue: 0,0:23:12.14,0:23:14.28,Default,,0,0,0,,And one river connecting them all
+Dialogue: 0,0:23:14.28,0:23:17.29,Default,,0,0,0,,THE EGYPT TOURISTS DON'T SEE The real Egypt
+Dialogue: 0,0:23:17.29,0:23:19.18,Default,,0,0,0,,is not just the pyramids
+Dialogue: 0,0:23:19.18,0:23:22.07,Default,,0,0,0,,It is the woman buying vegetables at the market
+Dialogue: 0,0:23:22.07,0:23:24.07,Default,,0,0,0,,The fisherman returning home
+Dialogue: 0,0:23:24.07,0:23:26.39,Default,,0,0,0,,The student studying for an exam
+Dialogue: 0,0:23:26.39,0:23:28.80,Default,,0,0,0,,The farmer working beside the Nile
+Dialogue: 0,0:23:28.80,0:23:31.28,Default,,0,0,0,,The taxi driver stuck in traffic
+Dialogue: 0,0:23:31.28,0:23:33.51,Default,,0,0,0,,The family eating dinner together
+Dialogue: 0,0:23:33.51,0:23:35.99,Default,,0,0,0,,The shopkeeper waiting for customers
+Dialogue: 0,0:23:35.99,0:23:38.30,Default,,0,0,0,,The child playing in a village street
+Dialogue: 0,0:23:38.30,0:23:40.69,Default,,0,0,0,,The worker commuting across Cairo
+Dialogue: 0,0:23:40.69,0:23:42.72,Default,,0,0,0,,These people are the real story
+Dialogue: 0,0:23:42.72,0:23:45.47,Default,,0,0,0,,The monuments may be thousands of years old
+Dialogue: 0,0:23:45.47,0:23:47.78,Default,,0,0,0,,But the country itself is alive
+Dialogue: 0,0:23:47.78,0:23:49.46,Default,,0,0,0,,It is changing every day
+Dialogue: 0,0:23:49.46,0:23:53.00,Default,,0,0,0,,FINAL REFLECTION At sunset the desert turns
+Dialogue: 0,0:23:53.00,0:23:53.92,Default,,0,0,0,,orange
+Dialogue: 0,0:23:53.92,0:23:56.17,Default,,0,0,0,,The Nile reflects the last light
+Dialogue: 0,0:23:56.17,0:23:57.93,Default,,0,0,0,,Cairo begins glowing
+Dialogue: 0,0:23:57.93,0:24:00.24,Default,,0,0,0,,The pyramids become silhouettes
+Dialogue: 0,0:24:00.24,0:24:02.94,Default,,0,0,0,,And somewhere in a small village a family sits
+Dialogue: 0,0:24:02.94,0:24:04.18,Default,,0,0,0,,down for dinner
+Dialogue: 0,0:24:04.18,0:24:06.67,Default,,0,0,0,,Tomorrow they will do it all again
+Dialogue: 0,0:24:06.67,0:24:09.07,Default,,0,0,0,,The farmer will return to the field
+Dialogue: 0,0:24:09.07,0:24:11.29,Default,,0,0,0,,The child will return to school
+Dialogue: 0,0:24:11.29,0:24:13.68,Default,,0,0,0,,The worker will return to the city
+Dialogue: 0,0:24:13.68,0:24:16.15,Default,,0,0,0,,The fisherman will return to the river
+Dialogue: 0,0:24:16.15,0:24:18.15,Default,,0,0,0,,And the Nile will continue flowing through
+Dialogue: 0,0:24:18.15,0:24:20.07,Default,,0,0,0,,a country that depends on it
+Dialogue: 0,0:24:20.07,0:24:22.58,Default,,0,0,0,,Egypt is often presented as a place from the
+Dialogue: 0,0:24:22.58,0:24:23.50,Default,,0,0,0,,past
+Dialogue: 0,0:24:23.50,0:24:25.61,Default,,0,0,0,,But that is only half the story
+Dialogue: 0,0:24:25.61,0:24:27.99,Default,,0,0,0,,This is a country of ancient monuments and
+Dialogue: 0,0:24:27.99,0:24:29.44,Default,,0,0,0,,modern problems
+Dialogue: 0,0:24:29.44,0:24:31.99,Default,,0,0,0,,Of crowded cities and empty deserts
+Dialogue: 0,0:24:31.99,0:24:35.04,Default,,0,0,0,,Of luxury resorts and struggling families
+Dialogue: 0,0:24:35.04,0:24:37.62,Default,,0,0,0,,Of traditional villages and rapidly changing
+Dialogue: 0,0:24:37.62,0:24:38.58,Default,,0,0,0,,cities
+Dialogue: 0,0:24:38.58,0:24:40.78,Default,,0,0,0,,Of people who protect traditions and young
+Dialogue: 0,0:24:40.78,0:24:43.08,Default,,0,0,0,,generations looking toward the future
+Dialogue: 0,0:24:43.08,0:24:45.85,Default,,0,0,0,,The pyramids tell us what Egyptians built thousands
+Dialogue: 0,0:24:45.85,0:24:46.99,Default,,0,0,0,,of years ago
+Dialogue: 0,0:24:46.99,0:24:48.97,Default,,0,0,0,,But the streets tell us what Egyptians are
+Dialogue: 0,0:24:48.97,0:24:50.15,Default,,0,0,0,,building today
+Dialogue: 0,0:24:50.15,0:24:53.11,Default,,0,0,0,,A country trying to feed a huge population
+Dialogue: 0,0:24:53.11,0:24:55.49,Default,,0,0,0,,A country trying to create jobs
+Dialogue: 0,0:24:55.49,0:24:58.24,Default,,0,0,0,,A country trying to expand beyond the Nile
+Dialogue: 0,0:24:58.24,0:25:00.55,Default,,0,0,0,,A country trying to protect its history while
+Dialogue: 0,0:25:00.55,0:25:01.83,Default,,0,0,0,,becoming modern
+Dialogue: 0,0:25:01.83,0:25:04.30,Default,,0,0,0,,And a country still living beside the same
+Dialogue: 0,0:25:04.30,0:25:06.90,Default,,0,0,0,,river that made civilization possible
+Dialogue: 0,0:25:06.90,0:25:09.49,Default,,0,0,0,,Maybe that is the real mystery of Egypt
+Dialogue: 0,0:25:09.49,0:25:11.43,Default,,0,0,0,,Not how the pyramids were built
+Dialogue: 0,0:25:11.43,0:25:14.05,Default,,0,0,0,,But how thousands of years later people are
+Dialogue: 0,0:25:14.05,0:25:16.46,Default,,0,0,0,,still building lives in the same extraordinary
+Dialogue: 0,0:25:16.46,0:25:17.55,Default,,0,0,0,,landscape
+Dialogue: 0,0:25:17.55,0:25:19.71,Default,,0,0,0,,Between the Nile and the desert
+Dialogue: 0,0:25:19.71,0:25:22.33,Default,,0,0,0,,Between the ancient world and the future
+Dialogue: 0,0:25:22.33,0:25:23.67,Default,,0,0,0,,This is Egypt
+Dialogue: 0,0:25:23.67,0:25:25.61,Default,,0,0,0,,This is Extreme Earth Life
+Dialogue: 0,0:25:25.61,0:25:27.01,Default,,0,0,0,,Life Beyond the Limits
